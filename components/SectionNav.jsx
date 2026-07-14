@@ -17,11 +17,10 @@ export default function SectionNav({ sections = [] }) {
   const [open, setOpen] = useState(false);
   const [ready, setReady] = useState(false);
   const [active, setActive] = useState(sections[0]?.target ?? null);
-  const [progress, setProgress] = useState(0);
   const rootRef = useRef(null);
 
   // Show the nav only after the reader has scrolled a little way down, and
-  // keep the progress ring + scroll-spy in sync with the scroll position.
+  // keep the scroll-spy highlight in sync with the scroll position.
   useEffect(() => {
     if (!sections.length) return;
 
@@ -33,7 +32,6 @@ export default function SectionNav({ sections = [] }) {
       const y = window.scrollY;
       const doc = document.documentElement;
       const max = doc.scrollHeight - window.innerHeight;
-      setProgress(max > 0 ? Math.min(100, (y / max) * 100) : 0);
       setReady(y > 320);
 
       // Scroll-spy: the active section is the last one whose top has crossed a
@@ -94,53 +92,66 @@ export default function SectionNav({ sections = [] }) {
   if (!sections.length) return null;
 
   return (
-    <nav
+    <div
       ref={rootRef}
       className={`snav${ready ? " is-ready" : ""}${open ? " is-open" : ""}`}
-      aria-label="Page sections"
     >
-      <div className="snav-panel" role="menu" aria-hidden={!open}>
-        <div className="snav-head">
-          <b>Sections</b>
-          <span>Tap to jump</span>
-        </div>
-        <ul className="snav-list">
-          {sections.map((s, i) => (
-            <li key={s.target} style={{ "--i": i }}>
-              <button
-                type="button"
-                role="menuitem"
-                tabIndex={open ? 0 : -1}
-                className={`snav-link${active === s.target ? " is-active" : ""}`}
-                aria-current={active === s.target ? "true" : undefined}
-                onClick={() => go(s.target)}
-              >
-                <span className="snav-dot" aria-hidden="true" />
-                <span className="snav-label">{s.label}</span>
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
+      {/* Wide screens: full horizontal bar docked bottom-centre. */}
+      <nav className="snav-bar" aria-label="Jump to section">
+        {sections.map((s) => (
+          <button
+            key={s.target}
+            type="button"
+            className={`snav-chip${active === s.target ? " is-active" : ""}`}
+            aria-current={active === s.target ? "true" : undefined}
+            onClick={() => go(s.target)}
+          >
+            {s.label}
+          </button>
+        ))}
+      </nav>
 
-      <button
-        type="button"
-        className="snav-toggle"
-        aria-expanded={open}
-        aria-label={open ? "Close section menu" : "Open section menu"}
-        onClick={() => setOpen((v) => !v)}
-      >
-        <span
-          className="snav-ring"
-          style={{ "--snav-progress": progress }}
-          aria-hidden="true"
-        />
-        <span className="snav-icon" aria-hidden="true">
-          <span />
-          <span />
-          <span />
-        </span>
-      </button>
-    </nav>
+      {/* Narrow screens: a labelled pill that expands into a menu. */}
+      <nav className="snav-fab" aria-label="Jump to section">
+        <div className="snav-panel" role="menu" aria-hidden={!open}>
+          <div className="snav-head">
+            <b>Jump to Section</b>
+            <span>Tap to scroll</span>
+          </div>
+          <ul className="snav-list">
+            {sections.map((s, i) => (
+              <li key={s.target} style={{ "--i": i }}>
+                <button
+                  type="button"
+                  role="menuitem"
+                  tabIndex={open ? 0 : -1}
+                  className={`snav-link${active === s.target ? " is-active" : ""}`}
+                  aria-current={active === s.target ? "true" : undefined}
+                  onClick={() => go(s.target)}
+                >
+                  <span className="snav-dot" aria-hidden="true" />
+                  <span className="snav-label">{s.label}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <button
+          type="button"
+          className="snav-toggle"
+          aria-expanded={open}
+          aria-label={open ? "Close section menu" : "Open section menu"}
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span className="snav-icon" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </span>
+          <span className="snav-toggle-text">Sections</span>
+        </button>
+      </nav>
+    </div>
   );
 }

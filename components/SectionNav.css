@@ -1,121 +1,172 @@
 /* ==========================================================================
-   SectionNav — floating in-page section navigator
-   A fixed "compass" button with a scroll-progress ring that expands into an
-   animated, glassy menu. Works on desktop and mobile; respects reduced motion.
-   Scoped under .snav to avoid colliding with page styles.
+   SectionNav — in-page section navigator
+   Desktop: a floating horizontal bar docked bottom-centre.
+   Mobile:  a labelled "Sections" pill that expands into a menu.
+   Both share one scroll-spy + smooth-scroll behaviour. Scoped under .snav.
    ========================================================================== */
 
 .snav {
   --snav-ink: #2c2723;
   --snav-gold: #c99a63;
   --snav-cream: #f5efe6;
-  --snav-line: rgba(255, 255, 255, 0.14);
-  --snav-size: 60px;
+  /* Full-viewport, non-blocking wrapper so children can sit fixed anywhere. */
   position: fixed;
-  right: max(20px, env(safe-area-inset-right));
-  bottom: max(20px, env(safe-area-inset-bottom));
+  inset: 0;
   z-index: 1200;
-  font-family: inherit;
-  /* Hidden until the user scrolls past the hero; toggled via .is-ready. */
-  opacity: 0;
-  transform: translateY(14px) scale(0.9);
   pointer-events: none;
+  font-family: inherit;
+}
+
+/* ==========================================================================
+   Desktop — floating horizontal bar
+   ========================================================================== */
+.snav-bar {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%) translateY(18px);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 6px;
+  max-width: calc(100vw - 32px);
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-radius: 999px;
+  background: rgba(44, 39, 35, 0.92);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  backdrop-filter: blur(14px) saturate(1.2);
+  border: 1px solid rgba(201, 154, 99, 0.32);
+  box-shadow: 0 18px 44px rgba(44, 39, 35, 0.34), 0 3px 10px rgba(44, 39, 35, 0.22);
+  pointer-events: auto;
+  /* Hidden until the reader scrolls past the hero. */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0s linear 0.6s;
+}
+.snav-bar::-webkit-scrollbar { display: none; }
+
+.snav.is-ready .snav-bar {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%);
+  transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0s;
+}
+
+.snav-chip {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 9px 15px;
+  border-radius: 999px;
+  color: rgba(245, 239, 230, 0.78);
+  font-size: 13px;
+  letter-spacing: 0.015em;
+  line-height: 1;
+  transition: background 0.28s ease, color 0.28s ease, transform 0.28s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.snav-chip:hover {
+  color: var(--snav-cream);
+  background: rgba(245, 239, 230, 0.1);
+}
+.snav-chip:focus-visible {
+  outline: 2px solid var(--snav-gold);
+  outline-offset: 2px;
+}
+.snav-chip.is-active {
+  background: var(--snav-gold);
+  color: var(--snav-ink);
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(201, 154, 99, 0.45);
+}
+
+/* ==========================================================================
+   Mobile — labelled pill button + expanding menu
+   ========================================================================== */
+.snav-fab {
+  position: absolute;
+  right: max(18px, env(safe-area-inset-right));
+  bottom: max(18px, env(safe-area-inset-bottom));
+  pointer-events: auto;
+  /* Hidden until the reader scrolls past the hero. */
+  opacity: 0;
+  transform: translateY(14px) scale(0.92);
   transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-.snav.is-ready {
+.snav.is-ready .snav-fab {
   opacity: 1;
   transform: none;
-  pointer-events: auto;
 }
 
-/* ---- The toggle button + progress ring ---------------------------------- */
 .snav-toggle {
-  position: relative;
-  width: var(--snav-size);
-  height: var(--snav-size);
-  border: 0;
-  padding: 0;
-  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(201, 154, 99, 0.4);
+  padding: 12px 18px 12px 16px;
+  border-radius: 999px;
   cursor: pointer;
   background: var(--snav-ink);
   color: var(--snav-cream);
-  display: grid;
-  place-items: center;
-  box-shadow: 0 10px 30px rgba(44, 39, 35, 0.35), 0 2px 6px rgba(44, 39, 35, 0.2);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  box-shadow: 0 12px 32px rgba(44, 39, 35, 0.38), 0 2px 6px rgba(44, 39, 35, 0.24);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
   -webkit-tap-highlight-color: transparent;
 }
-
-.snav-toggle:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 38px rgba(44, 39, 35, 0.4), 0 3px 8px rgba(44, 39, 35, 0.24);
-}
-
+.snav-toggle:active { transform: scale(0.97); }
 .snav-toggle:focus-visible {
   outline: 2px solid var(--snav-gold);
   outline-offset: 3px;
 }
+.snav-toggle-text { line-height: 1; }
 
-/* Progress ring drawn with a conic gradient masked to a thin band. */
-.snav-ring {
-  position: absolute;
-  inset: -4px;
-  border-radius: 50%;
-  background: conic-gradient(var(--snav-gold) calc(var(--snav-progress, 0) * 1%), rgba(201, 154, 99, 0.18) 0);
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 3px));
-  mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 3px));
-  pointer-events: none;
-}
-
-/* Icon: three lines that morph to an X when open. */
-.snav-icon {
-  position: relative;
-  width: 20px;
-  height: 14px;
-}
+/* Three lines that morph to an X when open. */
+.snav-icon { position: relative; width: 18px; height: 12px; flex: 0 0 auto; }
 .snav-icon span {
   position: absolute;
   left: 0;
   height: 2px;
   border-radius: 2px;
-  background: currentColor;
+  background: var(--snav-gold);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), width 0.4s ease, opacity 0.25s ease;
 }
-.snav-icon span:nth-child(1) { top: 0; width: 20px; }
-.snav-icon span:nth-child(2) { top: 6px; width: 14px; }
-.snav-icon span:nth-child(3) { top: 12px; width: 20px; }
-
-.snav.is-open .snav-icon span:nth-child(1) { top: 6px; width: 20px; transform: rotate(45deg); }
+.snav-icon span:nth-child(1) { top: 0; width: 18px; }
+.snav-icon span:nth-child(2) { top: 5px; width: 12px; }
+.snav-icon span:nth-child(3) { top: 10px; width: 18px; }
+.snav.is-open .snav-icon span:nth-child(1) { top: 5px; width: 18px; transform: rotate(45deg); }
 .snav.is-open .snav-icon span:nth-child(2) { opacity: 0; transform: translateX(-8px); }
-.snav.is-open .snav-icon span:nth-child(3) { top: 6px; width: 20px; transform: rotate(-45deg); }
+.snav.is-open .snav-icon span:nth-child(3) { top: 5px; width: 18px; transform: rotate(-45deg); }
 
-/* ---- The expanding menu panel ------------------------------------------- */
+/* Expanding menu panel */
 .snav-panel {
   position: absolute;
   right: 0;
-  bottom: calc(var(--snav-size) + 14px);
-  width: 264px;
-  max-width: min(78vw, 264px);
-  max-height: min(70vh, 560px);
+  bottom: calc(100% + 12px);
+  width: 260px;
+  max-width: 78vw;
+  max-height: min(66vh, 520px);
   overflow-y: auto;
   overscroll-behavior: contain;
   border-radius: 18px;
   padding: 10px;
-  background: rgba(245, 239, 230, 0.86);
+  background: rgba(44, 39, 35, 0.94);
   -webkit-backdrop-filter: blur(16px) saturate(1.2);
   backdrop-filter: blur(16px) saturate(1.2);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 24px 60px rgba(44, 39, 35, 0.28), 0 4px 12px rgba(44, 39, 35, 0.14);
+  border: 1px solid rgba(201, 154, 99, 0.3);
+  box-shadow: 0 24px 60px rgba(44, 39, 35, 0.4), 0 4px 12px rgba(44, 39, 35, 0.24);
   transform-origin: bottom right;
-  /* Closed state */
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px) scale(0.94);
   transition: opacity 0.32s ease, transform 0.42s cubic-bezier(0.16, 1, 0.3, 1),
     visibility 0s linear 0.42s;
 }
-
 .snav.is-open .snav-panel {
   opacity: 1;
   visibility: visible;
@@ -130,26 +181,18 @@
   justify-content: space-between;
   padding: 8px 12px 10px;
   margin-bottom: 4px;
-  border-bottom: 1px solid rgba(44, 39, 35, 0.1);
+  border-bottom: 1px solid rgba(245, 239, 230, 0.14);
 }
 .snav-head b {
   font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--snav-ink);
+  color: var(--snav-gold);
   font-weight: 600;
 }
-.snav-head span {
-  font-size: 11px;
-  color: rgba(44, 39, 35, 0.5);
-  letter-spacing: 0.04em;
-}
+.snav-head span { font-size: 11px; color: rgba(245, 239, 230, 0.45); }
 
-.snav-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+.snav-list { list-style: none; margin: 0; padding: 0; }
 
 .snav-link {
   display: flex;
@@ -162,82 +205,70 @@
   text-align: left;
   padding: 11px 12px;
   border-radius: 12px;
-  color: var(--snav-ink);
+  color: rgba(245, 239, 230, 0.86);
   font-size: 14.5px;
-  letter-spacing: 0.01em;
   position: relative;
   transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
   -webkit-tap-highlight-color: transparent;
-  /* Staggered entrance — each item drifts up as the panel opens. */
   opacity: 0;
   transform: translateY(8px);
 }
-
 .snav.is-open .snav-link {
   animation: snav-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   animation-delay: calc(var(--i, 0) * 45ms + 90ms);
 }
-
-@keyframes snav-in {
-  to { opacity: 1; transform: none; }
-}
+@keyframes snav-in { to { opacity: 1; transform: none; } }
 
 .snav-dot {
   flex: 0 0 auto;
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  border: 1.5px solid rgba(44, 39, 35, 0.35);
+  border: 1.5px solid rgba(245, 239, 230, 0.4);
   transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease,
     box-shadow 0.25s ease;
 }
-
 .snav-label { flex: 1 1 auto; }
 
 .snav-link:hover {
-  background: rgba(201, 154, 99, 0.14);
+  background: rgba(201, 154, 99, 0.16);
+  color: var(--snav-cream);
   transform: translateX(2px);
 }
 .snav-link:hover .snav-dot { border-color: var(--snav-gold); }
+.snav-link:focus-visible { outline: 2px solid var(--snav-gold); outline-offset: -2px; }
 
-.snav-link:focus-visible {
-  outline: 2px solid var(--snav-gold);
-  outline-offset: -2px;
-}
-
-/* Active section (scroll-spy) */
 .snav-link.is-active {
-  background: var(--snav-ink);
-  color: var(--snav-cream);
-  font-weight: 500;
+  background: var(--snav-gold);
+  color: var(--snav-ink);
+  font-weight: 600;
 }
 .snav-link.is-active .snav-dot {
-  background: var(--snav-gold);
-  border-color: var(--snav-gold);
+  background: var(--snav-ink);
+  border-color: var(--snav-ink);
   transform: scale(1.15);
-  box-shadow: 0 0 0 4px rgba(201, 154, 99, 0.25);
 }
 
-/* ---- Small screens: dock the panel to the bottom edge ------------------- */
-@media (max-width: 520px) {
-  .snav-panel {
-    position: fixed;
-    right: max(14px, env(safe-area-inset-right));
-    left: max(14px, env(safe-area-inset-left));
-    bottom: calc(var(--snav-size) + 24px + env(safe-area-inset-bottom));
-    width: auto;
-    max-width: none;
-    transform-origin: bottom center;
-  }
+/* ==========================================================================
+   Responsive swap: bar on wide screens, pill+menu on narrow ones
+   ========================================================================== */
+.snav-fab { display: none; }
+.snav-bar { display: flex; }
+
+@media (max-width: 900px) {
+  .snav-bar { display: none; }
+  .snav-fab { display: block; }
 }
 
-/* ---- Motion-sensitive users -------------------------------------------- */
+/* Motion-sensitive users */
 @media (prefers-reduced-motion: reduce) {
-  .snav,
+  .snav-bar,
+  .snav-fab,
   .snav-toggle,
   .snav-panel,
   .snav-link,
   .snav-dot,
+  .snav-chip,
   .snav-icon span {
     transition-duration: 0.001ms;
   }
