@@ -1,0 +1,6 @@
+/* Global baseline shared by every route. The heavy lifting is done by
+   adhiroha.min.css (sub-pages) and the homepage's own stylesheet; this only
+   holds a couple of universal resets that the original documents relied on. */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img, svg, video { max-width: 100%; }
