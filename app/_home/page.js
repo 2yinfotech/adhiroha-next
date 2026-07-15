@@ -405,7 +405,7 @@ export default "
           <div class=\
             "fact-row\"><span class=\ "fk\">Course Fees</span><span class=\ "fv rust\">Starts From &euro;510</span></div>\n </div>\n </div>\n
       <div class=\ "d-text reveal\">\n <span class=\ "kicker\">Shorter Stays, Same Depth</span>\n
-        <h2 class=\ "sec-h wide\">6 Days Yoga & Ayurveda Retreat in Rishikesh</h2>\n
+        <h2 class=\ "sec-h wide\">6 Days Divine Retreat in Rishikesh</h2>\n
      <p class=\"body-p\">Not everyone can step away from daily life for weeks at a time, and that is perfectly alright. The <strong>5 Nights &amp; 6 Days Yoga &amp; Ayurveda Retreat</strong> in Rishikesh is thoughtfully designed for rest, renewal, and holistic well-being, blending authentic yoga practices, personalized Ayurvedic therapies, meditation, pranayama, nourishing sattvic meals, and time to simply slow down amidst the peaceful Himalayan surroundings. It begins on the 24th of every month and starts from <strong>&euro;510</strong>.</p>\n
 
 <p class=\"body-p\">It offers the same authentic ashram experience and heartfelt guidance as our longer programmes, thoughtfully woven into six rejuvenating days &mdash; a wonderful introduction to the yogic lifestyle, holistic healing, and the timeless wisdom of Yoga and Ayurveda before choosing a full Yoga Teacher Training Course in Rishikesh.</p>\n <a class=\
@@ -426,9 +426,11 @@ export default "
             "fact-row\"><span class=\ "fk\">Certification</span><span class=\ "fv rust\">Sound Healing TTC</span></div>\n </div>\n </div>\n
       <div class=\ "d-text reveal\">\n <span class=\ "kicker\">Shorter Stays, Same Depth</span>\n
         <h2 class=\ "sec-h wide\">Sound Healing Teacher Training in Rishikesh</h2>\n
-        <p class=\"body-p\">The <strong>Sound Healing &amp; Therapy Teacher Training Course</strong> is a <strong>6-day residential programme</strong> designed to introduce you to the ancient wisdom of Tibetan and Vedic Sound Healing. Through singing bowls, mantra, vibration, meditation, and frequency-based healing practices, you'll discover how sound can restore harmony to the body, mind, and spirit while developing practical skills to support both personal transformation and professional healing. The course begins on the <strong>24th of every month</strong> and starts from <strong>&euro;690</strong>.</p>\n
-
-<p class=\"body-p\">Guided by experienced teachers in the peaceful surroundings of our Himalayan ashram, you'll gain hands-on experience with authentic healing instruments, learn the foundations of sound therapy, and receive an internationally recognized Adhiroha certification. Whether you're a yoga teacher, wellness practitioner, therapist, or simply exploring a deeper path of self-discovery, this immersive programme offers the same authentic ashram experience as our longer trainings &mdash; making it a meaningful first step into the world of holistic healing before continuing with a Yoga Teacher Training Course in Rishikesh.</p>\n <a class=\ "course-link\" href=\
+        <p class=\ "body-p\">The <strong>Sound Healing Teacher Training</strong> takes <strong>6 days</strong> to introduce you to the Tibetan
+          and Vedic world of <strong>singing bowls</strong>, mantra and vibration &mdash; both as a personal healing practice
+          and as something you can one day offer to others.</p>\n
+        <p class=\ "body-p\">Like our retreat, it can be a gentle first step into the ashram&rsquo;s rhythm and the sound of the Ganga before
+          committing to a longer yoga teacher training in Rishikesh.</p>\n <a class=\ "course-link\" href=\
           "/sound-healing-ttc-rishikesh/\">View full course <svg width=\"18\" height=\"10\" viewBox=\"0 0 20 10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M1 5h17M14 1l4 4-4 4\"/></svg></a>\n
         </div>\n </div>\n </div>\n</section>\n\n
 <!-- =================================================================== -->\n
