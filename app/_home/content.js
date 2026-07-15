@@ -663,13 +663,12 @@ export default `
                   with rare compassion and energy.</p>\n
                 <div class=\ "tch-pills\"><span>20+ years</span><span>Master&rsquo;s in Yoga Science</span></div>\n </div>\n </div>\n
             <div class=\
-              "car-slide\">\n <img src=\ "/img/remote/img_adhiroha-yttc-022.webp\" alt=\
-                "Yogacharya Ajay Pundir, Ashtanga Vinyasa teacher at Adhiroha\" loading=\ "lazy\">\n
+              "car-slide\">\n <img src=\ "/img/remote/img_adhiroha-yttc-023.webp\" alt=\
+                "Yogacharya Pratap Rawat, Ashtanga Vinyasa teacher at Adhiroha\" loading=\ "lazy\">\n
               <div class=\ "tch-cap\">\n <span class=\ "tch-role\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 8c3-2 5-2 8 0s5 2 8 0M3 13c3-2 5-2 8 0s5 2 8 0M3 18c3-2 5-2 8 0s5 2 8 0\"/></svg> Ashtanga &amp; Vinyasa</span>\n
-                <h3 class=\ "tch-name\">Yogacharya Ajay Pundir</h3>\n
-                <p class=\ "tch-bio\">An M.A. in Yoga and one of our most sought-after Ashtanga teachers &mdash; he runs the sunrise practice with
-                  an energy that makes 6 a.m. feel like a gift.</p>\n
-                <div class=\ "tch-pills\"><span>8+ years</span><span>M.A. in Yoga</span><span>Teaches 200 / 300 / 500</span></div>\n </div>\n </div>\n
+                <h3 class=\ "tch-name\">Yogacharya Pratap Rawat</h3>\n
+                <p class=\ "tch-bio\">A seasoned yogi who began practising at an early age, Pratap holds a Master&rsquo;s in Yoga &amp; Vedic Sciences and is recognised as one of the region&rsquo;s top Ashtanga teachers.</p>\n
+                <div class=\ "tch-pills\"><span>14+ years</span><span>Master&rsquo;s in Yoga &amp; Vedic Sciences</span><span>Teaches 200 / 300 / 500</span></div>\n </div>\n </div>\n
             <div class=\ "car-slide\">\n <img src=\ "/img/remote/img_adhiroha-yttc-026.webp\" alt=\
                 "Yogacharya Ashish Bangwal, Hatha yoga teacher at Adhiroha\" loading=\ "lazy\">\n
               <div class=\ "tch-cap\">\n <span class=\ "tch-role\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3l7 3v5c0 4.4-3 7.6-7 9-4-1.4-7-4.6-7-9V6l7-3z\"/></svg> Hatha Yoga</span>\n
@@ -693,12 +692,13 @@ export default `
                 <p class=\ "tch-bio\">In-depth knowledge of anatomy and physiology with expertise in acupressure therapy &mdash; his quiet, precise
                   adjustments are when everything clicks.</p>\n
                 <div class=\ "tch-pills\"><span>9+ years</span><span>Therapeutic yogic science</span></div>\n </div>\n </div>\n
-            <div class=\ "car-slide\">\n <img src=\ "/img/remote/img_adhiroha-yttc-023.webp\" alt=\
-                "Yogacharya Pratap Rawat, Ashtanga Vinyasa teacher at Adhiroha\" loading=\ "lazy\">\n
+            <div class=\ "car-slide\">\n <img src=\ "/img/remote/img_adhiroha-yttc-022.webp\" alt=\
+                "Yogacharya Ajay Pundir, Ashtanga Vinyasa teacher at Adhiroha\" loading=\ "lazy\">\n
               <div class=\ "tch-cap\">\n <span class=\ "tch-role\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 8c3-2 5-2 8 0s5 2 8 0M3 13c3-2 5-2 8 0s5 2 8 0M3 18c3-2 5-2 8 0s5 2 8 0\"/></svg> Ashtanga Vinyasa</span>\n
-                <h3 class=\ "tch-name\">Yogacharya Pratap Rawat</h3>\n
-                <p class=\ "tch-bio\">A seasoned yogi who began practising at an early age, Pratap holds a Master&rsquo;s in Yoga &amp; Vedic Sciences and is recognised as one of the region&rsquo;s top Ashtanga teachers.</p>\n
-                <div class=\ "tch-pills\"><span>14+ years</span><span>Master&rsquo;s in Yoga &amp; Vedic Sciences</span><span>Teaches 200 / 300 / 500</span></div>\n </div>\n </div>\n </div>\n
+                <h3 class=\ "tch-name\">Yogacharya Ajay Pundir</h3>\n
+                <p class=\ "tch-bio\">An M.A. in Yoga and one of our most sought-after Ashtanga teachers &mdash; he runs the sunrise practice with
+                  an energy that makes 6 a.m. feel like a gift.</p>\n
+                <div class=\ "tch-pills\"><span>8+ years</span><span>M.A. in Yoga</span><span>Teaches 200 / 300 / 500</span></div>\n </div>\n </div>\n </div>\n
           <div class=\
             "car-dots\">\n <button class=\ "car-dot on\" type=\ "button\" aria-label=\ "Teacher 1\"></button>\n <button class=\
               "car-dot\" type=\ "button\" aria-label=\ "Teacher 2\"></button>\n <button class=\ "car-dot\" type=\ "button\" aria-label=\
