@@ -925,7 +925,7 @@ export default `
       <h2 class=\ "sec-h\">Excursions, Rituals and Local Life</h2>\n
       <p class=\ "body-p\">A real education does not stop at the edge of the shala. Woven through every course are gentle excursions and rituals
         that connect you to the living culture around you &mdash; never rushed, never compulsory, simply offered the way
-        a friend would show you their hometown. For many students, these turn out to be the memories they hold onto longest.</p>\n
+        one would show you their hometown. For many students, these turn out to be the memories they hold onto longest.</p>\n
       </div>\n\n
     <div class=\ "exc-grid reveal\">\n
       <figure class=\ "exc-tile\">\n <img class=\ "u-img\" src=\ "/img/remote/img_yoga-training-122.webp\" alt=\
@@ -976,12 +976,11 @@ export default `
         <div class=\ "tone-body\">\n <span class=\ "tone-ic\"><svg width=\"23\" height=\"23\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3c2 2.5 3.5 4.5 3.5 7a3.5 3.5 0 0 1-7 0c0-2.5 1.5-4.5 3.5-7z\"/><path d=\"M6 21h12\"/><path d=\"M9 17.5c0 1.9 1.3 3.5 3 3.5s3-1.6 3-3.5\"/></svg></span>\n
           <div class=\ "tone-k\">After the Dusk</div>\n
           <h3 class=\ "tone-h\">Evenings by the Lamps</h3>\n
-          <p class=\ "tone-p\">As the sky softens, students drift down to the water for the aarti, where priests circle great brass lamps and
-            the whole riverbank glows amber against the dusk. You do not have to be religious to feel something stir in that
+          <p class=\ "tone-p\">As the sky softens, students drift down to the temple for the aarti, where priests circle great brass lamps glows amber against the dusk. You do not have to be religious to feel something stir in that
             moment. Many describe it as the first time in years they felt truly still.</p>\n </div>\n </div>\n </div>\n\n
     <div class=\ "tone-foot reveal\">\n
       <p class=\ "body-p\">Whether you choose the cool, clear months of winter or the green hush after the monsoon, the seasons in Rishikesh each
-        carry their own beauty \u2014 there is no wrong time to come and begin.</p>\n </div>\n </div>\n</section>\n\n
+        carry their own beauty \u2014 There is always a perfect time to begin your journey.</p>\n </div>\n </div>\n</section>\n\n
 <!-- =================================================================== -->\n
 <!-- ================  SECTION X \u00b7 AFTER YOU GRADUATE  ================= -->\n
 <!-- =================================================================== -->\n
@@ -1013,7 +1012,7 @@ export default `
 <section class=\ "pad band-cream\" id=\ "planning-your-stay\">\n
   <div class=\ "wrap\">\n
     <div class=\ "twelve-head reveal\">\n <span class=\ "kicker mid\">Planning Your Stay</span>\n
-      <h2 class=\ "sec-h\">How Booking and Arrival Work</h2>\n
+      <h2 class=\ "sec-h\">How Admissions and Arrival Work</h2>\n
       <p class=\ "body-p\">We have tried to make the practical side as simple as the spiritual side is deep. Four small steps, and by the time
         you step onto the mat, every worry has already been handled.</p>\n </div>\n\n
     <div class=\ "book-steps\">\n
@@ -1055,7 +1054,7 @@ export default `
     <div class=\ "courses-head reveal\">\n
       <div>\n <span class=\ "kicker\">Choosing Your Path</span>\n
         <h2 class=\ "sec-h wide\" style=\ "margin-bottom:0\">Which Course Is Right for You?</h2>\n </div>\n
-      <p class=\ "lead\">With several programs to choose from, it is natural to feel unsure about where to begin. The honest answer depends
+      <p class=\ "lead\">With several programs to choose from, it is natural to feel unsure about where to begin. The answer depends
         on where you are standing today \u2014 so here is a plain guide.</p>\n </div>\n\n
     <div class=\ "fork-list\">\n
       <div class=\ "fork-row reveal\">\n
@@ -1083,9 +1082,7 @@ export default `
             who choose it tend to be the ones who already know, somewhere inside, that this practice is going to become their
             living and not just their hobby.</p>\n </div>\n <a class=\ "course-link\" href=\ "#course-500\">View course <svg width=\"18\" height=\"10\" viewBox=\"0 0 20 10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M1 5h17M14 1l4 4-4 4\"/></svg></a>\n
         </div>\n </div>\n\n
-    <div class=\ "pay-note reveal\">\n <span class=\ "pn-ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\"/><path d=\"M3 6l9 7 9-7\"/></svg></span>\n
-      <p>Still unsure? Write to us and tell us your story. <b>We will never push you toward a longer or pricier program than you need</b>        \u2014 often the right advice is to begin gently with a short retreat, taste the rhythm of the place, and only then
-        decide how far you want to climb.</p>\n </div>\n </div>\n</section>\n\n
+     </div>\n</section>\n\n
 <!-- =================================================================== -->\n
 <!-- ================  SECTION AA \u00b7 WHY RISHIKESH  ===================== -->\n
 <!-- =================================================================== -->\n
@@ -1117,7 +1114,7 @@ export default `
     <div class=\ "incl-split\">\n
       <div class=\ "incl-side reveal\">\n <span class=\ "kicker\">What Is Included</span>\n
         <h2 class=\ "sec-h wide\">Everything Your Fee Covers</h2>\n
-        <p class=\ "body-p\">We believe in clear, honest pricing with no hidden surprises waiting at the gate. Your fee is built so that once
+        <p class=\ "body-p\">We believe in clear, pricing with no hidden surprises waiting at the gate. Your fee is built so that once
           you arrive, you can stop thinking about logistics entirely and pour yourself fully into the practice.</p>\n
         <div
           class=\ "fact-card\">\n
@@ -1143,7 +1140,7 @@ export default `
         <p>Course materials, including manuals and all the props you will use in the shala</p>
       </div>\n
       <div class=\ "check\"><span class=\ "check-ic\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"20 6 9 17 4 12\"/></svg></span>
-        <p>Excursions to the temple, the waterfall and the evening river ceremony</p>
+        <p>Excursions to the temple, the waterfall and the evening aarti ceremony</p>
       </div>\n
       <div class=\ "check\"><span class=\ "check-ic\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"20 6 9 17 4 12\"/></svg></span>
         <p>Your internationally recognised certificate on successful completion</p>
@@ -1163,7 +1160,7 @@ export default `
       <div class=\ "reveal\">\n <span class=\ "kicker\">Is This for Me?</span>\n
         <h2 class=\ "sec-h wide\">Who These Courses Are For</h2>\n
         <p class=\ "body-p\">One of the most common worries we hear is some version of, &ldquo;Am I fit enough, flexible enough, young enough,
-          spiritual enough for this?&rdquo; The honest answer is almost always yes. Our students range from their late teens
+          spiritual enough for this?&rdquo; The answer is almost always yes. Our students range from their late teens
           to their seventies, from former gymnasts to people who could barely touch their toes on day one. What unites them
           is not ability but willingness \u2014 the simple readiness to show up each morning and try.</p>\n
         <div class=\
@@ -1173,7 +1170,7 @@ export default `
             <span
               class=\ "chip\">Late teens to seventies</span>\n </div>\n
         <p class=\ "body-p\">You do not need to be able to stand on your head. You do not need a particular religion, or none at all. You only
-          need to be honest with yourself and open to the work \u2014 the teachers will meet you exactly where you are, which
+          need to be committed with yourself and open to the work \u2014 the teachers will meet you exactly where you are, which
           is, after all, the whole point.</p>\n </div>\n </div>\n </div>\n</section>\n\n
 <!-- =================================================================== -->\n
 <!-- ================  SECTION AD \u00b7 LIFE AFTER ADHIROHA  =============== -->\n
@@ -1195,8 +1192,7 @@ export default `
         strangers become family. Long after the certificates are handed out and the taxis pull away, our graduates stay in
         touch with one another and with us \u2014 sending photographs from the studios they open, the retreats they lead,
         the first nervous classes they teach back home. Many return, a year or two later, to climb to the next level.</p>\n
-      <p class=\ "body-p\">You arrive thinking you are signing up for a syllabus, and you leave having gained a worldwide circle of friends who
-        understand a part of you that words struggle to reach. Our door stays open to every graduate, always. Once you have
+      <p class=\ "body-p\">Our door stays open to every graduate, always. Once you have
         practised in these hills with us, you are part of the Adhiroha story for good \u2014 and you carry a little of these
         hills with you wherever you choose to teach.</p>\n </div>\n </div>\n</section>\n\n
 <!-- =================================================================== -->\n
@@ -1217,12 +1213,12 @@ export default `
           <div class=\ "faq-a\">Almost always the 200 hour yoga teacher training in Rishikesh. It is the recognised foundation, it assumes no prior
             teaching experience, and everything else builds on it. If you already hold a foundation certificate, the 300
             hour is your next step, while the 500 hour gives you both levels in one continuous journey. When in doubt, write
-            to us and we will guide you honestly.</div>\n </details>\n
+            to us and we will guide you.</div>\n </details>\n
         <details class=\ "faq\">\n
           <summary>What makes Adhiroha different from other schools in the country?<span class=\ "plus\" aria-hidden=\ "true\"></span></summary>\n
           <div class=\ "faq-a\">A few things, genuinely. The quality of education \u2014 authentic, traditional teachings with a dedicated, exceptional
             teacher for every subject, never one person or an intern handling everything. Living standards well above the
-            local norm, with clean, spacious rooms, private washrooms and hot water facing the mountains. The scenery of
+            local norm, with clean, spacious rooms facing the mountains, private washrooms and hot water. The scenery of
             Upper Tapovan, surrounded by green forest and natural springs, far from the noise of the market. And food that
             supports the practice \u2014 a balanced Satvik and Ayurvedic diet, simple yet delicious.</div>\n </details>\n
         <details class=\ "faq\">\n
@@ -1235,7 +1231,7 @@ export default `
           <summary>Are all the images on the website real?<span class=\ "plus\" aria-hidden=\ "true\"></span></summary>\n
           <div class=\
             "faq-a\">Completely. Every photograph and video we post here and on our social media is genuine, unstaged content from our
-            actual Ashrames. When you arrive, you will recognise the very views you fell in love with online \u2014 and we
+            actual Ashram. When you arrive, you will recognise the very views you fell in love with online \u2014 and we
             hope they exceed the pictures.</div>\n </details>\n
         <details class=\ "faq\">\n
           <summary>Which styles of asana do you teach?<span class=\ "plus\" aria-hidden=\ "true\"></span></summary>\n
@@ -1248,7 +1244,7 @@ export default `
           <summary>How experienced are the teachers?<span class=\ "plus\" aria-hidden=\ "true\"></span></summary>\n
           <div class=\
             "faq-a\">Every one of them is a qualified Acharya holding a master&rsquo;s degree in their own field, with anywhere from
-            eight to twenty years of teaching behind them.</div>\n </details>\n
+            ten to twenty years of teaching behind them.</div>\n </details>\n
         <details class=\ "faq\">\n
           <summary>Can I share a room with someone of the same gender?<span class=\ "plus\" aria-hidden=\ "true\"></span></summary>\n
           <div class=\ "faq-a\">Yes. Shared rooms are always allotted by gender. The residential area is common, but the rooms themselves are kept
@@ -1257,11 +1253,11 @@ export default `
           <summary>I am arriving early. Can I book accommodation in advance, and who arranges the airport pickup?<span class=\
               "plus\" aria-hidden=\ "true\"></span></summary>\n
           <div class=\ "faq-a\">If you arrive ahead of your start date, we can arrange accommodation for an additional cost. Please contact the
-            Ashram manager to learn the charge for the extra nights and to schedule a pickup from the nearest airport. Rishikesh
+            Ashram manager to learn the charge for the extra nights and to schedule a pickup from the nearest airport. Ashram
             Manager: +91 6397-328-721.</div>\n </details>\n
         <details class=\ "faq\">\n
           <summary>Is the school registered or affiliated with any recognised body?<span class=\ "plus\" aria-hidden=\ "true\"></span></summary>\n
-          <div class=\ "faq-a\">Yes \u2014 we are registered and recognised with Yoga Alliance, USA (internationally recognised), the Ministry
+          <div class=\ "faq-a\">Yes \u2014 we are affiliated with Yoga Alliance, USA (internationally recognised), the Ministry
             of Ayush, Government of India, and Uttarakhand Tourism, the state government body.</div>\n </details>\n
         <details
           class=\ "faq\">\n
@@ -1291,7 +1287,7 @@ export default `
 <section class=\ "pad band-cream\" id=\ "final-thought\">\n
   <div class=\ "wrap\">\n
     <div class=\ "twelve-head reveal\">\n <span class=\ "kicker mid\">A Final Thought</span>\n
-      <h2 class=\ "sec-h\">A Few Honest Words Before You Decide</h2>\n </div>\n\n
+      <h2 class=\ "sec-h\">A Few Words Before You Decide</h2>\n </div>\n\n
     <div class=\ "letter-card reveal\">\n
       <p class=\ "body-p\">Choosing where to train is a bigger decision than it first appears, and we would rather be honest with you than merely
         persuasive. Not every school suits every person, and that is genuinely alright. What we can promise is the plain
@@ -1305,13 +1301,13 @@ export default `
       <p class=\ "body-p\">We also know that doubt is part of the process, not a sign you should stay home. Nearly everyone hesitates before booking
         \u2014 over the cost, the time away, whether they are flexible enough or young enough or calm enough. Those doubts
         are completely normal, and we are always happy to talk them through. There are no wrong questions, and there is no
-        sales script waiting on the other end of the line \u2014 only people who once stood exactly where you are standing
+     script waiting on the other end of the line \u2014 only people who once stood exactly where you are standing
         now.</p>\n
       <p class=\ "body-p\">If something in these pages has stirred even a small what-if in you, we gently encourage you to listen to it. The right
         time rarely announces itself; usually you have to choose it. So take your time, read the course pages once more,
         talk it over with the people who love you \u2014 and when you are ready, this week, this year, or somewhere further
         down the road, write to us. We will be here, in the hills above the river, ready to walk the path beside you.</p>\n
-      <div class=\ "letter-sign\">\u2014 The Adhiroha Family</div>\n </div>\n </div>\n</section>\n\n
+      <div class=\ "letter-sign\">\u2014 The Adhiroha Team</div>\n </div>\n </div>\n</section>\n\n
 <!-- =================================================================== -->\n
 <!-- ================  SECTION AG \u00b7 CLOSING CTA  ======================= -->\n
 <!-- =================================================================== -->\n
@@ -1325,8 +1321,8 @@ export default `
             it is the 200-hour, 300-hour, 500-hour or a short retreat \u2014 we would love to hear from you.</p>\n
           <div class=\
             "cta-contacts\">\n <a class=\ "cta-chip2\" href=\ "mailto:info@adhiroha.com\">\n              <span class=\"cc-ic\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\"/><path d=\"M3 6l9 7 9-7\"/></svg></span>\n              <span class=\"cc-tx\"><b>info@adhiroha.com</b><i>Email us anytime</i></span>\n            </a>\n
-            <a class=\ "cta-chip2\" href=\ "tel:+919999048900\">\n              <span class=\"cc-ic\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 5h4l2 5-2.5 1.5a12 12 0 0 0 6 6L14 15l5 2v4a2 2 0 0 1-2 2C9 23 1 15 1 7a2 2 0 0 1 2-2z\"/></svg></span>\n              <span class=\"cc-tx\"><b>+91-9999-048-900</b><i>International</i></span>\n            </a>\n
-            <a class=\ "cta-chip2\" href=\ "tel:+916397328721\">\n              <span class=\"cc-ic\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 5h4l2 5-2.5 1.5a12 12 0 0 0 6 6L14 15l5 2v4a2 2 0 0 1-2 2C9 23 1 15 1 7a2 2 0 0 1 2-2z\"/></svg></span>\n              <span class=\"cc-tx\"><b>+91-6397-328-721</b><i>India</i></span>\n            </a>\n
+            <a class=\ "cta-chip2\" href=\ "tel:+919999048900\">\n              <span class=\"cc-ic\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 5h4l2 5-2.5 1.5a12 12 0 0 0 6 6L14 15l5 2v4a2 2 0 0 1-2 2C9 23 1 15 1 7a2 2 0 0 1 2-2z\"/></svg></span>\n              <span class=\"cc-tx\"><b>+91-9999-048-900</b><i>International Queries</i></span>\n            </a>\n
+            <a class=\ "cta-chip2\" href=\ "tel:+916397328721\">\n              <span class=\"cc-ic\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 5h4l2 5-2.5 1.5a12 12 0 0 0 6 6L14 15l5 2v4a2 2 0 0 1-2 2C9 23 1 15 1 7a2 2 0 0 1 2-2z\"/></svg></span>\n              <span class=\"cc-tx\"><b>+91-6397-328-721</b><i>Queries from India</i></span>\n            </a>\n
             <div class=\ "cta-chip2\">\n <span class=\ "cc-ic\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z\"/><circle cx=\"12\" cy=\"10\" r=\"3\"/></svg></span>\n
               <span class=\ "cc-tx\"><b>Upper Tapovan, Rishikesh</b><i>Uttarakhand, India</i></span>\n </div>\n </div>\n
           </div>\n
@@ -1338,7 +1334,7 @@ export default `
           <div class=\
             "cf-field\"><label>Message</label><textarea name=\ "message\" rows=\ "4\" placeholder=\
               "Tell us what you're hoping for\u2026\"></textarea></div>\n <button class=\ "cf-send\" type=\ "submit\">Send Message <svg width=\"17\" height=\"10\" viewBox=\"0 0 20 10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M1 5h17M14 1l4 4-4 4\"/></svg></button>\n
-          <p class=\ "cf-fine\">We usually reply within a day \u2014 no sales script, just a real conversation.</p>\n </form>\n </div>\n </div>\n
+          <p class=\ "cf-fine\">We usually reply within a day \u2014 no script, just a real conversation.</p>\n </form>\n </div>\n </div>\n
     </div>\n</section>\n\n
 <!-- =================================================================== -->\n
 <!-- ================  FOOTER \u00b7 PEACEFUL MOUNTAIN  ===================== -->\n
@@ -1391,8 +1387,8 @@ export default `
         </div>\n </div>\n\n
     <div class=\ "ftr-contactbar\">\n
       <h3 class=\ "ftr-contact-h\">Contact Us</h3>\n <a class=\ "ftr-contact-item\" href=\ "mailto:info@adhiroha.com\">\n        <span class=\"ftr-ic\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\"/><path d=\"M3 6l9 7 9-7\"/></svg></span>\n        <span class=\"ftr-contact-txt\"><b>info@adhiroha.com</b></span>\n      </a>\n
-      <a class=\ "ftr-contact-item\" href=\ "tel:+919999048900\">\n        <span class=\"ftr-ic\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z\"/></svg></span>\n        <span class=\"ftr-contact-txt\"><b>+91-9999-048-900</b><i>International</i></span>\n      </a>\n
-      <a class=\ "ftr-contact-item\" href=\ "tel:+916397328721\">\n        <span class=\"ftr-ic\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z\"/></svg></span>\n        <span class=\"ftr-contact-txt\"><b>+91-6397-328-721</b><i>India</i></span>\n      </a>\n
+      <a class=\ "ftr-contact-item\" href=\ "tel:+919999048900\">\n        <span class=\"ftr-ic\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z\"/></svg></span>\n        <span class=\"ftr-contact-txt\"><b>+91-9999-048-900</b><i>International Queries</i></span>\n      </a>\n
+      <a class=\ "ftr-contact-item\" href=\ "tel:+916397328721\">\n        <span class=\"ftr-ic\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z\"/></svg></span>\n        <span class=\"ftr-contact-txt\"><b>+91-6397-328-721</b><i>Queries from India</i></span>\n      </a>\n
       <div class=\ "ftr-badge\">\n <span class=\ "ftr-badge-ic\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"5\" r=\"2.1\"/><path d=\"M12 8.4c-2.3 0-4 1.7-4 3.8 0 1 .4 1.8 1.2 2.4\"/><path d=\"M12 8.4c2.3 0 4 1.7 4 3.8 0 1-.4 1.8-1.2 2.4\"/><path d=\"M4.8 18.2C6.4 16.2 9 15 12 15s5.6 1.2 7.2 3.2c-2 1.3-4.5 2-7.2 2s-5.2-.7-7.2-2z\"/></svg></span>\n
         <span>Rooted in tradition,<br>elevated in Rishikesh.</span>\n </div>\n </div>\n\n
     <nav class=\ "ftr-legal\">\n <a href=\ "/\">Home</a><a href=\ "/yoga-ashram-in-india-code-of-conduct/\">Terms</a><a href=\ "/sitemap.xml\">Sitemap</a>
