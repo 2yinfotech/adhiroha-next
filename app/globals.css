@@ -4,3 +4,15 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 img, svg, video { max-width: 100%; }
+
+/* Reveal-on-scroll failsafe. Pages hide `.reveal` blocks (opacity:0) and a
+   client script fades them in on scroll. If that script never runs — a stale
+   cached page, slow hydration, or JS disabled — the content would stay blank
+   forever. So we only allow the hidden state once the head script below has
+   confirmed JS is live by adding `js-reveal` to <html>; otherwise force the
+   content visible. This wins over the per-page `.reveal{opacity:0}` rules. */
+html:not(.js-reveal) .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+}

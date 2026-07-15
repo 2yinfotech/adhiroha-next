@@ -12,6 +12,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Mark JS as live before any content paints, so the reveal-on-scroll
+            blocks are only hidden when the client can actually reveal them
+            (see the `html:not(.js-reveal)` failsafe in globals.css). Runs in
+            <head> to avoid a flash of the content appearing then hiding. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.className+=' js-reveal';",
+          }}
+        />
         {/* Leaflet CSS — used by the location maps that appear across the site. */}
         <link
           rel="stylesheet"
