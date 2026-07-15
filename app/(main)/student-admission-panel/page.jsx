@@ -1,3 +1,4 @@
+import "../[slug]/styles.css"; // shared site chrome (header, drawer, footer) styling
 import "./styles.css";
 import { HEADER_HTML, DRAWER_HTML, FOOTER_HTML } from "@/components/chrome";
 import ArticleScripts from "@/components/ArticleScripts";
