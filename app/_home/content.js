@@ -442,7 +442,7 @@ export default `
   <div class=\ "wrap\">\n
     <div class=\ "twelve-head reveal\">\n <span class=\ "kicker mid\">A Day in the Life</span>\n
       <h2 class=\ "sec-h\">What a Typical Day Looks Like Here</h2>\n
-      <p class=\ "body-p\">People often ask what the days actually feel like, so here is an honest picture. You will wake before the sun, when
+      <p class=\ "body-p\">People often ask what the days actually feel like, so here is an picture. You will wake before the sun, when
         the hills are still grey and cool, and a bell will call everyone gently toward the shala. From there, the day unfolds
         in a rhythm the body quickly learns to love.</p>\n </div>\n\n
     <div class=\ "day-hero reveal\">\n
@@ -460,7 +460,7 @@ export default `
           "transition-delay:.08s\">\n <span class=\ "df-ic\"><svg width=\"26\" height=\"26\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"5\"/><line x1=\"12\" y1=\"1\" x2=\"12\" y2=\"3\"/><line x1=\"12\" y1=\"21\" x2=\"12\" y2=\"23\"/><line x1=\"4.22\" y1=\"4.22\" x2=\"5.64\" y2=\"5.64\"/><line x1=\"18.36\" y1=\"18.36\" x2=\"19.78\" y2=\"19.78\"/><line x1=\"1\" y1=\"12\" x2=\"3\" y2=\"12\"/><line x1=\"21\" y1=\"12\" x2=\"23\" y2=\"12\"/><line x1=\"4.22\" y1=\"19.78\" x2=\"5.64\" y2=\"18.36\"/><line x1=\"18.36\" y1=\"5.64\" x2=\"19.78\" y2=\"4.22\"/></svg></span>\n
           <div class=\ "df-txt\">\n
             <div class=\ "df-when\">Morning</div>\n
-            <div class=\ "df-what\">Dynamic Hatha or Ashtanga Vinyasa practice</div>\n </div>\n </div>\n\n
+            <div class=\ "df-what\">Ashtanga Vinyasa practice</div>\n </div>\n </div>\n\n
         <div class=\ "df-item reveal\" style=\
           "transition-delay:.16s\">\n <span class=\ "df-ic\"><svg width=\"26\" height=\"26\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z\"/><path d=\"M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z\"/></svg></span>\n
           <div class=\ "df-txt\">\n
@@ -470,20 +470,19 @@ export default `
           "transition-delay:.24s\">\n <span class=\ "df-ic\"><svg width=\"26\" height=\"26\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><path d=\"M23 21v-2a4 4 0 0 0-3-3.87\"/><path d=\"M16 3.13a4 4 0 0 1 0 7.75\"/></svg></span>\n
           <div class=\ "df-txt\">\n
             <div class=\ "df-when\">Afternoon</div>\n
-            <div class=\ "df-what\">Teaching methodology, alignment and adjustment</div>\n </div>\n </div>\n\n
+            <div class=\ "df-what\">Teaching methodology, Restorative practice</div>\n </div>\n </div>\n\n
         <div class=\ "df-item reveal\" style=\
           "transition-delay:.32s\">\n <span class=\ "df-ic\"><svg width=\"26\" height=\"26\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z\"/></svg></span>\n
           <div class=\ "df-txt\">\n
             <div class=\ "df-when\">Evening</div>\n
-            <div class=\ "df-what\">Restorative practice, meditation and mantra chanting</div>\n </div>\n </div>\n </div>\n </div>\n\n
+            <div class=\ "df-what\">Hatha yoga, meditation and mantra chanting</div>\n </div>\n </div>\n </div>\n </div>\n\n
     <div class=\
       "day-cols reveal\">\n
       <p class=\ "body-p\">The morning begins with cleansing practices and pranayama, then flows into a strong asana session while your body is
         fresh. The first meal arrives afterward, warm and simple, eaten in a quiet dining hall that looks out over the trees.
-        Mid-morning is for the mind: philosophy, anatomy, or the science of alignment, depending on the day.</p>\n
+        Mid-morning is for the mind: philosophy, anatomy, or the science of alignment, depending on the day. Lunch is followed by rest \u2014 a chance to nap, journal, or wander down toward the water.</p>\n
       <p class=\
-        "body-p\">Lunch is followed by rest \u2014 a chance to nap, journal, or wander down toward the water. The afternoon turns practical
-        with teaching methodology and adjustment clinics, and as the light softens, the day closes with meditation, chanting,
+        "body-p\">The afternoon shifts into deep rest with restorative yoga, where gentle, fully supported postures encourage the body to release tension, calm the nervous system, and cultivate profound relaxation and renewal., and as the light softens, the day closes with meditation, chanting,
         or the long ring of a singing bowl. Lights go out early, because the next dawn comes early too. This rhythm, repeated
         in the clean air of the foothills, is the real teacher.</p>\n </div>\n </div>\n</section>\n\n
 <!-- =================================================================== -->\n
