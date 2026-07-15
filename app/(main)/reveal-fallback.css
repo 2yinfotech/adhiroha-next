@@ -1,0 +1,8 @@
+/* Never allow scroll-reveal effects to hide page content in browsers that
+   cannot run IntersectionObserver. */
+html.reveal-fallback .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  transition: none !important;
+}
