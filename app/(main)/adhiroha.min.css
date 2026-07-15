@@ -9,3 +9,7 @@
 .hd-logo::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.85) 50%,transparent 58%);background-size:230% 100%;background-repeat:no-repeat;background-position:-60% 0;-webkit-mask:url("/img/logo-g.png") left center/contain no-repeat;mask:url("/img/logo-g.png") left center/contain no-repeat;animation:logoShine 6s ease-in-out infinite}
 @keyframes logoShine{0%{background-position:160% 0}55%{background-position:-60% 0}100%{background-position:-60% 0}}
 @media(prefers-reduced-motion:reduce){.hd-logo::after{animation:none}}
+
+/* Fixed header needs top clearance on sub-page heroes (matches homepage). */
+.c-hero{padding-top:124px}
+@media(max-width:1280px){.c-hero{padding-top:74px}}

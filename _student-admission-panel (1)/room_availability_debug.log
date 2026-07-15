@@ -1,0 +1,58 @@
+{
+    "ANUSHASANA": {
+        "type": "double",
+        "is_full": false,
+        "has_males": false,
+        "has_females": false,
+        "available_seats": 2
+    },
+    "SHADHNA": {
+        "type": "double",
+        "is_full": true,
+        "has_males": false,
+        "has_females": true,
+        "available_seats": -1
+    },
+    "BHAKTI": {
+        "type": "triple",
+        "is_full": true,
+        "has_males": false,
+        "has_females": true,
+        "available_seats": 0
+    },
+    "ANANDA": {
+        "type": "triple",
+        "is_full": true,
+        "has_males": false,
+        "has_females": true,
+        "available_seats": 0
+    },
+    "NIYAMA": {
+        "type": "triple",
+        "is_full": true,
+        "has_males": false,
+        "has_females": true,
+        "available_seats": 0
+    },
+    "ABHYASA": {
+        "type": "triple",
+        "is_full": true,
+        "has_males": false,
+        "has_females": true,
+        "available_seats": 0
+    },
+    "NIRVANA": {
+        "type": "triple",
+        "is_full": true,
+        "has_males": false,
+        "has_females": true,
+        "available_seats": 0
+    },
+    "DHYANA": {
+        "type": "triple",
+        "is_full": false,
+        "has_males": false,
+        "has_females": false,
+        "available_seats": 3
+    }
+}
