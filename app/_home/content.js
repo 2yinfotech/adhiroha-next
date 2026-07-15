@@ -1,4 +1,4 @@
-export default "
+export default `
 <!-- =================================================================== -->\n
 <!-- ================  HERO \u00b7 200 HOUR YTT  ============================ -->\n
 <!-- =================================================================== -->\n
@@ -1397,4 +1397,4 @@ export default "
     <div class=\ "ftr-copy\">\n
       <p>\u00a9 <span id=\ "year\"></span> Adhiroha. All rights reserved.</p>\n <span class=\ "ftr-copy-orn\" aria-hidden=\
         "true\"><svg width=\"120\" height=\"10\" viewBox=\"0 0 120 10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.1\" stroke-linecap=\"round\"><line x1=\"2\" y1=\"5\" x2=\"46\" y2=\"5\" stroke-dasharray=\"1 5\"/><path d=\"M60 1 L64 5 L60 9 L56 5 Z\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"74\" y1=\"5\" x2=\"118\" y2=\"5\" stroke-dasharray=\"1 5\"/></svg></span>\n
-      </div>\n\n </div>\n</footer>";
+      </div>\n\n </div>\n</footer>`;
