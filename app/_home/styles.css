@@ -4352,3 +4352,19 @@
 
 
 @media(max-width:680px){.site-footer{background-image:linear-gradient(180deg,rgba(18,13,10,.58) 0,rgba(18,13,10,.82) 13%,#17110e 28%,#140f0c 100%),url("/img/yoga-shala-007.webp")}.ftr-top{flex-direction:column;align-items:center;text-align:center;gap:18px}.ft-logo{margin-left:auto;margin-right:auto}.ftr-connect{flex-direction:column;align-items:center;gap:12px}.ftr-social{justify-content:center}.ftr-grid{grid-template-columns:1fr;gap:32px;text-align:center}.ftr-about{padding-right:0;grid-column:auto}.ftr-rule{margin-left:auto;margin-right:auto}.ftr-addr{max-width:none;margin-left:auto;margin-right:auto}.ftr-dir{margin-left:auto;margin-right:auto}.ftr-links{justify-items:center}.ftr-lotus{margin-left:auto;margin-right:auto}.ftr-contactbar{flex-direction:column;align-items:center;text-align:center;gap:16px}.ftr-contact-item{justify-content:center}.ftr-badge{margin-left:auto;margin-right:auto}.ftr-legal{justify-content:center;text-align:center}.ftr-h::after{margin-left:auto;margin-right:auto}}
+
+/* ===== Mool Mantras — image tiles with caption overlay (live-site design) ===== */
+#mool-mantras .mool-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:16px}
+#mool-mantras .mool-tile{position:relative;margin:0;border-radius:16px;overflow:hidden;aspect-ratio:1/1;
+  box-shadow:0 20px 44px -26px rgba(44,39,35,.55)}
+#mool-mantras .mool-tile img{width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .6s cubic-bezier(.22,.61,.36,1)}
+#mool-mantras .mool-tile:hover img{transform:scale(1.05)}
+#mool-mantras .mool-cap{position:absolute;left:16px;right:16px;bottom:16px;margin:0;background:#fff;
+  border-radius:12px;border-left:4px solid var(--rust,#ed1c25);padding:15px 18px;
+  box-shadow:0 12px 30px rgba(44,39,35,.22)}
+#mool-mantras .mool-cap p{margin:0;font-weight:600;color:var(--ink,#2c2723);text-align:center;
+  line-height:1.35;font-size:16px}
+@media(max-width:900px){#mool-mantras .mool-tiles{grid-template-columns:repeat(2,1fr);gap:18px}}
+@media(max-width:520px){#mool-mantras .mool-tiles{grid-template-columns:1fr}
+  #mool-mantras .mool-tile{aspect-ratio:4/3}}
