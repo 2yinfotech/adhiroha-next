@@ -482,8 +482,7 @@ export default `
         fresh. The first meal arrives afterward, warm and simple, eaten in a quiet dining hall that looks out over the trees.
         Mid-morning is for the mind: philosophy, anatomy, or the science of alignment, depending on the day. Lunch is followed by rest \u2014 a chance to nap, journal, or wander down toward the water.</p>\n
       <p class=\
-        "body-p\">The afternoon shifts into deep rest with restorative yoga, where gentle, fully supported postures encourage the body to release tension, calm the nervous system, and cultivate profound relaxation and renewal., and as the light softens, the day closes with meditation, chanting,
-        or the long ring of a singing bowl. Lights go out early, because the next dawn comes early too. This rhythm, repeated
+        "body-p\">The afternoon shifts into deep rest with restorative yoga, where gentle, fully supported postures encourage the body to release tension, calm the nervous system, and cultivate profound relaxation and renewal. Dinner follows as a nourishing vegetarian meal, shared quietly before the evening practice. As the light softens, the day closes with meditation and chanting. Lights go out early, because the next dawn comes early too. This rhythm, repeated
         in the clean air of the foothills, is the real teacher.</p>\n </div>\n </div>\n</section>\n\n
 <!-- =================================================================== -->\n
 <!-- ================  SECTION L \u00b7 CURRICULUM  ========================= -->\n
