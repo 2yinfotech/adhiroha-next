@@ -181,7 +181,7 @@ export default `
       <div class=\ "living-text\">\n
         <h3 class=\ "sub-h\">What Your Days Here Feel Like</h3>\n
         <p class=\ "body-p\">You wake early, in the old heartland of this practice, while the morning is still cool. After a few days the constant
-          background hum you live with back home simply goes quiet, and you stop noticing it was ever there. The campus does
+          background hum you live with back home simply goes quiet, and you stop noticing it was ever there. The Ashram does
           not really feel like a school. It feels more like a house full of people who happen to be learning the same thing
           at the same time. You are not here only for the postures, either. You are here to slow down, to eat plain food
           and keep sensible hours, to meet a tradition that is still genuinely lived in.</p>\n
@@ -200,7 +200,7 @@ export default `
 <!-- ================  SECTION D \u00b7 OUR STORY  ========================= -->\n
 <!-- =================================================================== -->\n
 <section id=\ "story\">\n
-  <div class=\ "story-band reveal\">\n <img class=\ "u-img\" alt=\ "The Adhiroha ashram campus on the green hillside of Upper Tapovan, Rishikesh\"\n src=\
+  <div class=\ "story-band reveal\">\n <img class=\ "u-img\" alt=\ "The Adhiroha ashram Ashram on the green hillside of Upper Tapovan, Rishikesh\"\n src=\
       "/img/remote/img_tion-3.webp\">\n </div>\n
   <div class=\ "wrap\" style=\ "padding-bottom:108px\">\n
     <div class=\ "story-flex reveal\">\n
@@ -219,7 +219,7 @@ export default `
           is on purpose. It means a teacher actually learns your name and your own particular fight with a posture, instead
           of calling cues across a crowded hall.</p>\n </div>\n
       <div class=\ "story-img\">\n <img class=\ "u-img\" src=\ "/img/ashram-006.webp\" alt=\
-          "Aerial view of the Adhiroha ashram campus among the trees of Upper Tapovan\">\n </div>\n </div>\n\n
+          "Aerial view of the Adhiroha ashram Ashram among the trees of Upper Tapovan\">\n </div>\n </div>\n\n
     <div class=\ "stat-row reveal\">\n
       <div class=\ "stat\">
         <div class=\ "num\">70+</div>
@@ -230,7 +230,7 @@ export default `
         <div class=\ "lab\">Groups, always \u2014 by design</div>
       </div>\n
       <div class=\ "stat\">
-        <div class=\ "num\">15\u201320</div>
+        <div class=\ "num\">10\u201320</div>
         <div class=\ "lab\">Years of practice behind each teacher</div>
       </div>\n </div>\n </div>\n</section>\n\n
 <!-- =================================================================== -->\n
@@ -360,7 +360,7 @@ export default `
         <p class=\ "body-p\">Across two months, the 500 hour yoga teacher training in rishikesh takes you from the fundamentals of posture and
           breath all the way to confident, independent teaching. You will not only learn what to teach but how to hold space
           \u2014 how to manage a class of mixed abilities, how to keep students safe, and how to bring the quiet authority
-          that makes people trust a teacher. Living and practising on campus for sixty days does something a shorter course
+          that makes people trust a teacher. Living and practising on Ashram for sixty days does something a shorter course
           cannot: it lets the practice settle into your bones.</p>\n
         <p class=\ "body-p\">Because it carries the full weight of both levels, the 500 hour yoga teacher training in rishikesh is the credential
           that opens the most doors. Graduates of the 500 hour yoga teacher training in rishikesh go on to lead their own
@@ -432,7 +432,7 @@ export default `
 
 <p class=\"body-p\">Each day combines theory with hands-on practice, allowing you to experience the healing power of sound while learning to confidently work with Tibetan singing bowls and other traditional healing instruments. As you deepen your understanding of vibration, energy, and frequency, you'll explore techniques for chakra balancing, stress relief, emotional healing, deep relaxation, and meditation in the serene surroundings of our Himalayan ashram.</p>\n
 
-<p class=\"body-p\">Guided by experienced teachers in the peaceful surroundings of our Himalayan ashram, you'll gain hands-on experience with authentic healing instruments, learn the foundations of sound therapy, and receive an internationally recognized Adhiroha certification. Whether you're a yoga teacher, wellness practitioner, therapist, or simply exploring a deeper path of self-discovery, this immersive programme offers the same authentic ashram experience as our longer trainings &mdash; making it a meaningful first step into the world of holistic healing before continuing with a Yoga Teacher Training Course in Rishikesh.</p>\n <a class=\ "course-link\" href=\
+<p class=\"body-p\">Guided by experienced teachers in the peaceful surroundings, you'll gain hands-on experience with authentic healing instruments, learn the foundations of sound therapy, and receive an internationally recognized Adhiroha certification. Whether you're a yoga teacher, wellness practitioner, therapist, or simply exploring a deeper path of self-discovery, this immersive programme offers the same authentic ashram experience as our longer trainings &mdash; making it a meaningful first step into the world of holistic healing before continuing with a Yoga Teacher Training Course in Rishikesh.</p>\n <a class=\ "course-link\" href=\
           "/sound-healing-ttc-rishikesh/\">View full course <svg width=\"18\" height=\"10\" viewBox=\"0 0 20 10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M1 5h17M14 1l4 4-4 4\"/></svg></a>\n
         </div>\n </div>\n </div>\n</section>\n\n
 <!-- =================================================================== -->\n
@@ -442,7 +442,7 @@ export default `
   <div class=\ "wrap\">\n
     <div class=\ "twelve-head reveal\">\n <span class=\ "kicker mid\">A Day in the Life</span>\n
       <h2 class=\ "sec-h\">What a Typical Day Looks Like Here</h2>\n
-      <p class=\ "body-p\">People often ask what the days actually feel like, so here is an picture. You will wake before the sun, when
+      <p class=\ "body-p\">People often ask what the days actually feel like, so here is a picture. You will wake before the sun, when
         the hills are still grey and cool, and a bell will call everyone gently toward the shala. From there, the day unfolds
         in a rhythm the body quickly learns to love.</p>\n </div>\n\n
     <div class=\ "day-hero reveal\">\n
@@ -455,7 +455,7 @@ export default `
         <div class=\ "df-item reveal\">\n <span class=\ "df-ic\"><svg width=\"26\" height=\"26\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M17 18a5 5 0 0 0-10 0\"/><line x1=\"12\" y1=\"2\" x2=\"12\" y2=\"9\"/><line x1=\"4.22\" y1=\"10.22\" x2=\"5.64\" y2=\"11.64\"/><line x1=\"1\" y1=\"18\" x2=\"3\" y2=\"18\"/><line x1=\"21\" y1=\"18\" x2=\"23\" y2=\"18\"/><line x1=\"18.36\" y1=\"11.64\" x2=\"19.78\" y2=\"10.22\"/><line x1=\"23\" y1=\"22\" x2=\"1\" y2=\"22\"/><polyline points=\"8 6 12 2 16 6\"/></svg></span>\n
           <div class=\ "df-txt\">\n
             <div class=\ "df-when\">Early Morning</div>\n
-            <div class=\ "df-what\">Cleansing practices, pranayama and meditation</div>\n </div>\n </div>\n\n
+            <div class=\ "df-what\">Cleansing practices, Pranayama and Meditation</div>\n </div>\n </div>\n\n
         <div class=\ "df-item reveal\" style=\
           "transition-delay:.08s\">\n <span class=\ "df-ic\"><svg width=\"26\" height=\"26\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"5\"/><line x1=\"12\" y1=\"1\" x2=\"12\" y2=\"3\"/><line x1=\"12\" y1=\"21\" x2=\"12\" y2=\"23\"/><line x1=\"4.22\" y1=\"4.22\" x2=\"5.64\" y2=\"5.64\"/><line x1=\"18.36\" y1=\"18.36\" x2=\"19.78\" y2=\"19.78\"/><line x1=\"1\" y1=\"12\" x2=\"3\" y2=\"12\"/><line x1=\"21\" y1=\"12\" x2=\"23\" y2=\"12\"/><line x1=\"4.22\" y1=\"19.78\" x2=\"5.64\" y2=\"18.36\"/><line x1=\"18.36\" y1=\"5.64\" x2=\"19.78\" y2=\"4.22\"/></svg></span>\n
           <div class=\ "df-txt\">\n
@@ -465,25 +465,24 @@ export default `
           "transition-delay:.16s\">\n <span class=\ "df-ic\"><svg width=\"26\" height=\"26\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z\"/><path d=\"M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z\"/></svg></span>\n
           <div class=\ "df-txt\">\n
             <div class=\ "df-when\">Late Morning</div>\n
-            <div class=\ "df-what\">Philosophy, anatomy and yogic science</div>\n </div>\n </div>\n\n
+            <div class=\ "df-what\">Philosophy, Anatomy and Yogic Science</div>\n </div>\n </div>\n\n
         <div class=\ "df-item reveal\" style=\
           "transition-delay:.24s\">\n <span class=\ "df-ic\"><svg width=\"26\" height=\"26\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><path d=\"M23 21v-2a4 4 0 0 0-3-3.87\"/><path d=\"M16 3.13a4 4 0 0 1 0 7.75\"/></svg></span>\n
           <div class=\ "df-txt\">\n
             <div class=\ "df-when\">Afternoon</div>\n
-            <div class=\ "df-what\">Teaching methodology, Restorative practice</div>\n </div>\n </div>\n\n
+            <div class=\ "df-what\">Adjustment & Alignment, Restorative practice</div>\n </div>\n </div>\n\n
         <div class=\ "df-item reveal\" style=\
           "transition-delay:.32s\">\n <span class=\ "df-ic\"><svg width=\"26\" height=\"26\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z\"/></svg></span>\n
           <div class=\ "df-txt\">\n
             <div class=\ "df-when\">Evening</div>\n
-            <div class=\ "df-what\">Hatha yoga, meditation and mantra chanting</div>\n </div>\n </div>\n </div>\n </div>\n\n
+            <div class=\ "df-what\">Hatha Yoga, Meditation and Mantra Chanting</div>\n </div>\n </div>\n </div>\n </div>\n\n
     <div class=\
       "day-cols reveal\">\n
       <p class=\ "body-p\">The morning begins with cleansing practices and pranayama, then flows into a strong asana session while your body is
         fresh. The first meal arrives afterward, warm and simple, eaten in a quiet dining hall that looks out over the trees.
         Mid-morning is for the mind: philosophy, anatomy, or the science of alignment, depending on the day. Lunch is followed by rest \u2014 a chance to nap, journal, or wander down toward the water.</p>\n
       <p class=\
-        "body-p\">The afternoon shifts into deep rest with restorative yoga, where gentle, fully supported postures encourage the body to release tension, calm the nervous system, and cultivate profound relaxation and renewal. Dinner follows as a nourishing vegetarian meal, shared quietly before the evening practice. As the light softens, the day closes with meditation and chanting. Lights go out early, because the next dawn comes early too. This rhythm, repeated
-        in the clean air of the foothills, is the real teacher.</p>\n </div>\n </div>\n</section>\n\n
+        "body-p\">The afternoon shifts into deep rest with restorative yoga, where gentle, fully supported postures encourage the body to release tension, calm the nervous system, and cultivate profound relaxation and renewal. As the light softens, the day closes with meditation and chanting. Dinner follows as a nourishing vegetarian meal. Lights go out early, because the next dawn comes early too. This rhythm, repeated in the clean air of the foothills, is the real teacher.</p>\n </div>\n </div>\n</section>\n\n
 <!-- =================================================================== -->\n
 <!-- ================  SECTION L \u00b7 CURRICULUM  ========================= -->\n
 <!-- =================================================================== -->\n
@@ -491,13 +490,13 @@ export default `
   <div class=\ "wrap\">\n
     <div class=\ "twelve-head reveal\">\n <span class=\ "kicker mid\">What You Will Learn</span>\n
       <h2 class=\ "sec-h\">The Curriculum, Subject by Subject</h2>\n
-      <p class=\ "body-p\">A certificate is only as good as the learning behind it, so we keep our syllabus broad, deep and honest. Every yoga
+      <p class=\ "body-p\">A certificate is only as good as the learning behind it, so we keep our syllabus broad and deep. Every yoga
         teacher training in India we run is built around the same core subjects, each one taught by a specialist rather than
         a single generalist trying to cover everything. Here is what fills your days.</p>\n </div>\n\n
     <div class=\
       "curr-grid\">\n
       <article class=\ "curr-card reveal\">\n <span class=\ "curr-num\">01</span>\n <span class=\ "curr-ic\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3.5c1.7 1.9 2.5 4 2.5 6 0 2.6-1.1 4.5-2.5 4.5S9.5 12.1 9.5 9.5c0-2 .8-4.1 2.5-6z\"/><path d=\"M5 8.5c2.4.8 4.2 2.2 5.3 4.2\"/><path d=\"M19 8.5c-2.4.8-4.2 2.2-5.3 4.2\"/><path d=\"M3 13.5c1.8 4 5 6.5 9 6.5s7.2-2.5 9-6.5c-2.4-.7-4.6-.7-6.6 0-.8.3-4 .3-4.8 0-2-.7-4.2-.7-6.6 0z\"/></svg></span>\n
-        <h3 class=\ "curr-h\">Hatha</h3>\n
+        <h3 class=\ "curr-h\">Hatha Yoga</h3>\n
         <p class=\ "curr-p\">The traditional, grounding heart of our asana work.</p>\n </article>\n\n
       <article class=\ "curr-card reveal\">\n <span class=\ "curr-num\">02</span>\n <span class=\ "curr-ic\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3c3.2 3.4 5.5 6.3 5.5 9.8a5.5 5.5 0 0 1-11 0C6.5 9.3 8.8 6.4 12 3z\"/><path d=\"M12 17.5a3 3 0 0 1-3-3c0-1.3.8-2.4 3-4 2.2 1.6 3 2.7 3 4a3 3 0 0 1-3 3z\"/></svg></span>\n
         <h3 class=\ "curr-h\">Ashtanga Vinyasa</h3>\n
@@ -522,8 +521,8 @@ export default `
           <h3 class=\ "curr-h\">Meditation &amp; Mantra</h3>\n
           <p class=\ "curr-p\">The quiet inner half of the work.</p>\n </article>\n\n
         <article class=\ "curr-card reveal\">\n <span class=\ "curr-num\">08</span>\n <span class=\ "curr-ic\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"8\" r=\"7\"/><polyline points=\"8.21 13.89 7 23 12 20 17 23 15.79 13.88\"/></svg></span>\n
-          <h3 class=\ "curr-h\">Teaching Methodology</h3>\n
-          <p class=\ "curr-p\">Sequencing, cueing, demonstration and the art of holding a class.</p>\n </article>\n </div>\n\n
+          <h3 class=\ "curr-h\">Restorative Yoga</h3>\n
+          <p class=\ "curr-p\">Deeply meditative practice that focuses on physical and mental relaxation</p>\n </article>\n </div>\n\n
     <div class=\
       "curr-foot reveal\">\n
       <p>Because each subject has its own dedicated teacher, you receive depth instead of a thin overview. This is one of the
@@ -540,7 +539,7 @@ export default `
             "/img/shankar-das.webp\" loading=\ "lazy\"></div>\n
         <div class=\ "inner-quote\">\n
           <p>&ldquo;Students who arrived convinced they could never sit still often find, somewhere in the second or third week,
-            that twenty minutes of stillness have slipped by without their noticing.&rdquo;</p>\n
+            that multiple moments of stillness have slipped by without their noticing.&rdquo;</p>\n
           <div class=\ "who\">Beyond the Postures</div>\n </div>\n </div>\n\n
       <div class=\ "reveal\">\n <span class=\ "kicker\">Beyond the Postures</span>\n
         <h2 class=\ "sec-h wide\">The Inner Practice</h2>\n
@@ -558,29 +557,29 @@ export default `
             <div><b>Meditation</b><span>Less a chore and more a homecoming \u2014 a stillness that slowly becomes your own rather than something done to you.</span></div>\n
             </div>\n
           <div class=\ "thread\">\n <span class=\ "thread-ic\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z\"/><path d=\"M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z\"/></svg></span>\n
-            <div><b>Philosophy</b><span>The Sutras, the Bhagavad Gita and the older texts \u2014 read slowly, discussed beside the river at dusk, as a practical map of the human mind.</span></div>\n
+            <div><b>Philosophy</b><span>The Sutras, the Bhagavad Gita and the older texts \u2014 read slowly and discussed as a practical map of the human mind.</span></div>\n
             </div>\n
           <div class=\ "thread\">\n <span class=\ "thread-ic\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z\"/><path d=\"M2 21c0-3 1.85-5.36 5.08-6\"/></svg></span>\n
             <div><b>Ayurveda</b><span>The sister science of living in rhythm with your own constitution \u2014 small daily habits that often outlast every advanced posture you master.</span></div>\n
             </div>\n
           <div class=\ "thread\">\n <span class=\ "thread-ic\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2 10v3\"/><path d=\"M6 6v11\"/><path d=\"M10 3v18\"/><path d=\"M14 8v7\"/><path d=\"M18 5v13\"/><path d=\"M22 10v3\"/></svg></span>\n
-            <div><b>Mantra &amp; Chanting</b><span>Voices rising together in the cool morning air \u2014 loosening something in the chest and binding a group of strangers into something close to family.</span></div>\n
+            <div><b>Mantra &amp; Chanting</b><span>Voices rising together in the air \u2014 loosening something in the chest and binding a group of strangers into something close to family.</span></div>\n
             </div>\n </div>\n\n
         <p class=\ "body-p\" style=\ "margin-top:26px\">This inner grounding is what separates a teacher who merely demonstrates shapes from one who can truly hold a room.
           When you have sat with your own restlessness and learned to breathe through it, you can meet that same struggle
           in a student with patience rather than judgement. That kind of presence cannot be faked and cannot be hurried;
           it is grown slowly, over weeks of steady morning practice.</p>\n </div>\n </div>\n </div>\n</section>\n\n
 <!-- =================================================================== -->\n
-<!-- ================  SECTION N \u00b7 CAMPUS SPACES  ====================== -->\n
+<!-- ================  SECTION N \u00b7 Ashram SPACES  ====================== -->\n
 <!-- =================================================================== -->\n
-<section class=\ "pad band-cream\" id=\ "campus-spaces\">\n
+<section class=\ "pad band-cream\" id=\ "Ashram-spaces\">\n
   <div class=\ "wrap\">\n
-    <div class=\ "campus-head reveal\">\n
+    <div class=\ "Ashram-head reveal\">\n
       <div>\n <span class=\ "kicker\">Every Space Has a Purpose</span>\n
         <h2 class=\ "sec-h wide\" style=\ "margin-bottom:0\">Dedicated Spaces for Every Need</h2>\n </div>\n
       <p class=\ "lead\">A practice is shaped by the space it happens in, and we have spent years making ours feel right. Every corner of the
-        campus exists for a reason.</p>\n </div>\n\n
-    <div class=\ "frame campus-banner reveal\"><img class=\ "u-img\" alt=\ "The Adhiroha campus set among the green hills of Upper Tapovan\" src=\
+        Ashram exists for a reason.</p>\n </div>\n\n
+    <div class=\ "frame Ashram-banner reveal\"><img class=\ "u-img\" alt=\ "The Adhiroha Ashram set among the green hills of Upper Tapovan\" src=\
         "/img/remote/img_yoga-training-119.webp\" loading=\ "lazy\"></div>\n\n
     <div class=\ "space-grid\">\n
       <article class=\ "space-card reveal\">\n <span class=\ "space-ic\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 2v3\"/><path d=\"M10.5 5h3\"/><path d=\"M12 5c1.7 1.3 2.6 2.8 2.6 4.5H9.4C9.4 7.8 10.3 6.3 12 5Z\"/><path d=\"M4 21h16\"/><path d=\"M6 21v-9.5l6-2 6 2V21\"/><line x1=\"9\" y1=\"12.5\" x2=\"9\" y2=\"21\"/><line x1=\"15\" y1=\"12.5\" x2=\"15\" y2=\"21\"/><path d=\"M11 21v-3h2v3\"/></svg></span>\n
@@ -604,7 +603,7 @@ export default `
           course of a few weeks.</p>\n </article>\n\n
       <article class=\ "space-card reveal\">\n <span class=\ "space-ic\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 2.8s6.5 7.2 6.5 11.4a6.5 6.5 0 0 1-13 0C5.5 10 12 2.8 12 2.8z\"/><path d=\"M12 17.5a3.2 3.2 0 0 1-3.2-3.2\"/></svg></span>\n
         <h3 class=\ "space-h\">Natural Spring Water</h3>\n
-        <p class=\ "space-p\">Crystal-clear spring water runs right through the campus \u2014 a small daily reminder of how close you are to nature
+        <p class=\ "space-p\">Crystal-clear spring water runs right through the Ashram \u2014 a small daily reminder of how close you are to nature
           here.</p>\n </article>\n\n
       <article class=\ "space-card reveal\">\n <span class=\ "space-ic\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 20h18\"/><path d=\"M5 20l5-9 3 5\"/><path d=\"M11 20l5-8 5 8\"/><circle cx=\"7\" cy=\"6\" r=\"2\"/></svg></span>\n
         <h3 class=\ "space-h\">Open-Air Practice</h3>\n
@@ -628,7 +627,7 @@ export default `
       <div class=\ "why-list reveal\">\n
         <div class=\ "why-row\">\n <span class=\ "why-num\" aria-hidden=\ "true\"></span>\n
           <div>\n <b>Experienced and Dedicated Teachers</b>\n
-            <p>Our instructors carry fifteen to eighteen years of practice behind them and share their wisdom without ego. They
+            <p>Our instructors carry ten to twenty years of practice behind them and share their wisdom without ego. They
               are the single biggest reason people travel across the world for a yoga teacher training in Rishikesh with
               us.</p>\n </div>\n </div>\n
         <div class=\ "why-row\">\n <span class=\ "why-num\" aria-hidden=\ "true\"></span>\n
@@ -705,7 +704,7 @@ export default `
       <div class=\ "reveal\">\n <span class=\ "kicker\">The People Who Teach You</span>\n
         <h2 class=\ "sec-h wide\">Meet the Teachers Behind the Practice</h2>\n
         <p class=\ "body-p\">Every great school is, in the end, its teachers \u2014 and ours are the reason students return. Each of our instructors
-          is a Yoga Acharya, holding a master&rsquo;s degree in their own field and carrying somewhere between eight and
+          is a Yoga Acharya, holding a master&rsquo;s degree in their own field and carrying somewhere between ten and
           twenty years of teaching behind them. We never hand a whole course to a single person, and we never put an intern
           at the front of the room. Each subject is led by someone who has truly lived it.</p>\n
         <p class=\ "body-p\">What students remember, though, is rarely the credentials. It is the patience of a teacher who stays back after class
@@ -723,7 +722,7 @@ export default `
             <div class=\ "lab\">A degree in their own field</div>
           </div>\n
           <div class=\ "stat\">
-            <div class=\ "num\">8\u201320</div>
+            <div class=\ "num\">10\u201320</div>
             <div class=\ "lab\">Years of teaching each</div>
           </div>\n </div>\n </div>\n </div>\n </div>\n</section>\n\n
 <!-- =================================================================== -->\n
@@ -743,11 +742,11 @@ export default `
             Where You Sleep\n </div>\n </div>\n
         <div class=\ "rest-body\">\n
           <h3 class=\ "rest-h\">Deep Rest, Every Night</h3>\n
-          <p class=\ "rest-p\">Our accommodation is comfortable and clean by any honest standard, more than holding its own against other schools
+          <p class=\ "rest-p\">Our accommodation is comfortable and clean by any standard, more than holding its own against other schools
             nearby. Rooms are spacious, washrooms are private, hot water is dependable, and every window opens onto the mountains
             and forest of Rishikesh.</p>\n
           <div class=\ "chip-row\">\n <span class=\ "chip\">Spacious rooms</span>\n <span class=\ "chip\">Private washrooms</span>\n <span class=\
-              "chip\">Hot water</span>\n <span class=\ "chip\">Mountain views</span>\n </div>\n </div>\n </article>\n\n
+              "chip\">Hot water</span>\n <span class=\ "chip\">Wifi</span>\n <span class=\ "chip\">Mountain views</span>\n </div>\n </div>\n </article>\n\n
       <article
         class=\ "rest-card reveal\" style=\ "transition-delay:.1s\">\n
         <div class=\ "rest-media\">\n <img class=\ "u-img\" alt=\ "Students sharing a meal in the open-air dining space at Adhiroha\" src=\
@@ -768,7 +767,7 @@ export default `
 <!-- =================================================================== -->\n
 <section class=\ "pad band-cream\" id=\ "student-to-teacher\">\n
   <div class=\ "wrap\">\n
-    <div class=\ "campus-head reveal\">\n
+    <div class=\ "Ashram-head reveal\">\n
       <div>\n <span class=\ "kicker\">Adhiroha TTC</span>\n
         <h2 class=\ "sec-h wide\" style=\ "margin-bottom:0\">The Journey from Student to Teacher</h2>\n </div>\n
       <p class=\ "lead\">The distance between sitting quietly in the back row and standing confidently at the front is shorter than it looks
@@ -813,7 +812,7 @@ export default `
   <div class=\ "wrap\">\n
     <div class=\ "twelve-head reveal\">\n <span class=\ "kicker mid\">Yoga Teacher Training in Rishikesh</span>\n
       <h2 class=\ "sec-h\">In the Words of Our Students</h2>\n
-      <p class=\ "body-p\">We could describe the experience all day, but the people who have lived it say it far better. Here are a few honest
+      <p class=\ "body-p\">We could describe the experience all day, but the people who have lived it say it far better. Here are a few
         voices from those who have walked through our gates.</p>\n
       <div class=\ "g-summary\">\n <svg width=\ "34\" height=\ "34\" viewBox=\ "0 0 48 48\"><path fill=\"#EA4335\" d=\"M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z\"/><path fill=\"#4285F4\" d=\"M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z\"/><path fill=\"#FBBC05\" d=\"M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z\"/><path fill=\"#34A853\" d=\"M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z\"/></svg>\n
         <span class=\ "gs-score\">5.0</span>\n <span class=\ "g-stars\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"#FBBC05\"><path d=\"M12 2l2.95 6.36 6.96.6-5.27 4.6 1.57 6.8L12 16.77l-6.21 3.59 1.57-6.8-5.27-4.6 6.96-.6z\"/></svg><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"#FBBC05\"><path d=\"M12 2l2.95 6.36 6.96.6-5.27 4.6 1.57 6.8L12 16.77l-6.21 3.59 1.57-6.8-5.27-4.6 6.96-.6z\"/></svg><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"#FBBC05\"><path d=\"M12 2l2.95 6.36 6.96.6-5.27 4.6 1.57 6.8L12 16.77l-6.21 3.59 1.57-6.8-5.27-4.6 6.96-.6z\"/></svg><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"#FBBC05\"><path d=\"M12 2l2.95 6.36 6.96.6-5.27 4.6 1.57 6.8L12 16.77l-6.21 3.59 1.57-6.8-5.27-4.6 6.96-.6z\"/></svg><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"#FBBC05\"><path d=\"M12 2l2.95 6.36 6.96.6-5.27 4.6 1.57 6.8L12 16.77l-6.21 3.59 1.57-6.8-5.27-4.6 6.96-.6z\"/></svg></span>\n
@@ -869,11 +868,11 @@ export default `
             with a depth you can feel.</p>\n </div>\n </article>\n\n
       <article class=\ "apart-card reveal\" style=\
         "transition-delay:.1s\">\n
-        <div class=\ "apart-media\">\n <img class=\ "u-img\" alt=\ "The warm in-house cafe at the Adhiroha campus\" src=\
+        <div class=\ "apart-media\">\n <img class=\ "u-img\" alt=\ "The warm in-house cafe at the Adhiroha Ashram\" src=\
             "/img/remote/info_cafe-1.webp\" loading=\ "lazy\">\n <span class=\ "apart-num\">II</span>\n </div>\n
         <div class=\ "apart-body\">\n <span class=\ "apart-ic\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z\"/></svg></span>\n
           <h3 class=\ "apart-h\">World-Class Amenities</h3>\n
-          <p class=\ "apart-p\">Our campus offers a tranquil shala, premium accommodation, nourishing vegetarian food, an in-house cafe, Ayurvedic
+          <p class=\ "apart-p\">Our Ashram offers a tranquil shala, premium accommodation, nourishing vegetarian food, an in-house cafe, Ayurvedic
             massage, and easy transport \u2014 so the practical worries fall away and you can simply practise.</p>\n </div>\n
         </article>\n\n
       <article class=\ "apart-card reveal\" style=\ "transition-delay:.2s\">\n
@@ -898,7 +897,7 @@ export default `
       <article class=\ "mool-card\">\n <span class=\ "mool-n\">01</span>\n <span class=\ "mool-ic\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z\"/><path d=\"M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12\"/></svg></span>\n
         <h3>Care for Nature First</h3>\n
         <p>We learn to care for one another by first learning to care for nature &mdash; the brook, the gardens, and the forest
-          that holds the campus.</p>\n </article>\n
+          that holds the Ashram.</p>\n </article>\n
       <article class=\ "mool-card\">\n <span class=\ "mool-n\">02</span>\n <span class=\ "mool-ic\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 1 0-7.8 7.8L12 21.2l8.8-8.8a5.5 5.5 0 0 0 0-7.8z\"/></svg></span>\n
         <h3>Comfort Through Discipline</h3>\n
         <p>We offer comfort and kindness through the disciplined journey of practice &mdash; structure held gently, never harshly.</p>\n
@@ -1103,7 +1102,7 @@ export default `
         "body-p\">This is also why a yoga teacher training in Rishikesh carries a certain weight on a teacher&rsquo;s resume that the
         same hours elsewhere simply do not. Studios around the world recognise where it comes from. More importantly, you
         will feel the difference in yourself \u2014 for many, this becomes the story they tell for the rest of their lives.
-        It is the single biggest reason we built our flagship campus here.</p>\n </div>\n </div>\n</section>\n\n
+        It is the single biggest reason we built our flagship Ashram here.</p>\n </div>\n </div>\n</section>\n\n
 <!-- =================================================================== -->\n
 <!-- ================  SECTION AB \u00b7 WHAT IS INCLUDED  ================== -->\n
 <!-- =================================================================== -->\n
@@ -1230,7 +1229,7 @@ export default `
           <summary>Are all the images on the website real?<span class=\ "plus\" aria-hidden=\ "true\"></span></summary>\n
           <div class=\
             "faq-a\">Completely. Every photograph and video we post here and on our social media is genuine, unstaged content from our
-            actual campuses. When you arrive, you will recognise the very views you fell in love with online \u2014 and we
+            actual Ashrames. When you arrive, you will recognise the very views you fell in love with online \u2014 and we
             hope they exceed the pictures.</div>\n </details>\n
         <details class=\ "faq\">\n
           <summary>Which styles of asana do you teach?<span class=\ "plus\" aria-hidden=\ "true\"></span></summary>\n
@@ -1252,7 +1251,7 @@ export default `
           <summary>I am arriving early. Can I book accommodation in advance, and who arranges the airport pickup?<span class=\
               "plus\" aria-hidden=\ "true\"></span></summary>\n
           <div class=\ "faq-a\">If you arrive ahead of your start date, we can arrange accommodation for an additional cost. Please contact the
-            campus manager to learn the charge for the extra nights and to schedule a pickup from the nearest airport. Rishikesh
+            Ashram manager to learn the charge for the extra nights and to schedule a pickup from the nearest airport. Rishikesh
             Manager: +91 6397-328-721.</div>\n </details>\n
         <details class=\ "faq\">\n
           <summary>Is the school registered or affiliated with any recognised body?<span class=\ "plus\" aria-hidden=\ "true\"></span></summary>\n
