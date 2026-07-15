@@ -1,0 +1,5 @@
+# These files are a single giant escaped-HTML string (export default "...").
+# Prettier/format-on-save breaks them into an invalid multi-line string.
+# Never format them.
+app/**/content.js
+app/**/scripts.js
