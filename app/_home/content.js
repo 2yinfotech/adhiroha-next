@@ -580,7 +580,7 @@ export default `
       <p class=\ "lead\">A practice is shaped by the space it happens in, and we have spent years making ours feel right. Every corner of the
         Ashram exists for a reason.</p>\n </div>\n\n
     <div class=\ "frame Ashram-banner reveal\"><img class=\ "u-img\" alt=\ "The Adhiroha Ashram set among the green hills of Upper Tapovan\" src=\
-        "/img/remote/img_yoga-training-119.webp\" loading=\ "lazy\"></div>\n\n
+        "/img/ashram-006.webp\" loading=\ "lazy\"></div>\n\n
     <div class=\ "space-grid\">\n
       <article class=\ "space-card reveal\">\n <span class=\ "space-ic\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 2v3\"/><path d=\"M10.5 5h3\"/><path d=\"M12 5c1.7 1.3 2.6 2.8 2.6 4.5H9.4C9.4 7.8 10.3 6.3 12 5Z\"/><path d=\"M4 21h16\"/><path d=\"M6 21v-9.5l6-2 6 2V21\"/><line x1=\"9\" y1=\"12.5\" x2=\"9\" y2=\"21\"/><line x1=\"15\" y1=\"12.5\" x2=\"15\" y2=\"21\"/><path d=\"M11 21v-3h2v3\"/></svg></span>\n
         <h3 class=\ "space-h\">Sacred Shiva Temple</h3>\n
