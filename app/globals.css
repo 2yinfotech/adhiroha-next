@@ -5,14 +5,29 @@
 html, body { margin: 0; padding: 0; }
 img, svg, video { max-width: 100%; }
 
-/* The sub-pages hide `.reveal` blocks (opacity:0) and fade them in with a
-   scroll observer. On the live server that JS was unreliable — sometimes it
-   ran but never revealed the sections — leaving everything below the hero
-   permanently blank. Reliability matters more than the fade, so we force all
-   reveal content visible with pure CSS. No JS dependency, so it can never be
-   blank again. This wins over the per-page `.reveal{opacity:0}` rules. */
-.reveal {
-  opacity: 1 !important;
-  transform: none !important;
-  filter: none !important;
+/* Reveal fade-in, done with PURE CSS (no JavaScript).
+   The sub-pages hide `.reveal` blocks (opacity:0) and used a JS scroll observer
+   to fade them in — but on the live server that JS was unreliable and left whole
+   sections permanently blank. Instead:
+     - Base state is always visible (`html .reveal{opacity:1}`), higher
+       specificity than the pages' `.reveal{opacity:0}`, so content can NEVER be
+       blank — even with JS off, a stale cache, or reduced-motion.
+     - A pure-CSS keyframe animation fades/slides each block up as the page
+       loads. No JS, no scroll observer, so it cannot fail. It always ends
+       visible. */
+html .reveal {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+@keyframes adh-reveal {
+  from { opacity: 0; transform: translateY(26px); filter: blur(6px); }
+  to   { opacity: 1; transform: none;            filter: none; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html .reveal {
+    animation: adh-reveal 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  }
 }
