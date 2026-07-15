@@ -655,13 +655,13 @@ export default `
       <div class=\ "reveal\">\n
         <div class=\ "car tch-car\">\n
           <div class=\ "car-track\">\n
-            <div class=\ "car-slide\">\n <img src=\ "/img/remote/img_adhiroha-yttc-026.webp\" alt=\
-                "Yogacharya Ashish Bangwal, Hatha yoga teacher at Adhiroha\" loading=\ "lazy\">\n
-              <div class=\ "tch-cap\">\n <span class=\ "tch-role\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3l7 3v5c0 4.4-3 7.6-7 9-4-1.4-7-4.6-7-9V6l7-3z\"/></svg> Hatha Yoga</span>\n
-                <h3 class=\ "tch-name\">Yogacharya Ashish Bangwal</h3>\n
-                <p class=\ "tch-bio\">Practising since 2017, Ashish teaches traditional Hatha rooted in the Iyengar approach &mdash; and stays
-                  back until the last question is answered.</p>\n
-                <div class=\ "tch-pills\"><span>8+ years</span><span>Traditional &amp; Iyengar Hatha</span></div>\n </div>\n </div>\n
+            <div class=\ "car-slide\">\n <img src=\ "/img/remote/img_jagjeet-singh.jpg\" alt=\
+                "Yogacharya Jagjeet Singh, philosophy and anatomy teacher at Adhiroha\" loading=\ "lazy\">\n
+              <div class=\ "tch-cap\">\n <span class=\ "tch-role\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2zM22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z\"/></svg> Philosophy &amp; Anatomy</span>\n
+                <h3 class=\ "tch-name\">Yogacharya Jagjeet Singh</h3>\n
+                <p class=\ "tch-bio\">Learned yoga from his yogi grandfather in Haridwar, mastered Hatha in the Himalayas, and teaches philosophy
+                  with rare compassion and energy.</p>\n
+                <div class=\ "tch-pills\"><span>20+ years</span><span>Master&rsquo;s in Yoga Science</span></div>\n </div>\n </div>\n
             <div class=\
               "car-slide\">\n <img src=\ "/img/remote/img_adhiroha-yttc-022.webp\" alt=\
                 "Yogacharya Ajay Pundir, Ashtanga Vinyasa teacher at Adhiroha\" loading=\ "lazy\">\n
@@ -670,13 +670,13 @@ export default `
                 <p class=\ "tch-bio\">An M.A. in Yoga and one of our most sought-after Ashtanga teachers &mdash; he runs the sunrise practice with
                   an energy that makes 6 a.m. feel like a gift.</p>\n
                 <div class=\ "tch-pills\"><span>8+ years</span><span>M.A. in Yoga</span><span>Teaches 200 / 300 / 500</span></div>\n </div>\n </div>\n
-            <div class=\ "car-slide\">\n <img src=\ "/img/remote/img_jagjeet-singh.jpg\" alt=\
-                "Yogacharya Jagjeet Singh, philosophy and anatomy teacher at Adhiroha\" loading=\ "lazy\">\n
-              <div class=\ "tch-cap\">\n <span class=\ "tch-role\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2zM22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z\"/></svg> Philosophy &amp; Anatomy</span>\n
-                <h3 class=\ "tch-name\">Yogacharya Jagjeet Singh</h3>\n
-                <p class=\ "tch-bio\">Learned yoga from his yogi grandfather in Haridwar, mastered Hatha in the Himalayas, and teaches philosophy
-                  with rare compassion and energy.</p>\n
-                <div class=\ "tch-pills\"><span>20+ years</span><span>Master&rsquo;s in Yoga Science</span></div>\n </div>\n </div>\n
+            <div class=\ "car-slide\">\n <img src=\ "/img/remote/img_adhiroha-yttc-026.webp\" alt=\
+                "Yogacharya Ashish Bangwal, Hatha yoga teacher at Adhiroha\" loading=\ "lazy\">\n
+              <div class=\ "tch-cap\">\n <span class=\ "tch-role\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3l7 3v5c0 4.4-3 7.6-7 9-4-1.4-7-4.6-7-9V6l7-3z\"/></svg> Hatha Yoga</span>\n
+                <h3 class=\ "tch-name\">Yogacharya Ashish Bangwal</h3>\n
+                <p class=\ "tch-bio\">Practising since 2017, Ashish teaches traditional Hatha rooted in the Iyengar approach &mdash; and stays
+                  back until the last question is answered.</p>\n
+                <div class=\ "tch-pills\"><span>8+ years</span><span>Traditional &amp; Iyengar Hatha</span></div>\n </div>\n </div>\n
             <div class=\
               "car-slide\">\n <img src=\ "/img/remote/img_rajat-1.jpg\" alt=\
                 "Yogacharya Rajat Purwal, pranayama and shatkarma teacher at Adhiroha\" loading=\ "lazy\">\n
@@ -692,12 +692,18 @@ export default `
                 <h3 class=\ "tch-name\">Yogacharya Anil Rayal</h3>\n
                 <p class=\ "tch-bio\">In-depth knowledge of anatomy and physiology with expertise in acupressure therapy &mdash; his quiet, precise
                   adjustments are when everything clicks.</p>\n
-                <div class=\ "tch-pills\"><span>9+ years</span><span>Therapeutic yogic science</span></div>\n </div>\n </div>\n </div>\n
+                <div class=\ "tch-pills\"><span>9+ years</span><span>Therapeutic yogic science</span></div>\n </div>\n </div>\n
+            <div class=\ "car-slide\">\n <img src=\ "/img/remote/img_adhiroha-yttc-023.webp\" alt=\
+                "Yogacharya Pratap Rawat, Ashtanga Vinyasa teacher at Adhiroha\" loading=\ "lazy\">\n
+              <div class=\ "tch-cap\">\n <span class=\ "tch-role\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 8c3-2 5-2 8 0s5 2 8 0M3 13c3-2 5-2 8 0s5 2 8 0M3 18c3-2 5-2 8 0s5 2 8 0\"/></svg> Ashtanga Vinyasa</span>\n
+                <h3 class=\ "tch-name\">Yogacharya Pratap Rawat</h3>\n
+                <p class=\ "tch-bio\">A seasoned yogi who began practising at an early age, Pratap holds a Master&rsquo;s in Yoga &amp; Vedic Sciences and is recognised as one of the region&rsquo;s top Ashtanga teachers.</p>\n
+                <div class=\ "tch-pills\"><span>14+ years</span><span>Master&rsquo;s in Yoga &amp; Vedic Sciences</span><span>Teaches 200 / 300 / 500</span></div>\n </div>\n </div>\n </div>\n
           <div class=\
             "car-dots\">\n <button class=\ "car-dot on\" type=\ "button\" aria-label=\ "Teacher 1\"></button>\n <button class=\
               "car-dot\" type=\ "button\" aria-label=\ "Teacher 2\"></button>\n <button class=\ "car-dot\" type=\ "button\" aria-label=\
               "Teacher 3\"></button>\n <button class=\ "car-dot\" type=\ "button\" aria-label=\ "Teacher 4\"></button>\n <button class=\
-              "car-dot\" type=\ "button\" aria-label=\ "Teacher 5\"></button>\n </div>\n
+              "car-dot\" type=\ "button\" aria-label=\ "Teacher 5\"></button>\n <button class=\ "car-dot\" type=\ "button\" aria-label=\ "Teacher 6\"></button>\n </div>\n
           <div class=\ "car-nav\">\n <button class=\ "car-btn car-prev\" type=\ "button\" aria-label=\ "Previous teacher\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"15 18 9 12 15 6\"/></svg></button>\n
             <button class=\ "car-btn car-next\" type=\ "button\" aria-label=\ "Next teacher\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"9 18 15 12 9 6\"/></svg></button>\n
             </div>\n </div>\n </div>\n
@@ -792,7 +798,7 @@ export default `
           class=\ "reel-pill pill-off\"><svg width=\ "14\" height=\ "14\" viewBox=\ "0 0 24 24\" fill=\ "none\" stroke=\ "currentColor\" stroke-width=\
             "1.8\" stroke-linecap=\ "round\" stroke-linejoin=\ "round\"><polygon points=\"11 5 6 9 2 9 2 15 6 15 11 19 11 5\"/><line x1=\"23\" y1=\"9\" x2=\"17\" y2=\"15\"/><line x1=\"17\" y1=\"9\" x2=\"23\" y2=\"15\"/></svg>          Tap for sound</span>\n <span class=\ "reel-pill pill-on\"><span class=\"eq\"><i></i><i></i><i></i></span> Playing</span>\n
           </div>\n
-      <div class=\ "reel-card reveal\" data-vid=\ "cKLtltb3VcY\" style=\ "transition-delay:.24s\">\n
+      <div class=\ "reel-card reveal\" data-vid=\ "DKea3XLsrUc\" style=\ "transition-delay:.24s\">\n
         <div class=\ "reel-player\"></div>\n <button class=\ "reel-hit\" type=\ "button\" aria-label=\ "Play this video with sound\"></button>\n
         <span
           class=\ "reel-pill pill-off\"><svg width=\ "14\" height=\ "14\" viewBox=\ "0 0 24 24\" fill=\ "none\" stroke=\ "currentColor\" stroke-width=\
