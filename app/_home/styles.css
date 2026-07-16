@@ -1167,7 +1167,7 @@
   .cta-inner{position:relative;z-index:2}
   .cta-k{display:inline-flex;align-items:center;gap:13px;color:#f3d8c8;font-size:12px;font-weight:600;
     letter-spacing:3.4px;text-transform:uppercase;margin-bottom:22px}
-  .cta-k::before,.cta-k::after{content:"";width:30px;height:1.5px;background:#f3d8c8}
+  .cta-k::before,.cta-k::after{content:none}
   .cta-h{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(30px,3.6vw,46px);line-height:1.15;
     color:#fff;max-width:20ch;margin:0 auto 20px}
   .cta-p{font-size:15.5px;font-weight:300;line-height:1.85;color:rgba(255,255,255,.88);max-width:66ch;margin:0 auto}
@@ -2768,7 +2768,7 @@
   .ab-cta > *{position:relative;z-index:2}
   .ab-cta .k{display:inline-flex;align-items:center;gap:12px;color:#f3d8c8;font-size:12px;font-weight:600;
     letter-spacing:3.2px;text-transform:uppercase;margin-bottom:20px}
-  .ab-cta .k::after{content:"";width:30px;height:1.5px;background:#f3d8c8}
+  .ab-cta .k::after{content:none}
   .ab-cta h2{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(28px,3.4vw,44px);color:#fff;margin:0 0 16px}
   .ab-cta p{font-size:16px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.9);max-width:58ch;margin:0 auto 32px}
   .ab-cta-btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
@@ -3976,7 +3976,7 @@
   .cta-inner{position:relative;z-index:2}
   .cta-k{display:inline-flex;align-items:center;gap:13px;color:#f3d8c8;font-size:12px;font-weight:600;
     letter-spacing:3.4px;text-transform:uppercase;margin-bottom:20px}
-  .cta-k::after{content:"";width:30px;height:1.5px;background:#f3d8c8}
+  .cta-k::after{content:none}
   .cta-h{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(28px,3.2vw,42px);line-height:1.14;
     color:#fff;max-width:16ch;margin:0 0 18px}
   .cta-p{font-size:15px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.86);max-width:52ch;margin:0}
