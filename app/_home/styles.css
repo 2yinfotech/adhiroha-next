@@ -1319,7 +1319,7 @@
   .c-hero .menu a.active::after{background:#eccdb9}
   .c-hero .burger span{background:#fff}
   .c-hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 380px;gap:72px;align-items:center;
-    max-width:1340px;margin:0 auto;padding:60px 60px 84px}
+    max-width:1420px;margin:0 auto;padding:60px 32px 84px}
   .c-crumbs{display:none}
   .c-crumbs a{color:rgba(246,239,229,.85);text-decoration:none;transition:color .2s}
   .c-crumbs a:hover{color:#fff}
