@@ -4368,3 +4368,14 @@
 @media(max-width:900px){#mool-mantras .mool-tiles{grid-template-columns:repeat(2,1fr);gap:18px}}
 @media(max-width:520px){#mool-mantras .mool-tiles{grid-template-columns:1fr}
   #mool-mantras .mool-tile{aspect-ratio:4/3}}
+
+/* Mobile: centre EVERY eyebrow kicker regardless of its section's alignment.
+   .kicker is display:inline-flex, so it only centres when its parent is
+   text-align:center. The welcome banner (.cine-inner) and story card
+   (.story-card) were left-aligned, leaving their kickers stuck to the left
+   while the heading below sat centred. Forcing display:flex + centre makes
+   the kicker span the row and centre its own content everywhere. */
+@media(max-width:680px){
+  .kicker{display:flex;justify-content:center;width:100%}
+  .cine-inner,.story-card{text-align:center}
+}
