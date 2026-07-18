@@ -236,7 +236,7 @@
   /* ====================================================== */
   /* ============  IMAGE-LED SECTION SYSTEM  ============== */
   /* ====================================================== */
-  .wrap{max-width:1420px;margin:0 auto;padding:0 32px}
+  .wrap{max-width:1340px;margin:0 auto;padding:0 60px}
   .pad{padding:108px 0}
   .pad-sm{padding:84px 0}
   .band-cream{background:var(--cream)}
@@ -1319,7 +1319,7 @@
   .c-hero .menu a.active::after{background:#eccdb9}
   .c-hero .burger span{background:#fff}
   .c-hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 380px;gap:72px;align-items:center;
-    max-width:1420px;margin:0 auto;padding:60px 32px 84px}
+    max-width:1340px;margin:0 auto;padding:60px 60px 84px}
   .c-crumbs{display:none}
   .c-crumbs a{color:rgba(246,239,229,.85);text-decoration:none;transition:color .2s}
   .c-crumbs a:hover{color:#fff}
@@ -3064,7 +3064,7 @@
   /* ====================================================== */
   /* ============  IMAGE-LED SECTION SYSTEM  ============== */
   /* ====================================================== */
-  .wrap{max-width:1420px;margin:0 auto;padding:0 32px}
+  .wrap{max-width:1340px;margin:0 auto;padding:0 60px}
   .pad{padding:108px 0}
   .pad-sm{padding:84px 0}
   .band-cream{background:var(--cream)}
@@ -3980,7 +3980,7 @@
   .cta-h{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(28px,3.2vw,42px);line-height:1.14;
     color:#fff;max-width:16ch;margin:0 0 18px}
   .cta-p{font-size:15px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.86);max-width:52ch;margin:0}
-  .cta-contacts{margin-top:26px;display:grid;gap:11px}
+  .cta-contacts{margin-top:26px;display:grid;gap:11px;text-align:left}
   .cta-chip2{display:flex;align-items:center;gap:14px;text-decoration:none;color:#fff}
   .cc-ic{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.32);
     background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;
