@@ -521,7 +521,7 @@
       linear-gradient(180deg,rgba(18,13,10,.12) 0,rgba(18,13,10,.5) 7%,rgba(18,13,10,.86) 15%,#17110e 24%,#140f0c 100%),
       url("/img/yoga-shala-007.webp") top center / cover no-repeat;
     background-color:#140f0c}
-  .site-footer .ftr-inner{position:relative;z-index:2;padding:118px 0 40px}
+  .site-footer .ftr-inner{position:relative;z-index:2;padding:118px 0 10px}
 
   /* row 1: logo + stay connected */
   .ftr-top{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;padding-bottom:34px}
