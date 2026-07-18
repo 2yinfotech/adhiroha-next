@@ -254,7 +254,7 @@
 
   .sec-h{
     font-family:'Playfair Display',serif;font-weight:500;
-    font-size:clamp(29px,3.5vw,46px);line-height:1.13;
+    font-size:clamp(28px,2.7vw,37px);line-height:1.13;
     color:var(--ink);letter-spacing:.2px;margin-bottom:24px;max-width:18ch;
   }
   .sec-h.wide{max-width:24ch}
@@ -3082,7 +3082,7 @@
 
   .sec-h{
     font-family:'Playfair Display',serif;font-weight:500;
-    font-size:clamp(29px,3.5vw,46px);line-height:1.13;
+    font-size:clamp(28px,2.7vw,37px);line-height:1.13;
     color:var(--ink);letter-spacing:.2px;margin-bottom:24px;max-width:18ch;
   }
   .sec-h.wide{max-width:24ch}
