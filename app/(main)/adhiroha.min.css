@@ -13,3 +13,11 @@
 /* Fixed header needs top clearance on sub-page heroes (matches homepage). */
 .c-hero{padding-top:124px}
 @media(max-width:1280px){.c-hero{padding-top:74px}}
+
+/* Keep section headings to ~2 lines (no 3-line headers). Centered heads fill
+   their container; narrow two-column heads drop a size so long titles fit. */
+.sec-h{text-wrap:balance}
+@media(min-width:993px){
+  .twelve-head .sec-h{max-width:none}
+  .cf-left .sec-h,.pa-left .sec-h,.faq-side .sec-h,.found-grid .sec-h,.cert-split .sec-h,.acc-split .sec-h,.rish-split .sec-h,.gm-side .sec-h{font-size:clamp(26px,2.3vw,32px)}
+}
