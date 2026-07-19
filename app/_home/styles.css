@@ -1526,7 +1526,7 @@
   #living-at-adhiroha{position:relative;overflow:hidden}
   #living-at-adhiroha > .wrap{position:relative;z-index:1}
   #living-at-adhiroha::before{content:"";position:absolute;inset:0;z-index:0;
-    background:#f5efe6 url("/bg-living.png") center/cover no-repeat}
+    background:#f5efe6 url("/img/living.webp") center/cover no-repeat}
   #living-at-adhiroha::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
     background:radial-gradient(125% 78% at 50% 42%,rgba(245,239,230,.62),rgba(245,239,230,.2) 52%,rgba(245,239,230,.5))}
   .gv-grid{display:grid;grid-template-columns:1fr 390px 1fr;gap:48px;align-items:center;margin-top:60px}
