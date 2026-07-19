@@ -24,6 +24,9 @@ const routes = [
   "blog-200-hour-yoga-teacher-training-guide",
   "blog-300-vs-500-hour-yoga-teacher-training",
   "blog-500-hour-yoga-teacher-training-worth-it",
+  "weather",
+  "volunteer-opportunity-in-rishikesh",
+  "apply-for-teacher-in-rishikesh",
 ];
 
 export default function sitemap() {

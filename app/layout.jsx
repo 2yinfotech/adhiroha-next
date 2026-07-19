@@ -1,5 +1,6 @@
 import "./globals.css";
 import Script from "next/script";
+import FooterLinkFix from "@/components/FooterLinkFix";
 
 export const metadata = {
   metadataBase: new URL("https://www.adhiroha.com"),
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         {children}
+        <FooterLinkFix />
         {/* Leaflet must be present before the page 'load' handlers run their
             map init, so load it before the app becomes interactive. */}
         <Script

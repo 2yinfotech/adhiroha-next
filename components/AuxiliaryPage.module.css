@@ -1,0 +1,62 @@
+.hero { position:relative; min-height:510px; overflow:hidden; color:#fff; background:#241c15; }
+.heroImage,.heroShade { position:absolute; inset:0; width:100%; height:100%; }
+.heroImage { object-fit:cover; object-position:center 56%; }
+.heroShade { background:linear-gradient(180deg,rgba(16,12,10,.76) 0%,rgba(22,15,12,.4) 43%,rgba(25,16,11,.75) 100%),linear-gradient(90deg,rgba(25,16,11,.42),transparent 68%); }
+.heroInner { position:relative; z-index:2; width:min(1180px,calc(100% - 48px)); margin:116px auto 0; padding:72px 0 80px; }
+.eyebrow { margin:0 0 16px; color:#efcdb8; font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; }
+.hero h1 { max-width:830px; margin:0; color:#fff; font-family:"Playfair Display",Georgia,serif; font-size:clamp(38px,5vw,64px); font-weight:500; letter-spacing:.2px; line-height:1.08; }
+.heroCopy { max-width:650px; margin:22px 0 0; color:rgba(255,255,255,.9); font-size:16px; font-weight:300; line-height:1.8; }
+.page { --aux-ink:#2c2723; --aux-body:#665e56; --aux-rust:#a04a30; --aux-cream:#fbf8f3; --aux-line:#e7ddd0; background:var(--aux-cream); color:var(--aux-ink); }
+.section { width:min(1180px,calc(100% - 48px)); margin:0 auto; padding:98px 0; }
+.section + .section { border-top:1px solid var(--aux-line); }
+.sectionAlt { background:#f3ece3; }
+.sectionAlt > div { width:min(1180px,calc(100% - 48px)); margin:0 auto; padding:98px 0; }
+.sectionLabel { display:block; margin-bottom:14px; color:var(--aux-rust); font-size:10.5px; font-weight:600; letter-spacing:2.4px; text-transform:uppercase; }
+.sectionTitle { max-width:750px; margin:0; font-family:"Playfair Display",Georgia,serif; font-size:clamp(30px,3.2vw,43px); font-weight:500; line-height:1.2; }
+.lead { max-width:760px; margin:22px 0 0; color:var(--aux-body); font-size:16px; font-weight:300; line-height:1.85; }
+.seasonGrid { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-top:48px; }
+.seasonCard,.infoCard,.benefitCard,.responsibility,.applyPanel { background:#fff; border:1px solid var(--aux-line); border-radius:18px; box-shadow:0 22px 48px -42px rgba(44,39,35,.45); }
+.seasonCard { min-height:100%; padding:27px 22px; }
+.seasonMonths { display:block; color:#a68a72; font-size:10px; font-weight:600; letter-spacing:1.6px; text-transform:uppercase; }
+.seasonCard h3,.infoCard h3,.benefitCard h3,.responsibility h3 { margin:12px 0 8px; font-family:"Playfair Display",Georgia,serif; font-size:21px; font-weight:600; line-height:1.25; }
+.seasonCard p,.infoCard p,.benefitCard p,.responsibility p { margin:0; color:var(--aux-body); font-size:13px; font-weight:300; line-height:1.7; }
+.seasonFit { display:block; margin-top:17px; color:var(--aux-rust); font-size:11.5px; font-weight:500; line-height:1.55; }
+.threeGrid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:45px; }
+.infoCard,.benefitCard { padding:28px; }
+.number { color:#caa488; font-family:"Playfair Display",Georgia,serif; font-size:18px; }
+.benefitGrid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:42px; }
+.benefitCard { display:grid; grid-template-columns:42px 1fr; gap:15px; }
+.benefitIcon { display:grid; width:42px; height:42px; place-items:center; border-radius:50%; background:#faeee5; color:var(--aux-rust); font-size:18px; }
+.benefitCard h3 { margin-top:1px; }
+.responsibilityGrid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:44px; }
+.responsibility { padding:27px; }
+.responsibility ul { display:grid; gap:11px; margin:19px 0 0; padding:0; list-style:none; }
+.responsibility li { position:relative; padding-left:17px; color:var(--aux-body); font-size:13px; font-weight:300; line-height:1.62; }
+.responsibility li::before { position:absolute; top:8px; left:0; width:5px; height:5px; border-radius:50%; background:#c39173; content:""; }
+.notice { display:grid; grid-template-columns:auto 1fr; gap:18px; margin-top:42px; padding:25px 28px; border:1px solid #ddc5b0; border-radius:15px; background:#fdf6ee; }
+.noticeMark { display:grid; width:31px; height:31px; place-items:center; border-radius:50%; background:var(--aux-rust); color:#fff; font-weight:700; }
+.notice strong { display:block; margin-bottom:5px; font-size:14px; }
+.notice p { margin:0; color:var(--aux-body); font-size:13.5px; font-weight:300; line-height:1.72; }
+.applyPanel { max-width:920px; margin:45px auto 0; padding:42px; }
+.applyPanel h2 { margin:0; font-family:"Playfair Display",Georgia,serif; font-size:30px; font-weight:500; }
+.applyPanel > p { max-width:65ch; margin:11px 0 0; color:var(--aux-body); font-size:13.5px; font-weight:300; line-height:1.7; }
+.form { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:31px; }
+.field { display:grid; gap:7px; }
+.fieldWide { grid-column:1 / -1; }
+.field label { color:#8e7b68; font-size:10px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; }
+.field input,.field textarea { width:100%; min-height:47px; box-sizing:border-box; border:1px solid var(--aux-line); border-radius:10px; outline:none; background:#fdfbf8; color:var(--aux-ink); font:inherit; font-size:13px; font-weight:300; padding:12px 14px; transition:border-color .2s,box-shadow .2s; }
+.field textarea { min-height:116px; resize:vertical; }
+.field input[type="file"] { padding:10px; }
+.field input:focus,.field textarea:focus { border-color:#c88565; box-shadow:0 0 0 3px rgba(160,74,48,.11); }
+.formFooter { grid-column:1 / -1; display:flex; align-items:center; justify-content:space-between; gap:20px; margin-top:5px; }
+.formNote,.formStatus { margin:0; color:var(--aux-body); font-size:11.5px; font-weight:300; line-height:1.6; }
+.formStatus { color:#7a482f; }
+.submit { flex:none; border:0; border-radius:30px; background:var(--aux-rust); color:#fff; cursor:pointer; font-family:inherit; font-size:11.5px; font-weight:600; letter-spacing:1.4px; padding:14px 23px; text-transform:uppercase; transition:background .2s,transform .2s; }
+.submit:hover { background:#843a24; transform:translateY(-1px); }
+.cta { display:flex; align-items:center; justify-content:space-between; gap:24px; margin-top:50px; padding:41px 44px; border-radius:20px; background:#3c2c25; color:#fff; }
+.cta p { max-width:610px; margin:9px 0 0; color:rgba(255,255,255,.76); font-size:13.5px; font-weight:300; line-height:1.7; }
+.cta h2 { margin:0; font-family:"Playfair Display",Georgia,serif; font-size:28px; font-weight:500; }
+.ctaLink { flex:none; border:1px solid rgba(255,255,255,.55); border-radius:30px; color:#fff; font-size:11.5px; font-weight:600; letter-spacing:1.3px; padding:14px 22px; text-decoration:none; text-transform:uppercase; }
+.ctaLink:hover { border-color:#fff; background:rgba(255,255,255,.1); }
+@media (max-width:960px) { .seasonGrid { grid-template-columns:repeat(3,1fr); } .responsibilityGrid { grid-template-columns:repeat(2,1fr); } }
+@media (max-width:680px) { .hero { min-height:460px; } .heroInner { width:min(100% - 32px,1180px); margin-top:82px; padding:61px 0; } .hero h1 { font-size:38px; } .heroCopy { font-size:14px; line-height:1.7; } .section { width:min(100% - 32px,1180px); padding:68px 0; } .sectionAlt > div { width:min(100% - 32px,1180px); padding:68px 0; } .seasonGrid,.threeGrid,.benefitGrid,.responsibilityGrid,.form { grid-template-columns:1fr; } .applyPanel { padding:28px 20px; } .formFooter,.cta { align-items:flex-start; flex-direction:column; } .fieldWide { grid-column:auto; } }
