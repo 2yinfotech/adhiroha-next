@@ -1,5 +1,6 @@
 import ArticleScripts from "@/components/ArticleScripts";
 import { DRAWER_HTML, FOOTER_HTML, HEADER_HTML } from "@/components/chrome";
+import "./chrome.css";
 import styles from "./AuxiliaryPage.module.css";
 
 const LOCAL_FOOTER_HTML = FOOTER_HTML
