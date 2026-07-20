@@ -3,12 +3,14 @@
 import "./adhiroha.min.css";
 import "./reveal-fallback.css";
 import StickyHeader from "@/components/StickyHeader";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function MainLayout({ children }) {
   return (
     <>
       {children}
       <StickyHeader />
+      <FloatingWhatsApp />
     </>
   );
 }

@@ -3,6 +3,8 @@ import content from "./_home/content";
 import scripts from "./_home/scripts";
 import PageScripts from "@/components/PageScripts";
 import StickyHeader from "@/components/StickyHeader";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import AnchorScroll from "@/components/AnchorScroll";
 
 export const metadata = {
   title: "Adhiroha Yoga School",
@@ -18,6 +20,8 @@ export default function Page() {
           header reliably gets its scrolled background and hides on scroll-down
           even if the page's own inline script blob fails to run. */}
       <StickyHeader />
+      <FloatingWhatsApp />
+      <AnchorScroll />
       <PageScripts code={scripts} />
     </>
   );

@@ -1,7 +1,4 @@
-import "../[slug]/styles.css"; // shared site chrome (header, drawer, footer) styling
 import "./styles.css";
-import { HEADER_HTML, DRAWER_HTML, FOOTER_HTML } from "@/components/chrome";
-import ArticleScripts from "@/components/ArticleScripts";
 import AdmissionForm from "@/components/AdmissionForm";
 
 export const metadata = {
@@ -11,16 +8,12 @@ export const metadata = {
   alternates: { canonical: "/student-admission-panel/" },
 };
 
+// The admission panel deliberately runs without the site header, drawer and
+// footer: it is a focused checkout flow, so nothing competes with the form.
 export default function Page() {
   return (
-    <>
-      <div dangerouslySetInnerHTML={{ __html: HEADER_HTML }} />
-      <div dangerouslySetInnerHTML={{ __html: DRAWER_HTML }} />
-      <main className="adm-page">
-        <AdmissionForm />
-      </main>
-      <div dangerouslySetInnerHTML={{ __html: FOOTER_HTML }} />
-      <ArticleScripts />
-    </>
+    <main className="adm-page">
+      <AdmissionForm />
+    </main>
   );
 }

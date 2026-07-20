@@ -9,6 +9,21 @@ export const metadata = {
     "Adhiroha Yoga School — Yoga Alliance certified teacher training courses and retreats in Rishikesh, India.",
 };
 
+// Hotjar (heatmaps + session recordings). Lives in <head> so it loads on every
+// page in the app, which is what Hotjar's install check looks for. The site id
+// is public by design; override it per-environment with NEXT_PUBLIC_HOTJAR_ID.
+const HOTJAR_ID = process.env.NEXT_PUBLIC_HOTJAR_ID || "5139050";
+const HOTJAR_SCRIPT = `
+(function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:${HOTJAR_ID},hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+`;
+
 // Contact-form handler as a plain inline script (NOT a React client component):
 // the forms live in server-rendered HTML with action="#", and if we waited for
 // React hydration to attach the submit listener, a fast submit on a heavy page
@@ -53,6 +68,8 @@ export default function RootLayout({ children }) {
           href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
           crossOrigin=""
         />
+        {/* Hotjar Tracking Code for adhiroha.com */}
+        <script dangerouslySetInnerHTML={{ __html: HOTJAR_SCRIPT }} />
         {/* Attach the contact-form submit handler immediately, before hydration. */}
         <script dangerouslySetInnerHTML={{ __html: CONTACT_FORM_SCRIPT }} />
       </head>
