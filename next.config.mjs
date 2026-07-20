@@ -24,6 +24,8 @@ const nextConfig = {
         destination: "https://languages.adhiroha.com/:lang",
         permanent: true,
       },
+      // Articles live at /blog/<slug>; send the bare /blog to the listing page.
+      { source: "/blog", destination: "/blogs/", permanent: false },
     ];
   },
 };

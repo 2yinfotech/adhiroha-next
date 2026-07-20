@@ -39,7 +39,7 @@ function buildCategoryGrid(articles) {
           const cover = fixAssetPath(a.cover_image);
           const date = formatDate(a.published_date);
           return (
-            `<a class="bcard reveal" href="/${esc(a.slug)}/">` +
+            `<a class="bcard reveal" href="/blog/${esc(a.slug)}/">` +
             `<div class="bcard-ph"><img class="u-img" src="${esc(cover)}" alt="${esc(a.title)}" loading="lazy">` +
             `<span class="btag">${esc(g.name)}</span></div>` +
             `<div class="bcard-bd"><div class="bmeta">${esc(date)}</div><h3>${esc(a.title)}</h3></div>` +
