@@ -13,6 +13,19 @@ const nextConfig = {
     // The site uses original image assets; serve them as-is.
     unoptimized: true,
   },
+
+  // The old site's language switcher links (/de, /fr, …) are already indexed by
+  // Google, but those localized pages now live on the languages subdomain. Send
+  // every language-code URL there permanently so the live links never 404.
+  async redirects() {
+    return [
+      {
+        source: "/:lang(da|de|es|fr|it|ja|nl|pl|pt|sv)",
+        destination: "https://languages.adhiroha.com/:lang",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
