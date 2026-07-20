@@ -1,0 +1,12 @@
+# ===================================================================
+# Adhiroha — reverse-proxy .htaccess for the Next.js NODE app.
+# Put this file in  public_html/.htaccess  (rename to ".htaccess").
+# It forwards EVERY request to the running Node server (next start),
+# which serves all pages, /api routes, redirects and DB-driven blogs.
+# The Node app must be running (PM2 / Hostinger Node app) on port 3000.
+# ===================================================================
+
+RewriteEngine On
+
+# Forward everything to the Node.js app on 127.0.0.1:3000
+RewriteRule ^(.*)$ http://127.0.0.1:3000/$1 [P,L]
