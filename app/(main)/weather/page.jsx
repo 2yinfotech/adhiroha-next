@@ -1,11 +1,21 @@
 import AuxiliaryPage from "@/components/AuxiliaryPage";
 import styles from "@/components/AuxiliaryPage.module.css";
+import JsonLd from "@/components/JsonLd";
+import { graph, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata = {
-  title: "Best Time for Yoga Teacher Training in Rishikesh | Adhiroha",
-  description: "A season-by-season guide to planning your yoga teacher training journey in Rishikesh.",
+  title: "Best Time for Yoga Teacher Training in Rishikesh",
+  description:
+    "Rishikesh weather month by month, and the best time of year to do a yoga teacher training — temperatures, monsoon, and what to pack for each season.",
   alternates: { canonical: "/weather/" },
 };
+
+// Structured data for this page — Course/FAQ/breadcrumbs so the listing
+// can earn rich results. FAQs are parsed from the page's own markup.
+const pageSchema = graph(
+    breadcrumbSchema([{ name: "Best Time to Visit", url: "/weather/" }])
+);
+
 
 const seasons = [
   ["Winter", "December – January", "Peaceful and cosy for inner reflection.", "Crisp mornings, sunny afternoons and cosy evenings.", "A tranquil yoga experience with fewer distractions and smaller groups."],
@@ -17,7 +27,9 @@ const seasons = [
 
 export default function WeatherPage() {
   return (
-    <AuxiliaryPage
+    <>
+      <JsonLd data={pageSchema} />
+      <AuxiliaryPage
       eyebrow="Weather update"
       title="Know the Best Time for Yoga Teacher Training in Rishikesh"
       description="Rishikesh offers a serene, spiritual setting throughout the year. Find the season that feels right for your yoga journey at Adhiroha."
@@ -43,5 +55,6 @@ export default function WeatherPage() {
         </div>
       </section>
     </AuxiliaryPage>
+  </>
   );
 }

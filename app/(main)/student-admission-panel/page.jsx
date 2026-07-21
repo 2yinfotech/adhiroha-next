@@ -2,9 +2,9 @@ import "./styles.css";
 import AdmissionForm from "@/components/AdmissionForm";
 
 export const metadata = {
-  title: "Student Admission — Reserve Your Seat | Adhiroha Yoga Ashram",
+  title: "Book Your Yoga Teacher Training | Adhiroha Admissions",
   description:
-    "Register for a yoga teacher training or retreat at Adhiroha Yoga Ashram in Rishikesh. Choose your course and dates, pick your stay, and reserve your seat.",
+    "Reserve your place on a yoga teacher training or retreat at Adhiroha, Rishikesh. Choose your course and dates and secure your seat with the registration fee.",
   alternates: { canonical: "/student-admission-panel/" },
 };
 

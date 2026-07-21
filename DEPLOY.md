@@ -65,3 +65,23 @@ Use FileZilla with the FTP credentials from hPanel (**Files → FTP Accounts**):
   form posts to `#` (same as the original). If you need it to actually send
   email, that requires a form handler (e.g. Hostinger's PHP mail, Formspree, or
   a small API) — ask and I can wire one up.
+
+## SEO: canonical host (must be done on the server)
+
+Every canonical URL the app emits points at `https://www.adhiroha.com` (set by
+`metadataBase` in `app/layout.jsx`). For that to be consistent, the server must
+301-redirect the non-www host to www — otherwise both versions stay reachable and
+Google splits ranking signals between them, which is the "canonical / domain
+mismatch" flagged in the July 2026 SEO audit.
+
+On Hostinger, add to the site's `.htaccess` (before the Next.js rules):
+
+    RewriteEngine On
+    RewriteCond %{HTTP_HOST} ^adhiroha\.com [NC]
+    RewriteRule ^(.*)$ https://www.adhiroha.com/$1 [L,R=301]
+
+Then in Google Search Console, make sure the `https://www.adhiroha.com` property
+is the one being tracked, and resubmit `sitemap.xml`.
+
+If you would rather use the bare domain, flip both: change `metadataBase` and
+`SITE` in `lib/seo.js` to `https://adhiroha.com` and redirect www -> non-www.

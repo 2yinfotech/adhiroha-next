@@ -1,12 +1,40 @@
 import "./globals.css";
 import Script from "next/script";
 import FooterLinkFix from "@/components/FooterLinkFix";
+import JsonLd from "@/components/JsonLd";
+import { graph, organizationSchema, websiteSchema } from "@/lib/seo";
 
 export const metadata = {
+  // www is the canonical host — non-www must 301 to it at the server (see DEPLOY.md).
   metadataBase: new URL("https://www.adhiroha.com"),
-  title: "Adhiroha Yoga School",
+  title: "Yoga Teacher Training in Rishikesh | 200/300/500-Hr YTTC — Adhiroha",
   description:
-    "Adhiroha Yoga School — Yoga Alliance certified teacher training courses and retreats in Rishikesh, India.",
+    "Yoga Alliance certified 200, 300 & 500 hour yoga teacher training in Rishikesh, India. Small batches, expert Indian teachers, ashram stay & meals included.",
+  applicationName: "Adhiroha Yoga School",
+  authors: [{ name: "Adhiroha Yoga School" }],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: "Adhiroha Yoga School",
+    locale: "en_US",
+    url: "https://www.adhiroha.com",
+    title: "Yoga Teacher Training in Rishikesh | 200/300/500-Hr YTTC — Adhiroha",
+    description:
+      "Yoga Alliance certified 200, 300 & 500 hour yoga teacher training in Rishikesh, India. Small batches, expert Indian teachers, ashram stay & meals included.",
+    images: [{ url: "/img/yoga-teacher-training-india-course.webp", width: 1200, height: 630, alt: "Adhiroha Yoga School, Upper Tapovan, Rishikesh" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yoga Teacher Training in Rishikesh | 200/300/500-Hr YTTC — Adhiroha",
+    description:
+      "Yoga Alliance certified 200, 300 & 500 hour yoga teacher training in Rishikesh, India.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+  },
 };
 
 // Hotjar (heatmaps + session recordings). Lives in <head> so it loads on every
@@ -68,6 +96,9 @@ export default function RootLayout({ children }) {
           href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
           crossOrigin=""
         />
+        {/* Sitewide structured data: who we are, and the site itself. Per-page
+            schema (Course, FAQPage, BreadcrumbList) is added by each page. */}
+        <JsonLd data={graph(organizationSchema(), websiteSchema())} />
         {/* Hotjar Tracking Code for adhiroha.com */}
         <script dangerouslySetInnerHTML={{ __html: HOTJAR_SCRIPT }} />
         {/* Attach the contact-form submit handler immediately, before hydration. */}

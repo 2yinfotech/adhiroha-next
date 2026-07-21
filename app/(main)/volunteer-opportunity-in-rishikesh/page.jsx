@@ -1,12 +1,22 @@
 import ApplicationForm from "@/components/ApplicationForm";
 import AuxiliaryPage from "@/components/AuxiliaryPage";
 import styles from "@/components/AuxiliaryPage.module.css";
+import JsonLd from "@/components/JsonLd";
+import { graph, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata = {
-  title: "Volunteer Opportunity in Rishikesh | Course Coordinator | Adhiroha",
-  description: "Volunteer as a course coordinator at Adhiroha Yoga Ashram in Rishikesh.",
+  title: "Volunteer in Rishikesh | Adhiroha Yoga School",
+  description:
+    "Volunteer at Adhiroha Yoga School in Rishikesh as a course coordinator — live at the ashram, support students and deepen your own practice.",
   alternates: { canonical: "/volunteer-opportunity-in-rishikesh/" },
 };
+
+// Structured data for this page — Course/FAQ/breadcrumbs so the listing
+// can earn rich results. FAQs are parsed from the page's own markup.
+const pageSchema = graph(
+    breadcrumbSchema([{ name: "Volunteer Opportunity", url: "/volunteer-opportunity-in-rishikesh/" }])
+);
+
 
 const responsibilities = [
   ["Course planning and development", ["Assist with curriculum design and updates alongside senior instructors.", "Create and manage schedules around instructor and facility availability.", "Ensure yoga props, study materials and classroom spaces are prepared."]],
@@ -19,7 +29,9 @@ const responsibilities = [
 
 export default function VolunteerPage() {
   return (
-    <AuxiliaryPage
+    <>
+      <JsonLd data={pageSchema} />
+      <AuxiliaryPage
       eyebrow="Adhiroha opportunities"
       title="Volunteer Opportunity in Adhiroha"
       description="Join our course coordination team in Rishikesh and gain meaningful experience in a dedicated yoga learning environment."
@@ -66,5 +78,6 @@ export default function VolunteerPage() {
         </div>
       </section>
     </AuxiliaryPage>
+  </>
   );
 }

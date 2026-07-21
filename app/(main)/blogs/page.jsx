@@ -4,14 +4,25 @@ import scripts from "./scripts";
 import PageScripts from "@/components/PageScripts";
 import { getAllArticles } from "@/lib/articles";
 import { fixAssetPath, formatDate } from "@/lib/article-render";
+import JsonLd from "@/components/JsonLd";
+import { graph, breadcrumbSchema, extractFaqs, faqSchema } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Blog | The Adhiroha Journal &mdash; Yoga Teacher Training, Honestly Written",
-  description: undefined,
+  title: "Yoga Teacher Training Blog | Adhiroha, Rishikesh",
+  description:
+    "Honest guides to training in Rishikesh — choosing a yoga school, what to expect as a beginner, and how the 200, 300 and 500 hour courses compare.",
   alternates: { canonical: "/blogs/" },
 };
+
+// Structured data for this page — Course/FAQ/breadcrumbs so the listing
+// can earn rich results. FAQs are parsed from the page's own markup.
+const pageSchema = graph(
+    faqSchema(extractFaqs(content)),
+    breadcrumbSchema([{ name: "Blog", url: "/blogs/" }])
+);
+
 
 function esc(s) {
   return String(s ?? "")
@@ -76,6 +87,7 @@ export default async function Page() {
 
   return (
     <>
+      <JsonLd data={pageSchema} />
       <div dangerouslySetInnerHTML={{ __html: html }} />
       <PageScripts code={scripts} />
     </>

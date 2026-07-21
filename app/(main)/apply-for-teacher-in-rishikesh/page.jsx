@@ -1,16 +1,28 @@
 import ApplicationForm from "@/components/ApplicationForm";
 import AuxiliaryPage from "@/components/AuxiliaryPage";
 import styles from "@/components/AuxiliaryPage.module.css";
+import JsonLd from "@/components/JsonLd";
+import { graph, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata = {
-  title: "Apply for Yoga Teacher in Rishikesh | Adhiroha",
-  description: "Apply to teach yoga at Adhiroha Yoga Ashram in Rishikesh.",
+  title: "Apply to Teach Yoga in Rishikesh | Adhiroha",
+  description:
+    "Apply to join the teaching team at Adhiroha Yoga School in Rishikesh. We look for experienced, traditionally trained yoga teachers based in India.",
   alternates: { canonical: "/apply-for-teacher-in-rishikesh/" },
 };
 
+// Structured data for this page — Course/FAQ/breadcrumbs so the listing
+// can earn rich results. FAQs are parsed from the page's own markup.
+const pageSchema = graph(
+    breadcrumbSchema([{ name: "Apply to Teach", url: "/apply-for-teacher-in-rishikesh/" }])
+);
+
+
 export default function TeacherApplicationPage() {
   return (
-    <AuxiliaryPage eyebrow="Join the teaching team" title="Apply for a Yoga Teacher Role in Rishikesh" description="Share your experience, teaching approach and love of yoga with the Adhiroha community.">
+    <>
+      <JsonLd data={pageSchema} />
+      <AuxiliaryPage eyebrow="Join the teaching team" title="Apply for a Yoga Teacher Role in Rishikesh" description="Share your experience, teaching approach and love of yoga with the Adhiroha community.">
       <section className={styles.section}>
         <span className={styles.sectionLabel}>Application form</span>
         <h2 className={styles.sectionTitle}>Bring your teaching to Adhiroha</h2>
@@ -22,5 +34,6 @@ export default function TeacherApplicationPage() {
         </div>
       </section>
     </AuxiliaryPage>
+  </>
   );
 }
