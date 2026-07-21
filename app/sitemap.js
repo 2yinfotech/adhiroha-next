@@ -27,6 +27,8 @@ const routes = [
   "weather",
   "volunteer-opportunity-in-rishikesh",
   "apply-for-teacher-in-rishikesh",
+  "faqs-of-yoga-school-in-india",
+  "privacy-policy",
 ];
 
 export default function sitemap() {

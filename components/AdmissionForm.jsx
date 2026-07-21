@@ -417,7 +417,7 @@ export default function AdmissionForm() {
     <section className="adm-wrap" ref={topRef}>
       <header className="adm-head">
         <span className="adm-kicker">Adhiroha Admissions</span>
-        <h1>Reserve your seat</h1>
+        <h1>Reserve your Seat</h1>
         <p>Choose your course and dates, tell us who's coming, pick your stay — and secure your place with the registration fee.</p>
       </header>
 

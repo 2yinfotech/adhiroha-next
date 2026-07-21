@@ -4555,3 +4555,7 @@
   /* Kickers are centred by the shared .kicker rule further down. */
   .detail > .course-link-m{align-self:center}
 }
+
+/* ===== sp12 course cards: text link instead of bare arrow ===== */
+.sp12-foot .course-link{margin-top:0}
+.sp12-more{white-space:nowrap;font-size:11.5px}

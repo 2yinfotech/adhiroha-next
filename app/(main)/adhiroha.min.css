@@ -27,4 +27,14 @@
    footer grew taller mid-load and the logo could end up scrolled off (or half
    cut) once you were already parked at the bottom of the page. Reserving the
    box keeps the footer height stable from first paint. */
-.ft-logo{aspect-ratio:500/136}
+.ft-logo{aspect-ratio:867/288}
+
+/* ===== Mid-page Register / Contact CTA band (course pages) ===== */
+.mid-cta-sec{padding:34px 0}
+.mid-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 30px;max-width:960px;margin:0 auto;padding:30px 40px;border:1px solid rgba(178,110,62,.28);border-radius:16px;background:linear-gradient(120deg,#fbf6ee,#f5e9d8)}
+.mid-cta-k{display:block;font-size:11px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;color:var(--rust);margin-bottom:7px}
+.mid-cta-t{font-family:'Playfair Display',serif;font-size:22px;line-height:1.3;color:#2b2118;margin:0}
+.mid-cta-actions{display:flex;gap:13px;flex-wrap:wrap;align-items:center}
+.mid-cta .btn-outline{background:#fff}
+@media(max-width:720px){.mid-cta{flex-direction:column;text-align:center;align-items:center;padding:26px 22px}.mid-cta-txt{width:100%}.mid-cta-actions{width:100%;justify-content:center}}
+@media(max-width:460px){.mid-cta-actions{flex-direction:column;align-items:stretch;width:100%}.mid-cta-actions .btn-primary,.mid-cta-actions .btn-outline{width:100%;justify-content:center;text-align:center}}
