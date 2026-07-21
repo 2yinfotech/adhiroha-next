@@ -76,7 +76,6 @@ export default function AdmissionForm() {
   const [payingWith, setPayingWith] = useState("");
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
-  const [done, setDone] = useState(null);
   // Booking rows are written once; retrying with another gateway reuses them.
   const registered = useRef(null);
   const paypalBox = useRef(null);
@@ -199,6 +198,23 @@ export default function AdmissionForm() {
   const toggleAddOn = (key) =>
     setAddOns((prev) => (prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key]));
 
+  // Once a booking is done, hand off to /thank-you/ with the details on the query
+  // string — the same pattern the old PHP panel used (thank-you.php?view_id=…).
+  function goToThankYou({ codes, paid, method, paymentId, pending }) {
+    const q = new URLSearchParams();
+    if (codes?.length) q.set("code", codes.join(","));
+    q.set("name", students.map((s) => s.name).join(","));
+    q.set("course", COURSES[course]?.label + activeAddOns.map((k) => ` + ${ADDONS[k].label}`).join(""));
+    if (batch?.date_range) q.set("dates", batch.date_range);
+    q.set("acco", labels[sharing]);
+    if (fees) q.set("balance", String(fees.balance));
+    if (paid != null) q.set("paid", Number(paid).toFixed(2));
+    if (method) q.set("method", method);
+    if (paymentId) q.set("payment", paymentId);
+    if (pending) q.set("pending", "1");
+    window.location.assign(`/thank-you/?${q.toString()}`);
+  }
+
   // Writes the pending bookings (once) and returns { bookingIds, codes }.
   async function ensureRegistered() {
     if (registered.current) return registered.current;
@@ -231,8 +247,7 @@ export default function AdmissionForm() {
       if (data.redirect) { window.location.href = data.redirect; return; }
 
       if (data.error === "payment_not_configured" || data.error === "wise_unavailable") {
-        setDone({ codes: reg.codes, pending: true, message: data.message });
-        setPayingWith("");
+        goToThankYou({ codes: reg.codes, pending: true });
         return;
       }
       if (!data.orderId) {
@@ -272,8 +287,14 @@ export default function AdmissionForm() {
             }),
           }).then((x) => x.json()).catch(() => ({ ok: false }));
 
-          if (v.ok) setDone({ codes: reg.codes, paymentId: v.paymentId });
-          else setError("Your payment went through, but we couldn't verify it automatically. Please contact us with your payment ID — your seat is safe.");
+          if (v.ok) {
+            goToThankYou({
+              codes: reg.codes, paid: gateways.razorpay.total,
+              method: "Razorpay", paymentId: v.paymentId,
+            });
+            return;
+          }
+          setError("Your payment went through, but we couldn't verify it automatically. Please contact us with your payment ID — your seat is safe.");
           setPayingWith("");
         },
         modal: {
@@ -334,8 +355,14 @@ export default function AdmissionForm() {
               }),
             });
             const out = await res.json();
-            if (out.ok) setDone({ codes: reg?.codes || [], paymentId: out.paymentId });
-            else setError(out.message || "PayPal payment could not be completed. Please try again.");
+            if (out.ok) {
+              goToThankYou({
+                codes: reg?.codes || [], paid: gateways.paypal.total,
+                method: "PayPal", paymentId: out.paymentId,
+              });
+              return;
+            }
+            setError(out.message || "PayPal payment could not be completed. Please try again.");
           },
 
           onCancel: () => setNotice("PayPal payment cancelled — your details are saved, you can pay any time."),
@@ -351,34 +378,6 @@ export default function AdmissionForm() {
   // Re-render the PayPal buttons if the amount changes (they capture it at click).
   useEffect(() => { paypalRendered.current = false; }, [fees?.reg]);
 
-  /* ============================================================
-     Success screen
-     ============================================================ */
-  if (done) {
-    return (
-      <section className="adm-wrap">
-        <div className="adm-card adm-done">
-          <div className="adm-tick" aria-hidden="true">✓</div>
-          <h2>{done.pending ? "Registration received" : "Your seat is reserved"}</h2>
-          <p>
-            {done.pending
-              ? done.message || "Your details are saved. We'll email you shortly with a secure payment link to confirm your seat."
-              : "A confirmation is on its way to your inbox. We look forward to welcoming you to Rishikesh."}
-          </p>
-          <div className="adm-refs">
-            {done.codes.map((c, i) => (
-              <div className="adm-ref" key={c}>
-                <span>{students[i]?.name || `Student ${i + 1}`}</span>
-                <b>{c}</b>
-              </div>
-            ))}
-          </div>
-          {done.paymentId && <p className="adm-payid">Payment ID: {done.paymentId}</p>}
-          <a className="adm-btn" href="/">Back to home</a>
-        </div>
-      </section>
-    );
-  }
 
   /* ============================================================
      Wizard
