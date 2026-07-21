@@ -257,7 +257,7 @@
     font-size:clamp(28px,2.7vw,37px);line-height:1.13;
     color:var(--ink);letter-spacing:.2px;margin-bottom:24px;max-width:18ch;
   }
-  .sec-h.wide{max-width:24ch}
+  .sec-h.wide{max-width:34ch}
   .body-p{font-size:16px;font-weight:300;line-height:1.85;color:var(--body);max-width:62ch}
   .body-p + .body-p{margin-top:18px}
   .lead{font-size:18px;line-height:1.78;color:#564f48;font-weight:300;max-width:60ch}
@@ -3086,7 +3086,7 @@
     font-size:clamp(28px,2.7vw,37px);line-height:1.13;
     color:var(--ink);letter-spacing:.2px;margin-bottom:24px;max-width:18ch;
   }
-  .sec-h.wide{max-width:24ch}
+  .sec-h.wide{max-width:34ch}
   .body-p{font-size:16px;font-weight:300;line-height:1.85;color:var(--body);max-width:62ch}
   .body-p + .body-p{margin-top:18px}
   .lead{font-size:16px;line-height:1.85;color:var(--body);font-weight:300;max-width:62ch}
