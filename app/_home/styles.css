@@ -4365,8 +4365,11 @@
 #mool-mantras .mool-cap{position:absolute;left:16px;right:16px;bottom:16px;margin:0;background:#fff;
   border-radius:12px;border-left:4px solid var(--rust,#ed1c25);padding:15px 18px;
   box-shadow:0 12px 30px rgba(44,39,35,.22)}
-#mool-mantras .mool-cap p{margin:0;font-weight:600;color:var(--ink,#2c2723);text-align:center;
-  line-height:1.35;font-size:16px}
+/* Caption type matches the site's other card headings (.space-h, .exc-cap b,
+   h3.sub-h) — Playfair Display, not the sans body face. */
+#mool-mantras .mool-cap p{margin:0;font-family:'Playfair Display',serif;font-weight:600;
+  color:var(--ink,#2c2723);text-align:center;line-height:1.3;font-size:17.5px;letter-spacing:.2px}
+@media(max-width:520px){#mool-mantras .mool-cap p{font-size:18.5px}}
 @media(max-width:900px){#mool-mantras .mool-tiles{grid-template-columns:repeat(2,1fr);gap:18px}}
 @media(max-width:520px){#mool-mantras .mool-tiles{grid-template-columns:1fr}
   #mool-mantras .mool-tile{aspect-ratio:4/3}}
@@ -4376,9 +4379,15 @@
    text-align:center. The welcome banner (.cine-inner) and story card
    (.story-card) were left-aligned, leaving their kickers stuck to the left
    while the heading below sat centred. Forcing display:flex + centre makes
-   the kicker span the row and centre its own content everywhere. */
-@media(max-width:680px){
-  .kicker{display:flex;justify-content:center;width:100%}
+   the kicker span the row and centre its own content everywhere.
+
+   `text-align` matters as well as `justify-content`: the flex centring only
+   places the text block as a whole, so a kicker long enough to wrap ("Every
+   Space Has a Purpose", "The People Who Teach You") still left-aligned its
+   second line. Raised to 768px to match the breakpoint the rest of the
+   centred mobile treatment uses. */
+@media(max-width:768px){
+  .kicker{display:flex;justify-content:center;width:100%;text-align:center}
   .cine-inner,.story-card{text-align:center}
 }
 
@@ -4543,13 +4552,6 @@
      stand on its own. */
   #Ashram-spaces .space-grid{margin-top:28px}
 
-  /* .kicker is inline-flex; as a flex item it needs to stay centred with the
-     rest of the column rather than stretching across it. */
-  .split.imgL > .col-pad > .kicker,
-  .detail > .d-text > .kicker,
-  .who-split > :nth-child(2) > .kicker,
-  .grad-split > :nth-child(2) > .kicker,
-  .teach-split > :nth-child(2) > .kicker,
-  .inner-split > :nth-child(2) > .kicker{align-self:center}
+  /* Kickers are centred by the shared .kicker rule further down. */
   .detail > .course-link-m{align-self:center}
 }
