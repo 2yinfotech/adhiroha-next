@@ -9,3 +9,21 @@
   .abx-hero>div:first-child{order:1}
   .abx-hero .gv-frame{order:2;margin:10px auto 0}
 }
+
+
+/* ===================================================================
+   Confirmation headline — one centred line
+   `.sec-h` defaults to max-width:18ch, which wrapped this 37-character
+   sentence over three ragged lines. Pin it to a single line and let the
+   size flex with the viewport so it still fits on a phone.
+   =================================================================== */
+.ty-head{text-align:center}
+.ty-head .sec-h{
+  max-width:none;
+  white-space:nowrap;
+  font-size:clamp(15px,3.6vw,34px);
+  margin-left:auto;
+  margin-right:auto;
+}
+.ty-head .kicker{justify-content:center}
+.ty-head .body-p{margin-left:auto;margin-right:auto;text-align:center}

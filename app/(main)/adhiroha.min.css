@@ -21,3 +21,10 @@
   .twelve-head .sec-h{max-width:none;font-size:clamp(28px,2.7vw,37px)}
   .cf-left .sec-h,.pa-left .sec-h,.faq-side .sec-h,.found-grid .sec-h,.cert-split .sec-h,.acc-split .sec-h,.rish-split .sec-h,.gm-side .sec-h{font-size:clamp(24px,2.1vw,30px);max-width:none}
 }
+
+
+/* The footer logo ships no CSS-known aspect ratio until it decodes, so the
+   footer grew taller mid-load and the logo could end up scrolled off (or half
+   cut) once you were already parked at the bottom of the page. Reserving the
+   box keeps the footer height stable from first paint. */
+.ft-logo{aspect-ratio:500/136}
