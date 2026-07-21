@@ -4473,7 +4473,9 @@
   .split.imgL > .col-pad > *{order:3}
 
   /* ---------- COURSE SECTIONS (.detail) ---------- */
-  .detail,.detail.flip{display:flex;flex-direction:column;gap:0}
+  /* `align-items:start` on the desktop grid would shrink each stacked row to
+     its own content width, leaving the fact card narrower than the photo. */
+  .detail,.detail.flip{display:flex;flex-direction:column;gap:0;align-items:stretch}
   .detail > .d-media,.detail > .d-text{display:contents}
   .detail > .d-text > .kicker{order:1}
   .detail > .d-text > .sec-h{order:1}
@@ -4484,9 +4486,70 @@
   /* The heading's own margin no longer sits above the first paragraph. */
   .detail > .d-text > .body-p:first-of-type{margin-top:26px}
 
+  /* ---------- THE REMAINING TWO-COLUMN SECTIONS ----------
+     Same treatment: heading → image → the rest. The media column is the
+     first child in each of these and the text column the second, except
+     for .living-split where both carry their own class. Media blocks that
+     bundle an overlay (.grad-seal, .inner-quote) move as one piece. */
+  .who-split,.grad-split,.teach-split,.inner-split,.living-split{
+    display:flex;flex-direction:column;gap:0;align-items:stretch
+  }
+
+  /* Text column stops generating a box so its children can be ordered. */
+  .who-split > :nth-child(2),
+  .grad-split > :nth-child(2),
+  .teach-split > :nth-child(2),
+  .inner-split > :nth-child(2),
+  .living-split > .living-text{display:contents}
+
+  /* Heading first … */
+  .who-split > :nth-child(2) > .kicker,.who-split > :nth-child(2) > .sec-h,
+  .grad-split > :nth-child(2) > .kicker,.grad-split > :nth-child(2) > .sec-h,
+  .teach-split > :nth-child(2) > .kicker,.teach-split > :nth-child(2) > .sec-h,
+  .inner-split > :nth-child(2) > .kicker,.inner-split > :nth-child(2) > .sec-h,
+  .living-split > .living-text > .sub-h{order:1}
+
+  /* … then the image … */
+  .who-split > :nth-child(1),
+  .grad-split > :nth-child(1),
+  .teach-split > :nth-child(1),
+  .inner-split > :nth-child(1),
+  .living-split > .collage{order:2;margin-bottom:30px}
+
+  /* … then everything else. */
+  .who-split > :nth-child(2) > *,
+  .grad-split > :nth-child(2) > *,
+  .teach-split > :nth-child(2) > *,
+  .inner-split > :nth-child(2) > *,
+  .living-split > .living-text > *{order:3}
+
+  /* ---------- CERTIFICATE MEDIA ----------
+     The desktop rule stretches this frame to match the text column
+     (height:100% + min-height:440px). Stacked, the percentage has no
+     parent height to resolve against, so the frame stayed 440px tall
+     while the photo fell back to its own aspect ratio — leaving an empty
+     band beneath it. Give it a plain height again. */
+  .grad-media .frame{height:340px!important;min-height:0}
+
+  /* ---------- HOW ADHIROHA BEGAN ----------
+     .story-img keeps a 380px min-height from the desktop side-by-side
+     layout. Stacked, the photo only fills its own aspect ratio and the
+     leftover height showed as a white band underneath it. */
+  .story-img{min-height:0}
+
+  /* ---------- ASHRAM SPACES ----------
+     The cards are pulled up over the banner on desktop; on a phone that
+     crops the photo and buries it behind the first card. Let the banner
+     stand on its own. */
+  #Ashram-spaces .space-grid{margin-top:28px}
+
   /* .kicker is inline-flex; as a flex item it needs to stay centred with the
      rest of the column rather than stretching across it. */
   .split.imgL > .col-pad > .kicker,
-  .detail > .d-text > .kicker{align-self:center}
+  .detail > .d-text > .kicker,
+  .who-split > :nth-child(2) > .kicker,
+  .grad-split > :nth-child(2) > .kicker,
+  .teach-split > :nth-child(2) > .kicker,
+  .inner-split > :nth-child(2) > .kicker{align-self:center}
   .detail > .course-link-m{align-self:center}
 }
