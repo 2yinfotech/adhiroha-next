@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
 import crypto from "crypto";
 import {
   COURSES, computeFees, gatewayBreakdown, getBatches,
@@ -57,14 +57,17 @@ export async function POST(request) {
     });
   } catch (e) { /* payment succeeded; a DB hiccup must not fail the user */ }
 
-  // Confirmation emails — best effort, never block the success screen.
+  // Confirmation emails are sent after the response: SMTP takes seconds, and the
+  // student is waiting on this call to be redirected to the thank-you page.
   const students = Array.isArray(body.students) ? body.students : [];
-  await sendAdmissionMail({
-    students, course, batch, acco, room: body.room, fees, addOns: fees?.addOns, stage: "paid",
-  }).catch(() => null);
-  for (const s of students) {
-    await sendStudentConfirmation({ student: s, course, batch, acco, room: body.room, fees }).catch(() => null);
-  }
+  after(async () => {
+    await sendAdmissionMail({
+      students, course, batch, acco, room: body.room, fees, addOns: fees?.addOns, stage: "paid",
+    }).catch(() => null);
+    for (const s of students) {
+      await sendStudentConfirmation({ student: s, course, batch, acco, room: body.room, fees }).catch(() => null);
+    }
+  });
 
   return NextResponse.json({ ok: true, paymentId: razorpay_payment_id });
 }

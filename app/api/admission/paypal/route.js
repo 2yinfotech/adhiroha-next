@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
 import {
   COURSES, computeFees, gatewayBreakdown, getBatches,
   markBookingsPaid, sendAdmissionMail, sendStudentConfirmation,
@@ -89,14 +89,18 @@ export async function POST(request) {
       });
     } catch (e) { /* paid already; a DB hiccup must not fail the user */ }
 
+    // Emails go out after the response — the payment is already captured and the
+    // student should not wait on SMTP to see their confirmation.
     const students = Array.isArray(body.students) ? body.students : [];
-    await sendAdmissionMail({
-      students, course: body.course, batch, acco, room: "N/A",
-      fees, addOns: fees.addOns, stage: "paid",
-    }).catch(() => null);
-    for (const s of students) {
-      await sendStudentConfirmation({ student: s, course: body.course, batch, acco, room: "N/A", fees }).catch(() => null);
-    }
+    after(async () => {
+      await sendAdmissionMail({
+        students, course: body.course, batch, acco, room: "N/A",
+        fees, addOns: fees.addOns, stage: "paid",
+      }).catch(() => null);
+      for (const s of students) {
+        await sendStudentConfirmation({ student: s, course: body.course, batch, acco, room: "N/A", fees }).catch(() => null);
+      }
+    });
 
     return NextResponse.json({ ok: true, paymentId: captured.id });
   }

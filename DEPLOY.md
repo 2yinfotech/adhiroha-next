@@ -1,87 +1,130 @@
-# Deploying to Hostinger (shared hosting / hPanel)
+# Deploying Adhiroha to Hostinger
 
-Your site is a **static export** — plain HTML/CSS/JS with no Node server needed.
-You just upload the files to `public_html`.
+> **This is a Node app, not a static site.** Earlier versions of this file said
+> to upload the `out/` folder as a static export. That is no longer true and will
+> break the site: payments, the contact form, the admission panel and the
+> DB-driven blogs are all **API routes**, and a static export contains none of
+> them. `next.config.mjs` deliberately does not set `output: "export"`.
+>
+> The site must run as a **Hostinger Node.js application** (`next build` then
+> `next start`), with `public_html/.htaccess` reverse-proxying to it — see
+> `hostinger-node.htaccess` in this folder.
 
-## Build (whenever you change the site)
+---
+
+## 1. Environment variables (this is what makes payments work)
+
+`.env.local` is gitignored and **never leaves your machine**. The live server has
+none of these until you set them there. If they are missing:
+
+- Razorpay / PayPal buttons do nothing, or report "payment isn't switched on"
+- the contact form and admission emails silently fail
+- blogs and batch dates cannot load
+
+Set them in **hPanel → Advanced → Node.js app → Environment variables**, or as a
+`.env.production` file in the app root on the server.
+
+The full list, already filled in with the current values, is in
+**`.env.production.example`** (gitignored — copy it across by hand, do not commit it).
+
+### ⚠️ Two things that catch people out
+
+**1. `NEXT_PUBLIC_*` variables are baked in at BUILD time, not read at runtime.**
+`NEXT_PUBLIC_PAYPAL_CLIENT_ID`, `NEXT_PUBLIC_RAZORPAY_KEY_ID` and
+`NEXT_PUBLIC_HOTJAR_ID` are compiled into the browser bundle. Setting them and
+restarting is **not enough** — you must set them and then run `npm run build`
+again, in that order. This is the usual reason "the PayPal button is dead on
+live but works locally".
+
+**2. `ARTICLES_SOURCE` must NOT be set in production.**
+`ARTICLES_SOURCE=sqlfile` makes the app read from the bundled SQL dump and turns
+every database write into a no-op — registrations would appear to succeed and
+save nothing. It exists only because local development cannot reach Hostinger's
+MySQL. Leave it out entirely on the server.
+
+Also use `DB_HOST=127.0.0.1`, not `localhost`: `localhost` can resolve to IPv6
+`::1`, which the database grant does not cover, giving
+`Access denied for user ...@'::1'`.
+
+---
+
+## 2. Deploy
 
 ```bash
-cd next-app
-npm install          # first time only
-npm run build        # produces the ./out folder + ./adhiroha-site.zip is made manually
+# on the server, in the app folder
+npm install --omit=dev
+npm run build        # env vars must already be set — see the NEXT_PUBLIC note above
+npm run start        # or let PM2 / the Hostinger Node app manager run it
 ```
 
-The finished website is the **`out/`** folder. A ready-to-upload
-**`adhiroha-site.zip`** (the contents of `out/`) is also in this folder.
+The Node app listens on **port 3000**. Then put `hostinger-node.htaccess` at
+`public_html/.htaccess` (renamed to `.htaccess`) so every request is proxied to it.
 
-To rebuild the zip after a new `npm run build`:
+After deploying, **clear the Hostinger cache** — it serves stale HTML otherwise
+and you will think your changes did not ship.
+
+---
+
+## 3. Verify it actually works on live
+
+Do not assume — check each one:
 
 ```bash
-cd out && zip -r -X ../adhiroha-site.zip . -x '.DS_Store' && cd ..
+# batches load from the live DB (not the SQL dump)
+curl -s https://www.adhiroha.com/api/admission/batches/?course=200%20Hour%20YTTC | head -c 200
+
+# Razorpay order creation — should return an orderId, not an error
+curl -s -X POST https://www.adhiroha.com/api/admission/order/ \
+  -H 'Content-Type: application/json' \
+  -d '{"course":"200 Hour YTTC","batchId":"125","sharing":"triple","numStudents":1,"gateway":"razorpay"}'
 ```
 
-## Upload — easiest way (hPanel File Manager)
+Then in a browser (hard-refresh first — `Cmd/Ctrl+Shift+R`):
 
-1. Log in to **hPanel** → **Files → File Manager**.
-2. Open **`public_html`**.
-3. If there are old files there you don't need (e.g. a default `index.html`),
-   delete them first.
-4. Click **Upload** (top-right) and upload **`adhiroha-site.zip`**.
-5. Right-click the uploaded zip → **Extract** → extract **into `public_html`**
-   (so the files land directly in `public_html`, not in a sub-folder).
-6. Delete the zip afterwards.
-7. Visit your domain — done.
+- `/student-admission-panel/` — PayPal buttons must render, Razorpay must open its
+  modal. **Stop there; the keys are live and completing a payment charges real money.**
+- `/contact-us/` — send a test message, confirm it arrives.
+- View source on any page — `application/ld+json` and `<meta name="description">`
+  must be present.
 
-> Make sure `index.html` ends up directly at `public_html/index.html`, and the
-> `.htaccess`, `img/`, `_next/`, `about-us/`, etc. are all directly inside
-> `public_html`.
+---
 
-## Upload — alternative (FTP)
+## 4. SEO: canonical host (server-level)
 
-Use FileZilla with the FTP credentials from hPanel (**Files → FTP Accounts**):
+Every canonical URL points at `https://www.adhiroha.com` (`metadataBase` in
+`app/layout.jsx`, `SITE` in `lib/seo.js`). The server must 301-redirect the
+non-www host to www, or Google splits ranking signals between the two.
 
-- Host: your server / `ftp.yourdomain.com`
-- Upload **everything inside `out/`** into `public_html`.
-- Important: enable "show hidden files" in FileZilla so the **`.htaccess`**
-  file is uploaded too (Server → *Force showing hidden files*).
-
-## What the `.htaccess` does
-
-- 301-redirects the old `*.html` URLs (e.g. `/about-us.html`) to the new clean
-  URLs (`/about-us/`) so old links / search results keep working.
-- Sets a long cache on static assets for speed.
-- Serves the custom `404.html`.
-
-## After it's live
-
-- Update the domain in `app/sitemap.js`, `app/robots.js`, and `app/layout.jsx`
-  (`metadataBase`) if it's not `https://www.adhiroha.com`, then rebuild.
-- Submit `https://yourdomain.com/sitemap.xml` in Google Search Console.
-
-## Notes
-
-- HTTPS: enable the free SSL in hPanel (**Security → SSL**) if not already on.
-- This is a static site, so there is **no** contact-form backend. The contact
-  form posts to `#` (same as the original). If you need it to actually send
-  email, that requires a form handler (e.g. Hostinger's PHP mail, Formspree, or
-  a small API) — ask and I can wire one up.
-
-## SEO: canonical host (must be done on the server)
-
-Every canonical URL the app emits points at `https://www.adhiroha.com` (set by
-`metadataBase` in `app/layout.jsx`). For that to be consistent, the server must
-301-redirect the non-www host to www — otherwise both versions stay reachable and
-Google splits ranking signals between them, which is the "canonical / domain
-mismatch" flagged in the July 2026 SEO audit.
-
-On Hostinger, add to the site's `.htaccess` (before the Next.js rules):
+Add to `public_html/.htaccess`, **before** the proxy rule:
 
     RewriteEngine On
     RewriteCond %{HTTP_HOST} ^adhiroha\.com [NC]
     RewriteRule ^(.*)$ https://www.adhiroha.com/$1 [L,R=301]
 
-Then in Google Search Console, make sure the `https://www.adhiroha.com` property
-is the one being tracked, and resubmit `sitemap.xml`.
+Then confirm `https://www.adhiroha.com` is the tracked property in Google Search
+Console and resubmit `sitemap.xml`.
 
-If you would rather use the bare domain, flip both: change `metadataBase` and
-`SITE` in `lib/seo.js` to `https://adhiroha.com` and redirect www -> non-www.
+To use the bare domain instead, flip both: change `metadataBase` and `SITE` to
+`https://adhiroha.com` and redirect www → non-www.
+
+---
+
+## 5. Old URLs
+
+The `.htaccess` also 301-redirects the old `*.html` URLs (`/about-us.html` →
+`/about-us/`) so existing links and search results keep working.
+
+If the old `admission.adhiroha.com` subdomain is still live, point it at
+`https://www.adhiroha.com/student-admission-panel/` — the whole site now links to
+the new panel, and the old one would otherwise keep taking bookings into a
+system nobody is watching.
+
+---
+
+## Notes
+
+- Enable free SSL in hPanel (**Security → SSL**) if it is not already on.
+- `SMTP_PASS` is a Gmail **app password** for info@adhiroha.com, not the account
+  password.
+- Admission notifications go to `ADMISSION_NOTIFY_TO` (2yinfotech@gmail.com);
+  the contact form goes to `CONTACT_TO` (info@adhiroha.com).

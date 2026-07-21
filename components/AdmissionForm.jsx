@@ -73,6 +73,7 @@ export default function AdmissionForm() {
 
   /* ---------- step 3: payment ---------- */
   const [registering, setRegistering] = useState(false);
+  const [saving, setSaving] = useState(false);
   const [payingWith, setPayingWith] = useState("");
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
@@ -215,18 +216,40 @@ export default function AdmissionForm() {
     window.location.assign(`/thank-you/?${q.toString()}`);
   }
 
-  // Writes the pending bookings (once) and returns { bookingIds, codes }.
+  // Writes the pending bookings on the first call — that happens as soon as the
+  // student details are in, so an abandoned checkout is still followed up — and
+  // on every later call just refreshes those same rows with the current
+  // accommodation and amounts. Returns { bookingIds, codes }.
   async function ensureRegistered() {
-    if (registered.current) return registered.current;
     const res = await fetch("/api/admission/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...selection(), students }),
+      body: JSON.stringify({
+        ...selection(),
+        students,
+        bookingIds: registered.current?.bookingIds,
+        codes: registered.current?.codes,
+      }),
     });
     const data = await res.json();
     if (!res.ok || !data.ok) throw new Error(data.error || "We couldn't save your registration.");
     registered.current = data;
     return data;
+  }
+
+  // Continue buttons: save (step 1) or update (step 2) before moving on. A
+  // failure keeps the student on the step with the reason, rather than walking
+  // them to a payment screen for a booking that was never written.
+  async function continueTo(next) {
+    setError(""); setNotice(""); setSaving(true);
+    try {
+      await ensureRegistered();
+      goto(next);
+    } catch (e) {
+      setError(e?.message || "We couldn't save your details. Please try again.");
+    } finally {
+      setSaving(false);
+    }
   }
 
   /* ---------- Wise / Razorpay ---------- */
@@ -246,8 +269,16 @@ export default function AdmissionForm() {
       // Wise is a hosted payment link.
       if (data.redirect) { window.location.href = data.redirect; return; }
 
+      // Payment could not be started at all. Stay on the panel and say so
+      // plainly — redirecting to the thank-you page here would read as a
+      // confirmation for someone who has not actually paid.
       if (data.error === "payment_not_configured" || data.error === "wise_unavailable") {
-        goToThankYou({ codes: reg.codes, pending: true });
+        setError(
+          (data.message || "That payment method isn't available right now.") +
+            ` Your details are saved under reference ${reg.codes.join(", ")} — ` +
+            "please try another method, or contact us and we'll send you a payment link."
+        );
+        setPayingWith("");
         return;
       }
       if (!data.orderId) {
@@ -391,13 +422,19 @@ export default function AdmissionForm() {
       </header>
 
       <ol className="adm-steps">
-        {["Course & students", "Accommodation", "Payment"].map((label, i) => {
+        {["Course", "Accommodation", "Payment"].map((label, i) => {
           const n = i + 1;
           const state = step === n ? " on" : step > n ? " done" : "";
           const reachable = n < step || (n === 2 && step1Ok) || (n === 3 && step1Ok && step2Ok);
           return (
             <li key={label} className={`adm-step${state}`}>
-              <button type="button" disabled={!reachable || n === step} onClick={() => goto(n)}>
+              <button
+                type="button"
+                disabled={!reachable || n === step || saving}
+                // Jumping forward from the stepper has to save/refresh the
+                // booking just like the Continue button does.
+                onClick={() => (n > step ? continueTo(n) : goto(n))}
+              >
                 <span className="adm-num">{step > n ? "✓" : n}</span>
                 <span className="adm-slabel">{label}</span>
               </button>
@@ -412,9 +449,9 @@ export default function AdmissionForm() {
           <div className="adm-body">
             <div className="adm-grid">
               <label>
-                <span>Course or retreat</span>
+                <span>Course or Retreat</span>
                 <select value={course} onChange={(e) => setCourse(e.target.value)}>
-                  <option value="">Select a course</option>
+                  <option value="">Select a Course</option>
                   {COURSE_LIST.map((c) => (
                     <option key={c.value} value={c.value}>{c.label}</option>
                   ))}
@@ -422,7 +459,7 @@ export default function AdmissionForm() {
               </label>
 
               <label>
-                <span>Start date</span>
+                <span>Start Date</span>
                 <select
                   value={batchId}
                   disabled={!course || loadingBatches || !batches.length}
@@ -439,10 +476,10 @@ export default function AdmissionForm() {
                   }}
                 >
                   <option value="">
-                    {!course ? "Choose a course first"
-                      : loadingBatches ? "Loading dates…"
-                      : batches.length ? "Select a batch"
-                      : "No dates listed"}
+                    {!course ? "Choose a Course First"
+                      : loadingBatches ? "Loading Dates…"
+                      : batches.length ? "Select a Batch"
+                      : "No Dates Listed"}
                   </option>
                   {batches.map((b) => {
                     const sold = String(b.status || "").toLowerCase() === "sold";
@@ -470,7 +507,7 @@ export default function AdmissionForm() {
 
             {course && (
               <div className="adm-incl">
-                <b>Your fee includes</b>
+                <b>Your Fee Includes</b>
                 <ul>{inclusions(course).map((x) => <li key={x}>{x}</li>)}</ul>
               </div>
             )}
@@ -478,7 +515,7 @@ export default function AdmissionForm() {
             {course && batchId && (
               <>
                 <h2 className="adm-h" ref={studentsRef}>
-                  Student details
+                  Student Details
                   <span className="adm-opt">{students.length} of {MAX_STUDENTS}</span>
                 </h2>
 
@@ -509,7 +546,7 @@ export default function AdmissionForm() {
                           <div className="adm-sbody">
                             <div className="adm-grid">
                               <label>
-                                <span>Full name</span>
+                                <span>Full Name</span>
                                 <input value={s.name} autoComplete="name"
                                   onChange={(e) => setStudent(i, { name: e.target.value })}
                                   placeholder="As on your passport" />
@@ -517,7 +554,7 @@ export default function AdmissionForm() {
                               <label>
                                 <span>Gender</span>
                                 <select value={s.gender} onChange={(e) => setStudent(i, { gender: e.target.value })}>
-                                  <option value="">Select gender</option>
+                                  <option value="">Select Gender</option>
                                   <option value="male">Male</option>
                                   <option value="female">Female</option>
                                 </select>
@@ -529,7 +566,7 @@ export default function AdmissionForm() {
                                   placeholder="you@email.com" />
                               </label>
                               <label>
-                                <span>WhatsApp number</span>
+                                <span>WhatsApp Number</span>
                                 <input type="tel" inputMode="tel" autoComplete="tel" value={s.number}
                                   onChange={(e) => setStudent(i, { number: e.target.value })}
                                   placeholder="+91 99999 00000" />
@@ -547,7 +584,7 @@ export default function AdmissionForm() {
                                   placeholder="City" />
                               </label>
                               <label>
-                                <span>How did you hear about us?</span>
+                                <span>How Did You Hear About Us?</span>
                                 <select
                                   value={s.source}
                                   onChange={(e) =>
@@ -557,7 +594,7 @@ export default function AdmissionForm() {
                                     })
                                   }
                                 >
-                                  <option value="">Select source</option>
+                                  <option value="">Select Source</option>
                                   <option value="Google">Google</option>
                                   <option value="Social Media">Social Media</option>
                                   <option value="Referral">Referral</option>
@@ -565,7 +602,7 @@ export default function AdmissionForm() {
                               </label>
                               {s.source === "Referral" && (
                                 <label>
-                                  <span>Referral code</span>
+                                  <span>Referral Code</span>
                                   <input value={s.refCode}
                                     onChange={(e) => setStudent(i, { refCode: e.target.value })}
                                     placeholder="Enter referral code" />
@@ -581,14 +618,18 @@ export default function AdmissionForm() {
 
                 {students.length < MAX_STUDENTS && (
                   <button type="button" className="adm-add" onClick={addStudent}>
-                    + Add another student
+                    + Add Another Student
                   </button>
                 )}
               </>
             )}
 
+            {error && <div className="adm-error">{error}</div>}
+
             <div className="adm-actions">
-              <button className="adm-btn" disabled={!step1Ok} onClick={() => goto(2)}>Continue</button>
+              <button className="adm-btn" disabled={!step1Ok || saving} onClick={() => continueTo(2)}>
+                {saving ? "Saving…" : "Continue"}
+              </button>
             </div>
           </div>
         )}
@@ -599,8 +640,8 @@ export default function AdmissionForm() {
             {canBundle && (
               <>
                 <h2 className="adm-h">
-                  Add to your training
-                  <span className="adm-opt">optional</span>
+                  Add to Your Training
+                  <span className="adm-opt">Optional</span>
                 </h2>
                 <div className="adm-addons">
                   {Object.values(ADDONS).map((a) => {
@@ -614,9 +655,8 @@ export default function AdmissionForm() {
                           <b>{a.label}</b>
                           <em>{a.blurb}</em>
                           <span className="adm-addonprice">
-                            {a.discounted
-                              ? <>{a.days} days · bundled rate applied</>
-                              : <>{a.days} days · +{eur(price)} per person</>}
+                            {a.days} days · +{eur(price)} per person
+                            {a.discounted ? " (bundled rate applied)" : ""}
                           </span>
                         </span>
                       </label>
@@ -626,14 +666,14 @@ export default function AdmissionForm() {
                 {addOns.includes("Sound Healing") && (
                   <p className="adm-combodates">
                     {comboBatch
-                      ? <>Sound Healing batch: <b>{comboBatch.date_range}</b></>
+                      ? <>Sound Healing Batch: <b>{comboBatch.date_range}</b></>
                       : "Finding the matching Sound Healing batch…"}
                   </p>
                 )}
               </>
             )}
 
-            <h2 className="adm-h">Choose your accommodation</h2>
+            <h2 className="adm-h">Choose Your Accommodation</h2>
             {availabilityTracked && !rooms && leadGender && <div className="adm-loading">Checking availability…</div>}
 
             <div className="adm-accos">
@@ -659,27 +699,31 @@ export default function AdmissionForm() {
                         {full && <em className="adm-fullbadge">Fully booked</em>}
                       </span>
                       <span className="adm-fees">
-                        <span className="adm-feerow"><span>Total fees</span><b>{eur(f.total)}</b></span>
-                        <span className="adm-feerow"><span>Registration now</span><b>{eur(f.reg)}</b></span>
-                        <span className="adm-feerow muted"><span>Balance on arrival</span><b>{eur(f.balance)}</b></span>
+                        <span className="adm-feerow"><span>Total Fees</span><b>{eur(f.total)}</b></span>
+                        <span className="adm-feerow"><span>Registration Now</span><b>{eur(f.reg)}</b></span>
+                        <span className="adm-feerow muted"><span>Balance on Arrival</span><b>{eur(f.balance)}</b></span>
                         {f.combo && (
                           <span className="adm-combobox">
-                            <span className="adm-combolabel">Course + Sound Healing bundle</span>
-                            <span className="adm-feerow"><span>Booked separately</span><b><s>{eur(f.separate)}</s></b></span>
-                            <span className="adm-feerow save"><span>You save</span><b>{eur(f.scholarship)}</b></span>
+                            <span className="adm-combolabel">Course + Sound Healing Bundle</span>
+                            <span className="adm-feerow"><span>Booked Separately</span><b><s>{eur(f.separate)}</s></b></span>
+                            <span className="adm-feerow save"><span>You Save</span><b>{eur(f.scholarship)}</b></span>
                           </span>
                         )}
                       </span>
-                      {students.length > 1 && <span className="adm-forn">for {students.length} students</span>}
+                      {students.length > 1 && <span className="adm-forn">For {students.length} Students</span>}
                     </span>
                   </button>
                 );
               })}
             </div>
 
+            {error && <div className="adm-error">{error}</div>}
+
             <div className="adm-actions">
-              <button className="adm-btn ghost" onClick={() => goto(1)}>Back</button>
-              <button className="adm-btn" disabled={!step2Ok} onClick={() => goto(3)}>Continue</button>
+              <button className="adm-btn ghost" onClick={() => goto(1)} disabled={saving}>Back</button>
+              <button className="adm-btn" disabled={!step2Ok || saving} onClick={() => continueTo(3)}>
+                {saving ? "Saving…" : "Continue"}
+              </button>
             </div>
           </div>
         )}
@@ -687,7 +731,7 @@ export default function AdmissionForm() {
         {/* ══════════════ STEP 3 ══════════════ */}
         {step === 3 && fees && gateways && (
           <div className="adm-body">
-            <h2 className="adm-h">Your booking</h2>
+            <h2 className="adm-h">Admission Details</h2>
             <div className="adm-summary">
               <div className="adm-srow">
                 <span>Course</span>
@@ -698,7 +742,7 @@ export default function AdmissionForm() {
               </div>
               <div className="adm-srow"><span>Dates</span><b>{batch?.date_range}</b></div>
               {fees.combo && comboBatch && (
-                <div className="adm-srow"><span>Sound Healing dates</span><b>{comboBatch.date_range}</b></div>
+                <div className="adm-srow"><span>Sound Healing Dates</span><b>{comboBatch.date_range}</b></div>
               )}
               <div className="adm-srow"><span>Accommodation</span><b>{labels[sharing]}</b></div>
               <div className="adm-srow">
@@ -708,20 +752,20 @@ export default function AdmissionForm() {
             </div>
 
             {/* Full fee structure, as on the old panel */}
-            <h2 className="adm-h">Fee structure</h2>
+            <h2 className="adm-h">Fee Structure</h2>
             <div className="adm-feestruct">
               <div className="adm-fsgroup">
                 <h3>{COURSES[course]?.label} — {labels[sharing]}</h3>
-                <div className="adm-srow"><span>Total fees</span><b>{eur(fees.mainTotal)}</b></div>
-                <div className="adm-srow"><span>Registration fee</span><b>{eur(fees.mainReg)}</b></div>
+                <div className="adm-srow"><span>Total Fees</span><b>{eur(fees.mainTotal)}</b></div>
+                <div className="adm-srow"><span>Registration Fee</span><b>{eur(fees.mainReg)}</b></div>
               </div>
 
               {/* Sound Healing is priced as a discounted bundle with the course. */}
               {fees.combo && (
                 <div className="adm-fsgroup">
                   <h3>Sound Healing TTC</h3>
-                  <div className="adm-srow"><span>Total fees</span><b>{eur(fees.soundTotal)}</b></div>
-                  <div className="adm-srow"><span>Registration fee</span><b>{eur(fees.soundReg)}</b></div>
+                  <div className="adm-srow"><span>Total Fees</span><b>{eur(fees.soundTotal)}</b></div>
+                  <div className="adm-srow"><span>Registration Fee</span><b>{eur(fees.soundReg)}</b></div>
                 </div>
               )}
 
@@ -729,33 +773,33 @@ export default function AdmissionForm() {
               {fees.addOnLines.map((l) => (
                 <div className="adm-fsgroup" key={l.key}>
                   <h3>{l.label}</h3>
-                  <div className="adm-srow"><span>Total fees</span><b>{eur(l.total)}</b></div>
-                  <div className="adm-srow"><span>Registration fee</span><b>{eur(l.reg)}</b></div>
+                  <div className="adm-srow"><span>Total Fees</span><b>{eur(l.total)}</b></div>
+                  <div className="adm-srow"><span>Registration Fee</span><b>{eur(l.reg)}</b></div>
                 </div>
               ))}
 
               {fees.combo && (
                 <div className="adm-fsgroup">
-                  <h3>Course + Sound Healing together</h3>
-                  <div className="adm-srow"><span>Booked separately</span><b><s>{eur(fees.separate)}</s></b></div>
-                  <div className="adm-srow"><span>Scholarship amount</span><b className="adm-save">− {eur(fees.scholarship)}</b></div>
+                  <h3>Course + Sound Healing Together</h3>
+                  <div className="adm-srow"><span>Booked Separately</span><b><s>{eur(fees.separate)}</s></b></div>
+                  <div className="adm-srow"><span>Scholarship Amount</span><b className="adm-save">− {eur(fees.scholarship)}</b></div>
                 </div>
               )}
 
               <div className="adm-fsgroup adm-fstotal">
-                <h3>Your total</h3>
-                <div className="adm-srow"><span>Total fees</span><b>{eur(fees.total)}</b></div>
-                <div className="adm-srow"><span>Total registration fees</span><b>{eur(fees.reg)}</b></div>
+                <h3>Your Total</h3>
+                <div className="adm-srow"><span>Total Fees</span><b>{eur(fees.total)}</b></div>
+                <div className="adm-srow"><span>Total Registration Fees</span><b>{eur(fees.reg)}</b></div>
                 {students.length > 1 && (
                   <div className="adm-srow"><span>Students</span><b>{students.length}</b></div>
                 )}
               </div>
               <p className="adm-balanceline">
-                Balance fees <b>{eur(fees.balance)}</b> to be paid upon arrival.
+                Balance Fees <b>{eur(fees.balance)}</b> to be paid upon arrival.
               </p>
             </div>
 
-            <h2 className="adm-h">How would you like to pay?</h2>
+            <h2 className="adm-h">How Would You Like to Pay?</h2>
             <p className="adm-hint">
               The registration fee secures your seat. Each method adds the card or transfer
               charge shown below.
@@ -771,12 +815,12 @@ export default function AdmissionForm() {
                       <b>{g.label}</b>
                       <em>{g.note}</em>
                     </div>
-                    <div className="adm-feerow"><span>Registration fee</span><b>{eur2(fees.reg)}</b></div>
+                    <div className="adm-feerow"><span>Registration Fee</span><b>{eur2(fees.reg)}</b></div>
                     <div className="adm-feerow muted">
-                      <span>{g.label} fee ({+(g.pct * 100).toFixed(1)}%)</span>
+                      <span>{g.label} Fee ({+(g.pct * 100).toFixed(1)}%)</span>
                       <b>{eur2(g.fee)}</b>
                     </div>
-                    <div className="adm-feerow strong"><span>Total today</span><b>{eur2(g.total)}</b></div>
+                    <div className="adm-feerow strong"><span>Total Today</span><b>{eur2(g.total)}</b></div>
                     <button type="button" className={`adm-btn pay brand-${key}`}
                       disabled={!!payingWith || registering} onClick={() => pay(key)}>
                       {busy ? (registering ? "Saving…" : "Opening…") : `Pay ${eur2(g.total)}`}
@@ -791,12 +835,12 @@ export default function AdmissionForm() {
                   <b>{gateways.paypal.label}</b>
                   <em>{gateways.paypal.note}</em>
                 </div>
-                <div className="adm-feerow"><span>Registration fee</span><b>{eur2(fees.reg)}</b></div>
+                <div className="adm-feerow"><span>Registration Fee</span><b>{eur2(fees.reg)}</b></div>
                 <div className="adm-feerow muted">
-                  <span>PayPal fee ({+(gateways.paypal.pct * 100).toFixed(1)}%)</span>
+                  <span>PayPal Fee ({+(gateways.paypal.pct * 100).toFixed(1)}%)</span>
                   <b>{eur2(gateways.paypal.fee)}</b>
                 </div>
-                <div className="adm-feerow strong"><span>Total today</span><b>{eur2(gateways.paypal.total)}</b></div>
+                <div className="adm-feerow strong"><span>Total Today</span><b>{eur2(gateways.paypal.total)}</b></div>
                 {PAYPAL_CLIENT_ID
                   ? <div className="adm-paypalbox" ref={paypalBox} />
                   : <p className="adm-paypaloff">PayPal isn't switched on yet — please use Wise or Razorpay.</p>}
