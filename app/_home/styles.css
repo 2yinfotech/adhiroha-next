@@ -4441,3 +4441,52 @@
 @media (prefers-reduced-motion:reduce){
   .cta-band-btn:hover{transform:none}
 }
+
+/* ===================================================================
+   MOBILE READING ORDER — image-led sections
+   -------------------------------------------------------------------
+   On a phone these sections stack, and the plain-image blocks put the
+   photo above the heading it belongs to, so you scroll past a picture
+   before you know what it is about. Reorder them to heading → image →
+   content. `display:contents` lets the two columns' children take part
+   in one flex order without touching the markup; inherited properties
+   (text-align, colour) and adjacent-sibling margins are unaffected.
+
+   Desktop is deliberately untouched, and this is scoped to the plain
+   image blocks only — sections with an overlaid float card keep their
+   current order.
+   =================================================================== */
+
+/* Mobile-only duplicate of the course link, sitting under the fact card. */
+.course-link-m{display:none}
+
+@media(max-width:768px){
+
+  /* ---------- SECTION A · A JOURNEY (.split.imgL) ---------- */
+  .split.imgL{display:flex;flex-direction:column;gap:0}
+  .split.imgL > .col-pad{display:contents}
+  /* Keep the column's reading width now that .col-pad generates no box. */
+  .split.imgL > .col-pad > *{max-width:520px;width:100%;margin-left:auto;margin-right:auto}
+  .split.imgL > .col-pad > .kicker{order:1}
+  .split.imgL > .col-pad > .sec-h{order:1}
+  .split.imgL > .frame.media{order:2;margin-bottom:30px}
+  .split.imgL > .col-pad > *{order:3}
+
+  /* ---------- COURSE SECTIONS (.detail) ---------- */
+  .detail,.detail.flip{display:flex;flex-direction:column;gap:0}
+  .detail > .d-media,.detail > .d-text{display:contents}
+  .detail > .d-text > .kicker{order:1}
+  .detail > .d-text > .sec-h{order:1}
+  .detail > .d-media > .frame{order:2}
+  .detail > .d-media > .fact-card{order:3}
+  .detail > .course-link-m{display:inline-flex;order:4;margin-top:18px}
+  .detail > .d-text > *{order:5}
+  /* The heading's own margin no longer sits above the first paragraph. */
+  .detail > .d-text > .body-p:first-of-type{margin-top:26px}
+
+  /* .kicker is inline-flex; as a flex item it needs to stay centred with the
+     rest of the column rather than stretching across it. */
+  .split.imgL > .col-pad > .kicker,
+  .detail > .d-text > .kicker{align-self:center}
+  .detail > .course-link-m{align-self:center}
+}
