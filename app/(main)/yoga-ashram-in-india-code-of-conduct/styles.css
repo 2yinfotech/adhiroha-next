@@ -7,7 +7,7 @@
    Matches the homepage: on phones the heading and text come first and
    the arch portrait follows, instead of the default `.gv-frame{order:-1}`.
    =================================================================== */
-@media(max-width:680px){
+@media(max-width:1100px){
   .abx-hero>div:first-child{order:1}
   .abx-hero .gv-frame{order:2;margin:10px auto 0}
 }
