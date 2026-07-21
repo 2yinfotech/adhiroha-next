@@ -656,7 +656,6 @@ export default function AdmissionForm() {
                           <em>{a.blurb}</em>
                           <span className="adm-addonprice">
                             {a.days} days · +{eur(price)} per person
-                            {a.discounted ? " (bundled rate applied)" : ""}
                           </span>
                         </span>
                       </label>
