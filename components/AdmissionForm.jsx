@@ -25,6 +25,19 @@ const eur = (n) => "€" + Number(n || 0).toLocaleString("en-IE", { maximumFract
 const eur2 = (n) =>
   "€" + Number(n || 0).toLocaleString("en-IE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
+// Display-only: force every batch date range to the short "1st Sep 2026" month
+// form so YTTC, Sound Healing, Retreat and Sadhana all read consistently. The
+// stored/emailed strings are left untouched.
+function fmtRange(range) {
+  if (!range) return range;
+  return String(range)
+    .replace(
+      /(January|February|March|April|May|June|July|August|September|October|November|December)/gi,
+      (m) => m.slice(0, 3)
+    )
+    .replace(/\bSept\b/gi, "Sep");
+}
+
 function loadScript(src, marker) {
   return new Promise((resolve) => {
     if (marker()) return resolve(true);
@@ -485,7 +498,7 @@ export default function AdmissionForm() {
                     const sold = String(b.status || "").toLowerCase() === "sold";
                     return (
                       <option key={b.id} value={b.id} disabled={sold}>
-                        {b.date_range}{sold ? " — fully booked" : ""}
+                        {fmtRange(b.date_range)}{sold ? " — fully booked" : ""}
                       </option>
                     );
                   })}
@@ -665,7 +678,7 @@ export default function AdmissionForm() {
                 {addOns.includes("Sound Healing") && (
                   <p className="adm-combodates">
                     {comboBatch
-                      ? <>Sound Healing Batch: <b>{comboBatch.date_range}</b></>
+                      ? <>Sound Healing Batch: <b>{fmtRange(comboBatch.date_range)}</b></>
                       : "Finding the matching Sound Healing batch…"}
                   </p>
                 )}
@@ -739,9 +752,9 @@ export default function AdmissionForm() {
                   {fees.addOns.map((k) => ` + ${ADDONS[k].label}`).join("")}
                 </b>
               </div>
-              <div className="adm-srow"><span>Dates</span><b>{batch?.date_range}</b></div>
+              <div className="adm-srow"><span>{fees.combo ? "YTTC Dates" : "Dates"}</span><b>{fmtRange(batch?.date_range)}</b></div>
               {fees.combo && comboBatch && (
-                <div className="adm-srow"><span>Sound Healing Dates</span><b>{comboBatch.date_range}</b></div>
+                <div className="adm-srow"><span>Sound Healing Dates</span><b>{fmtRange(comboBatch.date_range)}</b></div>
               )}
               <div className="adm-srow"><span>Accommodation</span><b>{labels[sharing]}</b></div>
               <div className="adm-srow">

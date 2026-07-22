@@ -8,10 +8,15 @@ import { useEffect } from "react";
  */
 export default function StickyHeader() {
   useEffect(() => {
-    const hd = document.getElementById("hd");
-    if (!hd) return;
+    // The header is injected via dangerouslySetInnerHTML on the page, so on some
+    // routes it may not be in the DOM the instant this effect runs. Re-query it
+    // lazily (on the first scroll) instead of bailing out permanently — that
+    // stopped the sticky background/auto-hide from ever attaching on some pages.
+    let hd = document.getElementById("hd");
     let lastY = window.pageYOffset || 0;
     const onScroll = () => {
+      if (!hd) hd = document.getElementById("hd");
+      if (!hd) return;
       const y = window.pageYOffset || 0;
       hd.classList.toggle("stuck", y > 40);
       if (y > lastY + 5 && y > 220) hd.classList.add("hide");
