@@ -14,13 +14,15 @@ const nextConfig = {
     unoptimized: true,
   },
 
-  // The old site's language switcher links (/de, /fr, …) are already indexed by
-  // Google, but those localized pages now live on the languages subdomain. Send
-  // every language-code URL there permanently so the live links never 404.
+  // The old site's language switcher links (/fr, /es, …) are already indexed by
+  // Google, and those localized pages still live on the languages subdomain, so
+  // send those language-code URLs there permanently. NOTE: /de is intentionally
+  // excluded — the German homepage is now served natively at app/de, so it must
+  // NOT be redirected off-site.
   async redirects() {
     return [
       {
-        source: "/:lang(da|de|es|fr|it|ja|nl|pl|pt|sv)",
+        source: "/:lang(da|es|fr|it|ja|nl|pl|pt|sv)",
         destination: "https://languages.adhiroha.com/:lang",
         permanent: true,
       },

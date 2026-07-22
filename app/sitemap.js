@@ -4,6 +4,7 @@ const BASE = "https://www.adhiroha.com";
 
 const routes = [
   "",
+  "de",
   "about-us",
   "contact-us",
   "blogs",
