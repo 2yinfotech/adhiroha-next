@@ -244,8 +244,10 @@ export default function AdmissionForm() {
     numStudents: students.length,
   });
 
+  // Only one bundle may be added at a time — picking another replaces it,
+  // clicking the selected one clears it.
   const toggleAddOn = (key) =>
-    setAddOns((prev) => (prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key]));
+    setAddOns((prev) => (prev.includes(key) ? [] : [key]));
 
   // Once a booking is done, hand off to /thank-you/ with the details on the query
   // string — the same pattern the old PHP panel used (thank-you.php?view_id=…).
