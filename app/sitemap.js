@@ -29,6 +29,7 @@ const routes = [
   "apply-for-teacher-in-rishikesh",
   "faqs-of-yoga-school-in-india",
   "privacy-policy",
+  "yoga-teacher-training-course-rishikesh-india",
 ];
 
 export default function sitemap() {
