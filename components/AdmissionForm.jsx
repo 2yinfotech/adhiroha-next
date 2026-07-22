@@ -38,6 +38,41 @@ function fmtRange(range) {
     .replace(/\bSept\b/gi, "Sep");
 }
 
+// Short label used for each bundle's "… Dates" row in the summary.
+const ADDON_DATES_LABEL = {
+  "Sound Healing": "Sound Healing",
+  "Yoga Retreat": "Retreat",
+  "Sadhana Immersion": "Sadhana",
+};
+
+const SHORT3 = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+function ordinalDay(n) {
+  const s = ["th", "st", "nd", "rd"], v = n % 100;
+  return n + (s[(v - 20) % 10] || s[v] || s[0]);
+}
+function parseDisplayDate(s) {
+  if (!s) return null;
+  const m = String(s).match(/(\d{1,2})\D*?([A-Za-z]{3,})\.?\s+(\d{4})/);
+  if (!m) return null;
+  const mi = SHORT3.findIndex((x) => x.toLowerCase() === m[2].slice(0, 3).toLowerCase());
+  if (mi < 0) return null;
+  return new Date(Date.UTC(Number(m[3]), mi, Number(m[1])));
+}
+function fmtDate(d) {
+  return `${ordinalDay(d.getUTCDate())} ${SHORT3[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
+}
+// Retreat / Sadhana have no separate batch list: they run the days immediately
+// after the chosen course checkout, so their range is derived from that date —
+// and rendered in the same short "24th Sep 2026" form as everything else.
+function addonDateRange(batch, days) {
+  const startStr = batch?.end_date || (batch?.date_range || "").split(" - ")[1];
+  const start = parseDisplayDate(startStr);
+  if (!start || !days) return null;
+  const end = new Date(start);
+  end.setUTCDate(end.getUTCDate() + (days - 1));
+  return `${fmtDate(start)} - ${fmtDate(end)}`;
+}
+
 function loadScript(src, marker) {
   return new Promise((resolve) => {
     if (marker()) return resolve(true);
@@ -675,11 +710,25 @@ export default function AdmissionForm() {
                     );
                   })}
                 </div>
-                {addOns.includes("Sound Healing") && (
+                {activeAddOns.length > 0 && (
                   <p className="adm-combodates">
-                    {comboBatch
-                      ? <>Sound Healing Batch: <b>{fmtRange(comboBatch.date_range)}</b></>
-                      : "Finding the matching Sound Healing batch…"}
+                    {activeAddOns.map((k) => {
+                      const label = ADDON_DATES_LABEL[k] || ADDONS[k].label;
+                      if (k === "Sound Healing") {
+                        return (
+                          <span key={k} style={{ display: "block" }}>
+                            {label} Dates:{" "}
+                            <b>{comboBatch ? fmtRange(comboBatch.date_range) : "finding the matching batch…"}</b>
+                          </span>
+                        );
+                      }
+                      const range = addonDateRange(batch, ADDONS[k].days);
+                      return range ? (
+                        <span key={k} style={{ display: "block" }}>
+                          {label} Dates: <b>{range}</b>
+                        </span>
+                      ) : null;
+                    })}
                   </p>
                 )}
               </>
@@ -752,10 +801,18 @@ export default function AdmissionForm() {
                   {fees.addOns.map((k) => ` + ${ADDONS[k].label}`).join("")}
                 </b>
               </div>
-              <div className="adm-srow"><span>{fees.combo ? "YTTC Dates" : "Dates"}</span><b>{fmtRange(batch?.date_range)}</b></div>
-              {fees.combo && comboBatch && (
-                <div className="adm-srow"><span>Sound Healing Dates</span><b>{fmtRange(comboBatch.date_range)}</b></div>
-              )}
+              <div className="adm-srow"><span>{activeAddOns.length ? "YTTC Dates" : "Dates"}</span><b>{fmtRange(batch?.date_range)}</b></div>
+              {activeAddOns.map((k) => {
+                const range = k === "Sound Healing"
+                  ? (comboBatch ? fmtRange(comboBatch.date_range) : null)
+                  : addonDateRange(batch, ADDONS[k].days);
+                if (!range) return null;
+                return (
+                  <div className="adm-srow" key={k}>
+                    <span>{ADDON_DATES_LABEL[k] || ADDONS[k].label} Dates</span><b>{range}</b>
+                  </div>
+                );
+              })}
               <div className="adm-srow"><span>Accommodation</span><b>{labels[sharing]}</b></div>
               <div className="adm-srow">
                 <span>Student{students.length > 1 ? "s" : ""}</span>
