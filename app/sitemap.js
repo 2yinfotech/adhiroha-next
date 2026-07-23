@@ -5,6 +5,10 @@ const BASE = "https://www.adhiroha.com";
 const routes = [
   "",
   "de",
+  "fr",
+  "fr/200-heures-formation-professeur-de-yoga-rishikesh",
+  "fr/300-heures-formation-professeur-de-yoga-rishikesh",
+  "fr/500-heures-formation-professeur-de-yoga-rishikesh",
   "de/200-stunden-yogalehrer-ausbildung-rishikesh",
   "de/300-stunden-yogalehrer-ausbildung-rishikesh",
   "de/500-stunden-yogalehrer-ausbildung-rishikesh",

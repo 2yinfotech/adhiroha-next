@@ -22,7 +22,7 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "/:lang(da|es|fr|it|ja|nl|pl|pt|sv)",
+        source: "/:lang(da|es|it|ja|nl|pl|pt|sv)",
         destination: "https://languages.adhiroha.com/:lang",
         permanent: true,
       },
