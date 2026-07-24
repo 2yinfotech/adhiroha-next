@@ -1,7 +1,7 @@
 // French Message des anciens page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../(main)/soon-after-message/styles.css";
+import "../../../(main)/soon-after-message/styles.css";
 import content from "./content";
-import scripts from "../../(main)/soon-after-message/scripts";
+import scripts from "../../../(main)/soon-after-message/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
 import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";

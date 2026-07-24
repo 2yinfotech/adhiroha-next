@@ -1,7 +1,7 @@
 // French FAQ page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../(main)/faqs-of-yoga-school-in-india/styles.css";
+import "../../../(main)/faqs-of-yoga-school-in-india/styles.css";
 import content from "./content";
-import scripts from "../../(main)/faqs-of-yoga-school-in-india/scripts";
+import scripts from "../../../(main)/faqs-of-yoga-school-in-india/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
 import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
