@@ -6,6 +6,7 @@ const routes = [
   "",
   "de",
   "fr",
+  "it",
   "fr/200-heures-formation-professeur-de-yoga-rishikesh",
   "fr/300-heures-formation-professeur-de-yoga-rishikesh",
   "fr/500-heures-formation-professeur-de-yoga-rishikesh",
