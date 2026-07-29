@@ -4559,3 +4559,47 @@
 /* ===== sp12 course cards: text link instead of bare arrow ===== */
 .sp12-foot .course-link{margin-top:0}
 .sp12-more{white-space:nowrap;font-size:11.5px}
+
+/* =====================================================================
+   INTERNAL LINKING
+   Contextual links inside body copy, and the "Keep Exploring" related
+   band that sits between the final CTA and the footer.
+   ===================================================================== */
+.ctx-link{
+  color:inherit;
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:3px;
+  text-decoration-color:rgba(140,63,41,.45);
+  transition:color .2s ease,text-decoration-color .2s ease;
+}
+.ctx-link:hover,
+.ctx-link:focus-visible{color:var(--rust);text-decoration-color:var(--rust)}
+
+.rl-sec{background:var(--bar);border-top:1px solid var(--line);padding:78px 0 86px}
+.rl-sec .kicker{margin-bottom:18px}
+.rl-sec .rl-h{max-width:22ch;margin-bottom:16px}
+.rl-sec .rl-intro{margin-bottom:42px}
+
+.rl-grid{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:34px;
+}
+.rl-card{padding-top:20px;border-top:1px solid var(--line)}
+.rl-link{
+  display:inline-block;
+  font-family:'Playfair Display',serif;font-weight:500;
+  font-size:17.5px;line-height:1.32;color:var(--ink);
+  text-decoration:none;transition:color .25s ease;
+}
+.rl-link:hover,.rl-link:focus-visible{color:var(--rust)}
+.rl-note{margin-top:10px;font-size:13.5px;font-weight:300;line-height:1.65;color:var(--body)}
+
+@media(max-width:1000px){.rl-grid{grid-template-columns:1fr 1fr;gap:30px}}
+@media(max-width:640px){
+  .rl-sec{padding:56px 0 62px}
+  .rl-grid{grid-template-columns:1fr;gap:0}
+  .rl-card{padding:18px 0;border-top:none}
+  .rl-card + .rl-card{border-top:1px solid var(--line)}
+  .rl-link{font-size:17px}
+}
