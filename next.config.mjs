@@ -14,18 +14,12 @@ const nextConfig = {
     unoptimized: true,
   },
 
-  // The old site's language switcher links (/fr, /es, …) are already indexed by
-  // Google, and those localized pages still live on the languages subdomain, so
-  // send those language-code URLs there permanently. NOTE: /de, /es, /fr, /it and
-  // /pl are intentionally excluded — these languages are now served natively at
-  // app/de, app/es, app/fr, app/it and app/pl, so they must NOT be redirected off-site.
+  // Every language the old site published on the languages subdomain (/de, /es,
+  // /fr, /it, /pl, /pt, /nl, /sv, /da, /ja) is now served natively from
+  // app/<lang>, so there is no language redirect left — adding one back would
+  // send a live localized route off-site.
   async redirects() {
     return [
-      {
-        source: "/:lang(da|ja|nl|pt|sv)",
-        destination: "https://languages.adhiroha.com/:lang",
-        permanent: true,
-      },
       // Articles live at /blog/<slug>; send the bare /blog to the listing page.
       { source: "/blog", destination: "/blogs/", permanent: false },
     ];
