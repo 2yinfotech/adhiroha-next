@@ -22,6 +22,12 @@ export const metadata = {
     title: "Retiro de Yoga e Ayurveda em Rishikesh | 6 Dias — Adhiroha",
     description: "Retiro de yoga e ayurveda de seis dias em Rishikesh, Índia — yoga suave, pranayama, terapias ayurvédicas personalizadas e comida sáttvica. A partir de € 510 com tudo incluído.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Retiro de Yoga e Ayurveda em Rishikesh | 6 Dias — Adhiroha",
+    description: "Retiro de yoga e ayurveda de seis dias em Rishikesh, Índia — yoga suave, pranayama, terapias ayurvédicas personalizadas e comida sáttvica. A partir de € 510 com tudo incluído.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

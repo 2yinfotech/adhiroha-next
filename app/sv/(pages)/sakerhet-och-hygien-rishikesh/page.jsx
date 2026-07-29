@@ -22,6 +22,12 @@ export const metadata = {
     title: "Säkerhet och Hygien | Yoga-ashramet Adhiroha, Rishikesh",
     description: "Kameraövervakning dygnet runt, inhägnat område, flygplatshämtning ingår och extra omtanke om kvinnor som reser ensamma — så sköter Adhiroha säkerhet och hygien i Rishikesh.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Säkerhet och Hygien | Yoga-ashramet Adhiroha, Rishikesh",
+    description: "Kameraövervakning dygnet runt, inhägnat område, flygplatshämtning ingår och extra omtanke om kvinnor som reser ensamma — så sköter Adhiroha säkerhet och hygien i Rishikesh.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

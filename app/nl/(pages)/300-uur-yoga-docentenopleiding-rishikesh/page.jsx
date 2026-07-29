@@ -40,6 +40,12 @@ export const metadata = {
     description:
       "Gevorderde 300-uur yoga-docentenopleiding in Rishikesh, gecertificeerd door Yoga Alliance. 30 dagen, kleine groepen, verblijf in een Himalaya-ashram, alle maaltijden en uitstapjes inbegrepen.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "300-Uur Yoga-docentenopleiding in Rishikesh | Adhiroha",
+    description: "Gevorderde 300-uur yoga-docentenopleiding in Rishikesh, gecertificeerd door Yoga Alliance. 30 dagen, kleine groepen, verblijf in een Himalaya-ashram, alle maaltijden en uitstapjes inbegrepen.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

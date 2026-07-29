@@ -28,6 +28,12 @@ export const metadata = {
       "Von Yoga Alliance zertifizierte 200-, 300- & 500-Stunden Yogalehrer-Ausbildung in Rishikesh, Indien. Kleine Gruppen, erfahrene indische Lehrer, Ashram-Unterkunft & Mahlzeiten inklusive.",
     images: [{ url: "/img/yoga-teacher-training-india-course.webp", width: 1200, height: 630, alt: "Adhiroha Yoga School, Upper Tapovan, Rishikesh" }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yogalehrer-Ausbildung in Rishikesh | 200/300/500-Stunden YTTC — Adhiroha",
+    description: "Von Yoga Alliance zertifizierte 200-, 300- & 500-Stunden Yogalehrer-Ausbildung in Rishikesh, Indien. Kleine Gruppen, erfahrene indische Lehrer, Ashram-Unterkunft & Mahlzeiten inklusive.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 // The German FAQ block is a rich-result candidate too; read straight from the

@@ -22,6 +22,12 @@ export const metadata = {
     title: "Sadhana Fördjupningsprogram i Rishikesh | 15 Dagar — Adhiroha",
     description: "Femton dagars Sadhana-fördjupningsprogram i Rishikesh — tystnad, egen övning, meditation, karma yoga och Bhagavad Gita i traditionell ashramrytm. Från 699 € all-inclusive.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sadhana Fördjupningsprogram i Rishikesh | 15 Dagar — Adhiroha",
+    description: "Femton dagars Sadhana-fördjupningsprogram i Rishikesh — tystnad, egen övning, meditation, karma yoga och Bhagavad Gita i traditionell ashramrytm. Från 699 € all-inclusive.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

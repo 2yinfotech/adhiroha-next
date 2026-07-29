@@ -22,6 +22,12 @@ export const metadata = {
     title: "アディローハについて | インド・リシケシのヨガスクール",
     description: "アディローハをご紹介します — リシケシ、アッパー・タポヴァンにあるヨガアライアンス認定のヨガアシュラム。2万平方フィートの敷地と、70か国以上から3,000人を超える卒業生。",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "アディローハについて | インド・リシケシのヨガスクール",
+    description: "アディローハをご紹介します — リシケシ、アッパー・タポヴァンにあるヨガアライアンス認定のヨガアシュラム。2万平方フィートの敷地と、70か国以上から3,000人を超える卒業生。",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

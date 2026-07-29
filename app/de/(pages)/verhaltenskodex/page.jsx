@@ -20,6 +20,12 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "de_DE", url: `${SITE}${DE}`,
     title: "Verhaltenskodex & Richtlinien | Adhiroha, Rishikesh", description: "Der Verhaltenskodex und die Zulassungs- & Gebührenrichtlinien des Adhiroha Ashrams in Rishikesh — klar dargelegt, bevor du dich anmeldest.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Verhaltenskodex & Richtlinien | Adhiroha, Rishikesh",
+    description: "Der Verhaltenskodex und die Zulassungs- & Gebührenrichtlinien des Adhiroha Ashrams in Rishikesh — klar dargelegt, bevor du dich anmeldest.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

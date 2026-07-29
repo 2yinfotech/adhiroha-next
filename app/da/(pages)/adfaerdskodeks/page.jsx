@@ -22,6 +22,12 @@ export const metadata = {
     title: "Adfærdskodeks og regler | Yogaashrammet Adhiroha, Rishikesh",
     description: "Reglerne på Adhirohas ashram i Rishikesh — de fire søjler, adfærdskodekset, nultolerancepolitikken og alt om priser, betaling og omlægning.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Adfærdskodeks og regler | Yogaashrammet Adhiroha, Rishikesh",
+    description: "Reglerne på Adhirohas ashram i Rishikesh — de fire søjler, adfærdskodekset, nultolerancepolitikken og alt om priser, betaling og omlægning.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

@@ -22,6 +22,12 @@ export const metadata = {
     title: "Odosobnienie Jogi i Ajurwedy w Riszikeś | 6 Dni — Adhiroha",
     description: "Sześciodniowe odosobnienie jogi i ajurwedy w Riszikeś w Indiach — łagodna joga, pranajama, spersonalizowane terapie ajurwedyjskie i jedzenie satwiczne. Od 510 € all inclusive.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Odosobnienie Jogi i Ajurwedy w Riszikeś | 6 Dni — Adhiroha",
+    description: "Sześciodniowe odosobnienie jogi i ajurwedy w Riszikeś w Indiach — łagodna joga, pranajama, spersonalizowane terapie ajurwedyjskie i jedzenie satwiczne. Od 510 € all inclusive.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

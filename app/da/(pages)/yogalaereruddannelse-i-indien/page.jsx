@@ -31,6 +31,12 @@ export const metadata = {
     description:
       "Yoga Alliance-certificerede yogalæreruddannelser på 200, 300 og 500 timer i Rishikesh, Indien. Alt inklusive, internationalt anerkendt certificering.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yogalæreruddannelse i Indien | YTTC 200, 300 og 500 timer i Rishikesh",
+    description: "Yoga Alliance-certificerede yogalæreruddannelser på 200, 300 og 500 timer i Rishikesh, Indien. Alt inklusive, internationalt anerkendt certificering.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

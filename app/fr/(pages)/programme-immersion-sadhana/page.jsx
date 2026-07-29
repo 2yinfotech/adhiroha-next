@@ -22,6 +22,12 @@ export const metadata = {
     title: "Programme d’immersion Sadhana à Rishikesh | 15 jours",
     description: "Une immersion Sadhana de 15 jours à Rishikesh pour une pratique personnelle plus profonde — sadhana quotidienne disciplinée, silence et vie yogique dans notre ashram himalayen.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Programme d’immersion Sadhana à Rishikesh | 15 jours",
+    description: "Une immersion Sadhana de 15 jours à Rishikesh pour une pratique personnelle plus profonde — sadhana quotidienne disciplinée, silence et vie yogique dans notre ashram himalayen.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

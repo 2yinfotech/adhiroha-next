@@ -22,6 +22,12 @@ export const metadata = {
     title: "Wiadomość od Naszych Absolwentów | Adhiroha, Riszikeś",
     description: "Absolwenci Adhiroha opisują swoimi słowami kurs nauczycielski jogi w Riszikeś — ogród, ołtarz ognia, pięć żywiołów kampusu i nauczycieli stojących za przemianą.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Wiadomość od Naszych Absolwentów | Adhiroha, Riszikeś",
+    description: "Absolwenci Adhiroha opisują swoimi słowami kurs nauczycielski jogi w Riszikeś — ogród, ołtarz ognia, pięć żywiołów kampusu i nauczycieli stojących za przemianą.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

@@ -34,6 +34,12 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "it_IT", url: `${SITE}${IT}`,
     title: "Formazione Insegnanti di Yoga Hatha & Yin a Rishikesh | Adhiroha", description: "Formazione insegnanti di Hatha e Yin yoga di 14 giorni a Rishikesh. Allineamento tradizionale, posizioni prolungate e pratica rigenerante con insegnanti indiani esperti.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Formazione Insegnanti di Yoga Hatha & Yin a Rishikesh | Adhiroha",
+    description: "Formazione insegnanti di Hatha e Yin yoga di 14 giorni a Rishikesh. Allineamento tradizionale, posizioni prolungate e pratica rigenerante con insegnanti indiani esperti.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing

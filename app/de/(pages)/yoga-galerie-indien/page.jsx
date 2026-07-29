@@ -20,6 +20,12 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "de_DE", url: `${SITE}${DE}`,
     title: "Yoga-Galerie | Der Adhiroha Ashram, Rishikesh", description: "181 ehrliche Fotos aus dem Adhiroha Ashram in Upper Tapovan, Rishikesh — die Shala, die Zimmer, das Essen, die Zeremonien und die Menschen.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yoga-Galerie | Der Adhiroha Ashram, Rishikesh",
+    description: "181 ehrliche Fotos aus dem Adhiroha Ashram in Upper Tapovan, Rishikesh — die Shala, die Zimmer, das Essen, die Zeremonien und die Menschen.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

@@ -20,6 +20,12 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "it_IT", url: `${SITE}${IT}`,
     title: "Formazione in Guarigione del Suono a Rishikesh | Adhiroha", description: "Formazione Insegnanti in Guarigione del Suono e Terapia di 6 giorni a Rishikesh. Ciotole tibetane, gong e scienza vedica del suono, in un ashram registrato Yoga Alliance.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Formazione in Guarigione del Suono a Rishikesh | Adhiroha",
+    description: "Formazione Insegnanti in Guarigione del Suono e Terapia di 6 giorni a Rishikesh. Ciotole tibetane, gong e scienza vedica del suono, in un ashram registrato Yoga Alliance.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

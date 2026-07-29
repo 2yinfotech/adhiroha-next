@@ -22,6 +22,12 @@ export const metadata = {
     title: "Galeria Zdjęć | Aśram Jogi Adhiroha w Riszikeś, Indie",
     description: "181 szczerych zdjęć z aśramu Adhiroha w Upper Tapovan w Riszikeś — sala, pokoje, jedzenie satwiczne, ceremonie, wycieczki i dzień certyfikacji.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Galeria Zdjęć | Aśram Jogi Adhiroha w Riszikeś, Indie",
+    description: "181 szczerych zdjęć z aśramu Adhiroha w Upper Tapovan w Riszikeś — sala, pokoje, jedzenie satwiczne, ceremonie, wycieczki i dzień certyfikacji.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

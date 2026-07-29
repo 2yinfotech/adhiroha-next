@@ -22,6 +22,12 @@ export const metadata = {
     title: "Segurança e Higiene | Ashram de Yoga Adhiroha, Rishikesh",
     description: "Câmeras 24/7, campus cercado, traslado do aeroporto incluso e apoio a mulheres viajando sozinhas — como a Adhiroha cuida da segurança e da higiene em Rishikesh.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Segurança e Higiene | Ashram de Yoga Adhiroha, Rishikesh",
+    description: "Câmeras 24/7, campus cercado, traslado do aeroporto incluso e apoio a mulheres viajando sozinhas — como a Adhiroha cuida da segurança e da higiene em Rishikesh.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

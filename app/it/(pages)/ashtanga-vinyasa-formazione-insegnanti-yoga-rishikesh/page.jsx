@@ -33,6 +33,12 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "it_IT", url: `${SITE}${IT}`,
     title: "Formazione Insegnanti di Yoga Ashtanga a Rishikesh | Adhiroha", description: "Impara la serie primaria e il sequencing vinyasa nella nostra formazione insegnanti di yoga Ashtanga di 14 giorni a Rishikesh, tra le pendici himalayane di Upper Tapovan.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Formazione Insegnanti di Yoga Ashtanga a Rishikesh | Adhiroha",
+    description: "Impara la serie primaria e il sequencing vinyasa nella nostra formazione insegnanti di yoga Ashtanga di 14 giorni a Rishikesh, tra le pendici himalayane di Upper Tapovan.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

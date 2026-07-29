@@ -22,6 +22,12 @@ export const metadata = {
     title: "Ljudhealingutbildning i Rishikesh | 6 Dagar — Adhiroha",
     description: "Sex dagars ljudhealing- och terapilärarutbildning med boende i Rishikesh — tibetanska klangskålar, gonggonger och vedisk ljudvetenskap, nivå 1, 2 och 3. Från 690 € all-inclusive.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ljudhealingutbildning i Rishikesh | 6 Dagar — Adhiroha",
+    description: "Sex dagars ljudhealing- och terapilärarutbildning med boende i Rishikesh — tibetanska klangskålar, gonggonger och vedisk ljudvetenskap, nivå 1, 2 och 3. Från 690 € all-inclusive.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

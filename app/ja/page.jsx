@@ -28,6 +28,12 @@ export const metadata = {
       "インド・リシケシで開講する、ヨガアライアンス認定の200・300・500時間ヨガ指導者養成コース。少人数制、経験豊かなインド人講師、アシュラム宿泊と食事込み。",
     images: [{ url: "/img/yoga-teacher-training-india-course.webp", width: 1200, height: 630, alt: "Adhiroha Yoga School, Upper Tapovan, Rishikesh" }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "リシケシのヨガ指導者養成コース | 200/300/500時間 YTTC — Adhiroha",
+    description: "インド・リシケシで開講する、ヨガアライアンス認定の200・300・500時間ヨガ指導者養成コース。少人数制、経験豊かなインド人講師、アシュラム宿泊と食事込み。",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 // The Japanese FAQ block is a rich-result candidate too; read straight from the

@@ -22,6 +22,12 @@ export const metadata = {
     title: "En hilsen fra vores tidligere elever | Adhiroha, Rishikesh",
     description: "Tidligere elever fra Adhiroha fortæller om deres yogalæreruddannelse i Rishikesh — ashrammet, de fem elementer, underviserne og forvandlingen.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "En hilsen fra vores tidligere elever | Adhiroha, Rishikesh",
+    description: "Tidligere elever fra Adhiroha fortæller om deres yogalæreruddannelse i Rishikesh — ashrammet, de fem elementer, underviserne og forvandlingen.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

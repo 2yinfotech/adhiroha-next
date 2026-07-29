@@ -22,6 +22,12 @@ export const metadata = {
     title: "Yoga- en Ayurvedaretraite in Rishikesh | 6 Dagen — Adhiroha",
     description: "Zesdaagse yoga- en ayurvedaretraite in Rishikesh, India — zachte yoga, pranayama, persoonlijke ayurvedische therapieën en sattvisch eten. Vanaf € 510 all-inclusive.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yoga- en Ayurvedaretraite in Rishikesh | 6 Dagen — Adhiroha",
+    description: "Zesdaagse yoga- en ayurvedaretraite in Rishikesh, India — zachte yoga, pranayama, persoonlijke ayurvedische therapieën en sattvisch eten. Vanaf € 510 all-inclusive.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

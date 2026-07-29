@@ -40,6 +40,12 @@ export const metadata = {
     description:
       "Von Yoga Alliance zertifizierte 200-Stunden Yogalehrer-Ausbildung in Rishikesh. 24 Tage, kleine Gruppen, Himalaya-Ashram, alle Mahlzeiten und Ausflüge inklusive.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "200-Stunden Yogalehrer-Ausbildung in Rishikesh | Adhiroha",
+    description: "Von Yoga Alliance zertifizierte 200-Stunden Yogalehrer-Ausbildung in Rishikesh. 24 Tage, kleine Gruppen, Himalaya-Ashram, alle Mahlzeiten und Ausflüge inklusive.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

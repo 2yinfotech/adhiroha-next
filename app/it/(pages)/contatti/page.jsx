@@ -20,6 +20,12 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "it_IT", url: `${SITE}${IT}`,
     title: "Contatta Adhiroha Yoga School | Rishikesh, India", description: "Contatta Adhiroha Yoga School a Upper Tapovan, Rishikesh. Chiamaci, scrivici su WhatsApp o via email per date dei corsi, tariffe e viaggio verso l'ashram.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contatta Adhiroha Yoga School | Rishikesh, India",
+    description: "Contatta Adhiroha Yoga School a Upper Tapovan, Rishikesh. Chiamaci, scrivici su WhatsApp o via email per date dei corsi, tariffe e viaggio verso l'ashram.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

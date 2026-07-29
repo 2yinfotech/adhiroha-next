@@ -22,6 +22,12 @@ export const metadata = {
     title: "FAQ | École de formation de professeur de yoga à Rishikesh, Inde | Adhiroha",
     description: "Réponses aux questions les plus fréquentes sur la formation de professeur de yoga d’Adhiroha à Rishikesh — le cours, le voyage et les repas, l’inscription, la certification et la remise des diplômes.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "FAQ | École de formation de professeur de yoga à Rishikesh, Inde | Adhiroha",
+    description: "Réponses aux questions les plus fréquentes sur la formation de professeur de yoga d’Adhiroha à Rishikesh — le cours, le voyage et les repas, l’inscription, la certification et la remise des diplômes.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 // FAQs are parsed from the page's own markup so the listing can earn rich results.

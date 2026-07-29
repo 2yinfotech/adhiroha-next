@@ -28,6 +28,12 @@ export const metadata = {
       "Yogalæreruddannelser på 200, 300 og 500 timer i Rishikesh, Indien, certificeret af Yoga Alliance. Små hold, erfarne indiske undervisere, ophold i ashram og måltider inkluderet.",
     images: [{ url: "/img/yoga-teacher-training-india-course.webp", width: 1200, height: 630, alt: "Adhiroha Yoga School, Upper Tapovan, Rishikesh" }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yogalæreruddannelse i Rishikesh | YTTC 200/300/500 timer — Adhiroha",
+    description: "Yogalæreruddannelser på 200, 300 og 500 timer i Rishikesh, Indien, certificeret af Yoga Alliance. Små hold, erfarne indiske undervisere, ophold i ashram og måltider inkluderet.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 // The Danish FAQ block is a rich-result candidate too; read straight from the

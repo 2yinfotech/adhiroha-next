@@ -33,6 +33,12 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "de_DE", url: `${SITE}${DE}`,
     title: "Ashtanga & Vinyasa Yogalehrer-Ausbildung in Rishikesh | Adhiroha", description: "12-tägige Ashtanga- & Vinyasa-Yogalehrer-Ausbildung in Rishikesh, akkreditiert vom Ministry of Ayush. Kleine Gruppen, Ashram-Unterkunft, alle Mahlzeiten inklusive.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ashtanga & Vinyasa Yogalehrer-Ausbildung in Rishikesh | Adhiroha",
+    description: "12-tägige Ashtanga- & Vinyasa-Yogalehrer-Ausbildung in Rishikesh, akkreditiert vom Ministry of Ayush. Kleine Gruppen, Ashram-Unterkunft, alle Mahlzeiten inklusive.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

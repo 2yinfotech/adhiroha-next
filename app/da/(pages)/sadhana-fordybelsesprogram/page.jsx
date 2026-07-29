@@ -22,6 +22,12 @@ export const metadata = {
     title: "Sadhana fordybelsesprogram i Rishikesh | 15 dage — Adhiroha",
     description: "Femten dages sadhana-fordybelse med ophold i Rishikesh — stilhed, egen praksis, meditation, karma yoga og Bhagavad Gita i traditionel ashram-disciplin. Fra 699 € alt inklusive.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sadhana fordybelsesprogram i Rishikesh | 15 dage — Adhiroha",
+    description: "Femten dages sadhana-fordybelse med ophold i Rishikesh — stilhed, egen praksis, meditation, karma yoga og Bhagavad Gita i traditionel ashram-disciplin. Fra 699 € alt inklusive.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

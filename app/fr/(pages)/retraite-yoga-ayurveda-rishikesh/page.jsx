@@ -22,6 +22,12 @@ export const metadata = {
     title: "Retraite Yoga & Ayurveda à Rishikesh | 6 jours — Adhiroha",
     description: "Une retraite bien-être de 6 jours de yoga et d’Ayurveda à Rishikesh. Yoga quotidien, thérapies ayurvédiques, repas sattviques et calme himalayen — à partir de 510 € tout compris.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Retraite Yoga & Ayurveda à Rishikesh | 6 jours — Adhiroha",
+    description: "Une retraite bien-être de 6 jours de yoga et d’Ayurveda à Rishikesh. Yoga quotidien, thérapies ayurvédiques, repas sattviques et calme himalayen — à partir de 510 € tout compris.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

@@ -22,6 +22,12 @@ export const metadata = {
     title: "Kontakt | Adhiroha — Yogaskole i Rishikesh",
     description: "Kontakt yogaashrammet Adhiroha i Upper Tapovan, Rishikesh. WhatsApp, e-mail eller formular — det er et rigtigt menneske, der svarer, som regel inden for et døgn.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kontakt | Adhiroha — Yogaskole i Rishikesh",
+    description: "Kontakt yogaashrammet Adhiroha i Upper Tapovan, Rishikesh. WhatsApp, e-mail eller formular — det er et rigtigt menneske, der svarer, som regel inden for et døgn.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

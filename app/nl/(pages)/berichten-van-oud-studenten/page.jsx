@@ -22,6 +22,12 @@ export const metadata = {
     title: "Een Bericht van Onze Oud-studenten | Adhiroha, Rishikesh",
     description: "Afgestudeerden van Adhiroha beschrijven in hun eigen woorden de yoga-docentenopleiding in Rishikesh — de tuin, het vuuraltaar, de vijf elementen van het terrein en de docenten achter de transformatie.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Een Bericht van Onze Oud-studenten | Adhiroha, Rishikesh",
+    description: "Afgestudeerden van Adhiroha beschrijven in hun eigen woorden de yoga-docentenopleiding in Rishikesh — de tuin, het vuuraltaar, de vijf elementen van het terrein en de docenten achter de transformatie.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

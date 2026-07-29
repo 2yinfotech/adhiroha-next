@@ -21,6 +21,12 @@ export const metadata = {
     title: "Formation en sonothérapie à Rishikesh | Adhiroha",
     description: "Formation de 6 jours en sonothérapie & soin par le son à Rishikesh. Bols tibétains, gongs et science védique du son, accréditée par le Ministry of Ayush.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Formation en sonothérapie à Rishikesh | Adhiroha",
+    description: "Formation de 6 jours en sonothérapie & soin par le son à Rishikesh. Bols tibétains, gongs et science védique du son, accréditée par le Ministry of Ayush.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

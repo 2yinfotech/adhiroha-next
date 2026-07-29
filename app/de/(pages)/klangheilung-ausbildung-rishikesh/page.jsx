@@ -20,6 +20,12 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "de_DE", url: `${SITE}${DE}`,
     title: "Klangheilung-Ausbildung in Rishikesh | Adhiroha", description: "6-tägige Klangheilung- & Therapie-Ausbildung in Rishikesh. Tibetische Klangschalen, Gongs und vedische Klangwissenschaft, akkreditiert vom Ministry of Ayush.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Klangheilung-Ausbildung in Rishikesh | Adhiroha",
+    description: "6-tägige Klangheilung- & Therapie-Ausbildung in Rishikesh. Tibetische Klangschalen, Gongs und vedische Klangwissenschaft, akkreditiert vom Ministry of Ayush.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

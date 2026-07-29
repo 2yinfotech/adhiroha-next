@@ -40,6 +40,12 @@ export const metadata = {
     description:
       "Profundiza tu práctica con nuestra formación de profesor de yoga de 300 horas en Rishikesh. 30 días de asanas avanzados, pranayama y filosofía en un ashram acreditado por Yoga Alliance.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Formación de profesor de yoga de 300 horas en Rishikesh | Adhiroha",
+    description: "Profundiza tu práctica con nuestra formación de profesor de yoga de 300 horas en Rishikesh. 30 días de asanas avanzados, pranayama y filosofía en un ashram acreditado por Yoga Alliance.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

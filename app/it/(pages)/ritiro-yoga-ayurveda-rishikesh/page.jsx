@@ -20,6 +20,12 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "it_IT", url: `${SITE}${IT}`,
     title: "Ritiro di Yoga e Ayurveda a Rishikesh | 6 Giorni — Adhiroha", description: "Un ritiro di benessere di 6 giorni tra Yoga e Ayurveda a Rishikesh. Yoga quotidiano, terapie ayurvediche, pasti sattvici e la quiete dell'Himalaya — da €510 tutto incluso.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ritiro di Yoga e Ayurveda a Rishikesh | 6 Giorni — Adhiroha",
+    description: "Un ritiro di benessere di 6 giorni tra Yoga e Ayurveda a Rishikesh. Yoga quotidiano, terapie ayurvediche, pasti sattvici e la quiete dell'Himalaya — da €510 tutto incluso.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

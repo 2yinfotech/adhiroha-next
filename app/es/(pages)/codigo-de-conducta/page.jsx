@@ -22,6 +22,12 @@ export const metadata = {
     title: "Código de conducta y políticas | Adhiroha, Rishikesh",
     description: "Consulta el código de conducta, las normas del ashram, y las políticas de reembolso y cancelación de la formación de profesor de yoga en Adhiroha, Rishikesh, India.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Código de conducta y políticas | Adhiroha, Rishikesh",
+    description: "Consulta el código de conducta, las normas del ashram, y las políticas de reembolso y cancelación de la formación de profesor de yoga en Adhiroha, Rishikesh, India.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

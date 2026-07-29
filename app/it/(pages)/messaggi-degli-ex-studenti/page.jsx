@@ -22,6 +22,12 @@ export const metadata = {
     title: "Recensioni degli Studenti e Messaggi degli Ex Allievi | Adhiroha",
     description: "Leggi cosa dicono i diplomati subito dopo la loro formazione ad Adhiroha — messaggi sinceri dagli studenti dei nostri corsi di 200, 300 e 500 ore a Rishikesh.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Recensioni degli Studenti e Messaggi degli Ex Allievi | Adhiroha",
+    description: "Leggi cosa dicono i diplomati subito dopo la loro formazione ad Adhiroha — messaggi sinceri dagli studenti dei nostri corsi di 200, 300 e 500 ore a Rishikesh.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

@@ -22,6 +22,12 @@ export const metadata = {
     title: "リシケシのヨガ＆アーユルヴェーダ・リトリート | 6日間 — Adhiroha",
     description: "インド・リシケシでの6日間のヨガ＆アーユルヴェーダ・リトリート — 穏やかなヨガ、プラーナヤーマ、一人ひとりに合わせたアーユルヴェーダ療法、サットヴィックな食事。€510からオールインクルーシブ。",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "リシケシのヨガ＆アーユルヴェーダ・リトリート | 6日間 — Adhiroha",
+    description: "インド・リシケシでの6日間のヨガ＆アーユルヴェーダ・リトリート — 穏やかなヨガ、プラーナヤーマ、一人ひとりに合わせたアーユルヴェーダ療法、サットヴィックな食事。€510からオールインクルーシブ。",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

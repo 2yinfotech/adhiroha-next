@@ -22,6 +22,12 @@ export const metadata = {
     title: "Veiligheid en Hygiëne | Yoga-ashram Adhiroha, Rishikesh",
     description: "24/7 cameratoezicht, een ommuurd terrein, luchthavenpick-up inbegrepen en extra zorg voor vrouwen die alleen reizen — zo regelt Adhiroha veiligheid en hygiëne in Rishikesh.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Veiligheid en Hygiëne | Yoga-ashram Adhiroha, Rishikesh",
+    description: "24/7 cameratoezicht, een ommuurd terrein, luchthavenpick-up inbegrepen en extra zorg voor vrouwen die alleen reizen — zo regelt Adhiroha veiligheid en hygiëne in Rishikesh.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

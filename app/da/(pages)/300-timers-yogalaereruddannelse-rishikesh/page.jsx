@@ -40,6 +40,12 @@ export const metadata = {
     description:
       "Avanceret 300-timers yogalæreruddannelse i Rishikesh, certificeret af Yoga Alliance. 30 dage, små hold, ophold i himalayansk ashram, alle måltider og udflugter inkluderet.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "300-timers yogalæreruddannelse i Rishikesh | Adhiroha",
+    description: "Avanceret 300-timers yogalæreruddannelse i Rishikesh, certificeret af Yoga Alliance. 30 dage, små hold, ophold i himalayansk ashram, alle måltider og udflugter inkluderet.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

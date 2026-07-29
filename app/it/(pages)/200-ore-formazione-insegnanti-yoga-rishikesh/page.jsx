@@ -40,6 +40,12 @@ export const metadata = {
     description:
       "Formazione insegnanti di yoga di 200 ore a Rishikesh, certificata Yoga Alliance. 24 giorni, gruppi ridotti, soggiorno in ashram himalayano, tutti i pasti e le escursioni incluse.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Formazione Insegnanti di Yoga di 200 Ore a Rishikesh | Adhiroha",
+    description: "Formazione insegnanti di yoga di 200 ore a Rishikesh, certificata Yoga Alliance. 24 giorni, gruppi ridotti, soggiorno in ashram himalayano, tutti i pasti e le escursioni incluse.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing

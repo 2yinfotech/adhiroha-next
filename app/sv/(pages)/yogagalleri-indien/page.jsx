@@ -22,6 +22,12 @@ export const metadata = {
     title: "Fotogalleri | Yoga-ashramet Adhiroha i Rishikesh, Indien",
     description: "181 ärliga bilder från Adhirohas ashram i Upper Tapovan, Rishikesh — shalan, rummen, den sattviska maten, ceremonierna, utflykterna och examensdagen.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fotogalleri | Yoga-ashramet Adhiroha i Rishikesh, Indien",
+    description: "181 ärliga bilder från Adhirohas ashram i Upper Tapovan, Rishikesh — shalan, rummen, den sattviska maten, ceremonierna, utflykterna och examensdagen.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

@@ -28,6 +28,12 @@ export const metadata = {
       "Door Yoga Alliance gecertificeerde yoga-docentenopleidingen van 200, 300 en 500 uur in Rishikesh, India. Kleine groepen, ervaren Indiase docenten, verblijf in de ashram en maaltijden inbegrepen.",
     images: [{ url: "/img/yoga-teacher-training-india-course.webp", width: 1200, height: 630, alt: "Adhiroha Yoga School, Upper Tapovan, Rishikesh" }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yoga-docentenopleiding in Rishikesh | YTTC 200/300/500 Uur — Adhiroha",
+    description: "Door Yoga Alliance gecertificeerde yoga-docentenopleidingen van 200, 300 en 500 uur in Rishikesh, India. Kleine groepen, ervaren Indiase docenten, verblijf in de ashram en maaltijden inbegrepen.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 // The Dutch FAQ block is a rich-result candidate too; read straight from the

@@ -40,6 +40,12 @@ export const metadata = {
     description:
       "200-timmars yogalärarutbildning i Rishikesh, certifierad av Yoga Alliance. 24 dagar, små grupper, boende i himalayiskt ashram, alla måltider och utflykter ingår.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "200-Timmars Yogalärarutbildning i Rishikesh | Adhiroha",
+    description: "200-timmars yogalärarutbildning i Rishikesh, certifierad av Yoga Alliance. 24 dagar, små grupper, boende i himalayiskt ashram, alla måltider och utflykter ingår.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing

@@ -22,6 +22,12 @@ export const metadata = {
     title: "リシケシのサウンドヒーリング養成コース | 6日間 — Adhiroha",
     description: "リシケシでの6日間の滞在型サウンドヒーリング＆セラピー指導者養成コース — チベットのシンギングボウル、ゴング、ヴェーダの音の科学、レベル1・2・3。€690からオールインクルーシブ。",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "リシケシのサウンドヒーリング養成コース | 6日間 — Adhiroha",
+    description: "リシケシでの6日間の滞在型サウンドヒーリング＆セラピー指導者養成コース — チベットのシンギングボウル、ゴング、ヴェーダの音の科学、レベル1・2・3。€690からオールインクルーシブ。",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

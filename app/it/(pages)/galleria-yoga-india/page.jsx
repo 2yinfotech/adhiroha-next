@@ -22,6 +22,12 @@ export const metadata = {
     title: "Galleria Yoga | L'Ashram Adhiroha, Rishikesh",
     description: "181 foto autentiche dell'ashram Adhiroha a Upper Tapovan, Rishikesh — la shala, le camere, il cibo, le cerimonie e le persone.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Galleria Yoga | L'Ashram Adhiroha, Rishikesh",
+    description: "181 foto autentiche dell'ashram Adhiroha a Upper Tapovan, Rishikesh — la shala, le camere, il cibo, le cerimonie e le persone.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

@@ -33,6 +33,12 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "fr_FR", url: `${SITE}${DE}`,
     title: "Formation de professeur de yoga de 300 heures à Rishikesh | Adhiroha", description: "Approfondis ta pratique avec notre formation de professeur de yoga de 300 heures à Rishikesh. 30 jours d’asana avancé, pranayama et philosophie dans un ashram Yoga Alliance.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Formation de professeur de yoga de 300 heures à Rishikesh | Adhiroha",
+    description: "Approfondis ta pratique avec notre formation de professeur de yoga de 300 heures à Rishikesh. 30 jours d’asana avancé, pranayama et philosophie dans un ashram Yoga Alliance.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

@@ -22,6 +22,12 @@ export const metadata = {
     title: "Código de Conduta e Políticas | Ashram de Yoga Adhiroha, Rishikesh",
     description: "As regras do ashram Adhiroha em Rishikesh — os quatro pilares, o código de conduta, as políticas de tolerância zero e tudo sobre valores, pagamentos e remarcação.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Código de Conduta e Políticas | Ashram de Yoga Adhiroha, Rishikesh",
+    description: "As regras do ashram Adhiroha em Rishikesh — os quatro pilares, o código de conduta, as políticas de tolerância zero e tudo sobre valores, pagamentos e remarcação.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

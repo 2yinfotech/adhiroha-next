@@ -22,6 +22,12 @@ export const metadata = {
     title: "En Hälsning från Våra Tidigare Elever | Adhiroha, Rishikesh",
     description: "Adhirohas utexaminerade beskriver med egna ord yogalärarutbildningen i Rishikesh — trädgården, eldaltaret, områdets fem element och lärarna bakom förvandlingen.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "En Hälsning från Våra Tidigare Elever | Adhiroha, Rishikesh",
+    description: "Adhirohas utexaminerade beskriver med egna ord yogalärarutbildningen i Rishikesh — trädgården, eldaltaret, områdets fem element och lärarna bakom förvandlingen.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

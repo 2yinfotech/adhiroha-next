@@ -22,6 +22,12 @@ export const metadata = {
     title: "Yoga- og ayurveda-retreat i Rishikesh | 6 dage — Adhiroha",
     description: "Seks dages yoga- og ayurveda-retreat i Rishikesh, Indien — blid yoga, pranayama, personligt tilpassede ayurvediske behandlinger og sattvisk mad. Fra 510 € alt inklusive.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yoga- og ayurveda-retreat i Rishikesh | 6 dage — Adhiroha",
+    description: "Seks dages yoga- og ayurveda-retreat i Rishikesh, Indien — blid yoga, pranayama, personligt tilpassede ayurvediske behandlinger og sattvisk mad. Fra 510 € alt inklusive.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

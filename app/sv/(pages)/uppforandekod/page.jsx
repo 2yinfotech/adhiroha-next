@@ -22,6 +22,12 @@ export const metadata = {
     title: "Uppförandekod och Regler | Yoga-ashramet Adhiroha, Rishikesh",
     description: "Reglerna på Adhirohas ashram i Rishikesh — de fyra pelarna, uppförandekoden, nolltoleranspolicyn och allt om avgifter, betalningar och ombokning.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Uppförandekod och Regler | Yoga-ashramet Adhiroha, Rishikesh",
+    description: "Reglerna på Adhirohas ashram i Rishikesh — de fyra pelarna, uppförandekoden, nolltoleranspolicyn och allt om avgifter, betalningar och ombokning.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

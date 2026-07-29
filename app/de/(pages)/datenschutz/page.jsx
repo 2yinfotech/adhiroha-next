@@ -20,6 +20,12 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "de_DE", url: `${SITE}${DE}`,
     title: "Datenschutzerklärung | Adhiroha Yoga School, Rishikesh", description: "Die Datenschutzerklärung der Adhiroha Yoga School — welche Daten wir erheben, wie wir sie verwenden und wie wir sie schützen.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Datenschutzerklärung | Adhiroha Yoga School, Rishikesh",
+    description: "Die Datenschutzerklärung der Adhiroha Yoga School — welche Daten wir erheben, wie wir sie verwenden und wie wir sie schützen.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

@@ -20,6 +20,12 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "es_ES", url: `${SITE}${ES}`,
     title: "Formación de Sonoterapia en Rishikesh | Adhiroha", description: "Formación de Sonoterapia y Sanación con Sonido de 6 días en Rishikesh. Cuencos tibetanos, gongs y ciencia védica del sonido, acreditada por el Ministry of Ayush.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Formación de Sonoterapia en Rishikesh | Adhiroha",
+    description: "Formación de Sonoterapia y Sanación con Sonido de 6 días en Rishikesh. Cuencos tibetanos, gongs y ciencia védica del sonido, acreditada por el Ministry of Ayush.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

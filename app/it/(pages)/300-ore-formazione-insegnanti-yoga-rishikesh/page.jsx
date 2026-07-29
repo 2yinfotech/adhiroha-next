@@ -40,6 +40,12 @@ export const metadata = {
     description:
       "Fai progredire la tua pratica con la nostra formazione insegnanti di yoga di 300 ore a Rishikesh. 30 giorni di asana avanzato, pranayama e filosofia in un ashram accreditato Yoga Alliance.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Formazione Insegnanti di Yoga di 300 Ore a Rishikesh | Adhiroha",
+    description: "Fai progredire la tua pratica con la nostra formazione insegnanti di yoga di 300 ore a Rishikesh. 30 giorni di asana avanzato, pranayama e filosofia in un ashram accreditato Yoga Alliance.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

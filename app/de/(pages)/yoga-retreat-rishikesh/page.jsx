@@ -20,6 +20,12 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "de_DE", url: `${SITE}${DE}`,
     title: "Yoga- & Ayurveda-Retreat in Rishikesh | 6 Tage — Adhiroha", description: "6-tägiges Yoga- & Ayurveda-Wellness-Retreat in Rishikesh. Sanftes Yoga, ayurvedische Therapien, sattvisches Essen — Ruhe im Himalaya-Ashram.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yoga- & Ayurveda-Retreat in Rishikesh | 6 Tage — Adhiroha",
+    description: "6-tägiges Yoga- & Ayurveda-Wellness-Retreat in Rishikesh. Sanftes Yoga, ayurvedische Therapien, sattvisches Essen — Ruhe im Himalaya-Ashram.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

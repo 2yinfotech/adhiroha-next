@@ -22,6 +22,12 @@ export const metadata = {
     title: "O Adhiroha | Szkoła Jogi w Riszikeś, Indie",
     description: "Poznaj Adhiroha — certyfikowany przez Yoga Alliance aśram jogi w Upper Tapovan w Riszikeś, z kampusem o powierzchni 20 000 stóp kw. i ponad 3000 uczniów z przeszło 70 krajów.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "O Adhiroha | Szkoła Jogi w Riszikeś, Indie",
+    description: "Poznaj Adhiroha — certyfikowany przez Yoga Alliance aśram jogi w Upper Tapovan w Riszikeś, z kampusem o powierzchni 20 000 stóp kw. i ponad 3000 uczniów z przeszło 70 krajów.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

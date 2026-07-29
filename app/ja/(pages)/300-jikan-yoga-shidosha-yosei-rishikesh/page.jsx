@@ -40,6 +40,12 @@ export const metadata = {
     description:
       "ヨガアライアンス認定の上級300時間ヨガ指導者養成コース（リシケシ）。30日間、少人数制、ヒマラヤのアシュラム滞在、食事と遠足込み。",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "リシケシの300時間ヨガ指導者養成コース | Adhiroha",
+    description: "ヨガアライアンス認定の上級300時間ヨガ指導者養成コース（リシケシ）。30日間、少人数制、ヒマラヤのアシュラム滞在、食事と遠足込み。",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

@@ -40,6 +40,12 @@ export const metadata = {
     description:
       "Dwunastodniowy kurs nauczycielski hatha i yin jogi w Riszikeś, akredytowany przez Ministerstwo Ayush. Małe grupy, pobyt w himalajskim aśramie, wszystkie posiłki i wycieczki w cenie.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kurs Nauczycielski Hatha i Yin Jogi w Riszikeś | 12 Dni — Adhiroha",
+    description: "Dwunastodniowy kurs nauczycielski hatha i yin jogi w Riszikeś, akredytowany przez Ministerstwo Ayush. Małe grupy, pobyt w himalajskim aśramie, wszystkie posiłki i wycieczki w cenie.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

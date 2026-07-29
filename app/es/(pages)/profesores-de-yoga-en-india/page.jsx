@@ -20,6 +20,12 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "es_ES", url: `${SITE}${ES}`,
     title: "Nuestros Profesores de Yoga en Rishikesh, India | Adhiroha", description: "Conoce a los acharyas de yoga de Adhiroha en Rishikesh — cada uno especialista con 9 a 20 años de experiencia en su propia disciplina.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nuestros Profesores de Yoga en Rishikesh, India | Adhiroha",
+    description: "Conoce a los acharyas de yoga de Adhiroha en Rishikesh — cada uno especialista con 9 a 20 años de experiencia en su propia disciplina.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

@@ -22,6 +22,12 @@ export const metadata = {
     title: "Over Adhiroha | Yogaschool in Rishikesh, India",
     description: "Maak kennis met Adhiroha — een door Yoga Alliance gecertificeerde yoga-ashram in Upper Tapovan, Rishikesh, met 20.000 vierkante voet terrein en meer dan 3.000 opgeleide studenten uit ruim 70 landen.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Over Adhiroha | Yogaschool in Rishikesh, India",
+    description: "Maak kennis met Adhiroha — een door Yoga Alliance gecertificeerde yoga-ashram in Upper Tapovan, Rishikesh, met 20.000 vierkante voet terrein en meer dan 3.000 opgeleide studenten uit ruim 70 landen.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

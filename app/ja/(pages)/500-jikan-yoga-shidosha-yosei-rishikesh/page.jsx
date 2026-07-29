@@ -40,6 +40,12 @@ export const metadata = {
     description:
       "ヨガアライアンス認定の500時間ヨガ指導者養成コース（リシケシ）。60日間、基礎から熟達までの全行程、ヒマラヤのアシュラム滞在、オールインクルーシブ。",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "リシケシの500時間ヨガ指導者養成コース | Adhiroha",
+    description: "ヨガアライアンス認定の500時間ヨガ指導者養成コース（リシケシ）。60日間、基礎から熟達までの全行程、ヒマラヤのアシュラム滞在、オールインクルーシブ。",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

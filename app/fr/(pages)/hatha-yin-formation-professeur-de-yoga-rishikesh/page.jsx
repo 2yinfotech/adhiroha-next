@@ -33,6 +33,12 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "fr_FR", url: `${SITE}${DE}`,
     title: "Formation Hatha & Yin de professeur de yoga à Rishikesh | Adhiroha", description: "Formation de professeur de yoga Hatha & Yin de 12 jours à Rishikesh, accréditée par le Ministry of Ayush. Petits groupes, hébergement en ashram, tous les repas inclus.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Formation Hatha & Yin de professeur de yoga à Rishikesh | Adhiroha",
+    description: "Formation de professeur de yoga Hatha & Yin de 12 jours à Rishikesh, accréditée par le Ministry of Ayush. Petits groupes, hébergement en ashram, tous les repas inclus.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

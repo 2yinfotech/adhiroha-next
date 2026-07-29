@@ -22,6 +22,12 @@ export const metadata = {
     title: "Kodeks Postępowania i Zasady | Aśram Jogi Adhiroha, Riszikeś",
     description: "Zasady obowiązujące w aśramie Adhiroha w Riszikeś — cztery filary, kodeks postępowania, zasady zerowej tolerancji oraz opłaty, płatności i zmiany terminu.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kodeks Postępowania i Zasady | Aśram Jogi Adhiroha, Riszikeś",
+    description: "Zasady obowiązujące w aśramie Adhiroha w Riszikeś — cztery filary, kodeks postępowania, zasady zerowej tolerancji oraz opłaty, płatności i zmiany terminu.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

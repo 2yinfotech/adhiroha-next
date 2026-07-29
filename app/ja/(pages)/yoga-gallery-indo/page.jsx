@@ -22,6 +22,12 @@ export const metadata = {
     title: "フォトギャラリー | アディローハ・ヨガアシュラム、リシケシ",
     description: "リシケシ、アッパー・タポヴァンのアディローハ・アシュラムのありのままの写真181枚 — シャラ、客室、サットヴィックな食事、儀式、遠足、そして生徒たち。",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "フォトギャラリー | アディローハ・ヨガアシュラム、リシケシ",
+    description: "リシケシ、アッパー・タポヴァンのアディローハ・アシュラムのありのままの写真181枚 — シャラ、客室、サットヴィックな食事、儀式、遠足、そして生徒たち。",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

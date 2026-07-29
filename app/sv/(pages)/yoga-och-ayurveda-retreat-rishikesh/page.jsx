@@ -22,6 +22,12 @@ export const metadata = {
     title: "Yoga- och Ayurvedaretreat i Rishikesh | 6 Dagar — Adhiroha",
     description: "Sex dagars yoga- och ayurvedaretreat i Rishikesh, Indien — mjuk yoga, pranayama, personliga ayurvediska behandlingar och sattvisk mat. Från 510 € all-inclusive.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yoga- och Ayurvedaretreat i Rishikesh | 6 Dagar — Adhiroha",
+    description: "Sex dagars yoga- och ayurvedaretreat i Rishikesh, Indien — mjuk yoga, pranayama, personliga ayurvediska behandlingar och sattvisk mat. Från 510 € all-inclusive.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

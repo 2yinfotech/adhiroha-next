@@ -31,6 +31,12 @@ export const metadata = {
     description:
       "Formações de professor de yoga de 200, 300 e 500 horas certificadas pela Yoga Alliance em Rishikesh, Índia. Tudo incluído, certificação reconhecida internacionalmente.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Formação de Professor de Yoga na Índia | YTTC 200, 300 e 500 Horas em Rishikesh",
+    description: "Formações de professor de yoga de 200, 300 e 500 horas certificadas pela Yoga Alliance em Rishikesh, Índia. Tudo incluído, certificação reconhecida internacionalmente.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

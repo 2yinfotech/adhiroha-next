@@ -40,6 +40,12 @@ export const metadata = {
     description:
       "Formação de professor de pranayama e meditação de doze dias em Rishikesh, acreditada pelo Ministério de Ayush. Turmas pequenas, hospedagem em ashram himalaio, todas as refeições e passeios inclusos.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Formação de Professor de Pranayama e Meditação em Rishikesh | 12 Dias — Adhiroha",
+    description: "Formação de professor de pranayama e meditação de doze dias em Rishikesh, acreditada pelo Ministério de Ayush. Turmas pequenas, hospedagem em ashram himalaio, todas as refeições e passeios inclusos.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

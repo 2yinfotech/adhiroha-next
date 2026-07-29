@@ -40,6 +40,12 @@ export const metadata = {
     description:
       "Formação de professor de yoga de 200 horas em Rishikesh, certificada pela Yoga Alliance. 24 dias, turmas pequenas, hospedagem em ashram himalaio, todas as refeições e passeios inclusos.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Formação de Professor de Yoga de 200 Horas em Rishikesh | Adhiroha",
+    description: "Formação de professor de yoga de 200 horas em Rishikesh, certificada pela Yoga Alliance. 24 dias, turmas pequenas, hospedagem em ashram himalaio, todas as refeições e passeios inclusos.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing

@@ -20,6 +20,12 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "de_DE", url: `${SITE}${DE}`,
     title: "FAQ | Yogalehrer-Ausbildungsschule in Rishikesh, Indien | Adhiroha", description: "Häufige Fragen zur Yogalehrer-Ausbildung in Rishikesh — zu Kurs, Anreise, Essen, Anmeldung und Abschluss, klar beantwortet.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "FAQ | Yogalehrer-Ausbildungsschule in Rishikesh, Indien | Adhiroha",
+    description: "Häufige Fragen zur Yogalehrer-Ausbildung in Rishikesh — zu Kurs, Anreise, Essen, Anmeldung und Abschluss, klar beantwortet.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

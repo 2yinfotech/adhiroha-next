@@ -22,6 +22,12 @@ export const metadata = {
     title: "Kontakt | Adhiroha — Szkoła Jogi w Riszikeś",
     description: "Napisz do aśramu jogi Adhiroha w Upper Tapovan w Riszikeś. WhatsApp, e-mail lub formularz — odpowiada prawdziwy człowiek, zwykle w ciągu doby.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kontakt | Adhiroha — Szkoła Jogi w Riszikeś",
+    description: "Napisz do aśramu jogi Adhiroha w Upper Tapovan w Riszikeś. WhatsApp, e-mail lub formularz — odpowiada prawdziwy człowiek, zwykle w ciągu doby.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

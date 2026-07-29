@@ -1,7 +1,7 @@
 import "./globals.css";
 import Script from "next/script";
-import FooterLinkFix from "@/components/FooterLinkFix";
 import JsonLd from "@/components/JsonLd";
+import LeafletOnDemand from "@/components/LeafletOnDemand";
 import { graph, organizationSchema, websiteSchema } from "@/lib/seo";
 
 export const metadata = {
@@ -90,30 +90,31 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Leaflet CSS — used by the location maps that appear across the site. */}
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-          crossOrigin=""
-        />
+        {/* The fonts used to be base64-inlined into the route stylesheet, which
+            meant no text could paint until ~420 KB of binary had downloaded.
+            They are real files now, so preload the four faces that carry the
+            visible page — Playfair for every heading, Poppins for body text —
+            and let the rest arrive with font-display: swap. */}
+        <link rel="preload" as="font" type="font/woff2" href="/fonts/playfair-display-600.woff2" crossOrigin="" />
+        <link rel="preload" as="font" type="font/woff2" href="/fonts/playfair-display-500.woff2" crossOrigin="" />
+        <link rel="preload" as="font" type="font/woff2" href="/fonts/poppins-300.woff2" crossOrigin="" />
+        <link rel="preload" as="font" type="font/woff2" href="/fonts/poppins-500.woff2" crossOrigin="" />
         {/* Sitewide structured data: who we are, and the site itself. Per-page
             schema (Course, FAQPage, BreadcrumbList) is added by each page. */}
         <JsonLd data={graph(organizationSchema(), websiteSchema())} />
-        {/* Hotjar Tracking Code for adhiroha.com */}
-        <script dangerouslySetInnerHTML={{ __html: HOTJAR_SCRIPT }} />
         {/* Attach the contact-form submit handler immediately, before hydration. */}
         <script dangerouslySetInnerHTML={{ __html: CONTACT_FORM_SCRIPT }} />
       </head>
       <body>
         {children}
-        <FooterLinkFix />
-        {/* Leaflet must be present before the page 'load' handlers run their
-            map init, so load it before the app becomes interactive. */}
-        <Script
-          src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-          strategy="beforeInteractive"
-          crossOrigin=""
-        />
+        {/* Hotjar: analytics, so it must never compete with first paint. Loading
+            it lazily still records the whole session — Hotjar backfills events
+            once it initialises — but keeps it off the critical path. */}
+        <Script id="hotjar" strategy="lazyOnload" dangerouslySetInnerHTML={{ __html: HOTJAR_SCRIPT }} />
+        {/* Fetches Leaflet only when a map is about to scroll into view. Must
+            sit after {children} so the page's own scripts have registered their
+            `adhiroha:leaflet` listener before this can dispatch it. */}
+        <LeafletOnDemand />
       </body>
     </html>
   );

@@ -22,6 +22,12 @@ export const metadata = {
     title: "Programa de Imersão Sadhana em Rishikesh | 15 Dias — Adhiroha",
     description: "Programa de imersão Sadhana de quinze dias em Rishikesh — silêncio, prática pessoal, meditação, karma yoga e o Bhagavad Gita no ritmo tradicional do ashram. A partir de € 699 com tudo incluído.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Programa de Imersão Sadhana em Rishikesh | 15 Dias — Adhiroha",
+    description: "Programa de imersão Sadhana de quinze dias em Rishikesh — silêncio, prática pessoal, meditação, karma yoga e o Bhagavad Gita no ritmo tradicional do ashram. A partir de € 699 com tudo incluído.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

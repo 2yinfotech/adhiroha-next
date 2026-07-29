@@ -40,6 +40,12 @@ export const metadata = {
     description:
       "Formação de professor de yoga de 500 horas em Rishikesh, certificada pela Yoga Alliance. 60 dias, da base ao avançado, hospedagem em ashram himalaio, todas as refeições e passeios inclusos.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Formação de Professor de Yoga de 500 Horas em Rishikesh | Adhiroha",
+    description: "Formação de professor de yoga de 500 horas em Rishikesh, certificada pela Yoga Alliance. 60 dias, da base ao avançado, hospedagem em ashram himalaio, todas as refeições e passeios inclusos.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

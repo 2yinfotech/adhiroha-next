@@ -22,6 +22,12 @@ export const metadata = {
     title: "Onze Yogadocenten in India | Acharya's van Adhiroha, Rishikesh",
     description: "Maak kennis met de 11 yoga-acharya's van Adhiroha in Rishikesh — masters in yogische wetenschap en doctors in natuurgeneeskunde, met meer dan 115 jaar gecombineerde leservaring.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Onze Yogadocenten in India | Acharya's van Adhiroha, Rishikesh",
+    description: "Maak kennis met de 11 yoga-acharya's van Adhiroha in Rishikesh — masters in yogische wetenschap en doctors in natuurgeneeskunde, met meer dan 115 jaar gecombineerde leservaring.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

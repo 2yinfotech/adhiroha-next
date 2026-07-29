@@ -40,6 +40,12 @@ export const metadata = {
     description:
       "500-timers yogalæreruddannelse i Rishikesh, certificeret af Yoga Alliance. 60 dage, hele vejen fra fundament til mesterskab, ophold i himalayansk ashram, alt inklusive.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "500-timers yogalæreruddannelse i Rishikesh | Adhiroha",
+    description: "500-timers yogalæreruddannelse i Rishikesh, certificeret af Yoga Alliance. 60 dage, hele vejen fra fundament til mesterskab, ophold i himalayansk ashram, alt inklusive.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

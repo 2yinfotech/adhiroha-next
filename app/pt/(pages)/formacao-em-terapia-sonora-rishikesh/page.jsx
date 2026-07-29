@@ -22,6 +22,12 @@ export const metadata = {
     title: "Formação em Terapia Sonora em Rishikesh | 6 Dias — Adhiroha",
     description: "Formação residencial de professor em terapia e cura sonora de seis dias em Rishikesh — taças cantantes tibetanas, gongos e ciência védica do som, níveis 1, 2 e 3. A partir de € 690 com tudo incluído.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Formação em Terapia Sonora em Rishikesh | 6 Dias — Adhiroha",
+    description: "Formação residencial de professor em terapia e cura sonora de seis dias em Rishikesh — taças cantantes tibetanas, gongos e ciência védica do som, níveis 1, 2 e 3. A partir de € 690 com tudo incluído.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

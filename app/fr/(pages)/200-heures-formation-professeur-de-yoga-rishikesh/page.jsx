@@ -33,6 +33,12 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "fr_FR", url: `${SITE}${DE}`,
     title: "Formation de professeur de yoga de 200 heures à Rishikesh | Adhiroha", description: "Formation de professeur de yoga de 200 heures à Rishikesh certifiée Yoga Alliance. 24 jours, petits groupes, ashram himalayen, tous les repas et excursions inclus.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Formation de professeur de yoga de 200 heures à Rishikesh | Adhiroha",
+    description: "Formation de professeur de yoga de 200 heures à Rishikesh certifiée Yoga Alliance. 24 jours, petits groupes, ashram himalayen, tous les repas et excursions inclus.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

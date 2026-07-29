@@ -40,6 +40,12 @@ export const metadata = {
     description:
       "Twaalfdaagse hatha- en yin-yoga-docentenopleiding in Rishikesh, geaccrediteerd door het Ministerie van Ayush. Kleine groepen, verblijf in een Himalaya-ashram, alle maaltijden en uitstapjes inbegrepen.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hatha- en Yin-yoga-docentenopleiding in Rishikesh | 12 Dagen — Adhiroha",
+    description: "Twaalfdaagse hatha- en yin-yoga-docentenopleiding in Rishikesh, geaccrediteerd door het Ministerie van Ayush. Kleine groepen, verblijf in een Himalaya-ashram, alle maaltijden en uitstapjes inbegrepen.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

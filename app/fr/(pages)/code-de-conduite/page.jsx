@@ -22,6 +22,12 @@ export const metadata = {
     title: "Code de conduite & règlement | Adhiroha, Rishikesh",
     description: "Consultez le code de conduite, les règles de l’ashram, les conditions de remboursement et d’annulation des formations de professeur de yoga à Adhiroha, Rishikesh, Inde.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Code de conduite & règlement | Adhiroha, Rishikesh",
+    description: "Consultez le code de conduite, les règles de l’ashram, les conditions de remboursement et d’annulation des formations de professeur de yoga à Adhiroha, Rishikesh, Inde.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

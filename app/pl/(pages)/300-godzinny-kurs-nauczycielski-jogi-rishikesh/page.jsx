@@ -40,6 +40,12 @@ export const metadata = {
     description:
       "Zaawansowany 300-godzinny kurs nauczycielski jogi w Riszikeś z certyfikatem Yoga Alliance. 30 dni, małe grupy, pobyt w himalajskim aśramie, wszystkie posiłki i wycieczki w cenie.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "300-Godzinny Kurs Nauczycielski Jogi w Riszikeś | Adhiroha",
+    description: "Zaawansowany 300-godzinny kurs nauczycielski jogi w Riszikeś z certyfikatem Yoga Alliance. 30 dni, małe grupy, pobyt w himalajskim aśramie, wszystkie posiłki i wycieczki w cenie.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

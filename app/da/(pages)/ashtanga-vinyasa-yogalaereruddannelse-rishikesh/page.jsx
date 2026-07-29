@@ -40,6 +40,12 @@ export const metadata = {
     description:
       "Tolv dages ashtanga- og vinyasa-yogalæreruddannelse i Rishikesh, akkrediteret af Ayush-ministeriet. Små hold, ophold i himalayansk ashram, alle måltider og udflugter inkluderet.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ashtanga- og vinyasa-yogalæreruddannelse i Rishikesh | 12 dage — Adhiroha",
+    description: "Tolv dages ashtanga- og vinyasa-yogalæreruddannelse i Rishikesh, akkrediteret af Ayush-ministeriet. Små hold, ophold i himalayansk ashram, alle måltider og udflugter inkluderet.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(

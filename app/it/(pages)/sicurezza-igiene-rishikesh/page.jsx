@@ -22,6 +22,12 @@ export const metadata = {
     title: "Sicurezza e Igiene nel Nostro Ashram a Rishikesh | Adhiroha",
     description: "Come Adhiroha protegge il benessere degli studenti a Rishikesh — camere pulite con bagno privato, acqua potabile RO, cucina satvica igienica e supporto sul posto 24/7.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sicurezza e Igiene nel Nostro Ashram a Rishikesh | Adhiroha",
+    description: "Come Adhiroha protegge il benessere degli studenti a Rishikesh — camere pulite con bagno privato, acqua potabile RO, cucina satvica igienica e supporto sul posto 24/7.",
+    images: ["/img/yoga-teacher-training-india-course.webp"],
+  },
 };
 
 const pageSchema = graph(
