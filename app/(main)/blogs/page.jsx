@@ -78,10 +78,15 @@ export default async function Page() {
   // everything from the footer onward, replacing the hand-written cards.
   const cut = content.indexOf('<div class="bcat');
   const footer = content.indexOf("<footer");
+  // The tail has to start at the "Keep Exploring" band when one is present:
+  // scripts/related-links.mjs writes it between the last </section> and the
+  // footer, so slicing from <footer> would silently drop it on this page alone.
+  const related = content.indexOf("<!-- ==  RELATED");
+  const tail = related !== -1 && related < footer ? related : footer;
   let html = content;
   if (cut !== -1 && footer !== -1) {
     const prefix = content.slice(0, cut);
-    const suffix = "\n  </div>\n</section>\n\n" + content.slice(footer);
+    const suffix = "\n  </div>\n</section>\n\n" + content.slice(tail);
     html = prefix + buildCategoryGrid(articles) + suffix;
   }
 

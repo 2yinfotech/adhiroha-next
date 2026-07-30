@@ -26,7 +26,25 @@ export default function StickyHeader() {
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
+
+    // The mobile language chip is a bare <details> (no JS needed to open it, which
+    // matters because the header is inlined into 200+ standalone HTML blobs).
+    // A native <details> only closes when its own summary is tapped, though, so
+    // wire up the two dismissals people expect: tap-away and Escape.
+    const closeLang = (e) => {
+      for (const d of document.querySelectorAll("details.hd-langm[open]")) {
+        if (!e || e.type === "keydown" || !d.contains(e.target)) d.open = false;
+      }
+    };
+    const onKey = (e) => { if (e.key === "Escape") closeLang(e); };
+    document.addEventListener("click", closeLang);
+    document.addEventListener("keydown", onKey);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      document.removeEventListener("click", closeLang);
+      document.removeEventListener("keydown", onKey);
+    };
   }, []);
   return null;
 }

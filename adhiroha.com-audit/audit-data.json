@@ -1,0 +1,368 @@
+{
+  "summary": {
+    "health_score": 57,
+    "business_type": "Local Service / Education \u2014 residential yoga teacher-training school in Rishikesh, India, selling internationally (hybrid local + international intent)",
+    "audit_date": "2026-07-30",
+    "target": "https://www.adhiroha.com",
+    "pages_crawled": 211,
+    "articles_discovered": 163,
+    "top_findings": [
+      "163 blog articles are entirely absent from sitemap.xml \u2014 44% of indexable URLs have no sitemap signal",
+      "27 near-duplicate article pairs (54 URLs, one third of the blog) measured 93.7\u201396.4% identical, each self-canonicalising",
+      "Open Graph on 25 English subpages returns the homepage's og:url and og:title \u2014 every WhatsApp/Facebook share of a course page previews as the homepage",
+      "hreflang is non-reciprocal (26 English pages declare none) and incomplete (175 pages declare 3 of 11 alternates)",
+      "Non-www serves the whole site with HTTP 200 instead of a 301 to www"
+    ],
+    "quick_wins": [
+      "Add the 163 articles to app/sitemap.js \u2014 one change, unlocks discovery for 44% of the site",
+      "Set openGraph.url/title/description per route (correct pattern already exists on /yoga-teacher-training-course-rishikesh-india/)",
+      "Add srcset/sizes to hero images \u2014 mobile homepage currently ships 2.31 MB of images, LCP hero is 416 KB at 1500px shown at 390px",
+      "Trim 78 titles over 60 chars and 121 meta descriptions over 160 chars",
+      "301 non-www to www with a single Cloudflare redirect rule",
+      "Ship the /blogs/ band fix (page.jsx was splicing away the Keep Exploring band) and decide whether the 3 component-based pages need one"
+    ],
+    "unavailable_data_sources": [
+      "CrUX field data \u2014 all CWV figures are lab measurements",
+      "Google Search Console \u2014 no indexation, impression or query data",
+      "GA4 \u2014 no organic traffic data",
+      "Moz / Bing Webmaster / Common Crawl \u2014 backlink profile entirely unknown, category not scored",
+      "DataForSEO \u2014 no live SERP, keyword volume or AI-visibility data"
+    ],
+    "tooling_note": "The bundled claude-seo Python toolchain could not run: it requires Python 3.10+ and this machine has only Python 3.9.6 and Python 3.15.0b4 (beta, no compatible wheels), with no brew/uv/pyenv available. Audit was performed with direct HTTP crawling, headless Chromium (Playwright) and the site source.",
+    "revision": "Revised 30 July 2026 after a local-build audit. The first pass wrongly stated the internal-linking work was pending deploy; commit 637cd2f had already shipped it. Content Quality 55->57 and On-Page 62->65, total 56->57."
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 55,
+      "weight": 22,
+      "what_works": [
+        "211/211 crawled URLs returned HTTP 200 \u2014 no broken static routes, no redirect chains",
+        "Canonicals flawless on the static site: 211/211 present, all self-referencing, 0 mismatches, 0 noindex",
+        "Full security header set: HSTS preload, nosniff, Referrer-Policy, X-Frame-Options, upgrade-insecure-requests",
+        "http to https returns 301; /about-us to /about-us/ returns 308; 404s return a real 404",
+        "robots.txt valid and references the sitemap; sitemap.xml valid with lastmod on all 211 entries"
+      ],
+      "findings": [
+        {
+          "title": "163 blog articles missing from sitemap.xml",
+          "severity": "Critical",
+          "description": "sitemap.xml contains 211 <loc> entries covering only static routes plus /blogs/ and 3 hardcoded blog-* pages. Zero /blog/<slug>/ URLs are present, yet /blogs/ links 163 live articles that all return HTTP 200.",
+          "recommendation": "Make app/sitemap.js async, read article slugs from the same source /blogs/ uses, and append them with a DB-derived lastmod and lower priority than the course pages. Do this after de-duplicating so the sitemap does not advertise duplicates."
+        },
+        {
+          "title": "Non-www serves the entire site with HTTP 200",
+          "severity": "High",
+          "description": "https://adhiroha.com/ returns 200 with 429,715 bytes rather than a 301 to www. DEPLOY.md states non-www must 301 at the server. Canonical tags on the non-www copy correctly point to www, which limits the damage.",
+          "recommendation": "Add a Cloudflare redirect rule 301ing the apex domain to www."
+        },
+        {
+          "title": "hreflang annotations are non-reciprocal",
+          "severity": "High",
+          "description": "26 English pages declare no hreflang at all, including /about-us/, /200-hour-.../, /300-hour-.../, /500-hour-.../, /contact-us/ and /blogs/. Meanwhile /de/200-stunden-.../ declares hreflang=en pointing back at /200-hour-.../. Google discards one-way annotations.",
+          "recommendation": "Emit the full alternates set on English pages too, generated from a route-equivalence map."
+        },
+        {
+          "title": "hreflang incomplete on 175 localized pages",
+          "severity": "High",
+          "description": "Localized subpages declare exactly 3 alternates (self, en, x-default); only the 11 homepages declare all 12. /de/200-stunden-.../ and /fr/200-heures-.../ never reference each other, so the ten language versions never cluster. Root cause: LANGUAGE_ALTERNATES in lib/seo.js maps homepages only.",
+          "recommendation": "Replace LANGUAGE_ALTERNATES with a route-equivalence map listing each logical page's URL in all 11 languages, derivable from the app/<lang>/(pages)/ directory structure."
+        },
+        {
+          "title": "html lang is 'en' on all 211 pages",
+          "severity": "Medium",
+          "description": "Every localized page ships lang=\"en\" in server-rendered HTML. components/SetLang.jsx corrects it in a useEffect, so it is only right after hydration. Google ignores the attribute but Bing reads it and screen readers pick a voice from it.",
+          "recommendation": "Render <html lang> per language via a route-group layout, then delete SetLang."
+        },
+        {
+          "title": "Broken article link on /blogs/",
+          "severity": "Medium",
+          "description": "/blog/Yoga for Seniors: A Beginner-Friendly Guide to Getting Started/ contains literal spaces and a colon and returns 404.",
+          "recommendation": "Re-slug to yoga-for-seniors-beginner-friendly-guide and fix the link on /blogs/."
+        },
+        {
+          "title": "21 mixed-case article slugs",
+          "severity": "Low",
+          "description": "e.g. /blog/Bloated-Again/, /blog/Yoga-Helps-Your-Gut/, /blog/The-Honest-Truth/. No case-insensitive collisions were found, so no active duplication.",
+          "recommendation": "301 to lowercase equivalents when convenient."
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 57,
+      "weight": 23,
+      "what_works": [
+        "Median 2,423 words across 211 pages; course pages run 6,500\u20137,000 words each; max 8,860",
+        "Zero duplicate titles and zero duplicate meta descriptions across all 211 static pages, including 184 localized pages",
+        "Only 2 pages below 300 words site-wide",
+        "Every page has exactly one H1 and at least one H2 \u2014 no hierarchy breaks",
+        "Strong first-hand experience signals on money pages: founder's letter, named teachers, real photography, honest framing",
+        "Internal linking resolved and live: 17 contextual in-copy links plus 92 Keep Exploring band links across 23 of 27 English pages"
+      ],
+      "findings": [
+        {
+          "title": "27 near-duplicate article pairs",
+          "severity": "Critical",
+          "description": "Every pair is slug vs slug1. Measured body-text similarity: yoga-for-thyroid-health 93.7%, yoga-for-pcos-hormonal-imbalance 95.0%, ganga-aarti-...-devotion 96.4%. Word counts differ by roughly 10 words. Both URLs in each pair self-canonicalise, so neither consolidates.",
+          "recommendation": "Keep the better version (consistently the non-1 variant), then 301 the duplicate and delete the DB row. If redirects are not possible at the data layer, emit a cross-canonical from the duplicate to the keeper."
+        },
+        {
+          "title": "No author or date on 163 articles",
+          "severity": "High",
+          "description": "Articles emit no datePublished, no dateModified, no author in schema, and carry no visible byline.",
+          "recommendation": "Add author and publish/updated dates to both the rendered page and BlogPosting schema. Add the DB columns if they do not exist."
+        },
+        {
+          "title": "Health claims without expertise signals",
+          "severity": "High",
+          "description": "60+ articles cover diabetes, thyroid, PCOS, menopause, heart disease and blood pressure with no named author, no credentials, no medical review and no citations. This is the highest E-E-A-T risk content on the site.",
+          "recommendation": "Attribute health articles to a named teacher with stated credentials and add a reviewed-by line."
+        },
+        {
+          "title": "Thin articles",
+          "severity": "Medium",
+          "description": "40+ articles fall in the 740\u2013920 word range, most of them the duplicate variants. Median article length ~1,200 words versus 2,423 site-wide.",
+          "recommendation": "After de-duplication, merge overlapping clusters (six PCOS articles, five thyroid, seven diabetes) into single 1,800\u20132,500 word guides and 301 the rest."
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 65,
+      "weight": 20,
+      "what_works": [
+        "0 missing titles, 0 missing meta descriptions, 0 missing H1s across 211 pages",
+        "0 duplicate titles, 0 duplicate descriptions",
+        "viewport meta and twitter:card present on 100% of pages",
+        "Descriptive keyword-aligned URL slugs on all static routes",
+        "Keyword anchor text now live at 45/16/14/19/12 across the five target keywords, up from 3/0/0/3/0"
+      ],
+      "findings": [
+        {
+          "title": "og:title, og:url and og:description on 25 English subpages are the homepage's",
+          "severity": "High",
+          "description": "8 of 9 sampled English subpages return og:url = https://www.adhiroha.com/ and the homepage og:title, including the 200/300/500-hour course pages, /about-us/, /contact-us/ and /blogs/. Those page.jsx files set title/description/alternates but no openGraph, so Next.js inherits the root layout's block verbatim including its hardcoded url. Every WhatsApp or Facebook share of a course page previews as the homepage.",
+          "recommendation": "Add a pageMetadata({title, description, path, image}) helper in lib/seo.js that always derives openGraph.url from path, and use it on every route. The correct pattern already exists on /yoga-teacher-training-course-rishikesh-india/."
+        },
+        {
+          "title": "og:image missing on 175 localized pages",
+          "severity": "High",
+          "description": "Localized page.jsx files override openGraph with title/description/url but no images, which replaces the inherited array. English subpages have the image but the wrong title/url; localized pages have the right title/url but no image.",
+          "recommendation": "Same shared helper fixes both halves."
+        },
+        {
+          "title": "78 titles exceed 60 characters",
+          "severity": "Medium",
+          "description": "35 exceed 70 characters, worst offenders being the localized course pages. These truncate in SERPs.",
+          "recommendation": "Trim to 50\u201360 characters, leading with the target keyword."
+        },
+        {
+          "title": "121 meta descriptions exceed 160 characters",
+          "severity": "Medium",
+          "description": "57% of all pages. Google will truncate or rewrite them.",
+          "recommendation": "Trim to 150\u2013160 characters."
+        },
+        {
+          "title": "4 titles under 30 characters",
+          "severity": "Low",
+          "description": "Under-using available SERP real estate.",
+          "recommendation": "Expand with a qualifier or brand suffix."
+        },
+        {
+          "title": "/blogs/ silently dropped its Keep Exploring band",
+          "severity": "Low",
+          "description": "app/(main)/blogs/page.jsx splices content.js by keeping content.slice(0,cut) and content.slice(footer); the band is written between the last </section> and <footer>, i.e. inside the discarded region. Only /blogs/ was affected because it is the only route that reassembles its content.js. Fixed locally by slicing the tail from the band marker; verified with the 97-article grid intact. Not yet deployed.",
+          "recommendation": "Deploy the blogs/page.jsx fix."
+        },
+        {
+          "title": "3 English pages carry no related-links band",
+          "severity": "Low",
+          "description": "/apply-for-teacher-in-rishikesh/, /volunteer-opportunity-in-rishikesh/ and /weather/ are component-based rather than content.js-driven, so scripts/related-links.mjs skips them.",
+          "recommendation": "Render the band from a shared React component on those routes, or accept the gap as they are low-value utility pages."
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 72,
+      "weight": 10,
+      "what_works": [
+        "JSON-LD on 211/211 static pages with 0 invalid blocks",
+        "Rich entity graph: EducationalOrganization + LocalBusiness + PostalAddress + GeoCoordinates + ImageObject + WebSite on all 211",
+        "Course + CourseInstance + Offer on 110 pages, correctly modelled for course rich results",
+        "FAQPage with Question/Answer on 135 pages, parsed from visible markup so schema and page cannot disagree",
+        "BreadcrumbList on 200 pages",
+        "aggregateRating deliberately omitted with a documented rationale \u2014 correct call, avoids a manual action"
+      ],
+      "findings": [
+        {
+          "title": "No Article/BlogPosting schema on 163 articles",
+          "severity": "High",
+          "description": "Articles emit only the site-wide organization graph. No Article, no author, no datePublished, no dateModified, no BreadcrumbList. This forfeits article rich results on 44% of the site's URLs.",
+          "recommendation": "Add BlogPosting with headline, image, datePublished, dateModified, author and mainEntityOfPage, plus a BreadcrumbList. Depends on real author/date data being available \u2014 do not invent values."
+        },
+        {
+          "title": "No Review or AggregateRating anywhere",
+          "severity": "Low",
+          "description": "Correctly avoided for now given the self-serving-rating policy risk.",
+          "recommendation": "To earn stars legitimately, surface real reviews with named reviewers and dates, then mark those up."
+        }
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "score": 45,
+      "weight": 10,
+      "what_works": [
+        "CLS is excellent: 0.001\u20130.035 across all eight runs, far inside the 0.1 good threshold",
+        "Long-task time is low (0\u2013279 ms) \u2014 JavaScript is not the bottleneck",
+        "Images already served as WebP",
+        "46 of 56 homepage images use loading=lazy; LCP hero is fetchpriority=high and preloaded"
+      ],
+      "findings": [
+        {
+          "title": "Homepage mobile LCP 4.43 s \u2014 poor",
+          "severity": "High",
+          "description": "Above Google's 4.0 s poor threshold. FCP equals LCP, so the delay is transfer time rather than render-blocking work. Lab measurement, no CrUX field data available.",
+          "recommendation": "Fix responsive images first \u2014 that is the dominant cause."
+        },
+        {
+          "title": "No responsive images anywhere",
+          "severity": "High",
+          "description": "0 of 56 homepage images use srcset, 0 use sizes, 0 picture elements. Mobile downloads desktop-resolution files: img_shiva-adhiroha.webp is 416 KB at 1500px natural displayed at 390px; img_dji-0921.webp 480 KB; yttc-004.webp 467 KB. Total 2.31 MB of images on a 390px viewport.",
+          "recommendation": "Generate 480/768/1200/1600px WebP variants for the ~20 largest images and add srcset + sizes, starting with each template's LCP hero. Expect ~1.5 MB saved on mobile. Note next.config.mjs sets images.unoptimized = true."
+        },
+        {
+          "title": "TTFB 0.8\u20132.0 s on mobile",
+          "severity": "High",
+          "description": "cache-control s-maxage=31536000 is set and Cloudflare fronts the site, but /about-us/ measured 1,984 ms TTFB, indicating frequent origin hits rather than edge cache.",
+          "recommendation": "Investigate Cloudflare cache hit ratio for HTML; confirm the Hostinger origin is not bypassing the edge cache."
+        },
+        {
+          "title": "Very large HTML documents",
+          "severity": "Medium",
+          "description": "Median 246,648 bytes of HTML per page, max 440,932 bytes (/es/500-horas-.../). 100 of 211 pages exceed 250 KB. Median 15 inline script blocks and 4 stylesheet links per page.",
+          "recommendation": "Move repeated inline scripts into a shared external file so they cache across pages."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 40,
+      "weight": 10,
+      "what_works": [
+        "FAQPage schema on 135 pages with Q&A lifted from visible markup \u2014 ideal passage-level citability",
+        "Clean heading hierarchy and answer-first prose on money pages",
+        "Strong consistent entity data: LocalBusiness, PostalAddress, GeoCoordinates, sameAs social profiles"
+      ],
+      "findings": [
+        {
+          "title": "Every major AI crawler is blocked in robots.txt",
+          "severity": "High",
+          "description": "Cloudflare's managed block disallows GPTBot, ClaudeBot, CCBot, Google-Extended, meta-externalagent and CloudflareBrowserRenderingCrawler, with Content-Signal: search=yes, ai-train=no, use=reference. The site cannot be cited by ChatGPT, Claude or Meta AI and is excluded from Gemini grounding. Google Search indexing is unaffected. This may well be intentional \u2014 it is Cloudflare's default posture and a legitimate content-rights position.",
+          "recommendation": "Treat as a business decision. For a school whose customers research heavily before booking, AI citability is likely worth more than the training-data concession \u2014 but that is the owner's call. To gain the visibility, unblock GPTBot and Google-Extended in Cloudflare's AI-crawler settings."
+        },
+        {
+          "title": "No llms.txt",
+          "severity": "Medium",
+          "description": "/llms.txt returns 404. This is an emerging convention that Google Search ignores.",
+          "recommendation": "Low priority, and moot while the AI crawlers above are blocked."
+        },
+        {
+          "title": "No Article schema on articles",
+          "severity": "Low",
+          "description": "Reduces machine-readability of the 163 pages most likely to be cited in an AI answer.",
+          "recommendation": "Covered by the Schema category recommendation."
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 55,
+      "weight": 5,
+      "what_works": [
+        "0 of 9,357 images across 211 pages are missing an alt attribute",
+        "WebP format throughout",
+        "Lazy loading applied to below-the-fold images"
+      ],
+      "findings": [
+        {
+          "title": "No srcset or sizes on any image",
+          "severity": "High",
+          "description": "0 of 56 homepage images use responsive image attributes. Single largest available performance win.",
+          "recommendation": "See the Performance recommendation."
+        },
+        {
+          "title": "5,005 images lack width/height",
+          "severity": "Medium",
+          "description": "Measured CLS stays under 0.04 today, so this is a robustness gap rather than an active defect \u2014 but it leaves no intrinsic-ratio safety net if CSS changes.",
+          "recommendation": "Add explicit width and height attributes."
+        },
+        {
+          "title": "253 images have empty alt",
+          "severity": "Low",
+          "description": "Correct for purely decorative images.",
+          "recommendation": "Confirm none are content-bearing."
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Critical Fixes",
+        "timeframe": "Week 1",
+        "items": [
+          "Add the 163 blog articles to app/sitemap.js (~1 hour)",
+          "Resolve the 27 duplicate article pairs by 301 or cross-canonical, and fix the 404 slug containing spaces and a colon (~3 hours)",
+          "Fix Open Graph on 25 English subpages via a shared pageMetadata helper in lib/seo.js (~1 hour)",
+          "301 non-www to www at Cloudflare (~15 minutes)"
+        ]
+      },
+      {
+        "name": "Phase 2: High-Impact Improvements",
+        "timeframe": "Weeks 2-3",
+        "items": [
+          "Rebuild hreflang from a route-equivalence map so annotations are reciprocal and complete across all 11 languages (~4 hours)",
+          "Add srcset/sizes and generate responsive WebP variants for the ~20 largest images (~4 hours)",
+          "Add BlogPosting + BreadcrumbList schema to the 163 articles (~2 hours)",
+          "Add author and date bylines to articles, prioritising the 60+ health articles (~4 hours plus editorial)",
+          "Trim 78 over-length titles and 121 over-length meta descriptions (~3 hours)",
+          "Ship the /blogs/ band fix and decide whether the 3 component-based pages need a band (~1 hour)"
+        ]
+      },
+      {
+        "name": "Phase 3: Content & Authority",
+        "timeframe": "Month 2",
+        "items": [
+          "Decide the AI-crawler position in Cloudflare (~30 minutes, business decision)",
+          "Render html lang server-side per language and delete SetLang (~2 hours)",
+          "Merge the thin overlapping health clusters (PCOS, thyroid, diabetes) into single authoritative guides",
+          "Normalise the 21 mixed-case article slugs",
+          "Reduce HTML weight by externalising repeated inline scripts"
+        ]
+      },
+      {
+        "name": "Phase 4: Monitoring & Iteration",
+        "timeframe": "Ongoing",
+        "items": [
+          "Install Python 3.12/3.13 and re-run with the claude-seo toolchain plus GSC, GA4, CrUX and a backlink source",
+          "Submit the updated sitemap and verify the 163 articles get indexed",
+          "Re-test Core Web Vitals against CrUX field data after the image work",
+          "Re-scrape three course pages in the Facebook Sharing Debugger to clear cached previews",
+          "Validate hreflang reciprocity across all 11 language versions of three sample pages",
+          "Re-run scripts/internal-links.mjs and scripts/related-links.mjs after content changes (both idempotent)"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/",
+    "raw_crawl": "crawl.json",
+    "raw_performance": "perf.json",
+    "local_build_findings": "findings/local-build.md",
+    "raw_crawl_local": "crawl-local.json"
+  }
+}
