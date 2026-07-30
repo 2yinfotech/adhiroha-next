@@ -1,12 +1,12 @@
 // Dutch 300-hour course page — served at /nl/300-uur-yoga-docentenopleiding-rishikesh.
 // Reuses the English course page's stylesheet and script unchanged; only the copy differs.
-import "../../../(main)/300-hour-yoga-teacher-training-course-rishikesh/styles.css";
+import "../../../(en)/(main)/300-hour-yoga-teacher-training-course-rishikesh/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/300-hour-yoga-teacher-training-course-rishikesh/scripts";
+import scripts from "../../../(en)/(main)/300-hour-yoga-teacher-training-course-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
 
 const NL = "/nl/300-uur-yoga-docentenopleiding-rishikesh/";
 const EN = "/300-hour-yoga-teacher-training-course-rishikesh/";
@@ -29,7 +29,7 @@ export const metadata = {
     "Gevorderde 300-uur yoga-docentenopleiding in Rishikesh, gecertificeerd door Yoga Alliance. 30 dagen, kleine groepen, verblijf in een Himalaya-ashram, alle maaltijden en uitstapjes inbegrepen.",
   alternates: {
     canonical: NL,
-    languages: { nl: `${SITE}${NL}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website",
@@ -49,6 +49,7 @@ export const metadata = {
 };
 
 const pageSchema = graph(
+  ...studentVideoSchemas(),
   courseSchema({
     name: "300-Uur Yoga-docentenopleiding in Rishikesh",
     description: metadata.description,
@@ -56,7 +57,7 @@ const pageSchema = graph(
     price: 1500,
     days: 30,
     styles: "Gevorderde hatha yoga, ashtanga vinyasa, uitlijning, pranayama, meditatie, yogafilosofie, anatomie",
-  }),
+  ...courseFacts("/300-hour-yoga-teacher-training-course-rishikesh/")}),
   faqSchema(extractFaqs(content)),
   breadcrumbSchema([{ name: "300-uur yoga-docentenopleiding", url: NL }])
 );

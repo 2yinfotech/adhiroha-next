@@ -1,12 +1,12 @@
 // Polish Hatha & Yin course page — served at /pl/hatha-yin-kurs-nauczycielski-jogi-rishikesh.
 // Reuses the English course page's stylesheet and script unchanged; only the copy differs.
-import "../../../(main)/hatha-teacher-training-course-rishikesh/styles.css";
+import "../../../(en)/(main)/hatha-teacher-training-course-rishikesh/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/hatha-teacher-training-course-rishikesh/scripts";
+import scripts from "../../../(en)/(main)/hatha-teacher-training-course-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
 
 const PL = "/pl/hatha-yin-kurs-nauczycielski-jogi-rishikesh/";
 const EN = "/hatha-teacher-training-course-rishikesh/";
@@ -29,7 +29,7 @@ export const metadata = {
     "Dwunastodniowy kurs nauczycielski hatha i yin jogi w Riszikeś, akredytowany przez Ministerstwo Ayush. Małe grupy, pobyt w himalajskim aśramie, wszystkie posiłki i wycieczki w cenie.",
   alternates: {
     canonical: PL,
-    languages: { pl: `${SITE}${PL}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website",
@@ -49,6 +49,7 @@ export const metadata = {
 };
 
 const pageSchema = graph(
+  ...studentVideoSchemas(),
   courseSchema({
     name: "Kurs Nauczycielski Hatha i Yin Jogi w Riszikeś",
     description: metadata.description,
@@ -56,7 +57,7 @@ const pageSchema = graph(
     price: 790,
     days: 14,
     styles: "Hatha joga, yin joga, ustawienie, pranajama, medytacja, anatomia, metodyka nauczania",
-  }),
+  ...courseFacts("/hatha-teacher-training-course-rishikesh/")}),
   faqSchema(extractFaqs(content)),
   breadcrumbSchema([{ name: "Kurs nauczycielski hatha i yin", url: PL }])
 );

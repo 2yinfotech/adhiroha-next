@@ -1,10 +1,10 @@
 // Spanish Contacto page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../../(main)/contact-us/styles.css";
+import "../../../(en)/(main)/contact-us/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/contact-us/scripts";
+import scripts from "../../../(en)/(main)/contact-us/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, hreflangFor } from "@/lib/seo";
 
 const ES = "/es/contacto/";
 const EN = "/contact-us/";
@@ -14,7 +14,7 @@ export const metadata = {
   description: "Ponte en contacto con Adhiroha en Rishikesh — WhatsApp, teléfono o correo electrónico. Cada mensaje recibe respuesta de una persona real, normalmente en un día.",
   alternates: {
     canonical: ES,
-    languages: { es: `${SITE}${ES}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "es_ES", url: `${SITE}${ES}`,

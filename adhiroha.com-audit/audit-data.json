@@ -1,6 +1,6 @@
 {
   "summary": {
-    "health_score": 57,
+    "health_score": 60,
     "business_type": "Local Service / Education \u2014 residential yoga teacher-training school in Rishikesh, India, selling internationally (hybrid local + international intent)",
     "audit_date": "2026-07-30",
     "target": "https://www.adhiroha.com",
@@ -29,7 +29,7 @@
       "DataForSEO \u2014 no live SERP, keyword volume or AI-visibility data"
     ],
     "tooling_note": "The bundled claude-seo Python toolchain could not run: it requires Python 3.10+ and this machine has only Python 3.9.6 and Python 3.15.0b4 (beta, no compatible wheels), with no brew/uv/pyenv available. Audit was performed with direct HTTP crawling, headless Chromium (Playwright) and the site source.",
-    "revision": "Revised 30 July 2026 after a local-build audit. The first pass wrongly stated the internal-linking work was pending deploy; commit 637cd2f had already shipped it. Content Quality 55->57 and On-Page 62->65, total 56->57."
+    "revision": "Revised 30 July 2026 after a local-build audit. The first pass wrongly stated the internal-linking work was pending deploy; commit 637cd2f had already shipped it. Content Quality 55->57 and On-Page 62->65, total 56->57. Schema pass 30 July 2026: Person, VideoObject, Course properties, localised breadcrumbs, WebSite.inLanguage, hasMap. Schema category 72->88, total 57->60. Blog schema deliberately out of scope."
   },
   "categories": [
     {
@@ -185,7 +185,7 @@
     },
     {
       "name": "Schema / Structured Data",
-      "score": 72,
+      "score": 88,
       "weight": 10,
       "what_works": [
         "JSON-LD on 211/211 static pages with 0 invalid blocks",
@@ -193,7 +193,13 @@
         "Course + CourseInstance + Offer on 110 pages, correctly modelled for course rich results",
         "FAQPage with Question/Answer on 135 pages, parsed from visible markup so schema and page cannot disagree",
         "BreadcrumbList on 200 pages",
-        "aggregateRating deliberately omitted with a documented rationale \u2014 correct call, avoids a manual action"
+        "aggregateRating deliberately omitted with a documented rationale \u2014 correct call, avoids a manual action",
+        "Person markup for all 11 acharyas on the teachers page in every language (katakana names on the Japanese page, romanisation as alternateName)",
+        "VideoObject for the 6 student-review films on all 66 course pages that embed them \u2014 real YouTube titles, upload dates and durations",
+        "Course now carries image, educationalCredentialAwarded, coursePrerequisites and a recurring Schedule (byMonthDay 1 / 24 / [1,15]); courseMode corrected to the documented 'Onsite'",
+        "BreadcrumbList root crumb localised (Startseite, Inicio, \u30db\u30fc\u30e0 \u2026) and pointing at the matching language homepage",
+        "WebSite.inLanguage lists all 11 published languages instead of a single hardcoded 'en'",
+        "LocalBusiness gained hasMap and a YouTube sameAs"
       ],
       "findings": [
         {
@@ -207,6 +213,24 @@
           "severity": "Low",
           "description": "Correctly avoided for now given the self-serving-rating policy risk.",
           "recommendation": "To earn stars legitimately, surface real reviews with named reviewers and dates, then mark those up."
+        },
+        {
+          "title": "openingHoursSpecification still absent",
+          "severity": "Low",
+          "description": "The site publishes no reception or office hours anywhere, so no truthful value exists to emit.",
+          "recommendation": "Add once the school supplies real hours."
+        },
+        {
+          "title": "Google Business Profile and Yoga Alliance sameAs still missing",
+          "severity": "Low",
+          "description": "Both are high-value entity links for a destination school, but neither URL is published anywhere on the site and guessing one would point the entity graph at the wrong business.",
+          "recommendation": "Add both URLs to SOCIAL in lib/seo.js once confirmed."
+        },
+        {
+          "title": "Course.inLanguage stays 'en' on every locale \u2014 verified correct, not a bug",
+          "severity": "Info",
+          "description": "inLanguage is the language a course is taught in. The site's own FAQ states it in every language: 'English is the medium of study at Adhiroha' / 'Englisch ist die Unterrichtssprache bei Adhiroha'. Setting it per locale would make the schema contradict the page.",
+          "recommendation": "Leave as is. Page language is carried by <html lang> and hreflang."
         }
       ]
     },

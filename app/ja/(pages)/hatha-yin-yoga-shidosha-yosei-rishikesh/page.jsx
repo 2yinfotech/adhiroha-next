@@ -1,12 +1,12 @@
 // Japanese Hatha & Yin course page — served at /ja/hatha-yin-yoga-shidosha-yosei-rishikesh.
 // Reuses the English course page's stylesheet and script unchanged; only the copy differs.
-import "../../../(main)/hatha-teacher-training-course-rishikesh/styles.css";
+import "../../../(en)/(main)/hatha-teacher-training-course-rishikesh/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/hatha-teacher-training-course-rishikesh/scripts";
+import scripts from "../../../(en)/(main)/hatha-teacher-training-course-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
 
 const JA = "/ja/hatha-yin-yoga-shidosha-yosei-rishikesh/";
 const EN = "/hatha-teacher-training-course-rishikesh/";
@@ -29,7 +29,7 @@ export const metadata = {
     "アーユシュ省認定の12日間ハタ＆陰ヨガ指導者養成コース（リシケシ）。少人数制、ヒマラヤのアシュラム滞在、食事と遠足込み。",
   alternates: {
     canonical: JA,
-    languages: { ja: `${SITE}${JA}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website",
@@ -49,6 +49,7 @@ export const metadata = {
 };
 
 const pageSchema = graph(
+  ...studentVideoSchemas(),
   courseSchema({
     name: "リシケシのハタ＆陰ヨガ指導者養成コース",
     description: metadata.description,
@@ -56,7 +57,7 @@ const pageSchema = graph(
     price: 790,
     days: 14,
     styles: "ハタヨガ、陰ヨガ、アライメント、プラーナヤーマ、瞑想、解剖学、指導法",
-  }),
+  ...courseFacts("/hatha-teacher-training-course-rishikesh/")}),
   faqSchema(extractFaqs(content)),
   breadcrumbSchema([{ name: "ハタ＆陰の指導者養成", url: JA }])
 );

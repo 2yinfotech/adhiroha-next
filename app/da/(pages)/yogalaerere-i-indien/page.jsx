@@ -1,10 +1,10 @@
 // Danish teachers page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../../(main)/yoga-teachers-in-india/styles.css";
+import "../../../(en)/(main)/yoga-teachers-in-india/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/yoga-teachers-in-india/scripts";
+import scripts from "../../../(en)/(main)/yoga-teachers-in-india/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE, teacherSchemas, hreflangFor } from "@/lib/seo";
 
 const DA = "/da/yogalaerere-i-indien/";
 const EN = "/yoga-teachers-in-india/";
@@ -15,7 +15,7 @@ export const metadata = {
     "Mød Adhirohas 11 yoga-acharyaer i Rishikesh — kandidater i yogisk videnskab og doktorer i naturmedicin, med over 115 års samlet undervisningserfaring.",
   alternates: {
     canonical: DA,
-    languages: { da: `${SITE}${DA}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "da_DK", url: `${SITE}${DA}`,
@@ -31,6 +31,7 @@ export const metadata = {
 };
 
 const pageSchema = graph(
+  ...teacherSchemas("da"),
   faqSchema(extractFaqs(content)),
   breadcrumbSchema([{ name: "Vores undervisere", url: DA }])
 );

@@ -1,10 +1,10 @@
 // Japanese gallery page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../../(main)/yoga-gallery-india/styles.css";
+import "../../../(en)/(main)/yoga-gallery-india/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/yoga-gallery-india/scripts";
+import scripts from "../../../(en)/(main)/yoga-gallery-india/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE, hreflangFor } from "@/lib/seo";
 
 const JA = "/ja/yoga-gallery-indo/";
 const EN = "/yoga-gallery-india/";
@@ -15,7 +15,7 @@ export const metadata = {
     "リシケシ、アッパー・タポヴァンのアディローハ・アシュラムのありのままの写真181枚 — シャラ、客室、サットヴィックな食事、儀式、遠足、そして生徒たち。",
   alternates: {
     canonical: JA,
-    languages: { ja: `${SITE}${JA}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "ja_JP", url: `${SITE}${JA}`,

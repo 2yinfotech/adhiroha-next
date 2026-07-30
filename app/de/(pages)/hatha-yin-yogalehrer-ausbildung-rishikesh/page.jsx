@@ -1,11 +1,11 @@
 // German Hatha & Yin Yogalehrer-Ausbildung in Rishikesh — reuses the English course dir's CSS/JS unchanged.
-import "../../../(main)/hatha-teacher-training-course-rishikesh/styles.css";
+import "../../../(en)/(main)/hatha-teacher-training-course-rishikesh/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/hatha-teacher-training-course-rishikesh/scripts";
+import scripts from "../../../(en)/(main)/hatha-teacher-training-course-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
 
 const DE = "/de/hatha-yin-yogalehrer-ausbildung-rishikesh/";
 const EN = "/hatha-teacher-training-course-rishikesh/";
@@ -27,7 +27,7 @@ export const metadata = {
   description: "12-tägige Hatha- & Yin-Yogalehrer-Ausbildung in Rishikesh, akkreditiert vom Ministry of Ayush. Kleine Gruppen, Ashram-Unterkunft, alle Mahlzeiten inklusive.",
   alternates: {
     canonical: DE,
-    languages: { de: `${SITE}${DE}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "de_DE", url: `${SITE}${DE}`,
@@ -42,7 +42,8 @@ export const metadata = {
 };
 
 const pageSchema = graph(
-  courseSchema({ name: "Hatha & Yin Yogalehrer-Ausbildung in Rishikesh", description: metadata.description, url: DE, price: 790, days: 14, styles: "Hatha Yoga, Yin Yoga, Alignment, Pranayama, Meditation" }),
+  ...studentVideoSchemas(),
+  courseSchema({ name: "Hatha & Yin Yogalehrer-Ausbildung in Rishikesh", description: metadata.description, url: DE, price: 790, days: 14, styles: "Hatha Yoga, Yin Yoga, Alignment, Pranayama, Meditation" , ...courseFacts("/hatha-teacher-training-course-rishikesh/")}),
   faqSchema(extractFaqs(content)),
   breadcrumbSchema([{ name: "Hatha & Yin Yogalehrer-Ausbildung", url: DE }])
 );

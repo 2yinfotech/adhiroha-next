@@ -1,10 +1,10 @@
 // Spanish Mensaje de Exalumnos page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../../(main)/soon-after-message/styles.css";
+import "../../../(en)/(main)/soon-after-message/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/soon-after-message/scripts";
+import scripts from "../../../(en)/(main)/soon-after-message/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE, hreflangFor } from "@/lib/seo";
 
 const ES = "/es/mensaje-de-exalumnos/";
 const EN = "/soon-after-message/";
@@ -15,7 +15,7 @@ export const metadata = {
     "Descubre lo que dicen los graduados poco después de su formación en Adhiroha — mensajes sinceros de alumnos de nuestros cursos de 200, 300 y 500 horas en Rishikesh.",
   alternates: {
     canonical: ES,
-    languages: { es: `${SITE}${ES}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "es_ES", url: `${SITE}${ES}`,

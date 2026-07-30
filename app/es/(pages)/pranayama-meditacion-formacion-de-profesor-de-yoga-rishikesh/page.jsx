@@ -1,11 +1,11 @@
 // Spanish Pranayama & Meditation Yogalehrer-Ausbildung in Rishikesh — reuses the English course dir's CSS/JS unchanged.
-import "../../../(main)/pranayama-teacher-training-course-rishikesh/styles.css";
+import "../../../(en)/(main)/pranayama-teacher-training-course-rishikesh/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/pranayama-teacher-training-course-rishikesh/scripts";
+import scripts from "../../../(en)/(main)/pranayama-teacher-training-course-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
 
 const ES = "/es/pranayama-meditacion-formacion-de-profesor-de-yoga-rishikesh/";
 const EN = "/pranayama-teacher-training-course-rishikesh/";
@@ -27,7 +27,7 @@ export const metadata = {
   description: "Formación de profesor de yoga en Pranayama y Meditación de 12 días en Rishikesh, acreditada por el Ministry of Ayush. Grupos reducidos, alojamiento en ashram, todas las comidas incluidas.",
   alternates: {
     canonical: ES,
-    languages: { es: `${SITE}${ES}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "es_ES", url: `${SITE}${ES}`,
@@ -42,7 +42,8 @@ export const metadata = {
 };
 
 const pageSchema = graph(
-  courseSchema({ name: "Formación de Profesor de Yoga en Pranayama y Meditación en Rishikesh", description: metadata.description, url: ES, price: 790, days: 14, styles: "Pranayama, Kriya, Meditación, Filosofía del Yoga" }),
+  ...studentVideoSchemas(),
+  courseSchema({ name: "Formación de Profesor de Yoga en Pranayama y Meditación en Rishikesh", description: metadata.description, url: ES, price: 790, days: 14, styles: "Pranayama, Kriya, Meditación, Filosofía del Yoga" , ...courseFacts("/pranayama-teacher-training-course-rishikesh/")}),
   faqSchema(extractFaqs(content)),
   breadcrumbSchema([{ name: "Formación en Pranayama y Meditación", url: ES }])
 );

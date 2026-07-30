@@ -13,7 +13,7 @@
 import fs from "fs";
 import path from "path";
 
-const MAIN = "app/(main)";
+const MAIN = "app/(en)/(main)";
 
 // Longest phrase first: "200 hour yoga teacher training in Rishikesh" has to win
 // over the generic "yoga teacher training in Rishikesh" that it contains.

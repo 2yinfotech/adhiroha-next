@@ -1,12 +1,12 @@
 // Danish Pranayama & Meditation course page — served at /da/pranayama-meditation-yogalaereruddannelse-rishikesh.
 // Reuses the English course page's stylesheet and script unchanged; only the copy differs.
-import "../../../(main)/pranayama-teacher-training-course-rishikesh/styles.css";
+import "../../../(en)/(main)/pranayama-teacher-training-course-rishikesh/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/pranayama-teacher-training-course-rishikesh/scripts";
+import scripts from "../../../(en)/(main)/pranayama-teacher-training-course-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
 
 const DA = "/da/pranayama-meditation-yogalaereruddannelse-rishikesh/";
 const EN = "/pranayama-teacher-training-course-rishikesh/";
@@ -29,7 +29,7 @@ export const metadata = {
     "Tolv dages pranayama- og meditations-yogalæreruddannelse i Rishikesh, akkrediteret af Ayush-ministeriet. Små hold, ophold i himalayansk ashram, alle måltider og udflugter inkluderet.",
   alternates: {
     canonical: DA,
-    languages: { da: `${SITE}${DA}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website",
@@ -49,6 +49,7 @@ export const metadata = {
 };
 
 const pageSchema = graph(
+  ...studentVideoSchemas(),
   courseSchema({
     name: "Pranayama- og meditations-yogalæreruddannelse i Rishikesh",
     description: metadata.description,
@@ -56,7 +57,7 @@ const pageSchema = graph(
     price: 790,
     days: 14,
     styles: "Pranayama, meditation, shatkarma, yogafilosofi, anatomi for den subtile krop, undervisningsmetodik",
-  }),
+  ...courseFacts("/pranayama-teacher-training-course-rishikesh/")}),
   faqSchema(extractFaqs(content)),
   breadcrumbSchema([{ name: "Pranayama- og meditationsuddannelse", url: DA }])
 );

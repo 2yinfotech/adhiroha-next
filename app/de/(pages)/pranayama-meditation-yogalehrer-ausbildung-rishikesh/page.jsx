@@ -1,11 +1,11 @@
 // German Pranayama & Meditation Yogalehrer-Ausbildung in Rishikesh — reuses the English course dir's CSS/JS unchanged.
-import "../../../(main)/pranayama-teacher-training-course-rishikesh/styles.css";
+import "../../../(en)/(main)/pranayama-teacher-training-course-rishikesh/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/pranayama-teacher-training-course-rishikesh/scripts";
+import scripts from "../../../(en)/(main)/pranayama-teacher-training-course-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
 
 const DE = "/de/pranayama-meditation-yogalehrer-ausbildung-rishikesh/";
 const EN = "/pranayama-teacher-training-course-rishikesh/";
@@ -27,7 +27,7 @@ export const metadata = {
   description: "12-tägige Pranayama- & Meditations-Yogalehrer-Ausbildung in Rishikesh, akkreditiert vom Ministry of Ayush. Kleine Gruppen, Ashram-Unterkunft, alle Mahlzeiten inklusive.",
   alternates: {
     canonical: DE,
-    languages: { de: `${SITE}${DE}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "de_DE", url: `${SITE}${DE}`,
@@ -42,7 +42,8 @@ export const metadata = {
 };
 
 const pageSchema = graph(
-  courseSchema({ name: "Pranayama & Meditation Yogalehrer-Ausbildung in Rishikesh", description: metadata.description, url: DE, price: 790, days: 14, styles: "Pranayama, Kriya, Meditation, Yoga-Philosophie" }),
+  ...studentVideoSchemas(),
+  courseSchema({ name: "Pranayama & Meditation Yogalehrer-Ausbildung in Rishikesh", description: metadata.description, url: DE, price: 790, days: 14, styles: "Pranayama, Kriya, Meditation, Yoga-Philosophie" , ...courseFacts("/pranayama-teacher-training-course-rishikesh/")}),
   faqSchema(extractFaqs(content)),
   breadcrumbSchema([{ name: "Pranayama & Meditation Ausbildung", url: DE }])
 );

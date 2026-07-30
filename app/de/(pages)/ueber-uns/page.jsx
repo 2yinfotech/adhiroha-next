@@ -1,10 +1,10 @@
 // German Über uns page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../../(main)/about-us/styles.css";
+import "../../../(en)/(main)/about-us/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/about-us/scripts";
+import scripts from "../../../(en)/(main)/about-us/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, hreflangFor } from "@/lib/seo";
 
 const DE = "/de/ueber-uns/";
 const EN = "/about-us/";
@@ -14,7 +14,7 @@ export const metadata = {
   description: "Lerne Adhiroha kennen — eine Yoga-Alliance-zertifizierte Yogaschule in Upper Tapovan, Rishikesh, mit erfahrenen indischen Acharyas und kleinen Gruppen.",
   alternates: {
     canonical: DE,
-    languages: { de: `${SITE}${DE}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "de_DE", url: `${SITE}${DE}`,

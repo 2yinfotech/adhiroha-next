@@ -25,11 +25,15 @@ hero section, so each route renders its **full original `<body>`** (hero image,
 navbar, drawer, content and footer) rather than hoisting a shared header into the
 layout. This keeps every page pixel-identical to its source.
 
-- `app/layout.jsx` — root layout. Holds `<html>`/`<body>`, global CSS, and loads
-  Leaflet (used by the location maps) before the app becomes interactive.
+- `app/(en)/layout.jsx`, `app/de/layout.jsx`, … — one **root layout per
+  language**, eleven in all. Each renders `components/SiteShell.jsx`, which holds
+  the `<html lang>`/`<body>`, the font preloads and the sitewide JSON-LD. Only a
+  root layout may render `<html>`, and it cannot read the pathname in a static
+  build, so one shared root layout could only ever hardcode a single `lang` —
+  hence one per locale.
 - `app/(main)/layout.jsx` — imports `adhiroha.min.css`, shared by every page
-  except the homepage. The homepage (`app/page.jsx`) ships its own styles.
-- `app/(main)/<slug>/page.jsx` — one route per original page. Each renders its
+  except the homepage. The homepage (`app/(en)/page.jsx`) ships its own styles.
+- `app/(en)/(main)/<slug>/page.jsx` — one route per original page. Each renders its
   full original body markup (`content.js`) plus its inline styles (`styles.css`)
   and runs its original JavaScript (`scripts.js`) via `components/PageScripts.jsx`.
 - `components/PageScripts.jsx` — runs a page's inline JS on mount, and cleans up
@@ -46,13 +50,18 @@ node scripts/generate.mjs
 ```
 
 This rewrites the homepage files under `app/_home/` and every
-`app/(main)/<slug>/` route (`content.js`, `styles.css`, `scripts.js`, `page.jsx`).
+`app/(en)/(main)/<slug>/` route (`content.js`, `styles.css`, `scripts.js`, `page.jsx`).
 
 ### Notes / possible follow-ups
 
 - `metadataBase` and the sitemap/robots domain are set to
-  `https://www.adhiroha.com` (`app/layout.jsx`, `app/sitemap.js`,
-  `app/robots.js`). Change these if the domain differs.
+  `https://www.adhiroha.com` (`SITE` in `lib/i18n-routes.js`, `metadataBase` in
+  `lib/root-metadata.js`, `app/sitemap.js`, `app/robots.js`). Change these if the
+  domain differs. The apex 301s to www — see DEPLOY.md §4.
+- `lib/i18n-routes.js` — the one translation map, keyed by English URL. Every
+  page's hreflang set is derived from it, which is what keeps the eleven language
+  versions reciprocal; Google discards any cluster where a page fails to link
+  back.
 - Static assets (`img/`, `gallery/`, `css/`, `js/`, root images) are copied into
   `public/`. Re-copy them if the originals change.
 - Leaflet is currently loaded on every page (as the original site did). It could

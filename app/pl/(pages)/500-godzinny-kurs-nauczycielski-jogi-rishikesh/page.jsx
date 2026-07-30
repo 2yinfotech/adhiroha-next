@@ -1,12 +1,12 @@
 // Polish 500-hour course page — served at /pl/500-godzinny-kurs-nauczycielski-jogi-rishikesh.
 // Reuses the English course page's stylesheet and script unchanged; only the copy differs.
-import "../../../(main)/500-hour-yoga-teacher-training-course-rishikesh/styles.css";
+import "../../../(en)/(main)/500-hour-yoga-teacher-training-course-rishikesh/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/500-hour-yoga-teacher-training-course-rishikesh/scripts";
+import scripts from "../../../(en)/(main)/500-hour-yoga-teacher-training-course-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
 
 const PL = "/pl/500-godzinny-kurs-nauczycielski-jogi-rishikesh/";
 const EN = "/500-hour-yoga-teacher-training-course-rishikesh/";
@@ -29,7 +29,7 @@ export const metadata = {
     "500-godzinny kurs nauczycielski jogi w Riszikeś z certyfikatem Yoga Alliance. 60 dni, od fundamentu po poziom zaawansowany, pobyt w himalajskim aśramie, wszystkie posiłki i wycieczki w cenie.",
   alternates: {
     canonical: PL,
-    languages: { pl: `${SITE}${PL}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website",
@@ -49,6 +49,7 @@ export const metadata = {
 };
 
 const pageSchema = graph(
+  ...studentVideoSchemas(),
   courseSchema({
     name: "500-Godzinny Kurs Nauczycielski Jogi w Riszikeś",
     description: metadata.description,
@@ -56,7 +57,7 @@ const pageSchema = graph(
     price: 2790,
     days: 60,
     styles: "Hatha joga, ashtanga vinyasa, yin, ustawienie, pranajama, medytacja, filozofia jogi, anatomia",
-  }),
+  ...courseFacts("/500-hour-yoga-teacher-training-course-rishikesh/")}),
   faqSchema(extractFaqs(content)),
   breadcrumbSchema([{ name: "500-godzinny kurs nauczycielski jogi", url: PL }])
 );

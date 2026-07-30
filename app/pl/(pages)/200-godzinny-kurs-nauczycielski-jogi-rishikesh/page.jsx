@@ -1,12 +1,12 @@
 // Polish 200-hour course page — served at /pl/200-godzinny-kurs-nauczycielski-jogi-rishikesh.
 // Reuses the English course page's stylesheet and script unchanged; only the copy differs.
-import "../../../(main)/200-hour-yoga-teacher-training-course-rishikesh/styles.css";
+import "../../../(en)/(main)/200-hour-yoga-teacher-training-course-rishikesh/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/200-hour-yoga-teacher-training-course-rishikesh/scripts";
+import scripts from "../../../(en)/(main)/200-hour-yoga-teacher-training-course-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
 
 const PL = "/pl/200-godzinny-kurs-nauczycielski-jogi-rishikesh/";
 const EN = "/200-hour-yoga-teacher-training-course-rishikesh/";
@@ -29,7 +29,7 @@ export const metadata = {
     "200-godzinny kurs nauczycielski jogi w Riszikeś z certyfikatem Yoga Alliance. 24 dni, małe grupy, pobyt w himalajskim aśramie, wszystkie posiłki i wycieczki w cenie.",
   alternates: {
     canonical: PL,
-    languages: { pl: `${SITE}${PL}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website",
@@ -51,6 +51,7 @@ export const metadata = {
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing
 // can earn rich results. FAQs are parsed from the page's own markup.
 const pageSchema = graph(
+  ...studentVideoSchemas(),
   courseSchema({
     name: "200-Godzinny Kurs Nauczycielski Jogi w Riszikeś",
     description: metadata.description,
@@ -58,7 +59,7 @@ const pageSchema = graph(
     price: 1275,
     days: 24,
     styles: "Hatha joga, ashtanga vinyasa, pranajama, medytacja, filozofia jogi, anatomia, metodyka nauczania",
-  }),
+  ...courseFacts("/200-hour-yoga-teacher-training-course-rishikesh/")}),
   faqSchema(extractFaqs(content)),
   breadcrumbSchema([{ name: "200-godzinny kurs nauczycielski jogi", url: PL }])
 );

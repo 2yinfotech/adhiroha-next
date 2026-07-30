@@ -1,12 +1,12 @@
 // Dutch Pranayama & Meditation course page — served at /nl/pranayama-meditatie-yoga-docentenopleiding-rishikesh.
 // Reuses the English course page's stylesheet and script unchanged; only the copy differs.
-import "../../../(main)/pranayama-teacher-training-course-rishikesh/styles.css";
+import "../../../(en)/(main)/pranayama-teacher-training-course-rishikesh/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/pranayama-teacher-training-course-rishikesh/scripts";
+import scripts from "../../../(en)/(main)/pranayama-teacher-training-course-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
 
 const NL = "/nl/pranayama-meditatie-yoga-docentenopleiding-rishikesh/";
 const EN = "/pranayama-teacher-training-course-rishikesh/";
@@ -29,7 +29,7 @@ export const metadata = {
     "Twaalfdaagse pranayama- en meditatie-docentenopleiding in Rishikesh, geaccrediteerd door het Ministerie van Ayush. Kleine groepen, verblijf in een Himalaya-ashram, alle maaltijden en uitstapjes inbegrepen.",
   alternates: {
     canonical: NL,
-    languages: { nl: `${SITE}${NL}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website",
@@ -49,6 +49,7 @@ export const metadata = {
 };
 
 const pageSchema = graph(
+  ...studentVideoSchemas(),
   courseSchema({
     name: "Pranayama- en Meditatie-docentenopleiding in Rishikesh",
     description: metadata.description,
@@ -56,7 +57,7 @@ const pageSchema = graph(
     price: 790,
     days: 14,
     styles: "Pranayama, meditatie, shatkarma, anatomie van het subtiele lichaam, yogafilosofie, lesmethodiek",
-  }),
+  ...courseFacts("/pranayama-teacher-training-course-rishikesh/")}),
   faqSchema(extractFaqs(content)),
   breadcrumbSchema([{ name: "Pranayama- en meditatie-docentenopleiding", url: NL }])
 );

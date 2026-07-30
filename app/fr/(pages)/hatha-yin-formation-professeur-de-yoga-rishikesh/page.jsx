@@ -1,13 +1,13 @@
 // French Hatha & Yin formation de professeur de yoga à Rishikesh — reuses the English course dir's CSS/JS unchanged.
-import "../../../(main)/hatha-teacher-training-course-rishikesh/styles.css";
+import "../../../(en)/(main)/hatha-teacher-training-course-rishikesh/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/hatha-teacher-training-course-rishikesh/scripts";
+import scripts from "../../../(en)/(main)/hatha-teacher-training-course-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
 
-const DE = "/fr/hatha-yin-formation-professeur-de-yoga-rishikesh/";
+const FR = "/fr/hatha-yin-formation-professeur-de-yoga-rishikesh/";
 const EN = "/hatha-teacher-training-course-rishikesh/";
 
 const sections = [
@@ -26,11 +26,11 @@ export const metadata = {
   title: "Formation Hatha & Yin de professeur de yoga à Rishikesh | Adhiroha",
   description: "Formation de professeur de yoga Hatha & Yin de 12 jours à Rishikesh, accréditée par le Ministry of Ayush. Petits groupes, hébergement en ashram, tous les repas inclus.",
   alternates: {
-    canonical: DE,
-    languages: { fr: `${SITE}${DE}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    canonical: FR,
+    languages: hreflangFor(EN),
   },
   openGraph: {
-    type: "website", siteName: "Adhiroha Yoga School", locale: "fr_FR", url: `${SITE}${DE}`,
+    type: "website", siteName: "Adhiroha Yoga School", locale: "fr_FR", url: `${SITE}${FR}`,
     title: "Formation Hatha & Yin de professeur de yoga à Rishikesh | Adhiroha", description: "Formation de professeur de yoga Hatha & Yin de 12 jours à Rishikesh, accréditée par le Ministry of Ayush. Petits groupes, hébergement en ashram, tous les repas inclus.",
   },
   twitter: {
@@ -42,9 +42,10 @@ export const metadata = {
 };
 
 const pageSchema = graph(
-  courseSchema({ name: "Formation Hatha & Yin de professeur de yoga à Rishikesh", description: metadata.description, url: DE, price: 790, days: 14, styles: "Hatha yoga, Yin yoga, alignement, pranayama, méditation" }),
+  ...studentVideoSchemas(),
+  courseSchema({ name: "Formation Hatha & Yin de professeur de yoga à Rishikesh", description: metadata.description, url: FR, price: 790, days: 14, styles: "Hatha yoga, Yin yoga, alignement, pranayama, méditation" , ...courseFacts("/hatha-teacher-training-course-rishikesh/")}),
   faqSchema(extractFaqs(content)),
-  breadcrumbSchema([{ name: "Formation Hatha & Yin", url: DE }])
+  breadcrumbSchema([{ name: "Formation Hatha & Yin", url: FR }])
 );
 
 export default function Page() {

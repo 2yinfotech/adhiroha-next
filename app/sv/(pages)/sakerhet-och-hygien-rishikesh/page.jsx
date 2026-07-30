@@ -1,10 +1,10 @@
 // Swedish safety & hygiene page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../../(main)/safety-hygiene-in-rishikesh/styles.css";
+import "../../../(en)/(main)/safety-hygiene-in-rishikesh/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/safety-hygiene-in-rishikesh/scripts";
+import scripts from "../../../(en)/(main)/safety-hygiene-in-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE, hreflangFor } from "@/lib/seo";
 
 const SV = "/sv/sakerhet-och-hygien-rishikesh/";
 const EN = "/safety-hygiene-in-rishikesh/";
@@ -15,7 +15,7 @@ export const metadata = {
     "Kameraövervakning dygnet runt, inhägnat område, flygplatshämtning ingår och extra omtanke om kvinnor som reser ensamma — så sköter Adhiroha säkerhet och hygien i Rishikesh.",
   alternates: {
     canonical: SV,
-    languages: { sv: `${SITE}${SV}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "sv_SE", url: `${SITE}${SV}`,

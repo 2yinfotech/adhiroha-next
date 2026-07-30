@@ -1,10 +1,10 @@
 // Portuguese Sadhana immersion page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../../(main)/sadhana-immersion-programme/styles.css";
+import "../../../(en)/(main)/sadhana-immersion-programme/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/sadhana-immersion-programme/scripts";
+import scripts from "../../../(en)/(main)/sadhana-immersion-programme/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, hreflangFor } from "@/lib/seo";
 
 const PT = "/pt/programa-de-imersao-sadhana/";
 const EN = "/sadhana-immersion-programme/";
@@ -15,7 +15,7 @@ export const metadata = {
     "Programa de imersão Sadhana de quinze dias em Rishikesh — silêncio, prática pessoal, meditação, karma yoga e o Bhagavad Gita no ritmo tradicional do ashram. A partir de € 699 com tudo incluído.",
   alternates: {
     canonical: PT,
-    languages: { pt: `${SITE}${PT}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pt_BR", url: `${SITE}${PT}`,
@@ -38,7 +38,7 @@ const pageSchema = graph(
     price: 699,
     days: 15,
     styles: "Hatha yoga, pranayama, meditação, karma yoga, filosofia do yoga",
-  }),
+  ...courseFacts("/sadhana-immersion-programme/")}),
   faqSchema(extractFaqs(content)),
   breadcrumbSchema([{ name: "Programa de imersão Sadhana", url: PT }])
 );

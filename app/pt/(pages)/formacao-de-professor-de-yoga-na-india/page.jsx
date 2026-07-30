@@ -1,10 +1,10 @@
 // Portuguese YTTC hub page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../../(main)/yoga-teacher-training-course-rishikesh-india/styles.css";
+import "../../../(en)/(main)/yoga-teacher-training-course-rishikesh-india/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/yoga-teacher-training-course-rishikesh-india/scripts";
+import scripts from "../../../(en)/(main)/yoga-teacher-training-course-rishikesh-india/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, hreflangFor } from "@/lib/seo";
 
 const PT = "/pt/formacao-de-professor-de-yoga-na-india/";
 const EN = "/yoga-teacher-training-course-rishikesh-india/";
@@ -23,7 +23,7 @@ export const metadata = {
   ],
   alternates: {
     canonical: PT,
-    languages: { pt: `${SITE}${PT}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pt_BR", url: `${SITE}${PT}`,
@@ -48,7 +48,7 @@ const pageSchema = graph(
     price: 1275,
     days: 24,
     styles: "Hatha, Ashtanga Vinyasa e Yin yoga",
-  }),
+  ...courseFacts("/200-hour-yoga-teacher-training-course-rishikesh/")}),
   courseSchema({
     name: "Formação de Professor de Yoga de 300 Horas em Rishikesh, Índia",
     description:
@@ -57,7 +57,7 @@ const pageSchema = graph(
     price: 1500,
     days: 30,
     styles: "Hatha, Ashtanga Vinyasa e alinhamento",
-  }),
+  ...courseFacts("/300-hour-yoga-teacher-training-course-rishikesh/")}),
   courseSchema({
     name: "Formação de Professor de Yoga de 500 Horas em Rishikesh, Índia",
     description:
@@ -66,7 +66,7 @@ const pageSchema = graph(
     price: 2790,
     days: 60,
     styles: "Hatha, Ashtanga, Yin e alinhamento",
-  }),
+  ...courseFacts("/500-hour-yoga-teacher-training-course-rishikesh/")}),
   faqSchema(extractFaqs(content)),
   breadcrumbSchema([{ name: "Formação de professor de yoga na Índia", url: PT }])
 );

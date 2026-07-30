@@ -1,10 +1,10 @@
 // Danish Sadhana immersion page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../../(main)/sadhana-immersion-programme/styles.css";
+import "../../../(en)/(main)/sadhana-immersion-programme/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/sadhana-immersion-programme/scripts";
+import scripts from "../../../(en)/(main)/sadhana-immersion-programme/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, hreflangFor } from "@/lib/seo";
 
 const DA = "/da/sadhana-fordybelsesprogram/";
 const EN = "/sadhana-immersion-programme/";
@@ -15,7 +15,7 @@ export const metadata = {
     "Femten dages sadhana-fordybelse med ophold i Rishikesh — stilhed, egen praksis, meditation, karma yoga og Bhagavad Gita i traditionel ashram-disciplin. Fra 699 € alt inklusive.",
   alternates: {
     canonical: DA,
-    languages: { da: `${SITE}${DA}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "da_DK", url: `${SITE}${DA}`,
@@ -38,7 +38,7 @@ const pageSchema = graph(
     price: 699,
     days: 15,
     styles: "Hatha yoga, pranayama, meditation, karma yoga, yogafilosofi",
-  }),
+  ...courseFacts("/sadhana-immersion-programme/")}),
   faqSchema(extractFaqs(content)),
   breadcrumbSchema([{ name: "Sadhana fordybelsesprogram", url: DA }])
 );

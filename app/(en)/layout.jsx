@@ -1,0 +1,12 @@
+// Root layout for every English route. It renders the document itself, so
+// <html lang="en"> is in the served HTML rather than being corrected by
+// client-side JS after the page has already parsed as English.
+import "../globals.css";
+import SiteShell from "@/components/SiteShell";
+import { rootMetadata } from "@/lib/root-metadata";
+
+export const metadata = rootMetadata("en");
+
+export default function EnglishRootLayout({ children }) {
+  return <SiteShell lang="en">{children}</SiteShell>;
+}

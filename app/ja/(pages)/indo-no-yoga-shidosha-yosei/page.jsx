@@ -1,10 +1,10 @@
 // Japanese YTTC hub page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../../(main)/yoga-teacher-training-course-rishikesh-india/styles.css";
+import "../../../(en)/(main)/yoga-teacher-training-course-rishikesh-india/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/yoga-teacher-training-course-rishikesh-india/scripts";
+import scripts from "../../../(en)/(main)/yoga-teacher-training-course-rishikesh-india/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, hreflangFor } from "@/lib/seo";
 
 const JA = "/ja/indo-no-yoga-shidosha-yosei/";
 const EN = "/yoga-teacher-training-course-rishikesh-india/";
@@ -23,7 +23,7 @@ export const metadata = {
   ],
   alternates: {
     canonical: JA,
-    languages: { ja: `${SITE}${JA}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "ja_JP", url: `${SITE}${JA}`,
@@ -48,7 +48,7 @@ const pageSchema = graph(
     price: 1275,
     days: 24,
     styles: "ハタヨガ、アシュタンガ・ヴィンヤサ、陰ヨガ",
-  }),
+  ...courseFacts("/200-hour-yoga-teacher-training-course-rishikesh/")}),
   courseSchema({
     name: "インド・リシケシの300時間ヨガ指導者養成コース",
     description:
@@ -57,7 +57,7 @@ const pageSchema = graph(
     price: 1500,
     days: 30,
     styles: "ハタヨガ、アシュタンガ・ヴィンヤサ、アライメント",
-  }),
+  ...courseFacts("/300-hour-yoga-teacher-training-course-rishikesh/")}),
   courseSchema({
     name: "インド・リシケシの500時間ヨガ指導者養成コース",
     description:
@@ -66,7 +66,7 @@ const pageSchema = graph(
     price: 2790,
     days: 60,
     styles: "ハタ、アシュタンガ、陰、アライメント",
-  }),
+  ...courseFacts("/500-hour-yoga-teacher-training-course-rishikesh/")}),
   faqSchema(extractFaqs(content)),
   breadcrumbSchema([{ name: "インドのヨガ指導者養成", url: JA }])
 );

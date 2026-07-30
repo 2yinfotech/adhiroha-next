@@ -162,7 +162,7 @@ function build(file, route) {
 
 function writePage(slug, file) {
   const { head, content, styles, scripts } = build(file, slug);
-  emit(path.join(APP, "(main)", slug), {
+  emit(path.join(APP, "(en)", "(main)", slug), {
     content,
     styles,
     scripts,

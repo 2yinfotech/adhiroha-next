@@ -1,12 +1,12 @@
 // Pagina italiana della formazione insegnanti di yoga di 300 ore — servita su /it/300-ore-formazione-insegnanti-yoga-rishikesh.
 // Riutilizza senza modifiche il foglio di stile e lo script della pagina inglese; cambia solo il contenuto.
-import "../../../(main)/300-hour-yoga-teacher-training-course-rishikesh/styles.css";
+import "../../../(en)/(main)/300-hour-yoga-teacher-training-course-rishikesh/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/300-hour-yoga-teacher-training-course-rishikesh/scripts";
+import scripts from "../../../(en)/(main)/300-hour-yoga-teacher-training-course-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
 
 const IT = "/it/300-ore-formazione-insegnanti-yoga-rishikesh/";
 const EN = "/300-hour-yoga-teacher-training-course-rishikesh/";
@@ -29,7 +29,7 @@ export const metadata = {
     "Fai progredire la tua pratica con la nostra formazione insegnanti di yoga di 300 ore a Rishikesh. 30 giorni di asana avanzato, pranayama e filosofia in un ashram accreditato Yoga Alliance.",
   alternates: {
     canonical: IT,
-    languages: { it: `${SITE}${IT}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website",
@@ -49,6 +49,7 @@ export const metadata = {
 };
 
 const pageSchema = graph(
+  ...studentVideoSchemas(),
   courseSchema({
     name: "Formazione Insegnanti di Yoga di 300 Ore a Rishikesh",
     description: metadata.description,
@@ -56,7 +57,7 @@ const pageSchema = graph(
     price: 1500,
     days: 30,
     styles: "Asana avanzato, pranayama, kriya, filosofia dello yoga, anatomia, metodologia avanzata dell'insegnamento",
-  }),
+  ...courseFacts("/300-hour-yoga-teacher-training-course-rishikesh/")}),
   faqSchema(extractFaqs(content)),
   breadcrumbSchema([{ name: "Formazione Insegnanti di Yoga di 300 Ore", url: IT }])
 );

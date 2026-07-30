@@ -5,8 +5,8 @@
 // miss adhiroha.min.css — where the fonts and CSS variables (--cream, --rust,
 // --ink, --line …) live — so every var(--…) resolves to nothing and the page
 // renders unstyled.
-import "../../(main)/adhiroha.min.css";
-import "../../(main)/reveal-fallback.css";
+import "../../(en)/(main)/adhiroha.min.css";
+import "../../(en)/(main)/reveal-fallback.css";
 import StickyHeader from "@/components/StickyHeader";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 

@@ -1,12 +1,12 @@
 // German 500-hour course page — served at /de/500-stunden-yogalehrer-ausbildung-rishikesh.
 // Reuses the English course page's stylesheet and script unchanged; only the copy differs.
-import "../../../(main)/500-hour-yoga-teacher-training-course-rishikesh/styles.css";
+import "../../../(en)/(main)/500-hour-yoga-teacher-training-course-rishikesh/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/500-hour-yoga-teacher-training-course-rishikesh/scripts";
+import scripts from "../../../(en)/(main)/500-hour-yoga-teacher-training-course-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
 
 const DE = "/de/500-stunden-yogalehrer-ausbildung-rishikesh/";
 const EN = "/500-hour-yoga-teacher-training-course-rishikesh/";
@@ -29,7 +29,7 @@ export const metadata = {
     "Schließe deinen RYT-500 mit unserer 500-Stunden Yogalehrer-Ausbildung in Rishikesh ab — 60 Tage, die den 200- und 300-Stunden-Lehrplan verbinden, Unterkunft und Mahlzeiten inklusive.",
   alternates: {
     canonical: DE,
-    languages: { de: `${SITE}${DE}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website",
@@ -49,6 +49,7 @@ export const metadata = {
 };
 
 const pageSchema = graph(
+  ...studentVideoSchemas(),
   courseSchema({
     name: "500-Stunden Yogalehrer-Ausbildung in Rishikesh",
     description: metadata.description,
@@ -56,7 +57,7 @@ const pageSchema = graph(
     price: 2790,
     days: 60,
     styles: "Hatha Yoga, Ashtanga Vinyasa, fortgeschrittene Asana, Pranayama, Meditation, Philosophie, Anatomie, Unterrichtsmethodik",
-  }),
+  ...courseFacts("/500-hour-yoga-teacher-training-course-rishikesh/")}),
   faqSchema(extractFaqs(content)),
   breadcrumbSchema([{ name: "500-Stunden Yogalehrer-Ausbildung", url: DE }])
 );

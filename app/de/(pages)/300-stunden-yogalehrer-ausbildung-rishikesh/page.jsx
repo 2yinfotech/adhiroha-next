@@ -1,12 +1,12 @@
 // German 300-hour course page — served at /de/300-stunden-yogalehrer-ausbildung-rishikesh.
 // Reuses the English course page's stylesheet and script unchanged; only the copy differs.
-import "../../../(main)/300-hour-yoga-teacher-training-course-rishikesh/styles.css";
+import "../../../(en)/(main)/300-hour-yoga-teacher-training-course-rishikesh/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/300-hour-yoga-teacher-training-course-rishikesh/scripts";
+import scripts from "../../../(en)/(main)/300-hour-yoga-teacher-training-course-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
 
 const DE = "/de/300-stunden-yogalehrer-ausbildung-rishikesh/";
 const EN = "/300-hour-yoga-teacher-training-course-rishikesh/";
@@ -29,7 +29,7 @@ export const metadata = {
     "Vertiefe deine Praxis mit unserer 300-Stunden Yogalehrer-Ausbildung in Rishikesh. 30 Tage fortgeschrittene Asana, Pranayama und Philosophie im Yoga-Alliance-Ashram.",
   alternates: {
     canonical: DE,
-    languages: { de: `${SITE}${DE}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website",
@@ -49,6 +49,7 @@ export const metadata = {
 };
 
 const pageSchema = graph(
+  ...studentVideoSchemas(),
   courseSchema({
     name: "300-Stunden Yogalehrer-Ausbildung in Rishikesh",
     description: metadata.description,
@@ -56,7 +57,7 @@ const pageSchema = graph(
     price: 1500,
     days: 30,
     styles: "Fortgeschrittene Asana, Pranayama, Kriya, Yoga-Philosophie, Anatomie, fortgeschrittene Unterrichtsmethodik",
-  }),
+  ...courseFacts("/300-hour-yoga-teacher-training-course-rishikesh/")}),
   faqSchema(extractFaqs(content)),
   breadcrumbSchema([{ name: "300-Stunden Yogalehrer-Ausbildung", url: DE }])
 );

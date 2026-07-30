@@ -92,14 +92,24 @@ Then in a browser (hard-refresh first — `Cmd/Ctrl+Shift+R`):
 ## 4. SEO: canonical host (server-level)
 
 Every canonical URL points at `https://www.adhiroha.com` (`metadataBase` in
-`app/layout.jsx`, `SITE` in `lib/seo.js`). The server must 301-redirect the
-non-www host to www, or Google splits ranking signals between the two.
+`lib/root-metadata.js`, `SITE` in `lib/i18n-routes.js`). The apex must
+301-redirect to www, or Google splits ranking signals between the two hosts —
+which is what it was doing: both hostnames answered 200 with the full site.
 
-Add to `public_html/.htaccess`, **before** the proxy rule:
+This is now shipped in **two places**, and you need the first one:
 
-    RewriteEngine On
-    RewriteCond %{HTTP_HOST} ^adhiroha\.com [NC]
-    RewriteRule ^(.*)$ https://www.adhiroha.com/$1 [L,R=301]
+1. `hostinger-node.htaccess` — the rule sits ahead of the proxy rule, so the
+   redirect happens at Apache and never reaches Node. **Copy this file to
+   `public_html/.htaccess` on deploy**; the redirect does not exist until you do.
+2. `next.config.mjs` — the same redirect as a `has: host` rule. It only fires if
+   Next.js sees the public `Host` header, which it does not behind Apache's
+   `[P]` proxy unless `ProxyPreserveHost` is on. Belt and braces.
+
+Verify after deploying:
+
+    curl -sI https://adhiroha.com/200-hour-yoga-teacher-training-course-rishikesh/
+
+Expect `HTTP/2 301` and a `location:` on the same path under `www.adhiroha.com`.
 
 Then confirm `https://www.adhiroha.com` is the tracked property in Google Search
 Console and resubmit `sitemap.xml`.

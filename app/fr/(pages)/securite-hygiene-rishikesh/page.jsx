@@ -1,23 +1,23 @@
 // French Sécurité & Hygiène page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../../(main)/safety-hygiene-in-rishikesh/styles.css";
+import "../../../(en)/(main)/safety-hygiene-in-rishikesh/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/safety-hygiene-in-rishikesh/scripts";
+import scripts from "../../../(en)/(main)/safety-hygiene-in-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, hreflangFor } from "@/lib/seo";
 
-const DE = "/fr/securite-hygiene-rishikesh/";
+const FR = "/fr/securite-hygiene-rishikesh/";
 const EN = "/safety-hygiene-in-rishikesh/";
 
 export const metadata = {
   title: "Sécurité & hygiène dans notre ashram de Rishikesh | Adhiroha",
   description: "Comment Adhiroha à Rishikesh assure la sécurité, l’hygiène et la logistique de voyage — en particulier pour les femmes voyageant seules. Accueil à l’arrivée, vidéosurveillance et plus.",
   alternates: {
-    canonical: DE,
-    languages: { fr: `${SITE}${DE}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    canonical: FR,
+    languages: hreflangFor(EN),
   },
   openGraph: {
-    type: "website", siteName: "Adhiroha Yoga School", locale: "fr_FR", url: `${SITE}${DE}`,
+    type: "website", siteName: "Adhiroha Yoga School", locale: "fr_FR", url: `${SITE}${FR}`,
     title: "Sécurité & hygiène dans notre ashram de Rishikesh | Adhiroha", description: "Comment Adhiroha à Rishikesh assure la sécurité, l’hygiène et la logistique de voyage — en particulier pour les femmes voyageant seules. Accueil à l’arrivée, vidéosurveillance et plus.",
   },
   twitter: {
@@ -30,7 +30,7 @@ export const metadata = {
 
 const pageSchema = graph(
   faqSchema(extractFaqs(content)),
-  breadcrumbSchema([{ name: "Sécurité & hygiène", url: DE }])
+  breadcrumbSchema([{ name: "Sécurité & hygiène", url: FR }])
 );
 
 export default function Page() {

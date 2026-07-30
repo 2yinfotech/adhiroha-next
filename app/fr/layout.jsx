@@ -1,12 +1,12 @@
-// Wraps both the French homepage and its inner pages so <html lang> reflects the
-// content. See components/SetLang for why this is done from the client.
-import SetLang from "@/components/SetLang";
+// Root layout for every /fr/ route. It renders the document itself, so
+// <html lang="fr"> is in the served HTML rather than being corrected by
+// client-side JS after the page has already parsed as English.
+import "../globals.css";
+import SiteShell from "@/components/SiteShell";
+import { rootMetadata } from "@/lib/root-metadata";
 
-export default function FrenchLayout({ children }) {
-  return (
-    <>
-      <SetLang lang="fr" />
-      {children}
-    </>
-  );
+export const metadata = rootMetadata("fr");
+
+export default function FrenchRootLayout({ children }) {
+  return <SiteShell lang="fr">{children}</SiteShell>;
 }

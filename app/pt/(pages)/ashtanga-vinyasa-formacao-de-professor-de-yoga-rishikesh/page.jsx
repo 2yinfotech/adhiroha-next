@@ -1,12 +1,12 @@
 // Portuguese Ashtanga & Vinyasa course page — served at /pt/ashtanga-vinyasa-formacao-de-professor-de-yoga-rishikesh.
 // Reuses the English course page's stylesheet and script unchanged; only the copy differs.
-import "../../../(main)/ashtanga-teacher-training-course-rishikesh/styles.css";
+import "../../../(en)/(main)/ashtanga-teacher-training-course-rishikesh/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/ashtanga-teacher-training-course-rishikesh/scripts";
+import scripts from "../../../(en)/(main)/ashtanga-teacher-training-course-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
 
 const PT = "/pt/ashtanga-vinyasa-formacao-de-professor-de-yoga-rishikesh/";
 const EN = "/ashtanga-teacher-training-course-rishikesh/";
@@ -29,7 +29,7 @@ export const metadata = {
     "Formação de professor de Ashtanga e Vinyasa Yoga de doze dias em Rishikesh, acreditada pelo Ministério de Ayush. Turmas pequenas, hospedagem em ashram himalaio, todas as refeições e passeios inclusos.",
   alternates: {
     canonical: PT,
-    languages: { pt: `${SITE}${PT}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website",
@@ -49,6 +49,7 @@ export const metadata = {
 };
 
 const pageSchema = graph(
+  ...studentVideoSchemas(),
   courseSchema({
     name: "Formação de Professor de Ashtanga e Vinyasa Yoga em Rishikesh",
     description: metadata.description,
@@ -56,7 +57,7 @@ const pageSchema = graph(
     price: 790,
     days: 14,
     styles: "Ashtanga Vinyasa, fluxo Vinyasa, alinhamento, pranayama, meditação, anatomia, metodologia de ensino",
-  }),
+  ...courseFacts("/ashtanga-teacher-training-course-rishikesh/")}),
   faqSchema(extractFaqs(content)),
   breadcrumbSchema([{ name: "Formação de professor de Ashtanga e Vinyasa", url: PT }])
 );

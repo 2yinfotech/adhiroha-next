@@ -1,12 +1,12 @@
-// Wraps both the German homepage and its inner pages so <html lang> reflects the
-// content. See components/SetLang for why this is done from the client.
-import SetLang from "@/components/SetLang";
+// Root layout for every /de/ route. It renders the document itself, so
+// <html lang="de"> is in the served HTML rather than being corrected by
+// client-side JS after the page has already parsed as English.
+import "../globals.css";
+import SiteShell from "@/components/SiteShell";
+import { rootMetadata } from "@/lib/root-metadata";
 
-export default function GermanLayout({ children }) {
-  return (
-    <>
-      <SetLang lang="de" />
-      {children}
-    </>
-  );
+export const metadata = rootMetadata("de");
+
+export default function GermanRootLayout({ children }) {
+  return <SiteShell lang="de">{children}</SiteShell>;
 }

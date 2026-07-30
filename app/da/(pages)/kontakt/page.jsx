@@ -1,10 +1,10 @@
 // Danish "Kontakt" page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../../(main)/contact-us/styles.css";
+import "../../../(en)/(main)/contact-us/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/contact-us/scripts";
+import scripts from "../../../(en)/(main)/contact-us/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE, hreflangFor } from "@/lib/seo";
 
 const DA = "/da/kontakt/";
 const EN = "/contact-us/";
@@ -15,7 +15,7 @@ export const metadata = {
     "Kontakt yogaashrammet Adhiroha i Upper Tapovan, Rishikesh. WhatsApp, e-mail eller formular — det er et rigtigt menneske, der svarer, som regel inden for et døgn.",
   alternates: {
     canonical: DA,
-    languages: { da: `${SITE}${DA}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "da_DK", url: `${SITE}${DA}`,

@@ -1,10 +1,10 @@
 // Italian I Nostri Insegnanti page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../../(main)/yoga-teachers-in-india/styles.css";
+import "../../../(en)/(main)/yoga-teachers-in-india/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/yoga-teachers-in-india/scripts";
+import scripts from "../../../(en)/(main)/yoga-teachers-in-india/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE, teacherSchemas, hreflangFor } from "@/lib/seo";
 
 const IT = "/it/insegnanti-di-yoga-in-india/";
 const EN = "/yoga-teachers-in-india/";
@@ -15,7 +15,7 @@ export const metadata = {
     "Incontra gli acharya indiani esperti che insegnano ad Adhiroha — praticanti di lunga data di hatha, ashtanga, pranayama e filosofia dello yoga a Rishikesh.",
   alternates: {
     canonical: IT,
-    languages: { it: `${SITE}${IT}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "it_IT", url: `${SITE}${IT}`,
@@ -31,6 +31,7 @@ export const metadata = {
 };
 
 const pageSchema = graph(
+  ...teacherSchemas("it"),
   faqSchema(extractFaqs(content)),
   breadcrumbSchema([{ name: "I Nostri Insegnanti", url: IT }])
 );

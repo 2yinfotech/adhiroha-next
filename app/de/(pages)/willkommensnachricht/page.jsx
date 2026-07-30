@@ -1,10 +1,10 @@
 // German Schülerstimmen page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../../(main)/soon-after-message/styles.css";
+import "../../../(en)/(main)/soon-after-message/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/soon-after-message/scripts";
+import scripts from "../../../(en)/(main)/soon-after-message/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, hreflangFor } from "@/lib/seo";
 
 const DE = "/de/willkommensnachricht/";
 const EN = "/soon-after-message/";
@@ -14,7 +14,7 @@ export const metadata = {
   description: "Eine Botschaft der Adhiroha-Absolventen — in einer Stimme, die vielen Namen gehört. Der Ashram, die Lehrer und der Mensch, der du wirst.",
   alternates: {
     canonical: DE,
-    languages: { de: `${SITE}${DE}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "de_DE", url: `${SITE}${DE}`,

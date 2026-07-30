@@ -1,10 +1,10 @@
 // Dutch alumni-message page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../../(main)/soon-after-message/styles.css";
+import "../../../(en)/(main)/soon-after-message/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/soon-after-message/scripts";
+import scripts from "../../../(en)/(main)/soon-after-message/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE, hreflangFor } from "@/lib/seo";
 
 const NL = "/nl/berichten-van-oud-studenten/";
 const EN = "/soon-after-message/";
@@ -15,7 +15,7 @@ export const metadata = {
     "Afgestudeerden van Adhiroha beschrijven in hun eigen woorden de yoga-docentenopleiding in Rishikesh — de tuin, het vuuraltaar, de vijf elementen van het terrein en de docenten achter de transformatie.",
   alternates: {
     canonical: NL,
-    languages: { nl: `${SITE}${NL}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "nl_NL", url: `${SITE}${NL}`,

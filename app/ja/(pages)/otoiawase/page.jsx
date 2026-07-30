@@ -1,10 +1,10 @@
 // Japanese "Contact" page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../../(main)/contact-us/styles.css";
+import "../../../(en)/(main)/contact-us/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/contact-us/scripts";
+import scripts from "../../../(en)/(main)/contact-us/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE, hreflangFor } from "@/lib/seo";
 
 const JA = "/ja/otoiawase/";
 const EN = "/contact-us/";
@@ -15,7 +15,7 @@ export const metadata = {
     "リシケシ、アッパー・タポヴァンのヨガアシュラム、アディローハへのお問い合わせ。WhatsApp、メール、フォームのいずれでも、実際の人間がたいてい1日以内にお返事します。",
   alternates: {
     canonical: JA,
-    languages: { ja: `${SITE}${JA}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "ja_JP", url: `${SITE}${JA}`,

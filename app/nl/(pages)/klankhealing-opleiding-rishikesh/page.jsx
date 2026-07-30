@@ -1,10 +1,10 @@
 // Dutch sound-healing TTC page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../../(main)/sound-healing-ttc-rishikesh/styles.css";
+import "../../../(en)/(main)/sound-healing-ttc-rishikesh/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/sound-healing-ttc-rishikesh/scripts";
+import scripts from "../../../(en)/(main)/sound-healing-ttc-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, hreflangFor } from "@/lib/seo";
 
 const NL = "/nl/klankhealing-opleiding-rishikesh/";
 const EN = "/sound-healing-ttc-rishikesh/";
@@ -15,7 +15,7 @@ export const metadata = {
     "Zesdaagse residentiële klankhealing- en therapie-docentenopleiding in Rishikesh — Tibetaanse klankschalen, gongs en Vedische klankwetenschap, niveau 1, 2 en 3. Vanaf € 690 all-inclusive.",
   alternates: {
     canonical: NL,
-    languages: { nl: `${SITE}${NL}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "nl_NL", url: `${SITE}${NL}`,
@@ -38,7 +38,7 @@ const pageSchema = graph(
     price: 690,
     days: 6,
     styles: "Tibetaanse klankschalen, gongs, Vedische klankwetenschap, chakrabalans, meditatie",
-  }),
+  ...courseFacts("/sound-healing-ttc-rishikesh/")}),
   faqSchema(extractFaqs(content)),
   breadcrumbSchema([{ name: "Klankhealing-opleiding", url: NL }])
 );

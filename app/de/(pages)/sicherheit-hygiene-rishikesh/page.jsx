@@ -1,10 +1,10 @@
 // German Sicherheit & Hygiene page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../../(main)/safety-hygiene-in-rishikesh/styles.css";
+import "../../../(en)/(main)/safety-hygiene-in-rishikesh/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/safety-hygiene-in-rishikesh/scripts";
+import scripts from "../../../(en)/(main)/safety-hygiene-in-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, hreflangFor } from "@/lib/seo";
 
 const DE = "/de/sicherheit-hygiene-rishikesh/";
 const EN = "/safety-hygiene-in-rishikesh/";
@@ -14,7 +14,7 @@ export const metadata = {
   description: "Wie Adhiroha in Rishikesh für Sicherheit, Hygiene und Reiselogistik sorgt — besonders für allein reisende Frauen. Abholung, Videoüberwachung und mehr.",
   alternates: {
     canonical: DE,
-    languages: { de: `${SITE}${DE}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "de_DE", url: `${SITE}${DE}`,

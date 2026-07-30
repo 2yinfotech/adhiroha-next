@@ -1,10 +1,10 @@
 // Polish "O nas" page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../../(main)/about-us/styles.css";
+import "../../../(en)/(main)/about-us/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/about-us/scripts";
+import scripts from "../../../(en)/(main)/about-us/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE, hreflangFor } from "@/lib/seo";
 
 const PL = "/pl/o-nas/";
 const EN = "/about-us/";
@@ -15,7 +15,7 @@ export const metadata = {
     "Poznaj Adhiroha — certyfikowany przez Yoga Alliance aśram jogi w Upper Tapovan w Riszikeś, z kampusem o powierzchni 20 000 stóp kw. i ponad 3000 uczniów z przeszło 70 krajów.",
   alternates: {
     canonical: PL,
-    languages: { pl: `${SITE}${PL}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pl_PL", url: `${SITE}${PL}`,

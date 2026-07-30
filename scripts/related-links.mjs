@@ -13,7 +13,7 @@
 import fs from "fs";
 import path from "path";
 
-const MAIN = "app/(main)";
+const MAIN = "app/(en)/(main)";
 
 // One entry per link target: the keyword anchor, and the line that explains it.
 const L = {

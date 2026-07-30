@@ -1,12 +1,12 @@
 // Swedish Pranayama & Meditation course page — served at /sv/pranayama-meditation-yogalararutbildning-rishikesh.
 // Reuses the English course page's stylesheet and script unchanged; only the copy differs.
-import "../../../(main)/pranayama-teacher-training-course-rishikesh/styles.css";
+import "../../../(en)/(main)/pranayama-teacher-training-course-rishikesh/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/pranayama-teacher-training-course-rishikesh/scripts";
+import scripts from "../../../(en)/(main)/pranayama-teacher-training-course-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
 
 const SV = "/sv/pranayama-meditation-yogalararutbildning-rishikesh/";
 const EN = "/pranayama-teacher-training-course-rishikesh/";
@@ -29,7 +29,7 @@ export const metadata = {
     "Tolv dagars pranayama- och meditationslärarutbildning i Rishikesh, ackrediterad av Ayushministeriet. Små grupper, boende i himalayiskt ashram, alla måltider och utflykter ingår.",
   alternates: {
     canonical: SV,
-    languages: { sv: `${SITE}${SV}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website",
@@ -49,6 +49,7 @@ export const metadata = {
 };
 
 const pageSchema = graph(
+  ...studentVideoSchemas(),
   courseSchema({
     name: "Pranayama- och Meditationslärarutbildning i Rishikesh",
     description: metadata.description,
@@ -56,7 +57,7 @@ const pageSchema = graph(
     price: 790,
     days: 14,
     styles: "Pranayama, meditation, shatkarma, den subtila kroppens anatomi, yogafilosofi, undervisningsmetodik",
-  }),
+  ...courseFacts("/pranayama-teacher-training-course-rishikesh/")}),
   faqSchema(extractFaqs(content)),
   breadcrumbSchema([{ name: "Pranayama- och meditationslärarutbildning", url: SV }])
 );

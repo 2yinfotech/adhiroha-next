@@ -1,10 +1,10 @@
 // Swedish code-of-conduct page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../../(main)/yoga-ashram-in-india-code-of-conduct/styles.css";
+import "../../../(en)/(main)/yoga-ashram-in-india-code-of-conduct/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/yoga-ashram-in-india-code-of-conduct/scripts";
+import scripts from "../../../(en)/(main)/yoga-ashram-in-india-code-of-conduct/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE, hreflangFor } from "@/lib/seo";
 
 const SV = "/sv/uppforandekod/";
 const EN = "/yoga-ashram-in-india-code-of-conduct/";
@@ -15,7 +15,7 @@ export const metadata = {
     "Reglerna på Adhirohas ashram i Rishikesh — de fyra pelarna, uppförandekoden, nolltoleranspolicyn och allt om avgifter, betalningar och ombokning.",
   alternates: {
     canonical: SV,
-    languages: { sv: `${SITE}${SV}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "sv_SE", url: `${SITE}${SV}`,

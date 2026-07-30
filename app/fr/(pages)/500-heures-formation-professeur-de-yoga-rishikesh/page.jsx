@@ -1,13 +1,13 @@
 // French Formation de professeur de yoga de 500 heures à Rishikesh — reuses the English course dir's CSS/JS unchanged; only the copy differs.
-import "../../../(main)/500-hour-yoga-teacher-training-course-rishikesh/styles.css";
+import "../../../(en)/(main)/500-hour-yoga-teacher-training-course-rishikesh/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/500-hour-yoga-teacher-training-course-rishikesh/scripts";
+import scripts from "../../../(en)/(main)/500-hour-yoga-teacher-training-course-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
 
-const DE = "/fr/500-heures-formation-professeur-de-yoga-rishikesh/";
+const FR = "/fr/500-heures-formation-professeur-de-yoga-rishikesh/";
 const EN = "/500-hour-yoga-teacher-training-course-rishikesh/";
 
 const sections = [
@@ -26,11 +26,11 @@ export const metadata = {
   title: "Formation de professeur de yoga de 500 heures à Rishikesh | Adhiroha",
   description: "Obtiens ton RYT-500 avec notre formation de professeur de yoga de 500 heures à Rishikesh — 60 jours réunissant les programmes de 200 et 300 heures, hébergement et repas inclus.",
   alternates: {
-    canonical: DE,
-    languages: { fr: `${SITE}${DE}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    canonical: FR,
+    languages: hreflangFor(EN),
   },
   openGraph: {
-    type: "website", siteName: "Adhiroha Yoga School", locale: "fr_FR", url: `${SITE}${DE}`,
+    type: "website", siteName: "Adhiroha Yoga School", locale: "fr_FR", url: `${SITE}${FR}`,
     title: "Formation de professeur de yoga de 500 heures à Rishikesh | Adhiroha", description: "Obtiens ton RYT-500 avec notre formation de professeur de yoga de 500 heures à Rishikesh — 60 jours réunissant les programmes de 200 et 300 heures, hébergement et repas inclus.",
   },
   twitter: {
@@ -42,9 +42,10 @@ export const metadata = {
 };
 
 const pageSchema = graph(
-  courseSchema({ name: "Formation de professeur de yoga de 500 heures à Rishikesh", description: metadata.description, url: DE, price: 2790, days: 60, styles: "Hatha Yoga, Ashtanga Vinyasa, asana avancé, pranayama, méditation, philosophie, anatomie, méthodologie d’enseignement" }),
+  ...studentVideoSchemas(),
+  courseSchema({ name: "Formation de professeur de yoga de 500 heures à Rishikesh", description: metadata.description, url: FR, price: 2790, days: 60, styles: "Hatha Yoga, Ashtanga Vinyasa, asana avancé, pranayama, méditation, philosophie, anatomie, méthodologie d’enseignement" , ...courseFacts("/500-hour-yoga-teacher-training-course-rishikesh/")}),
   faqSchema(extractFaqs(content)),
-  breadcrumbSchema([{ name: "Formation de professeur de yoga de 500 heures", url: DE }])
+  breadcrumbSchema([{ name: "Formation de professeur de yoga de 500 heures", url: FR }])
 );
 
 export default function Page() {

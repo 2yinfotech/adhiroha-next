@@ -1,12 +1,12 @@
 // Danish 500-hour course page — served at /da/500-timers-yogalaereruddannelse-rishikesh.
 // Reuses the English course page's stylesheet and script unchanged; only the copy differs.
-import "../../../(main)/500-hour-yoga-teacher-training-course-rishikesh/styles.css";
+import "../../../(en)/(main)/500-hour-yoga-teacher-training-course-rishikesh/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/500-hour-yoga-teacher-training-course-rishikesh/scripts";
+import scripts from "../../../(en)/(main)/500-hour-yoga-teacher-training-course-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
 
 const DA = "/da/500-timers-yogalaereruddannelse-rishikesh/";
 const EN = "/500-hour-yoga-teacher-training-course-rishikesh/";
@@ -29,7 +29,7 @@ export const metadata = {
     "500-timers yogalæreruddannelse i Rishikesh, certificeret af Yoga Alliance. 60 dage, hele vejen fra fundament til mesterskab, ophold i himalayansk ashram, alt inklusive.",
   alternates: {
     canonical: DA,
-    languages: { da: `${SITE}${DA}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website",
@@ -49,6 +49,7 @@ export const metadata = {
 };
 
 const pageSchema = graph(
+  ...studentVideoSchemas(),
   courseSchema({
     name: "500-timers yogalæreruddannelse i Rishikesh",
     description: metadata.description,
@@ -56,7 +57,7 @@ const pageSchema = graph(
     price: 2790,
     days: 60,
     styles: "Hatha yoga, ashtanga vinyasa, yin, opretning, pranayama, meditation, yogafilosofi, anatomi, undervisningsmetodik",
-  }),
+  ...courseFacts("/500-hour-yoga-teacher-training-course-rishikesh/")}),
   faqSchema(extractFaqs(content)),
   breadcrumbSchema([{ name: "500-timers yogalæreruddannelse", url: DA }])
 );

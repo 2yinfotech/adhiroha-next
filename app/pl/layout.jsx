@@ -1,12 +1,12 @@
-// Wraps both the Polish homepage and its inner pages so <html lang> reflects the
-// content. See components/SetLang for why this is done from the client.
-import SetLang from "@/components/SetLang";
+// Root layout for every /pl/ route. It renders the document itself, so
+// <html lang="pl"> is in the served HTML rather than being corrected by
+// client-side JS after the page has already parsed as English.
+import "../globals.css";
+import SiteShell from "@/components/SiteShell";
+import { rootMetadata } from "@/lib/root-metadata";
 
-export default function PolishLayout({ children }) {
-  return (
-    <>
-      <SetLang lang="pl" />
-      {children}
-    </>
-  );
+export const metadata = rootMetadata("pl");
+
+export default function PolishRootLayout({ children }) {
+  return <SiteShell lang="pl">{children}</SiteShell>;
 }

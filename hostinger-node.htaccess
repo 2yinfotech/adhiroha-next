@@ -8,5 +8,13 @@
 
 RewriteEngine On
 
+# --- Canonical host -------------------------------------------------
+# Every canonical tag on the site points at www.adhiroha.com, but the apex
+# also answered 200 with the full site, splitting crawl budget and inbound
+# links across two hostnames. 301 the apex to www BEFORE the proxy rule,
+# keeping path and query string ([R=301,L] carries the query by default).
+RewriteCond %{HTTP_HOST} ^adhiroha\.com$ [NC]
+RewriteRule ^(.*)$ https://www.adhiroha.com/$1 [L,R=301]
+
 # Forward everything to the Node.js app on 127.0.0.1:3000
 RewriteRule ^(.*)$ http://127.0.0.1:3000/$1 [P,L]

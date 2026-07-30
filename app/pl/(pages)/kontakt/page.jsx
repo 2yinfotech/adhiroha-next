@@ -1,10 +1,10 @@
 // Polish "Kontakt" page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../../(main)/contact-us/styles.css";
+import "../../../(en)/(main)/contact-us/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/contact-us/scripts";
+import scripts from "../../../(en)/(main)/contact-us/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE, hreflangFor } from "@/lib/seo";
 
 const PL = "/pl/kontakt/";
 const EN = "/contact-us/";
@@ -15,7 +15,7 @@ export const metadata = {
     "Napisz do aśramu jogi Adhiroha w Upper Tapovan w Riszikeś. WhatsApp, e-mail lub formularz — odpowiada prawdziwy człowiek, zwykle w ciągu doby.",
   alternates: {
     canonical: PL,
-    languages: { pl: `${SITE}${PL}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pl_PL", url: `${SITE}${PL}`,

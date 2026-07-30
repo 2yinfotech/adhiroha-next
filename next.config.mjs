@@ -20,6 +20,33 @@ const nextConfig = {
   // send a live localized route off-site.
   async redirects() {
     return [
+      // Apex → www, 301, path and query preserved. Both hostnames used to answer
+      // 200 with the full site, which splits crawl budget and inbound links
+      // across two hosts even though every canonical points at www.
+      //
+      // This only fires when Next.js actually sees the public Host header. On
+      // Hostinger the site sits behind an Apache reverse proxy that rewrites
+      // Host to 127.0.0.1:3000 unless ProxyPreserveHost is on, so the same
+      // redirect is also declared in hostinger-node.htaccess ahead of the proxy
+      // rule — that copy is the one that does the work in production.
+      //
+      // Split in two so the trailing slash survives: with trailingSlash: true a
+      // single `/:path*` rule would send /about-us/ to /about-us and cost a
+      // second hop to put the slash back. `statusCode: 301` rather than
+      // `permanent: true`, which emits 308 — equivalent to Google, but 301 is
+      // what every checker and curl -I looks for.
+      {
+        source: "/",
+        has: [{ type: "host", value: "adhiroha.com" }],
+        destination: "https://www.adhiroha.com/",
+        statusCode: 301,
+      },
+      {
+        source: "/:path+",
+        has: [{ type: "host", value: "adhiroha.com" }],
+        destination: "https://www.adhiroha.com/:path+/",
+        statusCode: 301,
+      },
       // Articles live at /blog/<slug>; send the bare /blog to the listing page.
       { source: "/blog", destination: "/blogs/", permanent: false },
     ];

@@ -1,10 +1,10 @@
 // Spanish Código de conducta page — reuses the English page's CSS/JS unchanged; only the copy differs.
-import "../../../(main)/yoga-ashram-in-india-code-of-conduct/styles.css";
+import "../../../(en)/(main)/yoga-ashram-in-india-code-of-conduct/styles.css";
 import content from "./content";
-import scripts from "../../../(main)/yoga-ashram-in-india-code-of-conduct/scripts";
+import scripts from "../../../(en)/(main)/yoga-ashram-in-india-code-of-conduct/scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE } from "@/lib/seo";
+import { graph, breadcrumbSchema, extractFaqs, faqSchema, SITE, hreflangFor } from "@/lib/seo";
 
 const ES = "/es/codigo-de-conducta/";
 const EN = "/yoga-ashram-in-india-code-of-conduct/";
@@ -15,7 +15,7 @@ export const metadata = {
     "Consulta el código de conducta, las normas del ashram, y las políticas de reembolso y cancelación de la formación de profesor de yoga en Adhiroha, Rishikesh, India.",
   alternates: {
     canonical: ES,
-    languages: { es: `${SITE}${ES}`, en: `${SITE}${EN}`, "x-default": `${SITE}${EN}` },
+    languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "es_ES", url: `${SITE}${ES}`,

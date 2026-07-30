@@ -1,12 +1,12 @@
-// Wraps both the Dutch homepage and its inner pages so <html lang> reflects the
-// content. See components/SetLang for why this is done from the client.
-import SetLang from "@/components/SetLang";
+// Root layout for every /nl/ route. It renders the document itself, so
+// <html lang="nl"> is in the served HTML rather than being corrected by
+// client-side JS after the page has already parsed as English.
+import "../globals.css";
+import SiteShell from "@/components/SiteShell";
+import { rootMetadata } from "@/lib/root-metadata";
 
-export default function DutchLayout({ children }) {
-  return (
-    <>
-      <SetLang lang="nl" />
-      {children}
-    </>
-  );
+export const metadata = rootMetadata("nl");
+
+export default function DutchRootLayout({ children }) {
+  return <SiteShell lang="nl">{children}</SiteShell>;
 }

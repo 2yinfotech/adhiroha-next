@@ -1,12 +1,12 @@
-// Wraps both the Italian homepage and its inner pages so <html lang> reflects the
-// content. See components/SetLang for why this is done from the client.
-import SetLang from "@/components/SetLang";
+// Root layout for every /it/ route. It renders the document itself, so
+// <html lang="it"> is in the served HTML rather than being corrected by
+// client-side JS after the page has already parsed as English.
+import "../globals.css";
+import SiteShell from "@/components/SiteShell";
+import { rootMetadata } from "@/lib/root-metadata";
 
-export default function ItalianLayout({ children }) {
-  return (
-    <>
-      <SetLang lang="it" />
-      {children}
-    </>
-  );
+export const metadata = rootMetadata("it");
+
+export default function ItalianRootLayout({ children }) {
+  return <SiteShell lang="it">{children}</SiteShell>;
 }
