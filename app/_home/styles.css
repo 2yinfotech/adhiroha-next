@@ -4778,10 +4778,11 @@
 
 /* Real marks, not stand-in icons — the whole section is about proof. */
 .acc-creds{display:grid;gap:2px}
-.acc-cred{display:flex;align-items:center;gap:15px;padding:13px 0}
+.acc-cred{display:flex;align-items:center;gap:18px;padding:15px 0}
 .acc-cred+.acc-cred{border-top:1px solid var(--line)}
-.acc-cred-logo{flex:none;width:52px;height:52px;object-fit:contain;border-radius:50%;
-  background:#fff;border:1px solid var(--line);padding:3px}
+/* The marks carry their own shape and their own transparency — a white plate
+   behind them just draws a second circle around a circular logo. */
+.acc-cred-logo{flex:none;width:72px;height:72px;object-fit:contain}
 .acc-cred b{display:block;font-family:'Playfair Display',serif;font-size:16px;
   font-weight:600;color:var(--ink);margin-bottom:3px}
 .acc-cred span{display:block;font-size:12.5px;font-weight:300;line-height:1.6;color:var(--body)}
@@ -4824,7 +4825,7 @@
   .acc-lvls{gap:10px;justify-content:space-between}
   .acc-lvl-badge{width:74px;height:74px}
   .acc-lvl span{font-size:10px;letter-spacing:1.1px}
-  .acc-cred-logo{width:46px;height:46px}
+  .acc-cred-logo{width:60px;height:60px}
   .acc-flag{width:34px;height:34px}
   .acc-flag+.acc-flag{margin-left:-10px}
   .acc-reach-t b{font-size:20px}
