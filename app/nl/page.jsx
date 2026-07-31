@@ -11,7 +11,7 @@ import StickyHeader from "@/components/StickyHeader";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import AnchorScroll from "@/components/AnchorScroll";
 import JsonLd from "@/components/JsonLd";
-import { graph, extractFaqs, faqSchema, SITE, LANGUAGE_ALTERNATES } from "@/lib/seo";
+import { graph, extractFaqs, faqSchema, SITE, LANGUAGE_ALTERNATES, schoolTourVideoSchema } from "@/lib/seo";
 
 export const metadata = {
   title: "Yoga-docentenopleiding in Rishikesh | YTTC 200/300/500 Uur — Adhiroha",
@@ -38,7 +38,7 @@ export const metadata = {
 
 // The Dutch FAQ block is a rich-result candidate too; read straight from the
 // translated markup so schema and page can never disagree.
-const pageSchema = graph(faqSchema(extractFaqs(content)));
+const pageSchema = graph(schoolTourVideoSchema(), faqSchema(extractFaqs(content)));
 
 export default function Page() {
   return (

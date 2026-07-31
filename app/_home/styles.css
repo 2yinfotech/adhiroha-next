@@ -4903,3 +4903,62 @@
 .ftr-rys-t{display:block;margin-top:11px;font-size:11.5px;font-weight:300;
   letter-spacing:.3px;line-height:1.7;color:#b3a99d}
 .ftr-rys:hover .ftr-rys-t{color:#d8cfc2}
+
+/* ===================================================================
+   SCHOOL TOUR VIDEO  (replaces the old #welcome photo banner)
+   =================================================================== */
+.tour{padding:86px 0 24px;text-align:center}
+.tour-head{max-width:820px;margin:0 auto 40px;padding:0 24px}
+.tour-head .sec-h{color:var(--ink);max-width:24ch;margin:0 auto 14px}
+.tour-lead{margin:0;font-size:16.5px;font-weight:300;line-height:1.7;color:var(--body)}
+
+/* Wider than .wrap on purpose — this is the banner that used to run edge to
+   edge, so it keeps that presence, just framed. */
+.tour-video{position:relative;width:min(1560px,100% - 48px);margin:0 auto;
+  border-radius:22px;padding:12px;background:linear-gradient(160deg,#efe5d4,#fbf8f3 45%,#e9dcc6);
+  box-shadow:0 44px 90px -50px rgba(44,39,35,.72)}
+/* the thin inner keyline that gives the frame its second edge */
+.tour-video::after{content:"";position:absolute;inset:5px;border-radius:18px;
+  border:1px solid rgba(201,154,99,.55);pointer-events:none}
+.tv-frame{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;
+  background:#1a1410}
+.tv-poster,.tv-embed{position:absolute;inset:0;width:100%;height:100%;display:block;border:0}
+.tv-poster{object-fit:cover}
+
+/* Play button: sits above the preview so the video can be opened at any moment. */
+.tv-overlay{position:absolute;inset:12px;z-index:2;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;border:0;border-radius:14px;cursor:pointer;
+  background:linear-gradient(180deg,rgba(26,20,16,.16),rgba(26,20,16,.52));
+  color:#fff;font:inherit;transition:background .4s,opacity .4s}
+.tv-overlay:hover{background:linear-gradient(180deg,rgba(26,20,16,.24),rgba(26,20,16,.6))}
+.tv-play{width:82px;height:82px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;background:var(--rust);
+  box-shadow:0 18px 42px -14px rgba(237,28,37,.85);transition:transform .35s}
+.tv-play svg{width:30px;height:30px;margin-left:4px}
+.tv-overlay:hover .tv-play{transform:scale(1.08)}
+/* Sits at the foot of the frame, not under the button — the poster has the
+   school's own wordmark dead centre and the two collided. */
+.tv-label{position:absolute;left:0;right:0;bottom:24px;
+  font-size:12.5px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;
+  text-shadow:0 2px 12px rgba(0,0,0,.65);transition:opacity .4s}
+/* While the silent preview runs, stay out of its way but stay clickable. */
+.is-previewing .tv-overlay{background:transparent}
+.is-previewing .tv-overlay:hover{background:linear-gradient(180deg,rgba(26,20,16,.2),rgba(26,20,16,.5))}
+.is-previewing .tv-play{transform:scale(.66);opacity:.9}
+.is-previewing .tv-label{opacity:0}
+.is-playing .tv-overlay{display:none}
+
+@media(max-width:900px){
+  .tour{padding:64px 0 18px}
+  .tour-head{margin-bottom:30px}
+  .tour-video{width:calc(100% - 28px);padding:8px;border-radius:16px}
+  .tour-video::after{inset:3px;border-radius:13px}
+  .tv-overlay{inset:8px}
+  .tv-play{width:64px;height:64px}
+  .tv-play svg{width:24px;height:24px}
+  .tv-label{font-size:11px;letter-spacing:1.4px;bottom:16px}
+}
+@media(max-width:520px){
+  .tv-play{width:56px;height:56px}
+  .tv-label{display:none}
+}

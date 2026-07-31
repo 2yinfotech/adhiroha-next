@@ -10,7 +10,7 @@ import StickyHeader from "@/components/StickyHeader";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import AnchorScroll from "@/components/AnchorScroll";
 import JsonLd from "@/components/JsonLd";
-import { graph, extractFaqs, faqSchema, SITE, LANGUAGE_ALTERNATES } from "@/lib/seo";
+import { graph, extractFaqs, faqSchema, SITE, LANGUAGE_ALTERNATES, schoolTourVideoSchema } from "@/lib/seo";
 
 export const metadata = {
   title: "Formation de professeur de yoga à Rishikesh | 200/300/500 h YTTC — Adhiroha",
@@ -35,7 +35,7 @@ export const metadata = {
   },
 };
 
-const pageSchema = graph(faqSchema(extractFaqs(content)));
+const pageSchema = graph(schoolTourVideoSchema(), faqSchema(extractFaqs(content)));
 
 export default function Page() {
   return (

@@ -6,7 +6,7 @@ import StickyHeader from "@/components/StickyHeader";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import AnchorScroll from "@/components/AnchorScroll";
 import JsonLd from "@/components/JsonLd";
-import { graph, extractFaqs, faqSchema, LANGUAGE_ALTERNATES } from "@/lib/seo";
+import { graph, extractFaqs, faqSchema, LANGUAGE_ALTERNATES, schoolTourVideoSchema } from "@/lib/seo";
 
 export const metadata = {
   title: "Yoga Teacher Training in Rishikesh | 200/300/500 Hr YTTC",
@@ -19,7 +19,7 @@ export const metadata = {
 
 // The homepage FAQ section is a strong rich-result candidate; the questions are
 // read straight from the page markup so schema and page can never disagree.
-const pageSchema = graph(faqSchema(extractFaqs(content)));
+const pageSchema = graph(schoolTourVideoSchema(), faqSchema(extractFaqs(content)));
 
 export default function Page() {
   return (
