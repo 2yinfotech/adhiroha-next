@@ -10,20 +10,20 @@ const ES = "/es/retiro-yoga-ayurveda-rishikesh/";
 const EN = "/yoga-retreat-in-rishikesh/";
 
 export const metadata = {
-  title: "Retiro de Yoga y Ayurveda en Rishikesh | 6 días — Adhiroha",
-  description: "Retiro de bienestar de 6 días de Yoga y Ayurveda en Rishikesh. Yoga suave, terapias ayurvédicas, comida sátvica — descanso en un ashram del Himalaya.",
+  title: "Retiro de Yoga y Ayurveda en Rishikesh | 6 días | Adhiroha",
+  description: "Retiro de bienestar de 6 días de Yoga y Ayurveda en Rishikesh. Yoga suave, terapias ayurvédicas, comida sátvica, descanso en un ashram del Himalaya.",
   alternates: {
     canonical: ES,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "es_ES", url: `${SITE}${ES}`,
-    title: "Retiro de Yoga y Ayurveda en Rishikesh | 6 días — Adhiroha", description: "Retiro de bienestar de 6 días de Yoga y Ayurveda en Rishikesh. Yoga suave, terapias ayurvédicas, comida sátvica — descanso en un ashram del Himalaya.",
+    title: "Retiro de Yoga y Ayurveda en Rishikesh | 6 días | Adhiroha", description: "Retiro de bienestar de 6 días de Yoga y Ayurveda en Rishikesh. Yoga suave, terapias ayurvédicas, comida sátvica, descanso en un ashram del Himalaya.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Retiro de Yoga y Ayurveda en Rishikesh | 6 días — Adhiroha",
-    description: "Retiro de bienestar de 6 días de Yoga y Ayurveda en Rishikesh. Yoga suave, terapias ayurvédicas, comida sátvica — descanso en un ashram del Himalaya.",
+    title: "Retiro de Yoga y Ayurveda en Rishikesh | 6 días | Adhiroha",
+    description: "Retiro de bienestar de 6 días de Yoga y Ayurveda en Rishikesh. Yoga suave, terapias ayurvédicas, comida sátvica, descanso en un ashram del Himalaya.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

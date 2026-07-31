@@ -12,7 +12,7 @@ const EN = "/yoga-gallery-india/";
 export const metadata = {
   title: "Fotogalleri | Yogaashrammet Adhiroha, Rishikesh",
   description:
-    "181 ærlige fotos fra Adhirohas ashram i Upper Tapovan, Rishikesh — shalaen, værelserne, den sattviske mad, ceremonierne, udflugterne og eleverne.",
+    "181 ærlige fotos fra Adhirohas ashram i Upper Tapovan, Rishikesh, shalaen, værelserne, den sattviske mad, ceremonierne, udflugterne og eleverne.",
   alternates: {
     canonical: DA,
     languages: hreflangFor(EN),
@@ -20,12 +20,12 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "da_DK", url: `${SITE}${DA}`,
     title: "Fotogalleri | Yogaashrammet Adhiroha, Rishikesh",
-    description: "181 ærlige fotos fra Adhirohas ashram i Upper Tapovan, Rishikesh — shalaen, værelserne, den sattviske mad, ceremonierne, udflugterne og eleverne.",
+    description: "181 ærlige fotos fra Adhirohas ashram i Upper Tapovan, Rishikesh, shalaen, værelserne, den sattviske mad, ceremonierne, udflugterne og eleverne.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Fotogalleri | Yogaashrammet Adhiroha, Rishikesh",
-    description: "181 ærlige fotos fra Adhirohas ashram i Upper Tapovan, Rishikesh — shalaen, værelserne, den sattviske mad, ceremonierne, udflugterne og eleverne.",
+    description: "181 ærlige fotos fra Adhirohas ashram i Upper Tapovan, Rishikesh, shalaen, værelserne, den sattviske mad, ceremonierne, udflugterne og eleverne.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

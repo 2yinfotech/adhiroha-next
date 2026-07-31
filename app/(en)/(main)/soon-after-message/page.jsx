@@ -8,7 +8,7 @@ import { graph, breadcrumbSchema, extractFaqs, faqSchema, hreflangFor } from "@/
 export const metadata = {
   title: "Student Reviews & Alumni Messages | Adhiroha",
   description:
-    "Read what graduates say soon after their training at Adhiroha — honest messages from students of our 200, 300 and 500 hour courses in Rishikesh.",
+    "Read what graduates say soon after their training at Adhiroha, honest messages from students of our 200, 300 and 500 hour courses in Rishikesh.",
   alternates: { canonical: "/soon-after-message/", languages: hreflangFor("/soon-after-message/") }
 };
 

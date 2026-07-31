@@ -12,7 +12,7 @@ const EN = "/about-us/";
 export const metadata = {
   title: "Sobre a Adhiroha | Escola de Yoga em Rishikesh, Índia",
   description:
-    "Conheça a Adhiroha — um ashram de yoga certificado pela Yoga Alliance em Upper Tapovan, Rishikesh, com 20.000 pés quadrados de campus e mais de 3.000 alunos formados de mais de 70 países.",
+    "Conheça a Adhiroha, um ashram de yoga certificado pela Yoga Alliance em Upper Tapovan, Rishikesh, com 20.000 pés quadrados de campus e mais de 3.000 alunos formados de mais de 70 países.",
   alternates: {
     canonical: PT,
     languages: hreflangFor(EN),
@@ -20,12 +20,12 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pt_BR", url: `${SITE}${PT}`,
     title: "Sobre a Adhiroha | Escola de Yoga em Rishikesh, Índia",
-    description: "Conheça a Adhiroha — um ashram de yoga certificado pela Yoga Alliance em Upper Tapovan, Rishikesh, com 20.000 pés quadrados de campus e mais de 3.000 alunos formados de mais de 70 países.",
+    description: "Conheça a Adhiroha, um ashram de yoga certificado pela Yoga Alliance em Upper Tapovan, Rishikesh, com 20.000 pés quadrados de campus e mais de 3.000 alunos formados de mais de 70 países.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Sobre a Adhiroha | Escola de Yoga em Rishikesh, Índia",
-    description: "Conheça a Adhiroha — um ashram de yoga certificado pela Yoga Alliance em Upper Tapovan, Rishikesh, com 20.000 pés quadrados de campus e mais de 3.000 alunos formados de mais de 70 países.",
+    description: "Conheça a Adhiroha, um ashram de yoga certificado pela Yoga Alliance em Upper Tapovan, Rishikesh, com 20.000 pés quadrados de campus e mais de 3.000 alunos formados de mais de 70 países.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

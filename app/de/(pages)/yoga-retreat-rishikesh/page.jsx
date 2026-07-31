@@ -10,20 +10,20 @@ const DE = "/de/yoga-retreat-rishikesh/";
 const EN = "/yoga-retreat-in-rishikesh/";
 
 export const metadata = {
-  title: "Yoga- & Ayurveda-Retreat in Rishikesh | 6 Tage — Adhiroha",
-  description: "6-tägiges Yoga- & Ayurveda-Wellness-Retreat in Rishikesh. Sanftes Yoga, ayurvedische Therapien, sattvisches Essen — Ruhe im Himalaya-Ashram.",
+  title: "Yoga- & Ayurveda-Retreat in Rishikesh | 6 Tage | Adhiroha",
+  description: "6-tägiges Yoga- & Ayurveda-Wellness-Retreat in Rishikesh. Sanftes Yoga, ayurvedische Therapien, sattvisches Essen, Ruhe im Himalaya-Ashram.",
   alternates: {
     canonical: DE,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "de_DE", url: `${SITE}${DE}`,
-    title: "Yoga- & Ayurveda-Retreat in Rishikesh | 6 Tage — Adhiroha", description: "6-tägiges Yoga- & Ayurveda-Wellness-Retreat in Rishikesh. Sanftes Yoga, ayurvedische Therapien, sattvisches Essen — Ruhe im Himalaya-Ashram.",
+    title: "Yoga- & Ayurveda-Retreat in Rishikesh | 6 Tage | Adhiroha", description: "6-tägiges Yoga- & Ayurveda-Wellness-Retreat in Rishikesh. Sanftes Yoga, ayurvedische Therapien, sattvisches Essen, Ruhe im Himalaya-Ashram.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yoga- & Ayurveda-Retreat in Rishikesh | 6 Tage — Adhiroha",
-    description: "6-tägiges Yoga- & Ayurveda-Wellness-Retreat in Rishikesh. Sanftes Yoga, ayurvedische Therapien, sattvisches Essen — Ruhe im Himalaya-Ashram.",
+    title: "Yoga- & Ayurveda-Retreat in Rishikesh | 6 Tage | Adhiroha",
+    description: "6-tägiges Yoga- & Ayurveda-Wellness-Retreat in Rishikesh. Sanftes Yoga, ayurvedische Therapien, sattvisches Essen, Ruhe im Himalaya-Ashram.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

@@ -11,19 +11,19 @@ const EN = "/contact-us/";
 
 export const metadata = {
   title: "Adhiroha Yoga School kontaktieren | Rishikesh, Indien",
-  description: "Nimm Kontakt mit Adhiroha in Rishikesh auf — WhatsApp, Telefon oder E-Mail. Jede Nachricht wird von einem echten Menschen beantwortet, meist innerhalb eines Tages.",
+  description: "Nimm Kontakt mit Adhiroha in Rishikesh auf, WhatsApp, Telefon oder E-Mail. Jede Nachricht wird von einem echten Menschen beantwortet, meist innerhalb eines Tages.",
   alternates: {
     canonical: DE,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "de_DE", url: `${SITE}${DE}`,
-    title: "Adhiroha Yoga School kontaktieren | Rishikesh, Indien", description: "Nimm Kontakt mit Adhiroha in Rishikesh auf — WhatsApp, Telefon oder E-Mail. Jede Nachricht wird von einem echten Menschen beantwortet, meist innerhalb eines Tages.",
+    title: "Adhiroha Yoga School kontaktieren | Rishikesh, Indien", description: "Nimm Kontakt mit Adhiroha in Rishikesh auf, WhatsApp, Telefon oder E-Mail. Jede Nachricht wird von einem echten Menschen beantwortet, meist innerhalb eines Tages.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Adhiroha Yoga School kontaktieren | Rishikesh, Indien",
-    description: "Nimm Kontakt mit Adhiroha in Rishikesh auf — WhatsApp, Telefon oder E-Mail. Jede Nachricht wird von einem echten Menschen beantwortet, meist innerhalb eines Tages.",
+    description: "Nimm Kontakt mit Adhiroha in Rishikesh auf, WhatsApp, Telefon oder E-Mail. Jede Nachricht wird von einem echten Menschen beantwortet, meist innerhalb eines Tages.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

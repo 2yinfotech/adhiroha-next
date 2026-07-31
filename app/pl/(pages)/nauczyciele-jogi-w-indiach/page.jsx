@@ -12,7 +12,7 @@ const EN = "/yoga-teachers-in-india/";
 export const metadata = {
   title: "Nasi Nauczyciele Jogi w Indiach | Aczarjowie Adhiroha, Riszikeś",
   description:
-    "Poznaj 11 aczarjów jogi Adhiroha w Riszikeś — magistrów nauk jogicznych i doktorów naturopatii, z ponad 115 latami łącznego doświadczenia w nauczaniu.",
+    "Poznaj 11 aczarjów jogi Adhiroha w Riszikeś, magistrów nauk jogicznych i doktorów naturopatii, z ponad 115 latami łącznego doświadczenia w nauczaniu.",
   alternates: {
     canonical: PL,
     languages: hreflangFor(EN),
@@ -20,12 +20,12 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pl_PL", url: `${SITE}${PL}`,
     title: "Nasi Nauczyciele Jogi w Indiach | Aczarjowie Adhiroha, Riszikeś",
-    description: "Poznaj 11 aczarjów jogi Adhiroha w Riszikeś — magistrów nauk jogicznych i doktorów naturopatii, z ponad 115 latami łącznego doświadczenia w nauczaniu.",
+    description: "Poznaj 11 aczarjów jogi Adhiroha w Riszikeś, magistrów nauk jogicznych i doktorów naturopatii, z ponad 115 latami łącznego doświadczenia w nauczaniu.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Nasi Nauczyciele Jogi w Indiach | Aczarjowie Adhiroha, Riszikeś",
-    description: "Poznaj 11 aczarjów jogi Adhiroha w Riszikeś — magistrów nauk jogicznych i doktorów naturopatii, z ponad 115 latami łącznego doświadczenia w nauczaniu.",
+    description: "Poznaj 11 aczarjów jogi Adhiroha w Riszikeś, magistrów nauk jogicznych i doktorów naturopatii, z ponad 115 latami łącznego doświadczenia w nauczaniu.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

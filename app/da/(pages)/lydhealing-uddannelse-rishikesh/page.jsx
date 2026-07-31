@@ -10,22 +10,22 @@ const DA = "/da/lydhealing-uddannelse-rishikesh/";
 const EN = "/sound-healing-ttc-rishikesh/";
 
 export const metadata = {
-  title: "Lydhealing-uddannelse i Rishikesh | 6 dage — Adhiroha",
+  title: "Lydhealing-uddannelse i Rishikesh | 6 dage | Adhiroha",
   description:
-    "Seks dages læreruddannelse i lydhealing og -terapi med ophold i Rishikesh — tibetanske syngeskåle, gonger og vedisk lydvidenskab, niveau 1, 2 og 3. Fra 690 € alt inklusive.",
+    "Seks dages læreruddannelse i lydhealing og -terapi med ophold i Rishikesh, tibetanske syngeskåle, gonger og vedisk lydvidenskab, niveau 1, 2 og 3. Fra 690 € alt inklusive.",
   alternates: {
     canonical: DA,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "da_DK", url: `${SITE}${DA}`,
-    title: "Lydhealing-uddannelse i Rishikesh | 6 dage — Adhiroha",
-    description: "Seks dages læreruddannelse i lydhealing og -terapi med ophold i Rishikesh — tibetanske syngeskåle, gonger og vedisk lydvidenskab, niveau 1, 2 og 3. Fra 690 € alt inklusive.",
+    title: "Lydhealing-uddannelse i Rishikesh | 6 dage | Adhiroha",
+    description: "Seks dages læreruddannelse i lydhealing og -terapi med ophold i Rishikesh, tibetanske syngeskåle, gonger og vedisk lydvidenskab, niveau 1, 2 og 3. Fra 690 € alt inklusive.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lydhealing-uddannelse i Rishikesh | 6 dage — Adhiroha",
-    description: "Seks dages læreruddannelse i lydhealing og -terapi med ophold i Rishikesh — tibetanske syngeskåle, gonger og vedisk lydvidenskab, niveau 1, 2 og 3. Fra 690 € alt inklusive.",
+    title: "Lydhealing-uddannelse i Rishikesh | 6 dage | Adhiroha",
+    description: "Seks dages læreruddannelse i lydhealing og -terapi med ophold i Rishikesh, tibetanske syngeskåle, gonger og vedisk lydvidenskab, niveau 1, 2 og 3. Fra 690 € alt inklusive.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

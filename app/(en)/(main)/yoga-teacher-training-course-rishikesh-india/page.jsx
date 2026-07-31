@@ -8,7 +8,7 @@ import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, courseFa
 export const metadata = {
   title: "Yoga Teacher Training in India | 200, 300 & 500 Hour YTTC in Rishikesh | Adhiroha",
   description:
-    "Yoga teacher training in India at Adhiroha, Rishikesh — Yoga Alliance certified 200, 300 & 500 hour residential courses. 3,000+ students from 70+ countries. All-inclusive fees, internationally recognised certification.",
+    "Yoga teacher training in India at Adhiroha, Rishikesh, Yoga Alliance certified 200, 300 & 500 hour residential courses. 3,000+ students from 70+ countries. All-inclusive fees, internationally recognised certification.",
   keywords: [
     "yoga teacher training in india",
     "yoga teacher training in rishikesh",
@@ -33,7 +33,7 @@ const pageSchema = graph(
   courseSchema({
     name: "200 Hour Yoga Teacher Training in Rishikesh, India",
     description:
-      "Residential 200 hour Yoga Alliance certified yoga teacher training course in Rishikesh, India — the beginner-friendly foundation in asana, pranayama, anatomy, philosophy and teaching practice.",
+      "Residential 200 hour Yoga Alliance certified yoga teacher training course in Rishikesh, India, the beginner-friendly foundation in asana, pranayama, anatomy, philosophy and teaching practice.",
     url: "/200-hour-yoga-teacher-training-course-rishikesh/",
     price: 1275,
     days: 24,
@@ -51,7 +51,7 @@ const pageSchema = graph(
   courseSchema({
     name: "500 Hour Yoga Teacher Training in Rishikesh, India",
     description:
-      "Residential 500 hour yoga teacher training course in Rishikesh, India — the complete 60-day immersion combining the 200 and 300 hour syllabus, from beginner to master level.",
+      "Residential 500 hour yoga teacher training course in Rishikesh, India, the complete 60-day immersion combining the 200 and 300 hour syllabus, from beginner to master level.",
     url: "/500-hour-yoga-teacher-training-course-rishikesh/",
     price: 2790,
     days: 60,

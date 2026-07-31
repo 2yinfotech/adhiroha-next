@@ -34,11 +34,11 @@ export default function BookingConfirmation() {
         <div className="ty-head reveal">
           <span className="kicker">{pending ? "Almost There" : "Booking Confirmed"}</span>
           <h2 className="sec-h wide">
-            {pending ? "Your details are saved" : "Thank you — we have your registration"}
+            {pending ? "Your details are saved" : "Thank you. We have your registration"}
           </h2>
           <p className="body-p">
             {pending
-              ? "Your place is held while we send you a secure payment link. Nothing more is needed from you right now — check your inbox shortly."
+              ? "Your place is held while we send you a secure payment link. Nothing more is needed from you right now, check your inbox shortly."
               : "Your seat is reserved and a confirmation email is on its way. Keep your booking reference safe; quote it in any message to us."}
           </p>
         </div>
@@ -85,15 +85,15 @@ export default function BookingConfirmation() {
           <div className="ty-step">
             <span className="ty-n">2</span>
             <h3>Plan your travel</h3>
-            <p>Fly into Dehradun (Jolly Grant) — pickup is included. Delhi is about 250&nbsp;km
+            <p>Fly into Dehradun (Jolly Grant), pickup is included. Delhi is about 250&nbsp;km
               away. Tell us your arrival time once your flights are booked.</p>
           </div>
           <div className="ty-step">
             <span className="ty-n">3</span>
             <h3>Settle the balance on arrival</h3>
             <p>{balance
-              ? `The remaining €${balance} is paid at the ashram when you arrive — cash or card, whichever suits.`
-              : "The remaining course fee is paid at the ashram when you arrive — cash or card, whichever suits."}</p>
+              ? `The remaining €${balance} is paid at the ashram when you arrive, cash or card, whichever suits.`
+              : "The remaining course fee is paid at the ashram when you arrive, cash or card, whichever suits."}</p>
           </div>
         </div>
 

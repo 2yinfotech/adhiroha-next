@@ -12,7 +12,7 @@ const EN = "/yoga-teachers-in-india/";
 export const metadata = {
   title: "I Nostri Insegnanti di Yoga a Rishikesh, India | Adhiroha",
   description:
-    "Incontra gli acharya indiani esperti che insegnano ad Adhiroha — praticanti di lunga data di hatha, ashtanga, pranayama e filosofia dello yoga a Rishikesh.",
+    "Incontra gli acharya indiani esperti che insegnano ad Adhiroha, praticanti di lunga data di hatha, ashtanga, pranayama e filosofia dello yoga a Rishikesh.",
   alternates: {
     canonical: IT,
     languages: hreflangFor(EN),
@@ -20,12 +20,12 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "it_IT", url: `${SITE}${IT}`,
     title: "I Nostri Insegnanti di Yoga a Rishikesh, India | Adhiroha",
-    description: "Incontra gli acharya indiani esperti che insegnano ad Adhiroha — praticanti di lunga data di hatha, ashtanga, pranayama e filosofia dello yoga a Rishikesh.",
+    description: "Incontra gli acharya indiani esperti che insegnano ad Adhiroha, praticanti di lunga data di hatha, ashtanga, pranayama e filosofia dello yoga a Rishikesh.",
   },
   twitter: {
     card: "summary_large_image",
     title: "I Nostri Insegnanti di Yoga a Rishikesh, India | Adhiroha",
-    description: "Incontra gli acharya indiani esperti che insegnano ad Adhiroha — praticanti di lunga data di hatha, ashtanga, pranayama e filosofia dello yoga a Rishikesh.",
+    description: "Incontra gli acharya indiani esperti che insegnano ad Adhiroha, praticanti di lunga data di hatha, ashtanga, pranayama e filosofia dello yoga a Rishikesh.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

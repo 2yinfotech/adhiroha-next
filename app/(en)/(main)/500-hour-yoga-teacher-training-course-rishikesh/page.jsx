@@ -21,7 +21,7 @@ const sections = [
 export const metadata = {
   title: "500 Hour Yoga Teacher Training in Rishikesh | Adhiroha",
   description:
-    "Complete your RYT-500 with our 500 hour yoga teacher training in Rishikesh — 60 days combining the 200 and 300 hour syllabus, stay and meals included.",
+    "Complete your RYT-500 with our 500 hour yoga teacher training in Rishikesh, 60 days combining the 200 and 300 hour syllabus, stay and meals included.",
   alternates: { canonical: "/500-hour-yoga-teacher-training-course-rishikesh/", languages: hreflangFor("/500-hour-yoga-teacher-training-course-rishikesh/") }
 };
 

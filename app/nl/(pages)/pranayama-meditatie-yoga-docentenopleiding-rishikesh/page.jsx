@@ -24,7 +24,7 @@ const sections = [
 ];
 
 export const metadata = {
-  title: "Pranayama- en Meditatie-docentenopleiding in Rishikesh | 12 Dagen — Adhiroha",
+  title: "Pranayama- en Meditatie-docentenopleiding in Rishikesh | 12 Dagen | Adhiroha",
   description:
     "Twaalfdaagse pranayama- en meditatie-docentenopleiding in Rishikesh, geaccrediteerd door het Ministerie van Ayush. Kleine groepen, verblijf in een Himalaya-ashram, alle maaltijden en uitstapjes inbegrepen.",
   alternates: {
@@ -36,13 +36,13 @@ export const metadata = {
     siteName: "Adhiroha Yoga School",
     locale: "nl_NL",
     url: `${SITE}${NL}`,
-    title: "Pranayama- en Meditatie-docentenopleiding in Rishikesh | 12 Dagen — Adhiroha",
+    title: "Pranayama- en Meditatie-docentenopleiding in Rishikesh | 12 Dagen | Adhiroha",
     description:
       "Twaalfdaagse pranayama- en meditatie-docentenopleiding in Rishikesh, geaccrediteerd door het Ministerie van Ayush. Kleine groepen, verblijf in een Himalaya-ashram, alle maaltijden en uitstapjes inbegrepen.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pranayama- en Meditatie-docentenopleiding in Rishikesh | 12 Dagen — Adhiroha",
+    title: "Pranayama- en Meditatie-docentenopleiding in Rishikesh | 12 Dagen | Adhiroha",
     description: "Twaalfdaagse pranayama- en meditatie-docentenopleiding in Rishikesh, geaccrediteerd door het Ministerie van Ayush. Kleine groepen, verblijf in een Himalaya-ashram, alle maaltijden en uitstapjes inbegrepen.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },

@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page {
+    size: A4;
+    margin: 22mm 18mm 25mm 18mm;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-size: 9pt;
+      color: #6b7280;
+      font-family: 'DejaVu Serif', 'Times New Roman', Georgia, serif;
+    }
+    @bottom-left {
+      content: "Confidential";
+      font-size: 7pt;
+      color: #d6d3cc;
+      font-family: 'DejaVu Serif', 'Times New Roman', Georgia, serif;
+    }
+    @bottom-right {
+      content: "adhiroha.com Google SEO Report";
+      font-size: 8pt;
+      color: #cbd5e1;
+      font-family: 'DejaVu Serif', 'Times New Roman', Georgia, serif;
+    }
+  }
+
+  @page :first {
+    margin: 0;
+    @bottom-left { content: none; }
+    @bottom-center { content: none; }
+    @bottom-right { content: none; }
+  }
+
+  @page toc {
+    @bottom-center {
+      content: counter(page);
+      font-size: 9pt;
+      color: #6b7280;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Times New Roman', 'DejaVu Serif', Georgia, serif;
+    font-size: 10pt;
+    line-height: 1.55;
+    color: #1e293b;
+    background: white;
+  }
+
+  /* ─── Title Page (Clean White) ─── */
+  .title-page {
+    page: first;
+    width: 210mm;
+    height: 297mm;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #1a1a2e;
+    position: relative;
+    padding: 50mm 30mm 40mm 30mm;
+    border-top: 6mm solid #1e3a5f;
+  }
+
+  .title-page .badge {
+    background: #f7f6f3;
+    border: 1px solid #d6d3cc;
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 9pt;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15mm;
+    color: #1e3a5f;
+  }
+
+  .title-page h1 {
+    font-size: 28pt;
+    font-weight: bold;
+    margin-bottom: 5mm;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    color: #1a1a2e;
+  }
+
+  .title-page .subtitle {
+    font-size: 13pt;
+    color: #6b7280;
+    margin-bottom: 12mm;
+    font-weight: 300;
+  }
+
+  .title-page .url {
+    font-size: 12pt;
+    color: #1e3a5f;
+    margin-bottom: 15mm;
+    padding: 4mm 8mm;
+    border: 1px solid #d6d3cc;
+    border-radius: 6px;
+    background: #faf9f7;
+  }
+
+  .title-page .score-box {
+    background: #faf9f7;
+    border: 2px solid #d6d3cc;
+    border-radius: 12px;
+    padding: 6mm 12mm;
+    margin-bottom: 15mm;
+  }
+
+  .title-page .score-number {
+    font-size: 42pt;
+    font-weight: bold;
+    color: #1e3a5f;
+    line-height: 1;
+  }
+
+  .title-page .score-label {
+    font-size: 10pt;
+    color: #6b7280;
+    margin-top: 2mm;
+  }
+
+  .title-page .meta {
+    font-size: 9pt;
+    color: #6b7280;
+    margin-top: 8mm;
+    padding-top: 5mm;
+    border-top: 1px solid #d6d3cc;
+  }
+
+  .title-page .meta span {
+    margin: 0 8px;
+  }
+
+  /* ─── Table of Contents ─── */
+  .toc-page {
+    page: toc;
+    page-break-before: always;
+  }
+
+  .toc-page h2 {
+    font-size: 18pt;
+    color: #1e3a5f;
+    margin-bottom: 8mm;
+    padding-bottom: 3mm;
+    border-bottom: 2px solid #1e3a5f;
+  }
+
+  .toc-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .toc-list li {
+    padding: 2mm 0;
+    border-bottom: 1px solid #f1f5f9;
+    overflow: hidden;
+  }
+
+  .toc-list li.toc-section {
+    font-weight: bold;
+    font-size: 11pt;
+    padding-top: 4mm;
+    color: #0f172a;
+  }
+
+  .toc-list li.toc-sub {
+    padding-left: 8mm;
+    font-size: 9.5pt;
+    color: #475569;
+  }
+
+  .toc-score {
+    display: inline-block;
+    float: right;
+    padding: 1px 8px;
+    border-radius: 10px;
+    font-size: 9pt;
+    font-weight: bold;
+    color: white;
+  }
+
+  .score-good { background: #2d6a4f; }
+  .score-warn { background: #d4740e; }
+  .score-bad { background: #c53030; }
+
+  /* ─── Section Styles ─── */
+  div.section {
+    page-break-before: always;
+  }
+
+  .section-header {
+    background: #faf9f7;
+    border-left: 4px solid #1e3a5f;
+    padding: 5mm 6mm;
+    margin-bottom: 6mm;
+    page-break-after: avoid;
+  }
+
+  .section-header h2 {
+    font-size: 16pt;
+    color: #0f172a;
+    margin-bottom: 1mm;
+  }
+
+  .section-header .section-score {
+    font-size: 12pt;
+    font-weight: bold;
+    float: right;
+    margin-top: -6mm;
+  }
+
+  h3 {
+    font-size: 12pt;
+    color: #1e3a5f;
+    margin-top: 6mm;
+    margin-bottom: 3mm;
+    padding-bottom: 1.5mm;
+    border-bottom: 1px solid #d6d3cc;
+    page-break-after: avoid;
+  }
+
+  h4 {
+    font-size: 10.5pt;
+    color: #334155;
+    margin-top: 4mm;
+    margin-bottom: 2mm;
+    page-break-after: avoid;
+  }
+
+  p {
+    margin-bottom: 3mm;
+    color: #334155;
+  }
+
+  .highlight {
+    background: #fef3c7;
+    border-left: 3px solid #d4740e;
+    padding: 3mm 4mm;
+    margin: 4mm 0;
+    font-size: 9.5pt;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  .critical-box {
+    background: #fef2f2;
+    border-left: 3px solid #c53030;
+    padding: 3mm 4mm;
+    margin: 4mm 0;
+    font-size: 9.5pt;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  .success-box {
+    background: #f0fdf4;
+    border-left: 3px solid #2d6a4f;
+    padding: 3mm 4mm;
+    margin: 4mm 0;
+    font-size: 9.5pt;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  /* ─── Tables ─── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 4mm 0 6mm 0;
+    font-size: 9pt;
+  }
+
+  thead th {
+    background: #f7f6f3;
+    color: #0f172a;
+    font-weight: bold;
+    padding: 3mm 4mm;
+    text-align: left;
+    border-bottom: 2px solid #d6d3cc;
+    font-size: 9pt;
+  }
+
+  tbody td {
+    padding: 2.5mm 3mm;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: top;
+  }
+
+  tbody tr:nth-child(even) {
+    background: #fdfcfa;
+  }
+
+  .status-pass {
+    color: #2d6a4f;
+    font-weight: bold;
+  }
+
+  .status-fail {
+    color: #c53030;
+    font-weight: bold;
+  }
+
+  .status-warn {
+    color: #d4740e;
+    font-weight: bold;
+  }
+
+  .status-partial {
+    color: #4a5568;
+    font-weight: bold;
+  }
+
+  /* ─── Charts ─── */
+  .chart-container {
+    text-align: center;
+    margin: 4mm 0;
+  }
+
+  .chart-container img {
+    max-width: 100%;
+    max-height: 120mm;
+    height: auto;
+  }
+
+  .chart-caption {
+    font-size: 8.5pt;
+    color: #6b7280;
+    font-style: italic;
+    margin-top: 2mm;
+    text-align: center;
+  }
+
+  .chart-half {
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+    text-align: center;
+    margin: 2mm 0;
+  }
+
+  .chart-half img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* ─── Two column layout ─── */
+  .two-col {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    margin: 3mm 0;
+  }
+
+  .two-col .col {
+    display: table-cell;
+    vertical-align: top;
+    padding: 0 2mm;
+  }
+
+  .four-col {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    margin: 3mm 0;
+  }
+
+  .four-col .col {
+    display: table-cell;
+    vertical-align: top;
+    padding: 0 1.5mm;
+  }
+
+  /* ─── Metric Cards ─── */
+  .metric-card {
+    background: #faf9f7;
+    border: 1px solid #d6d3cc;
+    border-radius: 6px;
+    padding: 2.5mm 3mm;
+    text-align: center;
+    margin: 2mm 0;
+  }
+
+  .metric-card .value {
+    font-size: 14pt;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+
+  .metric-card .label {
+    font-size: 7.5pt;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 1mm;
+  }
+
+  /* ─── Action Plan ─── */
+  .action-item {
+    background: #faf9f7;
+    border-radius: 4px;
+    padding: 3mm 4mm;
+    margin: 3mm 0;
+    border-left: 3px solid #cbd5e1;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  .action-item.critical {
+    border-left-color: #c53030;
+    background: #fdf2f2;
+  }
+
+  .action-item.high {
+    border-left-color: #d4740e;
+    background: #fdf8ef;
+  }
+
+  .action-item.medium {
+    border-left-color: #1e3a5f;
+    background: #f0f4f8;
+  }
+
+  .action-item.low {
+    border-left-color: #94a3b8;
+  }
+
+  .action-item h4 {
+    margin-top: 0;
+    margin-bottom: 1.5mm;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .action-item .effort {
+    font-size: 8.5pt;
+    color: #64748b;
+    float: right;
+  }
+
+  .priority-tag {
+    display: inline-block;
+    padding: 0.5mm 3mm;
+    border-radius: 3px;
+    font-size: 8pt;
+    font-weight: bold;
+    color: white;
+    margin-right: 2mm;
+    vertical-align: middle;
+  }
+
+  .priority-critical { background: #c53030; }
+  .priority-high { background: #d4740e; }
+  .priority-medium { background: #1e3a5f; }
+  .priority-low { background: #94a3b8; }
+
+  /* ─── Code blocks ─── */
+  .code-block {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 3mm 4mm;
+    border-radius: 4px;
+    font-family: 'DejaVu Sans Mono', monospace;
+    font-size: 8pt;
+    line-height: 1.6;
+    margin: 3mm 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  /* ─── Divider ─── */
+  .divider {
+    border: none;
+    border-top: 1px solid #d6d3cc;
+    margin: 5mm 0;
+  }
+
+  /* ─── Roadmap ─── */
+  .roadmap-phase {
+    background: #faf9f7;
+    border-radius: 6px;
+    padding: 4mm 5mm;
+    margin: 4mm 0;
+    border: 1px solid #d6d3cc;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  .roadmap-phase h4 {
+    margin-top: 0;
+    border-bottom: none;
+    color: #1e3a5f;
+  }
+
+  .roadmap-phase ul {
+    margin: 2mm 0 0 5mm;
+    padding: 0;
+  }
+
+  .roadmap-phase li {
+    margin-bottom: 1.5mm;
+    font-size: 9.5pt;
+    color: #334155;
+  }
+
+  /* ─── Lists ─── */
+  ul {
+    margin-left: 5mm;
+    margin-bottom: 3mm;
+  }
+
+  li {
+    margin-bottom: 1.5mm;
+  }
+
+  /* ─── Data freshness ─── */
+  .data-freshness {
+    font-size: 8pt;
+    color: #6b7280;
+    font-style: italic;
+    margin-top: 4mm;
+    padding-top: 2mm;
+    border-top: 1px solid #d6d3cc;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ======================================================= TITLE PAGE === -->
+<div class="title-page">
+  <div class="badge">Full SEO Audit Report</div>
+  <h1>adhiroha.com</h1>
+  <div class="subtitle">Prepared by Claude SEO</div>
+  <div class="score-box">
+    <div class="score-number">69<span style="font-size: 20pt; color: #94a3b8;">/100</span></div>
+    <div class="score-label">SEO Health Score</div>
+  </div>
+  <div class="meta">
+    <span>July 31, 2026</span>
+    <span>Full Audit</span>
+  </div>
+</div>
+
+
+<!-- ======================================================= TABLE OF CONTENTS === -->
+<div class="toc-page">
+  <h2>Table of Contents</h2>
+  <ul class="toc-list">
+    <li class="toc-section"><span>1. Executive Summary</span></li>
+    <li class="toc-sub"><span>Key Metrics, Critical Issues &amp; Quick Wins</span></li>
+    <li class="toc-section"><span>2. Audit Categories</span></li>
+    <li class="toc-sub"><span>What Works</span></li>
+    <li class="toc-sub"><span>Findings by Severity</span></li>
+    <li class="toc-section"><span>3. Action Plan</span></li>
+    <li class="toc-sub"><span>Phased Roadmap</span></li>
+    <li class="toc-section"><span>4. Data Sources &amp; Methodology</span></li>
+  </ul>
+</div>
+
+
+<!-- ======================================================= 1. EXECUTIVE SUMMARY === -->
+<div class="section">
+  <div class="section-header">
+    <h2>1. Executive Summary</h2>
+  </div>
+
+  <p>This report presents a comprehensive SEO audit of <strong>adhiroha.com</strong> for a <strong>Destination yoga school (residential teacher training, Rishikesh, India) — 11 language versions</strong> site, generated on July 31, 2026. Findings combine technical, content, schema, performance, visual, and search-readiness evidence as available.</p>
+
+  <div class="two-col">
+    <div class="col">
+      <div class="metric-card">
+        <div class="value" style="color: #d4740e;">69/100</div>
+        <div class="label">SEO Health Score</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="critical-box">
+    <strong>Critical Issues Found:</strong>
+    <ol>
+      <li><strong>Info:</strong> No refund or cancellation policy on any English page, while the site collects EUR 1,275-1,650 prepayments through /student-admission-panel/.</li>
+      <li><strong>Info:</strong> 163 blog posts carry no Article schema and no author entity — the site&#x27;s largest content surface is anonymous to search engines.</li>
+      <li><strong>Info:</strong> No datePublished or dateModified anywhere on the site, so no page can demonstrate freshness or editorial accountability.</li>
+      <li><strong>Info:</strong> Readability on /yoga-teachers-in-india/ is Flesch 27.2 (grade 16.1) for an audience spanning 70+ countries reading English as a second language.</li>
+      <li><strong>Info:</strong> In-body contextual internal links run 0.0-0.6 per 1,000 words against a 3-5 guideline; header and footer navigation hides this in raw link counts.</li>
+    </ol>
+  </div>
+
+  <div class="success-box">
+    <strong>Quick Wins:</strong>
+    <ol>
+      <li>Fill 5 empty alt attributes (2 on the homepage, 3 on the 200-hour course page).</li>
+      <li>Add 3-4 contextual in-body links to /about-us/ and /yoga-teachers-in-india/.</li>
+      <li>Verify the &#x27;Registered since 2018&#x27; claim against the Yoga Alliance directory, or soften it to &#x27;Teaching in Rishikesh since 2018&#x27;.</li>
+      <li>Surface the founder&#x27;s Morarji Desai National Institute of Yoga credential on the homepage and /about-us/, not only on 4 deeper English pages.</li>
+      <li>Add a table of contents to the 7,995-word homepage (39 H2 sections).</li>
+    </ol>
+  </div>
+
+</div>
+
+<!-- ======================================================= 2. AUDIT CATEGORIES === -->
+<div class="section">
+  <div class="section-header">
+    <h2>2. Audit Categories</h2>
+  </div>
+
+  <h3>2.1 Experience (first-hand signals)</h3>
+  <p><strong>Score:</strong> <span class="status-pass">80/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>69-75 original photographs per page, shot at the ashram rather than licensed stock.</li>
+    <li>Eleven named acharyas, each with a subject specialism and a years-of-teaching badge.</li>
+    <li>Founder named on the site (Guru Shankar Das), with &#x27;on the path since 2014&#x27;.</li>
+    <li>Own aerial school-tour video embedded on all 11 homepages with VideoObject schema (uploaded 2024-09-28, PT3M).</li>
+    <li>Eleven review cards carrying real reviewer names and countries.</li>
+    <li>Prose contains specific, non-generic detail that could not be fabricated from a template.</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>No documented graduate outcomes <span class="status-warn">Medium</span></h4>
+    <p>The site asserts that graduates &#x27;have registered overseas, been hired at established studios, and started their own classes all over the world&#x27;, but no named graduate, destination, studio or date is given anywhere. The claim carries no evidence a reader or a quality rater could check.</p>
+    <p><strong>Recommendation:</strong> Publish one or two full graduate case studies: name, home country, course taken, where they teach now, and what changed. A single verifiable outcome moves the Experience signal further than another thousand words of description.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.2 Expertise</h3>
+  <p><strong>Score:</strong> <span class="status-warn">60/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>Course pages carry accurate, deep syllabus detail with correct specialist vocabulary.</li>
+    <li>Eleven Person schema nodes on /yoga-teachers-in-india/ with jobTitle, knowsAbout and hasOccupation including years of experience.</li>
+    <li>Course schema carries educationalCredentialAwarded and coursePrerequisites derived from what the page actually says.</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>No author byline anywhere on the site <span class="status-warn">High</span></h4>
+    <p>Not one page across the sampled set carries a byline, an author bio, or a rel=author link. The people who hold the expertise are described on the teachers page but are never attached to any piece of content.</p>
+    <p><strong>Recommendation:</strong> Byline the blog posts and the long course guides to the named acharyas, and give each acharya an anchored bio section or its own page that the byline links to. The Person schema already exists — connect it to the content.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>163 blog posts emit no Article schema and no author entity <span class="status-warn">High</span></h4>
+    <p>app/(en)/(main)/blog/[slug]/page.jsx imports no JsonLd at all. The template already reads article.published_date and article.author from the database and renders both visibly, but neither reaches structured data. The blog is the largest content surface on the site and is anonymous to search engines.</p>
+    <p><strong>Recommendation:</strong> Add BlogPosting schema to the blog route template: author as a Person node, datePublished and dateModified from the existing database columns, publisher referencing the existing ORG_ID, plus headline, image and mainEntityOfPage. One file change fixes all 163 posts.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Founder credential buried <span class="status-warn">Low</span></h4>
+    <p>The founder&#x27;s qualification from the Morarji Desai National Institute of Yoga appears on only four English pages (the teachers page and three blog articles). It is absent from the homepage and /about-us/, where a first-time visitor forms their impression.</p>
+    <p><strong>Recommendation:</strong> Surface the credential in the founder&#x27;s introduction on the homepage story section and on /about-us/.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.3 Authoritativeness</h3>
+  <p><strong>Score:</strong> <span class="status-warn">64/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>Yoga Alliance public-profile link now present on 211 pages, with RYS 200, RYS 300 and RYS 500 badges — a third-party accreditation a reader can verify in one click.</li>
+    <li>Ministry of Ayush and Uttarakhand Tourism credentials shown with their real marks rather than stand-in icons.</li>
+    <li>Google Maps listing added to the Organization sameAs, alongside Instagram, Facebook and YouTube.</li>
+    <li>Every affiliation claim now matches reality — &#x27;affiliated with Yoga Alliance&#x27; was removed in all 11 languages.</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Accreditation is the only external validation <span class="status-warn">Medium</span></h4>
+    <p>Beyond Yoga Alliance and the two government bodies there is no press coverage, no industry citation, no award and no external mention linked from the site. There is also no Search Console property, so the actual inbound link profile is unmeasured.</p>
+    <p><strong>Recommendation:</strong> Set up Google Search Console and Bing Webmaster Tools to establish a baseline, confirm the Yoga Alliance directory listing links back to the site, and pursue a small number of genuine placements — yoga directories, alumni interviews, regional tourism listings.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Registered since 2018 is unverified <span class="status-warn">Medium</span></h4>
+    <p>The accreditation panel on all 11 homepages states that the school has been registered since 2018. The school has said it was previously affiliated rather than registered, and the Yoga Alliance directory publishes registration dates. If the two disagree, this single line hands a critic a checkable contradiction on the exact point the section exists to settle.</p>
+    <p><strong>Recommendation:</strong> Confirm the registration date on the Yoga Alliance profile. If it is later than 2018, change the line to describe how long the school has been teaching rather than how long it has been registered.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.4 Trustworthiness</h3>
+  <p><strong>Score:</strong> <span class="status-warn">73/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>Email, two phone numbers, full postal address and a map link on every page.</li>
+    <li>Privacy policy present (807 words) and linked from the footer.</li>
+    <li>Code of conduct page serves as published terms.</li>
+    <li>HTTPS throughout, with the apex now 301-redirecting to the canonical www host.</li>
+    <li>Testimonials carry real names and countries rather than initials.</li>
+    <li>Platform ratings are shown separately (Google 4.9, Yoga Alliance 4.5, Tripadvisor 4.3) rather than summed into an unverifiable total, and no self-compiled aggregateRating is emitted in schema.</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>No refund or cancellation policy <span class="status-warn">High</span></h4>
+    <p>The site takes prepayments of EUR 1,275 to EUR 1,650 through /student-admission-panel/. Refund and cancellation terms appear only in passing inside the FAQ and the code of conduct, and on no English page as a policy in its own right. For a destination business collecting money months before arrival from students in other countries, this is the largest remaining trust gap.</p>
+    <p><strong>Recommendation:</strong> Publish a dedicated refund and cancellation policy page covering deposits, cancellation windows, date transfers and no-shows. Link it from the footer, from the admission panel before payment, and from the fee section of every course page.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>No publication or update dates on any page <span class="status-warn">High</span></h4>
+    <p>No page carries a visible published or updated date, and no page emits datePublished or dateModified. Course fees, batch dates and accreditation status all change over time, and a reader has no way to judge whether what they are reading is current.</p>
+    <p><strong>Recommendation:</strong> Emit dateModified sitewide and show a visible &#x27;last updated&#x27; line on the course pages and blog posts. The blog already stores published_date in the database.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.5 Content structure and readability</h3>
+  <p><strong>Score:</strong> <span class="status-warn">66/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>Clean H1 to H2 to H3 hierarchy with exactly one H1 per page and no skipped levels.</li>
+    <li>Word counts comfortably clear the topical-coverage floors: homepage 7,995, 200-hour course 6,624, about 2,285, teachers 1,334.</li>
+    <li>Keyword density sits in a natural range (0.91-2.02 percent) with no stuffing.</li>
+    <li>Titles are 48-56 characters and meta descriptions 147-163 characters — all within display limits.</li>
+    <li>FAQ blocks are parsed from the page&#x27;s own markup into schema, so the two cannot drift apart.</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Teachers page reads at postgraduate level <span class="status-warn">Medium</span></h4>
+    <p>/yoga-teachers-in-india/ scores Flesch 27.2 with a grade level of 16.1 and an average sentence of 26.7 words. The homepage sits at 52.4 and the 200-hour course page at 53.5, against a 60-70 target for a general audience. Students come from more than 70 countries and the site ships 11 language versions, so a large share of readers are reading English as a second language.</p>
+    <p><strong>Recommendation:</strong> Break the long sentences on the teachers page and aim for Flesch 55-65 across the site. Readability is not a ranking factor, but it is a conversion factor for this audience.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Contextual internal linking is thin <span class="status-warn">Medium</span></h4>
+    <p>In-body contextual links run at 0.6 per 1,000 words on the homepage, 0.3 on the 200-hour course page and 0.0 on both /about-us/ and /yoga-teachers-in-india/, against a 3-5 per 1,000 guideline. Raw link counts look healthy only because the header, drawer and footer navigation is counted.</p>
+    <p><strong>Recommendation:</strong> Add three to five contextual links inside the body copy of each long page, using descriptive anchors that name the destination topic.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Five images with empty alt attributes <span class="status-warn">Low</span></h4>
+    <p>Two images on the homepage and three on the 200-hour course page ship alt=&quot;&quot;. Every other image across the sampled pages carries descriptive, localised alt text.</p>
+    <p><strong>Recommendation:</strong> Write descriptive alt text for the five affected images, or mark them aria-hidden if they are genuinely decorative.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>No table of contents on a 7,995-word homepage <span class="status-warn">Low</span></h4>
+    <p>The homepage runs 39 H2 sections across roughly 8,000 words with no in-page navigation. Coverage depth is a strength; orientation is not.</p>
+    <p><strong>Recommendation:</strong> Add a compact section jump-list near the top of the homepage, similar to the SectionNav component already used on the course pages.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.6 AI citation readiness</h3>
+  <p><strong>Score:</strong> <span class="status-warn">68/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>Rich entity graph: EducationalOrganization, LocalBusiness, WebSite, Course, Person, VideoObject and BreadcrumbList.</li>
+    <li>Twenty-four question-and-answer pairs across the homepage and 200-hour page in a format generative surfaces can extract directly.</li>
+    <li>Concrete, quotable figures: 3,000+ students, 70+ countries, EUR 1,275, 24 days, RYS 200/300/500.</li>
+    <li>Strong heading hierarchy gives clean passage boundaries.</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Prose is narrative rather than answer-first <span class="status-warn">Medium</span></h4>
+    <p>Average sentence length runs 22-27 words and key answers are embedded mid-paragraph rather than stated up front. Generative surfaces extract passages, and a passage that opens with its answer is far more quotable.</p>
+    <p><strong>Recommendation:</strong> Lead each section with a one-sentence direct answer before the supporting narrative. Keep the narrative — just move the conclusion to the front.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>No freshness signal for any surface to weigh <span class="status-warn">Medium</span></h4>
+    <p>With no dates anywhere, neither classic search nor generative surfaces can establish how current the content is. This compounds the missing Article schema on the blog.</p>
+    <p><strong>Recommendation:</strong> Ship dateModified sitewide alongside the blog schema work.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>FAQPage no longer earns rich results <span class="status-warn">Info</span></h4>
+    <p>Google withdrew FAQ rich results for most sites. The FAQPage markup on the homepage (13 pairs) and course pages (11 pairs) remains useful for extraction by generative surfaces but will not produce SERP dropdowns.</p>
+    <p><strong>Recommendation:</strong> Keep the markup, but do not expect FAQ dropdowns from it. Do not invest further in FAQ schema expecting rich results.</p>
+  </div>
+  <hr class="divider">
+</div>
+
+<!-- ======================================================= 3. ACTION PLAN === -->
+<div class="section">
+  <div class="section-header">
+    <h2>3. Action Plan</h2>
+  </div>
+
+  <div class="roadmap-phase">
+    <h4>Phase 1: Trust and accountability <span class="effort">Week 1 — approx. 6-8 hours</span></h4>
+    <ul>
+      <li>Write and publish a refund and cancellation policy page. Cover deposits, cancellation windows, date transfers and no-shows. Link it from the footer, from the admission panel before payment, and from the fee section of every course page. Highest trust return for the least work, and the only gap that touches money.</li>
+      <li>Add BlogPosting schema to app/(en)/(main)/blog/[slug]/page.jsx: author as a Person node, datePublished and dateModified from the existing database columns, publisher referencing ORG_ID, plus headline, image and mainEntityOfPage. One file, 163 posts fixed.</li>
+      <li>Verify the &#x27;Registered since 2018&#x27; line against the Yoga Alliance public profile before the next deploy. If the registration is more recent, change the line to describe teaching history instead.</li>
+      <li>Emit dateModified sitewide and show a visible last-updated line on course pages and blog posts.</li>
+    </ul>
+  </div>
+  <div class="roadmap-phase">
+    <h4>Phase 2: Attach the expertise to the content <span class="effort">Weeks 2-3 — approx. 8-12 hours</span></h4>
+    <ul>
+      <li>Byline blog posts and long course guides to the named acharyas.</li>
+      <li>Give each acharya an anchored bio section or its own page, and link the bylines to it. The Person schema with credentials already exists — connect it.</li>
+      <li>Surface the founder&#x27;s Morarji Desai National Institute of Yoga credential on the homepage story section and on /about-us/.</li>
+      <li>Publish one or two documented graduate case studies: name, home country, course taken, where they teach today, and what changed.</li>
+    </ul>
+  </div>
+  <div class="roadmap-phase">
+    <h4>Phase 3: Readability, linking and quick fixes <span class="effort">Month 2 — approx. 6-10 hours</span></h4>
+    <ul>
+      <li>Rewrite /yoga-teachers-in-india/ for readability. Break the 26.7-word average sentences and target Flesch 55-65.</li>
+      <li>Add three to five contextual in-body links to /about-us/ and /yoga-teachers-in-india/, and lift the homepage and course pages toward 3 per 1,000 words.</li>
+      <li>Write descriptive alt text for the five images currently shipping alt=&quot;&quot; (2 on the homepage, 3 on the 200-hour page).</li>
+      <li>Add a compact section jump-list to the homepage, mirroring the SectionNav component already used on the course pages.</li>
+      <li>Rework key sections to lead with a one-sentence direct answer before the supporting narrative.</li>
+    </ul>
+  </div>
+  <div class="roadmap-phase">
+    <h4>Phase 4: Measurement and authority <span class="effort">Ongoing</span></h4>
+    <ul>
+      <li>Set up Google Search Console and Bing Webmaster Tools. Without them there is no first-party data on indexation, queries or inbound links, and every estimate in this report stays an estimate.</li>
+      <li>Confirm the Yoga Alliance directory listing links back to the site — the single most relevant link available to a registered school.</li>
+      <li>Pursue a small number of genuine external placements: yoga directories, alumni interviews, regional tourism listings. Quality over volume.</li>
+      <li>Re-measure content quality after Phases 1-3 ship, and track AI citation visibility as a KPI alongside organic rankings.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ======================================================= DATA SOURCES & METHODOLOGY === -->
+<div class="section" style="text-align: center; padding-top: 15mm;">
+  <hr class="divider">
+  <h3 style="text-align: left;">Data Sources &amp; Methodology</h3>
+  <table>
+    <thead>
+      <tr><th>Source</th><th>Description</th><th>Update Frequency</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>PageSpeed Insights API</td>
+          <td>Lighthouse lab audit (mobile emulation, Moto G Power, slow 4G)</td>
+          <td>Real-time</td></tr>
+      <tr><td>Chrome UX Report (CrUX)</td>
+          <td>28-day rolling field data from real Chrome users</td>
+          <td>Daily ~04:00 UTC</td></tr>
+      <tr><td>CrUX History API</td>
+          <td>25-week p75 trend data per metric</td>
+          <td>Weekly</td></tr>
+      <tr><td>Google Search Console</td>
+          <td>Search Analytics (clicks, impressions, CTR, position)</td>
+          <td>2-3 day lag</td></tr>
+      <tr><td>URL Inspection API</td>
+          <td>Per-URL index status, coverage state, crawl info</td>
+          <td>Real-time (2,000/day)</td></tr>
+    </tbody>
+  </table>
+  <p style="color: #94a3b8; font-size: 9pt; margin-top: 5mm;">
+    Report generated by Claude SEO &mdash; Google SEO Intelligence Skill &mdash; July 31, 2026<br>
+    Methodology based on Google Web Vitals thresholds, Search Console documentation, and Lighthouse scoring algorithms.
+  </p>
+</div>
+
+</body>
+</html>

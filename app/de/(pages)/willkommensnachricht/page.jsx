@@ -11,19 +11,19 @@ const EN = "/soon-after-message/";
 
 export const metadata = {
   title: "Schülerstimmen & Absolventen-Botschaften | Adhiroha",
-  description: "Eine Botschaft der Adhiroha-Absolventen — in einer Stimme, die vielen Namen gehört. Der Ashram, die Lehrer und der Mensch, der du wirst.",
+  description: "Eine Botschaft der Adhiroha-Absolventen, in einer Stimme, die vielen Namen gehört. Der Ashram, die Lehrer und der Mensch, der du wirst.",
   alternates: {
     canonical: DE,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "de_DE", url: `${SITE}${DE}`,
-    title: "Schülerstimmen & Absolventen-Botschaften | Adhiroha", description: "Eine Botschaft der Adhiroha-Absolventen — in einer Stimme, die vielen Namen gehört. Der Ashram, die Lehrer und der Mensch, der du wirst.",
+    title: "Schülerstimmen & Absolventen-Botschaften | Adhiroha", description: "Eine Botschaft der Adhiroha-Absolventen, in einer Stimme, die vielen Namen gehört. Der Ashram, die Lehrer und der Mensch, der du wirst.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Schülerstimmen & Absolventen-Botschaften | Adhiroha",
-    description: "Eine Botschaft der Adhiroha-Absolventen — in einer Stimme, die vielen Namen gehört. Der Ashram, die Lehrer und der Mensch, der du wirst.",
+    description: "Eine Botschaft der Adhiroha-Absolventen, in einer Stimme, die vielen Namen gehört. Der Ashram, die Lehrer und der Mensch, der du wirst.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

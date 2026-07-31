@@ -12,7 +12,7 @@ const EN = "/yoga-teacher-training-course-rishikesh-india/";
 export const metadata = {
   title: "Yoga-docentenopleiding in India | YTTC 200, 300 en 500 Uur in Rishikesh | Adhiroha",
   description:
-    "Yoga-docentenopleiding in India bij Adhiroha, Rishikesh — residentiële cursussen van 200, 300 en 500 uur, gecertificeerd door Yoga Alliance. Meer dan 3.000 studenten uit ruim 70 landen. All-inclusive prijs, internationaal erkende certificering.",
+    "Yoga-docentenopleiding in India bij Adhiroha, Rishikesh, residentiële cursussen van 200, 300 en 500 uur, gecertificeerd door Yoga Alliance. Meer dan 3.000 studenten uit ruim 70 landen. All-inclusive prijs, internationaal erkende certificering.",
   keywords: [
     "yoga-docentenopleiding in india",
     "yoga-docentenopleiding in rishikesh",
@@ -43,7 +43,7 @@ const pageSchema = graph(
   courseSchema({
     name: "200-Uur Yoga-docentenopleiding in Rishikesh, India",
     description:
-      "Residentiële 200-uur yoga-docentenopleiding met Yoga Alliance-certificering in Rishikesh, India — de basis voor beginners in asana, pranayama, anatomie, filosofie en lespraktijk.",
+      "Residentiële 200-uur yoga-docentenopleiding met Yoga Alliance-certificering in Rishikesh, India, de basis voor beginners in asana, pranayama, anatomie, filosofie en lespraktijk.",
     url: "/nl/200-uur-yoga-docentenopleiding-rishikesh/",
     price: 1275,
     days: 24,
@@ -61,7 +61,7 @@ const pageSchema = graph(
   courseSchema({
     name: "500-Uur Yoga-docentenopleiding in Rishikesh, India",
     description:
-      "Residentiële 500-uur yoga-docentenopleiding in Rishikesh, India — de complete onderdompeling van 60 dagen die het programma van 200 en 300 uur combineert, van beginner tot masterniveau.",
+      "Residentiële 500-uur yoga-docentenopleiding in Rishikesh, India, de complete onderdompeling van 60 dagen die het programma van 200 en 300 uur combineert, van beginner tot masterniveau.",
     url: "/nl/500-uur-yoga-docentenopleiding-rishikesh/",
     price: 2790,
     days: 60,

@@ -7,7 +7,7 @@ import { graph, breadcrumbSchema } from "@/lib/seo";
 export const metadata = {
   title: "Volunteer in Rishikesh | Adhiroha Yoga School",
   description:
-    "Volunteer at Adhiroha Yoga School in Rishikesh as a course coordinator — live at the ashram, support students and deepen your own practice.",
+    "Volunteer at Adhiroha Yoga School in Rishikesh as a course coordinator, live at the ashram, support students and deepen your own practice.",
   alternates: { canonical: "/volunteer-opportunity-in-rishikesh/" },
 };
 

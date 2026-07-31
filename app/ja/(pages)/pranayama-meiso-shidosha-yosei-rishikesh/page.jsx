@@ -24,7 +24,7 @@ const sections = [
 ];
 
 export const metadata = {
-  title: "リシケシのプラーナヤーマ＆瞑想ヨガ指導者養成コース | 12日間 — Adhiroha",
+  title: "リシケシのプラーナヤーマ＆瞑想ヨガ指導者養成コース | 12日間、Adhiroha",
   description:
     "アーユシュ省認定の12日間プラーナヤーマ＆瞑想ヨガ指導者養成コース（リシケシ）。少人数制、ヒマラヤのアシュラム滞在、食事と遠足込み。",
   alternates: {
@@ -36,13 +36,13 @@ export const metadata = {
     siteName: "Adhiroha Yoga School",
     locale: "ja_JP",
     url: `${SITE}${JA}`,
-    title: "リシケシのプラーナヤーマ＆瞑想ヨガ指導者養成コース | 12日間 — Adhiroha",
+    title: "リシケシのプラーナヤーマ＆瞑想ヨガ指導者養成コース | 12日間、Adhiroha",
     description:
       "アーユシュ省認定の12日間プラーナヤーマ＆瞑想ヨガ指導者養成コース（リシケシ）。少人数制、ヒマラヤのアシュラム滞在、食事と遠足込み。",
   },
   twitter: {
     card: "summary_large_image",
-    title: "リシケシのプラーナヤーマ＆瞑想ヨガ指導者養成コース | 12日間 — Adhiroha",
+    title: "リシケシのプラーナヤーマ＆瞑想ヨガ指導者養成コース | 12日間、Adhiroha",
     description: "アーユシュ省認定の12日間プラーナヤーマ＆瞑想ヨガ指導者養成コース（リシケシ）。少人数制、ヒマラヤのアシュラム滞在、食事と遠足込み。",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },

@@ -12,7 +12,7 @@ const EN = "/yoga-teacher-training-course-rishikesh-india/";
 export const metadata = {
   title: "Formação de Professor de Yoga na Índia | YTTC 200, 300 e 500 Horas em Rishikesh | Adhiroha",
   description:
-    "Formação de professor de yoga na Índia com a Adhiroha, Rishikesh — cursos residenciais de 200, 300 e 500 horas certificados pela Yoga Alliance. Mais de 3.000 alunos de mais de 70 países. Valor com tudo incluído e certificação reconhecida internacionalmente.",
+    "Formação de professor de yoga na Índia com a Adhiroha, Rishikesh, cursos residenciais de 200, 300 e 500 horas certificados pela Yoga Alliance. Mais de 3.000 alunos de mais de 70 países. Valor com tudo incluído e certificação reconhecida internacionalmente.",
   keywords: [
     "formação de professor de yoga na índia",
     "formação de professor de yoga em rishikesh",
@@ -43,7 +43,7 @@ const pageSchema = graph(
   courseSchema({
     name: "Formação de Professor de Yoga de 200 Horas em Rishikesh, Índia",
     description:
-      "Curso residencial de formação de professor de yoga de 200 horas certificado pela Yoga Alliance em Rishikesh, Índia — a base para iniciantes em asana, pranayama, anatomia, filosofia e prática de ensino.",
+      "Curso residencial de formação de professor de yoga de 200 horas certificado pela Yoga Alliance em Rishikesh, Índia, a base para iniciantes em asana, pranayama, anatomia, filosofia e prática de ensino.",
     url: "/pt/200-horas-formacao-de-professor-de-yoga-rishikesh/",
     price: 1275,
     days: 24,
@@ -61,7 +61,7 @@ const pageSchema = graph(
   courseSchema({
     name: "Formação de Professor de Yoga de 500 Horas em Rishikesh, Índia",
     description:
-      "Curso residencial de formação de professor de yoga de 500 horas em Rishikesh, Índia — a imersão completa de 60 dias que combina os programas de 200 e 300 horas, do nível iniciante ao avançado.",
+      "Curso residencial de formação de professor de yoga de 500 horas em Rishikesh, Índia, a imersão completa de 60 dias que combina os programas de 200 e 300 horas, do nível iniciante ao avançado.",
     url: "/pt/500-horas-formacao-de-professor-de-yoga-rishikesh/",
     price: 2790,
     days: 60,

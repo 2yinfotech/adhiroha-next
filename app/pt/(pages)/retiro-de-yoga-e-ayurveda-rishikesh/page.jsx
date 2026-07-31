@@ -10,22 +10,22 @@ const PT = "/pt/retiro-de-yoga-e-ayurveda-rishikesh/";
 const EN = "/yoga-retreat-in-rishikesh/";
 
 export const metadata = {
-  title: "Retiro de Yoga e Ayurveda em Rishikesh | 6 Dias — Adhiroha",
+  title: "Retiro de Yoga e Ayurveda em Rishikesh | 6 Dias | Adhiroha",
   description:
-    "Retiro de yoga e ayurveda de seis dias em Rishikesh, Índia — yoga suave, pranayama, terapias ayurvédicas personalizadas e comida sáttvica. A partir de € 510 com tudo incluído.",
+    "Retiro de yoga e ayurveda de seis dias em Rishikesh, Índia, yoga suave, pranayama, terapias ayurvédicas personalizadas e comida sáttvica. A partir de € 510 com tudo incluído.",
   alternates: {
     canonical: PT,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pt_BR", url: `${SITE}${PT}`,
-    title: "Retiro de Yoga e Ayurveda em Rishikesh | 6 Dias — Adhiroha",
-    description: "Retiro de yoga e ayurveda de seis dias em Rishikesh, Índia — yoga suave, pranayama, terapias ayurvédicas personalizadas e comida sáttvica. A partir de € 510 com tudo incluído.",
+    title: "Retiro de Yoga e Ayurveda em Rishikesh | 6 Dias | Adhiroha",
+    description: "Retiro de yoga e ayurveda de seis dias em Rishikesh, Índia, yoga suave, pranayama, terapias ayurvédicas personalizadas e comida sáttvica. A partir de € 510 com tudo incluído.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Retiro de Yoga e Ayurveda em Rishikesh | 6 Dias — Adhiroha",
-    description: "Retiro de yoga e ayurveda de seis dias em Rishikesh, Índia — yoga suave, pranayama, terapias ayurvédicas personalizadas e comida sáttvica. A partir de € 510 com tudo incluído.",
+    title: "Retiro de Yoga e Ayurveda em Rishikesh | 6 Dias | Adhiroha",
+    description: "Retiro de yoga e ayurveda de seis dias em Rishikesh, Índia, yoga suave, pranayama, terapias ayurvédicas personalizadas e comida sáttvica. A partir de € 510 com tudo incluído.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

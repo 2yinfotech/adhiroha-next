@@ -12,7 +12,7 @@ const EN = "/safety-hygiene-in-rishikesh/";
 export const metadata = {
   title: "Bezpieczeństwo i Higiena | Aśram Jogi Adhiroha, Riszikeś",
   description:
-    "Monitoring 24/7, ogrodzony kampus, odbiór z lotniska w cenie i wsparcie dla kobiet podróżujących samotnie — jak Adhiroha dba o bezpieczeństwo i higienę w Riszikeś.",
+    "Monitoring 24/7, ogrodzony kampus, odbiór z lotniska w cenie i wsparcie dla kobiet podróżujących samotnie, jak Adhiroha dba o bezpieczeństwo i higienę w Riszikeś.",
   alternates: {
     canonical: PL,
     languages: hreflangFor(EN),
@@ -20,12 +20,12 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pl_PL", url: `${SITE}${PL}`,
     title: "Bezpieczeństwo i Higiena | Aśram Jogi Adhiroha, Riszikeś",
-    description: "Monitoring 24/7, ogrodzony kampus, odbiór z lotniska w cenie i wsparcie dla kobiet podróżujących samotnie — jak Adhiroha dba o bezpieczeństwo i higienę w Riszikeś.",
+    description: "Monitoring 24/7, ogrodzony kampus, odbiór z lotniska w cenie i wsparcie dla kobiet podróżujących samotnie, jak Adhiroha dba o bezpieczeństwo i higienę w Riszikeś.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Bezpieczeństwo i Higiena | Aśram Jogi Adhiroha, Riszikeś",
-    description: "Monitoring 24/7, ogrodzony kampus, odbiór z lotniska w cenie i wsparcie dla kobiet podróżujących samotnie — jak Adhiroha dba o bezpieczeństwo i higienę w Riszikeś.",
+    description: "Monitoring 24/7, ogrodzony kampus, odbiór z lotniska w cenie i wsparcie dla kobiet podróżujących samotnie, jak Adhiroha dba o bezpieczeństwo i higienę w Riszikeś.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

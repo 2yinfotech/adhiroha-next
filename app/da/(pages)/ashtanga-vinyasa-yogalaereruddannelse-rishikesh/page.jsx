@@ -24,7 +24,7 @@ const sections = [
 ];
 
 export const metadata = {
-  title: "Ashtanga- og vinyasa-yogalæreruddannelse i Rishikesh | 12 dage — Adhiroha",
+  title: "Ashtanga- og vinyasa-yogalæreruddannelse i Rishikesh | 12 dage | Adhiroha",
   description:
     "Tolv dages ashtanga- og vinyasa-yogalæreruddannelse i Rishikesh, akkrediteret af Ayush-ministeriet. Små hold, ophold i himalayansk ashram, alle måltider og udflugter inkluderet.",
   alternates: {
@@ -36,13 +36,13 @@ export const metadata = {
     siteName: "Adhiroha Yoga School",
     locale: "da_DK",
     url: `${SITE}${DA}`,
-    title: "Ashtanga- og vinyasa-yogalæreruddannelse i Rishikesh | 12 dage — Adhiroha",
+    title: "Ashtanga- og vinyasa-yogalæreruddannelse i Rishikesh | 12 dage | Adhiroha",
     description:
       "Tolv dages ashtanga- og vinyasa-yogalæreruddannelse i Rishikesh, akkrediteret af Ayush-ministeriet. Små hold, ophold i himalayansk ashram, alle måltider og udflugter inkluderet.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ashtanga- og vinyasa-yogalæreruddannelse i Rishikesh | 12 dage — Adhiroha",
+    title: "Ashtanga- og vinyasa-yogalæreruddannelse i Rishikesh | 12 dage | Adhiroha",
     description: "Tolv dages ashtanga- og vinyasa-yogalæreruddannelse i Rishikesh, akkrediteret af Ayush-ministeriet. Små hold, ophold i himalayansk ashram, alle måltider og udflugter inkluderet.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },

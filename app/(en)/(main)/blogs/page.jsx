@@ -12,7 +12,7 @@ export const dynamic = "force-dynamic";
 export const metadata = {
   title: "Yoga Teacher Training Blog | Adhiroha, Rishikesh",
   description:
-    "Honest guides to training in Rishikesh — choosing a yoga school, what to expect as a beginner, and how the 200, 300 and 500 hour courses compare.",
+    "Honest guides to training in Rishikesh, choosing a yoga school, what to expect as a beginner, and how the 200, 300 and 500 hour courses compare.",
   alternates: { canonical: "/blogs/" },
 };
 

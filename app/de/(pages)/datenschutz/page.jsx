@@ -11,19 +11,19 @@ const EN = "/privacy-policy/";
 
 export const metadata = {
   title: "Datenschutzerklärung | Adhiroha Yoga School, Rishikesh",
-  description: "Die Datenschutzerklärung der Adhiroha Yoga School — welche Daten wir erheben, wie wir sie verwenden und wie wir sie schützen.",
+  description: "Die Datenschutzerklärung der Adhiroha Yoga School, welche Daten wir erheben, wie wir sie verwenden und wie wir sie schützen.",
   alternates: {
     canonical: DE,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "de_DE", url: `${SITE}${DE}`,
-    title: "Datenschutzerklärung | Adhiroha Yoga School, Rishikesh", description: "Die Datenschutzerklärung der Adhiroha Yoga School — welche Daten wir erheben, wie wir sie verwenden und wie wir sie schützen.",
+    title: "Datenschutzerklärung | Adhiroha Yoga School, Rishikesh", description: "Die Datenschutzerklärung der Adhiroha Yoga School, welche Daten wir erheben, wie wir sie verwenden und wie wir sie schützen.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Datenschutzerklärung | Adhiroha Yoga School, Rishikesh",
-    description: "Die Datenschutzerklärung der Adhiroha Yoga School — welche Daten wir erheben, wie wir sie verwenden und wie wir sie schützen.",
+    description: "Die Datenschutzerklärung der Adhiroha Yoga School, welche Daten wir erheben, wie wir sie verwenden und wie wir sie schützen.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

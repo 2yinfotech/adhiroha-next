@@ -12,7 +12,7 @@ const EN = "/soon-after-message/";
 export const metadata = {
   title: "En Hälsning från Våra Tidigare Elever | Adhiroha, Rishikesh",
   description:
-    "Adhirohas utexaminerade beskriver med egna ord yogalärarutbildningen i Rishikesh — trädgården, eldaltaret, områdets fem element och lärarna bakom förvandlingen.",
+    "Adhirohas utexaminerade beskriver med egna ord yogalärarutbildningen i Rishikesh, trädgården, eldaltaret, områdets fem element och lärarna bakom förvandlingen.",
   alternates: {
     canonical: SV,
     languages: hreflangFor(EN),
@@ -20,12 +20,12 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "sv_SE", url: `${SITE}${SV}`,
     title: "En Hälsning från Våra Tidigare Elever | Adhiroha, Rishikesh",
-    description: "Adhirohas utexaminerade beskriver med egna ord yogalärarutbildningen i Rishikesh — trädgården, eldaltaret, områdets fem element och lärarna bakom förvandlingen.",
+    description: "Adhirohas utexaminerade beskriver med egna ord yogalärarutbildningen i Rishikesh, trädgården, eldaltaret, områdets fem element och lärarna bakom förvandlingen.",
   },
   twitter: {
     card: "summary_large_image",
     title: "En Hälsning från Våra Tidigare Elever | Adhiroha, Rishikesh",
-    description: "Adhirohas utexaminerade beskriver med egna ord yogalärarutbildningen i Rishikesh — trädgården, eldaltaret, områdets fem element och lärarna bakom förvandlingen.",
+    description: "Adhirohas utexaminerade beskriver med egna ord yogalärarutbildningen i Rishikesh, trädgården, eldaltaret, områdets fem element och lärarna bakom förvandlingen.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

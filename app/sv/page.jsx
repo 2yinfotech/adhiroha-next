@@ -14,7 +14,7 @@ import JsonLd from "@/components/JsonLd";
 import { graph, extractFaqs, faqSchema, SITE, LANGUAGE_ALTERNATES, schoolTourVideoSchema } from "@/lib/seo";
 
 export const metadata = {
-  title: "Yogalärarutbildning i Rishikesh | YTTC 200/300/500 Timmar — Adhiroha",
+  title: "Yogalärarutbildning i Rishikesh | YTTC 200/300/500 Timmar | Adhiroha",
   description:
     "Yogalärarutbildningar på 200, 300 och 500 timmar i Rishikesh, Indien, certifierade av Yoga Alliance. Små grupper, erfarna indiska lärare, boende i ashram och måltider ingår.",
   alternates: { canonical: "/sv/", languages: LANGUAGE_ALTERNATES },
@@ -23,14 +23,14 @@ export const metadata = {
     siteName: "Adhiroha Yoga School",
     locale: "sv_SE",
     url: `${SITE}/sv/`,
-    title: "Yogalärarutbildning i Rishikesh | YTTC 200/300/500 Timmar — Adhiroha",
+    title: "Yogalärarutbildning i Rishikesh | YTTC 200/300/500 Timmar | Adhiroha",
     description:
       "Yogalärarutbildningar på 200, 300 och 500 timmar i Rishikesh, Indien, certifierade av Yoga Alliance. Små grupper, erfarna indiska lärare, boende i ashram och måltider ingår.",
     images: [{ url: "/img/yoga-teacher-training-india-course.webp", width: 1200, height: 630, alt: "Adhiroha Yoga School, Upper Tapovan, Rishikesh" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yogalärarutbildning i Rishikesh | YTTC 200/300/500 Timmar — Adhiroha",
+    title: "Yogalärarutbildning i Rishikesh | YTTC 200/300/500 Timmar | Adhiroha",
     description: "Yogalärarutbildningar på 200, 300 och 500 timmar i Rishikesh, Indien, certifierade av Yoga Alliance. Små grupper, erfarna indiska lärare, boende i ashram och måltider ingår.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },

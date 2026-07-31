@@ -10,22 +10,22 @@ const DA = "/da/yoga-og-ayurveda-retreat-rishikesh/";
 const EN = "/yoga-retreat-in-rishikesh/";
 
 export const metadata = {
-  title: "Yoga- og ayurveda-retreat i Rishikesh | 6 dage — Adhiroha",
+  title: "Yoga- og ayurveda-retreat i Rishikesh | 6 dage | Adhiroha",
   description:
-    "Seks dages yoga- og ayurveda-retreat i Rishikesh, Indien — blid yoga, pranayama, personligt tilpassede ayurvediske behandlinger og sattvisk mad. Fra 510 € alt inklusive.",
+    "Seks dages yoga- og ayurveda-retreat i Rishikesh, Indien, blid yoga, pranayama, personligt tilpassede ayurvediske behandlinger og sattvisk mad. Fra 510 € alt inklusive.",
   alternates: {
     canonical: DA,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "da_DK", url: `${SITE}${DA}`,
-    title: "Yoga- og ayurveda-retreat i Rishikesh | 6 dage — Adhiroha",
-    description: "Seks dages yoga- og ayurveda-retreat i Rishikesh, Indien — blid yoga, pranayama, personligt tilpassede ayurvediske behandlinger og sattvisk mad. Fra 510 € alt inklusive.",
+    title: "Yoga- og ayurveda-retreat i Rishikesh | 6 dage | Adhiroha",
+    description: "Seks dages yoga- og ayurveda-retreat i Rishikesh, Indien, blid yoga, pranayama, personligt tilpassede ayurvediske behandlinger og sattvisk mad. Fra 510 € alt inklusive.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yoga- og ayurveda-retreat i Rishikesh | 6 dage — Adhiroha",
-    description: "Seks dages yoga- og ayurveda-retreat i Rishikesh, Indien — blid yoga, pranayama, personligt tilpassede ayurvediske behandlinger og sattvisk mad. Fra 510 € alt inklusive.",
+    title: "Yoga- og ayurveda-retreat i Rishikesh | 6 dage | Adhiroha",
+    description: "Seks dages yoga- og ayurveda-retreat i Rishikesh, Indien, blid yoga, pranayama, personligt tilpassede ayurvediske behandlinger og sattvisk mad. Fra 510 € alt inklusive.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

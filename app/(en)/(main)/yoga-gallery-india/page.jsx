@@ -8,7 +8,7 @@ import { graph, breadcrumbSchema, extractFaqs, faqSchema, hreflangFor } from "@/
 export const metadata = {
   title: "Yoga Gallery | The Adhiroha Ashram, Rishikesh",
   description:
-    "See the Adhiroha ashram in Rishikesh — the yoga shala, rooms, dining hall, Ganga ghat sessions and Himalayan surroundings, in photographs.",
+    "See the Adhiroha ashram in Rishikesh, the yoga shala, rooms, dining hall, Ganga ghat sessions and Himalayan surroundings, in photographs.",
   alternates: { canonical: "/yoga-gallery-india/", languages: hreflangFor("/yoga-gallery-india/") }
 };
 

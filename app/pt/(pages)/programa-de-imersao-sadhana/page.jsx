@@ -10,22 +10,22 @@ const PT = "/pt/programa-de-imersao-sadhana/";
 const EN = "/sadhana-immersion-programme/";
 
 export const metadata = {
-  title: "Programa de Imersão Sadhana em Rishikesh | 15 Dias — Adhiroha",
+  title: "Programa de Imersão Sadhana em Rishikesh | 15 Dias | Adhiroha",
   description:
-    "Programa de imersão Sadhana de quinze dias em Rishikesh — silêncio, prática pessoal, meditação, karma yoga e o Bhagavad Gita no ritmo tradicional do ashram. A partir de € 699 com tudo incluído.",
+    "Programa de imersão Sadhana de quinze dias em Rishikesh, silêncio, prática pessoal, meditação, karma yoga e o Bhagavad Gita no ritmo tradicional do ashram. A partir de € 699 com tudo incluído.",
   alternates: {
     canonical: PT,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pt_BR", url: `${SITE}${PT}`,
-    title: "Programa de Imersão Sadhana em Rishikesh | 15 Dias — Adhiroha",
-    description: "Programa de imersão Sadhana de quinze dias em Rishikesh — silêncio, prática pessoal, meditação, karma yoga e o Bhagavad Gita no ritmo tradicional do ashram. A partir de € 699 com tudo incluído.",
+    title: "Programa de Imersão Sadhana em Rishikesh | 15 Dias | Adhiroha",
+    description: "Programa de imersão Sadhana de quinze dias em Rishikesh, silêncio, prática pessoal, meditação, karma yoga e o Bhagavad Gita no ritmo tradicional do ashram. A partir de € 699 com tudo incluído.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Programa de Imersão Sadhana em Rishikesh | 15 Dias — Adhiroha",
-    description: "Programa de imersão Sadhana de quinze dias em Rishikesh — silêncio, prática pessoal, meditação, karma yoga e o Bhagavad Gita no ritmo tradicional do ashram. A partir de € 699 com tudo incluído.",
+    title: "Programa de Imersão Sadhana em Rishikesh | 15 Dias | Adhiroha",
+    description: "Programa de imersão Sadhana de quinze dias em Rishikesh, silêncio, prática pessoal, meditação, karma yoga e o Bhagavad Gita no ritmo tradicional do ashram. A partir de € 699 com tudo incluído.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

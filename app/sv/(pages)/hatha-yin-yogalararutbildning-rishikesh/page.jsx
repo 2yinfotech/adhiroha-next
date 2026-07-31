@@ -24,7 +24,7 @@ const sections = [
 ];
 
 export const metadata = {
-  title: "Hatha- och Yin-yogalärarutbildning i Rishikesh | 12 Dagar — Adhiroha",
+  title: "Hatha- och Yin-yogalärarutbildning i Rishikesh | 12 Dagar | Adhiroha",
   description:
     "Tolv dagars hatha- och yin-yogalärarutbildning i Rishikesh, ackrediterad av Ayushministeriet. Små grupper, boende i himalayiskt ashram, alla måltider och utflykter ingår.",
   alternates: {
@@ -36,13 +36,13 @@ export const metadata = {
     siteName: "Adhiroha Yoga School",
     locale: "sv_SE",
     url: `${SITE}${SV}`,
-    title: "Hatha- och Yin-yogalärarutbildning i Rishikesh | 12 Dagar — Adhiroha",
+    title: "Hatha- och Yin-yogalärarutbildning i Rishikesh | 12 Dagar | Adhiroha",
     description:
       "Tolv dagars hatha- och yin-yogalärarutbildning i Rishikesh, ackrediterad av Ayushministeriet. Små grupper, boende i himalayiskt ashram, alla måltider och utflykter ingår.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hatha- och Yin-yogalärarutbildning i Rishikesh | 12 Dagar — Adhiroha",
+    title: "Hatha- och Yin-yogalärarutbildning i Rishikesh | 12 Dagar | Adhiroha",
     description: "Tolv dagars hatha- och yin-yogalärarutbildning i Rishikesh, ackrediterad av Ayushministeriet. Små grupper, boende i himalayiskt ashram, alla måltider och utflykter ingår.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },

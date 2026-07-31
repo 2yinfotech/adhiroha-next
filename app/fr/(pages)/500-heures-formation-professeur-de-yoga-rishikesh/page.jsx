@@ -24,19 +24,19 @@ const sections = [
 
 export const metadata = {
   title: "Formation de professeur de yoga de 500 heures à Rishikesh | Adhiroha",
-  description: "Obtiens ton RYT-500 avec notre formation de professeur de yoga de 500 heures à Rishikesh — 60 jours réunissant les programmes de 200 et 300 heures, hébergement et repas inclus.",
+  description: "Obtiens ton RYT-500 avec notre formation de professeur de yoga de 500 heures à Rishikesh, 60 jours réunissant les programmes de 200 et 300 heures, hébergement et repas inclus.",
   alternates: {
     canonical: FR,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "fr_FR", url: `${SITE}${FR}`,
-    title: "Formation de professeur de yoga de 500 heures à Rishikesh | Adhiroha", description: "Obtiens ton RYT-500 avec notre formation de professeur de yoga de 500 heures à Rishikesh — 60 jours réunissant les programmes de 200 et 300 heures, hébergement et repas inclus.",
+    title: "Formation de professeur de yoga de 500 heures à Rishikesh | Adhiroha", description: "Obtiens ton RYT-500 avec notre formation de professeur de yoga de 500 heures à Rishikesh, 60 jours réunissant les programmes de 200 et 300 heures, hébergement et repas inclus.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Formation de professeur de yoga de 500 heures à Rishikesh | Adhiroha",
-    description: "Obtiens ton RYT-500 avec notre formation de professeur de yoga de 500 heures à Rishikesh — 60 jours réunissant les programmes de 200 et 300 heures, hébergement et repas inclus.",
+    description: "Obtiens ton RYT-500 avec notre formation de professeur de yoga de 500 heures à Rishikesh, 60 jours réunissant les programmes de 200 et 300 heures, hébergement et repas inclus.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

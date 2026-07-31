@@ -10,22 +10,22 @@ const SV = "/sv/kontakt/";
 const EN = "/contact-us/";
 
 export const metadata = {
-  title: "Kontakt | Adhiroha — Yogaskola i Rishikesh",
+  title: "Kontakt | Adhiroha, Yogaskola i Rishikesh",
   description:
-    "Kontakta yoga-ashramet Adhiroha i Upper Tapovan, Rishikesh. WhatsApp, e-post eller formulär — det är en riktig människa som svarar, oftast inom en dag.",
+    "Kontakta yoga-ashramet Adhiroha i Upper Tapovan, Rishikesh. WhatsApp, e-post eller formulär, det är en riktig människa som svarar, oftast inom en dag.",
   alternates: {
     canonical: SV,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "sv_SE", url: `${SITE}${SV}`,
-    title: "Kontakt | Adhiroha — Yogaskola i Rishikesh",
-    description: "Kontakta yoga-ashramet Adhiroha i Upper Tapovan, Rishikesh. WhatsApp, e-post eller formulär — det är en riktig människa som svarar, oftast inom en dag.",
+    title: "Kontakt | Adhiroha, Yogaskola i Rishikesh",
+    description: "Kontakta yoga-ashramet Adhiroha i Upper Tapovan, Rishikesh. WhatsApp, e-post eller formulär, det är en riktig människa som svarar, oftast inom en dag.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kontakt | Adhiroha — Yogaskola i Rishikesh",
-    description: "Kontakta yoga-ashramet Adhiroha i Upper Tapovan, Rishikesh. WhatsApp, e-post eller formulär — det är en riktig människa som svarar, oftast inom en dag.",
+    title: "Kontakt | Adhiroha, Yogaskola i Rishikesh",
+    description: "Kontakta yoga-ashramet Adhiroha i Upper Tapovan, Rishikesh. WhatsApp, e-post eller formulär, det är en riktig människa som svarar, oftast inom en dag.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

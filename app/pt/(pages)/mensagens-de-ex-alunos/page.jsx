@@ -12,7 +12,7 @@ const EN = "/soon-after-message/";
 export const metadata = {
   title: "Uma Mensagem dos Nossos Ex-Alunos | Adhiroha, Rishikesh",
   description:
-    "Formados da Adhiroha descrevem com as próprias palavras a formação de professor de yoga em Rishikesh — o jardim, o altar do fogo, os cinco elementos do campus e os professores por trás da transformação.",
+    "Formados da Adhiroha descrevem com as próprias palavras a formação de professor de yoga em Rishikesh, o jardim, o altar do fogo, os cinco elementos do campus e os professores por trás da transformação.",
   alternates: {
     canonical: PT,
     languages: hreflangFor(EN),
@@ -20,12 +20,12 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pt_BR", url: `${SITE}${PT}`,
     title: "Uma Mensagem dos Nossos Ex-Alunos | Adhiroha, Rishikesh",
-    description: "Formados da Adhiroha descrevem com as próprias palavras a formação de professor de yoga em Rishikesh — o jardim, o altar do fogo, os cinco elementos do campus e os professores por trás da transformação.",
+    description: "Formados da Adhiroha descrevem com as próprias palavras a formação de professor de yoga em Rishikesh, o jardim, o altar do fogo, os cinco elementos do campus e os professores por trás da transformação.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Uma Mensagem dos Nossos Ex-Alunos | Adhiroha, Rishikesh",
-    description: "Formados da Adhiroha descrevem com as próprias palavras a formação de professor de yoga em Rishikesh — o jardim, o altar do fogo, os cinco elementos do campus e os professores por trás da transformação.",
+    description: "Formados da Adhiroha descrevem com as próprias palavras a formação de professor de yoga em Rishikesh, o jardim, o altar do fogo, os cinco elementos do campus e os professores por trás da transformação.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

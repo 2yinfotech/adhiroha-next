@@ -8,7 +8,7 @@ import { graph, breadcrumbSchema, extractFaqs, faqSchema, teacherSchemas, hrefla
 export const metadata = {
   title: "Our Yoga Teachers in Rishikesh, India | Adhiroha",
   description:
-    "Meet the experienced Indian acharyas who teach at Adhiroha — lifelong practitioners of hatha, ashtanga, pranayama and yoga philosophy in Rishikesh.",
+    "Meet the experienced Indian acharyas who teach at Adhiroha, lifelong practitioners of hatha, ashtanga, pranayama and yoga philosophy in Rishikesh.",
   alternates: { canonical: "/yoga-teachers-in-india/", languages: hreflangFor("/yoga-teachers-in-india/") }
 };
 

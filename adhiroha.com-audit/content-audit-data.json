@@ -1,0 +1,237 @@
+{
+  "summary": {
+    "health_score": 69,
+    "business_type": "Destination yoga school (residential teacher training, Rishikesh, India) — 11 language versions",
+    "top_findings": [
+      "No refund or cancellation policy on any English page, while the site collects EUR 1,275-1,650 prepayments through /student-admission-panel/.",
+      "163 blog posts carry no Article schema and no author entity — the site's largest content surface is anonymous to search engines.",
+      "No datePublished or dateModified anywhere on the site, so no page can demonstrate freshness or editorial accountability.",
+      "Readability on /yoga-teachers-in-india/ is Flesch 27.2 (grade 16.1) for an audience spanning 70+ countries reading English as a second language.",
+      "In-body contextual internal links run 0.0-0.6 per 1,000 words against a 3-5 guideline; header and footer navigation hides this in raw link counts."
+    ],
+    "quick_wins": [
+      "Fill 5 empty alt attributes (2 on the homepage, 3 on the 200-hour course page).",
+      "Add 3-4 contextual in-body links to /about-us/ and /yoga-teachers-in-india/.",
+      "Verify the 'Registered since 2018' claim against the Yoga Alliance directory, or soften it to 'Teaching in Rishikesh since 2018'.",
+      "Surface the founder's Morarji Desai National Institute of Yoga credential on the homepage and /about-us/, not only on 4 deeper English pages.",
+      "Add a table of contents to the 7,995-word homepage (39 H2 sections)."
+    ]
+  },
+  "categories": [
+    {
+      "name": "Experience (first-hand signals)",
+      "score": 80,
+      "what_works": [
+        "69-75 original photographs per page, shot at the ashram rather than licensed stock.",
+        "Eleven named acharyas, each with a subject specialism and a years-of-teaching badge.",
+        "Founder named on the site (Guru Shankar Das), with 'on the path since 2014'.",
+        "Own aerial school-tour video embedded on all 11 homepages with VideoObject schema (uploaded 2024-09-28, PT3M).",
+        "Eleven review cards carrying real reviewer names and countries.",
+        "Prose contains specific, non-generic detail that could not be fabricated from a template."
+      ],
+      "findings": [
+        {
+          "title": "No documented graduate outcomes",
+          "severity": "Medium",
+          "description": "The site asserts that graduates 'have registered overseas, been hired at established studios, and started their own classes all over the world', but no named graduate, destination, studio or date is given anywhere. The claim carries no evidence a reader or a quality rater could check.",
+          "recommendation": "Publish one or two full graduate case studies: name, home country, course taken, where they teach now, and what changed. A single verifiable outcome moves the Experience signal further than another thousand words of description."
+        }
+      ]
+    },
+    {
+      "name": "Expertise",
+      "score": 60,
+      "what_works": [
+        "Course pages carry accurate, deep syllabus detail with correct specialist vocabulary.",
+        "Eleven Person schema nodes on /yoga-teachers-in-india/ with jobTitle, knowsAbout and hasOccupation including years of experience.",
+        "Course schema carries educationalCredentialAwarded and coursePrerequisites derived from what the page actually says."
+      ],
+      "findings": [
+        {
+          "title": "No author byline anywhere on the site",
+          "severity": "High",
+          "description": "Not one page across the sampled set carries a byline, an author bio, or a rel=author link. The people who hold the expertise are described on the teachers page but are never attached to any piece of content.",
+          "recommendation": "Byline the blog posts and the long course guides to the named acharyas, and give each acharya an anchored bio section or its own page that the byline links to. The Person schema already exists — connect it to the content."
+        },
+        {
+          "title": "163 blog posts emit no Article schema and no author entity",
+          "severity": "High",
+          "description": "app/(en)/(main)/blog/[slug]/page.jsx imports no JsonLd at all. The template already reads article.published_date and article.author from the database and renders both visibly, but neither reaches structured data. The blog is the largest content surface on the site and is anonymous to search engines.",
+          "recommendation": "Add BlogPosting schema to the blog route template: author as a Person node, datePublished and dateModified from the existing database columns, publisher referencing the existing ORG_ID, plus headline, image and mainEntityOfPage. One file change fixes all 163 posts."
+        },
+        {
+          "title": "Founder credential buried",
+          "severity": "Low",
+          "description": "The founder's qualification from the Morarji Desai National Institute of Yoga appears on only four English pages (the teachers page and three blog articles). It is absent from the homepage and /about-us/, where a first-time visitor forms their impression.",
+          "recommendation": "Surface the credential in the founder's introduction on the homepage story section and on /about-us/."
+        }
+      ]
+    },
+    {
+      "name": "Authoritativeness",
+      "score": 64,
+      "what_works": [
+        "Yoga Alliance public-profile link now present on 211 pages, with RYS 200, RYS 300 and RYS 500 badges — a third-party accreditation a reader can verify in one click.",
+        "Ministry of Ayush and Uttarakhand Tourism credentials shown with their real marks rather than stand-in icons.",
+        "Google Maps listing added to the Organization sameAs, alongside Instagram, Facebook and YouTube.",
+        "Every affiliation claim now matches reality — 'affiliated with Yoga Alliance' was removed in all 11 languages."
+      ],
+      "findings": [
+        {
+          "title": "Accreditation is the only external validation",
+          "severity": "Medium",
+          "description": "Beyond Yoga Alliance and the two government bodies there is no press coverage, no industry citation, no award and no external mention linked from the site. There is also no Search Console property, so the actual inbound link profile is unmeasured.",
+          "recommendation": "Set up Google Search Console and Bing Webmaster Tools to establish a baseline, confirm the Yoga Alliance directory listing links back to the site, and pursue a small number of genuine placements — yoga directories, alumni interviews, regional tourism listings."
+        },
+        {
+          "title": "Registered since 2018 is unverified",
+          "severity": "Medium",
+          "description": "The accreditation panel on all 11 homepages states that the school has been registered since 2018. The school has said it was previously affiliated rather than registered, and the Yoga Alliance directory publishes registration dates. If the two disagree, this single line hands a critic a checkable contradiction on the exact point the section exists to settle.",
+          "recommendation": "Confirm the registration date on the Yoga Alliance profile. If it is later than 2018, change the line to describe how long the school has been teaching rather than how long it has been registered."
+        }
+      ]
+    },
+    {
+      "name": "Trustworthiness",
+      "score": 73,
+      "what_works": [
+        "Email, two phone numbers, full postal address and a map link on every page.",
+        "Privacy policy present (807 words) and linked from the footer.",
+        "Code of conduct page serves as published terms.",
+        "HTTPS throughout, with the apex now 301-redirecting to the canonical www host.",
+        "Testimonials carry real names and countries rather than initials.",
+        "Platform ratings are shown separately (Google 4.9, Yoga Alliance 4.5, Tripadvisor 4.3) rather than summed into an unverifiable total, and no self-compiled aggregateRating is emitted in schema."
+      ],
+      "findings": [
+        {
+          "title": "No refund or cancellation policy",
+          "severity": "High",
+          "description": "The site takes prepayments of EUR 1,275 to EUR 1,650 through /student-admission-panel/. Refund and cancellation terms appear only in passing inside the FAQ and the code of conduct, and on no English page as a policy in its own right. For a destination business collecting money months before arrival from students in other countries, this is the largest remaining trust gap.",
+          "recommendation": "Publish a dedicated refund and cancellation policy page covering deposits, cancellation windows, date transfers and no-shows. Link it from the footer, from the admission panel before payment, and from the fee section of every course page."
+        },
+        {
+          "title": "No publication or update dates on any page",
+          "severity": "High",
+          "description": "No page carries a visible published or updated date, and no page emits datePublished or dateModified. Course fees, batch dates and accreditation status all change over time, and a reader has no way to judge whether what they are reading is current.",
+          "recommendation": "Emit dateModified sitewide and show a visible 'last updated' line on the course pages and blog posts. The blog already stores published_date in the database."
+        }
+      ]
+    },
+    {
+      "name": "Content structure and readability",
+      "score": 66,
+      "what_works": [
+        "Clean H1 to H2 to H3 hierarchy with exactly one H1 per page and no skipped levels.",
+        "Word counts comfortably clear the topical-coverage floors: homepage 7,995, 200-hour course 6,624, about 2,285, teachers 1,334.",
+        "Keyword density sits in a natural range (0.91-2.02 percent) with no stuffing.",
+        "Titles are 48-56 characters and meta descriptions 147-163 characters — all within display limits.",
+        "FAQ blocks are parsed from the page's own markup into schema, so the two cannot drift apart."
+      ],
+      "findings": [
+        {
+          "title": "Teachers page reads at postgraduate level",
+          "severity": "Medium",
+          "description": "/yoga-teachers-in-india/ scores Flesch 27.2 with a grade level of 16.1 and an average sentence of 26.7 words. The homepage sits at 52.4 and the 200-hour course page at 53.5, against a 60-70 target for a general audience. Students come from more than 70 countries and the site ships 11 language versions, so a large share of readers are reading English as a second language.",
+          "recommendation": "Break the long sentences on the teachers page and aim for Flesch 55-65 across the site. Readability is not a ranking factor, but it is a conversion factor for this audience."
+        },
+        {
+          "title": "Contextual internal linking is thin",
+          "severity": "Medium",
+          "description": "In-body contextual links run at 0.6 per 1,000 words on the homepage, 0.3 on the 200-hour course page and 0.0 on both /about-us/ and /yoga-teachers-in-india/, against a 3-5 per 1,000 guideline. Raw link counts look healthy only because the header, drawer and footer navigation is counted.",
+          "recommendation": "Add three to five contextual links inside the body copy of each long page, using descriptive anchors that name the destination topic."
+        },
+        {
+          "title": "Five images with empty alt attributes",
+          "severity": "Low",
+          "description": "Two images on the homepage and three on the 200-hour course page ship alt=\"\". Every other image across the sampled pages carries descriptive, localised alt text.",
+          "recommendation": "Write descriptive alt text for the five affected images, or mark them aria-hidden if they are genuinely decorative."
+        },
+        {
+          "title": "No table of contents on a 7,995-word homepage",
+          "severity": "Low",
+          "description": "The homepage runs 39 H2 sections across roughly 8,000 words with no in-page navigation. Coverage depth is a strength; orientation is not.",
+          "recommendation": "Add a compact section jump-list near the top of the homepage, similar to the SectionNav component already used on the course pages."
+        }
+      ]
+    },
+    {
+      "name": "AI citation readiness",
+      "score": 68,
+      "what_works": [
+        "Rich entity graph: EducationalOrganization, LocalBusiness, WebSite, Course, Person, VideoObject and BreadcrumbList.",
+        "Twenty-four question-and-answer pairs across the homepage and 200-hour page in a format generative surfaces can extract directly.",
+        "Concrete, quotable figures: 3,000+ students, 70+ countries, EUR 1,275, 24 days, RYS 200/300/500.",
+        "Strong heading hierarchy gives clean passage boundaries."
+      ],
+      "findings": [
+        {
+          "title": "Prose is narrative rather than answer-first",
+          "severity": "Medium",
+          "description": "Average sentence length runs 22-27 words and key answers are embedded mid-paragraph rather than stated up front. Generative surfaces extract passages, and a passage that opens with its answer is far more quotable.",
+          "recommendation": "Lead each section with a one-sentence direct answer before the supporting narrative. Keep the narrative — just move the conclusion to the front."
+        },
+        {
+          "title": "No freshness signal for any surface to weigh",
+          "severity": "Medium",
+          "description": "With no dates anywhere, neither classic search nor generative surfaces can establish how current the content is. This compounds the missing Article schema on the blog.",
+          "recommendation": "Ship dateModified sitewide alongside the blog schema work."
+        },
+        {
+          "title": "FAQPage no longer earns rich results",
+          "severity": "Info",
+          "description": "Google withdrew FAQ rich results for most sites. The FAQPage markup on the homepage (13 pairs) and course pages (11 pairs) remains useful for extraction by generative surfaces but will not produce SERP dropdowns.",
+          "recommendation": "Keep the markup, but do not expect FAQ dropdowns from it. Do not invest further in FAQ schema expecting rich results."
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Trust and accountability",
+        "timeframe": "Week 1 — approx. 6-8 hours",
+        "items": [
+          "Write and publish a refund and cancellation policy page. Cover deposits, cancellation windows, date transfers and no-shows. Link it from the footer, from the admission panel before payment, and from the fee section of every course page. Highest trust return for the least work, and the only gap that touches money.",
+          "Add BlogPosting schema to app/(en)/(main)/blog/[slug]/page.jsx: author as a Person node, datePublished and dateModified from the existing database columns, publisher referencing ORG_ID, plus headline, image and mainEntityOfPage. One file, 163 posts fixed.",
+          "Verify the 'Registered since 2018' line against the Yoga Alliance public profile before the next deploy. If the registration is more recent, change the line to describe teaching history instead.",
+          "Emit dateModified sitewide and show a visible last-updated line on course pages and blog posts."
+        ]
+      },
+      {
+        "name": "Phase 2: Attach the expertise to the content",
+        "timeframe": "Weeks 2-3 — approx. 8-12 hours",
+        "items": [
+          "Byline blog posts and long course guides to the named acharyas.",
+          "Give each acharya an anchored bio section or its own page, and link the bylines to it. The Person schema with credentials already exists — connect it.",
+          "Surface the founder's Morarji Desai National Institute of Yoga credential on the homepage story section and on /about-us/.",
+          "Publish one or two documented graduate case studies: name, home country, course taken, where they teach today, and what changed."
+        ]
+      },
+      {
+        "name": "Phase 3: Readability, linking and quick fixes",
+        "timeframe": "Month 2 — approx. 6-10 hours",
+        "items": [
+          "Rewrite /yoga-teachers-in-india/ for readability. Break the 26.7-word average sentences and target Flesch 55-65.",
+          "Add three to five contextual in-body links to /about-us/ and /yoga-teachers-in-india/, and lift the homepage and course pages toward 3 per 1,000 words.",
+          "Write descriptive alt text for the five images currently shipping alt=\"\" (2 on the homepage, 3 on the 200-hour page).",
+          "Add a compact section jump-list to the homepage, mirroring the SectionNav component already used on the course pages.",
+          "Rework key sections to lead with a one-sentence direct answer before the supporting narrative."
+        ]
+      },
+      {
+        "name": "Phase 4: Measurement and authority",
+        "timeframe": "Ongoing",
+        "items": [
+          "Set up Google Search Console and Bing Webmaster Tools. Without them there is no first-party data on indexation, queries or inbound links, and every estimate in this report stays an estimate.",
+          "Confirm the Yoga Alliance directory listing links back to the site — the single most relevant link available to a registered school.",
+          "Pursue a small number of genuine external placements: yoga directories, alumni interviews, regional tourism listings. Quality over volume.",
+          "Re-measure content quality after Phases 1-3 ship, and track AI citation visibility as a KPI alongside organic rankings."
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/"
+  }
+}

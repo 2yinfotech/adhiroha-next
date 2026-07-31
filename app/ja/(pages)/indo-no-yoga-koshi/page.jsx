@@ -12,7 +12,7 @@ const EN = "/yoga-teachers-in-india/";
 export const metadata = {
   title: "インドのヨガ講師陣 | アディローハのアチャリヤ、リシケシ",
   description:
-    "リシケシのアディローハで教える11人のヨガ・アチャリヤをご紹介します — ヨガ科学の修士や自然療法学の博士たちが、合計115年を超える指導経験をもって導きます。",
+    "リシケシのアディローハで教える11人のヨガ・アチャリヤをご紹介します。ヨガ科学の修士や自然療法学の博士たちが、合計115年を超える指導経験をもって導きます。",
   alternates: {
     canonical: JA,
     languages: hreflangFor(EN),
@@ -20,12 +20,12 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "ja_JP", url: `${SITE}${JA}`,
     title: "インドのヨガ講師陣 | アディローハのアチャリヤ、リシケシ",
-    description: "リシケシのアディローハで教える11人のヨガ・アチャリヤをご紹介します — ヨガ科学の修士や自然療法学の博士たちが、合計115年を超える指導経験をもって導きます。",
+    description: "リシケシのアディローハで教える11人のヨガ・アチャリヤをご紹介します。ヨガ科学の修士や自然療法学の博士たちが、合計115年を超える指導経験をもって導きます。",
   },
   twitter: {
     card: "summary_large_image",
     title: "インドのヨガ講師陣 | アディローハのアチャリヤ、リシケシ",
-    description: "リシケシのアディローハで教える11人のヨガ・アチャリヤをご紹介します — ヨガ科学の修士や自然療法学の博士たちが、合計115年を超える指導経験をもって導きます。",
+    description: "リシケシのアディローハで教える11人のヨガ・アチャリヤをご紹介します。ヨガ科学の修士や自然療法学の博士たちが、合計115年を超える指導経験をもって導きます。",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

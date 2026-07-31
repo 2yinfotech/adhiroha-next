@@ -12,7 +12,7 @@ const EN = "/safety-hygiene-in-rishikesh/";
 export const metadata = {
   title: "Sikkerhed og hygiejne | Yogaashrammet Adhiroha, Rishikesh",
   description:
-    "Sikkerhed, hygiejne og rejselogistik på Adhiroha i Rishikesh — videoovervågning døgnet rundt, indhegnet område, lufthavnsafhentning inkluderet og særlig omsorg for kvinder, der rejser alene.",
+    "Sikkerhed, hygiejne og rejselogistik på Adhiroha i Rishikesh, videoovervågning døgnet rundt, indhegnet område, lufthavnsafhentning inkluderet og særlig omsorg for kvinder, der rejser alene.",
   alternates: {
     canonical: DA,
     languages: hreflangFor(EN),
@@ -20,12 +20,12 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "da_DK", url: `${SITE}${DA}`,
     title: "Sikkerhed og hygiejne | Yogaashrammet Adhiroha, Rishikesh",
-    description: "Sikkerhed, hygiejne og rejselogistik på Adhiroha i Rishikesh — videoovervågning døgnet rundt, indhegnet område, lufthavnsafhentning inkluderet og særlig omsorg for kvinder, der rejser alene.",
+    description: "Sikkerhed, hygiejne og rejselogistik på Adhiroha i Rishikesh, videoovervågning døgnet rundt, indhegnet område, lufthavnsafhentning inkluderet og særlig omsorg for kvinder, der rejser alene.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Sikkerhed og hygiejne | Yogaashrammet Adhiroha, Rishikesh",
-    description: "Sikkerhed, hygiejne og rejselogistik på Adhiroha i Rishikesh — videoovervågning døgnet rundt, indhegnet område, lufthavnsafhentning inkluderet og særlig omsorg for kvinder, der rejser alene.",
+    description: "Sikkerhed, hygiejne og rejselogistik på Adhiroha i Rishikesh, videoovervågning døgnet rundt, indhegnet område, lufthavnsafhentning inkluderet og særlig omsorg for kvinder, der rejser alene.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

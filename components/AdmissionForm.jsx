@@ -325,7 +325,7 @@ export default function AdmissionForm() {
       if (data.error === "payment_not_configured" || data.error === "wise_unavailable") {
         setError(
           (data.message || "That payment method isn't available right now.") +
-            ` Your details are saved under reference ${reg.codes.join(", ")} — ` +
+            ` Your details are saved under reference ${reg.codes.join(", ")}, ` +
             "please try another method, or contact us and we'll send you a payment link."
         );
         setPayingWith("");
@@ -354,7 +354,7 @@ export default function AdmissionForm() {
         amount: data.amount,
         currency: data.currency,
         name: "Adhiroha Yoga Ashram",
-        description: `${course} — Registration Fee`,
+        description: `${course}, Registration Fee`,
         prefill: { name: students[0].name, email: students[0].email, contact: students[0].number },
         theme: { color: "#ed1c25" }, // Adhiroha brand red
         handler: async (r) => {
@@ -375,13 +375,13 @@ export default function AdmissionForm() {
             });
             return;
           }
-          setError("Your payment went through, but we couldn't verify it automatically. Please contact us with your payment ID — your seat is safe.");
+          setError("Your payment went through, but we couldn't verify it automatically. Please contact us with your payment ID. Your seat is safe.");
           setPayingWith("");
         },
         modal: {
           ondismiss: () => {
             setPayingWith("");
-            setNotice("Payment cancelled — your details are saved, you can pay any time.");
+            setNotice("Payment cancelled. Your details are saved, you can pay any time.");
           },
         },
       });
@@ -446,7 +446,7 @@ export default function AdmissionForm() {
             setError(out.message || "PayPal payment could not be completed. Please try again.");
           },
 
-          onCancel: () => setNotice("PayPal payment cancelled — your details are saved, you can pay any time."),
+          onCancel: () => setNotice("PayPal payment cancelled. Your details are saved, you can pay any time."),
           onError: (err) => setError(String(err?.message || "PayPal could not be loaded. Please try another method.")),
         })
         .render(paypalBox.current)
@@ -468,7 +468,7 @@ export default function AdmissionForm() {
       <header className="adm-head">
         <span className="adm-kicker">Adhiroha Admissions</span>
         <h1>Reserve your Seat</h1>
-        <p>Choose your course and dates, tell us who's coming, pick your stay — and secure your place with the registration fee.</p>
+        <p>Choose your course and dates, tell us who's coming, pick your stay, and secure your place with the registration fee.</p>
       </header>
 
       <ol className="adm-steps">
@@ -535,7 +535,7 @@ export default function AdmissionForm() {
                     const sold = String(b.status || "").toLowerCase() === "sold";
                     return (
                       <option key={b.id} value={b.id} disabled={sold}>
-                        {fmtRange(b.date_range)}{sold ? " — fully booked" : ""}
+                        {fmtRange(b.date_range)}{sold ? ", fully booked" : ""}
                       </option>
                     );
                   })}
@@ -545,13 +545,13 @@ export default function AdmissionForm() {
 
             {course && !loadingBatches && !batches.length && (
               <p className="adm-hint">
-                No dates are listed right now — please <a href="/contact-us/">contact us</a> and we'll help.
+                No dates are listed right now, please <a href="/contact-us/">contact us</a> and we'll help.
               </p>
             )}
 
             <p className="adm-hint">
               Looking for a 14-day Hatha, Ashtanga or Pranayama intensive? Those are arranged
-              personally — call <a href="tel:+919999048900">+91 9999 048 900</a> or email{" "}
+              personally, call <a href="tel:+919999048900">+91 9999 048 900</a> or email{" "}
               <a href="mailto:info@adhiroha.com">info@adhiroha.com</a>.
             </p>
 
@@ -826,7 +826,7 @@ export default function AdmissionForm() {
             <h2 className="adm-h">Fee Structure</h2>
             <div className="adm-feestruct">
               <div className="adm-fsgroup">
-                <h3>{COURSES[course]?.label} — {labels[sharing]}</h3>
+                <h3>{COURSES[course]?.label}, {labels[sharing]}</h3>
                 <div className="adm-srow"><span>Total Fees</span><b>{eur(fees.mainTotal)}</b></div>
                 <div className="adm-srow"><span>Registration Fee</span><b>{eur(fees.mainReg)}</b></div>
               </div>
@@ -900,7 +900,7 @@ export default function AdmissionForm() {
                 );
               })}
 
-              {/* PayPal — rendered by the PayPal JS SDK, captured on our server */}
+              {/* PayPal, rendered by the PayPal JS SDK, captured on our server */}
               <div className="adm-pay adm-pay-paypal">
                 <div className="adm-payhead">
                   <b>{gateways.paypal.label}</b>
@@ -914,7 +914,7 @@ export default function AdmissionForm() {
                 <div className="adm-feerow strong"><span>Total Today</span><b>{eur2(gateways.paypal.total)}</b></div>
                 {PAYPAL_CLIENT_ID
                   ? <div className="adm-paypalbox" ref={paypalBox} />
-                  : <p className="adm-paypaloff">PayPal isn't switched on yet — please use Wise or Razorpay.</p>}
+                  : <p className="adm-paypaloff">PayPal isn't switched on yet, please use Wise or Razorpay.</p>}
               </div>
             </div>
 

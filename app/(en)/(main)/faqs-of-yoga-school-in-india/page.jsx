@@ -8,7 +8,7 @@ import { graph, breadcrumbSchema, extractFaqs, faqSchema, hreflangFor } from "@/
 export const metadata = {
   title: "FAQs | Yoga Teacher Training School in Rishikesh, India | Adhiroha",
   description:
-    "Answers to the most common questions about Adhiroha's Yoga Teacher Training in Rishikesh — the course, travel and food, registration, certification and graduation.",
+    "Answers to the most common questions about Adhiroha's Yoga Teacher Training in Rishikesh, the course, travel and food, registration, certification and graduation.",
   alternates: { canonical: "/faqs-of-yoga-school-in-india/", languages: hreflangFor("/faqs-of-yoga-school-in-india/") }
 };
 

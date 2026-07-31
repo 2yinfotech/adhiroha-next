@@ -12,7 +12,7 @@ const EN = "/yoga-teachers-in-india/";
 export const metadata = {
   title: "Våra Yogalärare i Indien | Adhirohas Acharyas, Rishikesh",
   description:
-    "Möt Adhirohas 11 yoga-acharyas i Rishikesh — masterexaminerade i yogisk vetenskap och doktorer i naturmedicin, med över 115 års samlad undervisningserfarenhet.",
+    "Möt Adhirohas 11 yoga-acharyas i Rishikesh, masterexaminerade i yogisk vetenskap och doktorer i naturmedicin, med över 115 års samlad undervisningserfarenhet.",
   alternates: {
     canonical: SV,
     languages: hreflangFor(EN),
@@ -20,12 +20,12 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "sv_SE", url: `${SITE}${SV}`,
     title: "Våra Yogalärare i Indien | Adhirohas Acharyas, Rishikesh",
-    description: "Möt Adhirohas 11 yoga-acharyas i Rishikesh — masterexaminerade i yogisk vetenskap och doktorer i naturmedicin, med över 115 års samlad undervisningserfarenhet.",
+    description: "Möt Adhirohas 11 yoga-acharyas i Rishikesh, masterexaminerade i yogisk vetenskap och doktorer i naturmedicin, med över 115 års samlad undervisningserfarenhet.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Våra Yogalärare i Indien | Adhirohas Acharyas, Rishikesh",
-    description: "Möt Adhirohas 11 yoga-acharyas i Rishikesh — masterexaminerade i yogisk vetenskap och doktorer i naturmedicin, med över 115 års samlad undervisningserfarenhet.",
+    description: "Möt Adhirohas 11 yoga-acharyas i Rishikesh, masterexaminerade i yogisk vetenskap och doktorer i naturmedicin, med över 115 års samlad undervisningserfarenhet.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

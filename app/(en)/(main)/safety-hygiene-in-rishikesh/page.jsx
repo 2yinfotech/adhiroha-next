@@ -8,7 +8,7 @@ import { graph, breadcrumbSchema, extractFaqs, faqSchema, hreflangFor } from "@/
 export const metadata = {
   title: "Safety & Hygiene at Our Rishikesh Ashram | Adhiroha",
   description:
-    "How Adhiroha keeps students safe and well in Rishikesh — clean ensuite rooms, RO drinking water, hygienic sattvic kitchen and 24/7 on-site support.",
+    "How Adhiroha keeps students safe and well in Rishikesh, clean ensuite rooms, RO drinking water, hygienic sattvic kitchen and 24/7 on-site support.",
   alternates: { canonical: "/safety-hygiene-in-rishikesh/", languages: hreflangFor("/safety-hygiene-in-rishikesh/") }
 };
 

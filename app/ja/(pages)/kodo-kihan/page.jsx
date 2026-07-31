@@ -12,7 +12,7 @@ const EN = "/yoga-ashram-in-india-code-of-conduct/";
 export const metadata = {
   title: "行動規範とポリシー | アディローハ・ヨガアシュラム、リシケシ",
   description:
-    "リシケシのアディローハ・アシュラムのルール — 4つの柱、行動規範、ゼロトレランス・ポリシー、そして料金・お支払い・日程変更に関するすべて。",
+    "リシケシのアディローハ・アシュラムのルール、4つの柱、行動規範、ゼロトレランス・ポリシー、そして料金・お支払い・日程変更に関するすべて。",
   alternates: {
     canonical: JA,
     languages: hreflangFor(EN),
@@ -20,12 +20,12 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "ja_JP", url: `${SITE}${JA}`,
     title: "行動規範とポリシー | アディローハ・ヨガアシュラム、リシケシ",
-    description: "リシケシのアディローハ・アシュラムのルール — 4つの柱、行動規範、ゼロトレランス・ポリシー、そして料金・お支払い・日程変更に関するすべて。",
+    description: "リシケシのアディローハ・アシュラムのルール、4つの柱、行動規範、ゼロトレランス・ポリシー、そして料金・お支払い・日程変更に関するすべて。",
   },
   twitter: {
     card: "summary_large_image",
     title: "行動規範とポリシー | アディローハ・ヨガアシュラム、リシケシ",
-    description: "リシケシのアディローハ・アシュラムのルール — 4つの柱、行動規範、ゼロトレランス・ポリシー、そして料金・お支払い・日程変更に関するすべて。",
+    description: "リシケシのアディローハ・アシュラムのルール、4つの柱、行動規範、ゼロトレランス・ポリシー、そして料金・お支払い・日程変更に関するすべて。",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

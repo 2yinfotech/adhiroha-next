@@ -11,19 +11,19 @@ const EN = "/safety-hygiene-in-rishikesh/";
 
 export const metadata = {
   title: "Sécurité & hygiène dans notre ashram de Rishikesh | Adhiroha",
-  description: "Comment Adhiroha à Rishikesh assure la sécurité, l’hygiène et la logistique de voyage — en particulier pour les femmes voyageant seules. Accueil à l’arrivée, vidéosurveillance et plus.",
+  description: "Comment Adhiroha à Rishikesh assure la sécurité, l’hygiène et la logistique de voyage, en particulier pour les femmes voyageant seules. Accueil à l’arrivée, vidéosurveillance et plus.",
   alternates: {
     canonical: FR,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "fr_FR", url: `${SITE}${FR}`,
-    title: "Sécurité & hygiène dans notre ashram de Rishikesh | Adhiroha", description: "Comment Adhiroha à Rishikesh assure la sécurité, l’hygiène et la logistique de voyage — en particulier pour les femmes voyageant seules. Accueil à l’arrivée, vidéosurveillance et plus.",
+    title: "Sécurité & hygiène dans notre ashram de Rishikesh | Adhiroha", description: "Comment Adhiroha à Rishikesh assure la sécurité, l’hygiène et la logistique de voyage, en particulier pour les femmes voyageant seules. Accueil à l’arrivée, vidéosurveillance et plus.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Sécurité & hygiène dans notre ashram de Rishikesh | Adhiroha",
-    description: "Comment Adhiroha à Rishikesh assure la sécurité, l’hygiène et la logistique de voyage — en particulier pour les femmes voyageant seules. Accueil à l’arrivée, vidéosurveillance et plus.",
+    description: "Comment Adhiroha à Rishikesh assure la sécurité, l’hygiène et la logistique de voyage, en particulier pour les femmes voyageant seules. Accueil à l’arrivée, vidéosurveillance et plus.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

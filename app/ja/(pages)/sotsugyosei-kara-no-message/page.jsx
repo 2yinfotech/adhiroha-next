@@ -12,7 +12,7 @@ const EN = "/soon-after-message/";
 export const metadata = {
   title: "卒業生からのメッセージ | アディローハ、リシケシ",
   description:
-    "アディローハの卒業生が語る、リシケシでのヨガ指導者養成コース — アシュラム、五大元素、講師陣、そして変容の物語。",
+    "アディローハの卒業生が語る、リシケシでのヨガ指導者養成コース、アシュラム、五大元素、講師陣、そして変容の物語。",
   alternates: {
     canonical: JA,
     languages: hreflangFor(EN),
@@ -20,12 +20,12 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "ja_JP", url: `${SITE}${JA}`,
     title: "卒業生からのメッセージ | アディローハ、リシケシ",
-    description: "アディローハの卒業生が語る、リシケシでのヨガ指導者養成コース — アシュラム、五大元素、講師陣、そして変容の物語。",
+    description: "アディローハの卒業生が語る、リシケシでのヨガ指導者養成コース、アシュラム、五大元素、講師陣、そして変容の物語。",
   },
   twitter: {
     card: "summary_large_image",
     title: "卒業生からのメッセージ | アディローハ、リシケシ",
-    description: "アディローハの卒業生が語る、リシケシでのヨガ指導者養成コース — アシュラム、五大元素、講師陣、そして変容の物語。",
+    description: "アディローハの卒業生が語る、リシケシでのヨガ指導者養成コース、アシュラム、五大元素、講師陣、そして変容の物語。",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

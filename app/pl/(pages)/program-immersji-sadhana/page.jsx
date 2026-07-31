@@ -10,22 +10,22 @@ const PL = "/pl/program-immersji-sadhana/";
 const EN = "/sadhana-immersion-programme/";
 
 export const metadata = {
-  title: "Program Immersji Sadhana w Riszikeś | 15 Dni — Adhiroha",
+  title: "Program Immersji Sadhana w Riszikeś | 15 Dni | Adhiroha",
   description:
-    "Piętnastodniowy program immersji Sadhana w Riszikeś — cisza, własna praktyka, medytacja, karma joga i Bhagawadgita w tradycyjnym rytmie aśramu. Od 699 € all inclusive.",
+    "Piętnastodniowy program immersji Sadhana w Riszikeś, cisza, własna praktyka, medytacja, karma joga i Bhagawadgita w tradycyjnym rytmie aśramu. Od 699 € all inclusive.",
   alternates: {
     canonical: PL,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pl_PL", url: `${SITE}${PL}`,
-    title: "Program Immersji Sadhana w Riszikeś | 15 Dni — Adhiroha",
-    description: "Piętnastodniowy program immersji Sadhana w Riszikeś — cisza, własna praktyka, medytacja, karma joga i Bhagawadgita w tradycyjnym rytmie aśramu. Od 699 € all inclusive.",
+    title: "Program Immersji Sadhana w Riszikeś | 15 Dni | Adhiroha",
+    description: "Piętnastodniowy program immersji Sadhana w Riszikeś, cisza, własna praktyka, medytacja, karma joga i Bhagawadgita w tradycyjnym rytmie aśramu. Od 699 € all inclusive.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Program Immersji Sadhana w Riszikeś | 15 Dni — Adhiroha",
-    description: "Piętnastodniowy program immersji Sadhana w Riszikeś — cisza, własna praktyka, medytacja, karma joga i Bhagawadgita w tradycyjnym rytmie aśramu. Od 699 € all inclusive.",
+    title: "Program Immersji Sadhana w Riszikeś | 15 Dni | Adhiroha",
+    description: "Piętnastodniowy program immersji Sadhana w Riszikeś, cisza, własna praktyka, medytacja, karma joga i Bhagawadgita w tradycyjnym rytmie aśramu. Od 699 € all inclusive.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

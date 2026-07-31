@@ -12,7 +12,7 @@ const EN = "/yoga-teacher-training-course-rishikesh-india/";
 export const metadata = {
   title: "Yogalärarutbildning i Indien | YTTC 200, 300 och 500 Timmar i Rishikesh | Adhiroha",
   description:
-    "Yogalärarutbildning i Indien hos Adhiroha, Rishikesh — internatbaserade kurser på 200, 300 och 500 timmar, certifierade av Yoga Alliance. Över 3 000 elever från mer än 70 länder. All-inclusive-pris, internationellt erkänd certifiering.",
+    "Yogalärarutbildning i Indien hos Adhiroha, Rishikesh, internatbaserade kurser på 200, 300 och 500 timmar, certifierade av Yoga Alliance. Över 3 000 elever från mer än 70 länder. All-inclusive-pris, internationellt erkänd certifiering.",
   keywords: [
     "yogalärarutbildning i indien",
     "yogalärarutbildning i rishikesh",
@@ -43,7 +43,7 @@ const pageSchema = graph(
   courseSchema({
     name: "200-Timmars Yogalärarutbildning i Rishikesh, Indien",
     description:
-      "Internatbaserad 200-timmars yogalärarutbildning certifierad av Yoga Alliance i Rishikesh, Indien — grunden för nybörjare i asana, pranayama, anatomi, filosofi och undervisningspraktik.",
+      "Internatbaserad 200-timmars yogalärarutbildning certifierad av Yoga Alliance i Rishikesh, Indien, grunden för nybörjare i asana, pranayama, anatomi, filosofi och undervisningspraktik.",
     url: "/sv/200-timmars-yogalararutbildning-rishikesh/",
     price: 1275,
     days: 24,
@@ -61,7 +61,7 @@ const pageSchema = graph(
   courseSchema({
     name: "500-Timmars Yogalärarutbildning i Rishikesh, Indien",
     description:
-      "Internatbaserad 500-timmars yogalärarutbildning i Rishikesh, Indien — den kompletta 60-dagars fördjupningen som förenar programmen på 200 och 300 timmar, från nybörjare till masternivå.",
+      "Internatbaserad 500-timmars yogalärarutbildning i Rishikesh, Indien, den kompletta 60-dagars fördjupningen som förenar programmen på 200 och 300 timmar, från nybörjare till masternivå.",
     url: "/sv/500-timmars-yogalararutbildning-rishikesh/",
     price: 2790,
     days: 60,

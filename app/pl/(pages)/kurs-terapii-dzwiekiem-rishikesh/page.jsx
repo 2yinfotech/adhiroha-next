@@ -10,22 +10,22 @@ const PL = "/pl/kurs-terapii-dzwiekiem-rishikesh/";
 const EN = "/sound-healing-ttc-rishikesh/";
 
 export const metadata = {
-  title: "Kurs Nauczycielski Terapii Dźwiękiem w Riszikeś | 6 Dni — Adhiroha",
+  title: "Kurs Nauczycielski Terapii Dźwiękiem w Riszikeś | 6 Dni | Adhiroha",
   description:
-    "Sześciodniowy stacjonarny kurs nauczycielski terapii i uzdrawiania dźwiękiem w Riszikeś — tybetańskie misy śpiewające, gongi i wedyjska nauka o dźwięku, poziomy 1, 2 i 3. Od 690 € all inclusive.",
+    "Sześciodniowy stacjonarny kurs nauczycielski terapii i uzdrawiania dźwiękiem w Riszikeś, tybetańskie misy śpiewające, gongi i wedyjska nauka o dźwięku, poziomy 1, 2 i 3. Od 690 € all inclusive.",
   alternates: {
     canonical: PL,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pl_PL", url: `${SITE}${PL}`,
-    title: "Kurs Nauczycielski Terapii Dźwiękiem w Riszikeś | 6 Dni — Adhiroha",
-    description: "Sześciodniowy stacjonarny kurs nauczycielski terapii i uzdrawiania dźwiękiem w Riszikeś — tybetańskie misy śpiewające, gongi i wedyjska nauka o dźwięku, poziomy 1, 2 i 3. Od 690 € all inclusive.",
+    title: "Kurs Nauczycielski Terapii Dźwiękiem w Riszikeś | 6 Dni | Adhiroha",
+    description: "Sześciodniowy stacjonarny kurs nauczycielski terapii i uzdrawiania dźwiękiem w Riszikeś, tybetańskie misy śpiewające, gongi i wedyjska nauka o dźwięku, poziomy 1, 2 i 3. Od 690 € all inclusive.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kurs Nauczycielski Terapii Dźwiękiem w Riszikeś | 6 Dni — Adhiroha",
-    description: "Sześciodniowy stacjonarny kurs nauczycielski terapii i uzdrawiania dźwiękiem w Riszikeś — tybetańskie misy śpiewające, gongi i wedyjska nauka o dźwięku, poziomy 1, 2 i 3. Od 690 € all inclusive.",
+    title: "Kurs Nauczycielski Terapii Dźwiękiem w Riszikeś | 6 Dni | Adhiroha",
+    description: "Sześciodniowy stacjonarny kurs nauczycielski terapii i uzdrawiania dźwiękiem w Riszikeś, tybetańskie misy śpiewające, gongi i wedyjska nauka o dźwięku, poziomy 1, 2 i 3. Od 690 € all inclusive.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

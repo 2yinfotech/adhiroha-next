@@ -12,7 +12,7 @@ const EN = "/yoga-ashram-in-india-code-of-conduct/";
 export const metadata = {
   title: "Gedragscode en Beleid | Yoga-ashram Adhiroha, Rishikesh",
   description:
-    "De regels van de Adhiroha-ashram in Rishikesh — de vier pijlers, de gedragscode, het nultolerantiebeleid en alles over kosten, betalingen en verplaatsen.",
+    "De regels van de Adhiroha-ashram in Rishikesh, de vier pijlers, de gedragscode, het nultolerantiebeleid en alles over kosten, betalingen en verplaatsen.",
   alternates: {
     canonical: NL,
     languages: hreflangFor(EN),
@@ -20,12 +20,12 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "nl_NL", url: `${SITE}${NL}`,
     title: "Gedragscode en Beleid | Yoga-ashram Adhiroha, Rishikesh",
-    description: "De regels van de Adhiroha-ashram in Rishikesh — de vier pijlers, de gedragscode, het nultolerantiebeleid en alles over kosten, betalingen en verplaatsen.",
+    description: "De regels van de Adhiroha-ashram in Rishikesh, de vier pijlers, de gedragscode, het nultolerantiebeleid en alles over kosten, betalingen en verplaatsen.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Gedragscode en Beleid | Yoga-ashram Adhiroha, Rishikesh",
-    description: "De regels van de Adhiroha-ashram in Rishikesh — de vier pijlers, de gedragscode, het nultolerantiebeleid en alles over kosten, betalingen en verplaatsen.",
+    description: "De regels van de Adhiroha-ashram in Rishikesh, de vier pijlers, de gedragscode, het nultolerantiebeleid en alles over kosten, betalingen en verplaatsen.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

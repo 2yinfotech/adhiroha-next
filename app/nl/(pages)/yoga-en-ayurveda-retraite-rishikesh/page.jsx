@@ -10,22 +10,22 @@ const NL = "/nl/yoga-en-ayurveda-retraite-rishikesh/";
 const EN = "/yoga-retreat-in-rishikesh/";
 
 export const metadata = {
-  title: "Yoga- en Ayurvedaretraite in Rishikesh | 6 Dagen — Adhiroha",
+  title: "Yoga- en Ayurvedaretraite in Rishikesh | 6 Dagen | Adhiroha",
   description:
-    "Zesdaagse yoga- en ayurvedaretraite in Rishikesh, India — zachte yoga, pranayama, persoonlijke ayurvedische therapieën en sattvisch eten. Vanaf € 510 all-inclusive.",
+    "Zesdaagse yoga- en ayurvedaretraite in Rishikesh, India, zachte yoga, pranayama, persoonlijke ayurvedische therapieën en sattvisch eten. Vanaf € 510 all-inclusive.",
   alternates: {
     canonical: NL,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "nl_NL", url: `${SITE}${NL}`,
-    title: "Yoga- en Ayurvedaretraite in Rishikesh | 6 Dagen — Adhiroha",
-    description: "Zesdaagse yoga- en ayurvedaretraite in Rishikesh, India — zachte yoga, pranayama, persoonlijke ayurvedische therapieën en sattvisch eten. Vanaf € 510 all-inclusive.",
+    title: "Yoga- en Ayurvedaretraite in Rishikesh | 6 Dagen | Adhiroha",
+    description: "Zesdaagse yoga- en ayurvedaretraite in Rishikesh, India, zachte yoga, pranayama, persoonlijke ayurvedische therapieën en sattvisch eten. Vanaf € 510 all-inclusive.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yoga- en Ayurvedaretraite in Rishikesh | 6 Dagen — Adhiroha",
-    description: "Zesdaagse yoga- en ayurvedaretraite in Rishikesh, India — zachte yoga, pranayama, persoonlijke ayurvedische therapieën en sattvisch eten. Vanaf € 510 all-inclusive.",
+    title: "Yoga- en Ayurvedaretraite in Rishikesh | 6 Dagen | Adhiroha",
+    description: "Zesdaagse yoga- en ayurvedaretraite in Rishikesh, India, zachte yoga, pranayama, persoonlijke ayurvedische therapieën en sattvisch eten. Vanaf € 510 all-inclusive.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

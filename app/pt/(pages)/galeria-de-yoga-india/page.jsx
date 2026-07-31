@@ -12,7 +12,7 @@ const EN = "/yoga-gallery-india/";
 export const metadata = {
   title: "Galeria de Fotos | Ashram de Yoga Adhiroha em Rishikesh, Índia",
   description:
-    "181 fotos honestas do ashram Adhiroha em Upper Tapovan, Rishikesh — a shala, os quartos, a comida sáttvica, as cerimônias, os passeios e o dia da certificação.",
+    "181 fotos honestas do ashram Adhiroha em Upper Tapovan, Rishikesh, a shala, os quartos, a comida sáttvica, as cerimônias, os passeios e o dia da certificação.",
   alternates: {
     canonical: PT,
     languages: hreflangFor(EN),
@@ -20,12 +20,12 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pt_BR", url: `${SITE}${PT}`,
     title: "Galeria de Fotos | Ashram de Yoga Adhiroha em Rishikesh, Índia",
-    description: "181 fotos honestas do ashram Adhiroha em Upper Tapovan, Rishikesh — a shala, os quartos, a comida sáttvica, as cerimônias, os passeios e o dia da certificação.",
+    description: "181 fotos honestas do ashram Adhiroha em Upper Tapovan, Rishikesh, a shala, os quartos, a comida sáttvica, as cerimônias, os passeios e o dia da certificação.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Galeria de Fotos | Ashram de Yoga Adhiroha em Rishikesh, Índia",
-    description: "181 fotos honestas do ashram Adhiroha em Upper Tapovan, Rishikesh — a shala, os quartos, a comida sáttvica, as cerimônias, os passeios e o dia da certificação.",
+    description: "181 fotos honestas do ashram Adhiroha em Upper Tapovan, Rishikesh, a shala, os quartos, a comida sáttvica, as cerimônias, os passeios e o dia da certificação.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

@@ -12,7 +12,7 @@ const EN = "/yoga-gallery-india/";
 export const metadata = {
   title: "フォトギャラリー | アディローハ・ヨガアシュラム、リシケシ",
   description:
-    "リシケシ、アッパー・タポヴァンのアディローハ・アシュラムのありのままの写真181枚 — シャラ、客室、サットヴィックな食事、儀式、遠足、そして生徒たち。",
+    "リシケシ、アッパー・タポヴァンのアディローハ・アシュラムのありのままの写真181枚、シャラ、客室、サットヴィックな食事、儀式、遠足、そして生徒たち。",
   alternates: {
     canonical: JA,
     languages: hreflangFor(EN),
@@ -20,12 +20,12 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "ja_JP", url: `${SITE}${JA}`,
     title: "フォトギャラリー | アディローハ・ヨガアシュラム、リシケシ",
-    description: "リシケシ、アッパー・タポヴァンのアディローハ・アシュラムのありのままの写真181枚 — シャラ、客室、サットヴィックな食事、儀式、遠足、そして生徒たち。",
+    description: "リシケシ、アッパー・タポヴァンのアディローハ・アシュラムのありのままの写真181枚、シャラ、客室、サットヴィックな食事、儀式、遠足、そして生徒たち。",
   },
   twitter: {
     card: "summary_large_image",
     title: "フォトギャラリー | アディローハ・ヨガアシュラム、リシケシ",
-    description: "リシケシ、アッパー・タポヴァンのアディローハ・アシュラムのありのままの写真181枚 — シャラ、客室、サットヴィックな食事、儀式、遠足、そして生徒たち。",
+    description: "リシケシ、アッパー・タポヴァンのアディローハ・アシュラムのありのままの写真181枚、シャラ、客室、サットヴィックな食事、儀式、遠足、そして生徒たち。",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

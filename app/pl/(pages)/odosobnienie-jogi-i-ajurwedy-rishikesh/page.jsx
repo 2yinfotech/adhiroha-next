@@ -10,22 +10,22 @@ const PL = "/pl/odosobnienie-jogi-i-ajurwedy-rishikesh/";
 const EN = "/yoga-retreat-in-rishikesh/";
 
 export const metadata = {
-  title: "Odosobnienie Jogi i Ajurwedy w Riszikeś | 6 Dni — Adhiroha",
+  title: "Odosobnienie Jogi i Ajurwedy w Riszikeś | 6 Dni | Adhiroha",
   description:
-    "Sześciodniowe odosobnienie jogi i ajurwedy w Riszikeś w Indiach — łagodna joga, pranajama, spersonalizowane terapie ajurwedyjskie i jedzenie satwiczne. Od 510 € all inclusive.",
+    "Sześciodniowe odosobnienie jogi i ajurwedy w Riszikeś w Indiach, łagodna joga, pranajama, spersonalizowane terapie ajurwedyjskie i jedzenie satwiczne. Od 510 € all inclusive.",
   alternates: {
     canonical: PL,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pl_PL", url: `${SITE}${PL}`,
-    title: "Odosobnienie Jogi i Ajurwedy w Riszikeś | 6 Dni — Adhiroha",
-    description: "Sześciodniowe odosobnienie jogi i ajurwedy w Riszikeś w Indiach — łagodna joga, pranajama, spersonalizowane terapie ajurwedyjskie i jedzenie satwiczne. Od 510 € all inclusive.",
+    title: "Odosobnienie Jogi i Ajurwedy w Riszikeś | 6 Dni | Adhiroha",
+    description: "Sześciodniowe odosobnienie jogi i ajurwedy w Riszikeś w Indiach, łagodna joga, pranajama, spersonalizowane terapie ajurwedyjskie i jedzenie satwiczne. Od 510 € all inclusive.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Odosobnienie Jogi i Ajurwedy w Riszikeś | 6 Dni — Adhiroha",
-    description: "Sześciodniowe odosobnienie jogi i ajurwedy w Riszikeś w Indiach — łagodna joga, pranajama, spersonalizowane terapie ajurwedyjskie i jedzenie satwiczne. Od 510 € all inclusive.",
+    title: "Odosobnienie Jogi i Ajurwedy w Riszikeś | 6 Dni | Adhiroha",
+    description: "Sześciodniowe odosobnienie jogi i ajurwedy w Riszikeś w Indiach, łagodna joga, pranajama, spersonalizowane terapie ajurwedyjskie i jedzenie satwiczne. Od 510 € all inclusive.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

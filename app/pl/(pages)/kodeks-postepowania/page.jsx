@@ -12,7 +12,7 @@ const EN = "/yoga-ashram-in-india-code-of-conduct/";
 export const metadata = {
   title: "Kodeks Postępowania i Zasady | Aśram Jogi Adhiroha, Riszikeś",
   description:
-    "Zasady obowiązujące w aśramie Adhiroha w Riszikeś — cztery filary, kodeks postępowania, zasady zerowej tolerancji oraz opłaty, płatności i zmiany terminu.",
+    "Zasady obowiązujące w aśramie Adhiroha w Riszikeś, cztery filary, kodeks postępowania, zasady zerowej tolerancji oraz opłaty, płatności i zmiany terminu.",
   alternates: {
     canonical: PL,
     languages: hreflangFor(EN),
@@ -20,12 +20,12 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pl_PL", url: `${SITE}${PL}`,
     title: "Kodeks Postępowania i Zasady | Aśram Jogi Adhiroha, Riszikeś",
-    description: "Zasady obowiązujące w aśramie Adhiroha w Riszikeś — cztery filary, kodeks postępowania, zasady zerowej tolerancji oraz opłaty, płatności i zmiany terminu.",
+    description: "Zasady obowiązujące w aśramie Adhiroha w Riszikeś, cztery filary, kodeks postępowania, zasady zerowej tolerancji oraz opłaty, płatności i zmiany terminu.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Kodeks Postępowania i Zasady | Aśram Jogi Adhiroha, Riszikeś",
-    description: "Zasady obowiązujące w aśramie Adhiroha w Riszikeś — cztery filary, kodeks postępowania, zasady zerowej tolerancji oraz opłaty, płatności i zmiany terminu.",
+    description: "Zasady obowiązujące w aśramie Adhiroha w Riszikeś, cztery filary, kodeks postępowania, zasady zerowej tolerancji oraz opłaty, płatności i zmiany terminu.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

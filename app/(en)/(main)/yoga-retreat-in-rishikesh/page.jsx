@@ -6,9 +6,9 @@ import JsonLd from "@/components/JsonLd";
 import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, courseFacts, hreflangFor } from "@/lib/seo";
 
 export const metadata = {
-  title: "Yoga & Ayurveda Retreat in Rishikesh | 6 Days — Adhiroha",
+  title: "Yoga & Ayurveda Retreat in Rishikesh | 6 Days | Adhiroha",
   description:
-    "A 6-day yoga and Ayurveda wellness retreat in Rishikesh. Daily yoga, Ayurvedic therapies, sattvic meals and Himalayan quiet — from €510 all inclusive.",
+    "A 6-day yoga and Ayurveda wellness retreat in Rishikesh. Daily yoga, Ayurvedic therapies, sattvic meals and Himalayan quiet, from €510 all inclusive.",
   alternates: { canonical: "/yoga-retreat-in-rishikesh/", languages: hreflangFor("/yoga-retreat-in-rishikesh/") }
 };
 

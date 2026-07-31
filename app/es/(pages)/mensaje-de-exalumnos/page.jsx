@@ -12,7 +12,7 @@ const EN = "/soon-after-message/";
 export const metadata = {
   title: "Opiniones de Alumnos y Mensajes de Exalumnos | Adhiroha",
   description:
-    "Descubre lo que dicen los graduados poco después de su formación en Adhiroha — mensajes sinceros de alumnos de nuestros cursos de 200, 300 y 500 horas en Rishikesh.",
+    "Descubre lo que dicen los graduados poco después de su formación en Adhiroha, mensajes sinceros de alumnos de nuestros cursos de 200, 300 y 500 horas en Rishikesh.",
   alternates: {
     canonical: ES,
     languages: hreflangFor(EN),
@@ -20,12 +20,12 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "es_ES", url: `${SITE}${ES}`,
     title: "Opiniones de Alumnos y Mensajes de Exalumnos | Adhiroha",
-    description: "Descubre lo que dicen los graduados poco después de su formación en Adhiroha — mensajes sinceros de alumnos de nuestros cursos de 200, 300 y 500 horas en Rishikesh.",
+    description: "Descubre lo que dicen los graduados poco después de su formación en Adhiroha, mensajes sinceros de alumnos de nuestros cursos de 200, 300 y 500 horas en Rishikesh.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Opiniones de Alumnos y Mensajes de Exalumnos | Adhiroha",
-    description: "Descubre lo que dicen los graduados poco después de su formación en Adhiroha — mensajes sinceros de alumnos de nuestros cursos de 200, 300 y 500 horas en Rishikesh.",
+    description: "Descubre lo que dicen los graduados poco después de su formación en Adhiroha, mensajes sinceros de alumnos de nuestros cursos de 200, 300 y 500 horas en Rishikesh.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

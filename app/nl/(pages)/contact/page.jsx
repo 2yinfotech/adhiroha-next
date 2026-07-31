@@ -10,22 +10,22 @@ const NL = "/nl/contact/";
 const EN = "/contact-us/";
 
 export const metadata = {
-  title: "Contact | Adhiroha — Yogaschool in Rishikesh",
+  title: "Contact | Adhiroha, Yogaschool in Rishikesh",
   description:
-    "Neem contact op met de yoga-ashram Adhiroha in Upper Tapovan, Rishikesh. WhatsApp, e-mail of formulier — er antwoordt een echt mens, meestal binnen een dag.",
+    "Neem contact op met de yoga-ashram Adhiroha in Upper Tapovan, Rishikesh. WhatsApp, e-mail of formulier, er antwoordt een echt mens, meestal binnen een dag.",
   alternates: {
     canonical: NL,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "nl_NL", url: `${SITE}${NL}`,
-    title: "Contact | Adhiroha — Yogaschool in Rishikesh",
-    description: "Neem contact op met de yoga-ashram Adhiroha in Upper Tapovan, Rishikesh. WhatsApp, e-mail of formulier — er antwoordt een echt mens, meestal binnen een dag.",
+    title: "Contact | Adhiroha, Yogaschool in Rishikesh",
+    description: "Neem contact op met de yoga-ashram Adhiroha in Upper Tapovan, Rishikesh. WhatsApp, e-mail of formulier, er antwoordt een echt mens, meestal binnen een dag.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact | Adhiroha — Yogaschool in Rishikesh",
-    description: "Neem contact op met de yoga-ashram Adhiroha in Upper Tapovan, Rishikesh. WhatsApp, e-mail of formulier — er antwoordt een echt mens, meestal binnen een dag.",
+    title: "Contact | Adhiroha, Yogaschool in Rishikesh",
+    description: "Neem contact op met de yoga-ashram Adhiroha in Upper Tapovan, Rishikesh. WhatsApp, e-mail of formulier, er antwoordt een echt mens, meestal binnen een dag.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

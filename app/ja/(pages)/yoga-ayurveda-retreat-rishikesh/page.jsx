@@ -10,22 +10,22 @@ const JA = "/ja/yoga-ayurveda-retreat-rishikesh/";
 const EN = "/yoga-retreat-in-rishikesh/";
 
 export const metadata = {
-  title: "リシケシのヨガ＆アーユルヴェーダ・リトリート | 6日間 — Adhiroha",
+  title: "リシケシのヨガ＆アーユルヴェーダ・リトリート | 6日間、Adhiroha",
   description:
-    "インド・リシケシでの6日間のヨガ＆アーユルヴェーダ・リトリート — 穏やかなヨガ、プラーナヤーマ、一人ひとりに合わせたアーユルヴェーダ療法、サットヴィックな食事。€510からオールインクルーシブ。",
+    "インド・リシケシでの6日間のヨガ＆アーユルヴェーダ・リトリート、穏やかなヨガ、プラーナヤーマ、一人ひとりに合わせたアーユルヴェーダ療法、サットヴィックな食事。€510からオールインクルーシブ。",
   alternates: {
     canonical: JA,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "ja_JP", url: `${SITE}${JA}`,
-    title: "リシケシのヨガ＆アーユルヴェーダ・リトリート | 6日間 — Adhiroha",
-    description: "インド・リシケシでの6日間のヨガ＆アーユルヴェーダ・リトリート — 穏やかなヨガ、プラーナヤーマ、一人ひとりに合わせたアーユルヴェーダ療法、サットヴィックな食事。€510からオールインクルーシブ。",
+    title: "リシケシのヨガ＆アーユルヴェーダ・リトリート | 6日間、Adhiroha",
+    description: "インド・リシケシでの6日間のヨガ＆アーユルヴェーダ・リトリート、穏やかなヨガ、プラーナヤーマ、一人ひとりに合わせたアーユルヴェーダ療法、サットヴィックな食事。€510からオールインクルーシブ。",
   },
   twitter: {
     card: "summary_large_image",
-    title: "リシケシのヨガ＆アーユルヴェーダ・リトリート | 6日間 — Adhiroha",
-    description: "インド・リシケシでの6日間のヨガ＆アーユルヴェーダ・リトリート — 穏やかなヨガ、プラーナヤーマ、一人ひとりに合わせたアーユルヴェーダ療法、サットヴィックな食事。€510からオールインクルーシブ。",
+    title: "リシケシのヨガ＆アーユルヴェーダ・リトリート | 6日間、Adhiroha",
+    description: "インド・リシケシでの6日間のヨガ＆アーユルヴェーダ・リトリート、穏やかなヨガ、プラーナヤーマ、一人ひとりに合わせたアーユルヴェーダ療法、サットヴィックな食事。€510からオールインクルーシブ。",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

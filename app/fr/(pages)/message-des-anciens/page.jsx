@@ -12,7 +12,7 @@ const EN = "/soon-after-message/";
 export const metadata = {
   title: "Avis d’élèves & messages des anciens | Adhiroha",
   description:
-    "Découvrez ce que disent les diplômés peu après leur formation à Adhiroha — des messages sincères d’élèves de nos cours de 200, 300 et 500 heures à Rishikesh.",
+    "Découvrez ce que disent les diplômés peu après leur formation à Adhiroha, des messages sincères d’élèves de nos cours de 200, 300 et 500 heures à Rishikesh.",
   alternates: {
     canonical: FR,
     languages: hreflangFor(EN),
@@ -20,12 +20,12 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "fr_FR", url: `${SITE}${FR}`,
     title: "Avis d’élèves & messages des anciens | Adhiroha",
-    description: "Découvrez ce que disent les diplômés peu après leur formation à Adhiroha — des messages sincères d’élèves de nos cours de 200, 300 et 500 heures à Rishikesh.",
+    description: "Découvrez ce que disent les diplômés peu après leur formation à Adhiroha, des messages sincères d’élèves de nos cours de 200, 300 et 500 heures à Rishikesh.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Avis d’élèves & messages des anciens | Adhiroha",
-    description: "Découvrez ce que disent les diplômés peu après leur formation à Adhiroha — des messages sincères d’élèves de nos cours de 200, 300 et 500 heures à Rishikesh.",
+    description: "Découvrez ce que disent les diplômés peu après leur formation à Adhiroha, des messages sincères d’élèves de nos cours de 200, 300 et 500 heures à Rishikesh.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

@@ -12,7 +12,7 @@ const EN = "/yoga-ashram-in-india-code-of-conduct/";
 export const metadata = {
   title: "Uppförandekod och Regler | Yoga-ashramet Adhiroha, Rishikesh",
   description:
-    "Reglerna på Adhirohas ashram i Rishikesh — de fyra pelarna, uppförandekoden, nolltoleranspolicyn och allt om avgifter, betalningar och ombokning.",
+    "Reglerna på Adhirohas ashram i Rishikesh, de fyra pelarna, uppförandekoden, nolltoleranspolicyn och allt om avgifter, betalningar och ombokning.",
   alternates: {
     canonical: SV,
     languages: hreflangFor(EN),
@@ -20,12 +20,12 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "sv_SE", url: `${SITE}${SV}`,
     title: "Uppförandekod och Regler | Yoga-ashramet Adhiroha, Rishikesh",
-    description: "Reglerna på Adhirohas ashram i Rishikesh — de fyra pelarna, uppförandekoden, nolltoleranspolicyn och allt om avgifter, betalningar och ombokning.",
+    description: "Reglerna på Adhirohas ashram i Rishikesh, de fyra pelarna, uppförandekoden, nolltoleranspolicyn och allt om avgifter, betalningar och ombokning.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Uppförandekod och Regler | Yoga-ashramet Adhiroha, Rishikesh",
-    description: "Reglerna på Adhirohas ashram i Rishikesh — de fyra pelarna, uppförandekoden, nolltoleranspolicyn och allt om avgifter, betalningar och ombokning.",
+    description: "Reglerna på Adhirohas ashram i Rishikesh, de fyra pelarna, uppförandekoden, nolltoleranspolicyn och allt om avgifter, betalningar och ombokning.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

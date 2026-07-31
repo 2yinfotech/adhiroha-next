@@ -12,7 +12,7 @@ const EN = "/yoga-teacher-training-course-rishikesh-india/";
 export const metadata = {
   title: "Yogalæreruddannelse i Indien | YTTC 200, 300 og 500 timer i Rishikesh | Adhiroha",
   description:
-    "Yogalæreruddannelse i Indien hos Adhiroha, Rishikesh — kurser med ophold på 200, 300 og 500 timer, certificeret af Yoga Alliance. Over 3.000 elever fra mere end 70 lande. Alt inklusive, internationalt anerkendt certificering.",
+    "Yogalæreruddannelse i Indien hos Adhiroha, Rishikesh, kurser med ophold på 200, 300 og 500 timer, certificeret af Yoga Alliance. Over 3.000 elever fra mere end 70 lande. Alt inklusive, internationalt anerkendt certificering.",
   keywords: [
     "yogalæreruddannelse i indien",
     "yogalæreruddannelse i rishikesh",
@@ -43,7 +43,7 @@ const pageSchema = graph(
   courseSchema({
     name: "200-timers yogalæreruddannelse i Rishikesh, Indien",
     description:
-      "200-timers yogalæreruddannelse med ophold, certificeret af Yoga Alliance, i Rishikesh, Indien — grundforløbet for nybegyndere i asana, pranayama, anatomi, filosofi og undervisningspraksis.",
+      "200-timers yogalæreruddannelse med ophold, certificeret af Yoga Alliance, i Rishikesh, Indien, grundforløbet for nybegyndere i asana, pranayama, anatomi, filosofi og undervisningspraksis.",
     url: "/da/200-timers-yogalaereruddannelse-rishikesh/",
     price: 1275,
     days: 24,
@@ -61,7 +61,7 @@ const pageSchema = graph(
   courseSchema({
     name: "500-timers yogalæreruddannelse i Rishikesh, Indien",
     description:
-      "500-timers yogalæreruddannelse med ophold i Rishikesh, Indien — den komplette fordybelse på 60 dage, der forener programmerne på 200 og 300 timer, fra nybegynder til masterniveau.",
+      "500-timers yogalæreruddannelse med ophold i Rishikesh, Indien, den komplette fordybelse på 60 dage, der forener programmerne på 200 og 300 timer, fra nybegynder til masterniveau.",
     url: "/da/500-timers-yogalaereruddannelse-rishikesh/",
     price: 2790,
     days: 60,

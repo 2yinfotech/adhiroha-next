@@ -8,7 +8,7 @@ import { graph, breadcrumbSchema, extractFaqs, faqSchema } from "@/lib/seo";
 export const metadata = {
   title: "Complete Guide to 200 Hour Yoga Teacher Training",
   description:
-    "What a 200 hour yoga teacher training really involves — the syllabus, daily schedule, costs and how to choose the right school in Rishikesh.",
+    "What a 200 hour yoga teacher training really involves. The syllabus, daily schedule, costs and how to choose the right school in Rishikesh.",
   alternates: { canonical: "/blog-200-hour-yoga-teacher-training-guide/" }
 };
 

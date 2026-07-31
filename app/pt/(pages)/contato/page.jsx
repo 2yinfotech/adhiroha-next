@@ -10,22 +10,22 @@ const PT = "/pt/contato/";
 const EN = "/contact-us/";
 
 export const metadata = {
-  title: "Contato | Adhiroha — Escola de Yoga em Rishikesh",
+  title: "Contato | Adhiroha, Escola de Yoga em Rishikesh",
   description:
-    "Fale com o ashram de yoga Adhiroha em Upper Tapovan, Rishikesh. WhatsApp, e-mail ou formulário — quem responde é uma pessoa de verdade, normalmente em até um dia.",
+    "Fale com o ashram de yoga Adhiroha em Upper Tapovan, Rishikesh. WhatsApp, e-mail ou formulário, quem responde é uma pessoa de verdade, normalmente em até um dia.",
   alternates: {
     canonical: PT,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pt_BR", url: `${SITE}${PT}`,
-    title: "Contato | Adhiroha — Escola de Yoga em Rishikesh",
-    description: "Fale com o ashram de yoga Adhiroha em Upper Tapovan, Rishikesh. WhatsApp, e-mail ou formulário — quem responde é uma pessoa de verdade, normalmente em até um dia.",
+    title: "Contato | Adhiroha, Escola de Yoga em Rishikesh",
+    description: "Fale com o ashram de yoga Adhiroha em Upper Tapovan, Rishikesh. WhatsApp, e-mail ou formulário, quem responde é uma pessoa de verdade, normalmente em até um dia.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contato | Adhiroha — Escola de Yoga em Rishikesh",
-    description: "Fale com o ashram de yoga Adhiroha em Upper Tapovan, Rishikesh. WhatsApp, e-mail ou formulário — quem responde é uma pessoa de verdade, normalmente em até um dia.",
+    title: "Contato | Adhiroha, Escola de Yoga em Rishikesh",
+    description: "Fale com o ashram de yoga Adhiroha em Upper Tapovan, Rishikesh. WhatsApp, e-mail ou formulário, quem responde é uma pessoa de verdade, normalmente em até um dia.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

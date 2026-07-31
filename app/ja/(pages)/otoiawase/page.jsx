@@ -10,7 +10,7 @@ const JA = "/ja/otoiawase/";
 const EN = "/contact-us/";
 
 export const metadata = {
-  title: "お問い合わせ | Adhiroha — リシケシのヨガスクール",
+  title: "お問い合わせ | Adhiroha、リシケシのヨガスクール",
   description:
     "リシケシ、アッパー・タポヴァンのヨガアシュラム、アディローハへのお問い合わせ。WhatsApp、メール、フォームのいずれでも、実際の人間がたいてい1日以内にお返事します。",
   alternates: {
@@ -19,12 +19,12 @@ export const metadata = {
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "ja_JP", url: `${SITE}${JA}`,
-    title: "お問い合わせ | Adhiroha — リシケシのヨガスクール",
+    title: "お問い合わせ | Adhiroha、リシケシのヨガスクール",
     description: "リシケシ、アッパー・タポヴァンのヨガアシュラム、アディローハへのお問い合わせ。WhatsApp、メール、フォームのいずれでも、実際の人間がたいてい1日以内にお返事します。",
   },
   twitter: {
     card: "summary_large_image",
-    title: "お問い合わせ | Adhiroha — リシケシのヨガスクール",
+    title: "お問い合わせ | Adhiroha、リシケシのヨガスクール",
     description: "リシケシ、アッパー・タポヴァンのヨガアシュラム、アディローハへのお問い合わせ。WhatsApp、メール、フォームのいずれでも、実際の人間がたいてい1日以内にお返事します。",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },

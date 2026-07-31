@@ -6,7 +6,7 @@ import { graph, breadcrumbSchema } from "@/lib/seo";
 export const metadata = {
   title: "Best Time for Yoga Teacher Training in Rishikesh",
   description:
-    "Rishikesh weather month by month, and the best time of year to do a yoga teacher training — temperatures, monsoon, and what to pack for each season.",
+    "Rishikesh weather month by month, and the best time of year to do a yoga teacher training, temperatures, monsoon, and what to pack for each season.",
   alternates: { canonical: "/weather/" },
 };
 

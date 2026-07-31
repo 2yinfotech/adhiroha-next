@@ -10,22 +10,22 @@ const NL = "/nl/sadhana-immersie-programma/";
 const EN = "/sadhana-immersion-programme/";
 
 export const metadata = {
-  title: "Sadhana-immersieprogramma in Rishikesh | 15 Dagen — Adhiroha",
+  title: "Sadhana-immersieprogramma in Rishikesh | 15 Dagen | Adhiroha",
   description:
-    "Vijftiendaags Sadhana-immersieprogramma in Rishikesh — stilte, eigen beoefening, meditatie, karma yoga en de Bhagavad Gita in het traditionele ashramritme. Vanaf € 699 all-inclusive.",
+    "Vijftiendaags Sadhana-immersieprogramma in Rishikesh, stilte, eigen beoefening, meditatie, karma yoga en de Bhagavad Gita in het traditionele ashramritme. Vanaf € 699 all-inclusive.",
   alternates: {
     canonical: NL,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "nl_NL", url: `${SITE}${NL}`,
-    title: "Sadhana-immersieprogramma in Rishikesh | 15 Dagen — Adhiroha",
-    description: "Vijftiendaags Sadhana-immersieprogramma in Rishikesh — stilte, eigen beoefening, meditatie, karma yoga en de Bhagavad Gita in het traditionele ashramritme. Vanaf € 699 all-inclusive.",
+    title: "Sadhana-immersieprogramma in Rishikesh | 15 Dagen | Adhiroha",
+    description: "Vijftiendaags Sadhana-immersieprogramma in Rishikesh, stilte, eigen beoefening, meditatie, karma yoga en de Bhagavad Gita in het traditionele ashramritme. Vanaf € 699 all-inclusive.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sadhana-immersieprogramma in Rishikesh | 15 Dagen — Adhiroha",
-    description: "Vijftiendaags Sadhana-immersieprogramma in Rishikesh — stilte, eigen beoefening, meditatie, karma yoga en de Bhagavad Gita in het traditionele ashramritme. Vanaf € 699 all-inclusive.",
+    title: "Sadhana-immersieprogramma in Rishikesh | 15 Dagen | Adhiroha",
+    description: "Vijftiendaags Sadhana-immersieprogramma in Rishikesh, stilte, eigen beoefening, meditatie, karma yoga en de Bhagavad Gita in het traditionele ashramritme. Vanaf € 699 all-inclusive.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

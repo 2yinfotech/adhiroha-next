@@ -8,7 +8,7 @@ import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, courseFa
 export const metadata = {
   title: "Sadhana Immersion Programme in Rishikesh | 15 Days",
   description:
-    "A 15-day Sadhana immersion in Rishikesh for a deeper personal practice — disciplined daily sadhana, silence and yogic living at our Himalayan ashram.",
+    "A 15-day Sadhana immersion in Rishikesh for a deeper personal practice, disciplined daily sadhana, silence and yogic living at our Himalayan ashram.",
   alternates: { canonical: "/sadhana-immersion-programme/", languages: hreflangFor("/sadhana-immersion-programme/") }
 };
 

@@ -14,7 +14,7 @@ import JsonLd from "@/components/JsonLd";
 import { graph, extractFaqs, faqSchema, SITE, LANGUAGE_ALTERNATES, schoolTourVideoSchema } from "@/lib/seo";
 
 export const metadata = {
-  title: "Formación de Profesor de Yoga en Rishikesh | YTTC de 200/300/500 horas — Adhiroha",
+  title: "Formación de Profesor de Yoga en Rishikesh | YTTC de 200/300/500 horas | Adhiroha",
   description:
     "Formación de profesor de yoga certificada por Yoga Alliance de 200, 300 y 500 horas en Rishikesh, India. Grupos reducidos, profesores indios con experiencia, alojamiento en ashram y comidas incluidas.",
   alternates: { canonical: "/es/", languages: LANGUAGE_ALTERNATES },
@@ -23,14 +23,14 @@ export const metadata = {
     siteName: "Adhiroha Yoga School",
     locale: "es_ES",
     url: `${SITE}/es/`,
-    title: "Formación de Profesor de Yoga en Rishikesh | YTTC de 200/300/500 horas — Adhiroha",
+    title: "Formación de Profesor de Yoga en Rishikesh | YTTC de 200/300/500 horas | Adhiroha",
     description:
       "Formación de profesor de yoga certificada por Yoga Alliance de 200, 300 y 500 horas en Rishikesh, India. Grupos reducidos, profesores indios con experiencia, alojamiento en ashram y comidas incluidas.",
     images: [{ url: "/img/yoga-teacher-training-india-course.webp", width: 1200, height: 630, alt: "Adhiroha Yoga School, Upper Tapovan, Rishikesh" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Formación de Profesor de Yoga en Rishikesh | YTTC de 200/300/500 horas — Adhiroha",
+    title: "Formación de Profesor de Yoga en Rishikesh | YTTC de 200/300/500 horas | Adhiroha",
     description: "Formación de profesor de yoga certificada por Yoga Alliance de 200, 300 y 500 horas en Rishikesh, India. Grupos reducidos, profesores indios con experiencia, alojamiento en ashram y comidas incluidas.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },

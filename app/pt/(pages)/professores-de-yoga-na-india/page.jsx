@@ -12,7 +12,7 @@ const EN = "/yoga-teachers-in-india/";
 export const metadata = {
   title: "Nossos Professores de Yoga na Índia | Acharyas da Adhiroha, Rishikesh",
   description:
-    "Conheça os 11 acharyas de yoga da Adhiroha em Rishikesh — mestres em Ciência Yogue e doutores em naturopatia, com mais de 115 anos de experiência de ensino somada.",
+    "Conheça os 11 acharyas de yoga da Adhiroha em Rishikesh, mestres em Ciência Yogue e doutores em naturopatia, com mais de 115 anos de experiência de ensino somada.",
   alternates: {
     canonical: PT,
     languages: hreflangFor(EN),
@@ -20,12 +20,12 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pt_BR", url: `${SITE}${PT}`,
     title: "Nossos Professores de Yoga na Índia | Acharyas da Adhiroha, Rishikesh",
-    description: "Conheça os 11 acharyas de yoga da Adhiroha em Rishikesh — mestres em Ciência Yogue e doutores em naturopatia, com mais de 115 anos de experiência de ensino somada.",
+    description: "Conheça os 11 acharyas de yoga da Adhiroha em Rishikesh, mestres em Ciência Yogue e doutores em naturopatia, com mais de 115 anos de experiência de ensino somada.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Nossos Professores de Yoga na Índia | Acharyas da Adhiroha, Rishikesh",
-    description: "Conheça os 11 acharyas de yoga da Adhiroha em Rishikesh — mestres em Ciência Yogue e doutores em naturopatia, com mais de 115 anos de experiência de ensino somada.",
+    description: "Conheça os 11 acharyas de yoga da Adhiroha em Rishikesh, mestres em Ciência Yogue e doutores em naturopatia, com mais de 115 anos de experiência de ensino somada.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

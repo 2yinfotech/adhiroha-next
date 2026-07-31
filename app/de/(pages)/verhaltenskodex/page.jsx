@@ -11,19 +11,19 @@ const EN = "/yoga-ashram-in-india-code-of-conduct/";
 
 export const metadata = {
   title: "Verhaltenskodex & Richtlinien | Adhiroha, Rishikesh",
-  description: "Der Verhaltenskodex und die Zulassungs- & Gebührenrichtlinien des Adhiroha Ashrams in Rishikesh — klar dargelegt, bevor du dich anmeldest.",
+  description: "Der Verhaltenskodex und die Zulassungs- & Gebührenrichtlinien des Adhiroha Ashrams in Rishikesh, klar dargelegt, bevor du dich anmeldest.",
   alternates: {
     canonical: DE,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "de_DE", url: `${SITE}${DE}`,
-    title: "Verhaltenskodex & Richtlinien | Adhiroha, Rishikesh", description: "Der Verhaltenskodex und die Zulassungs- & Gebührenrichtlinien des Adhiroha Ashrams in Rishikesh — klar dargelegt, bevor du dich anmeldest.",
+    title: "Verhaltenskodex & Richtlinien | Adhiroha, Rishikesh", description: "Der Verhaltenskodex und die Zulassungs- & Gebührenrichtlinien des Adhiroha Ashrams in Rishikesh, klar dargelegt, bevor du dich anmeldest.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Verhaltenskodex & Richtlinien | Adhiroha, Rishikesh",
-    description: "Der Verhaltenskodex und die Zulassungs- & Gebührenrichtlinien des Adhiroha Ashrams in Rishikesh — klar dargelegt, bevor du dich anmeldest.",
+    description: "Der Verhaltenskodex und die Zulassungs- & Gebührenrichtlinien des Adhiroha Ashrams in Rishikesh, klar dargelegt, bevor du dich anmeldest.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

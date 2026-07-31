@@ -10,22 +10,22 @@ const FR = "/fr/retraite-yoga-ayurveda-rishikesh/";
 const EN = "/yoga-retreat-in-rishikesh/";
 
 export const metadata = {
-  title: "Retraite Yoga & Ayurveda à Rishikesh | 6 jours — Adhiroha",
+  title: "Retraite Yoga & Ayurveda à Rishikesh | 6 jours | Adhiroha",
   description:
-    "Une retraite bien-être de 6 jours de yoga et d’Ayurveda à Rishikesh. Yoga quotidien, thérapies ayurvédiques, repas sattviques et calme himalayen — à partir de 510 € tout compris.",
+    "Une retraite bien-être de 6 jours de yoga et d’Ayurveda à Rishikesh. Yoga quotidien, thérapies ayurvédiques, repas sattviques et calme himalayen, à partir de 510 € tout compris.",
   alternates: {
     canonical: FR,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "fr_FR", url: `${SITE}${FR}`,
-    title: "Retraite Yoga & Ayurveda à Rishikesh | 6 jours — Adhiroha",
-    description: "Une retraite bien-être de 6 jours de yoga et d’Ayurveda à Rishikesh. Yoga quotidien, thérapies ayurvédiques, repas sattviques et calme himalayen — à partir de 510 € tout compris.",
+    title: "Retraite Yoga & Ayurveda à Rishikesh | 6 jours | Adhiroha",
+    description: "Une retraite bien-être de 6 jours de yoga et d’Ayurveda à Rishikesh. Yoga quotidien, thérapies ayurvédiques, repas sattviques et calme himalayen, à partir de 510 € tout compris.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Retraite Yoga & Ayurveda à Rishikesh | 6 jours — Adhiroha",
-    description: "Une retraite bien-être de 6 jours de yoga et d’Ayurveda à Rishikesh. Yoga quotidien, thérapies ayurvédiques, repas sattviques et calme himalayen — à partir de 510 € tout compris.",
+    title: "Retraite Yoga & Ayurveda à Rishikesh | 6 jours | Adhiroha",
+    description: "Une retraite bien-être de 6 jours de yoga et d’Ayurveda à Rishikesh. Yoga quotidien, thérapies ayurvédiques, repas sattviques et calme himalayen, à partir de 510 € tout compris.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

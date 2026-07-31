@@ -8,7 +8,7 @@ import { graph, breadcrumbSchema, extractFaqs, faqSchema, hreflangFor } from "@/
 export const metadata = {
   title: "About Adhiroha | Yoga School in Rishikesh, India",
   description:
-    "Adhiroha is a Yoga Alliance certified yoga school in Upper Tapovan, Rishikesh — 20,000 sq ft ashram, 3,000+ students trained from over 70 countries.",
+    "Adhiroha is a Yoga Alliance certified yoga school in Upper Tapovan, Rishikesh, 20,000 sq ft ashram, 3,000+ students trained from over 70 countries.",
   alternates: { canonical: "/about-us/", languages: hreflangFor("/about-us/") }
 };
 

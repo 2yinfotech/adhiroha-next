@@ -12,7 +12,7 @@ const EN = "/soon-after-message/";
 export const metadata = {
   title: "Een Bericht van Onze Oud-studenten | Adhiroha, Rishikesh",
   description:
-    "Afgestudeerden van Adhiroha beschrijven in hun eigen woorden de yoga-docentenopleiding in Rishikesh — de tuin, het vuuraltaar, de vijf elementen van het terrein en de docenten achter de transformatie.",
+    "Afgestudeerden van Adhiroha beschrijven in hun eigen woorden de yoga-docentenopleiding in Rishikesh, de tuin, het vuuraltaar, de vijf elementen van het terrein en de docenten achter de transformatie.",
   alternates: {
     canonical: NL,
     languages: hreflangFor(EN),
@@ -20,12 +20,12 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "nl_NL", url: `${SITE}${NL}`,
     title: "Een Bericht van Onze Oud-studenten | Adhiroha, Rishikesh",
-    description: "Afgestudeerden van Adhiroha beschrijven in hun eigen woorden de yoga-docentenopleiding in Rishikesh — de tuin, het vuuraltaar, de vijf elementen van het terrein en de docenten achter de transformatie.",
+    description: "Afgestudeerden van Adhiroha beschrijven in hun eigen woorden de yoga-docentenopleiding in Rishikesh, de tuin, het vuuraltaar, de vijf elementen van het terrein en de docenten achter de transformatie.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Een Bericht van Onze Oud-studenten | Adhiroha, Rishikesh",
-    description: "Afgestudeerden van Adhiroha beschrijven in hun eigen woorden de yoga-docentenopleiding in Rishikesh — de tuin, het vuuraltaar, de vijf elementen van het terrein en de docenten achter de transformatie.",
+    description: "Afgestudeerden van Adhiroha beschrijven in hun eigen woorden de yoga-docentenopleiding in Rishikesh, de tuin, het vuuraltaar, de vijf elementen van het terrein en de docenten achter de transformatie.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

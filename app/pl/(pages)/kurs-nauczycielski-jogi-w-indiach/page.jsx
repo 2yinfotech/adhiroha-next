@@ -12,7 +12,7 @@ const EN = "/yoga-teacher-training-course-rishikesh-india/";
 export const metadata = {
   title: "Kurs Nauczycielski Jogi w Indiach | YTTC 200, 300 i 500 Godzin w Riszikeś | Adhiroha",
   description:
-    "Kurs nauczycielski jogi w Indiach w Adhiroha, Riszikeś — stacjonarne kursy 200, 300 i 500 godzin z certyfikatem Yoga Alliance. Ponad 3000 uczniów z przeszło 70 krajów. Opłata all inclusive, certyfikat uznawany na całym świecie.",
+    "Kurs nauczycielski jogi w Indiach w Adhiroha, Riszikeś, stacjonarne kursy 200, 300 i 500 godzin z certyfikatem Yoga Alliance. Ponad 3000 uczniów z przeszło 70 krajów. Opłata all inclusive, certyfikat uznawany na całym świecie.",
   keywords: [
     "kurs nauczycielski jogi w indiach",
     "kurs nauczycielski jogi w riszikeś",
@@ -43,7 +43,7 @@ const pageSchema = graph(
   courseSchema({
     name: "200-Godzinny Kurs Nauczycielski Jogi w Riszikeś, Indie",
     description:
-      "Stacjonarny 200-godzinny kurs nauczycielski jogi z certyfikatem Yoga Alliance w Riszikeś w Indiach — fundament dla początkujących: asany, pranajama, anatomia, filozofia i praktyka nauczania.",
+      "Stacjonarny 200-godzinny kurs nauczycielski jogi z certyfikatem Yoga Alliance w Riszikeś w Indiach, fundament dla początkujących: asany, pranajama, anatomia, filozofia i praktyka nauczania.",
     url: "/pl/200-godzinny-kurs-nauczycielski-jogi-rishikesh/",
     price: 1275,
     days: 24,
@@ -61,7 +61,7 @@ const pageSchema = graph(
   courseSchema({
     name: "500-Godzinny Kurs Nauczycielski Jogi w Riszikeś, Indie",
     description:
-      "Stacjonarny 500-godzinny kurs nauczycielski jogi w Riszikeś w Indiach — pełne 60-dniowe zanurzenie łączące program 200 i 300 godzin, od poziomu początkującego po mistrzowski.",
+      "Stacjonarny 500-godzinny kurs nauczycielski jogi w Riszikeś w Indiach, pełne 60-dniowe zanurzenie łączące program 200 i 300 godzin, od poziomu początkującego po mistrzowski.",
     url: "/pl/500-godzinny-kurs-nauczycielski-jogi-rishikesh/",
     price: 2790,
     days: 60,

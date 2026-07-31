@@ -53,7 +53,7 @@ const CONTACT_FORM_SCRIPT = `
     fetch('/api/contact/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
       .then(function(r){return r.json().catch(function(){return{};}).then(function(j){return{ok:r.ok,j:j};});})
       .then(function(res){
-        if(res.ok&&res.j.ok){form.reset();note(form,'Thank you! Your message has been sent \\u2014 we\\u2019ll reply soon.',true);}
+        if(res.ok&&res.j.ok){form.reset();note(form,'Thank you! Your message has been sent. We\\u2019ll reply soon.',true);}
         else{note(form,(res.j&&(res.j.message||res.j.error))||'Something went wrong. Please email info@adhiroha.com.',false);}
       })
       .catch(function(){note(form,'Network error. Please email us at info@adhiroha.com.',false);})

@@ -12,7 +12,7 @@ const EN = "/soon-after-message/";
 export const metadata = {
   title: "Wiadomość od Naszych Absolwentów | Adhiroha, Riszikeś",
   description:
-    "Absolwenci Adhiroha opisują swoimi słowami kurs nauczycielski jogi w Riszikeś — ogród, ołtarz ognia, pięć żywiołów kampusu i nauczycieli stojących za przemianą.",
+    "Absolwenci Adhiroha opisują swoimi słowami kurs nauczycielski jogi w Riszikeś, ogród, ołtarz ognia, pięć żywiołów kampusu i nauczycieli stojących za przemianą.",
   alternates: {
     canonical: PL,
     languages: hreflangFor(EN),
@@ -20,12 +20,12 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pl_PL", url: `${SITE}${PL}`,
     title: "Wiadomość od Naszych Absolwentów | Adhiroha, Riszikeś",
-    description: "Absolwenci Adhiroha opisują swoimi słowami kurs nauczycielski jogi w Riszikeś — ogród, ołtarz ognia, pięć żywiołów kampusu i nauczycieli stojących za przemianą.",
+    description: "Absolwenci Adhiroha opisują swoimi słowami kurs nauczycielski jogi w Riszikeś, ogród, ołtarz ognia, pięć żywiołów kampusu i nauczycieli stojących za przemianą.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Wiadomość od Naszych Absolwentów | Adhiroha, Riszikeś",
-    description: "Absolwenci Adhiroha opisują swoimi słowami kurs nauczycielski jogi w Riszikeś — ogród, ołtarz ognia, pięć żywiołów kampusu i nauczycieli stojących za przemianą.",
+    description: "Absolwenci Adhiroha opisują swoimi słowami kurs nauczycielski jogi w Riszikeś, ogród, ołtarz ognia, pięć żywiołów kampusu i nauczycieli stojących za przemianą.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

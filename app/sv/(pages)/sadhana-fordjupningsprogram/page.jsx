@@ -10,22 +10,22 @@ const SV = "/sv/sadhana-fordjupningsprogram/";
 const EN = "/sadhana-immersion-programme/";
 
 export const metadata = {
-  title: "Sadhana Fördjupningsprogram i Rishikesh | 15 Dagar — Adhiroha",
+  title: "Sadhana Fördjupningsprogram i Rishikesh | 15 Dagar | Adhiroha",
   description:
-    "Femton dagars Sadhana-fördjupningsprogram i Rishikesh — tystnad, egen övning, meditation, karma yoga och Bhagavad Gita i traditionell ashramrytm. Från 699 € all-inclusive.",
+    "Femton dagars Sadhana-fördjupningsprogram i Rishikesh, tystnad, egen övning, meditation, karma yoga och Bhagavad Gita i traditionell ashramrytm. Från 699 € all-inclusive.",
   alternates: {
     canonical: SV,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "sv_SE", url: `${SITE}${SV}`,
-    title: "Sadhana Fördjupningsprogram i Rishikesh | 15 Dagar — Adhiroha",
-    description: "Femton dagars Sadhana-fördjupningsprogram i Rishikesh — tystnad, egen övning, meditation, karma yoga och Bhagavad Gita i traditionell ashramrytm. Från 699 € all-inclusive.",
+    title: "Sadhana Fördjupningsprogram i Rishikesh | 15 Dagar | Adhiroha",
+    description: "Femton dagars Sadhana-fördjupningsprogram i Rishikesh, tystnad, egen övning, meditation, karma yoga och Bhagavad Gita i traditionell ashramrytm. Från 699 € all-inclusive.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sadhana Fördjupningsprogram i Rishikesh | 15 Dagar — Adhiroha",
-    description: "Femton dagars Sadhana-fördjupningsprogram i Rishikesh — tystnad, egen övning, meditation, karma yoga och Bhagavad Gita i traditionell ashramrytm. Från 699 € all-inclusive.",
+    title: "Sadhana Fördjupningsprogram i Rishikesh | 15 Dagar | Adhiroha",
+    description: "Femton dagars Sadhana-fördjupningsprogram i Rishikesh, tystnad, egen övning, meditation, karma yoga och Bhagavad Gita i traditionell ashramrytm. Från 699 € all-inclusive.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };

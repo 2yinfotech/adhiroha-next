@@ -10,22 +10,22 @@ const DA = "/da/sadhana-fordybelsesprogram/";
 const EN = "/sadhana-immersion-programme/";
 
 export const metadata = {
-  title: "Sadhana fordybelsesprogram i Rishikesh | 15 dage — Adhiroha",
+  title: "Sadhana fordybelsesprogram i Rishikesh | 15 dage | Adhiroha",
   description:
-    "Femten dages sadhana-fordybelse med ophold i Rishikesh — stilhed, egen praksis, meditation, karma yoga og Bhagavad Gita i traditionel ashram-disciplin. Fra 699 € alt inklusive.",
+    "Femten dages sadhana-fordybelse med ophold i Rishikesh, stilhed, egen praksis, meditation, karma yoga og Bhagavad Gita i traditionel ashram-disciplin. Fra 699 € alt inklusive.",
   alternates: {
     canonical: DA,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "da_DK", url: `${SITE}${DA}`,
-    title: "Sadhana fordybelsesprogram i Rishikesh | 15 dage — Adhiroha",
-    description: "Femten dages sadhana-fordybelse med ophold i Rishikesh — stilhed, egen praksis, meditation, karma yoga og Bhagavad Gita i traditionel ashram-disciplin. Fra 699 € alt inklusive.",
+    title: "Sadhana fordybelsesprogram i Rishikesh | 15 dage | Adhiroha",
+    description: "Femten dages sadhana-fordybelse med ophold i Rishikesh, stilhed, egen praksis, meditation, karma yoga og Bhagavad Gita i traditionel ashram-disciplin. Fra 699 € alt inklusive.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sadhana fordybelsesprogram i Rishikesh | 15 dage — Adhiroha",
-    description: "Femten dages sadhana-fordybelse med ophold i Rishikesh — stilhed, egen praksis, meditation, karma yoga og Bhagavad Gita i traditionel ashram-disciplin. Fra 699 € alt inklusive.",
+    title: "Sadhana fordybelsesprogram i Rishikesh | 15 dage | Adhiroha",
+    description: "Femten dages sadhana-fordybelse med ophold i Rishikesh, stilhed, egen praksis, meditation, karma yoga og Bhagavad Gita i traditionel ashram-disciplin. Fra 699 € alt inklusive.",
     images: ["/img/yoga-teacher-training-india-course.webp"],
   },
 };
