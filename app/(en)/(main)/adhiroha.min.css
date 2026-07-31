@@ -59,3 +59,26 @@
 .rl-note{margin-top:10px;font-size:13.5px;font-weight:300;line-height:1.65;color:var(--body)}
 @media(max-width:1000px){.rl-grid{grid-template-columns:1fr 1fr;gap:30px}}
 @media(max-width:640px){.rl-sec{padding:56px 0 62px}.rl-grid{grid-template-columns:1fr;gap:0}.rl-card{padding:18px 0;border-top:none}.rl-card+.rl-card{border-top:1px solid var(--line)}.rl-link{font-size:17px}}
+
+/* ===================================================================
+   YOGA ALLIANCE — RYS 200 / 300 / 500  (sub-pages)
+   Footer badge row on every page, plus the certificate card on the
+   200/300/500 course pages. Mirrors app/_home/styles.css.
+   =================================================================== */
+.ftr-rys{display:block;margin-top:22px;text-decoration:none}
+.ftr-rys-badges{display:flex;align-items:center;gap:9px}
+.ftr-rys .rys-b{width:52px;height:52px;display:block;filter:brightness(0) invert(1);opacity:.82;transition:opacity .25s}
+.ftr-rys:hover .rys-b{opacity:1}
+.ftr-rys-t{display:block;margin-top:11px;font-size:11.5px;font-weight:300;letter-spacing:.3px;line-height:1.7;color:#b3a99d}
+.ftr-rys:hover .ftr-rys-t{color:#d8cfc2}
+
+/* The real registration badge replaces the generic seal icon the card used
+   to draw — the point of this card is the credential, so show the credential.
+   The card is centre-aligned, so the badge and the link centre with it. */
+.cert-rys{width:80px;height:80px;display:block;margin:0 auto 16px}
+.cert-verify{display:inline-flex;align-items:center;gap:7px;margin-top:16px;
+  border:1px solid var(--rust);border-radius:30px;padding:8px 17px;
+  font-size:12px;font-weight:500;letter-spacing:.3px;text-decoration:none;
+  color:var(--rust);background:transparent;transition:background .25s,color .25s}
+.cert-verify:hover{background:var(--rust);color:#fff}
+@media(max-width:520px){.cert-rys{width:66px;height:66px}}
