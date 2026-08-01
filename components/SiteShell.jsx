@@ -1,4 +1,4 @@
-import Script from "next/script";
+import Analytics from "@/components/Analytics";
 import JsonLd from "@/components/JsonLd";
 import LeafletOnDemand from "@/components/LeafletOnDemand";
 import { graph, organizationSchema, websiteSchema } from "@/lib/seo";
@@ -12,21 +12,6 @@ import { graph, organizationSchema, websiteSchema } from "@/lib/seo";
 // layout per locale (app/(en), app/de, app/fr, …), each passing its own `lang`
 // here, so the attribute is correct in the served HTML rather than patched in
 // by client-side JS after paint.
-
-// Hotjar (heatmaps + session recordings). Lives in <head> so it loads on every
-// page in the app, which is what Hotjar's install check looks for. The site id
-// is public by design; override it per-environment with NEXT_PUBLIC_HOTJAR_ID.
-const HOTJAR_ID = process.env.NEXT_PUBLIC_HOTJAR_ID || "5139050";
-const HOTJAR_SCRIPT = `
-(function(h,o,t,j,a,r){
-    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-    h._hjSettings={hjid:${HOTJAR_ID},hjsv:6};
-    a=o.getElementsByTagName('head')[0];
-    r=o.createElement('script');r.async=1;
-    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-    a.appendChild(r);
-})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-`;
 
 // Contact-form handler as a plain inline script (NOT a React client component):
 // the forms live in server-rendered HTML with action="#", and if we waited for
@@ -83,10 +68,8 @@ export default function SiteShell({ lang, children }) {
       </head>
       <body>
         {children}
-        {/* Hotjar: analytics, so it must never compete with first paint. Loading
-            it lazily still records the whole session — Hotjar backfills events
-            once it initialises — but keeps it off the critical path. */}
-        <Script id="hotjar" strategy="lazyOnload" dangerouslySetInnerHTML={{ __html: HOTJAR_SCRIPT }} />
+        {/* Hotjar, minus the blog. See components/Analytics. */}
+        <Analytics />
         {/* Fetches Leaflet only when a map is about to scroll into view. Must
             sit after {children} so the page's own scripts have registered their
             `adhiroha:leaflet` listener before this can dispatch it. */}
