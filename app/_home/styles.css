@@ -4905,93 +4905,96 @@
 .ftr-rys:hover .ftr-rys-t{color:#d8cfc2}
 
 /* ===================================================================
-   SCHOOL TOUR VIDEO  (replaces the old #welcome photo banner)
+   SCHOOL TOUR  —  dark editorial split
    ===================================================================
-   The strip runs edge to edge and is deliberately shorter than 16:9 —
-   a full-bleed 16:9 is a whole screen tall. The poster and the muted
-   preview are cropped to fill it; the film gets its true 16:9 in the
-   lightbox, where there is room for it.
+   Third structure, not a third coat of paint. The two earlier versions
+   were both "heading on top, wide banner underneath", and cropping the
+   film into a short strip threw away the framing of the shot. Here the
+   panel goes dark so the forest footage reads, the film keeps its real
+   16:9, and the copy and facts sit beside it instead of stacking.
    =================================================================== */
-.tour{position:relative;padding:86px 0 0;text-align:center;overflow:hidden}
+.tour{position:relative;padding:clamp(64px,7vw,104px) 0;overflow:hidden;
+  background:#181310;isolation:isolate;--fgold:#c99a63}
+/* warm light coming from behind the film, so the panel is not a flat slab */
+.tour::before,.tour::after{content:"";position:absolute;z-index:-1;border-radius:50%;
+  pointer-events:none;filter:blur(80px)}
+.tour::before{width:52vw;height:52vw;max-width:720px;max-height:720px;top:-18%;right:-12%;
+  background:radial-gradient(circle,rgba(201,154,99,.42),transparent 66%);
+  animation:tourGlowA 24s ease-in-out infinite alternate}
+.tour::after{width:44vw;height:44vw;max-width:600px;max-height:600px;bottom:-22%;left:-10%;
+  background:radial-gradient(circle,rgba(237,28,37,.3),transparent 68%);
+  animation:tourGlowB 30s ease-in-out infinite alternate}
+@keyframes tourGlowA{to{transform:translate3d(-7%,10%,0) scale(1.12)}}
+@keyframes tourGlowB{to{transform:translate3d(9%,-8%,0) scale(1.16)}}
 
-/* A plain cream band under a dark video looked flat, so the section carries
-   its own light: two slow-drifting warm pools behind the copy. Purely
-   decorative, and it holds still for anyone who asks it to. */
-.tour::before,.tour::after{content:"";position:absolute;z-index:0;border-radius:50%;
-  pointer-events:none;filter:blur(64px);opacity:.72}
-.tour::before{width:46vw;height:46vw;max-width:640px;max-height:640px;top:-14%;left:-10%;
-  background:radial-gradient(circle,rgba(237,28,37,.16),transparent 68%);
-  animation:tourDriftA 26s ease-in-out infinite alternate}
-.tour::after{width:40vw;height:40vw;max-width:560px;max-height:560px;top:6%;right:-8%;
-  background:radial-gradient(circle,rgba(201,154,99,.28),transparent 68%);
-  animation:tourDriftB 32s ease-in-out infinite alternate}
-@keyframes tourDriftA{to{transform:translate3d(9%,14%,0) scale(1.14)}}
-@keyframes tourDriftB{to{transform:translate3d(-11%,10%,0) scale(1.1)}}
+.tour-grid{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);
+  gap:clamp(32px,4vw,64px);align-items:center;position:relative;z-index:1}
 
-.tour-head{position:relative;z-index:1;max-width:1020px;margin:0 auto 40px;padding:0 24px}
-.tour-head .sec-h{color:var(--ink);max-width:24ch;margin:0 auto 14px}
-.tour-lead{margin:0;font-size:16.5px;font-weight:300;line-height:1.7;color:var(--body)}
+.tour-copy .kicker{color:var(--fgold)}
+.tour-copy .sec-h{color:#f6efe5;max-width:15ch;margin-bottom:16px}
+.tour-lead{margin:0;font-size:16.5px;font-weight:300;line-height:1.75;color:#c4b8a9;max-width:34ch}
 
-.tour-video{position:relative;z-index:1;width:100%;overflow:hidden;
-  border-top:1px solid rgba(201,154,99,.5);border-bottom:1px solid rgba(201,154,99,.5)}
-.tv-frame{position:relative;height:clamp(320px,52vh,560px);overflow:hidden;background:#1a1410}
-.tv-poster,.tv-embed{position:absolute;inset:0;display:block;border:0}
-.tv-poster{width:100%;height:100%;object-fit:cover}
-/* 16:9 sized to the viewport, centred and cropped by the shorter strip, so the
-   preview fills the band instead of letterboxing inside it. */
-.tv-embed{top:50%;left:50%;transform:translate(-50%,-50%);
-  width:100vw;height:56.25vw;min-height:100%;min-width:177.78%;pointer-events:none}
+.tour-facts{list-style:none;margin:30px 0 0;padding:26px 0 0;display:grid;gap:15px;
+  border-top:1px solid rgba(201,154,99,.28)}
+.tour-facts li{display:flex;align-items:center;gap:13px;
+  font-size:13.5px;font-weight:300;letter-spacing:.2px;color:#d6cabb}
+.tv-fact-ic{display:inline-flex;width:34px;height:34px;flex:none;border-radius:50%;
+  align-items:center;justify-content:center;color:var(--fgold);
+  background:rgba(201,154,99,.14);border:1px solid rgba(201,154,99,.3)}
+.tv-fact-ic svg{width:16px;height:16px}
 
-/* how much of the silent preview is left */
+/* ---------- the film ---------- */
+.tour-stage{position:relative}
+.tour-video{position:relative;border-radius:16px;overflow:hidden;
+  box-shadow:0 46px 90px -40px rgba(0,0,0,.9),0 0 0 1px rgba(201,154,99,.34)}
+.tv-frame{position:relative;aspect-ratio:16/9;overflow:hidden;background:#0d0a08}
+.tv-poster,.tv-embed{position:absolute;inset:0;width:100%;height:100%;display:block;border:0}
+.tv-poster{object-fit:cover}
+.tv-embed{pointer-events:none}
+
 .tv-progress{position:absolute;left:0;right:0;bottom:0;height:3px;z-index:3;
-  background:rgba(255,255,255,.16);opacity:0;transition:opacity .4s}
+  background:rgba(255,255,255,.14);opacity:0;transition:opacity .4s}
 .tv-progress i{display:block;height:100%;width:100%;transform:scaleX(0);transform-origin:0 50%;
   background:linear-gradient(90deg,var(--fgold),var(--rust))}
 .is-previewing .tv-progress{opacity:1}
 
 .tv-overlay{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;
   align-items:center;justify-content:center;border:0;cursor:pointer;color:#fff;font:inherit;
-  background:linear-gradient(180deg,rgba(26,20,16,.24),rgba(26,20,16,.54));
+  background:radial-gradient(circle at 50% 50%,rgba(24,19,16,.06),rgba(24,19,16,.46));
   transition:background .4s}
-.tv-overlay:hover{background:linear-gradient(180deg,rgba(26,20,16,.32),rgba(26,20,16,.6))}
-.tv-play{position:relative;width:78px;height:78px;border-radius:50%;display:flex;
+.tv-overlay:hover{background:radial-gradient(circle at 50% 50%,rgba(24,19,16,.14),rgba(24,19,16,.54))}
+.tv-play{position:relative;width:74px;height:74px;border-radius:50%;display:flex;
   align-items:center;justify-content:center;background:var(--rust);
-  box-shadow:0 18px 42px -14px rgba(237,28,37,.85);
+  box-shadow:0 16px 40px -12px rgba(237,28,37,.9);
   transition:transform .35s cubic-bezier(.22,.61,.36,1)}
-/* a ring that keeps breathing outward, so the control reads as live */
 .tv-play::before,.tv-play::after{content:"";position:absolute;inset:0;border-radius:50%;
-  border:2px solid rgba(237,28,37,.55);animation:tvPulse 2.8s ease-out infinite}
+  border:2px solid rgba(237,28,37,.6);animation:tvPulse 2.8s ease-out infinite}
 .tv-play::after{animation-delay:1.4s}
-@keyframes tvPulse{0%{transform:scale(1);opacity:.75}100%{transform:scale(1.85);opacity:0}}
-.tv-play svg{width:28px;height:28px;margin-left:4px}
+@keyframes tvPulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.9);opacity:0}}
+.tv-play svg{width:26px;height:26px;margin-left:4px}
 .tv-overlay:hover .tv-play{transform:scale(1.09)}
-.tv-label{position:absolute;left:0;right:0;bottom:26px;
-  font-size:12.5px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;
-  text-shadow:0 2px 12px rgba(0,0,0,.65);transition:opacity .4s}
-/* while the silent preview runs, stay out of its way but stay clickable */
-.is-previewing .tv-overlay{background:linear-gradient(180deg,transparent,rgba(26,20,16,.3))}
-.is-previewing .tv-play{transform:scale(.66);opacity:.92}
+.tv-label{position:absolute;left:0;right:0;bottom:22px;
+  font-size:11.5px;font-weight:500;letter-spacing:1.9px;text-transform:uppercase;
+  color:#f2e7d8;text-shadow:0 2px 12px rgba(0,0,0,.8);transition:opacity .4s}
+.is-previewing .tv-overlay{background:linear-gradient(180deg,transparent 55%,rgba(24,19,16,.5))}
+.is-previewing .tv-play{transform:scale(.64);opacity:.9}
 .is-previewing .tv-play::before,.is-previewing .tv-play::after{animation:none;opacity:0}
 .is-previewing .tv-label{opacity:0}
 
-/* supporting facts, each already stated elsewhere on the site */
-.tour-facts{position:relative;z-index:1;display:flex;justify-content:center;flex-wrap:wrap;
-  gap:14px 44px;margin:0;padding:26px 24px 4px;list-style:none}
-.tour-facts li{display:inline-flex;align-items:center;gap:10px;
-  font-size:13px;font-weight:400;letter-spacing:.3px;color:var(--body)}
-.tv-fact-ic{display:inline-flex;width:30px;height:30px;flex:none;border-radius:50%;
-  align-items:center;justify-content:center;background:rgba(201,154,99,.16);color:var(--rust-dark)}
-.tv-fact-ic svg{width:16px;height:16px}
+/* the whole stage lifts in rather than just fading */
+.tour-stage{opacity:0;transform:translateY(26px) scale(.985);
+  transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1)}
+.tour-stage.in{opacity:1;transform:none}
 
 /* ---------- lightbox ---------- */
 .tv-modal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;
   justify-content:center;padding:clamp(16px,4vw,56px);
-  background:rgba(14,10,8,.9);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+  background:rgba(12,9,7,.92);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
 .tv-modal.open{display:flex;animation:tvIn .28s ease}
 @keyframes tvIn{from{opacity:0}to{opacity:1}}
 .tv-modal-box{width:min(1240px,100%);aspect-ratio:16/9;max-height:100%;
   border-radius:14px;overflow:hidden;background:#000;
-  box-shadow:0 50px 110px -40px rgba(0,0,0,.9);animation:tvRise .34s cubic-bezier(.22,.61,.36,1)}
+  box-shadow:0 50px 110px -40px rgba(0,0,0,.95);animation:tvRise .34s cubic-bezier(.22,.61,.36,1)}
 @keyframes tvRise{from{transform:translateY(18px) scale(.985);opacity:0}to{transform:none;opacity:1}}
 .tv-modal-frame,.tv-modal-frame iframe,#tv-player{width:100%;height:100%;border:0;display:block}
 .tv-modal-x{position:absolute;top:clamp(12px,3vw,26px);right:clamp(12px,3vw,26px);
@@ -5000,23 +5003,23 @@
   background:rgba(255,255,255,.1);color:#fff;transition:background .25s,transform .25s}
 .tv-modal-x:hover{background:rgba(255,255,255,.22);transform:rotate(90deg)}
 
-@media(max-width:900px){
-  .tour{padding:64px 0 0}
-  .tour-head{margin-bottom:30px}
-  .tv-frame{height:clamp(230px,38vh,360px)}
-  .tv-play{width:62px;height:62px}
-  .tv-play svg{width:23px;height:23px}
-  .tv-label{font-size:11px;letter-spacing:1.4px;bottom:16px}
-  .tour-facts{gap:12px 26px;padding:22px 20px 2px}
-  .tour-facts li{font-size:12px}
+@media(max-width:1000px){
+  .tour-grid{grid-template-columns:1fr;gap:34px}
+  .tour-copy{text-align:center}
+  .tour-copy .sec-h,.tour-lead{max-width:none;margin-left:auto;margin-right:auto}
+  .tour-lead{max-width:52ch}
+  .tour-facts{justify-items:center;max-width:340px;margin-inline:auto}
+  .tour-facts li{width:100%}
 }
-@media(max-width:520px){
-  .tv-play{width:54px;height:54px}
-  .tv-label{display:none}
-  .tour-facts{flex-direction:column;align-items:flex-start;max-width:300px;margin:0 auto}
+@media(max-width:640px){
+  .tv-play{width:60px;height:60px}
+  .tv-play svg{width:22px;height:22px}
+  .tv-label{font-size:10.5px;letter-spacing:1.4px;bottom:14px}
+  .tour-facts li{font-size:12.5px}
 }
 @media(prefers-reduced-motion:reduce){
   .tour::before,.tour::after{animation:none}
   .tv-play::before,.tv-play::after{animation:none;opacity:0}
   .tv-modal-box{animation:none}
+  .tour-stage{opacity:1;transform:none;transition:none}
 }
