@@ -1,0 +1,354 @@
+/* ===================================================================
+   Paid-campaign landing page.
+   Self-contained on purpose: it does not pull adhiroha.min.css, because
+   that stylesheet is ~400 KB and exists to style navigation this page
+   does not have. Only the four font faces the page actually paints are
+   declared here.
+   =================================================================== */
+@font-face{font-family:'Playfair Display';src:url('/fonts/playfair-display-600.woff2') format('woff2');
+  font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Playfair Display';src:url('/fonts/playfair-display-500.woff2') format('woff2');
+  font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Poppins';src:url('/fonts/poppins-300.woff2') format('woff2');
+  font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Poppins';src:url('/fonts/poppins-500.woff2') format('woff2');
+  font-weight:500;font-style:normal;font-display:swap}
+
+.lp{--rust:#ed1c25;--ink:#2c2723;--body:#6b6660;--cream:#f5efe6;--bar:#fbf8f3;
+  --line:#e2dccf;--gold:#c99a63;
+  font-family:'Poppins',system-ui,-apple-system,sans-serif;color:var(--body);
+  font-weight:300;line-height:1.7;background:#fff}
+.lp h1,.lp h2,.lp h3{font-family:'Playfair Display',Georgia,serif;color:var(--ink);
+  font-weight:600;line-height:1.15;margin:0}
+.lp p{margin:0}
+.lp-wrap{width:min(1180px,100% - 40px);margin:0 auto}
+.lp-kicker{display:block;font-size:10.5px;font-weight:500;letter-spacing:2.6px;
+  text-transform:uppercase;color:var(--rust);margin-bottom:12px}
+.lp-head{max-width:760px;margin:0 auto 42px;text-align:center}
+.lp-head h2{font-size:clamp(26px,3.2vw,38px)}
+.lp-sec{padding:clamp(58px,7vw,92px) 0}
+.lp-sec-alt{background:var(--bar)}
+
+/* ---------------- hero ---------------- */
+.lp-hero{position:relative;isolation:isolate;padding:clamp(30px,4vw,54px) 0 clamp(50px,6vw,78px);
+  min-height:clamp(600px,86vh,900px);display:flex;align-items:center}
+.lp-hero-bg,.lp-hero-shade{position:absolute;inset:0;z-index:-1}
+.lp-hero-bg{width:100%;height:100%;object-fit:cover;object-position:center 38%}
+.lp-hero-shade{background:linear-gradient(100deg,rgba(20,15,12,.9) 0%,rgba(20,15,12,.74) 42%,rgba(20,15,12,.34) 100%)}
+.lp-hero-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,478px);
+  gap:clamp(30px,4vw,64px);align-items:center}
+.lp-logo{width:190px;height:auto;margin-bottom:26px}
+.lp-hero-copy h1{color:#fff;font-size:clamp(31px,4.3vw,54px);max-width:15ch}
+.lp-sub{margin-top:18px;font-size:clamp(15px,1.3vw,17px);line-height:1.75;
+  color:#ded4c7;max-width:46ch}
+.lp-ticks{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:11px}
+.lp-ticks li{position:relative;padding-left:30px;font-size:14.5px;color:#efe7dc}
+.lp-ticks li::before{content:"";position:absolute;left:0;top:8px;width:18px;height:18px;
+  border-radius:50%;background:var(--rust);
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
+  background-size:12px;background-repeat:no-repeat;background-position:center}
+.lp-badges{display:flex;align-items:center;gap:12px;margin-top:30px;flex-wrap:wrap}
+.lp-badge{width:56px;height:56px;filter:brightness(0) invert(1);opacity:.92}
+.lp-badge-t{font-size:11.5px;line-height:1.45;color:#cfc4b6;letter-spacing:.3px}
+.lp-badge-t b{display:block;color:var(--gold);font-weight:500;letter-spacing:1px}
+
+/* ---------------- the form ---------------- */
+.lp-form-wrap{position:relative}
+.lf{background:#fff;border-radius:18px;padding:30px 28px 26px;
+  box-shadow:0 40px 90px -40px rgba(0,0,0,.8)}
+.lf-h{font-size:23px;margin-bottom:6px}
+.lf-sub{font-size:13px;line-height:1.6;color:var(--body);margin-bottom:20px}
+.lf-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.lf-field{display:block;min-width:0}
+.lf-field>span{display:block;font-size:11.5px;font-weight:500;letter-spacing:.4px;
+  color:var(--ink);margin-bottom:6px}
+.lf-field>span i{font-style:normal;font-weight:300;color:#9b948b}
+.lf-field input,.lf-field select{width:100%;border:1px solid var(--line);border-radius:9px;
+  padding:11px 12px;font:inherit;font-size:14px;color:var(--ink);background:#fff;
+  transition:border-color .2s,box-shadow .2s}
+.lf-field input::placeholder{color:#b3aca3}
+.lf-field input:focus,.lf-field select:focus{outline:none;border-color:var(--rust);
+  box-shadow:0 0 0 3px rgba(237,28,37,.12)}
+.lf-send{width:100%;margin-top:8px;border:0;border-radius:30px;cursor:pointer;
+  background:var(--rust);color:#fff;font:inherit;font-size:14px;font-weight:500;
+  letter-spacing:.8px;text-transform:uppercase;padding:15px 20px;
+  box-shadow:0 16px 32px -14px rgba(237,28,37,.75);
+  transition:transform .22s,box-shadow .22s,opacity .22s}
+.lf-send:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 22px 40px -14px rgba(237,28,37,.85)}
+.lf-send:disabled{opacity:.65;cursor:default}
+.lf-err{margin-top:12px;font-size:13px;color:#c0392b}
+.lf-privacy{margin-top:14px;font-size:11px;line-height:1.6;color:#9b948b}
+.lf-compact .lf-sub{margin-bottom:16px}
+
+.lf-done{text-align:center;padding:44px 30px}
+.lf-tick{width:58px;height:58px;border-radius:50%;background:#2e7d32;color:#fff;
+  display:inline-flex;align-items:center;justify-content:center;margin-bottom:18px}
+.lf-tick svg{width:28px;height:28px}
+.lf-done h3{font-size:23px;margin-bottom:10px}
+.lf-done p{font-size:14px;line-height:1.75}
+
+/* ---------------- trust strip ---------------- */
+.lp-trust{background:var(--ink);color:#e7ded1}
+.lp-trust-in{display:flex;align-items:center;justify-content:center;gap:clamp(22px,5vw,64px);
+  flex-wrap:wrap;padding:24px 0}
+.lp-stat{text-align:center}
+.lp-stat b{display:block;font-family:'Playfair Display',serif;font-size:27px;color:#fff}
+.lp-stat span{font-size:11.5px;letter-spacing:.6px;color:#a99f92}
+.lp-orgs{display:flex;align-items:center;gap:16px}
+.lp-orgs img{width:44px;height:44px;object-fit:contain;background:#fff;border-radius:50%;padding:5px}
+
+/* ---------------- what is inside ---------------- */
+.lp-split{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  gap:clamp(30px,4vw,60px);align-items:center}
+.lp-split h2{font-size:clamp(25px,3vw,36px);max-width:18ch}
+.lp-inside{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:18px}
+.lp-inside li{display:flex;gap:14px;align-items:flex-start}
+.lp-inside-ic{flex:none;width:26px;height:26px;border-radius:50%;background:rgba(237,28,37,.1);
+  color:var(--rust);display:inline-flex;align-items:center;justify-content:center;margin-top:2px}
+.lp-inside-ic svg{width:14px;height:14px}
+.lp-inside b{display:block;font-weight:500;color:var(--ink);font-size:15px;margin-bottom:3px}
+.lp-inside p{font-size:13.5px;line-height:1.65}
+.lp-figure{margin:0;border-radius:18px;overflow:hidden;
+  box-shadow:0 40px 80px -44px rgba(44,39,35,.7)}
+.lp-figure img{display:block;width:100%;height:auto;object-fit:cover;aspect-ratio:4/3}
+
+/* ---------------- why cards ---------------- */
+.lp-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.lp-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  transition:transform .4s cubic-bezier(.22,.61,.36,1),box-shadow .4s}
+.lp-card:hover{transform:translateY(-5px);box-shadow:0 30px 56px -30px rgba(44,39,35,.45)}
+.lp-card img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+.lp-card-b{padding:22px 22px 24px}
+.lp-card h3{font-size:19px;margin-bottom:9px}
+.lp-card p{font-size:13.5px;line-height:1.7}
+
+/* ---------------- quotes ---------------- */
+.lp-quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.lp-quote{margin:0;background:#fff;border:1px solid var(--line);border-radius:16px;
+  padding:26px 24px;box-shadow:0 14px 34px -26px rgba(44,39,35,.4)}
+.lp-stars{display:flex;gap:3px;color:#FBBC05;margin-bottom:14px}
+.lp-stars svg{width:15px;height:15px}
+.lp-quote blockquote{margin:0 0 16px;font-size:14px;line-height:1.75;color:var(--body)}
+.lp-quote figcaption b{display:block;font-weight:500;color:var(--ink);font-size:14px}
+.lp-quote figcaption span{font-size:12px;color:#9b948b}
+
+/* ---------------- faq ---------------- */
+.lp-faq-wrap{max-width:840px}
+.lp-faq details{background:#fff;border:1px solid var(--line);border-radius:12px;
+  margin-bottom:10px;overflow:hidden}
+.lp-faq summary{list-style:none;cursor:pointer;padding:18px 22px;font-size:15px;
+  font-weight:500;color:var(--ink);display:flex;align-items:center;justify-content:space-between;gap:16px}
+.lp-faq summary::-webkit-details-marker{display:none}
+.lp-faq summary span{flex:none;width:16px;height:16px;position:relative}
+.lp-faq summary span::before,.lp-faq summary span::after{content:"";position:absolute;
+  background:var(--rust);border-radius:2px;transition:transform .25s}
+.lp-faq summary span::before{inset:7px 0;height:2px}
+.lp-faq summary span::after{inset:0 7px;width:2px}
+.lp-faq details[open] summary span::after{transform:scaleY(0)}
+.lp-faq details p{padding:0 22px 20px;font-size:14px;line-height:1.75}
+
+/* ---------------- closing ---------------- */
+.lp-close{background:var(--cream);padding:clamp(58px,7vw,92px) 0}
+.lp-close-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,478px);
+  gap:clamp(30px,4vw,60px);align-items:center}
+.lp-close-copy h2{font-size:clamp(26px,3.2vw,38px);max-width:14ch;margin-bottom:16px}
+.lp-close-copy p{font-size:15px;line-height:1.8;max-width:44ch}
+.lp-call{display:inline-flex;align-items:center;gap:11px;margin-top:24px;
+  border:1px solid var(--ink);border-radius:30px;padding:13px 24px;text-decoration:none;
+  color:var(--ink);font-size:15px;font-weight:500;letter-spacing:.4px;
+  transition:background .25s,color .25s}
+.lp-call svg{width:18px;height:18px}
+.lp-call:hover{background:var(--ink);color:#fff}
+
+.lp-foot{background:var(--ink);color:#a99f92;padding:26px 0;text-align:center}
+.lp-foot p{font-size:12.5px;line-height:1.7}
+.lp-foot-sm{margin-top:6px;font-size:11.5px;color:#847b70}
+
+/* ---------------- responsive ---------------- */
+@media(max-width:1000px){
+  .lp-hero-in,.lp-split,.lp-close-in{grid-template-columns:1fr}
+  .lp-hero{min-height:0;padding-bottom:44px}
+  .lp-hero-shade{background:linear-gradient(180deg,rgba(20,15,12,.86),rgba(20,15,12,.82))}
+  .lp-hero-copy h1,.lp-sub{max-width:none}
+  .lp-cards,.lp-quotes{grid-template-columns:1fr 1fr}
+  .lp-split .lp-figure{order:-1}
+  .lp-close-copy h2,.lp-close-copy p{max-width:none}
+}
+@media(max-width:680px){
+  .lp-cards,.lp-quotes{grid-template-columns:1fr}
+  .lf-row{grid-template-columns:1fr}
+  .lf{padding:24px 20px 22px}
+  .lp-logo{width:150px;margin-bottom:20px}
+  .lp-trust-in{gap:20px}
+  .lp-stat b{font-size:23px}
+}
+
+/* ===================================================================
+   Expanded sections
+   =================================================================== */
+.lp-lead{margin:16px 0 0;font-size:15.5px;line-height:1.8;max-width:48ch}
+.lp-note{margin:34px auto 0;max-width:56ch;text-align:center;font-size:14px;
+  line-height:1.75;color:var(--body)}
+.lp-pill{display:inline-block;margin-bottom:10px;padding:5px 13px;border-radius:20px;
+  background:rgba(237,28,37,.09);color:var(--rust);
+  font-size:11px;font-weight:500;letter-spacing:1.1px;text-transform:uppercase}
+
+/* two stacked figures beside a text column */
+.lp-figstack{display:grid;gap:18px}
+.lp-figure-sm{max-width:74%;justify-self:end}
+.lp-split-rev .lp-figure-sm{justify-self:start}
+
+/* ---------------- gallery band ---------------- */
+.lp-gallery{padding:clamp(58px,7vw,92px) 0 0;background:#fff}
+.lp-grid8{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:8px}
+.lp-grid8 figure{margin:0;overflow:hidden;position:relative}
+.lp-grid8 img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;
+  transition:transform .7s cubic-bezier(.22,.61,.36,1)}
+.lp-grid8 figure:hover img{transform:scale(1.06)}
+
+/* ---------------- a day here ---------------- */
+.lp-day{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.lp-day-item{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  transition:transform .4s cubic-bezier(.22,.61,.36,1),box-shadow .4s}
+.lp-day-item:hover{transform:translateY(-4px);box-shadow:0 28px 52px -30px rgba(44,39,35,.42)}
+.lp-day-item img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+.lp-day-b{padding:20px 22px 22px}
+.lp-day-t{display:inline-block;font-family:'Playfair Display',serif;font-size:19px;
+  color:var(--rust);margin-bottom:6px}
+.lp-day-b h3{font-size:17px;margin-bottom:8px}
+.lp-day-b p{font-size:13.5px;line-height:1.7}
+
+/* ---------------- mid-page CTA band ---------------- */
+.lp-band{position:relative;isolation:isolate;padding:clamp(64px,8vw,110px) 0;text-align:center}
+.lp-band-bg,.lp-band-shade{position:absolute;inset:0;z-index:-1}
+.lp-band-bg{width:100%;height:100%;object-fit:cover}
+.lp-band-shade{background:linear-gradient(180deg,rgba(20,15,12,.78),rgba(20,15,12,.86))}
+.lp-band-in h2{color:#fff;font-size:clamp(27px,3.4vw,40px);max-width:18ch;margin:0 auto 14px}
+.lp-band-in p{color:#ded4c7;font-size:15.5px;line-height:1.75;max-width:52ch;margin:0 auto}
+.lp-band-btn{display:inline-block;margin-top:26px;border-radius:30px;padding:15px 34px;
+  background:var(--rust);color:#fff;text-decoration:none;font-size:14px;font-weight:500;
+  letter-spacing:.9px;text-transform:uppercase;
+  box-shadow:0 18px 36px -14px rgba(237,28,37,.8);transition:transform .22s,box-shadow .22s}
+.lp-band-btn:hover{transform:translateY(-2px);box-shadow:0 24px 44px -14px rgba(237,28,37,.9)}
+
+/* ---------------- certification ---------------- */
+.lp-cert{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
+  gap:clamp(30px,4vw,60px);align-items:center}
+.lp-cert-copy h2{font-size:clamp(25px,3vw,36px);max-width:16ch}
+.lp-cert-marks{display:grid;gap:16px;margin-top:26px}
+.lp-cert-marks div{display:flex;align-items:center;gap:14px}
+.lp-cert-marks img{width:46px;height:46px;object-fit:contain;flex:none}
+.lp-cert-marks span{font-size:13px;line-height:1.5;color:var(--body)}
+.lp-cert-marks b{display:block;font-weight:500;color:var(--ink);font-size:14.5px}
+.lp-cert-badges{display:flex;align-items:center;justify-content:center;gap:clamp(12px,2vw,26px)}
+.lp-cert-badges img{width:clamp(88px,11vw,132px);height:auto}
+
+/* ---------------- teachers ---------------- */
+.lp-teachers{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.lp-teachers figure{margin:0;text-align:center}
+.lp-teachers img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;
+  border-radius:14px;margin-bottom:14px}
+.lp-teachers b{display:block;font-family:'Playfair Display',serif;font-size:16px;
+  font-weight:600;color:var(--ink)}
+.lp-teachers span{display:block;font-size:12.5px;color:var(--body);margin-top:3px}
+.lp-teachers i{display:inline-block;margin-top:7px;font-style:normal;font-size:11px;
+  font-weight:500;letter-spacing:.8px;text-transform:uppercase;color:var(--rust)}
+
+/* closing section image */
+.lp-close-img{margin:28px 0 0;border-radius:16px;overflow:hidden;max-width:440px;
+  box-shadow:0 30px 60px -36px rgba(44,39,35,.6)}
+.lp-close-img img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+
+.lp-cards-3{grid-template-columns:repeat(3,1fr)}
+
+@media(max-width:1000px){
+  .lp-grid8{grid-template-columns:repeat(3,1fr)}
+  .lp-day{grid-template-columns:1fr 1fr}
+  .lp-cert{grid-template-columns:1fr;text-align:center}
+  .lp-cert-copy h2,.lp-cert-copy .lp-lead{max-width:none;margin-left:auto;margin-right:auto}
+  .lp-cert-marks div{justify-content:center}
+  .lp-teachers{grid-template-columns:repeat(2,1fr)}
+  .lp-split-rev .lp-figstack{order:-1}
+  .lp-figure-sm{max-width:100%;justify-self:stretch}
+  .lp-close-img{max-width:none}
+}
+@media(max-width:680px){
+  .lp-grid8{grid-template-columns:repeat(2,1fr);gap:8px}
+  .lp-day,.lp-cards-3{grid-template-columns:1fr}
+  .lp-lead{max-width:none}
+}
+
+/* ===================================================================
+   Section variety — the ornaments and compositions the main site uses.
+   The first pass repeated one three-column card grid six times, which
+   is what made the page read as a template.
+   =================================================================== */
+
+/* flourished kicker */
+.lpk{display:inline-flex;align-items:center;gap:11px;margin-bottom:12px;
+  font-size:10.5px;font-weight:500;letter-spacing:2.6px;text-transform:uppercase;color:var(--rust)}
+.lpk-orn{flex:none;opacity:.85}
+.lpk-orn.flip{transform:scaleX(-1)}
+.lpk-light{color:var(--gold)}
+.lp-head .lpk{justify-content:center}
+
+/* sunburst rule under a centred heading */
+.lp-sun{display:block;margin:18px auto 0;color:#e0a83c}
+.lp-head .lp-sun{margin-bottom:4px}
+
+/* ---------------- gallery: a mosaic, not a uniform grid ----------------
+   8 tiles tiling 4 columns x 3 rows exactly: one 2x2 hero, one 2x1 wide,
+   six single cells. Anything else leaves holes in the grid. */
+.lp-grid8{grid-template-columns:repeat(4,1fr);grid-auto-rows:172px;gap:8px}
+.lp-grid8 figure:nth-child(1){grid-column:span 2;grid-row:span 2}
+.lp-grid8 figure:nth-child(6){grid-column:span 2}
+.lp-grid8 img{height:100%;aspect-ratio:auto}
+
+/* ---------------- a day here: numbered editorial list ---------------- */
+.lp-daygrid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+  gap:clamp(30px,4vw,60px);align-items:start}
+.lp-dayfig{position:relative;margin:0;border-radius:18px;overflow:hidden;
+  box-shadow:0 40px 80px -44px rgba(44,39,35,.7)}
+.lp-dayfig img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
+/* a small card riding the bottom corner, as on the site's why section */
+.lp-floatstat{position:absolute;right:-6px;bottom:20px;display:flex;align-items:center;gap:12px;
+  background:#fff;border-radius:12px;padding:13px 18px;
+  box-shadow:0 20px 40px -20px rgba(44,39,35,.55)}
+.lp-floatstat b{font-family:'Playfair Display',serif;font-size:26px;color:var(--rust);line-height:1}
+.lp-floatstat span{font-size:11.5px;line-height:1.4;color:var(--body)}
+
+.lp-daylist{list-style:none;margin:0;padding:0;counter-reset:d}
+.lp-daylist li{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.lp-daylist li:first-child{padding-top:0}
+.lp-daylist li:last-child{border-bottom:0}
+.lp-daynum{flex:none;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;font-size:15px;color:var(--rust)}
+.lp-daytime{display:block;font-size:11px;font-weight:500;letter-spacing:1.6px;
+  color:var(--rust);margin-bottom:5px}
+.lp-daylist h3{font-size:18px;margin-bottom:7px}
+.lp-daylist p{font-size:13.5px;line-height:1.7}
+
+/* ---------------- pill label over an image + chip row ---------------- */
+.lp-card-img{position:relative;overflow:hidden}
+.lp-imgpill{position:absolute;left:16px;bottom:14px;background:#fff;color:var(--rust);
+  border-radius:20px;padding:7px 15px;font-size:10.5px;font-weight:500;
+  letter-spacing:1.4px;text-transform:uppercase;
+  box-shadow:0 10px 22px -12px rgba(44,39,35,.6)}
+.lp-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.lp-chips span{border:1px solid var(--line);border-radius:20px;padding:6px 13px;
+  font-size:11.5px;color:var(--body);background:#fff}
+
+@media(max-width:1000px){
+  .lp-grid8{grid-auto-rows:140px}
+  .lp-daygrid{grid-template-columns:1fr}
+  .lp-dayfig img{aspect-ratio:16/9}
+  .lp-floatstat{right:16px}
+}
+@media(max-width:680px){
+  .lp-grid8{grid-template-columns:repeat(2,1fr);grid-auto-rows:118px}
+  .lp-grid8 figure:nth-child(n){grid-column:span 1;grid-row:span 1}
+  .lp-grid8 figure:nth-child(1){grid-column:span 2;grid-row:span 2}
+  .lp-daylist li{gap:14px}
+  .lp-daynum{width:38px;height:38px;font-size:13px}
+}

@@ -140,3 +140,10 @@
   .hd-langm-panel{min-width:min(80vw,266px)}
 }
 /* == MOBILE NAV END == */
+
+/* The hub page reuses .wt-list for its numbered explainers, but those are plain
+   lists rather than the course page's click-to-open accordion, so the bodies
+   must stay open. Without this every paragraph renders at max-height:0. */
+.wt-list.ix-open .wt-item{cursor:default}
+.wt-list.ix-open .wt-body{max-height:none;overflow:visible;opacity:1;transition:none}
+.wt-list.ix-open .wt-body p{margin-top:8px}
