@@ -44,8 +44,14 @@ const CONTACT_FORM_SCRIPT = `
           note(form,'Thank you! Your message has been sent. We\\u2019ll reply soon.',true);
           // The conversion signal for Tag Manager. Fired here and nowhere else,
           // so a failed send or a bounced validation never counts as a lead.
+          // The email is normalised for enhanced conversions, and omitted rather
+          // than sent empty when the visitor left the field blank. Email only:
+          // no name, phone or address goes into user_data.
           window.dataLayer=window.dataLayer||[];
-          window.dataLayer.push({event:'contact_form_submit',form_location:location.pathname,form_name:'contact_us'});
+          var payload={event:'contact_form_submit',form_location:window.location.pathname,form_name:'contact_us'};
+          var em=(data.email||'').trim().toLowerCase();
+          if(em){payload.user_data={email_address:em};}
+          window.dataLayer.push(payload);
         }
         else{note(form,(res.j&&(res.j.message||res.j.error))||'Something went wrong. Please email info@adhiroha.com.',false);}
       })

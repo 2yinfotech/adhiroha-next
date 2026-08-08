@@ -263,6 +263,16 @@ export default function AdmissionForm() {
     if (method) q.set("method", method);
     if (paymentId) q.set("payment", paymentId);
     if (pending) q.set("pending", "1");
+    // Enhanced conversions need the buyer's email on /thank-you/, but the email
+    // must not travel on the query string: URLs end up in server logs, Referer
+    // headers and browser history. Nor is a lookup-by-code endpoint acceptable,
+    // since booking codes are short enough to enumerate and that would expose
+    // customer emails to anyone who guesses one. sessionStorage keeps it in the
+    // one place it is already allowed to be: this visitor's own tab.
+    try {
+      const payer = String(students?.[0]?.email || "").trim().toLowerCase();
+      if (payer) sessionStorage.setItem("adhiroha:booking_email", payer);
+    } catch { /* private browsing blocks sessionStorage; tracking is optional */ }
     window.location.assign(`/thank-you/?${q.toString()}`);
   }
 

@@ -57,11 +57,13 @@ export default function LeadForm({ id = "lead-form", compact = false }) {
         // Tag Manager's conversion signal for the paid-campaign guide request.
         // Only a confirmed send counts, so a network failure never bills as a lead.
         window.dataLayer = window.dataLayer || [];
+        const normalised = email.trim().toLowerCase();
         window.dataLayer.push({
           event: "lead_form_submit",
           form_location: window.location.pathname,
           form_name: "lp_enquiry",
           course_interest: get("course") || "not specified",
+          ...(normalised ? { user_data: { email_address: normalised } } : {}),
         });
       } else {
         setState("error");

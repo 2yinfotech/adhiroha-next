@@ -36,10 +36,14 @@ export default function ApplicationForm({ type }) {
     // response to wait on. The furthest we can honestly track is the handoff,
     // which is why the event is named _start and not _submit.
     window.dataLayer = window.dataLayer || [];
+    const email = String(data.get("email") || "").trim().toLowerCase();
     window.dataLayer.push({
       event: "application_start",
       form_location: window.location.pathname,
       form_name: `${type}_application`,
+      // Omitted entirely when blank: an empty string matches nothing and only
+      // pollutes the enhanced-conversions match rate.
+      ...(email ? { user_data: { email_address: email } } : {}),
     });
     window.location.href = `mailto:info@adhiroha.com?subject=${encodeURIComponent(TITLES[type])}&body=${encodeURIComponent(lines.join("\n"))}`;
   }
