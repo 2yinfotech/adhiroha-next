@@ -10,6 +10,7 @@
 // only have them compete with the real pages.
 import "../globals.css";
 import Analytics from "@/components/Analytics";
+import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/GoogleTagManager";
 import { SITE } from "@/lib/seo";
 
 export const metadata = {
@@ -25,8 +26,10 @@ export default function LandingLayout({ children }) {
         <link rel="preload" as="font" type="font/woff2" href="/fonts/playfair-display-600.woff2" crossOrigin="" />
         <link rel="preload" as="font" type="font/woff2" href="/fonts/poppins-300.woff2" crossOrigin="" />
         <link rel="preload" as="font" type="font/woff2" href="/fonts/poppins-500.woff2" crossOrigin="" />
+        <GoogleTagManagerHead />
       </head>
       <body>
+        <GoogleTagManagerBody />
         {children}
         <Analytics />
       </body>

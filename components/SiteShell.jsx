@@ -1,4 +1,5 @@
 import Analytics from "@/components/Analytics";
+import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/GoogleTagManager";
 import JsonLd from "@/components/JsonLd";
 import LeafletOnDemand from "@/components/LeafletOnDemand";
 import { graph, organizationSchema, websiteSchema } from "@/lib/seo";
@@ -38,7 +39,14 @@ const CONTACT_FORM_SCRIPT = `
     fetch('/api/contact/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
       .then(function(r){return r.json().catch(function(){return{};}).then(function(j){return{ok:r.ok,j:j};});})
       .then(function(res){
-        if(res.ok&&res.j.ok){form.reset();note(form,'Thank you! Your message has been sent. We\\u2019ll reply soon.',true);}
+        if(res.ok&&res.j.ok){
+          form.reset();
+          note(form,'Thank you! Your message has been sent. We\\u2019ll reply soon.',true);
+          // The conversion signal for Tag Manager. Fired here and nowhere else,
+          // so a failed send or a bounced validation never counts as a lead.
+          window.dataLayer=window.dataLayer||[];
+          window.dataLayer.push({event:'contact_form_submit',form_location:location.pathname,form_name:'contact_us'});
+        }
         else{note(form,(res.j&&(res.j.message||res.j.error))||'Something went wrong. Please email info@adhiroha.com.',false);}
       })
       .catch(function(){note(form,'Network error. Please email us at info@adhiroha.com.',false);})
@@ -63,10 +71,13 @@ export default function SiteShell({ lang, children }) {
         {/* Sitewide structured data: who we are, and the site itself. Per-page
             schema (Course, FAQPage, BreadcrumbList) is added by each page. */}
         <JsonLd data={graph(organizationSchema(), websiteSchema())} />
+        {/* Tag Manager, ahead of the form handler so early pushes are not lost. */}
+        <GoogleTagManagerHead />
         {/* Attach the contact-form submit handler immediately, before hydration. */}
         <script dangerouslySetInnerHTML={{ __html: CONTACT_FORM_SCRIPT }} />
       </head>
       <body>
+        <GoogleTagManagerBody />
         {children}
         {/* Hotjar, minus the blog. See components/Analytics. */}
         <Analytics />

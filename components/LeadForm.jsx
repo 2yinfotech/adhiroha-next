@@ -54,6 +54,15 @@ export default function LeadForm({ id = "lead-form", compact = false }) {
       const json = await res.json().catch(() => ({}));
       if (res.ok && json.ok) {
         setState("done");
+        // Tag Manager's conversion signal for the paid-campaign guide request.
+        // Only a confirmed send counts, so a network failure never bills as a lead.
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "lead_form_submit",
+          form_location: window.location.pathname,
+          form_name: "lp_enquiry",
+          course_interest: get("course") || "not specified",
+        });
       } else {
         setState("error");
         setNote(json.message || json.error || "Something went wrong. Please try again.");

@@ -32,6 +32,15 @@ export default function ApplicationForm({ type }) {
     if (resume?.name) lines.push(`Resume selected: ${resume.name}`);
     lines.push("\nPlease attach the selected image and resume to this email before sending.");
     setStatus("Your email app is opening. Please attach the selected files before sending your application.");
+    // This form hands off to the visitor's mail client, so there is no server
+    // response to wait on. The furthest we can honestly track is the handoff,
+    // which is why the event is named _start and not _submit.
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "application_start",
+      form_location: window.location.pathname,
+      form_name: `${type}_application`,
+    });
     window.location.href = `mailto:info@adhiroha.com?subject=${encodeURIComponent(TITLES[type])}&body=${encodeURIComponent(lines.join("\n"))}`;
   }
   return (
