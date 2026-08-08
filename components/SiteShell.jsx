@@ -1,5 +1,7 @@
 import Analytics from "@/components/Analytics";
 import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/GoogleTagManager";
+import ConsentDefaults from "@/components/ConsentDefaults";
+import ConsentBanner from "@/components/ConsentBanner";
 import JsonLd from "@/components/JsonLd";
 import LeafletOnDemand from "@/components/LeafletOnDemand";
 import { graph, organizationSchema, websiteSchema } from "@/lib/seo";
@@ -22,6 +24,25 @@ import { graph, organizationSchema, websiteSchema } from "@/lib/seo";
 const CONTACT_FORM_SCRIPT = `
 (function(){
   function isContactForm(f){return !!(f.querySelector('input[name="email"]')&&f.querySelector('textarea[name="message"]'));}
+  /* The same enquiry form is embedded on the course pages as well as on
+     /contact-us/, and the two need to be told apart in Google Ads. Rather than
+     tagging 121 copies of the markup, the page says what it is about already:
+     every course page emits Course JSON-LD, and its "name" is the course, in
+     that page's own language. A page with no Course node, /contact-us/ and the
+     homepage among them, is a general enquiry and keeps its original event. */
+  function courseOnThisPage(){
+    try{
+      var tags=document.querySelectorAll('script[type="application/ld+json"]');
+      for(var i=0;i<tags.length;i++){
+        var parsed=JSON.parse(tags[i].textContent||'{}');
+        var nodes=parsed['@graph']||[parsed];
+        for(var j=0;j<nodes.length;j++){
+          if(nodes[j]&&nodes[j]['@type']==='Course'&&nodes[j].name){return nodes[j].name;}
+        }
+      }
+    }catch(e){}
+    return '';
+  }
   function note(form,msg,ok){
     var el=form.querySelector('.cf-result');
     if(!el){el=document.createElement('p');el.className='cf-result';el.style.cssText='margin-top:14px;font-size:13.5px;font-weight:500;text-align:center;line-height:1.5';form.appendChild(el);}
@@ -48,7 +69,10 @@ const CONTACT_FORM_SCRIPT = `
           // than sent empty when the visitor left the field blank. Email only:
           // no name, phone or address goes into user_data.
           window.dataLayer=window.dataLayer||[];
-          var payload={event:'contact_form_submit',form_location:window.location.pathname,form_name:'contact_us'};
+          var course=courseOnThisPage();
+          var payload=course
+            ? {event:'lead_form_submit',form_location:window.location.pathname,form_name:'course_enquiry',course_interest:course}
+            : {event:'contact_form_submit',form_location:window.location.pathname,form_name:'contact_us'};
           var em=(data.email||'').trim().toLowerCase();
           if(em){payload.user_data={email_address:em};}
           window.dataLayer.push(payload);
@@ -77,6 +101,9 @@ export default function SiteShell({ lang, children }) {
         {/* Sitewide structured data: who we are, and the site itself. Per-page
             schema (Course, FAQPage, BreadcrumbList) is added by each page. */}
         <JsonLd data={graph(organizationSchema(), websiteSchema())} />
+        {/* Consent Mode v2 defaults. Must stay directly above the container:
+            gtm.js has to load already knowing what it is allowed to do. */}
+        <ConsentDefaults />
         {/* Tag Manager, ahead of the form handler so early pushes are not lost. */}
         <GoogleTagManagerHead />
         {/* Attach the contact-form submit handler immediately, before hydration. */}
@@ -87,6 +114,7 @@ export default function SiteShell({ lang, children }) {
         {children}
         {/* Hotjar, minus the blog. See components/Analytics. */}
         <Analytics />
+        <ConsentBanner locale={lang} />
         {/* Fetches Leaflet only when a map is about to scroll into view. Must
             sit after {children} so the page's own scripts have registered their
             `adhiroha:leaflet` listener before this can dispatch it. */}
