@@ -1,3 +1,22 @@
+// Retreat URL in each locale, and the Sadhana Immersion Programme page it now
+// points at. Written out rather than derived from lib/i18n-routes.js, because
+// the retreat has been removed from that map: hreflang must stop advertising a
+// page that no longer exists, while these redirects have to keep working for as
+// long as the old URLs are linked to anywhere on the web.
+const RETREAT_REDIRECTS = [
+  ["/yoga-retreat-in-rishikesh/", "/sadhana-immersion-programme/"],
+  ["/da/yoga-og-ayurveda-retreat-rishikesh/", "/da/sadhana-fordybelsesprogram/"],
+  ["/de/yoga-retreat-rishikesh/", "/de/sadhana-immersion-programm/"],
+  ["/es/retiro-yoga-ayurveda-rishikesh/", "/es/programa-inmersion-sadhana/"],
+  ["/fr/retraite-yoga-ayurveda-rishikesh/", "/fr/programme-immersion-sadhana/"],
+  ["/it/ritiro-yoga-ayurveda-rishikesh/", "/it/programma-immersione-sadhana/"],
+  ["/ja/yoga-ayurveda-retreat-rishikesh/", "/ja/sadhana-immersion-program/"],
+  ["/nl/yoga-en-ayurveda-retraite-rishikesh/", "/nl/sadhana-immersie-programma/"],
+  ["/pl/odosobnienie-jogi-i-ajurwedy-rishikesh/", "/pl/program-immersji-sadhana/"],
+  ["/pt/retiro-de-yoga-e-ayurveda-rishikesh/", "/pt/programa-de-imersao-sadhana/"],
+  ["/sv/yoga-och-ayurveda-retreat-rishikesh/", "/sv/sadhana-fordjupningsprogram/"],
+];
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Hostinger's Next.js deployment runs `next build` followed by `next start`.
@@ -49,6 +68,17 @@ const nextConfig = {
       },
       // Articles live at /blog/<slug>; send the bare /blog to the listing page.
       { source: "/blog", destination: "/blogs/", permanent: false },
+      // The Yoga Retreat is discontinued. Each locale's retreat URL goes to that
+      // same locale's Sadhana Immersion Programme, which is the nearest thing we
+      // still run and the course that replaced it in the admission panel. These
+      // pages were indexed in eleven languages, so they are redirected rather
+      // than dropped: a 301 carries the ranking over instead of throwing it away
+      // and leaving every inbound link on a 404.
+      ...RETREAT_REDIRECTS.map(([from, to]) => ({
+        source: from.replace(/\/$/, ""),
+        destination: to,
+        statusCode: 301,
+      })),
     ];
   },
 

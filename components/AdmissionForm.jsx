@@ -41,7 +41,6 @@ function fmtRange(range) {
 // Short label used for each bundle's "… Dates" row in the summary.
 const ADDON_DATES_LABEL = {
   "Sound Healing": "Sound Healing",
-  "Yoga Retreat": "Retreat",
   "Sadhana Immersion": "Sadhana",
 };
 
@@ -178,7 +177,7 @@ export default function AdmissionForm() {
     return () => { cancelled = true; };
   }, [course]);
 
-  // Bundles aren't offered on Sound Healing / Yoga Retreat as the main course.
+  // Bundles aren't offered on Sound Healing / Sadhana Immersion as the main course.
   useEffect(() => { if (!canBundle) setAddOns([]); }, [canBundle]);
 
   /* ---------- resolve the paired Sound Healing batch for the combo ---------- */
