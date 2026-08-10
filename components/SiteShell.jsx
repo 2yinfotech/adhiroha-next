@@ -2,6 +2,7 @@ import Analytics from "@/components/Analytics";
 import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/GoogleTagManager";
 import ConsentDefaults from "@/components/ConsentDefaults";
 import ConsentBanner from "@/components/ConsentBanner";
+import CourseEnquiryModal from "@/components/CourseEnquiryModal";
 import JsonLd from "@/components/JsonLd";
 import LeafletOnDemand from "@/components/LeafletOnDemand";
 import { graph, organizationSchema, websiteSchema } from "@/lib/seo";
@@ -115,6 +116,8 @@ export default function SiteShell({ lang, children }) {
         {/* Hotjar, minus the blog. See components/Analytics. */}
         <Analytics />
         <ConsentBanner locale={lang} />
+        {/* Arms itself only on the courses that are not currently running. */}
+        <CourseEnquiryModal locale={lang} />
         {/* Fetches Leaflet only when a map is about to scroll into view. Must
             sit after {children} so the page's own scripts have registered their
             `adhiroha:leaflet` listener before this can dispatch it. */}

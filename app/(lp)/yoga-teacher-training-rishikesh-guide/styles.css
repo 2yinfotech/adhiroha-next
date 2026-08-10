@@ -366,5 +366,8 @@
   font-size:13px;font-weight:400;line-height:1.6;text-align:left}
 .soon-note b{color:#4a3a28;font-weight:600}
 .soon-note-ic{flex:0 0 auto;width:16px;height:16px;margin-top:2px;color:#b07d45}
-.bc-pill.is-soon{background:rgba(201,154,99,.18);color:#8a6334;
-  border:1px solid rgba(201,154,99,.5)}
+/* The pill sits on top of the hero photograph, so it has to be opaque. The
+   translucent version was unreadable against a light frame. Gold rather than
+   the rust used by a running course, so the two read as different states. */
+.bc-pill.is-soon{background:#b07d45;color:#fff;border:0;
+  box-shadow:0 3px 12px rgba(40,26,12,.34)}
