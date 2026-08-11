@@ -20,13 +20,24 @@
 }
 
 /* ---- header ---- */
+/* adhiroha-logo-14.png is a 500x500 canvas whose artwork only occupies rows
+   154-313; 68% of the file is transparent padding, which was showing up as a
+   large empty band under the logo. The image is cropped to its ink here rather
+   than shipping a second copy of the asset: 500/160 is the artwork's own ratio,
+   and 46.7% is where its centre sits in the square. */
 .rg-top {
   background: #fff;
   border-bottom: 1px solid var(--line);
-  padding: 18px 24px;
+  padding: 14px 24px;
   text-align: center;
+  line-height: 0;
 }
-.rg-top img { width: 168px; height: auto; }
+.rg-top img {
+  width: 190px; height: 61px;
+  object-fit: cover;
+  object-position: center 46.7%;
+  display: inline-block;
+}
 
 .rg-wrap { max-width: 940px; margin: 0 auto; padding: 0 22px; }
 

@@ -18,7 +18,7 @@ function Shell({ children }) {
   return (
     <div className="rg-page">
       <div className="rg-top">
-        <img src="/img/adhiroha-logo-14.png" alt="Adhiroha" width="867" height="288" />
+        <img src="/img/adhiroha-logo-14.png" alt="Adhiroha" width="190" height="61" />
       </div>
       {children}
     </div>
@@ -54,7 +54,20 @@ export default async function RegistrationPage({ searchParams }) {
     );
   }
 
-  const booking = await getBooking(id).catch(() => null);
+  let booking = null;
+  try {
+    booking = await getBooking(id);
+  } catch {
+    // The connection failed rather than the booking being absent. Say so, so
+    // nobody spends an afternoon looking for a booking that is actually there.
+    return (
+      <Message
+        title="We cannot reach the booking system"
+        body="This is a problem at our end, not with your link. Please try again in a few minutes, or write to info@adhiroha.com and we will sort it out."
+      />
+    );
+  }
+
   if (!booking) {
     return (
       <Message
