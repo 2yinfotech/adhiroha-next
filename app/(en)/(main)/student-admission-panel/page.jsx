@@ -4,7 +4,7 @@ import AdmissionForm from "@/components/AdmissionForm";
 export const metadata = {
   title: "Book Your Yoga Teacher Training | Adhiroha Admissions",
   description:
-    "Reserve your place on a yoga teacher training or retreat at Adhiroha, Rishikesh. Choose your course and dates and secure your seat with the registration fee.",
+    "Reserve your place on a yoga teacher training at Adhiroha, Rishikesh. Choose your course and dates and secure your seat with the registration fee.",
   alternates: { canonical: "/student-admission-panel/" },
   // A transactional booking form, ~100 words of unique copy. It is reached from
   // the Register buttons across the site rather than from search, and indexing

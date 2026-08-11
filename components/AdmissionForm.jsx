@@ -26,7 +26,7 @@ const eur2 = (n) =>
   "€" + Number(n || 0).toLocaleString("en-IE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
 // Display-only: force every batch date range to the short "1st Sep 2026" month
-// form so YTTC, Sound Healing, Retreat and Sadhana all read consistently. The
+// form so YTTC and Sound Healing read consistently. The
 // stored/emailed strings are left untouched.
 function fmtRange(range) {
   if (!range) return range;
@@ -41,7 +41,6 @@ function fmtRange(range) {
 // Short label used for each bundle's "… Dates" row in the summary.
 const ADDON_DATES_LABEL = {
   "Sound Healing": "Sound Healing",
-  "Sadhana Immersion": "Sadhana",
 };
 
 const SHORT3 = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -60,7 +59,7 @@ function parseDisplayDate(s) {
 function fmtDate(d) {
   return `${ordinalDay(d.getUTCDate())} ${SHORT3[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
 }
-// Retreat / Sadhana have no separate batch list: they run the days immediately
+// Bundles have no separate batch list: they run the days immediately
 // after the chosen course checkout, so their range is derived from that date —
 // and rendered in the same short "24th Sep 2026" form as everything else.
 function addonDateRange(batch, days) {
@@ -177,7 +176,7 @@ export default function AdmissionForm() {
     return () => { cancelled = true; };
   }, [course]);
 
-  // Bundles aren't offered on Sound Healing / Sadhana Immersion as the main course.
+  // Bundles aren't offered on Sound Healing as the main course.
   useEffect(() => { if (!canBundle) setAddOns([]); }, [canBundle]);
 
   /* ---------- resolve the paired Sound Healing batch for the combo ---------- */
@@ -508,7 +507,7 @@ export default function AdmissionForm() {
           <div className="adm-body">
             <div className="adm-grid">
               <label>
-                <span>Course or Retreat</span>
+                <span>Course</span>
                 <select value={course} onChange={(e) => setCourse(e.target.value)}>
                   <option value="">Select a Course</option>
                   {COURSE_LIST.map((c) => (

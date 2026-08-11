@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { enquiryStrings } from "@/lib/enquiry";
+import { enquiryStrings, ENQUIRY_ONLY_PATHS } from "@/lib/enquiry";
 
 /**
  * The enquiry modal for courses that are not running as scheduled batches.
@@ -76,9 +76,12 @@ export default function CourseEnquiryModal({ locale = "en" }) {
   const nameRef = useRef(null);
   const t = enquiryStrings(locale);
 
-  /* Only arm on a page that carries the upcoming marker. */
+  /* Arm on the courses that are not running (they carry the upcoming marker) and
+     on the ones that are arranged directly with the school. See ENQUIRY_ONLY_PATHS. */
   useEffect(() => {
-    if (!document.querySelector(".bc-pill.is-soon")) return;
+    const path = window.location.pathname.replace(/\/?$/, "/");
+    const enquiryOnly = ENQUIRY_ONLY_PATHS.includes(path);
+    if (!enquiryOnly && !document.querySelector(".bc-pill.is-soon")) return;
     setCourse(courseOnPage() || " ");
   }, []);
 
