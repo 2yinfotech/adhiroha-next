@@ -3,6 +3,7 @@ import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/GoogleT
 import ConsentDefaults from "@/components/ConsentDefaults";
 import ConsentBanner from "@/components/ConsentBanner";
 import CourseEnquiryModal from "@/components/CourseEnquiryModal";
+import RegistrationDonePopup from "@/components/RegistrationDonePopup";
 import JsonLd from "@/components/JsonLd";
 import LeafletOnDemand from "@/components/LeafletOnDemand";
 import { graph, organizationSchema, websiteSchema } from "@/lib/seo";
@@ -118,6 +119,8 @@ export default function SiteShell({ lang, children }) {
         <ConsentBanner locale={lang} />
         {/* Arms itself only on the courses that are not currently running. */}
         <CourseEnquiryModal locale={lang} />
+        {/* Confirms the registration form to a student who has just been sent back here. */}
+        <RegistrationDonePopup />
         {/* Fetches Leaflet only when a map is about to scroll into view. Must
             sit after {children} so the page's own scripts have registered their
             `adhiroha:leaflet` listener before this can dispatch it. */}

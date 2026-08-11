@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { REGISTRATION_DONE_KEY } from "@/components/RegistrationDonePopup";
 
 /**
  * The post-booking registration form.
@@ -50,14 +51,22 @@ export default function RegistrationForm({ booking, courseOptions, selectedCours
     try {
       const res = await fetch("/api/registration/", { method: "POST", body: data });
       const json = await res.json().catch(() => ({}));
-      if (res.ok && json.ok) { setState("done"); window.scrollTo({ top: 0, behavior: "smooth" }); }
-      else { setState("idle"); setErr(json.message || "Something went wrong. Please email info@adhiroha.com."); }
+      if (res.ok && json.ok) {
+        // Hand the confirmation to the homepage and send the student there,
+        // rather than leaving them on a page with nowhere to go. The name is
+        // passed in sessionStorage so it never appears in the URL.
+        try { sessionStorage.setItem(REGISTRATION_DONE_KEY, booking.b_name || ""); } catch {}
+        setState("done");
+        window.location.assign("/");
+      } else { setState("idle"); setErr(json.message || "Something went wrong. Please email info@adhiroha.com."); }
     } catch {
       setState("idle");
       setErr("Network error. Please check your connection and try again.");
     }
   }
 
+  // Shown for the moment between a successful save and the browser leaving for
+  // the homepage, where the confirmation popup takes over.
   if (state === "done") {
     return (
       <div className="rg-state">
@@ -66,10 +75,7 @@ export default function RegistrationForm({ booking, courseOptions, selectedCours
           <circle cx="12" cy="12" r="10" /><path d="M8 12.5l2.6 2.6L16 9.5" />
         </svg>
         <h2 className="rg-h1">Thank you, {booking.b_name}</h2>
-        <p>
-          Your registration is with us. We will be in touch before you travel with anything else
-          you need. If you spot a mistake, write to info@adhiroha.com and we will correct it.
-        </p>
+        <p>Taking you back to the site…</p>
       </div>
     );
   }

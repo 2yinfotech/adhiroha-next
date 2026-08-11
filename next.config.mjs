@@ -68,6 +68,13 @@ const nextConfig = {
       },
       // Articles live at /blog/<slug>; send the bare /blog to the listing page.
       { source: "/blog", destination: "/blogs/", permanent: false },
+      // The registration form used to be Registration.php on the old site, and
+      // links carrying ?view=<booking id> are still in students' inboxes. Next
+      // passes the query string through, so ?view= survives the hop. Both
+      // capitalisations are listed because redirect sources are case-sensitive
+      // and the old links were sent with a capital R.
+      { source: "/Registration.php", destination: "/registration/", statusCode: 301 },
+      { source: "/registration.php", destination: "/registration/", statusCode: 301 },
       // The Yoga Retreat is discontinued. Each locale's retreat URL goes to that
       // same locale's Sadhana Immersion Programme, which is the nearest thing we
       // still run and the course that replaced it in the admission panel. These
