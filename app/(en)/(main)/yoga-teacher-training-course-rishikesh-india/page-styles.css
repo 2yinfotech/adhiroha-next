@@ -1,0 +1,736 @@
+/* ===================================================================
+   THE THREE PATHS — combined 200 / 300 / 500 landing page.
+
+   Purpose-written, not a copy of the course-page stylesheet. The hero,
+   typography, buttons and footer come from ../adhiroha.min.css (the route
+   group's sheet); the header chrome comes from components/chrome.css. Every
+   rule below is namespaced `tp-` so nothing here can leak into other pages.
+
+   Nothing on this page is hidden. There is no tab, no switch and no
+   display:none on content — every one of the three courses is written out in
+   full, in source order, because the page's job is to rank as well as to read.
+   The three accents are set per-block by .tp-lv200 / .tp-lv300 / .tp-lv500
+   rather than by a state attribute on the wrapper.
+   =================================================================== */
+
+.tp {
+  /* Level accents, taken from the courses' own names in Adhiroha's copy:
+     Root of Yoga, Heart of Yoga, Crown of Yoga. Muted to sit inside the
+     site's cream-and-ink palette rather than shout over it. */
+  --root: #a0492e;
+  --heart: #4e6a44;
+  --crown: #6b4c7b;
+  --lv: var(--root);
+  --lv-soft: rgba(160, 73, 46, 0.09);
+  --paper: #fbf8f3;
+  --tp-line: #e2dccf;
+}
+.tp .tp-lv200 { --lv: var(--root);  --lv-soft: rgba(160, 73, 46, 0.09); }
+.tp .tp-lv300 { --lv: var(--heart); --lv-soft: rgba(78, 106, 68, 0.10); }
+.tp .tp-lv500 { --lv: var(--crown); --lv-soft: rgba(107, 76, 123, 0.10); }
+
+/* Visually hidden, but read aloud and indexed — used for table captions. */
+.tp-sr {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+
+/* ---------- shared page furniture ---------- */
+.tp-wrap { max-width: 1340px; margin: 0 auto; padding: 0 60px; }
+.tp-sec { padding: 96px 0; position: relative; }
+.tp-sec.tight { padding: 72px 0; }
+.tp-dark { background: var(--ink); color: #efe7da; }
+.tp-paper { background: var(--paper); }
+.tp-cream { background: var(--cream); }
+
+.tp-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 10px; font-weight: 600; letter-spacing: 1.9px; text-transform: uppercase;
+  color: var(--lv); margin-bottom: 16px;
+}
+.tp-eyebrow::before { content: ""; width: 26px; height: 1px; background: currentColor; flex: none; }
+.tp-dark .tp-eyebrow { color: #eccdb9; }
+
+.tp-h2 {
+  font-family: 'Playfair Display', Georgia, serif; font-weight: 500;
+  font-size: clamp(27px, 3.1vw, 42px); line-height: 1.16; color: var(--ink);
+  letter-spacing: .2px; margin: 0 0 18px; max-width: 20ch;
+}
+.tp-dark .tp-h2 { color: #fff; }
+.tp-h2.wide { max-width: 26ch; }
+
+.tp-h3 {
+  font-family: 'Playfair Display', Georgia, serif; font-weight: 500;
+  font-size: clamp(21px, 2.1vw, 27px); line-height: 1.22; color: var(--ink);
+  margin: 0 0 14px; max-width: 26ch;
+}
+
+.tp-p {
+  font-family: 'Poppins', system-ui, sans-serif; font-weight: 300;
+  font-size: 15.5px; line-height: 1.82; color: var(--body); margin: 0 0 16px; max-width: 66ch;
+}
+.tp-dark .tp-p { color: #cdc4b8; }
+
+.tp-head { max-width: 760px; margin-bottom: 48px; }
+.tp-head.mid { margin-left: auto; margin-right: auto; text-align: center; }
+.tp-head.mid .tp-eyebrow::before { display: none; }
+.tp-head.mid .tp-h2, .tp-head.mid .tp-p { margin-left: auto; margin-right: auto; }
+
+.tp-link {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 11.5px; font-weight: 600; letter-spacing: 1.4px; text-transform: uppercase;
+  color: var(--lv); text-decoration: none; border-bottom: 1px solid currentColor;
+  padding-bottom: 3px; transition: gap .25s ease;
+}
+.tp-link:hover { gap: 15px; }
+.tp-dark .tp-link { color: #eccdb9; }
+
+/* Numerals used as structure, not decoration: hours, days and fees are the
+   facts a visitor is comparing, so they get the display face at full scale. */
+.tp-fig {
+  font-family: 'Playfair Display', Georgia, serif; font-weight: 600;
+  font-variant-numeric: tabular-nums; letter-spacing: -.5px; line-height: .9;
+}
+
+/* ===================================================================
+   HERO — structurally identical to the 200-hour page. The only addition is
+   the level switch inside the booking card, which is what makes this page
+   one document instead of three.
+   =================================================================== */
+/* All three fees, listed. Each row is an anchor down to that course's own
+   section, so the card is a table of contents as well as a price list. */
+.tp-hero-levels { display: flex; flex-direction: column; gap: 2px; margin: 4px 0 20px; }
+.tp-hero-level {
+  display: flex; align-items: center; gap: 14px; text-decoration: none;
+  padding: 12px 12px; border-radius: 12px; border: 1px solid transparent;
+  transition: background .25s ease, border-color .25s ease;
+}
+.tp-hero-level:hover { background: var(--lv-soft); border-color: color-mix(in srgb, var(--lv) 28%, transparent); }
+.tp-hero-level:focus-visible { outline: 2px solid var(--lv); outline-offset: 2px; }
+.tp-hero-level .hl-n { font-size: 27px; color: var(--lv); flex: none; min-width: 52px; }
+.tp-hero-level .hl-t { min-width: 0; flex: 1; }
+.tp-hero-level .hl-t b {
+  display: block; font-family: 'Playfair Display', Georgia, serif; font-weight: 500;
+  font-size: 15.5px; color: var(--ink); line-height: 1.2;
+}
+.tp-hero-level .hl-t i {
+  display: block; font-style: normal; font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 11px; font-weight: 300; color: var(--body); margin-top: 2px;
+}
+.tp-hero-level .hl-p {
+  flex: none; font-family: 'Playfair Display', Georgia, serif; font-variant-numeric: tabular-nums;
+  font-weight: 600; font-size: 19px; color: var(--ink);
+}
+
+/* ===================================================================
+   THE LADDER — the signature.
+
+   One 0→500-hour axis, three runs drawn against it. The 200 run covers the
+   first 200 hours, the 300 run covers the last 300, and the 500 run covers
+   the whole span. The prerequisite is drawn rather than stated: the 300 run
+   physically cannot reach zero, and the gap in front of it is hatched and
+   labelled with the 200 hours you must already hold.
+   =================================================================== */
+.tp-ladder { background: var(--paper); border-top: 1px solid var(--tp-line); border-bottom: 1px solid var(--tp-line); }
+
+.tp-axis {
+  position: relative; height: 26px; margin: 0 0 8px;
+  border-bottom: 1px solid var(--tp-line);
+}
+.tp-axis > span { position: absolute; top: 0; bottom: 0; width: 0; }
+.tp-axis i {
+  position: absolute; left: 0; bottom: 0; width: 1px; height: 8px; background: var(--tp-line);
+}
+.tp-axis b {
+  position: absolute; left: 0; bottom: 11px; transform: translateX(-50%);
+  font-family: 'Poppins', system-ui, sans-serif; font-size: 9.5px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase; color: #9b9287; white-space: nowrap;
+}
+.tp-axis .a0 { left: 0; } .tp-axis .a0 b { transform: none; }
+.tp-axis .a2 { left: 40%; }
+.tp-axis .a5 { left: 100%; } .tp-axis .a5 b { transform: translateX(-100%); }
+
+.tp-runs { display: flex; flex-direction: column; gap: 12px; }
+
+/* Each run is an anchor down to that course's section. */
+.tp-run { display: block; width: 100%; text-align: left; text-decoration: none; color: inherit; }
+.tp-run:focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; border-radius: 6px; }
+
+/* The bar and its parts are spans inside a <button>, so each one has to be
+   told it is a box. */
+.tp-bar {
+  display: block; position: relative; height: 92px; border-radius: 10px;
+  background: rgba(255, 255, 255, .55); border: 1px solid var(--tp-line);
+  overflow: hidden; transition: border-color .35s ease, box-shadow .35s ease, background .35s ease;
+}
+.tp-run:hover .tp-bar { border-color: #cbc0ac; }
+
+/* The filled span. Left/width are set per run and never change — the run's
+   position on the axis is a fact about the course, not a display state. */
+.tp-fill {
+  position: absolute; top: 0; bottom: 0; border-radius: 9px;
+  background: #ece5d8; transition: background .4s ease, box-shadow .4s ease;
+  display: flex; align-items: center; padding: 0 26px; gap: 22px;
+}
+.tp-run[data-run="200"] .tp-fill { left: 0; width: 40%; }
+.tp-run[data-run="300"] .tp-fill { left: 40%; right: 0; width: auto; }
+.tp-run[data-run="500"] .tp-fill { left: 0; right: 0; width: auto; }
+
+/* The hatched region in front of the 300 run: the foundation you arrive
+   holding. It is the prerequisite, drawn to scale. */
+.tp-prior {
+  position: absolute; top: 0; bottom: 0; left: 0; width: 40%;
+  display: flex; align-items: center; padding: 0 26px;
+  background: repeating-linear-gradient(-45deg, transparent 0 7px, rgba(44, 39, 35, .055) 7px 8px);
+  border-right: 1px dashed #c9bda8;
+}
+.tp-prior span {
+  font-family: 'Poppins', system-ui, sans-serif; font-size: 10.5px; font-weight: 500;
+  letter-spacing: .4px; color: #948b80; line-height: 1.5; max-width: 24ch;
+}
+
+.tp-run-n { display: block; color: #9b9287; transition: color .4s ease; font-size: clamp(28px, 3.4vw, 44px); flex: none; }
+.tp-run-t { display: block; min-width: 0; }
+.tp-run-t b {
+  display: block; font-family: 'Playfair Display', Georgia, serif; font-weight: 500;
+  font-size: 18px; color: var(--ink); line-height: 1.25; transition: color .4s ease;
+}
+.tp-run-t i {
+  display: block; font-style: normal; font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 11.5px; font-weight: 300; color: var(--body); margin-top: 3px; transition: color .4s ease;
+}
+
+.tp-run-meta {
+  display: block; margin-left: auto; text-align: right; flex: none;
+  font-family: 'Poppins', system-ui, sans-serif; font-size: 11px; font-weight: 500;
+  letter-spacing: .3px; color: var(--body); line-height: 1.6; transition: color .4s ease;
+}
+.tp-run-meta b { display: block; font-size: 15px; font-weight: 600; color: var(--ink); transition: color .4s ease; }
+
+/* All three runs are filled, each in its own accent, all of the time. The
+   comparison is the point, so there is nothing to select and nothing dimmed. */
+.tp-run .tp-fill {
+  background: var(--lv); box-shadow: 0 20px 40px -20px color-mix(in srgb, var(--lv) 70%, transparent);
+}
+.tp-run .tp-bar { border-color: transparent; }
+.tp-run :is(.tp-run-n, .tp-run-t b, .tp-run-meta b) { color: #fff; }
+.tp-run :is(.tp-run-t i, .tp-run-meta) { color: rgba(255, 255, 255, .82); }
+.tp-run:hover .tp-fill { box-shadow: 0 26px 50px -20px color-mix(in srgb, var(--lv) 85%, transparent); }
+
+/* Below-bar labels. Hidden until the bar is too short to hold text — see the
+   760px block, which is the only place this is switched on. */
+.tp-run-under { display: none; }
+
+.tp-ladder-cap {
+  margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--tp-line);
+  display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+  font-family: 'Playfair Display', Georgia, serif; font-style: italic;
+  font-size: 15px; line-height: 1.6; color: #564f48;
+}
+
+/* ===================================================================
+   A COURSE SECTION — the same skeleton three times over.
+   =================================================================== */
+.tp-course-photo { margin: 0 0 44px; position: relative; border-radius: 20px; overflow: hidden; background: #ece5d8; }
+.tp-course-photo img { display: block; width: 100%; aspect-ratio: 24 / 8; object-fit: cover; }
+.tp-course-photo figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 46px 30px 22px;
+  display: flex; align-items: baseline; gap: 14px;
+  background: linear-gradient(180deg, transparent, rgba(20, 15, 11, .78));
+  font-family: 'Playfair Display', Georgia, serif; font-size: 19px; color: #fff;
+}
+.tp-course-photo figcaption .tp-fig { font-size: 44px; color: #fff; }
+
+.tp-course-head { display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: start; }
+.tp-course-body { margin-top: 72px; }
+.tp-course-body .tp-h3 { margin-top: 0; }
+.tp-course-body > .tp-h3 + .tp-p { margin-bottom: 26px; }
+.tp-course-body .tp-pillars + .tp-h3,
+.tp-course-body .tp-who + .tp-h3 { margin-top: 64px; }
+
+.tp-price-card {
+  background: #fff; border: 1px solid var(--tp-line); border-radius: 20px;
+  padding: 34px 34px 30px; box-shadow: 0 44px 84px -60px rgba(44, 39, 35, .6);
+}
+.tp-price-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.tp-price-lab {
+  font-family: 'Poppins', system-ui, sans-serif; font-size: 9.5px; font-weight: 600;
+  letter-spacing: 1.7px; text-transform: uppercase; color: #9b9287; margin-bottom: 8px;
+}
+.tp-price-big { font-size: clamp(40px, 5vw, 58px); color: var(--lv); }
+.tp-price-sub {
+  margin-top: 6px; font-family: 'Poppins', system-ui, sans-serif; font-size: 12px;
+  font-weight: 400; letter-spacing: .3px; color: var(--body);
+}
+.tp-price-alt {
+  text-align: right; font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 12.5px; font-weight: 300; color: var(--body); line-height: 1.7;
+}
+.tp-price-alt b { display: block; font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 600; color: var(--ink); }
+
+.tp-rows { margin: 26px 0 24px; border-top: 1px solid var(--tp-line); }
+.tp-row {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 20px;
+  padding: 12px 0; border-bottom: 1px solid var(--tp-line);
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+.tp-row dt { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #9b9287; flex: none; }
+.tp-row dd { margin: 0; font-size: 13.5px; font-weight: 400; color: var(--ink); text-align: right; }
+
+.tp-split {
+  background: var(--lv-soft); border-radius: 14px; padding: 18px 20px; margin-bottom: 22px;
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+.tp-split-h { font-size: 9.5px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: var(--lv); margin-bottom: 12px; }
+.tp-split-r { display: flex; align-items: center; gap: 14px; font-size: 13px; font-weight: 300; color: var(--body); padding: 5px 0; }
+.tp-split-r b { font-family: 'Playfair Display', Georgia, serif; font-size: 19px; font-weight: 600; color: var(--ink); min-width: 82px; }
+
+.tp-fineprint {
+  display: flex; gap: 10px; margin-top: 16px;
+  font-family: 'Poppins', system-ui, sans-serif; font-size: 11.5px; font-weight: 300;
+  line-height: 1.65; color: #8a8177;
+}
+.tp-fineprint svg { flex: none; margin-top: 2px; color: var(--lv); }
+
+/* Who it is for */
+.tp-who { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; border: 1px solid var(--tp-line); border-radius: 18px; overflow: hidden; background: var(--tp-line); }
+.tp-who-item { background: var(--paper); padding: 24px 26px; }
+.tp-who-item b {
+  display: block; font-family: 'Playfair Display', Georgia, serif; font-weight: 500;
+  font-size: 17.5px; color: var(--ink); margin-bottom: 7px;
+}
+.tp-who-item p { margin: 0; font-family: 'Poppins', system-ui, sans-serif; font-size: 13.5px; font-weight: 300; line-height: 1.75; color: var(--body); }
+.tp-who-item span {
+  display: inline-block; font-family: 'Poppins', system-ui, sans-serif; font-size: 9.5px;
+  font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--lv); margin-bottom: 9px;
+}
+
+.tp-prereq {
+  display: flex; align-items: center; gap: 14px; margin-bottom: 26px;
+  padding: 15px 20px; border-radius: 12px; border: 1px dashed color-mix(in srgb, var(--lv) 45%, var(--tp-line));
+  background: var(--lv-soft);
+  font-family: 'Poppins', system-ui, sans-serif; font-size: 13px; font-weight: 400; color: var(--ink); line-height: 1.6;
+}
+.tp-prereq svg { flex: none; color: var(--lv); }
+
+/* Dates table — one table, a column per course. */
+.tp-dates { background: #fff; border: 1px solid var(--tp-line); border-radius: 20px; padding: 32px 30px 24px; }
+.tp-dates-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.tp-dates-note {
+  display: flex; align-items: center; gap: 10px; margin: 18px 0 0; padding-top: 16px;
+  border-top: 1px solid var(--tp-line);
+  font-family: 'Poppins', system-ui, sans-serif; font-size: 12.5px; font-weight: 300; color: var(--body);
+}
+.tp-dates-note svg { flex: none; color: var(--lv); }
+.tp-table { width: 100%; border-collapse: collapse; min-width: 620px; }
+.tp-table th {
+  font-family: 'Poppins', system-ui, sans-serif; font-size: 9.5px; font-weight: 600;
+  letter-spacing: 1.7px; text-transform: uppercase; color: #9b9287; text-align: left;
+  padding: 10px 12px; border-bottom: 1px solid var(--tp-line); white-space: nowrap;
+}
+.tp-table td {
+  padding: 13px 12px; border-bottom: 1px solid var(--tp-line);
+  font-family: 'Poppins', system-ui, sans-serif; font-size: 13.5px; font-weight: 300;
+  color: var(--body); white-space: nowrap;
+}
+.tp-table tr:last-child td { border-bottom: none; }
+.tp-table td.mo { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 15px; color: var(--ink); }
+.tp-table td.fee { font-weight: 500; color: var(--ink); }
+.tp-seat {
+  display: inline-flex; align-items: center; gap: 7px; border-radius: 30px; padding: 5px 13px;
+  font-size: 10.5px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+}
+.tp-seat i { width: 6px; height: 6px; border-radius: 50%; flex: none; }
+.tp-seat.ok { background: #eef4e9; color: #4c7a3d; } .tp-seat.ok i { background: #5d9948; }
+.tp-seat.few { background: var(--lv-soft); color: var(--lv); } .tp-seat.few i { background: var(--lv); }
+
+/* ===================================================================
+   CURRICULUM — four pillars, per level.
+   =================================================================== */
+.tp-pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--tp-line); border: 1px solid var(--tp-line); border-radius: 18px; overflow: hidden; }
+.tp-pillar { background: #fff; padding: 30px 26px 28px; display: flex; flex-direction: column; }
+.tp-pillar-n {
+  font-family: 'Poppins', system-ui, sans-serif; font-size: 9.5px; font-weight: 600;
+  letter-spacing: 1.7px; text-transform: uppercase; color: var(--lv); margin-bottom: 14px;
+}
+.tp-pillar h4 { margin: 0 0 6px; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 21px; color: var(--ink); line-height: 1.2; }
+.tp-pillar .sub { font-family: 'Poppins', system-ui, sans-serif; font-size: 11.5px; font-weight: 300; font-style: italic; color: #9b9287; margin-bottom: 20px; }
+.tp-pillar ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 15px; }
+.tp-pillar li { font-family: 'Poppins', system-ui, sans-serif; font-size: 13px; font-weight: 300; line-height: 1.7; color: var(--body); padding-left: 16px; position: relative; }
+.tp-pillar li::before { content: ""; position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--lv); opacity: .55; }
+.tp-pillar li b { font-weight: 500; color: var(--ink); }
+
+/* ===================================================================
+   THE ARC — how the course unfolds, per level.
+   =================================================================== */
+.tp-arc { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; counter-reset: arc; }
+.tp-arc-step { position: relative; padding-top: 26px; border-top: 2px solid var(--tp-line); }
+.tp-arc-step::before {
+  content: ""; position: absolute; top: -2px; left: 0; width: 0; height: 2px; background: var(--lv);
+  transition: width 1s cubic-bezier(.22, .61, .36, 1);
+}
+.tp-arc-step.lit::before { width: 100%; }
+.tp-arc-when {
+  font-family: 'Poppins', system-ui, sans-serif; font-size: 9.5px; font-weight: 600;
+  letter-spacing: 1.7px; text-transform: uppercase; color: var(--lv); margin-bottom: 10px;
+}
+.tp-arc-step h4 { margin: 0 0 10px; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 22px; color: var(--ink); }
+.tp-arc-step p { margin: 0; font-family: 'Poppins', system-ui, sans-serif; font-size: 13.5px; font-weight: 300; line-height: 1.78; color: var(--body); }
+
+/* ===================================================================
+   THE SPINE — the honest divider. Everything after this is identical
+   whichever level you pick, so it is shown once instead of three times.
+   =================================================================== */
+.tp-spine { background: var(--ink); color: #efe7da; padding: 74px 0; text-align: center; }
+.tp-spine-rule { display: flex; align-items: center; gap: 20px; max-width: 620px; margin: 0 auto 26px; }
+.tp-spine-rule i { flex: 1; height: 1px; background: rgba(255, 255, 255, .22); }
+.tp-spine-rule svg { flex: none; color: #eccdb9; }
+.tp-spine h2 {
+  margin: 0 0 14px; font-family: 'Playfair Display', Georgia, serif; font-weight: 500;
+  font-size: clamp(24px, 3vw, 36px); line-height: 1.24; color: #fff;
+}
+.tp-spine p {
+  margin: 0 auto; max-width: 62ch; font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 15px; font-weight: 300; line-height: 1.8; color: #c6bcae;
+}
+.tp-spine-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 28px; }
+.tp-spine-tags span {
+  font-family: 'Poppins', system-ui, sans-serif; font-size: 10px; font-weight: 600;
+  letter-spacing: 1.4px; text-transform: uppercase; color: #eccdb9;
+  border: 1px solid rgba(236, 205, 185, .32); border-radius: 30px; padding: 7px 16px;
+}
+
+/* ===================================================================
+   THE DAY — a single column of hours.
+   =================================================================== */
+.tp-day-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.tp-hours { border-top: 1px solid var(--tp-line); }
+.tp-hour {
+  display: grid; grid-template-columns: 74px 1fr; gap: 22px; align-items: baseline;
+  padding: 15px 0; border-bottom: 1px solid var(--tp-line);
+}
+.tp-hour time {
+  font-family: 'Playfair Display', Georgia, serif; font-variant-numeric: tabular-nums;
+  font-weight: 600; font-size: 17px; color: var(--lv);
+}
+.tp-hour p { margin: 0; font-family: 'Poppins', system-ui, sans-serif; font-size: 14px; font-weight: 300; line-height: 1.7; color: var(--body); }
+.tp-hour p b { font-weight: 500; color: var(--ink); }
+.tp-day-part {
+  padding: 22px 0 8px; font-family: 'Poppins', system-ui, sans-serif; font-size: 9.5px;
+  font-weight: 600; letter-spacing: 1.8px; text-transform: uppercase; color: #9b9287;
+  border-bottom: 1px solid var(--tp-line);
+}
+.tp-day-part:first-child { padding-top: 0; }
+
+.tp-day-media { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; position: sticky; top: 120px; }
+.tp-day-media figure { margin: 0; border-radius: 14px; overflow: hidden; background: #ece5d8; }
+.tp-day-media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.tp-day-media figure:nth-child(1) { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+.tp-day-media figure:nth-child(2), .tp-day-media figure:nth-child(3) { aspect-ratio: 1 / 1; }
+.tp-day-media figure:nth-child(4) { grid-column: 1 / -1; aspect-ratio: 2 / 1; }
+
+/* ===================================================================
+   THE ASHRAM — tabbed spaces with a photo strip each.
+   =================================================================== */
+/* The four spaces, written out one after another rather than tabbed. Odd
+   rows put the photographs first, even rows put the text first, so four
+   stacked blocks do not read as four identical slabs. */
+.tp-space {
+  display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center;
+  padding: 40px 0; border-top: 1px solid var(--tp-line);
+}
+.tp-space.first { border-top: none; padding-top: 8px; }
+/* Flipped rows move the photographs to the right — and swap the column widths
+   with them, so the wide column always holds the pictures. The class comes
+   from JSX rather than :nth-of-type, which counts the section's heading block
+   too and would start the alternation on the wrong foot. */
+.tp-space.flip { grid-template-columns: .85fr 1.15fr; }
+.tp-space.flip .tp-space-shots { order: 2; }
+.tp-space-shots { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; height: 400px; }
+.tp-space-shots figure { margin: 0; border-radius: 14px; overflow: hidden; background: #ece5d8; }
+.tp-space-shots figure:first-child { grid-row: 1 / 3; }
+.tp-space-shots img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.tp-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.tp-chips span {
+  font-family: 'Poppins', system-ui, sans-serif; font-size: 10px; font-weight: 600;
+  letter-spacing: 1.2px; text-transform: uppercase; color: var(--lv);
+  background: var(--lv-soft); border-radius: 30px; padding: 7px 14px;
+}
+
+/* ===================================================================
+   ROOMS + FOOD — two facing halves.
+   =================================================================== */
+.tp-two { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--tp-line); border: 1px solid var(--tp-line); border-radius: 20px; overflow: hidden; }
+.tp-half { background: #fff; }
+.tp-half-img { aspect-ratio: 16 / 10; overflow: hidden; background: #ece5d8; }
+.tp-half-img img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 1.1s cubic-bezier(.22, .61, .36, 1); }
+.tp-half:hover .tp-half-img img { transform: scale(1.045); }
+.tp-half-body { padding: 32px 34px 34px; }
+.tp-half-body h3 { margin: 0 0 12px; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 24px; color: var(--ink); }
+.tp-ticks { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 11px; }
+.tp-ticks li {
+  display: flex; gap: 11px; font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 13.5px; font-weight: 300; line-height: 1.68; color: var(--body);
+}
+.tp-ticks svg { flex: none; margin-top: 4px; color: var(--lv); }
+
+/* ===================================================================
+   TEACHERS — a horizontal rail. Ten people, so it scrolls rather than
+   collapsing into a wall of small cards.
+   =================================================================== */
+.tp-rail { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 18px; margin: 0 -60px; padding-left: 60px; padding-right: 60px; }
+.tp-rail::-webkit-scrollbar { height: 5px; }
+.tp-rail::-webkit-scrollbar-thumb { background: #d5cbb8; border-radius: 4px; }
+.tp-teacher { flex: 0 0 262px; scroll-snap-align: start; }
+.tp-teacher-img { aspect-ratio: 3 / 4; border-radius: 16px; overflow: hidden; background: #ece5d8; margin-bottom: 16px; }
+.tp-teacher-img img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.tp-teacher b { display: block; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 18px; color: var(--ink); line-height: 1.25; }
+.tp-teacher .subj { display: block; margin-top: 4px; font-family: 'Poppins', system-ui, sans-serif; font-size: 11.5px; font-weight: 500; letter-spacing: .4px; color: var(--lv); }
+.tp-teacher .yrs { display: block; margin-top: 8px; font-family: 'Poppins', system-ui, sans-serif; font-size: 11.5px; font-weight: 300; color: #9b9287; }
+
+/* ===================================================================
+   EXCURSIONS — six photo cards.
+   =================================================================== */
+.tp-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.tp-card { border-radius: 18px; overflow: hidden; background: #fff; border: 1px solid var(--tp-line); display: flex; flex-direction: column; }
+.tp-card-img { aspect-ratio: 4 / 3; overflow: hidden; background: #ece5d8; }
+.tp-card-img img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 1.1s cubic-bezier(.22, .61, .36, 1); }
+.tp-card:hover .tp-card-img img { transform: scale(1.05); }
+.tp-card-body { padding: 24px 24px 26px; }
+.tp-card-when { font-family: 'Poppins', system-ui, sans-serif; font-size: 9.5px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: var(--lv); margin-bottom: 10px; }
+.tp-card-body h3 { margin: 0 0 9px; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 20px; color: var(--ink); line-height: 1.25; }
+.tp-card-body p { margin: 0; font-family: 'Poppins', system-ui, sans-serif; font-size: 13.5px; font-weight: 300; line-height: 1.75; color: var(--body); }
+
+/* ===================================================================
+   CERTIFICATE
+   =================================================================== */
+.tp-certs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.tp-cert-card {
+  background: #fff; border: 1px solid var(--tp-line); border-top: 3px solid var(--lv);
+  border-radius: 18px; padding: 32px 28px; text-align: center;
+}
+.tp-cert-card > img { width: 96px; height: auto; margin: 0 auto 18px; display: block; }
+.tp-cert-card h3 { margin: 0 0 10px; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 21px; color: var(--ink); }
+.tp-cert-card .school { font-family: 'Poppins', system-ui, sans-serif; font-size: 9.5px; font-weight: 600; letter-spacing: 1.7px; text-transform: uppercase; color: #9b9287; margin-bottom: 14px; }
+.tp-cert-card p { margin: 0; font-family: 'Poppins', system-ui, sans-serif; font-size: 13.5px; font-weight: 300; line-height: 1.75; color: var(--body); }
+
+.tp-cert-marks { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 26px; }
+.tp-cert-marks a, .tp-cert-marks span {
+  display: flex; align-items: center; gap: 12px; text-decoration: none;
+  background: #fff; border: 1px solid var(--tp-line); border-radius: 14px; padding: 13px 20px;
+  font-family: 'Poppins', system-ui, sans-serif; font-size: 12.5px; font-weight: 400; color: var(--body); line-height: 1.5;
+}
+.tp-cert-marks a:hover { border-color: var(--lv); color: var(--ink); }
+.tp-cert-marks img { width: 32px; height: 32px; object-fit: contain; flex: none; }
+
+/* ===================================================================
+   VIDEOS — the YouTube reviews.
+   =================================================================== */
+.tp-vgrid { display: grid; grid-template-columns: 1.55fr 1fr; gap: 26px; align-items: start; }
+.tp-vmain {
+  position: relative; aspect-ratio: 16 / 9; border-radius: 18px; overflow: hidden;
+  background: #12100e; cursor: pointer;
+}
+.tp-vmain img, .tp-vmain iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
+.tp-vplay {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 74px; height: 74px; border-radius: 50%; background: rgba(255, 255, 255, .93); color: var(--ink);
+  display: grid; place-items: center; transition: transform .3s ease, background .3s ease; pointer-events: none;
+}
+.tp-vmain:hover .tp-vplay { transform: translate(-50%, -50%) scale(1.08); }
+.tp-vlab {
+  position: absolute; left: 20px; bottom: 18px; z-index: 2;
+  font-family: 'Poppins', system-ui, sans-serif; font-size: 10.5px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase; color: #fff;
+  background: rgba(20, 15, 11, .6); border-radius: 30px; padding: 7px 15px; pointer-events: none;
+}
+.tp-vlist { display: flex; flex-direction: column; gap: 9px; max-height: 460px; overflow-y: auto; padding-right: 4px; }
+.tp-vrow {
+  display: flex; align-items: center; gap: 14px; cursor: pointer; text-align: left;
+  appearance: none; background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 12px; padding: 9px; transition: background .25s ease, border-color .25s ease;
+}
+.tp-vrow:hover { background: rgba(255, 255, 255, .09); }
+.tp-vrow[aria-current="true"] { background: rgba(236, 205, 185, .14); border-color: rgba(236, 205, 185, .45); }
+.tp-vrow img { width: 96px; height: 56px; object-fit: cover; border-radius: 7px; flex: none; }
+.tp-vrow b { display: block; font-family: 'Poppins', system-ui, sans-serif; font-size: 13px; font-weight: 500; color: #fff; }
+.tp-vrow i { display: block; font-style: normal; font-family: 'Poppins', system-ui, sans-serif; font-size: 11px; font-weight: 300; color: #a89e91; margin-top: 3px; }
+.tp-vrow:focus-visible { outline: 2px solid #eccdb9; outline-offset: 2px; }
+
+/* ===================================================================
+   VOICES — written testimonials.
+   =================================================================== */
+.tp-ratings { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-bottom: 44px; }
+.tp-rating {
+  display: flex; align-items: center; gap: 12px; background: #fff; border: 1px solid var(--tp-line);
+  border-radius: 14px; padding: 13px 20px;
+}
+.tp-rating svg, .tp-rating > img { flex: none; }
+.tp-rating > img { width: 26px; height: 26px; object-fit: contain; }
+.tp-rating b { font-family: 'Playfair Display', Georgia, serif; font-size: 21px; font-weight: 600; color: var(--ink); }
+.tp-rating span { font-family: 'Poppins', system-ui, sans-serif; font-size: 11px; font-weight: 400; color: var(--body); }
+
+.tp-quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.tp-quote {
+  background: #fff; border: 1px solid var(--tp-line); border-radius: 18px; padding: 30px 28px;
+  display: flex; flex-direction: column;
+}
+.tp-quote-mark { font-family: 'Playfair Display', Georgia, serif; font-size: 46px; line-height: .6; color: var(--lv); opacity: .3; margin-bottom: 14px; }
+.tp-quote p { margin: 0 0 22px; font-family: 'Poppins', system-ui, sans-serif; font-size: 14.5px; font-weight: 300; line-height: 1.8; color: var(--ink); flex: 1; }
+.tp-quote-who { display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--tp-line); padding-top: 18px; }
+.tp-avatar {
+  width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; flex: none;
+  background: var(--lv-soft); color: var(--lv);
+  font-family: 'Playfair Display', Georgia, serif; font-size: 17px; font-weight: 600;
+}
+.tp-quote-who b { display: block; font-family: 'Poppins', system-ui, sans-serif; font-size: 13.5px; font-weight: 500; color: var(--ink); }
+.tp-quote-who i { display: block; font-style: normal; font-family: 'Poppins', system-ui, sans-serif; font-size: 11.5px; font-weight: 300; color: #9b9287; }
+.tp-quote-stars { margin-left: auto; display: flex; gap: 2px; flex: none; }
+
+/* ===================================================================
+   GALLERY — a wide mosaic of the ashram year.
+   =================================================================== */
+.tp-mosaic { display: grid; grid-template-columns: repeat(6, 1fr); grid-auto-rows: 150px; gap: 12px; }
+.tp-mosaic figure { margin: 0; border-radius: 12px; overflow: hidden; background: #ece5d8; }
+.tp-mosaic img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.22, .61, .36, 1); }
+.tp-mosaic figure:hover img { transform: scale(1.06); }
+.tp-mosaic .w2 { grid-column: span 2; } .tp-mosaic .w3 { grid-column: span 3; }
+.tp-mosaic .h2 { grid-row: span 2; }
+
+/* ===================================================================
+   INCLUDED / NOT INCLUDED
+   =================================================================== */
+.tp-incl { display: grid; grid-template-columns: 1.35fr .65fr; gap: 1px; background: var(--tp-line); border: 1px solid var(--tp-line); border-radius: 20px; overflow: hidden; }
+.tp-incl > div { background: #fff; padding: 34px 34px 36px; }
+.tp-incl > div:last-child { background: var(--paper); }
+.tp-incl h3 { margin: 0 0 20px; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 22px; color: var(--ink); }
+.tp-incl ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 13px; }
+.tp-incl li { display: flex; gap: 12px; font-family: 'Poppins', system-ui, sans-serif; font-size: 13.5px; font-weight: 300; line-height: 1.7; color: var(--body); }
+.tp-incl li svg { flex: none; margin-top: 4px; }
+.tp-incl .yes svg { color: #5d9948; }
+.tp-incl .no svg { color: #b5aa99; }
+.tp-incl .note { margin: 22px 0 0; font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 14px; line-height: 1.65; color: #7d746a; }
+
+/* ===================================================================
+   FAQ
+   =================================================================== */
+.tp-faq { max-width: 880px; margin: 0 auto; border-top: 1px solid var(--tp-line); }
+.tp-faq details { border-bottom: 1px solid var(--tp-line); }
+.tp-faq summary { list-style: none; cursor: pointer; padding: 22px 44px 22px 0; position: relative; }
+/* The question is a real heading, so it lands in the document outline and in
+   the FAQPage markup rather than being loose text inside a <summary>. */
+.tp-faq summary h3 {
+  margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500;
+  font-size: 18.5px; color: var(--ink); line-height: 1.4;
+}
+.tp-faq summary::-webkit-details-marker { display: none; }
+.tp-faq summary::after {
+  content: ""; position: absolute; right: 8px; top: 50%; width: 11px; height: 11px;
+  border-right: 1.6px solid var(--lv); border-bottom: 1.6px solid var(--lv);
+  transform: translateY(-70%) rotate(45deg); transition: transform .3s ease;
+}
+.tp-faq details[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
+.tp-faq summary:focus-visible { outline: 2px solid var(--lv); outline-offset: 3px; }
+.tp-faq .ans { padding: 0 44px 24px 0; }
+.tp-faq .ans p { margin: 0; font-family: 'Poppins', system-ui, sans-serif; font-size: 14.5px; font-weight: 300; line-height: 1.85; color: var(--body); }
+
+/* ===================================================================
+   APPLY — the closing band.
+   =================================================================== */
+.tp-apply { position: relative; overflow: hidden; background: var(--ink); }
+.tp-apply > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .3; }
+.tp-apply::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(20, 15, 11, .92) 0%, rgba(20, 15, 11, .72) 55%, rgba(20, 15, 11, .5) 100%); }
+.tp-apply .tp-wrap { position: relative; z-index: 2; }
+.tp-apply-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: center; padding: 96px 0; }
+.tp-apply h2 { margin: 0 0 18px; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: clamp(28px, 3.6vw, 46px); line-height: 1.16; color: #fff; }
+.tp-apply p { margin: 0 0 30px; font-family: 'Poppins', system-ui, sans-serif; font-size: 16px; font-weight: 300; line-height: 1.8; color: #cdc4b8; max-width: 52ch; }
+.tp-apply-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.tp-apply-sum { background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .14); border-radius: 20px; padding: 30px 32px; backdrop-filter: blur(3px); }
+.tp-apply-sum .lab { font-family: 'Poppins', system-ui, sans-serif; font-size: 9.5px; font-weight: 600; letter-spacing: 1.7px; text-transform: uppercase; color: #eccdb9; margin-bottom: 14px; }
+.tp-apply-row {
+  display: flex; align-items: center; gap: 16px; text-decoration: none;
+  padding: 14px 0; border-top: 1px solid rgba(255, 255, 255, .14);
+  transition: padding-left .25s ease;
+}
+.tp-apply-row:hover { padding-left: 8px; }
+.tp-apply-row:focus-visible { outline: 2px solid #eccdb9; outline-offset: 3px; }
+.tp-apply-row > .tp-fig { font-size: 28px; color: #eccdb9; flex: none; min-width: 54px; }
+.tp-apply-row span + span { flex: 1; min-width: 0; }
+.tp-apply-row b { display: block; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 16px; color: #fff; }
+.tp-apply-row i { display: block; font-style: normal; font-family: 'Poppins', system-ui, sans-serif; font-size: 11.5px; font-weight: 300; color: #a89e91; margin-top: 2px; }
+.tp-apply-row .p { flex: none; font-family: 'Playfair Display', Georgia, serif; font-variant-numeric: tabular-nums; font-weight: 600; font-size: 19px; color: #fff; }
+
+/* ===================================================================
+   RESPONSIVE
+   =================================================================== */
+@media (max-width: 1100px) {
+  .tp-wrap { padding: 0 34px; }
+  .tp-rail { margin: 0 -34px; padding-left: 34px; padding-right: 34px; }
+  .tp-sec { padding: 74px 0; }
+  .tp-course-head, .tp-day-grid, .tp-apply-grid { grid-template-columns: 1fr; gap: 44px; }
+  .tp-course-body { margin-top: 52px; }
+  .tp-course-photo img { aspect-ratio: 20 / 9; }
+  .tp-space, .tp-space.flip { grid-template-columns: 1fr; gap: 30px; }
+  .tp-space.flip .tp-space-shots { order: 0; }
+  .tp-certs { grid-template-columns: 1fr; }
+  .tp-vgrid { grid-template-columns: 1fr; }
+  .tp-vlist { max-height: none; flex-direction: row; overflow-x: auto; }
+  .tp-vrow { flex: 0 0 250px; }
+  .tp-pillars { grid-template-columns: 1fr 1fr; }
+  .tp-arc { grid-template-columns: 1fr 1fr; gap: 30px; }
+  .tp-cards, .tp-quotes { grid-template-columns: 1fr 1fr; }
+  .tp-day-media { position: static; }
+  .tp-apply-grid { padding: 74px 0; }
+  .tp-mosaic { grid-auto-rows: 120px; }
+}
+
+@media (max-width: 760px) {
+  .tp-wrap { padding: 0 22px; }
+  .tp-rail { margin: 0 -22px; padding-left: 22px; padding-right: 22px; }
+  .tp-sec { padding: 58px 0; }
+  .tp-sec.tight { padding: 48px 0; }
+  .tp-head { margin-bottom: 34px; }
+
+  /* The ladder keeps its proportions on a phone — that is the whole point of
+     it — but the labels move out of the bar and under it, because 92px of
+     height cannot hold three columns of text at this width. */
+  .tp-bar { height: 46px; }
+  .tp-fill { padding: 0 14px; gap: 12px; }
+  .tp-run-n { font-size: 19px; }
+  .tp-run-t, .tp-run-meta { display: none; }
+  .tp-prior span { display: none; }
+  .tp-run-under {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 14px;
+    padding: 9px 2px 0; font-family: 'Poppins', system-ui, sans-serif;
+  }
+  .tp-run-under b { font-family: 'Playfair Display', Georgia, serif; font-size: 15.5px; font-weight: 500; color: var(--ink); }
+  .tp-run-under i { font-style: normal; font-size: 11.5px; font-weight: 400; color: var(--body); }
+  .tp-runs { gap: 22px; }
+
+  .tp-pillars, .tp-arc, .tp-cards, .tp-quotes, .tp-two, .tp-incl, .tp-who { grid-template-columns: 1fr; }
+  .tp-space-shots { height: 300px; }
+  .tp-price-card, .tp-dates, .tp-cert-card { padding: 26px 22px; }
+  .tp-course-photo { margin-bottom: 30px; }
+  .tp-course-photo img { aspect-ratio: 16 / 9; }
+  .tp-course-photo figcaption { padding: 34px 20px 16px; font-size: 16px; }
+  .tp-course-photo figcaption .tp-fig { font-size: 32px; }
+  .tp-day-media { grid-template-columns: 1fr 1fr; }
+  .tp-mosaic { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 96px; }
+  .tp-apply-grid { padding: 58px 0; }
+  .tp-switch button { font-size: 11.5px; }
+  .tp-hour { grid-template-columns: 58px 1fr; gap: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tp *, .tp *::before, .tp *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+/* Sits under the FAQ list, pointing at the site's full FAQ page. */
+.tp-faq-more {
+  max-width: 880px; margin: 24px auto 0; text-align: center;
+  font-family: 'Poppins', system-ui, sans-serif; font-size: 13.5px; font-weight: 300;
+  color: var(--body);
+}
+.tp-faq-more a { color: var(--lv); text-decoration: underline; text-underline-offset: 3px; }
