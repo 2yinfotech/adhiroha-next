@@ -25,7 +25,7 @@ export const metadata = withOpenGraph({
   description:
     "Complete your RYT-500 with our 500 hour yoga teacher training in Rishikesh, 60 days combining the 200 and 300 hour syllabus, stay and meals included.",
   alternates: { canonical: "/500-hour-yoga-teacher-training-course-rishikesh/", languages: hreflangFor("/500-hour-yoga-teacher-training-course-rishikesh/") }
-});
+}, { type: "article" });
 
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing
 // can earn rich results. FAQs are parsed from the page's own markup.

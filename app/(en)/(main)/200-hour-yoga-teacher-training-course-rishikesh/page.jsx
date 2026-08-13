@@ -24,7 +24,7 @@ export const metadata = withOpenGraph({
   description:
     "Yoga Alliance certified 200 hour yoga teacher training in Rishikesh. 24 days, small groups, Himalayan ashram stay, all meals and excursions included.",
   alternates: { canonical: "/200-hour-yoga-teacher-training-course-rishikesh/", languages: hreflangFor("/200-hour-yoga-teacher-training-course-rishikesh/") }
-});
+}, { type: "article" });
 
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing
 // can earn rich results. FAQs are parsed from the page's own markup.

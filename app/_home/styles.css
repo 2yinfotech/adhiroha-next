@@ -5042,3 +5042,32 @@
    the rust used by a running course, so the two read as different states. */
 .bc-pill.is-soon{background:#b07d45;color:#fff;border:0;
   box-shadow:0 3px 12px rgba(40,26,12,.34)}
+
+/* ---------- Shortened course sections (.detail.compact) ----------
+   The 300 and 500 sections carry one paragraph now instead of four. The default
+   .detail grid is `align-items:start` with a fixed 460px image, so the media
+   column would hang a long way below the text and the row would read as broken.
+   These two stretch instead: the frame grows to fill whatever height the text
+   column needs, with a floor so a short paragraph cannot squash the photo.
+   Only above 1100px, which is where the grid is actually two columns. Below
+   that the layout stacks and the existing fixed frame heights are correct. */
+@media (min-width: 1101px) {
+  .detail.compact { align-items: stretch; }
+  .detail.compact > .d-media { display: flex; flex-direction: column; }
+  .detail.compact > .d-media > .frame { flex: 1 1 auto; height: auto; min-height: 300px; }
+  .detail.compact > .d-media > .fact-card { flex: 0 0 auto; }
+  /* Keep the text block optically centred against the taller media column. */
+  .detail.compact > .d-text { display: flex; flex-direction: column; justify-content: center; }
+}
+
+/* Review counts under each platform score. Google will not show a rating rich
+   result without a count, and the count has to be visible to the reader on the
+   same page as the markup, not only inside the JSON-LD. */
+.rt-count {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .04em;
+  color: #a2937d;
+  margin-top: 2px;
+}

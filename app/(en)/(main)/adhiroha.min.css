@@ -121,3 +121,89 @@
    the rust used by a running course, so the two read as different states. */
 .bc-pill.is-soon{background:#b07d45;color:#fff;border:0;
   box-shadow:0 3px 12px rgba(40,26,12,.34)}
+
+/* ===== Course-page rating line ====================================
+   The Course node carries an aggregateRating, and Google requires the same
+   figures to be visible to the reader on that page. This sits under the hero
+   chips and names the source, because the rating is the school's on Google
+   rather than one course's. */
+.c-rating{display:inline-flex;align-items:center;gap:10px;margin-top:18px;
+  padding:9px 16px;border-radius:999px;background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.18)}
+.c-rating .cr-score{font-family:'Playfair Display',Georgia,serif;font-size:19px;
+  font-weight:600;color:#fff;line-height:1}
+.c-rating .cr-stars{color:#f5b301;letter-spacing:1px;font-size:13px;line-height:1}
+.c-rating .cr-txt{font-size:12px;font-weight:300;color:#e5dccd;line-height:1.4}
+.c-rating .cr-txt b{font-weight:500;color:#fff}
+@media(max-width:680px){.c-rating{padding:8px 13px;gap:8px}
+  .c-rating .cr-score{font-size:17px}.c-rating .cr-txt{font-size:11px}}
+
+/* ===== New course-page sections =====================================
+   Built from the site's existing tokens (band-cream/band-paper, twelve-head,
+   sec-h, kicker mid, reveal) so they animate in on scroll like everything else
+   and need no new colours. Only the grids below are new. */
+
+/* --- Module-wise syllabus: hour allocation --- */
+/* Five categories, so the track is sized to fit all five on one row on a wide
+   screen rather than leaving the last card stranded underneath. */
+.mod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(198px,1fr));gap:18px;margin-top:52px}
+@media(min-width:1180px){.mod-grid{grid-template-columns:repeat(5,1fr)}}
+@media(max-width:1179px) and (min-width:760px){.mod-grid{grid-template-columns:repeat(3,1fr)}}
+.mod-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;
+  padding:30px 26px 26px;overflow:hidden;
+  transition:transform .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s}
+.mod-card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -34px rgba(44,39,35,.42)}
+.mod-card::before{content:"";position:absolute;inset:0 auto auto 0;width:100%;height:3px;
+  background:linear-gradient(90deg,#c99a63,#f0d9b5);transform:scaleX(0);transform-origin:left;
+  transition:transform .5s cubic-bezier(.22,.61,.36,1)}
+.mod-card:hover::before{transform:scaleX(1)}
+.mod-hours{display:inline-flex;align-items:baseline;gap:5px;margin-bottom:14px}
+.mod-hours b{font-family:'Playfair Display',Georgia,serif;font-size:34px;font-weight:600;color:#c1362f;line-height:1}
+.mod-hours span{font-size:11px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:#a2937d}
+.mod-card h3{font-family:'Playfair Display',Georgia,serif;font-size:19px;font-weight:600;
+  color:var(--ink);margin:0 0 9px;line-height:1.3}
+.mod-card p{font-size:13.5px;font-weight:300;line-height:1.65;color:#6b5c48;margin:0}
+.mod-bar{height:4px;border-radius:4px;background:rgba(201,154,99,.2);margin-top:18px;overflow:hidden}
+.mod-bar i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,#c99a63,#c1362f)}
+
+/* --- Arrival / packing: numbered steps beside a photo --- */
+.arr-split{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;margin-top:52px}
+.arr-steps{list-style:none;padding:0;margin:0;counter-reset:arr}
+.arr-steps li{position:relative;padding:0 0 26px 60px;counter-increment:arr}
+.arr-steps li::before{content:counter(arr,decimal-leading-zero);position:absolute;left:0;top:-2px;
+  width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+  font-size:12px;font-weight:600;letter-spacing:.5px;color:#c1362f;
+  background:rgba(201,154,99,.14);border:1px solid rgba(201,154,99,.4)}
+.arr-steps li::after{content:"";position:absolute;left:19.5px;top:44px;bottom:6px;width:1px;
+  background:linear-gradient(180deg,rgba(201,154,99,.5),transparent)}
+.arr-steps li:last-child{padding-bottom:0}
+.arr-steps li:last-child::after{display:none}
+.arr-steps b{display:block;font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px}
+.arr-steps p{font-size:13.5px;font-weight:300;line-height:1.7;color:#6b5c48;margin:0}
+.arr-media{position:relative;border-radius:20px;overflow:hidden;height:100%;min-height:420px;
+  box-shadow:0 34px 72px -40px rgba(44,39,35,.6)}
+.arr-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:transform 1.1s cubic-bezier(.22,.61,.36,1)}
+.arr-split:hover .arr-media img{transform:scale(1.05)}
+
+/* --- Season table --- */
+.season-wrap{margin-top:46px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
+.season-row{display:grid;grid-template-columns:1.1fr .9fr 1.4fr;gap:0;
+  border-bottom:1px solid var(--line);transition:background .3s}
+.season-row:last-child{border-bottom:0}
+.season-row:hover{background:rgba(201,154,99,.07)}
+.season-row>div{padding:17px 22px;font-size:13.5px;font-weight:300;color:#6b5c48;line-height:1.55}
+.season-row .sr-m{font-weight:600;color:var(--ink)}
+.season-row .sr-t{color:#c1362f;font-weight:500;white-space:nowrap}
+.season-head{background:rgba(201,154,99,.12)}
+.season-head>div{font-size:10.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#8a7860}
+
+@media(max-width:900px){
+  .arr-split{grid-template-columns:1fr;gap:36px}
+  .arr-media{min-height:300px}
+  .season-row{grid-template-columns:1fr;gap:0}
+  .season-row>div{padding:10px 18px}
+  .season-row>div:first-child{padding-top:16px}
+  .season-row>div:last-child{padding-bottom:16px}
+  .season-head{display:none}
+}
