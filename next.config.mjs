@@ -119,6 +119,17 @@ const nextConfig = {
   async headers() {
     return [
       {
+        // Course and marketing pages change a few times a month, not a few
+        // times a day. Without a Cache-Control header every request rebuilt the
+        // page on the origin, which is why TTFB swung between 0.46s and 1.72s.
+        // s-maxage lets Cloudflare and any CDN in front serve from the edge
+        // while stale-while-revalidate keeps a refresh from ever being a miss.
+        source: "/((?!api|student-admission-panel|registration|blog|blogs).*)",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400" },
+        ],
+      },
+      {
         source: "/:path*",
         headers: [
           { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
