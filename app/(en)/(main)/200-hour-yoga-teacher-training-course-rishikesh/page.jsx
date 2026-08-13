@@ -12,8 +12,10 @@ const sections = [
   { label: "Fees", target: "course-glance" },
   { label: "Subject", target: "curriculum" },
   { label: "Daily Schedule", target: "daily-rhythm" },
+  { label: "Amenities", target: "amenities" },
   { label: "Accommodation", target: "accommodation" },
   { label: "Teachers", target: "your-teachers" },
+  { label: "Surrounding", target: "finding-us" },
   { label: "Contact Us", target: "begin" }
 ];
 
