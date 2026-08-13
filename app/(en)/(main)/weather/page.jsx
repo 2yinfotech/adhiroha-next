@@ -1,14 +1,15 @@
 import AuxiliaryPage from "@/components/AuxiliaryPage";
+import { withOpenGraph } from "@/lib/root-metadata";
 import styles from "@/components/AuxiliaryPage.module.css";
 import JsonLd from "@/components/JsonLd";
 import { graph, breadcrumbSchema } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = withOpenGraph({
   title: "Best Time for Yoga Teacher Training in Rishikesh",
   description:
     "Rishikesh weather month by month, and the best time of year to do a yoga teacher training, temperatures, monsoon, and what to pack for each season.",
   alternates: { canonical: "/weather/" },
-};
+});
 
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing
 // can earn rich results. FAQs are parsed from the page's own markup.

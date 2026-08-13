@@ -1,16 +1,17 @@
 import "./styles.css";
+import { withOpenGraph } from "@/lib/root-metadata";
 import content from "./content";
 import scripts from "./scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
 import { graph, breadcrumbSchema, extractFaqs, faqSchema, hreflangFor } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = withOpenGraph({
   title: "Code of Conduct & Policies | Adhiroha, Rishikesh",
   description:
     "Read the code of conduct, ashram rules, refund and cancellation policies for yoga teacher training courses at Adhiroha in Rishikesh, India.",
   alternates: { canonical: "/yoga-ashram-in-india-code-of-conduct/", languages: hreflangFor("/yoga-ashram-in-india-code-of-conduct/") }
-};
+});
 
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing
 // can earn rich results. FAQs are parsed from the page's own markup.

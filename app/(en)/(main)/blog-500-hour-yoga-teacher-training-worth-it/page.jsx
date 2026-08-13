@@ -1,16 +1,17 @@
 import "./styles.css";
+import { withOpenGraph } from "@/lib/root-metadata";
 import content from "./content";
 import scripts from "./scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
 import { graph, breadcrumbSchema, extractFaqs, faqSchema } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = withOpenGraph({
   title: "Is the 500 Hour Yoga Teacher Training Worth It?",
   description:
     "Is a 500 hour yoga teacher training worth two months and the fee? An honest look at what RYT-500 certification actually changes for a teacher.",
   alternates: { canonical: "/blog-500-hour-yoga-teacher-training-worth-it/" }
-};
+});
 
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing
 // can earn rich results. FAQs are parsed from the page's own markup.

@@ -1,15 +1,16 @@
 import ApplicationForm from "@/components/ApplicationForm";
+import { withOpenGraph } from "@/lib/root-metadata";
 import AuxiliaryPage from "@/components/AuxiliaryPage";
 import styles from "@/components/AuxiliaryPage.module.css";
 import JsonLd from "@/components/JsonLd";
 import { graph, breadcrumbSchema } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = withOpenGraph({
   title: "Apply to Teach Yoga in Rishikesh | Adhiroha",
   description:
     "Apply to join the teaching team at Adhiroha Yoga School in Rishikesh. We look for experienced, traditionally trained yoga teachers based in India.",
   alternates: { canonical: "/apply-for-teacher-in-rishikesh/" },
-};
+});
 
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing
 // can earn rich results. FAQs are parsed from the page's own markup.

@@ -1,16 +1,17 @@
 import "./styles.css";
+import { withOpenGraph } from "@/lib/root-metadata";
 import content from "./content";
 import scripts from "./scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
 import { graph, breadcrumbSchema, extractFaqs, faqSchema, hreflangFor } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = withOpenGraph({
   title: "Yoga Gallery | The Adhiroha Ashram, Rishikesh",
   description:
     "See the Adhiroha ashram in Rishikesh, the yoga shala, rooms, dining hall, Ganga ghat sessions and Himalayan surroundings, in photographs.",
   alternates: { canonical: "/yoga-gallery-india/", languages: hreflangFor("/yoga-gallery-india/") }
-};
+});
 
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing
 // can earn rich results. FAQs are parsed from the page's own markup.

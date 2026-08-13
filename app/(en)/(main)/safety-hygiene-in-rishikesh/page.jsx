@@ -1,16 +1,17 @@
 import "./styles.css";
+import { withOpenGraph } from "@/lib/root-metadata";
 import content from "./content";
 import scripts from "./scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
 import { graph, breadcrumbSchema, extractFaqs, faqSchema, hreflangFor } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = withOpenGraph({
   title: "Safety & Hygiene at Our Rishikesh Ashram | Adhiroha",
   description:
     "How Adhiroha keeps students safe and well in Rishikesh, clean ensuite rooms, RO drinking water, hygienic sattvic kitchen and 24/7 on-site support.",
   alternates: { canonical: "/safety-hygiene-in-rishikesh/", languages: hreflangFor("/safety-hygiene-in-rishikesh/") }
-};
+});
 
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing
 // can earn rich results. FAQs are parsed from the page's own markup.

@@ -1,16 +1,17 @@
 import "./styles.css";
+import { withOpenGraph } from "@/lib/root-metadata";
 import content from "./content";
 import scripts from "./scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
 import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, courseFacts, hreflangFor } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = withOpenGraph({
   title: "Sadhana Immersion Programme in Rishikesh | 15 Days",
   description:
     "A 15-day Sadhana immersion in Rishikesh for a deeper personal practice, disciplined daily sadhana, silence and yogic living at our Himalayan ashram.",
   alternates: { canonical: "/sadhana-immersion-programme/", languages: hreflangFor("/sadhana-immersion-programme/") }
-};
+});
 
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing
 // can earn rich results. FAQs are parsed from the page's own markup.

@@ -3,6 +3,8 @@ import "./styles.css";
 import { HEADER_HTML, DRAWER_HTML, FOOTER_HTML } from "@/components/chrome";
 import ArticleScripts from "@/components/ArticleScripts";
 import { getArticleBySlug, getAllArticles, getFaqs, getInternalOk } from "@/lib/articles";
+import { postMetadata } from "@/lib/blog-seo";
+import { SITE } from "@/lib/seo";
 import {
   buildToc,
   fixArticleHtml,
@@ -19,10 +21,11 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const article = await getArticleBySlug(slug);
   if (!article) return { title: "Not found | Adhiroha" };
-  return {
-    title: article.title_tag || article.title,
-    alternates: { canonical: `/blog/${article.slug}/` },
-  };
+  // Description, canonical and a complete per-post Open Graph block. Before
+  // this, every post inherited the root layout's metadata, so all of them
+  // shared the homepage's description and announced og:url as the homepage.
+  const cover = fixAssetPath(article.cover_image);
+  return postMetadata(article, { image: cover ? `${SITE}${cover}` : undefined });
 }
 
 const ICON_CAL =

@@ -1,4 +1,5 @@
 import "./styles.css";
+import { withOpenGraph } from "@/lib/root-metadata";
 import content from "./content";
 import scripts from "./scripts";
 import PageScripts from "@/components/PageScripts";
@@ -9,12 +10,12 @@ import { graph, breadcrumbSchema, extractFaqs, faqSchema } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
-export const metadata = {
+export const metadata = withOpenGraph({
   title: "Yoga Teacher Training Blog | Adhiroha, Rishikesh",
   description:
     "Honest guides to training in Rishikesh, choosing a yoga school, what to expect as a beginner, and how the 200, 300 and 500 hour courses compare.",
   alternates: { canonical: "/blogs/" },
-};
+});
 
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing
 // can earn rich results. FAQs are parsed from the page's own markup.

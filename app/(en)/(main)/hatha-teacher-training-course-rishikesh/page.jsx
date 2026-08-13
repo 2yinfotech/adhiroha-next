@@ -1,4 +1,5 @@
 import "./styles.css";
+import { withOpenGraph } from "@/lib/root-metadata";
 import content from "./content";
 import scripts from "./scripts";
 import PageScripts from "@/components/PageScripts";
@@ -18,12 +19,12 @@ const sections = [
   { label: "Contact Us", target: "begin" }
 ];
 
-export const metadata = {
+export const metadata = withOpenGraph({
   title: "Hatha & Yin Yoga Teacher Training in Rishikesh | Adhiroha",
   description:
     "A 14-day Hatha and Yin yoga teacher training in Rishikesh. Traditional alignment, long holds and restorative practice with experienced Indian teachers.",
   alternates: { canonical: "/hatha-teacher-training-course-rishikesh/", languages: hreflangFor("/hatha-teacher-training-course-rishikesh/") }
-};
+});
 
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing
 // can earn rich results. FAQs are parsed from the page's own markup.

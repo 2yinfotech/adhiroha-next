@@ -1,4 +1,5 @@
 import "../_home/styles.css";
+import { withOpenGraph } from "@/lib/root-metadata";
 import content from "../_home/content";
 import scripts from "../_home/scripts";
 import PageScripts from "@/components/PageScripts";
@@ -8,14 +9,14 @@ import AnchorScroll from "@/components/AnchorScroll";
 import JsonLd from "@/components/JsonLd";
 import { graph, extractFaqs, faqSchema, LANGUAGE_ALTERNATES, schoolTourVideoSchema } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = withOpenGraph({
   title: "Yoga Teacher Training in Rishikesh | 200/300/500 Hr YTTC",
   description:
-    "Yoga Alliance certified 200, 300 & 500 hour yoga teacher training in Rishikesh, India. Small batches, expert Indian teachers, ashram stay & meals included.",
+    "Yoga Alliance certified yoga teacher training school in Rishikesh, India. Small batches, expert Indian teachers, three-acre ashram stay and meals included.",
   // Page-level `alternates` replaces the layout's, so the hreflang set has to be
   // declared here alongside the canonical — not inherited.
   alternates: { canonical: "/", languages: LANGUAGE_ALTERNATES }
-};
+});
 
 // The homepage FAQ section is a strong rich-result candidate; the questions are
 // read straight from the page markup so schema and page can never disagree.

@@ -1,16 +1,17 @@
 import "./styles.css";
+import { withOpenGraph } from "@/lib/root-metadata";
 import content from "./content";
 import scripts from "./scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
 import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, courseFacts, hreflangFor } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = withOpenGraph({
   title: "Sound Healing Teacher Training in Rishikesh | Adhiroha",
   description:
     "Certified sound healing and therapy teacher training in Rishikesh. Learn singing bowls, gongs and mantra over 6 days at our Yoga Alliance registered ashram.",
   alternates: { canonical: "/sound-healing-ttc-rishikesh/", languages: hreflangFor("/sound-healing-ttc-rishikesh/") }
-};
+});
 
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing
 // can earn rich results. FAQs are parsed from the page's own markup.

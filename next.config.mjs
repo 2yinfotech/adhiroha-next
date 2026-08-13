@@ -75,6 +75,30 @@ const nextConfig = {
       // and the old links were sent with a capital R.
       { source: "/Registration.php", destination: "/registration/", statusCode: 301 },
       { source: "/registration.php", destination: "/registration/", statusCode: 301 },
+      // Four URLs that 404 but are still in Google's index and still taking
+      // impressions. /500-hour-…-in-india in particular outranks the real 500
+      // hour page on "500 hour yoga school in india" while returning nothing at
+      // all, so the equity is being thrown away rather than passed on.
+      {
+        source: "/500-hour-yoga-teacher-training-course-in-india",
+        destination: "/500-hour-yoga-teacher-training-course-rishikesh/",
+        statusCode: 301,
+      },
+      {
+        source: "/200-hour-yoga-teacher-training-course-in-rishikesh",
+        destination: "/200-hour-yoga-teacher-training-course-rishikesh/",
+        statusCode: 301,
+      },
+      {
+        source: "/200-hour-yoga-teacher-training-course-in-india",
+        destination: "/200-hour-yoga-teacher-training-course-rishikesh/",
+        statusCode: 301,
+      },
+      {
+        source: "/300-hour-yoga-teacher-training-course-in-india",
+        destination: "/300-hour-yoga-teacher-training-course-rishikesh/",
+        statusCode: 301,
+      },
       // The Yoga Retreat is discontinued. Each locale's retreat URL goes to that
       // same locale's Sadhana Immersion Programme, which is the nearest thing we
       // still run and the course that replaced it in the admission panel. These

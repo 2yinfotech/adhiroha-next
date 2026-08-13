@@ -1,4 +1,5 @@
 import "./styles.css";
+import { withOpenGraph } from "@/lib/root-metadata";
 import content from "./content";
 import scripts from "./scripts";
 import PageScripts from "@/components/PageScripts";
@@ -9,21 +10,20 @@ import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, courseFa
 const sections = [
   { label: "Intro", target: "top" },
   { label: "Fees", target: "course-glance" },
+  { label: "Compare", target: "compare-courses" },
   { label: "Subject", target: "curriculum" },
   { label: "Daily Schedule", target: "daily-rhythm" },
-  { label: "Amenities", target: "amenities" },
   { label: "Accommodation", target: "accommodation" },
   { label: "Teachers", target: "your-teachers" },
-  { label: "Surrounding", target: "finding-us" },
   { label: "Contact Us", target: "begin" }
 ];
 
-export const metadata = {
-  title: "500 Hour Yoga Teacher Training in Rishikesh | Adhiroha",
+export const metadata = withOpenGraph({
+  title: "500 Hour Yoga Teacher Training in Rishikesh, India | RYT 500 | Adhiroha",
   description:
     "Complete your RYT-500 with our 500 hour yoga teacher training in Rishikesh, 60 days combining the 200 and 300 hour syllabus, stay and meals included.",
   alternates: { canonical: "/500-hour-yoga-teacher-training-course-rishikesh/", languages: hreflangFor("/500-hour-yoga-teacher-training-course-rishikesh/") }
-};
+});
 
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing
 // can earn rich results. FAQs are parsed from the page's own markup.

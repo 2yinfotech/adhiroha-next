@@ -1,4 +1,5 @@
 import "./styles.css";
+import { withOpenGraph } from "@/lib/root-metadata";
 import content from "./content";
 import scripts from "./scripts";
 import PageScripts from "@/components/PageScripts";
@@ -18,12 +19,12 @@ const sections = [
   { label: "Contact Us", target: "begin" }
 ];
 
-export const metadata = {
+export const metadata = withOpenGraph({
   title: "Pranayama & Meditation TTC in Rishikesh | Adhiroha",
   description:
     "A 14-day pranayama and meditation teacher training in Rishikesh. Breathwork, kriya and meditation taught traditionally beside the Ganga at our ashram.",
   alternates: { canonical: "/pranayama-teacher-training-course-rishikesh/", languages: hreflangFor("/pranayama-teacher-training-course-rishikesh/") }
-};
+});
 
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing
 // can earn rich results. FAQs are parsed from the page's own markup.

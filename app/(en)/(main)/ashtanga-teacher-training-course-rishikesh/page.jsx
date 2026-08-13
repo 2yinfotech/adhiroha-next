@@ -1,4 +1,5 @@
 import "./styles.css";
+import { withOpenGraph } from "@/lib/root-metadata";
 import content from "./content";
 import scripts from "./scripts";
 import PageScripts from "@/components/PageScripts";
@@ -18,12 +19,12 @@ const sections = [
   { label: "Contact Us", target: "begin" }
 ];
 
-export const metadata = {
+export const metadata = withOpenGraph({
   title: "Ashtanga Yoga Teacher Training in Rishikesh | Adhiroha",
   description:
     "Learn the primary series and vinyasa sequencing on our 14-day Ashtanga yoga teacher training in Rishikesh, taught in the Himalayan foothills at Upper Tapovan.",
   alternates: { canonical: "/ashtanga-teacher-training-course-rishikesh/", languages: hreflangFor("/ashtanga-teacher-training-course-rishikesh/") }
-};
+});
 
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing
 // can earn rich results. FAQs are parsed from the page's own markup.

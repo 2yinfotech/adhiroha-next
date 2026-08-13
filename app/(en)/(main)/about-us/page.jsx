@@ -1,16 +1,17 @@
 import "./styles.css";
+import { withOpenGraph } from "@/lib/root-metadata";
 import content from "./content";
 import scripts from "./scripts";
 import PageScripts from "@/components/PageScripts";
 import JsonLd from "@/components/JsonLd";
 import { graph, breadcrumbSchema, extractFaqs, faqSchema, hreflangFor } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = withOpenGraph({
   title: "About Adhiroha | Yoga School in Rishikesh, India",
   description:
     "Adhiroha is a Yoga Alliance certified yoga school in Upper Tapovan, Rishikesh, 20,000 sq ft ashram, 3,000+ students trained from over 70 countries.",
   alternates: { canonical: "/about-us/", languages: hreflangFor("/about-us/") }
-};
+});
 
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing
 // can earn rich results. FAQs are parsed from the page's own markup.
