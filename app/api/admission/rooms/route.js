@@ -11,7 +11,7 @@ export async function GET(request) {
     return NextResponse.json(await getRoomAvailability(month, gender));
   } catch (e) {
     return NextResponse.json(
-      { availableRooms: [], doubleSharingBooked: true, tripleSharingBooked: true, error: "unavailable" },
+      { availableRooms: [], doubleSharingBooked: true, tripleSharingBooked: true, unavailableReason: { double: "", triple: "" }, error: "unavailable" },
       { status: 500 }
     );
   }

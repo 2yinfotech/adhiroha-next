@@ -204,6 +204,16 @@ export default function AdmissionForm() {
     return () => { cancelled = true; };
   }, [step, leadGender, batch?.month, availabilityTracked]);
 
+  // Going back a step and changing the batch or the lead student's gender can
+  // leave a sharing type selected that the new combination no longer offers —
+  // a man who picked double in March and then moved to the December batch.
+  // Drop the choice so step 2 asks again instead of carrying an unbookable one.
+  useEffect(() => {
+    if (!sharing || !rooms) return;
+    const gone = sharing === "triple" ? rooms.tripleSharingBooked : rooms.doubleSharingBooked;
+    if (gone) setSharing("");
+  }, [rooms, sharing]);
+
   /* ---------- students ---------- */
   const setStudent = (i, patch) =>
     setStudents((prev) => prev.map((s, idx) => (idx === i ? { ...s, ...patch } : s)));
@@ -754,6 +764,9 @@ export default function AdmissionForm() {
                 const full = availabilityTracked && rooms
                   ? which === "triple" ? rooms.tripleSharingBooked : rooms.doubleSharingBooked
                   : false;
+                // A room that is closed by policy rather than by bookings says so.
+                // "Fully booked" on a December double would simply be untrue.
+                const reason = rooms?.unavailableReason?.[which] || "";
                 return (
                   <button
                     key={which}
@@ -767,7 +780,7 @@ export default function AdmissionForm() {
                     <span className="adm-accobody">
                       <span className="adm-accohead">
                         <b>{labels[which]}</b>
-                        {full && <em className="adm-fullbadge">Fully booked</em>}
+                        {full && <em className="adm-fullbadge">{reason || "Fully booked"}</em>}
                       </span>
                       <span className="adm-fees">
                         <span className="adm-feerow"><span>Total Fees</span><b>{eur(f.total)}</b></span>
