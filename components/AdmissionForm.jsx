@@ -10,7 +10,8 @@ const COURSE_LIST = Object.entries(COURSES).map(([value, c]) => ({ value, ...c }
 const MAX_STUDENTS = 3;
 
 // Shown if a gateway is somehow reached with the box unticked.
-const AGREE_FIRST = "Please tick the box above before paying.";
+const AGREE_FIRST = "Please accept the Code of Conduct before paying.";
+const CONDUCT_URL = "/yoga-ashram-in-india-code-of-conduct/";
 
 // Accommodation photography (public/img/remote).
 const ACCO_IMG = {
@@ -909,12 +910,9 @@ export default function AdmissionForm() {
               <input type="checkbox" checked={agreed}
                 onChange={(e) => setAgreed(e.target.checked)} />
               <span>
-                <b>Please check this and confirm</b>
-                Our Ashram is located in the beautiful natural surroundings of the mountains
-                and forest. As with mountain living, especially during the monsoon, you may
-                occasionally experience small things like insects, changing weather, or brief
-                power interruptions. We simply encourage students to come with an open mind
-                and enjoy the natural surroundings.
+                I have read the{" "}
+                <a href={CONDUCT_URL} target="_blank" rel="noopener noreferrer">Code of Conduct</a>{" "}
+                in full and I accept it.
               </span>
             </label>
 

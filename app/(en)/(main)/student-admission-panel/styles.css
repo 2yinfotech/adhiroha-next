@@ -602,10 +602,10 @@
    view: the student should not have to scroll back up to find them. */
 .adm-agree {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
   margin: 22px 0 0;
-  padding: 14px 16px;
+  padding: 12px 16px;
   border: 1.5px solid var(--line);
   border-radius: 11px;
   background: var(--paper);
@@ -618,21 +618,15 @@
   flex: none;
   width: 17px;
   height: 17px;
-  margin-top: 1px;
   accent-color: var(--gold);
   cursor: pointer;
 }
 .adm-agree span {
-  font-size: 12.5px;
-  line-height: 1.65;
+  font-size: 13px;
+  line-height: 1.6;
   color: var(--body);
 }
-.adm-agree span b {
-  display: block;
-  font-size: 13.5px;
-  color: var(--ink);
-  margin-bottom: 4px;
-}
+
 .adm-agree a { color: var(--gold-dk); text-decoration: underline; }
 
 /* PayPal renders its own buttons, so they are greyed and made unclickable
