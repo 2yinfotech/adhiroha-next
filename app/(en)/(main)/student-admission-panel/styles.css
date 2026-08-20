@@ -484,9 +484,13 @@
 .adm-payhead { margin-bottom: 2px; }
 .adm-payhead b { display: block; font-size: 16px; }
 .adm-payhead em { display: block; font-style: normal; font-size: 12px; color: var(--body); margin-top: 2px; }
-.adm-pay .adm-btn.pay { margin-top: 8px; width: 100%; }
+/* The three cards stretch to the tallest one (PayPal, which has two buttons).
+   Pushing the action to the bottom puts that slack above the button instead of
+   leaving an empty shelf underneath it, and lines the three buttons up. */
+.adm-pay .adm-btn.pay { margin-top: auto; width: 100%; }
 
 /* PayPal SDK renders its own buttons into this box. */
+.adm-paypalwrap { margin-top: auto; }
 .adm-paypalbox { margin-top: 10px; min-height: 46px; }
 .adm-paypaloff {
   margin: 10px 0 0;
@@ -600,8 +604,8 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  margin: 14px 0 4px;
-  padding: 11px 13px;
+  margin: 18px 0 16px;
+  padding: 14px 16px;
   border: 1.5px solid var(--line);
   border-radius: 11px;
   background: var(--paper);
@@ -620,7 +624,7 @@
 }
 .adm-agree span {
   font-size: 12.5px;
-  line-height: 1.55;
+  line-height: 1.65;
   color: var(--body);
 }
 .adm-agree a { color: var(--gold-dk); text-decoration: underline; }
