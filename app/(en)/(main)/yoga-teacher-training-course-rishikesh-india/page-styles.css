@@ -686,7 +686,7 @@
   .tp-mosaic { grid-auto-rows: 120px; }
 }
 
-@media (max-width: 760px) {
+@media(max-width:760px),(max-width:1024px) and (orientation:portrait){
   .tp-wrap { padding: 0 22px; }
   .tp-rail { margin: 0 -22px; padding-left: 22px; padding-right: 22px; }
   .tp-sec { padding: 58px 0; }

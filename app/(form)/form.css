@@ -165,7 +165,7 @@
   border: 1px solid var(--ink); border-radius: 3px; background: none; cursor: pointer;
 }
 
-@media (max-width: 720px) {
+@media(max-width:720px),(max-width:1024px) and (orientation:portrait){
   .rg-grid, .rg-choice { grid-template-columns: 1fr; }
   .rg-card { padding: 22px 18px 18px; }
   .rg-head { padding-top: 30px; }

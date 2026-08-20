@@ -165,7 +165,7 @@
 .lp-foot-sm{margin-top:6px;font-size:11.5px;color:#847b70}
 
 /* ---------------- responsive ---------------- */
-@media(max-width:1000px){
+@media(max-width:1000px),(max-width:1024px) and (orientation:portrait){
   .lp-hero-in,.lp-split,.lp-close-in{grid-template-columns:1fr}
   .lp-hero{min-height:0;padding-bottom:44px}
   .lp-hero-shade{background:linear-gradient(180deg,rgba(20,15,12,.86),rgba(20,15,12,.82))}
@@ -174,7 +174,7 @@
   .lp-split .lp-figure{order:-1}
   .lp-close-copy h2,.lp-close-copy p{max-width:none}
 }
-@media(max-width:680px){
+@media(max-width:680px),(max-width:1024px) and (orientation:portrait){
   .lp-cards,.lp-quotes{grid-template-columns:1fr}
   .lf-row{grid-template-columns:1fr}
   .lf{padding:24px 20px 22px}
@@ -261,7 +261,7 @@
 
 .lp-cards-3{grid-template-columns:repeat(3,1fr)}
 
-@media(max-width:1000px){
+@media(max-width:1000px),(max-width:1024px) and (orientation:portrait){
   .lp-grid8{grid-template-columns:repeat(3,1fr)}
   .lp-day{grid-template-columns:1fr 1fr}
   .lp-cert{grid-template-columns:1fr;text-align:center}
@@ -272,7 +272,7 @@
   .lp-figure-sm{max-width:100%;justify-self:stretch}
   .lp-close-img{max-width:none}
 }
-@media(max-width:680px){
+@media(max-width:680px),(max-width:1024px) and (orientation:portrait){
   .lp-grid8{grid-template-columns:repeat(2,1fr);gap:8px}
   .lp-day,.lp-cards-3{grid-template-columns:1fr}
   .lp-lead{max-width:none}
@@ -339,13 +339,13 @@
 .lp-chips span{border:1px solid var(--line);border-radius:20px;padding:6px 13px;
   font-size:11.5px;color:var(--body);background:#fff}
 
-@media(max-width:1000px){
+@media(max-width:1000px),(max-width:1024px) and (orientation:portrait){
   .lp-grid8{grid-auto-rows:140px}
   .lp-daygrid{grid-template-columns:1fr}
   .lp-dayfig img{aspect-ratio:16/9}
   .lp-floatstat{right:16px}
 }
-@media(max-width:680px){
+@media(max-width:680px),(max-width:1024px) and (orientation:portrait){
   .lp-grid8{grid-template-columns:repeat(2,1fr);grid-auto-rows:118px}
   .lp-grid8 figure:nth-child(n){grid-column:span 1;grid-row:span 1}
   .lp-grid8 figure:nth-child(1){grid-column:span 2;grid-row:span 2}

@@ -31,3 +31,71 @@ html .reveal {
     animation: adh-reveal 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) both;
   }
 }
+
+/* ============================================================
+   iPad
+   ============================================================
+   Portrait tablets (744-1024 CSS px) now render the phone layout: every
+   max-width block between 680px and 1024px also fires on `orientation:
+   portrait`, so the columns stack exactly the way they do on a phone.
+
+   What is left is size. The phone layout is drawn in px for a ~390px screen,
+   so on an 820px iPad it lays out correctly but reads small and sparse. `zoom`
+   scales the finished layout — type, images, spacing and radii together — so
+   the proportions stay exactly as designed instead of only the fonts growing.
+
+   The factors are chosen so the layout is composed at roughly 700-740px and
+   then scaled to fill the screen. Nothing here can reach a phone or a desktop:
+   every rule is fenced behind both a width range and `orientation: portrait`.
+   ============================================================ */
+
+@media (min-width: 700px) and (max-width: 800px) and (orientation: portrait) and (any-pointer: coarse) {
+  body { zoom: 1.06; }
+}
+@media (min-width: 801px) and (max-width: 900px) and (orientation: portrait) and (any-pointer: coarse) {
+  body { zoom: 1.15; }
+}
+@media (min-width: 901px) and (max-width: 1024px) and (orientation: portrait) and (any-pointer: coarse) {
+  body { zoom: 1.34; }
+}
+
+/* ---------- Header, 1281-1420px ----------
+   Not a tablet rule, a plain bug: the desktop nav switches on at 1281px but
+   only fits from about 1400px, so "JOIN NOW" ran off the right edge by up to
+   96px. It shows on an iPad Pro in landscape (1366) and on any 1280/1366
+   laptop. Tightening the header's own spacing across that band lets the full
+   nav fit instead of moving the breakpoint and giving landscape iPads the
+   phone burger. Prefixed with `html` so it outranks the per-page copies of
+   these rules, which load after this file. */
+@media (min-width: 1281px) and (max-width: 1420px) {
+  html .hd-in { padding-left: 20px; padding-right: 20px; gap: 12px; }
+  html .hd-nav { gap: 0; }
+  html .hd-link { padding-left: 8px; padding-right: 8px; font-size: 12.5px; }
+  html .hd-logo img { height: 42px; }
+  html .hd-in > .hd-cta { padding-left: 18px; padding-right: 18px; letter-spacing: .8px; }
+}
+
+/* ---------- Landscape tablets ----------
+   Landscape iPads (1024-1366) already get the desktop layout, which is what it
+   should look like. They only run slightly large for the screen, so the whole
+   page is scaled down a touch. `any-pointer: coarse` keeps this on touch
+   devices: a 1366px laptop is left exactly as it is. */
+@media (min-width: 1024px) and (max-width: 1400px) and (orientation: landscape) and (any-pointer: coarse) {
+  body { zoom: 0.94; }
+}
+
+/* ---------- Portrait tablets: centre the capped media ----------
+   Several media blocks carry a desktop max-width (`.ov-left .frame` is capped
+   at 560px, `.found-grid .frame` at 600px). On a phone the column is narrower
+   than the cap so it fills and nobody notices; in the stacked tablet layout the
+   column is wider than the cap, so the image sits hard left with a gap beside
+   it. Auto margins centre it. Where the block already fills its column the
+   margins do nothing, so this cannot shift anything that was correct. */
+@media (min-width: 700px) and (max-width: 1024px) and (orientation: portrait) and (any-pointer: coarse) {
+  html .frame,
+  html .d-media,
+  html .media-wrap,
+  html .why-media,
+  html .grad-media,
+  html .cine-inner { margin-left: auto; margin-right: auto; }
+}

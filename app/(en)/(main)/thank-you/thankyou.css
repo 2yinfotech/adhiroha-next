@@ -157,7 +157,7 @@
 .ty-links span { font-size: 13.5px; color: var(--body); line-height: 1.6; font-weight: 300; }
 
 /* ---------- responsive ---------- */
-@media (max-width: 1000px) {
+@media(max-width:1000px),(max-width:1024px) and (orientation:portrait){
   .ty-steps { grid-template-columns: 1fr; }
   .ty-split { grid-template-columns: 1fr; }
   .ty-links { grid-template-columns: repeat(2, 1fr); }
