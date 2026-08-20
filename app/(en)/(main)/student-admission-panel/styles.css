@@ -627,7 +627,7 @@
   color: var(--body);
 }
 
-.adm-agree a { color: var(--gold-dk); text-decoration: underline; }
+.adm-agree a { color: var(--rust); font-weight: 600; text-decoration: underline; }
 
 /* PayPal renders its own buttons, so they are greyed and made unclickable
    rather than disabled. `inert` on the wrapper takes them out of the tab

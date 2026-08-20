@@ -911,7 +911,7 @@ export default function AdmissionForm() {
                 onChange={(e) => setAgreed(e.target.checked)} />
               <span>
                 I have read the{" "}
-                <a href={CONDUCT_URL} target="_blank" rel="noopener noreferrer">Code of Conduct</a>{" "}
+                <a href={CONDUCT_URL} target="_blank" rel="noopener noreferrer">Code of Conduct &amp; Ashram Guidelines</a>{" "}
                 in full and I accept it.
               </span>
             </label>
