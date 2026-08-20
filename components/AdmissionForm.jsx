@@ -9,6 +9,10 @@ import {
 const COURSE_LIST = Object.entries(COURSES).map(([value, c]) => ({ value, ...c }));
 const MAX_STUDENTS = 3;
 
+// Shown if a gateway is somehow reached with the box unticked.
+const AGREE_FIRST = "Please accept the Code of Conduct before paying.";
+const CONDUCT_URL = "/yoga-ashram-in-india-code-of-conduct/";
+
 // Accommodation photography (public/img/remote).
 const ACCO_IMG = {
   triple: "/img/remote/img_tion-1.webp",
@@ -125,6 +129,11 @@ export default function AdmissionForm() {
   const [notice, setNotice] = useState("");
   // Booking rows are written once; retrying with another gateway reuses them.
   const registered = useRef(null);
+  // The Code of Conduct has to be accepted before any gateway opens. The ref
+  // mirrors the state because the PayPal buttons are rendered once and their
+  // callbacks close over whatever the value was at render time.
+  const [agreed, setAgreed] = useState(false);
+  const agreedRef = useRef(false);
   const paypalBox = useRef(null);
   const paypalRendered = useRef(false);
 
@@ -320,8 +329,11 @@ export default function AdmissionForm() {
     }
   }
 
+  useEffect(() => { agreedRef.current = agreed; }, [agreed]);
+
   /* ---------- Wise / Razorpay ---------- */
   async function pay(gateway) {
+    if (!agreedRef.current) { setError(AGREE_FIRST); return; }
     setError(""); setNotice(""); setPayingWith(gateway); setRegistering(true);
     try {
       const reg = await ensureRegistered();
@@ -428,6 +440,7 @@ export default function AdmissionForm() {
 
           // Register the students, then ask our server to create the order.
           createOrder: async () => {
+            if (!agreedRef.current) { setError(AGREE_FIRST); throw new Error(AGREE_FIRST); }
             setError("");
             const reg = await ensureRegistered();
             const res = await fetch("/api/admission/paypal", {
@@ -897,6 +910,19 @@ export default function AdmissionForm() {
               charge shown below.
             </p>
 
+            {/* Nothing can be paid until this is ticked. Kept to one small
+                paragraph so it does not push the gateways below the fold. */}
+            <label className={`adm-agree${agreed ? " on" : ""}`}>
+              <input type="checkbox" checked={agreed}
+                onChange={(e) => setAgreed(e.target.checked)} />
+              <span>
+                I have read and accept the{" "}
+                <a href={CONDUCT_URL} target="_blank" rel="noopener noreferrer">Code of Conduct</a>{" "}
+                and I understand the ashram is in the mountains and forest, where insects,
+                changing weather and brief power interruptions can be part of the stay.
+              </span>
+            </label>
+
             <div className="adm-pays">
               {["wise", "razorpay"].map((key) => {
                 const g = gateways[key];
@@ -914,7 +940,7 @@ export default function AdmissionForm() {
                     </div>
                     <div className="adm-feerow strong"><span>Total Today</span><b>{eur2(g.total)}</b></div>
                     <button type="button" className={`adm-btn pay brand-${key}`}
-                      disabled={!!payingWith || registering} onClick={() => pay(key)}>
+                      disabled={!agreed || !!payingWith || registering} onClick={() => pay(key)}>
                       {busy ? (registering ? "Saving…" : "Opening…") : `Pay ${eur2(g.total)}`}
                     </button>
                   </div>
@@ -934,7 +960,11 @@ export default function AdmissionForm() {
                 </div>
                 <div className="adm-feerow strong"><span>Total Today</span><b>{eur2(gateways.paypal.total)}</b></div>
                 {PAYPAL_CLIENT_ID
-                  ? <div className="adm-paypalbox" ref={paypalBox} />
+                  ? (
+                    <div className={`adm-paypalwrap${agreed ? "" : " off"}`} inert={!agreed}>
+                      <div className="adm-paypalbox" ref={paypalBox} />
+                    </div>
+                  )
                   : <p className="adm-paypaloff">PayPal isn't switched on yet, please use Wise or Razorpay.</p>}
               </div>
             </div>

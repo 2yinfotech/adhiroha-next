@@ -591,3 +591,50 @@
    the rust used by a running course, so the two read as different states. */
 .bc-pill.is-soon{background:#b07d45;color:#fff;border:0;
   box-shadow:0 3px 12px rgba(40,26,12,.34)}
+
+/* ───────── Code of Conduct consent (step 3) ─────────
+   Sits between the "How would you like to pay?" hint and the gateway cards.
+   Deliberately small and single-block so the three payment cards stay in
+   view: the student should not have to scroll back up to find them. */
+.adm-agree {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 14px 0 4px;
+  padding: 11px 13px;
+  border: 1.5px solid var(--line);
+  border-radius: 11px;
+  background: var(--paper);
+  cursor: pointer;
+  transition: border-color .25s, background .25s;
+}
+.adm-agree:hover { border-color: var(--gold); }
+.adm-agree.on { border-color: var(--gold); background: var(--cream); }
+.adm-agree input {
+  flex: none;
+  width: 17px;
+  height: 17px;
+  margin-top: 1px;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+.adm-agree span {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--body);
+}
+.adm-agree a { color: var(--gold-dk); text-decoration: underline; }
+
+/* PayPal renders its own buttons, so they are greyed and made unclickable
+   rather than disabled. `inert` on the wrapper takes them out of the tab
+   order; the createOrder callback checks the box a second time. */
+.adm-paypalwrap.off { opacity: .45; pointer-events: none; }
+
+/* A gateway button that is only waiting on the tick should not still wear its
+   brand colour at 45% — it reads as clickable. Grey it out properly instead. */
+.adm-pay .adm-btn.pay:disabled {
+  background: var(--line);
+  border-color: var(--line);
+  color: var(--body);
+  opacity: 1;
+}
