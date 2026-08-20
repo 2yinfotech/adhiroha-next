@@ -903,18 +903,13 @@ export default function AdmissionForm() {
               </p>
             </div>
 
-            <h2 className="adm-h">How Would You Like to Pay?</h2>
-            <p className="adm-hint">
-              The registration fee secures your seat. Each method adds the card or transfer
-              charge shown below.
-            </p>
-
-            {/* Nothing can be paid until this is ticked. Kept to one small
-                paragraph so it does not push the gateways below the fold. */}
+            {/* Sits above the payment heading: it has to be read and ticked
+                before any of the three gateways will open. */}
             <label className={`adm-agree${agreed ? " on" : ""}`}>
               <input type="checkbox" checked={agreed}
                 onChange={(e) => setAgreed(e.target.checked)} />
               <span>
+                <b>Please check this and confirm</b>
                 Our Ashram is located in the beautiful natural surroundings of the mountains
                 and forest. As with mountain living, especially during the monsoon, you may
                 occasionally experience small things like insects, changing weather, or brief
@@ -922,6 +917,12 @@ export default function AdmissionForm() {
                 and enjoy the natural surroundings.
               </span>
             </label>
+
+            <h2 className="adm-h">How Would You Like to Pay?</h2>
+            <p className="adm-hint">
+              The registration fee secures your seat. Each method adds the card or transfer
+              charge shown below.
+            </p>
 
             <div className="adm-pays">
               {["wise", "razorpay"].map((key) => {

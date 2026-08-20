@@ -455,7 +455,7 @@
 .adm-srow.total > b { color: var(--rust); font-weight: 700; }
 
 /* ───────── Payment cards ───────── */
-.adm-pays { display: grid; gap: 12px; grid-template-columns: 1fr; }
+.adm-pays { display: grid; gap: 12px; grid-template-columns: 1fr; margin-top: 15px; }
 @media (min-width: 700px) { .adm-pays { grid-template-columns: repeat(3, 1fr); } }
 .adm-pay {
   border: 1.5px solid var(--line);
@@ -604,7 +604,7 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  margin: 18px 0 16px;
+  margin: 22px 0 0;
   padding: 14px 16px;
   border: 1.5px solid var(--line);
   border-radius: 11px;
@@ -626,6 +626,12 @@
   font-size: 12.5px;
   line-height: 1.65;
   color: var(--body);
+}
+.adm-agree span b {
+  display: block;
+  font-size: 13.5px;
+  color: var(--ink);
+  margin-bottom: 4px;
 }
 .adm-agree a { color: var(--gold-dk); text-decoration: underline; }
 
