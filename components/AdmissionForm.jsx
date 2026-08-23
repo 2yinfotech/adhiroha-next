@@ -9,6 +9,19 @@ import {
 const COURSE_LIST = Object.entries(COURSES).map(([value, c]) => ({ value, ...c }));
 const MAX_STUDENTS = 3;
 
+// A course can be pre-selected by the link that brought the student here, so a
+// "Register Now" on the 300 hour page opens the panel with that course already
+// chosen. Both the short alias used in links and the panel's own key are
+// accepted, so an old or hand-typed link still resolves.
+const COURSE_FROM_PARAM = {
+  ...Object.fromEntries(Object.keys(COURSES).map((k) => [k.toLowerCase(), k])),
+  "200": "200 Hour YTTC",
+  "300": "300 Hour YTTC",
+  "500": "500 Hour YTTC",
+  "sound": "Sound Healing",
+  "sound-healing": "Sound Healing",
+};
+
 // Shown if a gateway is somehow reached with the box unticked.
 const AGREE_FIRST = "Please accept the Code of Conduct before paying.";
 const CONDUCT_URL = "/yoga-ashram-in-india-code-of-conduct/";
@@ -171,6 +184,18 @@ export default function AdmissionForm() {
   );
 
   const gateways = useMemo(() => (fees ? gatewayBreakdown(fees.reg) : null), [fees]);
+
+  /* ---------- course pre-selected by the incoming link ----------
+     Read from window.location rather than useSearchParams: this only needs to
+     run once after hydration, and useSearchParams would force the whole panel
+     behind a Suspense boundary. Setting the course here runs the batch fetch
+     below exactly as if the student had picked it from the dropdown. */
+  useEffect(() => {
+    const raw = new URLSearchParams(window.location.search).get("course");
+    if (!raw) return;
+    const key = COURSE_FROM_PARAM[raw.trim().toLowerCase()];
+    if (key) setCourse(key);
+  }, []);
 
   /* ---------- load batches when the course changes ---------- */
   useEffect(() => {

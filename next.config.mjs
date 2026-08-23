@@ -89,6 +89,14 @@ const nextConfig = {
         destination: "/200-hour-yoga-teacher-training-course-rishikesh/",
         statusCode: 301,
       },
+      // A truncated version of the 200 hour URL is in circulation — the slug is
+      // cut off mid-word at "rishik". Somewhere it was linked or shared with the
+      // tail missing, so it 404s instead of landing on the course page.
+      {
+        source: "/200-hour-yoga-teacher-training-course-rishik",
+        destination: "/200-hour-yoga-teacher-training-course-rishikesh/",
+        statusCode: 301,
+      },
       {
         source: "/200-hour-yoga-teacher-training-course-in-india",
         destination: "/200-hour-yoga-teacher-training-course-rishikesh/",
