@@ -62,7 +62,7 @@
   .hd-drawer details,
   .hd-drawer a.hdw-link{margin:0 22px;border-bottom:1px solid var(--line)}
   .hd-drawer summary,
-  .hd-drawer a.hdw-link{font-family:'Playfair Display',serif;font-size:17.5px;font-weight:500;letter-spacing:.2px;padding:16px 2px;color:var(--ink)}
+  .hd-drawer a.hdw-link{font-family:'Playfair Display',serif;font-size:15.5px;font-weight:500;letter-spacing:.2px;padding:16px 2px;color:var(--ink)}
   .hd-drawer a.hdw-link{transition:color .2s}
   .hd-drawer a.hdw-link:active{color:var(--rust)}
   /* No box-model change on open, so nothing jumps as the accordion expands. */
@@ -119,7 +119,7 @@
   .hd-drawer details,
   .hd-drawer a.hdw-link{margin:0 14px;border-bottom:1px solid var(--line)}
   .hd-drawer summary,
-  .hd-drawer a.hdw-link{font-family:'Playfair Display',serif;font-size:17.5px;font-weight:500;letter-spacing:.2px;padding:16px 12px;color:var(--ink)}
+  .hd-drawer a.hdw-link{font-family:'Playfair Display',serif;font-size:15.5px;font-weight:500;letter-spacing:.2px;padding:16px 12px;color:var(--ink)}
   .hd-drawer a.hdw-link{transition:color .2s}
   .hd-drawer a.hdw-link:active{color:var(--rust)}
   .hd-drawer details[open]{border-bottom-color:transparent;background:rgba(255,255,255,.75);border-radius:14px;box-shadow:inset 3px 0 0 var(--rust),0 18px 34px -26px rgba(26,20,16,.5)}
