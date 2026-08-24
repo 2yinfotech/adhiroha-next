@@ -104,19 +104,19 @@ html .reveal {
    The page is scaled with `zoom` on portrait tablets, which is right for the
    content but leaves the drawer menu reading far larger than it does on a
    phone: 15.5px became 17.8px on an iPad and 20.8px on an iPad Pro. These sizes
-   are the phone values divided by each band's zoom, so the menu lands at ~15.5px
+   are the phone values divided by each band's zoom, so the menu lands at ~14px
    and its sub-links at ~13px on screen — the same size a phone shows, whatever
    the tablet. The sub-links have to come down too, or at 1.34x they would end up
    larger than the menu rows above them. */
 @media (min-width: 700px) and (max-width: 800px) and (orientation: portrait) and (any-pointer: coarse) {
-  html .hd-drawer summary, html .hd-drawer a.hdw-link { font-size: 14.5px; }
+  html .hd-drawer summary, html .hd-drawer a.hdw-link { font-size: 13px; }
   html .hdw-sub a { font-size: 12.5px; }
 }
 @media (min-width: 801px) and (max-width: 900px) and (orientation: portrait) and (any-pointer: coarse) {
-  html .hd-drawer summary, html .hd-drawer a.hdw-link { font-size: 13.5px; }
+  html .hd-drawer summary, html .hd-drawer a.hdw-link { font-size: 12px; }
   html .hdw-sub a { font-size: 11.5px; }
 }
 @media (min-width: 901px) and (max-width: 1024px) and (orientation: portrait) and (any-pointer: coarse) {
-  html .hd-drawer summary, html .hd-drawer a.hdw-link { font-size: 11.5px; }
+  html .hd-drawer summary, html .hd-drawer a.hdw-link { font-size: 10.5px; }
   html .hdw-sub a { font-size: 10px; }
 }
