@@ -65,6 +65,8 @@ export default function LeadForm({ id = "lead-form", compact = false }) {
           course_interest: get("course") || "not specified",
           ...(normalised ? { user_data: { email_address: normalised } } : {}),
         });
+        // Meta's matching conversion, on the same confirmed send.
+        if (window.fbq) window.fbq("track", "Lead");
       } else {
         setState("error");
         setNote(json.message || json.error || "Something went wrong. Please try again.");

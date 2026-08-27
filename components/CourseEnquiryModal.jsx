@@ -145,6 +145,9 @@ export default function CourseEnquiryModal({ locale = "en" }) {
           course_interest: course.trim(),
           ...(email ? { user_data: { email_address: email.toLowerCase() } } : {}),
         });
+        // Meta's matching conversion. Guarded because the pixel only exists once
+        // the visitor has accepted cookies; when it does not, nothing is sent.
+        if (window.fbq) window.fbq("track", "Lead");
       } else {
         setState("idle");
         setErr(json.message || json.error || t.errGeneric);

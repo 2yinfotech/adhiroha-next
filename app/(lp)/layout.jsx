@@ -13,6 +13,7 @@ import Analytics from "@/components/Analytics";
 import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/GoogleTagManager";
 import ConsentDefaults from "@/components/ConsentDefaults";
 import ConsentBanner from "@/components/ConsentBanner";
+import MetaPixel from "@/components/MetaPixel";
 import { SITE } from "@/lib/seo";
 
 export const metadata = {
@@ -35,6 +36,9 @@ export default function LandingLayout({ children }) {
         <GoogleTagManagerBody />
         {children}
         <Analytics />
+        {/* This layout does not use SiteShell, so the pixel has to be added
+            here too — and this is the page paid traffic actually lands on. */}
+        <MetaPixel />
         <ConsentBanner locale="en" />
       </body>
     </html>

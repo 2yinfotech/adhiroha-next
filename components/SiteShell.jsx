@@ -2,6 +2,7 @@ import Analytics from "@/components/Analytics";
 import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/GoogleTagManager";
 import ConsentDefaults from "@/components/ConsentDefaults";
 import ConsentBanner from "@/components/ConsentBanner";
+import MetaPixel from "@/components/MetaPixel";
 import CourseEnquiryModal from "@/components/CourseEnquiryModal";
 import RegistrationDonePopup from "@/components/RegistrationDonePopup";
 import JsonLd from "@/components/JsonLd";
@@ -78,6 +79,10 @@ const CONTACT_FORM_SCRIPT = `
           var em=(data.email||'').trim().toLowerCase();
           if(em){payload.user_data={email_address:em};}
           window.dataLayer.push(payload);
+          /* Meta's matching conversion. Guarded: the pixel is only present once
+             the visitor has accepted cookies, and this same block is the one
+             place that knows the send actually succeeded. */
+          if(window.fbq){window.fbq('track','Lead');}
         }
         else{note(form,(res.j&&(res.j.message||res.j.error))||'Something went wrong. Please email info@adhiroha.com.',false);}
       })
@@ -116,6 +121,9 @@ export default function SiteShell({ lang, children }) {
         {children}
         {/* Hotjar, minus the blog. See components/Analytics. */}
         <Analytics />
+        {/* Meta Pixel: PageView everywhere, ViewContent on the course pages and
+            Lead on a completed booking. Waits for cookie consent like Hotjar. */}
+        <MetaPixel />
         <ConsentBanner locale={lang} />
         {/* Arms itself only on the courses that are not currently running. */}
         <CourseEnquiryModal locale={lang} />
