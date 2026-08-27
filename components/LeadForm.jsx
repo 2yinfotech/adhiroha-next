@@ -18,7 +18,26 @@ const COURSES = [
   "Not sure yet",
 ];
 
-export default function LeadForm({ id = "lead-form", compact = false }) {
+// The wording is a prop so one form can serve more than one campaign. The
+// defaults are the guide page's copy, so that page is unaffected.
+const GUIDE_COPY = {
+  title: "Get the free course guide",
+  sub: "Curriculum, daily schedule, what is included and the upcoming dates.",
+  send: "Send me the guide",
+  errRequired: "Please add your name and email so we can send the guide.",
+  doneTitle: "Your guide is on its way",
+  doneBody:
+    "Check your inbox in the next few minutes. If it has not arrived, look in your " +
+    "promotions or spam folder. We will also reply personally with the upcoming dates " +
+    "for the course you chose.",
+  privacy:
+    "We use your details only to send the guide and answer your enquiry about training " +
+    "at Adhiroha. We never sell or share them, and you can ask us to delete them at any " +
+    "time by replying to our email.",
+};
+
+export default function LeadForm({ id = "lead-form", compact = false, copy }) {
+  const t = { ...GUIDE_COPY, ...(copy || {}) };
   const [state, setState] = useState("idle"); // idle | sending | done | error
   const [note, setNote] = useState("");
 
@@ -32,7 +51,7 @@ export default function LeadForm({ id = "lead-form", compact = false }) {
     const email = get("email");
     if (!name || !email) {
       setState("error");
-      setNote("Please add your name and email so we can send the guide.");
+      setNote(t.errRequired);
       return;
     }
 
@@ -84,20 +103,16 @@ export default function LeadForm({ id = "lead-form", compact = false }) {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"
                strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
         </span>
-        <h3>Your guide is on its way</h3>
-        <p>
-          Check your inbox in the next few minutes. If it has not arrived, look in your
-          promotions or spam folder. We will also reply personally with the upcoming dates
-          for the course you chose.
-        </p>
+        <h3>{t.doneTitle}</h3>
+        <p>{t.doneBody}</p>
       </div>
     );
   }
 
   return (
     <form className={`lf${compact ? " lf-compact" : ""}`} id={id} onSubmit={onSubmit} noValidate>
-      <h3 className="lf-h">Get the free course guide</h3>
-      <p className="lf-sub">Curriculum, daily schedule, what is included and the upcoming dates.</p>
+      <h3 className="lf-h">{t.title}</h3>
+      <p className="lf-sub">{t.sub}</p>
 
       <div className="lf-row">
         <label className="lf-field">
@@ -135,7 +150,7 @@ export default function LeadForm({ id = "lead-form", compact = false }) {
       </div>
 
       <button className="lf-send" type="submit" disabled={state === "sending"}>
-        {state === "sending" ? "Sending…" : "Send me the guide"}
+        {state === "sending" ? "Sending…" : t.send}
       </button>
 
       {state === "error" && <p className="lf-err" role="alert">{note}</p>}
@@ -143,11 +158,7 @@ export default function LeadForm({ id = "lead-form", compact = false }) {
       {/* Stated inline rather than linked: this page carries no navigation, and a
           lead form still owes the visitor a plain word about what happens to
           their details. */}
-      <p className="lf-privacy">
-        We use your details only to send the guide and answer your enquiry about training
-        at Adhiroha. We never sell or share them, and you can ask us to delete them at any
-        time by replying to our email.
-      </p>
+      <p className="lf-privacy">{t.privacy}</p>
     </form>
   );
 }

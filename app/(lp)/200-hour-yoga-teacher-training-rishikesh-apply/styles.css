@@ -1,0 +1,553 @@
+/* ============================================================
+   Yoga Teacher Training — paid-campaign landing page
+   ============================================================
+
+   Colour and type are the site's own, token for token: rust #ed1c25, ink
+   #2c2723, body #6b6660, cream #f5efe6, bar #fbf8f3, line #e2dccf, with
+   Playfair Display over Poppins. Someone who arrives from an ad and then
+   visits adhiroha.com should not be able to tell the two apart.
+
+   The structure follows the homepage too: a photographic hero with a warm dark
+   scrim and white type, then cream and paper bands below it. Rust is kept for
+   things you can press, so a red element always means a next step.
+
+   The ashram is the school's real advantage over a rented hall in town, so
+   every band carries photographs of it rather than a paragraph about it.
+   ============================================================ */
+
+.lp {
+  --rust: #ed1c25;
+  --rust-dk: #c4151c;
+  --ink: #2c2723;
+  --body: #6b6660;
+  --cream: #f5efe6;
+  --bar: #fbf8f3;
+  --line: #e2dccf;
+  --gold: #c8912f;
+  --dark: #241f1b;
+
+  background: var(--bar);
+  color: var(--ink);
+  font-family: Poppins, system-ui, sans-serif;
+  font-weight: 300;
+  overflow-x: clip;
+}
+
+.lp *, .lp *::before, .lp *::after { box-sizing: border-box; }
+
+.lp h1, .lp h2, .lp h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 600; letter-spacing: -0.01em; margin: 0;
+}
+
+/* Scoped to bare anchors on purpose: a plain `.lp a` rule would outrank every
+   single-class button rule below and repaint them all in the body colour. */
+.lp a:not([class]) { color: inherit; }
+.lp :focus-visible { outline: 2px solid var(--rust); outline-offset: 3px; border-radius: 3px; }
+
+.lp img { max-width: 100%; }
+.lp-ic { width: 1em; height: 1em; flex: none; }
+.lp-g { width: 17px; height: 17px; flex: none; }
+.lp-stars { color: var(--gold); font-size: 12px; letter-spacing: 1.5px; }
+
+.lp-in { max-width: 1180px; margin: 0 auto; padding: 0 26px; }
+.lp-band { padding: 92px 0; }
+
+.lp-sechead { max-width: 720px; margin: 0 auto 46px; text-align: center; }
+.lp-kick {
+  margin: 0 0 10px; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--rust);
+}
+.lp-sechead h2 { font-size: clamp(28px, 3.5vw, 43px); line-height: 1.15; }
+.lp-sub { margin: 16px auto 0; font-size: 15.5px; line-height: 1.8; color: var(--body); }
+.lp-day-grid .lp-sechead,
+.lp-incl-grid .lp-sechead,
+.lp-close-grid .lp-sechead { text-align: left; margin-left: 0; margin-right: 0; }
+.lp-day-grid .lp-sub,
+.lp-incl-grid .lp-sub,
+.lp-close-grid .lp-sub { margin-left: 0; margin-right: 0; }
+.lp-sechead-dark .lp-kick { color: var(--gold); }
+.lp-sechead-dark h2 { color: #fff; }
+.lp-sechead-dark .lp-sub { color: #cdc5ba; }
+
+/* ───────── the mark, over the hero ─────────
+   No bar and no phone number: a white strip across the top cut the photograph
+   in half, and every element up there is one more thing to click that is not
+   the enquiry. */
+.lp-top {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 3;
+  display: flex; justify-content: center; padding: 26px 26px 0;
+}
+.lp-logo {
+  height: 58px; width: auto;
+  /* 500×500 source with the artwork in the middle third — cropped to its ink
+     rather than shown with two-thirds of the frame empty. */
+  object-fit: cover; object-position: center 46.7%; aspect-ratio: 192 / 58;
+}
+
+/* ───────── hero ─────────
+   One column, centred, with the photograph left as open as the type allows —
+   the ashram and the river are the argument, so they are not hidden behind a
+   form. The form is one press away instead. */
+.lp-hero {
+  position: relative; isolation: isolate;
+  min-height: 92vh; display: grid; place-items: center;
+  padding: 132px 0 78px; color: #fff; text-align: center;
+}
+.lp-hero-bg {
+  position: absolute; inset: 0; z-index: -2;
+  width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%;
+}
+.lp-hero::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    /* darker at the very top so the mark reads, and along the bottom so the
+       type has a floor; the middle is left as clear as it can be */
+    linear-gradient(to bottom, rgba(16, 13, 11, 0.72) 0%, rgba(16, 13, 11, 0.2) 26%,
+                    rgba(16, 13, 11, 0.34) 58%, rgba(16, 13, 11, 0.78) 100%);
+}
+.lp-hero-in { max-width: 1010px; margin: 0 auto; padding: 0 26px; }
+
+.lp-eyebrow {
+  margin: 0 0 20px; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.24em; text-transform: uppercase; color: #eec98a;
+}
+.lp-h1 {
+  font-size: clamp(35px, 5.4vw, 68px); line-height: 1.06; margin: 0 0 22px; color: #fff;
+  text-shadow: 0 2px 26px rgba(0, 0, 0, 0.4);
+}
+.lp-lede {
+  margin: 0 auto 34px; max-width: 60ch; font-size: 17px; line-height: 1.8; color: #ece5db;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.4);
+}
+
+.lp-usps {
+  list-style: none; margin: 0 0 38px; padding: 0;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+}
+.lp-usps li {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 9px 18px 9px 10px; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+}
+.lp-usp-ic {
+  width: 28px; height: 28px; border-radius: 50%; flex: none;
+  display: grid; place-items: center;
+  background: rgba(238, 201, 138, 0.18); color: #eec98a;
+}
+.lp-usp-ic .lp-ic { width: 16px; height: 16px; }
+.lp-usp-h { font-size: 13.5px; font-weight: 500; color: #fff; }
+
+.lp-hero-act { display: grid; justify-items: center; gap: 18px; }
+.lp-hero-rating {
+  display: inline-flex; align-items: center; gap: 9px; flex-wrap: wrap; justify-content: center;
+  margin: 0; padding: 9px 18px; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 13px; color: #ece5db;
+}
+.lp-hero-rating b { font-size: 16px; font-weight: 600; color: #fff; }
+
+/* ───────── credentials strip ───────── */
+.lp-creds { background: #fff; border-bottom: 1px solid var(--line); padding: 26px 0; }
+.lp-creds-lead {
+  margin: 0 0 16px; text-align: center;
+  font-size: 10.5px; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; color: #9d9689;
+}
+.lp-cred-row {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 38px;
+}
+.lp-cred-row li { display: flex; align-items: center; gap: 12px; }
+.lp-cred-row img { width: 48px; height: 48px; object-fit: contain; }
+.lp-cred-row span { display: flex; flex-direction: column; }
+.lp-cred-row b { font-size: 13.5px; font-weight: 600; }
+.lp-cred-row em { font-style: normal; font-size: 11.5px; color: var(--body); }
+.lp-cred-seal {
+  width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--cream); color: var(--gold);
+}
+.lp-cred-seal .lp-ic { width: 24px; height: 24px; }
+
+/* ───────── courses ───────── */
+.lp-courses { background: var(--bar); }
+.lp-course-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.lp-course {
+  display: flex; flex-direction: column;
+  background: #fff; border: 1px solid var(--line); border-radius: 18px; overflow: hidden;
+  box-shadow: 0 18px 40px -34px rgba(44, 39, 35, 0.6);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.lp-course:hover { transform: translateY(-3px); box-shadow: 0 26px 46px -30px rgba(44, 39, 35, 0.55); }
+.lp-course figure { margin: 0; position: relative; }
+.lp-course figure img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.lp-course figcaption {
+  position: absolute; left: 13px; bottom: 13px;
+  background: var(--rust); color: #fff; border-radius: 999px;
+  font-size: 10.5px; font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase;
+  padding: 6px 13px;
+}
+.lp-course-body { padding: 26px 26px 28px; display: flex; flex-direction: column; flex: 1; }
+.lp-course-body h3 { font-size: 21px; line-height: 1.25; }
+.lp-course-body h3 b { font-weight: 700; font-size: 36px; color: var(--rust); letter-spacing: -0.02em; }
+.lp-course-for { margin: 8px 0 15px; font-size: 13px; line-height: 1.6; color: var(--body); }
+.lp-course-body > ul { list-style: none; margin: 0 0 20px; padding: 0; display: grid; gap: 9px; }
+.lp-course-body > ul li { display: flex; align-items: flex-start; gap: 9px; font-size: 13.5px; line-height: 1.5; }
+.lp-course-body > ul .lp-ic { width: 15px; height: 15px; margin-top: 2px; color: #2f7d4f; }
+.lp-course-cta {
+  margin-top: auto; text-align: center; text-decoration: none;
+  font-size: 12.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--rust); border: 1.5px solid var(--rust); border-radius: 999px; padding: 12px 18px;
+  transition: background 0.2s, color 0.2s;
+}
+.lp-course-cta:hover { background: var(--rust); color: #fff; }
+
+/* ───────── the ashram, carousel ───────── */
+.lp-ashram { background: var(--cream); }
+.lp-car { position: relative; }
+.lp-car-track {
+  list-style: none; margin: 0; padding: 0 0 4px;
+  display: grid; grid-auto-flow: column; grid-auto-columns: 42%;
+  gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+}
+.lp-car-track::-webkit-scrollbar { display: none; }
+.lp-car-card { scroll-snap-align: start; position: relative; border-radius: 18px; overflow: hidden; background: #ded5c7; }
+.lp-car-card img { width: 100%; height: auto; aspect-ratio: 5 / 4; object-fit: cover; display: block; }
+.lp-car-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(28, 24, 21, 0.78), transparent 46%); }
+.lp-car-cap { position: absolute; left: 20px; right: 20px; bottom: 17px; z-index: 2; font-size: 14.5px; font-weight: 500; color: #fff; line-height: 1.4; }
+.lp-car-ctl { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 20px; }
+.lp-car-btn {
+  width: 40px; height: 40px; border-radius: 50%; cursor: pointer;
+  background: #fff; border: 1px solid var(--line); color: var(--ink);
+  display: grid; place-items: center; transition: border-color 0.2s, color 0.2s, opacity 0.2s;
+}
+.lp-car-btn svg { width: 18px; height: 18px; }
+.lp-car-btn:hover:not(:disabled) { border-color: var(--rust); color: var(--rust); }
+.lp-car-btn:disabled { opacity: 0.35; cursor: default; }
+.lp-car-dots { list-style: none; display: flex; gap: 7px; margin: 0; padding: 0; }
+.lp-car-dots button {
+  width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; cursor: pointer;
+  background: #cdc2b1; transition: background 0.2s, transform 0.2s;
+}
+.lp-car-dots button.on { background: var(--rust); transform: scale(1.3); }
+
+/* ───────── comparison ───────── */
+.lp-vs { background: #fff; }
+.lp-vs-wrap { overflow-x: auto; }
+.lp-vs-table { width: 100%; min-width: 680px; border-collapse: collapse; text-align: left; }
+.lp-vs-table th, .lp-vs-table td { padding: 15px 18px; vertical-align: top; }
+.lp-vs-table thead th {
+  font-family: Poppins, sans-serif; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.13em; text-transform: uppercase; color: var(--body);
+  border-bottom: 2px solid var(--line);
+}
+.lp-vs-table thead th.lp-vs-us { color: var(--ink); background: var(--cream); border-bottom-color: var(--rust); }
+.lp-vs-table tbody tr { border-bottom: 1px solid var(--line); }
+.lp-vs-table tbody th { font-family: Poppins, sans-serif; font-size: 13.5px; font-weight: 600; width: 27%; }
+.lp-vs-table td { font-size: 13.5px; line-height: 1.55; color: var(--body); }
+.lp-vs-table td.lp-vs-us { background: var(--cream); color: var(--ink); }
+.lp-vs-table td.lp-vs-us .lp-ic { width: 15px; height: 15px; color: #2f7d4f; margin-right: 8px; vertical-align: -2px; }
+.lp-vs-them { color: #8d857a; }
+
+/* ───────── the day ───────── */
+.lp-day { background: var(--dark); }
+.lp-day-grid { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: 54px; align-items: center; }
+.lp-day-photo { margin: 0; border-radius: 18px; overflow: hidden; box-shadow: 0 30px 60px -40px rgba(0,0,0,.9); }
+.lp-day-photo img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
+.lp-rail { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 26px 34px; }
+.lp-rail > li { border-top: 2px solid; border-image: linear-gradient(90deg, var(--gold), rgba(200, 145, 47, 0.14)) 1; padding-top: 15px; }
+.lp-rail-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 13px; }
+.lp-rail-name { font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); }
+.lp-rail-span { font-family: "Playfair Display", Georgia, serif; font-size: 17px; font-weight: 600; color: #fff; }
+.lp-rail ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 11px; }
+.lp-rail ul li { display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: baseline; }
+.lp-rail ul b { font-family: "Playfair Display", Georgia, serif; font-size: 13.5px; font-weight: 600; font-variant-numeric: tabular-nums; color: #fff; }
+.lp-rail ul span { font-size: 12.5px; line-height: 1.55; color: #b7ada1; }
+
+/* ───────── what's included ───────── */
+.lp-incl { background: var(--cream); }
+.lp-incl-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 56px; align-items: center; }
+.lp-incl-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 15px; }
+.lp-incl-list li { display: flex; align-items: center; gap: 14px; font-size: 14.5px; line-height: 1.5; }
+.lp-incl-ic {
+  width: 38px; height: 38px; flex: none; border-radius: 50%;
+  display: grid; place-items: center; background: #fff; color: var(--rust);
+  border: 1px solid var(--line);
+}
+.lp-incl-ic .lp-ic { width: 17px; height: 17px; }
+/* Four square photographs on an even grid. They used to be staggered with
+   margin offsets, which left the column ragged against the list beside it. */
+.lp-incl-pics { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.lp-incl-pics figure {
+  margin: 0; border-radius: 16px; overflow: hidden;
+  box-shadow: 0 20px 44px -34px rgba(44, 39, 35, 0.75);
+}
+.lp-incl-pics img { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; display: block; }
+
+/* ───────── proof ───────── */
+.lp-proof { background: var(--bar); }
+.lp-ratings { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 32px; }
+.lp-rating { display: flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 9px 19px; }
+.lp-rating b { font-size: 16px; font-weight: 600; }
+.lp-rating-w { font-size: 13px; font-weight: 500; }
+.lp-rating-c { font-size: 12px; color: var(--body); }
+.lp-rating-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+
+.lp-vids { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.lp-vid { position: relative; aspect-ratio: 4 / 3; border-radius: 13px; overflow: hidden; background: var(--dark); }
+.lp-vid-face { display: block; width: 100%; height: 100%; padding: 0; border: 0; cursor: pointer; background: none; position: relative; }
+.lp-vid-face img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+.lp-vid-face::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(28, 24, 21, 0.84), transparent 52%); }
+.lp-vid-face:hover img { transform: scale(1.04); }
+.lp-vid-play {
+  position: absolute; inset: 0; margin: auto; z-index: 2;
+  width: 50px; height: 50px; border-radius: 50%; background: var(--rust); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 10px 26px -8px rgba(0, 0, 0, 0.6); transition: transform 0.25s;
+}
+.lp-vid-play svg { width: 20px; height: 20px; margin-left: 3px; }
+.lp-vid-face:hover .lp-vid-play { transform: scale(1.09); }
+.lp-vid-cap { position: absolute; left: 14px; right: 14px; bottom: 12px; z-index: 2; font-size: 12.5px; font-weight: 500; color: #fff; text-align: left; line-height: 1.4; }
+.lp-vid-frame { width: 100%; height: 100%; border: 0; display: block; }
+
+.lp-quote {
+  margin: 28px 0 0; padding: 24px 28px; display: grid; grid-template-columns: 92px 1fr; gap: 22px;
+  align-items: center; background: #fff; border: 1px solid var(--line);
+  border-left: 3px solid var(--gold); border-radius: 0 14px 14px 0;
+}
+.lp-quote figure { margin: 0; }
+.lp-quote figure img { width: 92px; height: 92px; border-radius: 50%; object-fit: cover; display: block; }
+.lp-quote p { margin: 0 0 9px; font-family: "Playfair Display", Georgia, serif; font-size: 18px; line-height: 1.62; font-style: italic; }
+.lp-quote cite { font-size: 12.5px; font-style: normal; color: var(--body); }
+
+/* ───────── close ───────── */
+.lp-close { background: var(--cream); }
+.lp-close-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.lp-steps { list-style: none; margin: 0 0 26px; padding: 0; display: grid; gap: 17px; counter-reset: s; }
+.lp-steps li { display: grid; gap: 3px; padding-left: 40px; position: relative; counter-increment: s; }
+.lp-steps li::before {
+  content: counter(s, decimal-leading-zero); position: absolute; left: 0; top: 0;
+  font-family: "Playfair Display", Georgia, serif; font-size: 15px; font-weight: 600; color: var(--rust);
+}
+.lp-steps b { font-size: 15px; font-weight: 600; }
+.lp-steps span { font-size: 13.5px; line-height: 1.6; color: var(--body); }
+
+.lp-cta {
+  display: inline-block; text-decoration: none; background: var(--rust); color: #fff;
+  font-size: 14px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
+  padding: 17px 36px; border-radius: 999px;
+  box-shadow: 0 16px 32px -14px rgba(237, 28, 37, 0.7);
+  transition: background 0.2s, transform 0.2s;
+}
+.lp-cta:hover { background: var(--rust-dk); transform: translateY(-1px); }
+.lp-cta-note { margin: 15px 0 0; font-size: 13px; color: var(--body); }
+.lp-cta-note a { color: var(--rust); font-weight: 500; text-decoration: none; }
+
+.lp-faq details { border-bottom: 1px solid var(--line); }
+.lp-faq details:first-child { border-top: 1px solid var(--line); }
+.lp-faq summary {
+  list-style: none; cursor: pointer; display: flex; align-items: center;
+  justify-content: space-between; gap: 16px; padding: 16px 2px; font-size: 14.5px; font-weight: 500;
+}
+.lp-faq summary::-webkit-details-marker { display: none; }
+.lp-faq summary .lp-ic { width: 17px; height: 17px; color: var(--rust); transition: transform 0.25s; }
+.lp-faq details[open] summary .lp-ic { transform: rotate(180deg); }
+.lp-faq p { margin: 0 0 17px; padding-right: 30px; font-size: 13.5px; line-height: 1.72; color: var(--body); }
+
+/* ───────── foot ───────── */
+.lp-foot { background: var(--dark); color: #b7ada1; text-align: center; padding: 32px 26px 36px; font-size: 12.5px; line-height: 1.85; }
+.lp-foot img { height: 40px; width: auto; object-fit: cover; object-position: center 46.7%; aspect-ratio: 132 / 40; margin-bottom: 10px; }
+.lp-foot p { margin: 0; }
+
+/* ───────── sticky bar ───────── */
+.lp-sticky { display: none; }
+
+/* ============================================================ */
+@media (max-width: 1000px) {
+  .lp-hero-in, .lp-day-grid, .lp-incl-grid, .lp-close-grid { grid-template-columns: 1fr; gap: 34px; }
+  .lp-course-grid { grid-template-columns: 1fr; }
+  .lp-course figure img { aspect-ratio: 21 / 9; }
+  .lp-car-track { grid-auto-columns: 58%; }
+  .lp-day-photo img { aspect-ratio: 16 / 9; }
+}
+
+@media (max-width: 760px) {
+  .lp-band { padding: 48px 0; }
+  /* The mark is absolutely positioned over the hero, so the copy has to start
+     below it — the old 34px let the logo sit on top of the eyebrow. */
+  .lp-hero { padding: 116px 0 52px; min-height: 88vh; }
+  .lp-top { padding: 20px 20px 0; }
+  .lp-logo { height: 46px; aspect-ratio: 152 / 46; }
+  .lp-rail { grid-template-columns: 1fr; gap: 20px; }
+  .lp-vids { grid-template-columns: 1fr 1fr; gap: 11px; }
+  .lp-car-track { grid-auto-columns: 84%; }
+  .lp-quote { grid-template-columns: 1fr; gap: 16px; padding: 20px; }
+  .lp-quote figure img { width: 66px; height: 66px; }
+  .lp-cred-row { gap: 14px 24px; }
+
+  /* Phone only: once the form has scrolled away it is a long way back. The
+     right inset clears the floating WhatsApp button. */
+  .lp-sticky {
+    display: flex; flex-direction: column; align-items: center; gap: 1px;
+    position: fixed; left: 12px; right: 78px; bottom: 14px; z-index: 40;
+    background: var(--rust); color: #fff; text-decoration: none;
+    padding: 11px 18px; border-radius: 999px;
+    box-shadow: 0 14px 30px -10px rgba(0, 0, 0, 0.5);
+  }
+  .lp-sticky b { font-size: 14px; font-weight: 600; }
+  .lp-sticky span { font-size: 10.5px; opacity: 0.88; }
+  .lp-foot { padding-bottom: 92px; }
+}
+
+@media (max-width: 520px) {
+  .lp-in, .lp-hero-in { padding: 0 18px; }
+  .lp-formwrap { padding: 20px 17px 18px; border-radius: 13px; }
+  .lp-usps { grid-template-columns: 1fr; gap: 14px; }
+  .lp-incl-pics { gap: 10px; }
+  .lp-sticky span { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp *, .lp *::before, .lp *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+
+/* ============================================================
+   The enquiry form
+   ============================================================
+   LeadForm ships without styles — each landing page dresses it. Inputs are set
+   at 16px deliberately: iOS Safari zooms the page in when a focused field is
+   smaller than that, and a page that lurches sideways at the first tap loses
+   the lead.
+   ============================================================ */
+.lp .lf { display: grid; gap: 13px; }
+.lp .lf-h { margin: 0; font-family: "Playfair Display", Georgia, serif; font-size: 23px; font-weight: 600; line-height: 1.25; color: var(--ink); }
+.lp .lf-sub { margin: -6px 0 2px; font-size: 12.5px; line-height: 1.6; color: var(--body); }
+.lp .lf-row { display: grid; gap: 13px; grid-template-columns: 1fr 1fr; }
+.lp .lf-field { display: grid; gap: 5px; min-width: 0; }
+.lp .lf-field > span { font-size: 11.5px; font-weight: 500; color: var(--body); }
+.lp .lf-field > span i { font-style: normal; color: #a9a294; font-weight: 400; }
+.lp .lf input, .lp .lf select {
+  width: 100%; font-family: inherit; font-size: 16px; font-weight: 300; color: var(--ink);
+  background: var(--bar); border: 1px solid var(--line); border-radius: 9px; padding: 11px 13px;
+  transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
+}
+.lp .lf input::placeholder { color: #b3ab9d; }
+.lp .lf input:focus, .lp .lf select:focus {
+  outline: none; background: #fff; border-color: var(--rust);
+  box-shadow: 0 0 0 3px rgba(237, 28, 37, 0.13);
+}
+.lp .lf select {
+  appearance: none; cursor: pointer; padding-right: 34px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b6660' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 12px center; background-size: 15px;
+}
+.lp .lf-send {
+  margin-top: 4px; width: 100%; cursor: pointer; font-family: inherit;
+  font-size: 14.5px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
+  color: #fff; background: var(--rust); border: 0; border-radius: 999px; padding: 16px 20px;
+  box-shadow: 0 16px 30px -14px rgba(237, 28, 37, 0.75);
+  transition: background 0.2s, transform 0.15s;
+}
+.lp .lf-send:hover:not(:disabled) { background: var(--rust-dk); transform: translateY(-1px); }
+.lp .lf-send:disabled { opacity: 0.6; cursor: progress; }
+.lp .lf-err { margin: 0; font-size: 13px; color: var(--rust-dk); }
+.lp .lf-privacy { margin: 2px 0 0; font-size: 10.5px; line-height: 1.6; color: #a9a294; }
+.lp .lf-done { text-align: center; padding: 22px 6px 10px; }
+.lp .lf-tick { display: grid; place-items: center; width: 52px; height: 52px; margin: 0 auto 14px; border-radius: 50%; background: rgba(47, 125, 79, 0.1); color: #2f7d4f; }
+.lp .lf-tick svg { width: 26px; height: 26px; }
+.lp .lf-done h3 { margin: 0 0 8px; font-family: "Playfair Display", Georgia, serif; font-size: 22px; font-weight: 600; color: var(--ink); }
+.lp .lf-done p { margin: 0; font-size: 13.5px; line-height: 1.7; color: var(--body); }
+
+@media (max-width: 520px) { .lp .lf-row { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   The enquiry dialog
+   ============================================================
+   The hero asks for a name and an email and nothing else. Everything the six
+   fields used to collect is asked for in the reply, when the person is already
+   in conversation rather than standing at the door.
+   ============================================================ */
+.lp-modal {
+  position: fixed; inset: 0; z-index: 200;
+  display: grid; place-items: center; padding: 22px;
+  background: rgba(24, 19, 15, 0.66); backdrop-filter: blur(3px);
+  animation: lp-fade 0.2s ease-out both;
+}
+@keyframes lp-fade { from { opacity: 0 } to { opacity: 1 } }
+@keyframes lp-rise { from { opacity: 0; transform: translateY(14px) scale(0.985) } to { opacity: 1; transform: none } }
+
+.lp-modal-box {
+  /* The dialog is rendered inside the hero, so it inherits the hero's white
+     type and centred alignment — which made the heading white on white. Both
+     are reset here rather than at the call site. */
+  color: var(--ink); text-align: left;
+  position: relative; width: 100%; max-width: 470px;
+  background: #fff; border-radius: 18px; padding: 34px 32px 26px;
+  border-top: 4px solid var(--rust);
+  box-shadow: 0 40px 90px -30px rgba(20, 14, 8, 0.7);
+  max-height: 92vh; overflow-y: auto;
+  animation: lp-rise 0.26s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+.lp-modal-x {
+  position: absolute; top: 12px; right: 14px; width: 34px; height: 34px;
+  border: 0; background: none; color: #a49c8e; cursor: pointer; border-radius: 50%;
+  display: grid; place-items: center;
+}
+.lp-modal-x svg { width: 18px; height: 18px; }
+.lp-modal-x:hover { background: var(--cream); color: var(--ink); }
+
+.lp-modal-h {
+  margin: 0 0 8px; font-family: "Playfair Display", Georgia, serif;
+  font-size: 25px; font-weight: 600; line-height: 1.22; padding-right: 26px;
+}
+.lp-modal-sub { margin: 0 0 20px; font-size: 13.5px; line-height: 1.65; color: var(--body); }
+
+.lp-modal-field { display: grid; gap: 5px; margin-bottom: 13px; }
+.lp-modal-field > span { font-size: 11.5px; font-weight: 500; color: var(--body); }
+.lp-modal-field input {
+  width: 100%; font-family: inherit; font-size: 16px; font-weight: 300; color: var(--ink);
+  background: var(--bar); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px;
+  transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
+}
+.lp-modal-field input::placeholder { color: #b3ab9d; }
+.lp-modal-field input:focus {
+  outline: none; background: #fff; border-color: var(--rust);
+  box-shadow: 0 0 0 3px rgba(237, 28, 37, 0.13);
+}
+.lp-modal-send {
+  width: 100%; margin-top: 5px; cursor: pointer; font-family: inherit;
+  font-size: 14.5px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
+  color: #fff; background: var(--rust); border: 0; border-radius: 999px; padding: 16px 20px;
+  box-shadow: 0 16px 30px -14px rgba(237, 28, 37, 0.75);
+  transition: background 0.2s, transform 0.15s;
+}
+.lp-modal-send:hover:not(:disabled) { background: var(--rust-dk); transform: translateY(-1px); }
+.lp-modal-send:disabled { opacity: 0.6; cursor: progress; }
+.lp-modal-err { margin: 10px 0 0; font-size: 13px; color: var(--rust-dk); }
+
+.lp-modal-usps {
+  list-style: none; margin: 22px 0 0; padding: 20px 0 0;
+  border-top: 1px solid var(--line); display: grid; gap: 12px;
+}
+.lp-modal-usps li { display: flex; align-items: center; gap: 12px; font-size: 13px; line-height: 1.45; color: var(--ink); }
+.lp-modal-ic {
+  width: 32px; height: 32px; flex: none; border-radius: 50%;
+  display: grid; place-items: center; background: var(--cream); color: var(--rust);
+}
+.lp-modal-ic .lp-ic { width: 17px; height: 17px; }
+.lp-modal-privacy { margin: 18px 0 0; font-size: 10.5px; line-height: 1.6; color: #a9a294; }
+
+.lp-modal-done { text-align: center; padding: 20px 4px 12px; }
+.lp-modal-tick {
+  display: grid; place-items: center; width: 56px; height: 56px; margin: 0 auto 16px;
+  border-radius: 50%; background: rgba(47, 125, 79, 0.1); color: #2f7d4f;
+}
+.lp-modal-tick svg { width: 28px; height: 28px; }
+.lp-modal-done h3 { margin: 0 0 10px; font-family: "Playfair Display", Georgia, serif; font-size: 23px; font-weight: 600; }
+.lp-modal-done p { margin: 0; font-size: 13.5px; line-height: 1.72; color: var(--body); }
+
+@media (max-width: 520px) {
+  .lp-modal { padding: 14px; align-items: end; }
+  .lp-modal-box { padding: 28px 20px 22px; border-radius: 16px; }
+}
