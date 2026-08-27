@@ -5,6 +5,7 @@ import {
   COURSES, YOGA_TTC_COURSES, ROOM_TRACKED_COURSES, ADDONS, FEES,
   computeFees, gatewayBreakdown, tierLabels, inclusions,
 } from "@/lib/admission-fees";
+import { contentNameFor } from "@/lib/meta-pixel";
 
 const COURSE_LIST = Object.entries(COURSES).map(([value, c]) => ({ value, ...c }));
 const MAX_STUDENTS = 3;
@@ -346,6 +347,22 @@ export default function AdmissionForm() {
     setError(""); setNotice(""); setSaving(true);
     try {
       await ensureRegistered();
+      // Meta's InitiateCheckout, fired on the step 1 -> 2 move and nowhere else.
+      // That is the point the student stops browsing and commits: course, dates
+      // and every student's details are filled in, and ensureRegistered has just
+      // written the booking rows. Firing it on panel load would only restate
+      // PageView, and firing it at the payment step would land so close to
+      // Purchase that the funnel would show nothing between the two. The
+      // registration fee is the same for either sharing type, so it can be
+      // priced here, before the room is chosen.
+      if (next === 2 && window.fbq) {
+        const reg = Number(previewFees(sharing || "triple")?.reg);
+        window.fbq("track", "InitiateCheckout", {
+          ...(reg ? { value: reg, currency: "EUR" } : {}),
+          content_name: contentNameFor(course),
+          num_items: students.length,
+        });
+      }
       goto(next);
     } catch (e) {
       setError(e?.message || "We couldn't save your details. Please try again.");

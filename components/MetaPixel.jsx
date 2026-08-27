@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { CONSENT_COOKIE, CONSENT_EVENT } from "@/lib/consent";
-import { META_PIXEL_ID, courseContentFor, isRealBooking } from "@/lib/meta-pixel";
+import { META_PIXEL_ID, courseContentFor, purchaseFrom } from "@/lib/meta-pixel";
 
 /**
  * Meta (Facebook) Pixel.
@@ -22,7 +22,15 @@ import { META_PIXEL_ID, courseContentFor, isRealBooking } from "@/lib/meta-pixel
  * Events:
  *   PageView      every page, once the pixel is allowed to load
  *   ViewContent   the four course pages, in all eleven locales
- *   Lead          /thank-you/, and only when the URL carries a real booking
+ *   Purchase      /thank-you/, only when a payment actually completed
+ *
+ * Lead is deliberately NOT fired here. It belongs to the four enquiry forms —
+ * the contact form, the course enquiry modal and the landing-page form — and
+ * firing it on a completed booking as well would count every sale as a lead
+ * too, inflating the lead numbers with people who never enquired.
+ *
+ * InitiateCheckout is not here either: it belongs to the moment the student
+ * commits their details in the admission panel, so AdmissionForm fires it.
  */
 
 const BASE_SNIPPET = `
@@ -82,10 +90,13 @@ export default function MetaPixel() {
     const content = courseContentFor(pathname);
     if (content) window.fbq("track", "ViewContent", content);
 
-    // A completed booking. Guarded on the query string so that opening
-    // /thank-you/ directly, or refreshing it later, cannot count as one.
-    if (/^\/thank-you\/?$/.test(pathname) && isRealBooking(window.location.search)) {
-      window.fbq("track", "Lead");
+    // The sale, with the amount actually charged and the course that was
+    // bought. purchaseFrom returns null for a held seat (pending=1), where
+    // nothing has been paid yet, and for anyone who simply opened the page or
+    // refreshed it later — none of which may count as a conversion.
+    if (/^\/thank-you\/?$/.test(pathname)) {
+      const purchase = purchaseFrom(window.location.search);
+      if (purchase) window.fbq("track", "Purchase", purchase);
     }
   }, [granted, pathname]);
 
