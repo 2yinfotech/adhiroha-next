@@ -51,7 +51,7 @@
 .hd-scrim.open{opacity:1;visibility:visible}
 .hdw-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
 .hdw-top img{height:38px;width:auto}
-.hdw-close{background:none;border:1px solid var(--line);border-radius:50%;width:38px;height:38px;cursor:pointer;color:var(--ink);font-size:20px;line-height:1}
+.hdw-close{background:none;border:1px solid rgba(255,255,255,.32);border-radius:50%;width:38px;height:38px;cursor:pointer;color:#fff;font-size:20px;line-height:1}
 .hd-drawer a.hdw-link{display:block;padding:13px 6px;border-bottom:1px solid var(--line);font-size:14.5px;font-weight:500;color:var(--ink);text-decoration:none}
 .hd-drawer details{border-bottom:1px solid var(--line)}
 .hd-drawer summary{list-style:none;display:flex;justify-content:space-between;align-items:center;padding:13px 6px;font-size:14.5px;font-weight:500;color:var(--ink);cursor:pointer}
@@ -92,7 +92,7 @@
 /* Drawer: warm paper gradient, generous rhythm, serif headings so it reads
      like the rest of the site rather than a generic mobile menu. */
   .hd-drawer{padding:0;background:linear-gradient(180deg,#fff 0,#fbf8f3 26%,#f3ece1 100%)}
-.hdw-top{margin:0;padding:18px 22px;border-bottom:1px solid var(--line);background:#fff}
+.hdw-top{margin:0;padding:18px 22px;border-bottom:1px solid rgba(255,255,255,.14);background:#3b2f24}
 .hdw-top img{height:40px}
 .hdw-close{width:40px;height:40px;font-size:21px;transition:background .25s,border-color .25s,color .25s}
 .hdw-close:active{background:var(--rust);border-color:var(--rust);color:#fff}
@@ -137,7 +137,7 @@
   .hd-drawer{z-index:1300}
 .hd-scrim{z-index:1290}
 .hd-drawer{padding:0;background:linear-gradient(180deg,#fff 0,#fbf8f3 26%,#f3ece1 100%)}
-.hdw-top{margin:0;padding:18px 22px;border-bottom:1px solid var(--line);background:#fff}
+.hdw-top{margin:0;padding:18px 22px;border-bottom:1px solid rgba(255,255,255,.14);background:#3b2f24}
 .hdw-top img{height:40px}
 .hdw-close{width:40px;height:40px;font-size:21px;transition:background .25s,border-color .25s,color .25s}
 .hdw-close:active{background:var(--rust);border-color:var(--rust);color:#fff}
