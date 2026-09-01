@@ -908,11 +908,10 @@ export default function AdmissionForm() {
                       onClick={() => setRoomId(r.id)}
                     >
                       <b>{r.name}</b>
-                      <em>
-                        {r.available
-                          ? `${r.free} of ${r.capacity} beds free`
-                          : r.reason}
-                      </em>
+                      {/* Nothing is said about a room that is open — how many
+                          beds are left is our business, not the student's. A
+                          room they cannot have says why, in two words. */}
+                      {!r.available && <em>{r.reason}</em>}
                     </button>
                   ))}
                 </div>

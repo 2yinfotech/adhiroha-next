@@ -32,34 +32,46 @@ SET time_zone = '+00:00';
 CREATE TABLE IF NOT EXISTS `rooms` (
   `id`         TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name`       VARCHAR(64)      NOT NULL,
-  `sharing`    ENUM('double','triple') NOT NULL,
+  -- 'single' is the private room. It is never offered on the website; see
+  -- `bookable` below.
+  `sharing`    ENUM('single','double','triple') NOT NULL,
   -- Kept as a column rather than derived from `sharing`, so a room can be
   -- taken down to fewer beds for a season without changing its type.
   `capacity`   TINYINT UNSIGNED NOT NULL,
   `sort_order` TINYINT UNSIGNED NOT NULL DEFAULT 0,
-  `active`     TINYINT(1)       NOT NULL DEFAULT 1,
+  `active`     TINYINT(1)       NOT NULL DEFAULT 1 COMMENT 'in use at all',
+  -- Whether the admission panel on the website may offer it. The single
+  -- private room is kept out of the wizard because it is given on walk-ins and
+  -- as a favour, but it is a real room and the admin panel still fills it — so
+  -- it belongs in this table, not outside it, or the occupancy board would show
+  -- the ashram as emptier than it is.
+  `bookable`   TINYINT(1)       NOT NULL DEFAULT 1 COMMENT 'offered on the website',
   PRIMARY KEY (`id`),
   UNIQUE KEY `uq_rooms_name` (`name`),
   KEY `idx_rooms_sharing` (`sharing`,`active`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO `rooms` (`name`,`sharing`,`capacity`,`sort_order`) VALUES
-  ('SATYA',      'double', 2,  1),
-  ('SHANTI',     'double', 2,  2),
-  ('SANKALPA',   'double', 2,  3),
-  ('BODHI',      'double', 2,  4),
-  ('ANUSHASANA', 'triple', 3, 11),
-  ('SHADHNA',    'triple', 3, 12),
-  ('BHAKTI',     'triple', 3, 13),
-  ('ANANDA',     'triple', 3, 14),
-  ('NIYAMA',     'triple', 3, 15),
-  ('ABHYASA',    'triple', 3, 16),
-  ('NIRVANA',    'triple', 3, 17),
-  ('DHYANA',     'triple', 3, 18)
+INSERT INTO `rooms` (`name`,`sharing`,`capacity`,`sort_order`,`bookable`) VALUES
+  ('SATYA',          'double', 2,  1, 1),
+  ('SHANTI',         'double', 2,  2, 1),
+  ('SANKALPA',       'double', 2,  3, 1),
+  ('BODHI',          'double', 2,  4, 1),
+  ('ANUSHASANA',     'triple', 3, 11, 1),
+  ('SHADHNA',        'triple', 3, 12, 1),
+  ('BHAKTI',         'triple', 3, 13, 1),
+  ('ANANDA',         'triple', 3, 14, 1),
+  ('NIYAMA',         'triple', 3, 15, 1),
+  ('ABHYASA',        'triple', 3, 16, 1),
+  ('NIRVANA',        'triple', 3, 17, 1),
+  ('DHYANA',         'triple', 3, 18, 1),
+  -- Walk-ins and special cases only. Filled from the admin panel, never from
+  -- the website. Capacity 1, so the same capacity rule covers it for free.
+  ('SINGLE PRIVATE', 'single', 1, 30, 0)
 ON DUPLICATE KEY UPDATE
   `sharing` = VALUES(`sharing`),
   `capacity` = VALUES(`capacity`),
-  `sort_order` = VALUES(`sort_order`);
+  `sort_order` = VALUES(`sort_order`),
+  `bookable` = VALUES(`bookable`);
 
 -- ---------------------------------------------------------------------
 --  2. Who is in which room, in which month.
@@ -120,7 +132,8 @@ BEGIN
     SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'room_occupancy: that room is full for that month';
   END IF;
 
-  -- One gender per room per month: whoever arrives first sets it.
+  -- One gender per room per month: whoever arrives first sets it. A room of
+  -- one has nobody to share with, so the rule cannot bite there.
   SELECT `gender` INTO v_gender FROM `room_occupancy`
    WHERE `room_id` = NEW.room_id
      AND `stay_year` = NEW.stay_year
@@ -182,6 +195,7 @@ SELECT
   r.`name`                                 AS `room`,
   r.`sharing`,
   r.`capacity`,
+  r.`bookable`,
   o.`stay_year`,
   o.`stay_month`,
   COUNT(o.`id`)                            AS `occupied`,
@@ -191,7 +205,7 @@ SELECT
 FROM `rooms` r
 LEFT JOIN `room_occupancy` o ON o.`room_id` = r.`id`
 WHERE r.`active` = 1
-GROUP BY r.`id`, r.`name`, r.`sharing`, r.`capacity`, o.`stay_year`, o.`stay_month`;
+GROUP BY r.`id`, r.`name`, r.`sharing`, r.`capacity`, r.`bookable`, o.`stay_year`, o.`stay_month`;
 
 -- =====================================================================
 --  Optional: carry the current occupants over from `rooms_name`.
