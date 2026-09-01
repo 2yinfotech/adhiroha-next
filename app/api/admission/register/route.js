@@ -3,6 +3,7 @@ import {
   COURSES, computeFees, gatewayBreakdown, saveBooking, generateStudentCode,
   sendAdmissionMail, getBatches, shortDateRange, updateBookingSelection,
 } from "@/lib/admission";
+import { reserveRoomForGroup } from "@/lib/rooms";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -18,7 +19,7 @@ export const runtime = "nodejs";
 // instead of inserting a second set — no second email is sent.
 export async function POST(request) {
   const body = await request.json().catch(() => ({}));
-  const { course, batchId, sharing = "", addOns = [] } = body;
+  const { course, batchId, sharing = "", addOns = [], roomId = null } = body;
   const students = Array.isArray(body.students) ? body.students.slice(0, 3) : [];
   const bookingIds = (Array.isArray(body.bookingIds) ? body.bookingIds : []).filter(Boolean);
   const codes = Array.isArray(body.codes) ? body.codes : [];
@@ -63,7 +64,7 @@ export async function POST(request) {
   const acco = !sharing ? "Not selected yet" : sharing === "double" ? "Double Sharing" : "Triple Sharing";
   // Room numbers are only tracked for the residential YTTC courses.
   const roomTracked = ["200 Hour YTTC", "300 Hour YTTC", "500 Hour YTTC"].includes(course);
-  const room = roomTracked ? body.room || "N/A" : "N/A";
+  const room = roomTracked ? body.roomName || body.room || "N/A" : "N/A";
 
   // Per-student share of the group figures, so each row carries its own amount.
   const perReg = fees ? +(fees.reg / students.length).toFixed(2) : 0;
@@ -79,6 +80,28 @@ export async function POST(request) {
     } catch (e) {
       return NextResponse.json({ error: "We couldn't update your registration. Please try again." }, { status: 502 });
     }
+
+    // Hold the beds. Done here, at the end of step 2, rather than after payment:
+    // otherwise two people looking at the same last bed can both pay for it, and
+    // one of them has to be told afterwards. The room is released again by
+    // releaseBooking() if the booking is cancelled.
+    if (roomTracked && roomId) {
+      const held = await reserveRoomForGroup({
+        roomId, course, year: batch.year, month: batch.month,
+        students: students.map((s, i) => ({
+          bookingId: bookingIds[i], name: s.name, gender: String(s.gender).toLowerCase(),
+        })),
+      }).catch((e) => ({ ok: false, error: String(e?.message || e) }));
+
+      if (!held.ok && held.error !== "ER_NO_SUCH_TABLE") {
+        const msg =
+          held.error === "room_full" ? `${held.room} filled up for ${held.month}. Please pick another room.`
+          : held.error === "gender_locked" ? `${held.room} is taken by the other gender for ${held.month}. Please pick another room.`
+          : "That room is no longer available. Please pick another.";
+        return NextResponse.json({ error: msg, roomTaken: true }, { status: 409 });
+      }
+    }
+
     return NextResponse.json({
       ok: true,
       bookingIds,

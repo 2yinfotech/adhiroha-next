@@ -134,6 +134,7 @@ export default function AdmissionForm() {
   const [comboBatch, setComboBatch] = useState(null);
   const [sharing, setSharing] = useState("");
   const [rooms, setRooms] = useState(null);
+  const [roomId, setRoomId] = useState("");
 
   /* ---------- step 3: payment ---------- */
   const [registering, setRegistering] = useState(false);
@@ -230,14 +231,16 @@ export default function AdmissionForm() {
     if (step !== 2 || !leadGender || !batch?.month || !availabilityTracked) { setRooms(null); return; }
     let cancelled = false;
     setRooms(null);
-    fetch(`/api/admission/rooms?month=${encodeURIComponent(batch.month)}&gender=${leadGender}`)
+    fetch(`/api/admission/rooms?course=${encodeURIComponent(course)}` +
+          `&month=${encodeURIComponent(batch.month)}&year=${encodeURIComponent(batch.year || "")}` +
+          `&gender=${leadGender}`)
       .then((r) => r.json())
       .then((d) => { if (!cancelled) setRooms(d); })
       .catch(() => {
         if (!cancelled) setRooms({ availableRooms: [], doubleSharingBooked: false, tripleSharingBooked: false });
       });
     return () => { cancelled = true; };
-  }, [step, leadGender, batch?.month, availabilityTracked]);
+  }, [step, leadGender, course, batch?.month, batch?.year, availabilityTracked]);
 
   // Going back a step and changing the batch or the lead student's gender can
   // leave a sharing type selected that the new combination no longer offers —
@@ -248,6 +251,21 @@ export default function AdmissionForm() {
     const gone = sharing === "triple" ? rooms.tripleSharingBooked : rooms.doubleSharingBooked;
     if (gone) setSharing("");
   }, [rooms, sharing]);
+
+  // The rooms on offer change with the sharing type, the batch and the lead
+  // student's gender. Drop a room that any of those has just taken away, so
+  // nobody carries an unbookable choice to the payment step.
+  const roomsForSharing = useMemo(
+    () => (rooms?.rooms || []).filter((r) => r.sharing === sharing),
+    [rooms, sharing]
+  );
+  useEffect(() => {
+    if (!roomId) return;
+    const still = roomsForSharing.find((r) => String(r.id) === String(roomId) && r.available);
+    if (!still) setRoomId("");
+  }, [roomsForSharing, roomId]);
+
+  const chosenRoom = roomsForSharing.find((r) => String(r.id) === String(roomId)) || null;
 
   /* ---------- students ---------- */
   const setStudent = (i, patch) =>
@@ -269,7 +287,7 @@ export default function AdmissionForm() {
     s.number.trim() && s.country.trim() && s.city.trim();
 
   const step1Ok = course && batchId && students.length > 0 && students.every(studentComplete);
-  const step2Ok = !!sharing;
+  const step2Ok = !!sharing && (!roomsForSharing.length || !!chosenRoom);
 
   const goto = (n) => {
     setError(""); setNotice(""); setStep(n);
@@ -285,6 +303,8 @@ export default function AdmissionForm() {
     course, batchId, sharing,
     addOns: activeAddOns,
     numStudents: students.length,
+    roomId: chosenRoom?.id || null,
+    roomName: chosenRoom?.name || "",
   });
 
   // Only one bundle may be added at a time — picking another replaces it,
@@ -301,6 +321,7 @@ export default function AdmissionForm() {
     q.set("course", COURSES[course]?.label + activeAddOns.map((k) => ` + ${ADDONS[k].label}`).join(""));
     if (batch?.date_range) q.set("dates", batch.date_range);
     q.set("acco", labels[sharing]);
+    if (chosenRoom) q.set("room", chosenRoom.name);
     if (fees) q.set("balance", String(fees.balance));
     if (paid != null) q.set("paid", Number(paid).toFixed(2));
     if (method) q.set("method", method);
@@ -856,6 +877,48 @@ export default function AdmissionForm() {
               })}
             </div>
 
+            {/* Room selection. Only rooms this student can actually have are
+                pressable; a full room, and a room already holding the other
+                gender, are both still shown with the reason on them. Seeing
+                why a room has gone is more use than not seeing it at all. */}
+            {sharing && roomsForSharing.length > 0 && (
+              <>
+                <h2 className="adm-h">
+                  Pick Your Room
+                  <span className="adm-opt">
+                    {rooms?.months?.length > 1
+                      ? `${labels[sharing]} · ${rooms.months.map((m) => m.label).join(" and ")}`
+                      : labels[sharing]}
+                  </span>
+                </h2>
+                {rooms?.months?.length > 1 && (
+                  <p className="adm-hint">
+                    The 500 hour course runs across two months, so only rooms free for both
+                    of them are offered.
+                  </p>
+                )}
+                <div className="adm-rooms">
+                  {roomsForSharing.map((r) => (
+                    <button
+                      key={r.id}
+                      type="button"
+                      disabled={!r.available}
+                      className={`adm-room${String(roomId) === String(r.id) ? " sel" : ""}${r.available ? "" : " off"}`}
+                      aria-pressed={String(roomId) === String(r.id)}
+                      onClick={() => setRoomId(r.id)}
+                    >
+                      <b>{r.name}</b>
+                      <em>
+                        {r.available
+                          ? `${r.free} of ${r.capacity} beds free`
+                          : r.reason}
+                      </em>
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
+
             {error && <div className="adm-error">{error}</div>}
 
             <div className="adm-actions">
@@ -892,6 +955,7 @@ export default function AdmissionForm() {
                 );
               })}
               <div className="adm-srow"><span>Accommodation</span><b>{labels[sharing]}</b></div>
+              {chosenRoom && <div className="adm-srow"><span>Room</span><b>{chosenRoom.name}</b></div>}
               <div className="adm-srow">
                 <span>Student{students.length > 1 ? "s" : ""}</span>
                 <b>{students.map((s) => s.name).join(", ")}</b>
