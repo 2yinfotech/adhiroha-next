@@ -92,6 +92,48 @@ const CONTACT_FORM_SCRIPT = `
 })();
 `;
 
+/* WhatsApp click, the second of the two GA4 key events the gap audit asked for.
+   (The first, the enquiry-form submission, is pushed by the handler above.)
+
+   WhatsApp is the school's busiest enquiry channel and none of it was being
+   measured: every link is a plain outbound <a> to api.whatsapp.com, and an
+   outbound click leaves the page without GA4 ever hearing about it. Delegated
+   at the document level and attached on parse, so it covers the header, the
+   footer, the mobile drawer, the floating button and any link written into page
+   copy — in all eleven languages — without tagging a single one of them.
+
+   `link_location` is derived from where the link sits, so the reporting can
+   tell a floating-button tap from a considered click at the bottom of a course
+   page. No listener is added to the links themselves: they must keep navigating
+   normally, and preventing the default to wait for a beacon is how a tracked
+   link ends up not opening WhatsApp at all. */
+const WHATSAPP_CLICK_SCRIPT = `
+(function(){
+  function locationOf(a){
+    if(a.closest('.wa-float'))return'floating_button';
+    if(a.closest('header'))return'header';
+    if(a.closest('aside'))return'mobile_drawer';
+    if(a.closest('footer'))return'footer';
+    return'page_body';
+  }
+  document.addEventListener('click',function(e){
+    var a=e.target&&e.target.closest?e.target.closest('a[href]'):null;
+    if(!a)return;
+    var href=a.getAttribute('href')||'';
+    if(!/(?:api\\.whatsapp\\.com|wa\\.me|web\\.whatsapp\\.com)/.test(href))return;
+    window.dataLayer=window.dataLayer||[];
+    window.dataLayer.push({
+      event:'whatsapp_click',
+      link_location:locationOf(a),
+      page_path:window.location.pathname,
+      link_url:href
+    });
+    /* Meta's equivalent, guarded — the pixel only exists once cookies are accepted. */
+    if(window.fbq){window.fbq('track','Contact');}
+  },true);
+})();
+`;
+
 export default function SiteShell({ lang, children }) {
   return (
     <html lang={lang}>
@@ -115,6 +157,8 @@ export default function SiteShell({ lang, children }) {
         <GoogleTagManagerHead />
         {/* Attach the contact-form submit handler immediately, before hydration. */}
         <script dangerouslySetInnerHTML={{ __html: CONTACT_FORM_SCRIPT }} />
+        {/* Outbound WhatsApp clicks, the site's other conversion signal. */}
+        <script dangerouslySetInnerHTML={{ __html: WHATSAPP_CLICK_SCRIPT }} />
       </head>
       <body>
         <GoogleTagManagerBody />

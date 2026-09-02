@@ -13,6 +13,13 @@
  *   lead_form_submit     the Google Ads landing page guide form, same condition
  *   application_start    teacher / volunteer application, when the email is composed
  *   booking_complete     an admission payment that reached /thank-you/
+ *   whatsapp_click       any outbound click to WhatsApp, from anywhere on the
+ *                        site, carrying link_location (header / footer /
+ *                        mobile_drawer / floating_button / page_body)
+ *
+ * contact_form_submit and whatsapp_click are the two the gap audit named as the
+ * key events to mark in GA4 — until they are marked there, nothing on the site
+ * can be judged on enquiries rather than rankings.
  *
  * Each carries a form_location and page_path so one trigger can serve every page
  * and the reporting can still be split by where the enquiry came from.

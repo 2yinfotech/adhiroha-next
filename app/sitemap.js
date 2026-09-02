@@ -1,219 +1,115 @@
-export const dynamic = "force-static";
+import fs from "fs";
+import path from "path";
+import { getAllArticles } from "@/lib/articles";
+import { SITE } from "@/lib/seo";
 
-const BASE = "https://www.adhiroha.com";
+/**
+ * The sitemap, generated from the routes that actually exist.
+ *
+ * It used to be a hand-maintained array of 203 URLs. The gap audit found 384
+ * pages earning impressions against those 203 entries — 191 ranking pages
+ * missing, 158 of them blog posts, including every article the internal-link
+ * plan depends on. A list maintained by hand cannot keep up with a blog that
+ * lives in a database, so it is no longer maintained by hand.
+ *
+ * Two sources, both live:
+ *
+ *   · the route folders under app/, walked at request time
+ *   · the `articles` table, which is where /blog/<slug>/ comes from
+ *
+ * Revalidated hourly rather than rebuilt per request: the route tree only
+ * changes on deploy and a new post can wait an hour to appear. If the database
+ * is unreachable the static routes are still served — a sitemap missing its
+ * blog section is recoverable, a sitemap that 500s is not.
+ */
 
-const routes = [
-  "",
-  "de",
-  "fr",
-  "it",
-  "pl",
-  "pt",
-  "nl",
-  "sv",
-  "ja",
-  "ja/200-jikan-yoga-shidosha-yosei-rishikesh",
-  "ja/300-jikan-yoga-shidosha-yosei-rishikesh",
-  "ja/500-jikan-yoga-shidosha-yosei-rishikesh",
-  "ja/hatha-yin-yoga-shidosha-yosei-rishikesh",
-  "ja/ashtanga-vinyasa-yoga-shidosha-yosei-rishikesh",
-  "ja/pranayama-meiso-shidosha-yosei-rishikesh",
-  "ja/adhiroha-ni-tsuite",
-  "ja/otoiawase",
-  "ja/indo-no-yoga-koshi",
-  "ja/yoga-gallery-indo",
-  "ja/kodo-kihan",
-  "ja/anzen-to-eisei-rishikesh",
-  "ja/sotsugyosei-kara-no-message",
-  "ja/indo-no-yoga-shidosha-yosei",
-  "ja/sound-healing-yosei-rishikesh",
-  "ja/sadhana-immersion-program",
-  "da",
-  "da/200-timers-yogalaereruddannelse-rishikesh",
-  "da/300-timers-yogalaereruddannelse-rishikesh",
-  "da/500-timers-yogalaereruddannelse-rishikesh",
-  "da/hatha-yin-yogalaereruddannelse-rishikesh",
-  "da/ashtanga-vinyasa-yogalaereruddannelse-rishikesh",
-  "da/pranayama-meditation-yogalaereruddannelse-rishikesh",
-  "da/om-os",
-  "da/kontakt",
-  "da/yogalaerere-i-indien",
-  "da/yogagalleri-indien",
-  "da/adfaerdskodeks",
-  "da/sikkerhed-og-hygiejne-rishikesh",
-  "da/hilsner-fra-tidligere-elever",
-  "da/yogalaereruddannelse-i-indien",
-  "da/lydhealing-uddannelse-rishikesh",
-  "da/sadhana-fordybelsesprogram",
-  "sv/200-timmars-yogalararutbildning-rishikesh",
-  "sv/300-timmars-yogalararutbildning-rishikesh",
-  "sv/500-timmars-yogalararutbildning-rishikesh",
-  "sv/hatha-yin-yogalararutbildning-rishikesh",
-  "sv/ashtanga-vinyasa-yogalararutbildning-rishikesh",
-  "sv/pranayama-meditation-yogalararutbildning-rishikesh",
-  "sv/om-oss",
-  "sv/kontakt",
-  "sv/yogalarare-i-indien",
-  "sv/yogagalleri-indien",
-  "sv/uppforandekod",
-  "sv/sakerhet-och-hygien-rishikesh",
-  "sv/halsningar-fran-tidigare-elever",
-  "sv/yogalararutbildning-i-indien",
-  "sv/ljudhealing-utbildning-rishikesh",
-  "sv/sadhana-fordjupningsprogram",
-  "nl/200-uur-yoga-docentenopleiding-rishikesh",
-  "nl/300-uur-yoga-docentenopleiding-rishikesh",
-  "nl/500-uur-yoga-docentenopleiding-rishikesh",
-  "nl/hatha-yin-yoga-docentenopleiding-rishikesh",
-  "nl/ashtanga-vinyasa-yoga-docentenopleiding-rishikesh",
-  "nl/pranayama-meditatie-yoga-docentenopleiding-rishikesh",
-  "nl/over-ons",
-  "nl/contact",
-  "nl/yogadocenten-in-india",
-  "nl/yoga-galerij-india",
-  "nl/gedragscode",
-  "nl/veiligheid-en-hygiene-rishikesh",
-  "nl/berichten-van-oud-studenten",
-  "nl/yoga-docentenopleiding-in-india",
-  "nl/klankhealing-opleiding-rishikesh",
-  "nl/sadhana-immersie-programma",
-  "pt/200-horas-formacao-de-professor-de-yoga-rishikesh",
-  "pt/300-horas-formacao-de-professor-de-yoga-rishikesh",
-  "pt/500-horas-formacao-de-professor-de-yoga-rishikesh",
-  "pt/hatha-yin-formacao-de-professor-de-yoga-rishikesh",
-  "pt/ashtanga-vinyasa-formacao-de-professor-de-yoga-rishikesh",
-  "pt/pranayama-meditacao-formacao-de-professor-de-yoga-rishikesh",
-  "pt/sobre-nos",
-  "pt/contato",
-  "pt/professores-de-yoga-na-india",
-  "pt/galeria-de-yoga-india",
-  "pt/codigo-de-conduta",
-  "pt/seguranca-e-higiene-rishikesh",
-  "pt/mensagens-de-ex-alunos",
-  "pt/formacao-de-professor-de-yoga-na-india",
-  "pt/formacao-em-terapia-sonora-rishikesh",
-  "pt/programa-de-imersao-sadhana",
-  "pl/200-godzinny-kurs-nauczycielski-jogi-rishikesh",
-  "pl/300-godzinny-kurs-nauczycielski-jogi-rishikesh",
-  "pl/500-godzinny-kurs-nauczycielski-jogi-rishikesh",
-  "pl/hatha-yin-kurs-nauczycielski-jogi-rishikesh",
-  "pl/ashtanga-vinyasa-kurs-nauczycielski-jogi-rishikesh",
-  "pl/pranajama-medytacja-kurs-nauczycielski-jogi-rishikesh",
-  "pl/o-nas",
-  "pl/kontakt",
-  "pl/nauczyciele-jogi-w-indiach",
-  "pl/galeria-jogi-indie",
-  "pl/kodeks-postepowania",
-  "pl/bezpieczenstwo-i-higiena-rishikesh",
-  "pl/wiadomosci-od-absolwentow",
-  "pl/kurs-nauczycielski-jogi-w-indiach",
-  "pl/kurs-terapii-dzwiekiem-rishikesh",
-  "pl/program-immersji-sadhana",
-  "it/200-ore-formazione-insegnanti-yoga-rishikesh",
-  "it/300-ore-formazione-insegnanti-yoga-rishikesh",
-  "it/500-ore-formazione-insegnanti-yoga-rishikesh",
-  "it/hatha-yin-formazione-insegnanti-yoga-rishikesh",
-  "it/ashtanga-vinyasa-formazione-insegnanti-yoga-rishikesh",
-  "it/pranayama-meditazione-formazione-insegnanti-yoga-rishikesh",
-  "it/chi-siamo",
-  "it/contatti",
-  "it/insegnanti-di-yoga-in-india",
-  "it/galleria-yoga-india",
-  "it/codice-di-condotta",
-  "it/sicurezza-igiene-rishikesh",
-  "it/messaggi-degli-ex-studenti",
-  "it/formazione-insegnanti-yoga-in-india",
-  "it/formazione-sonoterapia-rishikesh",
-  "it/programma-immersione-sadhana",
-  "fr/200-heures-formation-professeur-de-yoga-rishikesh",
-  "fr/300-heures-formation-professeur-de-yoga-rishikesh",
-  "fr/500-heures-formation-professeur-de-yoga-rishikesh",
-  "fr/hatha-yin-formation-professeur-de-yoga-rishikesh",
-  "fr/ashtanga-vinyasa-formation-professeur-de-yoga-rishikesh",
-  "fr/pranayama-meditation-formation-professeur-de-yoga-rishikesh",
-  "fr/formation-sonotherapie-rishikesh",
-  "fr/programme-immersion-sadhana",
-  "fr/formation-professeur-de-yoga-en-inde",
-  "fr/a-propos",
-  "fr/professeurs-de-yoga-en-inde",
-  "fr/galerie-yoga-inde",
-  "fr/contact",
-  "fr/faq-ecole-de-yoga-inde",
-  "fr/code-de-conduite",
-  "fr/securite-hygiene-rishikesh",
-  "fr/message-des-anciens",
-  "fr/politique-de-confidentialite",
-  "de/200-stunden-yogalehrer-ausbildung-rishikesh",
-  "de/300-stunden-yogalehrer-ausbildung-rishikesh",
-  "de/500-stunden-yogalehrer-ausbildung-rishikesh",
-  "de/hatha-yin-yogalehrer-ausbildung-rishikesh",
-  "de/ashtanga-vinyasa-yogalehrer-ausbildung-rishikesh",
-  "de/pranayama-meditation-yogalehrer-ausbildung-rishikesh",
-  "de/klangheilung-ausbildung-rishikesh",
-  "de/sadhana-immersion-programm",
-  "de/yogalehrer-ausbildung-rishikesh-indien",
-  "de/ueber-uns",
-  "de/yogalehrer-in-indien",
-  "de/yoga-galerie-indien",
-  "de/kontakt",
-  "de/faq-yogaschule-indien",
-  "de/verhaltenskodex",
-  "de/sicherheit-hygiene-rishikesh",
-  "de/willkommensnachricht",
-  "de/datenschutz",
-  "es",
-  "es/200-horas-formacion-de-profesor-de-yoga-rishikesh",
-  "es/300-horas-formacion-de-profesor-de-yoga-rishikesh",
-  "es/500-horas-formacion-de-profesor-de-yoga-rishikesh",
-  "es/hatha-yin-formacion-de-profesor-de-yoga-rishikesh",
-  "es/ashtanga-vinyasa-formacion-de-profesor-de-yoga-rishikesh",
-  "es/pranayama-meditacion-formacion-de-profesor-de-yoga-rishikesh",
-  "es/formacion-sonoterapia-rishikesh",
-  "es/programa-inmersion-sadhana",
-  "es/formacion-de-profesor-de-yoga-en-india",
-  "es/sobre-nosotros",
-  "es/profesores-de-yoga-en-india",
-  "es/galeria-yoga-india",
-  "es/contacto",
-  "es/codigo-de-conducta",
-  "es/seguridad-higiene-rishikesh",
-  "es/mensaje-de-exalumnos",
-  "about-us",
-  "contact-us",
-  "blogs",
-  "yoga-gallery-india",
-  "yoga-teachers-in-india",
-  "ashram-accommodation-rishikesh",
-  "ashram-food-rishikesh",
-  "excursions-rishikesh",
-  "yoga-ashram-in-india-code-of-conduct",
-  "safety-hygiene-in-rishikesh",
-  "soon-after-message",
-  "sadhana-immersion-programme",
-  "sound-healing-ttc-rishikesh",
-  "200-hour-yoga-teacher-training-course-rishikesh",
-  "300-hour-yoga-teacher-training-course-rishikesh",
-  "500-hour-yoga-teacher-training-course-rishikesh",
-  "ashtanga-teacher-training-course-rishikesh",
-  "hatha-teacher-training-course-rishikesh",
-  "pranayama-teacher-training-course-rishikesh",
-  "blog-200-hour-yoga-teacher-training-guide",
-  "blog-300-vs-500-hour-yoga-teacher-training",
-  "blog-500-hour-yoga-teacher-training-worth-it",
-  "weather",
-  "volunteer-opportunity-in-rishikesh",
-  "apply-for-teacher-in-rishikesh",
-  "faqs-of-yoga-school-in-india",
-  "privacy-policy",
-  "yoga-teacher-training-course-rishikesh-india",
-];
+const BASE = SITE;
 
-export default function sitemap() {
+// Route groups (parenthesised), private folders (_prefixed) and dynamic
+// segments are not URLs. `[slug]` is handled separately from the database.
+const isRouteSegment = (name) =>
+  !name.startsWith("(") && !name.startsWith("_") && !name.startsWith("[") && !name.startsWith(".");
+
+// A page that sets `index: false` — the admission panel, the registration form,
+// /thank-you/ and the two paid-ads landing pages — must not be advertised. The
+// flag is read from the source rather than duplicated in a list here, so a page
+// that is later opened up to search joins the sitemap on its own.
+function isNoindex(dir) {
+  for (const f of ["page.jsx", "page.js", "layout.jsx", "layout.js"]) {
+    const p = path.join(dir, f);
+    if (!fs.existsSync(p)) continue;
+    if (/index:\s*false/.test(fs.readFileSync(p, "utf8"))) return true;
+  }
+  return false;
+}
+
+/**
+ * Every static route in the app, as a URL path.
+ *
+ * Walks app/ the way Next.js resolves routes: a folder holding a page.jsx is a
+ * route, a route group contributes its children at the parent's path, and a
+ * noindex layout disqualifies everything beneath it.
+ */
+function staticRoutes() {
+  const root = path.join(process.cwd(), "app");
+  const found = [];
+
+  const walk = (dir, urlPath) => {
+    if (isNoindex(dir)) return;
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    if (entries.some((e) => e.isFile() && /^page\.(jsx?|tsx?)$/.test(e.name))) {
+      found.push(urlPath);
+    }
+    for (const e of entries) {
+      if (!e.isDirectory()) continue;
+      const child = path.join(dir, e.name);
+      // A route group adds nothing to the URL; a real folder adds its name.
+      if (e.name.startsWith("(")) walk(child, urlPath);
+      else if (isRouteSegment(e.name)) walk(child, `${urlPath}${e.name}/`);
+    }
+  };
+
+  walk(root, "/");
+  return [...new Set(found)].sort();
+}
+
+/** Every published article, at the /blog/<slug>/ URL the article route serves. */
+async function blogRoutes() {
+  try {
+    const rows = await getAllArticles();
+    return rows
+      .filter((a) => a.slug)
+      .map((a) => ({
+        url: `/blog/${a.slug}/`,
+        lastModified: new Date(a.modified_date || a.published_date || Date.now()),
+      }));
+  } catch (err) {
+    // Never let a database hiccup take the whole sitemap down with it.
+    console.error("sitemap: could not read articles —", err?.message || err);
+    return [];
+  }
+}
+
+// The homepage is crawled most often, the eleven localized homepages and the
+// course pages next, everything else at the default weight.
+function weightFor(url) {
+  if (url === "/") return { changeFrequency: "weekly", priority: 1 };
+  if (/^\/[a-z]{2}\/$/.test(url)) return { changeFrequency: "weekly", priority: 0.9 };
+  if (/hour-yoga-teacher-training/.test(url)) return { changeFrequency: "weekly", priority: 0.9 };
+  if (url.startsWith("/blog/")) return { changeFrequency: "monthly", priority: 0.6 };
+  return { changeFrequency: "monthly", priority: 0.7 };
+}
+
+export const revalidate = 3600;
+
+export default async function sitemap() {
   const now = new Date();
-  return routes.map((r) => ({
-    url: r === "" ? `${BASE}/` : `${BASE}/${r}/`,
-    lastModified: now,
-    changeFrequency: r === "" ? "weekly" : "monthly",
-    priority: r === "" ? 1 : 0.7,
+  const pages = staticRoutes().map((url) => ({ url, lastModified: now }));
+  const entries = [...pages, ...(await blogRoutes())];
+
+  return entries.map(({ url, lastModified }) => ({
+    url: `${BASE}${url}`,
+    lastModified,
+    ...weightFor(url),
   }));
 }

@@ -30,7 +30,9 @@ const RULES = [
   ["pranayama (?:&amp; |and )?meditation(?: teacher)? training", "/pranayama-teacher-training-course-rishikesh/"],
   ["sound healing(?: &amp; therapy)?(?: teacher)? training", "/sound-healing-ttc-rishikesh/"],
   ["sadhana immersion programme", "/sadhana-immersion-programme/"],
-  ["yoga (?:&amp; |and )?ayurveda (?:wellness )?retreat", "/yoga-retreat-in-rishikesh/"],
+  // The yoga & ayurveda retreat rule is gone: that page is discontinued and
+  // 301s to /sadhana-immersion-programme/, so linking the phrase would spend
+  // an internal link on a redirect hop.
   ["yoga teacher training(?: course)? in rishikesh", "/"],
 ];
 

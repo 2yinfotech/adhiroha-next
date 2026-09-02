@@ -9,8 +9,13 @@ import AnchorScroll from "@/components/AnchorScroll";
 import JsonLd from "@/components/JsonLd";
 import { graph, extractFaqs, faqSchema, LANGUAGE_ALTERNATES, schoolTourVideoSchema } from "@/lib/seo";
 
+// The title used to read "… | 200/300/500 Hr YTTC". The gap audit found the
+// homepage was ranking against its own course pages on exactly those three
+// phrases, so the hour counts are gone from here and live only on the pages
+// that are actually about them. The three hour-count sections further down were
+// cut to summaries at the same time, for the same reason.
 export const metadata = withOpenGraph({
-  title: "Yoga Teacher Training in Rishikesh | 200/300/500 Hr YTTC",
+  title: "Yoga Teacher Training in Rishikesh, India | Adhiroha Yoga School",
   description:
     "Yoga Alliance certified yoga teacher training school in Rishikesh, India. Small batches, expert Indian teachers, three-acre ashram stay and meals included.",
   // Page-level `alternates` replaces the layout's, so the hreflang set has to be

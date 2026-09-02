@@ -57,10 +57,6 @@ const L = {
     "Sadhana Immersion Programme in Rishikesh",
     "A fifteen-day personal practice immersion, with no teaching syllabus to keep up with."
   ],
-  "/yoga-retreat-in-rishikesh/": [
-    "Yoga &amp; Ayurveda Retreat in Rishikesh",
-    "Six days of practice, Ayurvedic therapy and rest — no certification, no pressure."
-  ],
   "/about-us/": [
     "Why Adhiroha Is the Best Yoga School in Rishikesh",
     "The founder&rsquo;s letter, the accreditations, and what the ashram is actually like."
@@ -105,6 +101,18 @@ const L = {
     "Is the 500 Hour Yoga Teacher Training Worth It?",
     "Sixty days is a serious commitment. Here is what actually happens across them."
   ],
+  "/ashram-accommodation-rishikesh/": [
+    "Ashram Accommodation in Rishikesh",
+    "The rooms, the sharing options and what is actually included in the fee."
+  ],
+  "/ashram-food-rishikesh/": [
+    "Ashram Food: What You Will Eat",
+    "Three sattvic vegetarian meals a day, and how the kitchen handles allergies."
+  ],
+  "/excursions-rishikesh/": [
+    "Excursions Around Rishikesh",
+    "The waterfall, the Ganga aarti and the temple walks that come with the course."
+  ],
   "/contact-us/": [
     "Contact Our Yoga School in Rishikesh",
     "Ask us anything about dates, travel or fees — we usually reply within a day."
@@ -117,9 +125,9 @@ const PLAN = {
     "Read More Before You Choose Your Course",
     "Most students spend a week or two comparing schools before they book, and that is exactly as it should be. These pages answer the questions that come next.",
     "/200-hour-yoga-teacher-training-course-rishikesh/",
-    "/yoga-teacher-training-course-rishikesh-india/",
-    "/about-us/",
-    "/blog-200-hour-yoga-teacher-training-guide/"
+    "/300-hour-yoga-teacher-training-course-rishikesh/",
+    "/500-hour-yoga-teacher-training-course-rishikesh/",
+    "/yoga-teacher-training-course-rishikesh-india/"
   ],
   "/200-hour-yoga-teacher-training-course-rishikesh/": [
     "Where the 200 Hour Course Leads Next",
@@ -151,7 +159,7 @@ const PLAN = {
     "/ashtanga-teacher-training-course-rishikesh/",
     "/pranayama-teacher-training-course-rishikesh/",
     "/200-hour-yoga-teacher-training-course-rishikesh/",
-    "/"
+    "/300-hour-yoga-teacher-training-course-rishikesh/"
   ],
   "/ashtanga-teacher-training-course-rishikesh/": [
     "The Other Specialised Trainings",
@@ -159,7 +167,7 @@ const PLAN = {
     "/hatha-teacher-training-course-rishikesh/",
     "/pranayama-teacher-training-course-rishikesh/",
     "/200-hour-yoga-teacher-training-course-rishikesh/",
-    "/"
+    "/500-hour-yoga-teacher-training-course-rishikesh/"
   ],
   "/pranayama-teacher-training-course-rishikesh/": [
     "The Other Specialised Trainings",
@@ -167,47 +175,39 @@ const PLAN = {
     "/hatha-teacher-training-course-rishikesh/",
     "/ashtanga-teacher-training-course-rishikesh/",
     "/sound-healing-ttc-rishikesh/",
-    "/"
+    "/300-hour-yoga-teacher-training-course-rishikesh/"
   ],
   "/sound-healing-ttc-rishikesh/": [
     "Short Programmes at the Ashram",
     "Sound healing is one of several shorter stays we run for students who cannot take a whole month away.",
     "/sadhana-immersion-programme/",
-    "/yoga-retreat-in-rishikesh/",
     "/pranayama-teacher-training-course-rishikesh/",
-    "/"
+    "/200-hour-yoga-teacher-training-course-rishikesh/",
+    "/500-hour-yoga-teacher-training-course-rishikesh/"
   ],
   "/sadhana-immersion-programme/": [
     "Short Programmes at the Ashram",
     "The immersion is for practice rather than certification. These are the closest things to it that we run.",
-    "/yoga-retreat-in-rishikesh/",
     "/sound-healing-ttc-rishikesh/",
     "/200-hour-yoga-teacher-training-course-rishikesh/",
-    "/"
-  ],
-  "/yoga-retreat-in-rishikesh/": [
-    "If You Would Rather Train Than Rest",
-    "The retreat asks nothing of you. When you are ready for something that does, these are the next steps.",
-    "/sadhana-immersion-programme/",
-    "/200-hour-yoga-teacher-training-course-rishikesh/",
-    "/sound-healing-ttc-rishikesh/",
-    "/"
+    "/300-hour-yoga-teacher-training-course-rishikesh/",
+    "/500-hour-yoga-teacher-training-course-rishikesh/"
   ],
   "/about-us/": [
     "See the School for Yourself",
     "Words about a school only go so far. These pages let you check the claim from other angles.",
     "/yoga-teachers-in-india/",
-    "/yoga-gallery-india/",
     "/soon-after-message/",
-    "/yoga-teacher-training-course-rishikesh-india/"
+    "/300-hour-yoga-teacher-training-course-rishikesh/",
+    "/500-hour-yoga-teacher-training-course-rishikesh/"
   ],
   "/yoga-teachers-in-india/": [
     "More About the School",
     "The teachers are the reason people travel here. This is the rest of the picture.",
     "/about-us/",
     "/200-hour-yoga-teacher-training-course-rishikesh/",
-    "/yoga-gallery-india/",
-    "/soon-after-message/"
+    "/300-hour-yoga-teacher-training-course-rishikesh/",
+    "/500-hour-yoga-teacher-training-course-rishikesh/"
   ],
   "/yoga-teacher-training-course-rishikesh-india/": [
     "Read Each Course in Full",
@@ -221,25 +221,25 @@ const PLAN = {
     "Still Deciding?",
     "If the answers above settled the practical questions, these pages cover the course itself.",
     "/200-hour-yoga-teacher-training-course-rishikesh/",
-    "/yoga-teacher-training-course-rishikesh-india/",
-    "/about-us/",
-    "/blogs/"
+    "/300-hour-yoga-teacher-training-course-rishikesh/",
+    "/500-hour-yoga-teacher-training-course-rishikesh/",
+    "/yoga-teacher-training-course-rishikesh-india/"
   ],
   "/blogs/": [
     "Start With the Courses",
     "The articles are here to help you choose. When you are ready, the course pages have the detail.",
     "/200-hour-yoga-teacher-training-course-rishikesh/",
-    "/yoga-teacher-training-course-rishikesh-india/",
-    "/about-us/",
-    "/faqs-of-yoga-school-in-india/"
+    "/300-hour-yoga-teacher-training-course-rishikesh/",
+    "/500-hour-yoga-teacher-training-course-rishikesh/",
+    "/yoga-teacher-training-course-rishikesh-india/"
   ],
   "/blog-200-hour-yoga-teacher-training-guide/": [
     "Read Next",
     "If the guide answered the first questions, these pages take it from there.",
     "/200-hour-yoga-teacher-training-course-rishikesh/",
+    "/300-hour-yoga-teacher-training-course-rishikesh/",
     "/yoga-teacher-training-course-rishikesh-india/",
-    "/faqs-of-yoga-school-in-india/",
-    "/about-us/"
+    "/faqs-of-yoga-school-in-india/"
   ],
   "/blog-300-vs-500-hour-yoga-teacher-training/": [
     "Read Next",
@@ -253,49 +253,49 @@ const PLAN = {
     "Read Next",
     "Two months is a long time to commit. Read the course in full, and the honest comparison with the 300 hour route.",
     "/500-hour-yoga-teacher-training-course-rishikesh/",
+    "/300-hour-yoga-teacher-training-course-rishikesh/",
     "/blog-300-vs-500-hour-yoga-teacher-training/",
-    "/yoga-teacher-training-course-rishikesh-india/",
-    "/about-us/"
+    "/yoga-teacher-training-course-rishikesh-india/"
   ],
   "/yoga-gallery-india/": [
     "Now Read the Courses",
     "You have seen the place. These pages tell you what happens inside it.",
     "/200-hour-yoga-teacher-training-course-rishikesh/",
-    "/yoga-teacher-training-course-rishikesh-india/",
-    "/about-us/",
-    "/yoga-teachers-in-india/"
+    "/300-hour-yoga-teacher-training-course-rishikesh/",
+    "/500-hour-yoga-teacher-training-course-rishikesh/",
+    "/yoga-teacher-training-course-rishikesh-india/"
   ],
   "/soon-after-message/": [
     "Where These Students Trained",
     "Every message above was written by a graduate of one of these courses.",
     "/200-hour-yoga-teacher-training-course-rishikesh/",
-    "/yoga-teacher-training-course-rishikesh-india/",
-    "/about-us/",
-    "/yoga-gallery-india/"
+    "/300-hour-yoga-teacher-training-course-rishikesh/",
+    "/500-hour-yoga-teacher-training-course-rishikesh/",
+    "/yoga-teacher-training-course-rishikesh-india/"
   ],
   "/safety-hygiene-in-rishikesh/": [
     "More Things Worth Knowing",
     "Practical questions rarely stop at hygiene. These pages cover the rest of them.",
     "/faqs-of-yoga-school-in-india/",
     "/yoga-ashram-in-india-code-of-conduct/",
-    "/about-us/",
-    "/200-hour-yoga-teacher-training-course-rishikesh/"
+    "/200-hour-yoga-teacher-training-course-rishikesh/",
+    "/300-hour-yoga-teacher-training-course-rishikesh/"
   ],
   "/yoga-ashram-in-india-code-of-conduct/": [
     "More Things Worth Knowing",
     "The rules exist to protect the practice. These pages explain the rest of ashram life.",
     "/safety-hygiene-in-rishikesh/",
     "/faqs-of-yoga-school-in-india/",
-    "/about-us/",
-    "/200-hour-yoga-teacher-training-course-rishikesh/"
+    "/200-hour-yoga-teacher-training-course-rishikesh/",
+    "/500-hour-yoga-teacher-training-course-rishikesh/"
   ],
   "/contact-us/": [
     "While You Wait for Our Reply",
     "Most questions are already answered somewhere on these pages.",
     "/faqs-of-yoga-school-in-india/",
     "/200-hour-yoga-teacher-training-course-rishikesh/",
-    "/yoga-teacher-training-course-rishikesh-india/",
-    "/about-us/"
+    "/300-hour-yoga-teacher-training-course-rishikesh/",
+    "/500-hour-yoga-teacher-training-course-rishikesh/"
   ],
   "/privacy-policy/": [
     "Back to the School",
@@ -304,6 +304,30 @@ const PLAN = {
     "/200-hour-yoga-teacher-training-course-rishikesh/",
     "/about-us/",
     "/contact-us/"
+  ],
+  "/ashram-accommodation-rishikesh/": [
+    "The Rest of Ashram Life",
+    "Where you sleep is one part of the month. These pages cover the others.",
+    "/ashram-food-rishikesh/",
+    "/200-hour-yoga-teacher-training-course-rishikesh/",
+    "/300-hour-yoga-teacher-training-course-rishikesh/",
+    "/500-hour-yoga-teacher-training-course-rishikesh/"
+  ],
+  "/ashram-food-rishikesh/": [
+    "The Rest of Ashram Life",
+    "The kitchen is only half of it. These pages cover where you stay and what you study.",
+    "/ashram-accommodation-rishikesh/",
+    "/200-hour-yoga-teacher-training-course-rishikesh/",
+    "/300-hour-yoga-teacher-training-course-rishikesh/",
+    "/500-hour-yoga-teacher-training-course-rishikesh/"
+  ],
+  "/excursions-rishikesh/": [
+    "What the Excursions Belong To",
+    "The excursions come with a course. These are the courses they come with.",
+    "/200-hour-yoga-teacher-training-course-rishikesh/",
+    "/300-hour-yoga-teacher-training-course-rishikesh/",
+    "/500-hour-yoga-teacher-training-course-rishikesh/",
+    "/yoga-teacher-training-course-rishikesh-india/"
   ],
   "/thank-you/": [
     "While You Prepare to Travel",
@@ -347,6 +371,42 @@ function band(route) {
   );
 }
 
+/**
+ * Removes a band this script wrote on an earlier run, so it can be re-run after
+ * the copy or the plan changes.
+ *
+ * Anchored on the <section class="rl-sec"> element rather than on the comment
+ * markers. The markers alone were not enough: content.js files are serialised
+ * with every non-ASCII character escaped, so the "·" in the opening marker is
+ * "\\u00b7" on disk and never matched the literal marker searched for here. The
+ * strip silently did nothing and a second band was appended below the first —
+ * which is exactly what happened, on every page, before this was fixed.
+ */
+function stripBand(raw, file) {
+  let out = raw;
+  for (let guard = 0; guard < 10; guard++) {
+    const at = out.indexOf('<section class=\\"rl-sec\\"');
+    if (at < 0) break;
+    const end = out.indexOf("</section>", at);
+    if (end < 0) throw new Error(`${file}: unterminated rl-sec band`);
+    let from = at;
+    let to = end + "</section>".length;
+    // Take the comment banner above it and the closing banner below, in either
+    // the literal or the \\u-escaped spelling.
+    for (const open of [OPEN, OPEN.replace("\u00b7", "\\u00b7")]) {
+      const o = out.lastIndexOf(open, at);
+      if (o > -1 && at - o < open.length + 8) from = o;
+    }
+    for (const close of [CLOSE, CLOSE.replace("\u00b7", "\\u00b7")]) {
+      if (out.startsWith(close, to)) to += close.length;
+      else if (out.startsWith("\\n" + close, to)) to += close.length + 2;
+    }
+    while (out.slice(from - 2, from) === "\\n") from -= 2;
+    out = out.slice(0, from) + out.slice(to);
+  }
+  return out;
+}
+
 const pages = [
   ["/", "app/_home/content.js"],
   ...fs
@@ -363,15 +423,7 @@ for (const [route, file] of pages) {
     continue;
   }
   let raw = fs.readFileSync(file, "utf8");
-  // Idempotency: drop a previously injected band before writing the new one.
-  let from = raw.indexOf(OPEN);
-  if (from > -1) {
-    const to = raw.indexOf(CLOSE, from);
-    // The band is written with two escaped newlines in front of it; take those
-    // back as well so repeated runs cannot accumulate blank lines.
-    while (raw.slice(from - 2, from) === "\\n") from -= 2;
-    raw = raw.slice(0, from) + raw.slice(to + CLOSE.length);
-  }
+  raw = stripBand(raw, file);
   const footerAt = raw.lastIndexOf("<footer");
   if (footerAt < 0) {
     console.log(`${route}  — SKIPPED, no <footer>`);
