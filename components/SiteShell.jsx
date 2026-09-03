@@ -134,6 +134,49 @@ const WHATSAPP_CLICK_SCRIPT = `
 })();
 `;
 
+/* Header background and auto-hide, attached during parse.
+
+   This logic already existed, but only inside <StickyHeader>, a React client
+   component — so on every page except the homepage it could not run until the
+   whole React bundle had downloaded, parsed and hydrated. Measured on a
+   throttled mid-range phone against the live site, that was 6.2 seconds during
+   which the fixed header sat fully transparent over the hero and did not hide
+   on scroll. On desktop it hydrates fast enough that nobody notices, which is
+   why it read as a phone-only bug.
+
+   Nothing here needs React, a framework or even the header to exist yet: the
+   element is re-queried lazily, because this script sits in <head> and the
+   markup it looks for is parsed later. StickyHeader still ships as the failsafe
+   and now skips its own scroll wiring when this has already bound, so the two
+   can never fight over the same classes.
+
+   Kept deliberately identical in behaviour to the homepage's inlined copy in
+   app/_home/scripts.js — same thresholds, same class names — so the header
+   behaves the same on every page of the site. */
+const HEADER_SCROLL_SCRIPT = `
+(function(){
+  if(window.__adhHeaderBound)return;
+  window.__adhHeaderBound=1;
+  var hd=null,lastY=window.pageYOffset||0;
+  function onScroll(){
+    if(!hd)hd=document.getElementById('hd');
+    if(!hd)return;
+    var y=window.pageYOffset||0;
+    hd.classList.toggle('stuck',y>40);
+    if(y>lastY+5&&y>220){hd.classList.add('hide');}
+    else if(y<lastY-5){hd.classList.remove('hide');}
+    if(y<120){hd.classList.remove('hide');}
+    lastY=y;
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  /* Run once as soon as the header exists: a reload part-way down the page must
+     paint the header already styled rather than waiting for the first scroll. */
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',onScroll);}
+  else{onScroll();}
+  onScroll();
+})();
+`;
+
 export default function SiteShell({ lang, children }) {
   return (
     <html lang={lang}>
@@ -159,6 +202,8 @@ export default function SiteShell({ lang, children }) {
         <script dangerouslySetInnerHTML={{ __html: CONTACT_FORM_SCRIPT }} />
         {/* Outbound WhatsApp clicks, the site's other conversion signal. */}
         <script dangerouslySetInnerHTML={{ __html: WHATSAPP_CLICK_SCRIPT }} />
+        {/* Header background / auto-hide, bound now rather than after hydration. */}
+        <script dangerouslySetInnerHTML={{ __html: HEADER_SCROLL_SCRIPT }} />
       </head>
       <body>
         <GoogleTagManagerBody />

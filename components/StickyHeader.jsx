@@ -8,24 +8,35 @@ import { useEffect } from "react";
  */
 export default function StickyHeader() {
   useEffect(() => {
-    // The header is injected via dangerouslySetInnerHTML on the page, so on some
-    // routes it may not be in the DOM the instant this effect runs. Re-query it
-    // lazily (on the first scroll) instead of bailing out permanently — that
-    // stopped the sticky background/auto-hide from ever attaching on some pages.
-    let hd = document.getElementById("hd");
-    let lastY = window.pageYOffset || 0;
-    const onScroll = () => {
-      if (!hd) hd = document.getElementById("hd");
-      if (!hd) return;
-      const y = window.pageYOffset || 0;
-      hd.classList.toggle("stuck", y > 40);
-      if (y > lastY + 5 && y > 220) hd.classList.add("hide");
-      else if (y < lastY - 5) hd.classList.remove("hide");
-      if (y < 120) hd.classList.remove("hide");
-      lastY = y;
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
+    // The scroll behaviour normally comes from the inline script in SiteShell,
+    // which binds during parse instead of waiting for hydration — this component
+    // used to be the only place it lived, and on a throttled phone that left the
+    // header transparent and non-hiding for six seconds on every page but the
+    // homepage. That script sets the flag below once it has bound, so this is
+    // now only the failsafe for the case where it did not run at all.
+    let detach = () => {};
+    if (!window.__adhHeaderBound) {
+      window.__adhHeaderBound = 1;
+      // The header is injected via dangerouslySetInnerHTML on the page, so on some
+      // routes it may not be in the DOM the instant this effect runs. Re-query it
+      // lazily (on the first scroll) instead of bailing out permanently — that
+      // stopped the sticky background/auto-hide from ever attaching on some pages.
+      let hd = document.getElementById("hd");
+      let lastY = window.pageYOffset || 0;
+      const onScroll = () => {
+        if (!hd) hd = document.getElementById("hd");
+        if (!hd) return;
+        const y = window.pageYOffset || 0;
+        hd.classList.toggle("stuck", y > 40);
+        if (y > lastY + 5 && y > 220) hd.classList.add("hide");
+        else if (y < lastY - 5) hd.classList.remove("hide");
+        if (y < 120) hd.classList.remove("hide");
+        lastY = y;
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+      detach = () => window.removeEventListener("scroll", onScroll);
+    }
 
     // The mobile language chip is a bare <details> (no JS needed to open it, which
     // matters because the header is inlined into 200+ standalone HTML blobs).
@@ -41,7 +52,7 @@ export default function StickyHeader() {
     document.addEventListener("keydown", onKey);
 
     return () => {
-      window.removeEventListener("scroll", onScroll);
+      detach();
       document.removeEventListener("click", closeLang);
       document.removeEventListener("keydown", onKey);
     };
