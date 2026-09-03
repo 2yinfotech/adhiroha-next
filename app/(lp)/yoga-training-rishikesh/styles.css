@@ -2774,3 +2774,176 @@ background: linear-gradient(to right, #ef4444, #dc2626);
   #mobile-cta-bar svg { width: 18px; height: 18px; }
   @media (min-width: 1024px) { #mobile-cta-bar { display: none; } }
   @media (max-width: 1023px) { body { padding-bottom: 74px; } }
+/* ==== Accreditation band ====================================================
+   Carried over from the homepage's #accreditation section, with Yoga Alliance
+   given the visual lead: it is the registration that decides whether the
+   certificate is worth anything abroad, so it gets the panel, the three level
+   badges and the verify link, while Ayush and Uttarakhand Tourism sit quietly
+   underneath.
+
+   Written as its own classes rather than Tailwind utilities — this page ships a
+   pre-compiled Tailwind file, so a class that is not already in it does
+   nothing at all. */
+
+.acr-sec {
+  padding: 72px 16px;
+  background: #faf8f4;
+  position: relative;
+}
+.acr-wrap { max-width: 1120px; margin: 0 auto; }
+
+.acr-head { text-align: center; max-width: 760px; margin: 0 auto 44px; }
+.acr-kicker {
+  display: inline-block;
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ed1c24;
+  margin-bottom: 12px;
+}
+.acr-h2 {
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+  font-size: clamp(1.6rem, 4vw, 2.35rem);
+  font-weight: 600;
+  color: #8f8166;
+  margin: 0 0 8px;
+  line-height: 1.25;
+}
+.acr-h2 + .acr-lead { margin-top: 16px; }
+.acr-lead {
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  font-size: 0.97rem;
+  line-height: 1.75;
+  color: #4b5563;
+  margin: 0;
+}
+.acr-lead strong { color: #2c2723; font-weight: 700; }
+
+/* --- Yoga Alliance, the highlighted one --- */
+.acr-primary {
+  background: #fff;
+  border: 2px solid rgba(237, 28, 36, 0.22);
+  border-radius: 22px;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "left levels" "verify verify";
+  gap: 26px 34px;
+  align-items: center;
+  box-shadow: 0 14px 40px rgba(143, 129, 102, 0.13);
+}
+.acr-primary-left { grid-area: left; display: flex; align-items: center; gap: 18px; }
+.acr-ya-logo { width: 74px; height: 74px; object-fit: contain; flex: 0 0 auto; }
+.acr-badge-pill {
+  display: inline-block;
+  background: #ed1c24;
+  color: #fff;
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+.acr-ya-name {
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2c2723;
+  margin: 0 0 5px;
+}
+.acr-ya-note {
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: #6b7280;
+  margin: 0;
+  max-width: 42ch;
+}
+
+.acr-levels { grid-area: levels; display: flex; gap: 20px; }
+.acr-level { text-align: center; }
+.acr-level img { width: 62px; height: 62px; object-fit: contain; display: block; margin: 0 auto 6px; }
+.acr-level span {
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  color: #8f8166;
+}
+
+.acr-verify {
+  grid-area: verify;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 20px;
+  border-top: 1px solid rgba(143, 129, 102, 0.18);
+  margin-top: 2px;
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ed1c24;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+.acr-verify:hover { color: #d41b23; text-decoration: underline; }
+
+/* --- The quieter recognitions --- */
+.acr-others {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 22px;
+}
+.acr-other {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(143, 129, 102, 0.18);
+  border-radius: 14px;
+  padding: 13px 20px;
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+.acr-other img { width: 42px; height: 42px; object-fit: contain; flex: 0 0 auto; }
+.acr-other b {
+  display: block;
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #2c2723;
+}
+.acr-other span {
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  font-size: 0.79rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+@media (max-width: 820px) {
+  .acr-sec { padding: 52px 14px; }
+  .acr-primary {
+    grid-template-columns: 1fr;
+    grid-template-areas: "left" "levels" "verify";
+    justify-items: center;
+    text-align: center;
+    padding: 26px 20px;
+  }
+  .acr-primary-left { flex-direction: column; text-align: center; gap: 12px; }
+  .acr-ya-note { max-width: none; }
+  .acr-levels { justify-content: center; gap: 22px; }
+  /* The label wraps to two lines at this width, and as a flex item the arrow
+     then floats beside the block instead of following the last word. Laying it
+     out as text keeps the arrow attached to "directory". */
+  .acr-verify { display: block; width: 100%; padding-top: 16px; text-align: center; }
+  .acr-verify svg { display: inline-block; vertical-align: -2px; margin-left: 6px; }
+  .acr-other { flex: 1 1 100%; max-width: none; }
+}
