@@ -1,0 +1,155 @@
+/* Thank-you page for a landing-page enquiry.
+   Deliberately its own small stylesheet rather than the landing page's 78 KB of
+   compiled Tailwind: this page shows six lines of text and has no reason to
+   carry a whole utility framework. The tokens are the landing page's, so the
+   two read as one journey. */
+
+.tq-page {
+  --cream: #faf8f4;
+  --ink: #1f2937;
+  --muted: #6b7280;
+  --red: #ed1c24;
+  --red-dark: #d41b23;
+  --gold: #8f8166;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-montserrat), "Montserrat", ui-sans-serif, system-ui, sans-serif;
+}
+
+.tq-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
+}
+.tq-header img { width: 150px; height: auto; }
+
+.tq-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 20px 72px;
+}
+
+.tq-card {
+  width: 100%;
+  max-width: 640px;
+  background: #fff;
+  border-radius: 24px;
+  padding: 48px 36px;
+  text-align: center;
+  box-shadow: 0 18px 48px rgba(31, 41, 55, 0.09);
+  border: 1px solid rgba(143, 129, 102, 0.14);
+}
+
+/* The tick. A plain SVG stroke animation — no library, and it still reads as
+   confirmation with animation disabled. */
+.tq-tick { width: 76px; height: 76px; margin: 0 auto 22px; display: block; }
+.tq-tick circle { fill: rgba(34, 197, 94, 0.1); }
+.tq-tick path {
+  stroke: #22c55e;
+  stroke-width: 3.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  stroke-dasharray: 34;
+  stroke-dashoffset: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .tq-tick path { animation: tq-draw 0.55s ease-out 0.1s both; }
+  @keyframes tq-draw { from { stroke-dashoffset: 34; } to { stroke-dashoffset: 0; } }
+}
+
+.tq-card h1 {
+  font-family: var(--font-playfair), "Playfair Display", ui-serif, Georgia, serif;
+  font-size: clamp(1.75rem, 4.5vw, 2.4rem);
+  font-weight: 600;
+  color: var(--gold);
+  margin: 0 0 14px;
+  line-height: 1.25;
+}
+
+.tq-card p { color: var(--muted); font-size: 1.02rem; line-height: 1.7; margin: 0 0 12px; }
+.tq-card p strong { color: var(--ink); }
+
+.tq-next {
+  margin: 30px 0 4px;
+  padding: 20px 22px;
+  background: var(--cream);
+  border-radius: 14px;
+  text-align: left;
+}
+.tq-next h2 {
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 12px;
+  font-weight: 700;
+}
+.tq-next ul { margin: 0; padding: 0; list-style: none; }
+.tq-next li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.tq-next li:last-child { margin-bottom: 0; }
+.tq-next li::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 0.62em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--red);
+}
+
+.tq-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.tq-btn {
+  flex: 1 1 200px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 18px;
+  border-radius: 11px;
+  font-weight: 700;
+  font-size: 0.96rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.tq-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); }
+.tq-btn svg { width: 18px; height: 18px; }
+.tq-wa { background: linear-gradient(135deg, #25d366, #128c7e); color: #fff; }
+.tq-home { background: #fff; color: var(--ink); border: 1px solid #d8d3c9; }
+
+/* Written as .tq-card .tq-meta, not .tq-meta: `.tq-card p` above is one
+   specificity point higher and its `margin: 0 0 12px` shorthand would otherwise
+   win, collapsing the gap under the buttons to nothing. */
+.tq-card .tq-meta { margin: 26px 0 0; font-size: 0.85rem; color: #9ca3af; }
+.tq-meta a { color: var(--red-dark); text-decoration: none; font-weight: 600; }
+.tq-meta a:hover { text-decoration: underline; }
+
+.tq-footer {
+  background: linear-gradient(to bottom, #111827, #000);
+  color: #fff;
+  text-align: center;
+  padding: 34px 20px;
+}
+.tq-footer img { width: 130px; height: auto; margin-bottom: 14px; }
+.tq-footer p { margin: 5px 0; font-size: 0.85rem; color: #cbd5e1; line-height: 1.6; }
+
+@media (max-width: 520px) {
+  .tq-card { padding: 36px 22px; border-radius: 18px; }
+  .tq-main { padding: 34px 14px 48px; }
+}

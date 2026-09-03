@@ -14,6 +14,7 @@ import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/GoogleT
 import ConsentDefaults from "@/components/ConsentDefaults";
 import ConsentBanner from "@/components/ConsentBanner";
 import MetaPixel from "@/components/MetaPixel";
+import GoogleAdsTag from "@/components/GoogleAdsTag";
 import { SITE } from "@/lib/seo";
 
 export const metadata = {
@@ -31,6 +32,10 @@ export default function LandingLayout({ children }) {
         <link rel="preload" as="font" type="font/woff2" href="/fonts/poppins-500.woff2" crossOrigin="" />
         <ConsentDefaults />
         <GoogleTagManagerHead />
+        {/* The Google tag itself. Ads scans the landing page for it and reports
+            "Google tag missing" when only the container is present. Base tag
+            only — conversions still fire from the container. */}
+        <GoogleAdsTag />
       </head>
       <body>
         <GoogleTagManagerBody />

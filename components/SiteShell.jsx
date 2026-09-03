@@ -3,6 +3,7 @@ import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/GoogleT
 import ConsentDefaults from "@/components/ConsentDefaults";
 import ConsentBanner from "@/components/ConsentBanner";
 import MetaPixel from "@/components/MetaPixel";
+import GoogleAdsTag from "@/components/GoogleAdsTag";
 import CourseEnquiryModal from "@/components/CourseEnquiryModal";
 import RegistrationDonePopup from "@/components/RegistrationDonePopup";
 import JsonLd from "@/components/JsonLd";
@@ -198,6 +199,8 @@ export default function SiteShell({ lang, children }) {
         <ConsentDefaults />
         {/* Tag Manager, ahead of the form handler so early pushes are not lost. */}
         <GoogleTagManagerHead />
+        {/* The Google tag, base only. See components/GoogleAdsTag. */}
+        <GoogleAdsTag />
         {/* Attach the contact-form submit handler immediately, before hydration. */}
         <script dangerouslySetInnerHTML={{ __html: CONTACT_FORM_SCRIPT }} />
         {/* Outbound WhatsApp clicks, the site's other conversion signal. */}
