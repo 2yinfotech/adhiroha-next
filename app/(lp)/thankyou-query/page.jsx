@@ -9,8 +9,18 @@ import "./styles.css";
  * anything in and the conversion count stops meaning anything.
  *
  * It is also the conversion page: the enquiry form redirects here only after the
- * API has confirmed the row was written, so `generate_lead` firing here means a
+ * API has confirmed the row was written, so the conversion firing here means a
  * real, saved lead — not a submit button that was clicked.
+ *
+ * The event name `lead_form_submit` is not cosmetic. It is the one the GTM
+ * container (GTM-MXT62BFP) already has a Google Ads conversion tag for. This
+ * page originally pushed `generate_lead`, which reads better but which nothing
+ * in the container listens for — so three real leads were captured and saved
+ * while Google Ads recorded nothing at all. Verified by pushing each candidate
+ * name into the live container and watching the network: `lead_form_submit` and
+ * `contact_form_submit` each produce a request to
+ * googleadservices.com/pagead/conversion/761575090/, `generate_lead` produces
+ * none. Do not rename this without building the matching tag in GTM first.
  */
 
 const montserrat = Montserrat({
@@ -49,7 +59,7 @@ const CONVERSION_SCRIPT = `
     if(sessionStorage.getItem('lead_counted')==='1')return;
     var email=(sessionStorage.getItem('ec_email')||'').trim().toLowerCase();
     var name=(sessionStorage.getItem('ec_name')||'').trim();
-    var payload={event:'generate_lead',form_name:'course_enquiry',form_location:'/yoga-training-rishikesh/'};
+    var payload={event:'lead_form_submit',form_name:'course_enquiry',form_location:'/yoga-training-rishikesh/'};
     if(email){payload.user_data={email_address:email};}
     if(name){payload.lead_name=name;}
     window.dataLayer=window.dataLayer||[];
