@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { siteDbConfig, openPool } from "@/lib/db-config";
+import { resolveCountry } from "@/lib/geo-country";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -79,17 +80,21 @@ export async function POST(request) {
   }
 
   const { date, dateTime } = istNow();
+  const country = await resolveCountry(request.headers);
 
   // Every field the client may send is re-derived or bounded here. The dates,
-  // the code and the stage in particular are set server-side: a lead's own
-  // browser must not be able to decide when it arrived or what stage it is in.
+  // the code, the stage and the country in particular are set server-side: a
+  // lead's own browser must not be able to decide when it arrived, what stage
+  // it is in, or where in the world it came from. `body.l_country` is read
+  // nowhere — the landing page used to send the literal "United States" for
+  // every enquiry, which is exactly why it is ignored.
   const row = {
     l_name: name,
     last_name: str(body.last_name, 255),
     l_email: email,
     l_phone: str(body.l_phone, 255),
     l_message: str(body.l_message, 5000),
-    l_country: str(body.l_country, 255) || "Not Available",
+    l_country: country,
     l_code: randomCode(),
     l_source: str(body.l_source, 255) || "Website",
     l_date: dateTime,
