@@ -97,9 +97,19 @@ export default function Panel({ user }) {
     setRunning(false);
   }
 
+  /**
+   * Signing out is worth keeping for a shared or borrowed computer, but with no
+   * login page there is nothing to come back to — the way back in is the access
+   * link. So it asks first, and then leaves for the public site rather than
+   * reloading into a 404 that looks like the panel has broken.
+   */
   async function signOut() {
+    const ok = window.confirm(
+      "Sign out of the leads panel?\n\nThere is no login page: to get back in you will need your panel link."
+    );
+    if (!ok) return;
     await fetch("/api/leads-panel/logout/", { method: "POST" });
-    window.location.reload();
+    window.location.href = "/";
   }
 
   const pages = Math.max(1, Math.ceil(total / 50));
