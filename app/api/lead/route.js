@@ -110,11 +110,27 @@ export async function POST(request) {
 
   try {
     const db = await getPool();
-    await db.query(
+    const [result] = await db.query(
       `INSERT INTO \`leads\` (${COLUMNS.map((c) => `\`${c}\``).join(",")})
        VALUES (${COLUMNS.map(() => "?").join(",")})`,
       COLUMNS.map((c) => row[c])
     );
+
+    // Hand the lead to the CRM so its welcome email and follow-up sequence
+    // start. The id comes from the insert result rather than a follow-up
+    // SELECT LAST_INSERT_ID(): this is a pool, and that second query could land
+    // on a different connection and return somebody else's id.
+    //
+    // Swallowed on purpose. The enquiry is already safely saved by this point,
+    // and a CRM table that has not been created yet must never turn a captured
+    // lead into an error the visitor sees.
+    try {
+      const { enroll } = await import("@/lib/crm/sequence");
+      if (result?.insertId) await enroll(result.insertId);
+    } catch (err) {
+      console.error("crm enrol skipped:", err?.message || err);
+    }
+
     return NextResponse.json({ success: true, message: "Submitted Successfully!" });
   } catch (err) {
     // The visitor must never see a stack trace, and must never be told their
