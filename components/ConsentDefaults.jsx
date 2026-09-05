@@ -27,22 +27,38 @@ const SCRIPT = `
     if(m){stored=decodeURIComponent(m[1]);}
   }catch(e){}
 
-  function all(v){
-    return {ad_storage:v,ad_user_data:v,ad_personalization:v,analytics_storage:v,wait_for_update:500};
+  /* wait_for_update is set only where the answer is genuinely pending — i.e.
+     where the default is "denied" and the banner's answer could still change
+     it. It used to be on every default, including the granted one, and that
+     was the bug: a granted default told Google's tags "you may fire", then
+     immediately told them "but wait for an update first". For a visitor who
+     simply ignored the banner no update ever came, so the tag stayed silent
+     for the whole visit. Measured on the live site: a plain page load produced
+     zero requests to Google, while sending a consent update by hand produced
+     eight. That is also why Google Ads reported the tag as missing — its
+     checker does not click Accept either. */
+  function all(v,waitForUpdate){
+    var c={ad_storage:v,ad_user_data:v,ad_personalization:v,analytics_storage:v};
+    if(waitForUpdate){c.wait_for_update=500;}
+    return c;
   }
 
   if(stored==='granted'||stored==='denied'){
     /* An explicit choice already made by this visitor. It travels with them,
-       so no region split: their answer applies wherever they are. */
-    gtag('consent','default',all(stored));
+       so no region split: their answer applies wherever they are. Nothing is
+       pending, so nothing waits. */
+    gtag('consent','default',all(stored,false));
   }else{
-    /* No choice yet. Denied across the EEA, the UK and Switzerland; granted
-       elsewhere. The region-less call must come second so it acts as the
-       fallback rather than overriding the regional one. */
-    var eea=all('denied');
+    /* No choice yet. Denied across the EEA, the UK and Switzerland — and there
+       the tags do wait, because an Accept would legitimately change the answer.
+       Granted everywhere else, and there they fire straight away: that default
+       is the decision, not a placeholder for one. The region-less call must
+       come second so it acts as the fallback rather than overriding the
+       regional one. */
+    var eea=all('denied',true);
     eea.region=${JSON.stringify(CONSENT_REGIONS)};
     gtag('consent','default',eea);
-    gtag('consent','default',all('granted'));
+    gtag('consent','default',all('granted',false));
   }
 
   /* Keep the Google click identifiers usable while consent is denied, without

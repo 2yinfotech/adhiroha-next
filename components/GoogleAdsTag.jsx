@@ -27,17 +27,27 @@ const ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || "AW-761575090";
 
 export default function GoogleAdsTag() {
   if (!ADS_ID) return null;
+  // One inline script that queues the commands and then injects the loader
+  // itself, rather than rendering <script async src> as an element.
+  //
+  // This is not a style preference. React 19 hoists a rendered `<script async
+  // src>` to the very top of <head>, which put the Google tag loader at byte
+  // 1228 of the served HTML while <ConsentDefaults /> — the script that
+  // declares the Consent Mode defaults — sat at byte 4128. The tag was being
+  // fetched before the page had said what it was allowed to do. Injecting the
+  // loader from here keeps it strictly after the consent defaults, in the order
+  // Google requires, and React cannot reorder an inline script.
   return (
-    <>
-      <script async src={`https://www.googletagmanager.com/gtag/js?id=${ADS_ID}`} />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `window.dataLayer=window.dataLayer||[];
+    <script
+      dangerouslySetInnerHTML={{
+        __html: `window.dataLayer=window.dataLayer||[];
 if(!window.gtag){window.gtag=function(){dataLayer.push(arguments);};}
 gtag('js',new Date());
-gtag('config','${ADS_ID}',{allow_enhanced_conversions:true});`,
-        }}
-      />
-    </>
+gtag('config','${ADS_ID}',{allow_enhanced_conversions:true});
+(function(){var s=document.createElement('script');s.async=true;
+s.src='https://www.googletagmanager.com/gtag/js?id=${ADS_ID}';
+document.head.appendChild(s);})();`,
+      }}
+    />
   );
 }
