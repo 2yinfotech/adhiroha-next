@@ -3,9 +3,10 @@
 import { useState } from "react";
 
 /**
- * Sign in with the same username and password as admin.adhiroha.com — the
- * credentials come from the shared `admin` table, so nobody needs a second
- * account for this.
+ * Sign in with a leads-panel account.
+ *
+ * These accounts live in `crm_users` (see crm-users.sql), which belongs to this
+ * panel alone — they are no longer the PHP admin panel's logins.
  */
 export default function LoginForm() {
   const [busy, setBusy] = useState(false);
@@ -44,7 +45,7 @@ export default function LoginForm() {
     <div className="cl-wrap">
       <form className="cl-card" onSubmit={submit}>
         <h1>Adhiroha Leads</h1>
-        <p className="sub">Sign in with your admin panel details.</p>
+        <p className="sub">Sign in to see and follow up on your leads.</p>
 
         {error ? <div className="cl-error">{error}</div> : null}
 
