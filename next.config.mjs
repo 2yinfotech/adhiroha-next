@@ -153,7 +153,18 @@ const nextConfig = {
         // office computer once the browser tab is closed.
         source: "/(leads-panel|api/leads-panel)(.*)",
         headers: [
-          { key: "Cache-Control", value: "private, no-store, max-age=0, must-revalidate" },
+          // `no-cache` is not redundant next to `no-store`, whatever it looks
+          // like. Cloudflare's Browser Cache TTL rewrites Cache-Control on the
+          // way out and will happily turn `private, no-store, max-age=0` into
+          // `private, max-age=14400` — which is how the panel ended up serving a
+          // cached 404 to someone who was signed in. A response carrying
+          // `no-cache` is left alone. /registration/ has always sent this exact
+          // string and has never been cached; the panel now says the same thing.
+          //
+          // A `Vary: Cookie` alongside this would be the belt to that braces,
+          // but it does not survive: the App Router sends its own Vary and that
+          // is the one that goes out. Do not add it back thinking it helps.
+          { key: "Cache-Control", value: "private, no-cache, no-store, max-age=0, must-revalidate" },
         ],
       },
       {
