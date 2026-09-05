@@ -48,8 +48,13 @@ the panel, so you can always trigger it by hand.
 ## Using it
 
 `https://www.adhiroha.com/leads-panel/` — sign in with your existing
-admin.adhiroha.com username and password. It is noindex and kept out of
-sitemap.xml.
+admin.adhiroha.com details. **Either the username or the email address works**,
+so `adhiroha` and `info@adhiroha.com` both get you in. It is noindex and kept
+out of sitemap.xml.
+
+If sign-in says *"The panel is not finished being set up"*, step 2 above has not
+been done on the server. If it says *"Wrong username or password"*, it really is
+the password.
 
 ## The sequence
 

@@ -41,6 +41,13 @@ export async function POST(request) {
   if (!result || !result.token) {
     // One message for every failure, so the response cannot be used to work out
     // which usernames exist.
+    if (result?.error === "unconfigured") {
+      console.error("crm login: CRM_SESSION_SECRET is missing or too short");
+      return NextResponse.json(
+        { ok: false, message: "The panel is not finished being set up: CRM_SESSION_SECRET is missing on the server." },
+        { status: 503 }
+      );
+    }
     const message =
       result?.error === "unsupported"
         ? "This account's password needs to be reset before it can be used here."
