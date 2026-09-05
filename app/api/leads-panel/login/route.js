@@ -48,6 +48,23 @@ export async function POST(request) {
         { status: 503 }
       );
     }
+    // A server-side problem is told apart from a bad password on purpose. These
+    // two say nothing about whether the account exists, so they give an
+    // attacker nothing — but they stop a database outage or a missing table
+    // from being mistaken for the wrong password.
+    if (result?.error === "no-table") {
+      return NextResponse.json(
+        { ok: false, message: "The panel is not finished being set up: the crm_users table does not exist yet. Run crm-users.sql." },
+        { status: 503 }
+      );
+    }
+    if (result?.error === "unavailable") {
+      return NextResponse.json(
+        { ok: false, message: "Cannot reach the database right now. Try again in a moment." },
+        { status: 503 }
+      );
+    }
+
     const message =
       result?.error === "unsupported"
         ? "This account's password needs to be reset before it can be used here."

@@ -132,9 +132,28 @@ const nextConfig = {
         // page on the origin, which is why TTFB swung between 0.46s and 1.72s.
         // s-maxage lets Cloudflare and any CDN in front serve from the edge
         // while stale-while-revalidate keeps a refresh from ever being a miss.
-        source: "/((?!api|student-admission-panel|registration|blog|blogs).*)",
+        //
+        // Anything whose answer depends on who is asking has to be excluded, or
+        // Cloudflare serves one visitor's page to everybody. `leads-panel` was
+        // missing here: the signed-out login form was cached with a HIT, so
+        // signing in set the cookie and the reload still got the CDN's cached
+        // login page — the panel could never open. A page marked
+        // `force-dynamic` does not save you, because these headers are applied
+        // over the top of the ones Next.js emits for it.
+        source: "/((?!api|student-admission-panel|leads-panel|registration|blog|blogs).*)",
         headers: [
           { key: "Cache-Control", value: "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400" },
+        ],
+      },
+      {
+        // The panel and its API, said explicitly rather than merely left out of
+        // the rule above. These responses contain customers' names, email
+        // addresses and phone numbers; `private, no-store` keeps them out of
+        // Cloudflare, out of any proxy in between, and off the disk of a shared
+        // office computer once the browser tab is closed.
+        source: "/(leads-panel|api/leads-panel)(.*)",
+        headers: [
+          { key: "Cache-Control", value: "private, no-store, max-age=0, must-revalidate" },
         ],
       },
       {
