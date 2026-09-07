@@ -9,6 +9,9 @@ import "../../(en)/(main)/adhiroha.min.css";
 import "../../(en)/(main)/reveal-fallback.css";
 import StickyHeader from "@/components/StickyHeader";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+// Same in-page anchor handling the homepages have: scroll to the section
+// without leaving a "#…" behind in the address bar.
+import AnchorScroll from "@/components/AnchorScroll";
 
 export default function PortuguesePagesLayout({ children }) {
   return (
@@ -16,6 +19,7 @@ export default function PortuguesePagesLayout({ children }) {
       {children}
       <StickyHeader />
       <FloatingWhatsApp />
+      <AnchorScroll />
     </>
   );
 }

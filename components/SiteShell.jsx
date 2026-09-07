@@ -135,6 +135,55 @@ const WHATSAPP_CLICK_SCRIPT = `
 })();
 `;
 
+/* Take Google's `_gl` back out of the address bar.
+
+   ConsentDefaults sets `url_passthrough`, which tells Google's tags to carry the
+   ad-click and session ids in the URL instead of in cookies for any visitor who
+   has not accepted them — that is what keeps a Google Ads conversion attached to
+   the ad that paid for it across the EEA and the UK. The side effect is that
+   every internal link arrives decorated:
+
+     /200-hour-yoga-teacher-training-course-rishikesh/?_gl=1*1hchkbk*_up*MQ..*_ga*…
+
+   which people then see, copy, and paste into places a tracking parameter has no
+   business being. The measurement is worth keeping; the visible URL is not the
+   price we have to pay for it.
+
+   The parameter only has to survive long enough for the tag to read it, which
+   happens once as the tag initialises. So this waits for the container to be
+   there and gives it a further two seconds before cleaning up. If the container
+   never appears — an ad blocker, a network failure — the value was never going
+   to be read by anyone, so after twelve seconds it goes anyway.
+
+   `replaceState` rather than assigning to location: no reload, and no extra
+   entry in the back button's history. Any other query the page was opened with
+   is preserved, along with the hash. */
+const CLEAN_GL_SCRIPT = `
+(function(){
+  try{ if(window.location.search.indexOf('_gl=')===-1)return; }catch(e){ return; }
+
+  function strip(){
+    try{
+      var u=new URL(window.location.href);
+      if(!u.searchParams.has('_gl'))return;
+      u.searchParams.delete('_gl');
+      var q=u.searchParams.toString();
+      history.replaceState(null,'',u.pathname+(q?'?'+q:'')+u.hash);
+    }catch(e){}
+  }
+
+  var started=Date.now(), tagSeenAt=0;
+  var poll=setInterval(function(){
+    var elapsed=Date.now()-started;
+    if(!tagSeenAt&&window.google_tag_manager){tagSeenAt=elapsed;}
+    if((tagSeenAt&&elapsed-tagSeenAt>2000)||elapsed>12000){
+      clearInterval(poll);
+      strip();
+    }
+  },250);
+})();
+`;
+
 /* Header background and auto-hide, attached during parse.
 
    This logic already existed, but only inside <StickyHeader>, a React client
@@ -207,6 +256,8 @@ export default function SiteShell({ lang, children }) {
         <script dangerouslySetInnerHTML={{ __html: WHATSAPP_CLICK_SCRIPT }} />
         {/* Header background / auto-hide, bound now rather than after hydration. */}
         <script dangerouslySetInnerHTML={{ __html: HEADER_SCROLL_SCRIPT }} />
+        {/* Clears Google's `_gl` from the address bar once the tag has read it. */}
+        <script dangerouslySetInnerHTML={{ __html: CLEAN_GL_SCRIPT }} />
       </head>
       <body>
         <GoogleTagManagerBody />
