@@ -150,10 +150,19 @@ const WHATSAPP_CLICK_SCRIPT = `
    price we have to pay for it.
 
    The parameter only has to survive long enough for the tag to read it, which
-   happens once as the tag initialises. So this waits for the container to be
-   there and gives it a further two seconds before cleaning up. If the container
-   never appears — an ad blocker, a network failure — the value was never going
-   to be read by anyone, so after twelve seconds it goes anyway.
+   happens as the GA4 tag initialises. Tag Manager registers each container it
+   has started under `window.google_tag_manager`, keyed by id — so a `G-…` key
+   appearing there is the tag itself saying it has run, which is a far better
+   signal than a guessed delay. Measured on the live site: `google_tag_manager`
+   exists at 73ms and `G-EP75TT30YF` is registered at 102ms. A 250ms grace on
+   top of that, so the parameter is gone in roughly a third of a second — before
+   anyone can read it, let alone copy it.
+
+   An earlier version simply waited two seconds after the container appeared.
+   That worked, but two seconds is long enough to see, and people did.
+
+   If the GA4 tag never registers — an ad blocker, a network failure — nothing
+   was ever going to read the value, so after eight seconds it goes regardless.
 
    `replaceState` rather than assigning to location: no reload, and no extra
    entry in the back button's history. Any other query the page was opened with
@@ -172,15 +181,22 @@ const CLEAN_GL_SCRIPT = `
     }catch(e){}
   }
 
-  var started=Date.now(), tagSeenAt=0;
+  function ga4Started(){
+    var c=window.google_tag_manager;
+    if(!c)return false;
+    for(var k in c){ if(k.charAt(0)==='G'&&k.charAt(1)==='-')return true; }
+    return false;
+  }
+
+  var started=Date.now(), readyAt=0;
   var poll=setInterval(function(){
     var elapsed=Date.now()-started;
-    if(!tagSeenAt&&window.google_tag_manager){tagSeenAt=elapsed;}
-    if((tagSeenAt&&elapsed-tagSeenAt>2000)||elapsed>12000){
+    if(!readyAt&&ga4Started()){readyAt=elapsed;}
+    if((readyAt&&elapsed-readyAt>250)||elapsed>8000){
       clearInterval(poll);
       strip();
     }
-  },250);
+  },50);
 })();
 `;
 
