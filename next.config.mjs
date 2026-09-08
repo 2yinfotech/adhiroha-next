@@ -140,9 +140,37 @@ const nextConfig = {
         // login page — the panel could never open. A page marked
         // `force-dynamic` does not save you, because these headers are applied
         // over the top of the ones Next.js emits for it.
-        source: "/((?!api|student-admission-panel|leads-panel|registration|blog|blogs).*)",
+        // `_next` is excluded because this rule was doing real damage there.
+        // Everything under /_next/static/ has a content hash in its filename and
+        // Next.js serves it `max-age=31536000, immutable` for exactly that
+        // reason — it can never change without the URL changing too. This rule
+        // was overwriting that with `max-age=0`, so every visitor revalidated
+        // every JS and CSS chunk on every page. On this site each internal link
+        // is a full document load, so that is once per click, per person: the
+        // origin was answering thousands of requests that a browser should
+        // never have made. Hostinger started returning 429 for the whole site.
+        source: "/((?!api|_next|student-admission-panel|leads-panel|registration|blog|blogs).*)",
         headers: [
           { key: "Cache-Control", value: "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400" },
+        ],
+      },
+      {
+        // Build output: hashed filenames, so it is safe to keep forever. Stated
+        // explicitly rather than relying on the exclusion above, so that the
+        // right answer survives someone editing that regex later.
+        source: "/_next/static/(.*)",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
+      {
+        // Fonts, images and video shipped in /public. These filenames are NOT
+        // hashed, so "immutable" would strand a replaced file in browsers for a
+        // year. A week in the browser and a month at the edge takes the traffic
+        // off the origin while still letting a swapped image appear on its own.
+        source: "/(.*)\\.(woff2|woff|ttf|otf|eot|jpg|jpeg|png|gif|webp|avif|svg|ico|mp4|webm)",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=604800, s-maxage=2592000, stale-while-revalidate=86400" },
         ],
       },
       {

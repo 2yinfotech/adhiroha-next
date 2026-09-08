@@ -22,13 +22,33 @@ function tooFast(ip) {
   return last && now - last < WINDOW;
 }
 
-export async function POST(request) {
-  const ip =
-    (request.headers.get("x-forwarded-for") || "").split(",")[0].trim() ||
-    request.headers.get("cf-connecting-ip") ||
-    "unknown";
+/**
+ * The visitor's real address, as seen from behind Cloudflare and Hostinger's
+ * Apache proxy.
+ *
+ * `cf-connecting-ip` comes first because Cloudflare writes it itself and
+ * overwrites anything the client sent, so it cannot be forged. `x-forwarded-for`
+ * used to be checked first, and it is the one header here a client CAN forge —
+ * anyone could have sent a different value on each request and had a fresh
+ * bucket every time, which is the one thing a rate limiter must not allow.
+ *
+ * Returning null rather than a shared "unknown" string matters. That string was
+ * a single bucket every unidentifiable request fell into together, so one
+ * visitor's failed sign-in would have made everyone else in that bucket wait —
+ * exactly the "all visitors treated as one client" failure to avoid. If we
+ * cannot tell who is asking, we do not throttle: the panel is reached by a
+ * 128-bit link now, and guessing that is not a threat this window would stop.
+ */
+function clientIp(request) {
+  const h = request.headers;
+  const forwarded = (h.get("x-forwarded-for") || "").split(",")[0].trim();
+  return h.get("cf-connecting-ip") || h.get("x-real-ip") || forwarded || null;
+}
 
-  if (tooFast(ip)) {
+export async function POST(request) {
+  const ip = clientIp(request);
+
+  if (ip && tooFast(ip)) {
     return NextResponse.json({ ok: false, message: "Too many attempts. Wait a moment." }, { status: 429 });
   }
 
