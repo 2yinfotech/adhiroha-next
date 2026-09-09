@@ -248,3 +248,20 @@
 
 .cc-btn,.cc-btn:hover{text-decoration:none}
 .cc-here{text-decoration:none}
+
+/* Hero enquiry form — the card that used to show the price.
+   The form fields themselves reuse .cf-field / .cf-send / .cf-fine from each
+   course page's own styles.css (the translated pages import the English one),
+   so only the heading and the tighter hero spacing are defined here. One place
+   for all eleven languages, because every locale's layout loads this file. */
+.book-card--form{max-width:440px}
+.book-card--form .bcf-h{font-family:'Playfair Display',serif;font-weight:600;font-size:21px;line-height:1.25;color:var(--ink);margin:0 0 5px}
+.book-card--form .bcf-sub{font-size:12.5px;font-weight:300;line-height:1.55;color:var(--body);margin:0 0 18px}
+.book-card--form .cf-field{margin-bottom:12px}
+.book-card--form .cf-field textarea{height:84px;min-height:84px}
+.book-card--form .cf-send{margin-top:2px}
+.book-card--form .cf-fine{margin-top:11px}
+@media (max-width:900px){
+  .book-card--form{max-width:none}
+  .book-card--form .bcf-h{font-size:19px}
+}
