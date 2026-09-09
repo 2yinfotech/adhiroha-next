@@ -265,3 +265,19 @@
   .book-card--form{max-width:none}
   .book-card--form .bcf-h{font-size:19px}
 }
+
+/* Dates & Fees: when the course actually starts, under the schedule row.
+   The wording is each page's own — the line the hero pill used to carry — so it
+   says the 1st, the 24th, or the 1st and 15th depending on the course. */
+.ft-when{display:block;margin-top:5px;font-size:11.5px;font-weight:400;line-height:1.4;color:var(--body)}
+
+/* "Have a Query ?" — the outlined half of the pair, in green so the question
+   reads as a different kind of action from the solid red Register Now beside
+   it. Defined after .btn-outline, which it overrides. */
+.btn-query{border-color:#1a7f4b;color:#1a7f4b}
+.btn-query:hover{background:#1a7f4b;color:#fff}
+
+/* The batch table is no longer behind a button, so it ships open. Two classes,
+   so this beats the .dates-wrap{max-height:0} that each page's own stylesheet
+   still declares, whichever order they load in. */
+.dates-wrap.open{max-height:none}
