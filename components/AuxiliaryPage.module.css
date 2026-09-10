@@ -60,3 +60,11 @@
 .ctaLink:hover { border-color:#fff; background:rgba(255,255,255,.1); }
 @media (max-width:960px) { .seasonGrid { grid-template-columns:repeat(3,1fr); } .responsibilityGrid { grid-template-columns:repeat(2,1fr); } }
 @media (max-width:680px) { .hero { min-height:460px; } .heroInner { width:min(100% - 32px,1180px); margin-top:82px; padding:61px 0; } .hero h1 { font-size:38px; } .heroCopy { font-size:14px; line-height:1.7; } .section { width:min(100% - 32px,1180px); padding:68px 0; } .sectionAlt > div { width:min(100% - 32px,1180px); padding:68px 0; } .seasonGrid,.threeGrid,.benefitGrid,.responsibilityGrid,.form { grid-template-columns:1fr; } .applyPanel { padding:28px 20px; } .formFooter,.cta { align-items:flex-start; flex-direction:column; } .fieldWide { grid-column:auto; } }
+
+/* The confirmation that replaces the application form once it is in.
+   Deliberately takes the whole space the form occupied: someone who has just
+   uploaded a CV should not have to hunt for a line of small text to find out
+   whether it worked. */
+.formDone { grid-column:1/-1; padding:34px 36px; border-radius:18px; background:#f4f8f4; border:1px solid #cfe3d3; }
+.formDone h3 { margin:0 0 10px; font-family:'Playfair Display',serif; font-weight:600; font-size:21px; color:#1a4d31; }
+.formDone p { margin:0; font-size:13.8px; font-weight:300; line-height:1.75; color:#42604e; }
