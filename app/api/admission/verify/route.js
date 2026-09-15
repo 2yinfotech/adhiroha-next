@@ -2,7 +2,7 @@ import { NextResponse, after } from "next/server";
 import crypto from "crypto";
 import {
   COURSES, computeFees, gatewayBreakdown, getBatches,
-  markBookingsPaid, sendAdmissionMail, sendStudentConfirmation,
+  markBookingsPaid, sendAdmissionMail, sendStudentConfirmation, getBookingRoom,
 } from "@/lib/admission";
 
 export const dynamic = "force-dynamic";
@@ -53,7 +53,9 @@ export async function POST(request) {
   try {
     await markBookingsPaid(bookingIds, {
       paid, method: "Razorpay", receipt: razorpay_payment_id, status: "confirmed",
-      acco, room: body.room, balance: fees ? fees.balance / numStudents : null,
+      // No room here: whatever step 2 allocated is already on the row, and
+      // markBookingsPaid only overwrites room_no when it is given one.
+      acco, balance: fees ? fees.balance / numStudents : null,
     });
   } catch (e) { /* payment succeeded; a DB hiccup must not fail the user */ }
 
@@ -61,11 +63,14 @@ export async function POST(request) {
   // student is waiting on this call to be redirected to the thank-you page.
   const students = Array.isArray(body.students) ? body.students : [];
   after(async () => {
+    // Read back rather than trusted from the browser: the panel does not know
+    // the room, because the student is not told which one they have.
+    const room = await getBookingRoom(bookingIds);
     await sendAdmissionMail({
-      students, course, batch, acco, room: body.room, fees, addOns: fees?.addOns, stage: "paid",
+      students, course, batch, acco, room, fees, addOns: fees?.addOns, stage: "paid",
     }).catch(() => null);
     for (const s of students) {
-      await sendStudentConfirmation({ student: s, course, batch, acco, room: body.room, fees }).catch(() => null);
+      await sendStudentConfirmation({ student: s, course, batch, acco, fees }).catch(() => null);
     }
   });
 

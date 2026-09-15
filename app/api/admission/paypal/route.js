@@ -1,7 +1,7 @@
 import { NextResponse, after } from "next/server";
 import {
   COURSES, computeFees, gatewayBreakdown, getBatches,
-  markBookingsPaid, sendAdmissionMail, sendStudentConfirmation,
+  markBookingsPaid, sendAdmissionMail, sendStudentConfirmation, getBookingRoom,
 } from "@/lib/admission";
 import { createPayPalOrder, capturePayPalOrder, completedCapture, paypalConfigured } from "@/lib/paypal";
 
@@ -93,12 +93,16 @@ export async function POST(request) {
     // student should not wait on SMTP to see their confirmation.
     const students = Array.isArray(body.students) ? body.students : [];
     after(async () => {
+      // The room the school allocated at step 2. This used to send "N/A" on the
+      // PayPal path, so the ashram's own notification never named the room for
+      // anyone paying that way.
+      const room = await getBookingRoom(bookingIds);
       await sendAdmissionMail({
-        students, course: body.course, batch, acco, room: "N/A",
+        students, course: body.course, batch, acco, room,
         fees, addOns: fees.addOns, stage: "paid",
       }).catch(() => null);
       for (const s of students) {
-        await sendStudentConfirmation({ student: s, course: body.course, batch, acco, room: "N/A", fees }).catch(() => null);
+        await sendStudentConfirmation({ student: s, course: body.course, batch, acco, fees }).catch(() => null);
       }
     });
 

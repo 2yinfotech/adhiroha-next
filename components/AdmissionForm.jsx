@@ -134,10 +134,6 @@ export default function AdmissionForm() {
   const [comboBatch, setComboBatch] = useState(null);
   const [sharing, setSharing] = useState("");
   const [rooms, setRooms] = useState(null);
-  // The room the server assigned on the step 2 post. Students do not choose
-  // a room any more — it is allocated for them — so this is only ever shown
-  // back to them on the summary.
-  const [assignedRoom, setAssignedRoom] = useState("");
 
   /* ---------- step 3: payment ---------- */
   const [registering, setRegistering] = useState(false);
@@ -255,10 +251,6 @@ export default function AdmissionForm() {
     if (gone) setSharing("");
   }, [rooms, sharing]);
 
-  // Changing the sharing type, the batch or the lead student's gender means
-  // the server will pick again on the next step 2 post, so the room shown on
-  // the summary is stale until then.
-  useEffect(() => { setAssignedRoom(""); }, [sharing, batch?.month, batch?.year, leadGender]);
 
   /* ---------- students ---------- */
   const setStudent = (i, patch) =>
@@ -312,7 +304,6 @@ export default function AdmissionForm() {
     q.set("course", COURSES[course]?.label + activeAddOns.map((k) => ` + ${ADDONS[k].label}`).join(""));
     if (batch?.date_range) q.set("dates", batch.date_range);
     q.set("acco", labels[sharing]);
-    if (assignedRoom) q.set("room", assignedRoom);
     if (fees) q.set("balance", String(fees.balance));
     if (paid != null) q.set("paid", Number(paid).toFixed(2));
     if (method) q.set("method", method);
@@ -349,8 +340,6 @@ export default function AdmissionForm() {
     const data = await res.json();
     if (!res.ok || !data.ok) throw new Error(data.error || "We couldn't save your registration.");
     registered.current = data;
-    // Set on the step 2 post, once a room has actually been held for them.
-    if (data.room) setAssignedRoom(data.room);
     return data;
   }
 
@@ -873,8 +862,10 @@ export default function AdmissionForm() {
             {/* No room picker. Rooms are allocated rather than chosen: the
                 server takes the first free room of this sharing type inside the
                 same transaction that holds the beds, which is the only way two
-                people cannot be given the last bed at once. The room they get
-                is shown back to them on the summary below. */}
+                people cannot be given the last bed at once. Which room that is
+                is never shown to the student — not here, not on the summary,
+                not in their confirmation email. It can still change before they
+                arrive, and the ashram's own notification carries it. */}
             {sharing && rooms?.months?.length > 1 && (
               <p className="adm-hint">
                 The 500 hour course runs across two months, so your room is held for
@@ -918,7 +909,6 @@ export default function AdmissionForm() {
                 );
               })}
               <div className="adm-srow"><span>Accommodation</span><b>{labels[sharing]}</b></div>
-              {assignedRoom && <div className="adm-srow"><span>Room</span><b>{assignedRoom}</b></div>}
               <div className="adm-srow">
                 <span>Student{students.length > 1 ? "s" : ""}</span>
                 <b>{students.map((s) => s.name).join(", ")}</b>
