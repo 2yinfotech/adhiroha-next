@@ -134,7 +134,10 @@ export default function AdmissionForm() {
   const [comboBatch, setComboBatch] = useState(null);
   const [sharing, setSharing] = useState("");
   const [rooms, setRooms] = useState(null);
-  const [roomId, setRoomId] = useState("");
+  // The room the server assigned on the step 2 post. Students do not choose
+  // a room any more — it is allocated for them — so this is only ever shown
+  // back to them on the summary.
+  const [assignedRoom, setAssignedRoom] = useState("");
 
   /* ---------- step 3: payment ---------- */
   const [registering, setRegistering] = useState(false);
@@ -252,20 +255,10 @@ export default function AdmissionForm() {
     if (gone) setSharing("");
   }, [rooms, sharing]);
 
-  // The rooms on offer change with the sharing type, the batch and the lead
-  // student's gender. Drop a room that any of those has just taken away, so
-  // nobody carries an unbookable choice to the payment step.
-  const roomsForSharing = useMemo(
-    () => (rooms?.rooms || []).filter((r) => r.sharing === sharing),
-    [rooms, sharing]
-  );
-  useEffect(() => {
-    if (!roomId) return;
-    const still = roomsForSharing.find((r) => String(r.id) === String(roomId) && r.available);
-    if (!still) setRoomId("");
-  }, [roomsForSharing, roomId]);
-
-  const chosenRoom = roomsForSharing.find((r) => String(r.id) === String(roomId)) || null;
+  // Changing the sharing type, the batch or the lead student's gender means
+  // the server will pick again on the next step 2 post, so the room shown on
+  // the summary is stale until then.
+  useEffect(() => { setAssignedRoom(""); }, [sharing, batch?.month, batch?.year, leadGender]);
 
   /* ---------- students ---------- */
   const setStudent = (i, patch) =>
@@ -287,7 +280,7 @@ export default function AdmissionForm() {
     s.number.trim() && s.country.trim() && s.city.trim();
 
   const step1Ok = course && batchId && students.length > 0 && students.every(studentComplete);
-  const step2Ok = !!sharing && (!roomsForSharing.length || !!chosenRoom);
+  const step2Ok = !!sharing;
 
   const goto = (n) => {
     setError(""); setNotice(""); setStep(n);
@@ -303,8 +296,6 @@ export default function AdmissionForm() {
     course, batchId, sharing,
     addOns: activeAddOns,
     numStudents: students.length,
-    roomId: chosenRoom?.id || null,
-    roomName: chosenRoom?.name || "",
   });
 
   // Only one bundle may be added at a time — picking another replaces it,
@@ -321,7 +312,7 @@ export default function AdmissionForm() {
     q.set("course", COURSES[course]?.label + activeAddOns.map((k) => ` + ${ADDONS[k].label}`).join(""));
     if (batch?.date_range) q.set("dates", batch.date_range);
     q.set("acco", labels[sharing]);
-    if (chosenRoom) q.set("room", chosenRoom.name);
+    if (assignedRoom) q.set("room", assignedRoom);
     if (fees) q.set("balance", String(fees.balance));
     if (paid != null) q.set("paid", Number(paid).toFixed(2));
     if (method) q.set("method", method);
@@ -358,6 +349,8 @@ export default function AdmissionForm() {
     const data = await res.json();
     if (!res.ok || !data.ok) throw new Error(data.error || "We couldn't save your registration.");
     registered.current = data;
+    // Set on the step 2 post, once a room has actually been held for them.
+    if (data.room) setAssignedRoom(data.room);
     return data;
   }
 
@@ -877,45 +870,16 @@ export default function AdmissionForm() {
               })}
             </div>
 
-            {/* Room selection. Only rooms this student can actually have are
-                pressable; a full room, and a room already holding the other
-                gender, are both still shown with the reason on them. Seeing
-                why a room has gone is more use than not seeing it at all. */}
-            {sharing && roomsForSharing.length > 0 && (
-              <>
-                <h2 className="adm-h">
-                  Pick Your Room
-                  <span className="adm-opt">
-                    {rooms?.months?.length > 1
-                      ? `${labels[sharing]} · ${rooms.months.map((m) => m.label).join(" and ")}`
-                      : labels[sharing]}
-                  </span>
-                </h2>
-                {rooms?.months?.length > 1 && (
-                  <p className="adm-hint">
-                    The 500 hour course runs across two months, so only rooms free for both
-                    of them are offered.
-                  </p>
-                )}
-                <div className="adm-rooms">
-                  {roomsForSharing.map((r) => (
-                    <button
-                      key={r.id}
-                      type="button"
-                      disabled={!r.available}
-                      className={`adm-room${String(roomId) === String(r.id) ? " sel" : ""}${r.available ? "" : " off"}`}
-                      aria-pressed={String(roomId) === String(r.id)}
-                      onClick={() => setRoomId(r.id)}
-                    >
-                      <b>{r.name}</b>
-                      {/* Nothing is said about a room that is open — how many
-                          beds are left is our business, not the student's. A
-                          room they cannot have says why, in two words. */}
-                      {!r.available && <em>{r.reason}</em>}
-                    </button>
-                  ))}
-                </div>
-              </>
+            {/* No room picker. Rooms are allocated rather than chosen: the
+                server takes the first free room of this sharing type inside the
+                same transaction that holds the beds, which is the only way two
+                people cannot be given the last bed at once. The room they get
+                is shown back to them on the summary below. */}
+            {sharing && rooms?.months?.length > 1 && (
+              <p className="adm-hint">
+                The 500 hour course runs across two months, so your room is held for
+                {" "}{rooms.months.map((m) => m.label).join(" and ")}.
+              </p>
             )}
 
             {error && <div className="adm-error">{error}</div>}
@@ -954,7 +918,7 @@ export default function AdmissionForm() {
                 );
               })}
               <div className="adm-srow"><span>Accommodation</span><b>{labels[sharing]}</b></div>
-              {chosenRoom && <div className="adm-srow"><span>Room</span><b>{chosenRoom.name}</b></div>}
+              {assignedRoom && <div className="adm-srow"><span>Room</span><b>{assignedRoom}</b></div>}
               <div className="adm-srow">
                 <span>Student{students.length > 1 ? "s" : ""}</span>
                 <b>{students.map((s) => s.name).join(", ")}</b>
