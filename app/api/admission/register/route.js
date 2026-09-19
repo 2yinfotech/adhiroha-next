@@ -3,7 +3,6 @@ import {
   COURSES, computeFees, gatewayBreakdown, saveBooking, generateStudentCode,
   sendAdmissionMail, getBatches, shortDateRange, updateBookingSelection,
 } from "@/lib/admission";
-import { reserveRoomForGroup } from "@/lib/rooms";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -62,11 +61,8 @@ export async function POST(request) {
   }
 
   const acco = !sharing ? "Not selected yet" : sharing === "double" ? "Double Sharing" : "Triple Sharing";
-  // Room numbers are only tracked for the residential YTTC courses.
-  const roomTracked = ["200 Hour YTTC", "300 Hour YTTC", "500 Hour YTTC"].includes(course);
-  // The first post is step 1, before a sharing type exists, so no room has been
-  // held yet. The rows below start with "N/A" and are updated on the step 2
-  // post, once a room has actually been assigned.
+  // Rows are written with no room. One is allocated when the booking is
+  // confirmed, by the payment routes, and written over this.
   const room = "N/A";
 
   // Per-student share of the group figures, so each row carries its own amount.
@@ -76,40 +72,14 @@ export async function POST(request) {
 
   // Second and later posts only refresh the choices on the existing rows.
   if (bookingIds.length === students.length) {
-    // Hold the beds first, because the room it picks is what gets written to
-    // the booking. Done at the end of step 2 rather than after payment:
-    // otherwise two people looking at the same last bed can both pay for it and
-    // one of them has to be told afterwards. releaseBooking() gives the beds
-    // back if the booking is cancelled.
-    let assignedRoom = "N/A";
-    if (roomTracked && sharing) {
-      const held = await reserveRoomForGroup({
-        sharing, course, year: batch.year, month: batch.month,
-        students: students.map((s, i) => ({
-          bookingId: bookingIds[i], name: s.name, gender: String(s.gender).toLowerCase(),
-        })),
-      }).catch((e) => ({ ok: false, error: String(e?.message || e) }));
-
-      if (held.ok) {
-        assignedRoom = held.room;
-      } else if (held.error !== "ER_NO_SUCH_TABLE") {
-        // Nobody is asked to "pick another room" any more — they never picked
-        // one. Each message says what they can actually do about it.
-        const label = sharing === "double" ? "double sharing" : "triple sharing";
-        const other = sharing === "double" ? "triple sharing" : "double sharing";
-        const msg =
-          held.error === "mixed_group"
-            ? "Men and women are placed in separate rooms, so please register the men and the women separately."
-            : held.error === "none_free" || held.error === "room_full" || held.error === "gender_locked"
-            ? `We have just run out of ${label} rooms for ${held.month || "these dates"}. Please choose ${other}, or another start date.`
-            : "We could not hold a room for you just now. Please try again in a moment.";
-        return NextResponse.json({ error: msg, roomTaken: true }, { status: 409 });
-      }
-    }
-
+    // No room is allocated here. Beds used to be held at the end of step 2,
+    // before any money had changed hands, so every abandoned registration kept
+    // a bed that nothing ever expired — the ashram filled up with people who
+    // had not paid. The room is now given out once the booking is confirmed,
+    // in the payment routes (see allocateConfirmedRoom).
     try {
       await updateBookingSelection(bookingIds, {
-        acco, room: assignedRoom, ramount: perReg, balance: perBalance, remarks, students,
+        acco, room, ramount: perReg, balance: perBalance, remarks, students,
       });
     } catch (e) {
       return NextResponse.json({ error: "We couldn't update your registration. Please try again." }, { status: 502 });
@@ -121,9 +91,6 @@ export async function POST(request) {
       codes,
       batch,
       fees,
-      // The room the student has been given. They did not choose it, so the
-      // panel shows it back to them on the summary.
-      room: assignedRoom === "N/A" ? "" : assignedRoom,
       gateways: fees ? gatewayBreakdown(fees.reg) : null,
     });
   }

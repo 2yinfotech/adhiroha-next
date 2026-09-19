@@ -2,8 +2,9 @@ import { NextResponse, after } from "next/server";
 import crypto from "crypto";
 import {
   COURSES, computeFees, gatewayBreakdown, getBatches,
-  markBookingsPaid, sendAdmissionMail, sendStudentConfirmation, getBookingRoom,
+  markBookingsPaid, sendAdmissionMail, sendStudentConfirmation, getBookingRoom, setBookingRoom,
 } from "@/lib/admission";
+import { allocateConfirmedRoom } from "@/lib/rooms";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -63,9 +64,25 @@ export async function POST(request) {
   // student is waiting on this call to be redirected to the thank-you page.
   const students = Array.isArray(body.students) ? body.students : [];
   after(async () => {
-    // Read back rather than trusted from the browser: the panel does not know
-    // the room, because the student is not told which one they have.
-    const room = await getBookingRoom(bookingIds);
+    // The room is given out here, now the booking is confirmed — not when the
+    // student first filled the form in. See allocateConfirmedRoom.
+    const held = await allocateConfirmedRoom({ course, batch, sharing, bookingIds, students });
+    if (held.ok) {
+      await setBookingRoom(bookingIds, held.room).catch(() => null);
+    } else if (held.error !== "not_tracked") {
+      // The payment stands either way. Nobody is turned away over a room.
+      console.error(`[admission] paid but no room for bookings ${bookingIds.join(",")}: ${held.error}`);
+    }
+
+    // Not trusted from the browser: the panel does not know the room, because
+    // the student is not told which one they have. When the allocation failed,
+    // the notification says so outright rather than quietly leaving it blank —
+    // somebody has paid and needs a bed.
+    const room = held.ok
+      ? held.room
+      : held.error === "not_tracked"
+      ? await getBookingRoom(bookingIds)
+      : "NOT ALLOCATED \u2014 no free room at the time of payment, please assign one by hand";
     await sendAdmissionMail({
       students, course, batch, acco, room, fees, addOns: fees?.addOns, stage: "paid",
     }).catch(() => null);

@@ -1,8 +1,9 @@
 import { NextResponse, after } from "next/server";
 import {
   COURSES, computeFees, gatewayBreakdown, getBatches,
-  markBookingsPaid, sendAdmissionMail, sendStudentConfirmation, getBookingRoom,
+  markBookingsPaid, sendAdmissionMail, sendStudentConfirmation, getBookingRoom, setBookingRoom,
 } from "@/lib/admission";
+import { allocateConfirmedRoom } from "@/lib/rooms";
 import { createPayPalOrder, capturePayPalOrder, completedCapture, paypalConfigured } from "@/lib/paypal";
 
 export const dynamic = "force-dynamic";
@@ -93,10 +94,22 @@ export async function POST(request) {
     // student should not wait on SMTP to see their confirmation.
     const students = Array.isArray(body.students) ? body.students : [];
     after(async () => {
-      // The room the school allocated at step 2. This used to send "N/A" on the
-      // PayPal path, so the ashram's own notification never named the room for
-      // anyone paying that way.
-      const room = await getBookingRoom(bookingIds);
+      // Allocated here, now the booking is confirmed. This path used to send
+      // the literal "N/A", so the ashram was never told the room for anyone
+      // paying by PayPal.
+      const held = await allocateConfirmedRoom({
+        course: body.course, batch, sharing: body.sharing, bookingIds, students,
+      });
+      if (held.ok) {
+        await setBookingRoom(bookingIds, held.room).catch(() => null);
+      } else if (held.error !== "not_tracked") {
+        console.error(`[admission] paid but no room for bookings ${bookingIds.join(",")}: ${held.error}`);
+      }
+      const room = held.ok
+        ? held.room
+        : held.error === "not_tracked"
+        ? await getBookingRoom(bookingIds)
+        : "NOT ALLOCATED \u2014 no free room at the time of payment, please assign one by hand";
       await sendAdmissionMail({
         students, course: body.course, batch, acco, room,
         fees, addOns: fees.addOns, stage: "paid",
