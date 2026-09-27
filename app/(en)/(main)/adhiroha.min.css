@@ -69,8 +69,8 @@
    200/300/500 course pages. Mirrors app/_home/styles.css.
    =================================================================== */
 .ftr-rys{display:block;margin-top:22px;text-decoration:none}
-.ftr-rys-badges{display:flex;align-items:center;gap:9px}
-.ftr-rys .rys-b{width:52px;height:52px;display:block;filter:brightness(0) invert(1);opacity:.82;transition:opacity .25s}
+.ftr-rys-badges{display:inline-flex;align-items:center;gap:10px}
+.ftr-rys .rys-b{width:60px;height:60px;display:block;filter:brightness(0) invert(1);opacity:1;transition:opacity .25s}
 .ftr-rys:hover .rys-b{opacity:1}
 .ftr-rys-t{display:block;margin-top:11px;font-size:11.5px;font-weight:300;letter-spacing:.3px;line-height:1.7;color:#b3a99d}
 .ftr-rys:hover .ftr-rys-t{color:#d8cfc2}
