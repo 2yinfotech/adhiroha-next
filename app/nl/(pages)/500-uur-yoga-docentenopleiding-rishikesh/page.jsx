@@ -39,12 +39,13 @@ export const metadata = {
     title: "500-Uur Yoga-docentenopleiding in Rishikesh | Adhiroha",
     description:
       "500-uur yoga-docentenopleiding in Rishikesh, gecertificeerd door Yoga Alliance. 60 dagen, van fundament tot gevorderd, verblijf in een Himalaya-ashram, alle maaltijden en uitstapjes inbegrepen.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "500-Uur Yoga-docentenopleiding in Rishikesh | Adhiroha",
     description: "500-uur yoga-docentenopleiding in Rishikesh, gecertificeerd door Yoga Alliance. 60 dagen, van fundament tot gevorderd, verblijf in een Himalaya-ashram, alle maaltijden en uitstapjes inbegrepen.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

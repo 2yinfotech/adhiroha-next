@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "nl_NL", url: `${SITE}${NL}`,
     title: "Gedragscode en Beleid | Yoga-ashram Adhiroha, Rishikesh",
     description: "De regels van de Adhiroha-ashram in Rishikesh, de vier pijlers, de gedragscode, het nultolerantiebeleid en alles over kosten, betalingen en verplaatsen.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Gedragscode en Beleid | Yoga-ashram Adhiroha, Rishikesh",
     description: "De regels van de Adhiroha-ashram in Rishikesh, de vier pijlers, de gedragscode, het nultolerantiebeleid en alles over kosten, betalingen en verplaatsen.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

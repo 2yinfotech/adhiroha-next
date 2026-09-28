@@ -30,12 +30,13 @@ export const metadata = {
     title: "インドのヨガ指導者養成コース | リシケシの200・300・500時間 YTTC",
     description:
       "インド・リシケシで開講する、ヨガアライアンス認定の200・300・500時間ヨガ指導者養成コース。オールインクルーシブ、国際的に認められた認定。",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "インドのヨガ指導者養成コース | リシケシの200・300・500時間 YTTC",
     description: "インド・リシケシで開講する、ヨガアライアンス認定の200・300・500時間ヨガ指導者養成コース。オールインクルーシブ、国際的に認められた認定。",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

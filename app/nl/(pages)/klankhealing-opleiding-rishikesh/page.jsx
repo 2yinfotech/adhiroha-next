@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "nl_NL", url: `${SITE}${NL}`,
     title: "Klankhealing-opleiding in Rishikesh | 6 Dagen | Adhiroha",
     description: "Zesdaagse residentiële klankhealing- en therapie-docentenopleiding in Rishikesh, Tibetaanse klankschalen, gongs en Vedische klankwetenschap, niveau 1, 2 en 3. Vanaf € 690 all-inclusive.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Klankhealing-opleiding in Rishikesh | 6 Dagen | Adhiroha",
     description: "Zesdaagse residentiële klankhealing- en therapie-docentenopleiding in Rishikesh, Tibetaanse klankschalen, gongs en Vedische klankwetenschap, niveau 1, 2 en 3. Vanaf € 690 all-inclusive.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

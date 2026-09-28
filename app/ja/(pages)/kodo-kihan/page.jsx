@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "ja_JP", url: `${SITE}${JA}`,
     title: "行動規範とポリシー | アディローハ・ヨガアシュラム、リシケシ",
     description: "リシケシのアディローハ・アシュラムのルール、4つの柱、行動規範、ゼロトレランス・ポリシー、そして料金・お支払い・日程変更に関するすべて。",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "行動規範とポリシー | アディローハ・ヨガアシュラム、リシケシ",
     description: "リシケシのアディローハ・アシュラムのルール、4つの柱、行動規範、ゼロトレランス・ポリシー、そして料金・お支払い・日程変更に関するすべて。",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

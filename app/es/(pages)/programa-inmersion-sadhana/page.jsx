@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "es_ES", url: `${SITE}${ES}`,
     title: "Programa de Inmersión Sadhana en Rishikesh | 15 Días",
     description: "Un Programa de Inmersión Sadhana de 15 días en Rishikesh para profundizar tu práctica personal, sadhana diaria disciplinada, silencio y vida yóguica en nuestro ashram del Himalaya.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Programa de Inmersión Sadhana en Rishikesh | 15 Días",
     description: "Un Programa de Inmersión Sadhana de 15 días en Rishikesh para profundizar tu práctica personal, sadhana diaria disciplinada, silencio y vida yóguica en nuestro ashram del Himalaya.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

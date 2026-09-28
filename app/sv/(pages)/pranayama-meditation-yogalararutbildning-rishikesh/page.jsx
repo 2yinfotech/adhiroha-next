@@ -39,12 +39,13 @@ export const metadata = {
     title: "Pranayama- och Meditationslärarutbildning i Rishikesh | 12 Dagar | Adhiroha",
     description:
       "Tolv dagars pranayama- och meditationslärarutbildning i Rishikesh, ackrediterad av Ayushministeriet. Små grupper, boende i himalayiskt ashram, alla måltider och utflykter ingår.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Pranayama- och Meditationslärarutbildning i Rishikesh | 12 Dagar | Adhiroha",
     description: "Tolv dagars pranayama- och meditationslärarutbildning i Rishikesh, ackrediterad av Ayushministeriet. Små grupper, boende i himalayiskt ashram, alla måltider och utflykter ingår.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

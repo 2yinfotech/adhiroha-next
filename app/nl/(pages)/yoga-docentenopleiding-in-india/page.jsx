@@ -30,12 +30,13 @@ export const metadata = {
     title: "Yoga-docentenopleiding in India | YTTC 200, 300 en 500 Uur in Rishikesh",
     description:
       "Door Yoga Alliance gecertificeerde yoga-docentenopleidingen van 200, 300 en 500 uur in Rishikesh, India. All-inclusive, internationaal erkende certificering.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Yoga-docentenopleiding in India | YTTC 200, 300 en 500 Uur in Rishikesh",
     description: "Door Yoga Alliance gecertificeerde yoga-docentenopleidingen van 200, 300 en 500 uur in Rishikesh, India. All-inclusive, internationaal erkende certificering.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

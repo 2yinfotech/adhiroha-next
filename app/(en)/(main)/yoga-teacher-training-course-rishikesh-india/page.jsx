@@ -59,8 +59,7 @@ export const metadata = {
       "Yoga Alliance registered 200, 300 and 500 hour residential yoga teacher training in Rishikesh, India. All-inclusive fees, internationally recognised certification.",
     url: URL,
     type: "website",
-    images: [{ url: "/img/adhiroha-yttc-014.webp", width: 1600, height: 1064,
-               alt: "Students practising in the shala at Adhiroha, Rishikesh" }],
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
 };
 

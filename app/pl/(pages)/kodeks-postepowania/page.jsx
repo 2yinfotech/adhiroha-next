@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pl_PL", url: `${SITE}${PL}`,
     title: "Kodeks Postępowania i Zasady | Aśram Jogi Adhiroha, Riszikeś",
     description: "Zasady obowiązujące w aśramie Adhiroha w Riszikeś, cztery filary, kodeks postępowania, zasady zerowej tolerancji oraz opłaty, płatności i zmiany terminu.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Kodeks Postępowania i Zasady | Aśram Jogi Adhiroha, Riszikeś",
     description: "Zasady obowiązujące w aśramie Adhiroha w Riszikeś, cztery filary, kodeks postępowania, zasady zerowej tolerancji oraz opłaty, płatności i zmiany terminu.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

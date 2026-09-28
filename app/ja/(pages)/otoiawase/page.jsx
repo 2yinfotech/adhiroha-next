@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "ja_JP", url: `${SITE}${JA}`,
     title: "お問い合わせ | Adhiroha、リシケシのヨガスクール",
     description: "リシケシ、アッパー・タポヴァンのヨガアシュラム、アディローハへのお問い合わせ。WhatsApp、メール、フォームのいずれでも、実際の人間がたいてい1日以内にお返事します。",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "お問い合わせ | Adhiroha、リシケシのヨガスクール",
     description: "リシケシ、アッパー・タポヴァンのヨガアシュラム、アディローハへのお問い合わせ。WhatsApp、メール、フォームのいずれでも、実際の人間がたいてい1日以内にお返事します。",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

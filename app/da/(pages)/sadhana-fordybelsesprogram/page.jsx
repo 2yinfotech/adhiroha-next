@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "da_DK", url: `${SITE}${DA}`,
     title: "Sadhana fordybelsesprogram i Rishikesh | 15 dage | Adhiroha",
     description: "Femten dages sadhana-fordybelse med ophold i Rishikesh, stilhed, egen praksis, meditation, karma yoga og Bhagavad Gita i traditionel ashram-disciplin. Fra 699 € alt inklusive.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Sadhana fordybelsesprogram i Rishikesh | 15 dage | Adhiroha",
     description: "Femten dages sadhana-fordybelse med ophold i Rishikesh, stilhed, egen praksis, meditation, karma yoga og Bhagavad Gita i traditionel ashram-disciplin. Fra 699 € alt inklusive.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pl_PL", url: `${SITE}${PL}`,
     title: "Kurs Nauczycielski Terapii Dźwiękiem w Riszikeś | 6 Dni | Adhiroha",
     description: "Sześciodniowy stacjonarny kurs nauczycielski terapii i uzdrawiania dźwiękiem w Riszikeś, tybetańskie misy śpiewające, gongi i wedyjska nauka o dźwięku, poziomy 1, 2 i 3. Od 690 € all inclusive.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Kurs Nauczycielski Terapii Dźwiękiem w Riszikeś | 6 Dni | Adhiroha",
     description: "Sześciodniowy stacjonarny kurs nauczycielski terapii i uzdrawiania dźwiękiem w Riszikeś, tybetańskie misy śpiewające, gongi i wedyjska nauka o dźwięku, poziomy 1, 2 i 3. Od 690 € all inclusive.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

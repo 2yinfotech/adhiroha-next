@@ -19,12 +19,13 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "es_ES", url: `${SITE}${ES}`,
     title: "Formación de profesor de yoga en India | YTTC de 200, 300 y 500 horas en Rishikesh | Adhiroha", description: "Formación de profesor de yoga certificada por Yoga Alliance de 200, 300 y 500 horas en Rishikesh, India. Alojamiento incluido y todo incluido.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Formación de profesor de yoga en India | YTTC de 200, 300 y 500 horas en Rishikesh | Adhiroha",
     description: "Formación de profesor de yoga certificada por Yoga Alliance de 200, 300 y 500 horas en Rishikesh, India. Alojamiento incluido y todo incluido.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

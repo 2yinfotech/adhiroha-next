@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pl_PL", url: `${SITE}${PL}`,
     title: "Kontakt | Adhiroha, Szkoła Jogi w Riszikeś",
     description: "Napisz do aśramu jogi Adhiroha w Upper Tapovan w Riszikeś. WhatsApp, e-mail lub formularz, odpowiada prawdziwy człowiek, zwykle w ciągu doby.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Kontakt | Adhiroha, Szkoła Jogi w Riszikeś",
     description: "Napisz do aśramu jogi Adhiroha w Upper Tapovan w Riszikeś. WhatsApp, e-mail lub formularz, odpowiada prawdziwy człowiek, zwykle w ciągu doby.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

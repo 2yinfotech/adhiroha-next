@@ -32,12 +32,13 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "it_IT", url: `${SITE}${IT}`,
     title: "Formazione Insegnanti di Yoga Pranayama & Meditazione a Rishikesh | Adhiroha", description: "Una formazione insegnanti di yoga Pranayama e Meditazione di 14 giorni a Rishikesh. Respirazione, kriya e meditazione insegnati in modo tradizionale accanto al Ganga nel nostro ashram.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Formazione Insegnanti di Yoga Pranayama & Meditazione a Rishikesh | Adhiroha",
     description: "Una formazione insegnanti di yoga Pranayama e Meditazione di 14 giorni a Rishikesh. Respirazione, kriya e meditazione insegnati in modo tradizionale accanto al Ganga nel nostro ashram.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

@@ -39,12 +39,13 @@ export const metadata = {
     title: "300-Timmars Yogalärarutbildning i Rishikesh | Adhiroha",
     description:
       "Avancerad 300-timmars yogalärarutbildning i Rishikesh, certifierad av Yoga Alliance. 30 dagar, små grupper, boende i himalayiskt ashram, alla måltider och utflykter ingår.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "300-Timmars Yogalärarutbildning i Rishikesh | Adhiroha",
     description: "Avancerad 300-timmars yogalärarutbildning i Rishikesh, certifierad av Yoga Alliance. 30 dagar, små grupper, boende i himalayiskt ashram, alla måltider och utflykter ingår.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

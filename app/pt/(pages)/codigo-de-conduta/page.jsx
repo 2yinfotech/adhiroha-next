@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pt_BR", url: `${SITE}${PT}`,
     title: "Código de Conduta e Políticas | Ashram de Yoga Adhiroha, Rishikesh",
     description: "As regras do ashram Adhiroha em Rishikesh, os quatro pilares, o código de conduta, as políticas de tolerância zero e tudo sobre valores, pagamentos e remarcação.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Código de Conduta e Políticas | Ashram de Yoga Adhiroha, Rishikesh",
     description: "As regras do ashram Adhiroha em Rishikesh, os quatro pilares, o código de conduta, as políticas de tolerância zero e tudo sobre valores, pagamentos e remarcação.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "nl_NL", url: `${SITE}${NL}`,
     title: "Een Bericht van Onze Oud-studenten | Adhiroha, Rishikesh",
     description: "Afgestudeerden van Adhiroha beschrijven in hun eigen woorden de yoga-docentenopleiding in Rishikesh, de tuin, het vuuraltaar, de vijf elementen van het terrein en de docenten achter de transformatie.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Een Bericht van Onze Oud-studenten | Adhiroha, Rishikesh",
     description: "Afgestudeerden van Adhiroha beschrijven in hun eigen woorden de yoga-docentenopleiding in Rishikesh, de tuin, het vuuraltaar, de vijf elementen van het terrein en de docenten achter de transformatie.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

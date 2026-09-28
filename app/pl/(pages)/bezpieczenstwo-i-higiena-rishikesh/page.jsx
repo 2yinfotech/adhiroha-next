@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pl_PL", url: `${SITE}${PL}`,
     title: "Bezpieczeństwo i Higiena | Aśram Jogi Adhiroha, Riszikeś",
     description: "Monitoring 24/7, ogrodzony kampus, odbiór z lotniska w cenie i wsparcie dla kobiet podróżujących samotnie, jak Adhiroha dba o bezpieczeństwo i higienę w Riszikeś.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Bezpieczeństwo i Higiena | Aśram Jogi Adhiroha, Riszikeś",
     description: "Monitoring 24/7, ogrodzony kampus, odbiór z lotniska w cenie i wsparcie dla kobiet podróżujących samotnie, jak Adhiroha dba o bezpieczeństwo i higienę w Riszikeś.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

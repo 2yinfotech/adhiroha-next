@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "it_IT", url: `${SITE}${IT}`,
     title: "Sicurezza e Igiene nel Nostro Ashram a Rishikesh | Adhiroha",
     description: "Come Adhiroha protegge il benessere degli studenti a Rishikesh, camere pulite con bagno privato, acqua potabile RO, cucina satvica igienica e supporto sul posto 24/7.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Sicurezza e Igiene nel Nostro Ashram a Rishikesh | Adhiroha",
     description: "Come Adhiroha protegge il benessere degli studenti a Rishikesh, camere pulite con bagno privato, acqua potabile RO, cucina satvica igienica e supporto sul posto 24/7.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

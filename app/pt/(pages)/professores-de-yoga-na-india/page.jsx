@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pt_BR", url: `${SITE}${PT}`,
     title: "Nossos Professores de Yoga na Índia | Acharyas da Adhiroha, Rishikesh",
     description: "Conheça os 11 acharyas de yoga da Adhiroha em Rishikesh, mestres em Ciência Yogue e doutores em naturopatia, com mais de 115 anos de experiência de ensino somada.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Nossos Professores de Yoga na Índia | Acharyas da Adhiroha, Rishikesh",
     description: "Conheça os 11 acharyas de yoga da Adhiroha em Rishikesh, mestres em Ciência Yogue e doutores em naturopatia, com mais de 115 anos de experiência de ensino somada.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

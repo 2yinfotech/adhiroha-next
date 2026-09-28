@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "nl_NL", url: `${SITE}${NL}`,
     title: "Contact | Adhiroha, Yogaschool in Rishikesh",
     description: "Neem contact op met de yoga-ashram Adhiroha in Upper Tapovan, Rishikesh. WhatsApp, e-mail of formulier, er antwoordt een echt mens, meestal binnen een dag.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Contact | Adhiroha, Yogaschool in Rishikesh",
     description: "Neem contact op met de yoga-ashram Adhiroha in Upper Tapovan, Rishikesh. WhatsApp, e-mail of formulier, er antwoordt een echt mens, meestal binnen een dag.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

@@ -19,12 +19,13 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "de_DE", url: `${SITE}${DE}`,
     title: "Unsere Yogalehrer in Rishikesh, Indien | Adhiroha", description: "Lerne die Yoga-Acharyas von Adhiroha in Rishikesh kennen, jeder ein Spezialist mit 9–20 Jahren Erfahrung in seinem eigenen Fach.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Unsere Yogalehrer in Rishikesh, Indien | Adhiroha",
     description: "Lerne die Yoga-Acharyas von Adhiroha in Rishikesh kennen, jeder ein Spezialist mit 9–20 Jahren Erfahrung in seinem eigenen Fach.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

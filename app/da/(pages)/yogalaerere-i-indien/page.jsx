@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "da_DK", url: `${SITE}${DA}`,
     title: "Vores yogaundervisere i Indien | Adhirohas acharyaer, Rishikesh",
     description: "Mød Adhirohas 11 yoga-acharyaer i Rishikesh, kandidater i yogisk videnskab og doktorer i naturmedicin, med over 115 års samlet undervisningserfaring.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Vores yogaundervisere i Indien | Adhirohas acharyaer, Rishikesh",
     description: "Mød Adhirohas 11 yoga-acharyaer i Rishikesh, kandidater i yogisk videnskab og doktorer i naturmedicin, med over 115 års samlet undervisningserfaring.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

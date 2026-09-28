@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "it_IT", url: `${SITE}${IT}`,
     title: "Recensioni degli Studenti e Messaggi degli Ex Allievi | Adhiroha",
     description: "Leggi cosa dicono i diplomati subito dopo la loro formazione ad Adhiroha, messaggi sinceri dagli studenti dei nostri corsi di 200, 300 e 500 ore a Rishikesh.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Recensioni degli Studenti e Messaggi degli Ex Allievi | Adhiroha",
     description: "Leggi cosa dicono i diplomati subito dopo la loro formazione ad Adhiroha, messaggi sinceri dagli studenti dei nostri corsi di 200, 300 e 500 ore a Rishikesh.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

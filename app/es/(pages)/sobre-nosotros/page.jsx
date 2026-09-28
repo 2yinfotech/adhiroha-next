@@ -19,12 +19,13 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "es_ES", url: `${SITE}${ES}`,
     title: "Sobre Adhiroha | Escuela de Yoga en Rishikesh, India", description: "Conoce Adhiroha, un ashram de yoga certificado por Yoga Alliance en Upper Tapovan, Rishikesh, con acharyas indios experimentados y grupos reducidos.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Sobre Adhiroha | Escuela de Yoga en Rishikesh, India",
     description: "Conoce Adhiroha, un ashram de yoga certificado por Yoga Alliance en Upper Tapovan, Rishikesh, con acharyas indios experimentados y grupos reducidos.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

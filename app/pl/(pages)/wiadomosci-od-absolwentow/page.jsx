@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pl_PL", url: `${SITE}${PL}`,
     title: "Wiadomość od Naszych Absolwentów | Adhiroha, Riszikeś",
     description: "Absolwenci Adhiroha opisują swoimi słowami kurs nauczycielski jogi w Riszikeś, ogród, ołtarz ognia, pięć żywiołów kampusu i nauczycieli stojących za przemianą.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Wiadomość od Naszych Absolwentów | Adhiroha, Riszikeś",
     description: "Absolwenci Adhiroha opisują swoimi słowami kurs nauczycielski jogi w Riszikeś, ogród, ołtarz ognia, pięć żywiołów kampusu i nauczycieli stojących za przemianą.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

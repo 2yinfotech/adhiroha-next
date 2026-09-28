@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "sv_SE", url: `${SITE}${SV}`,
     title: "Säkerhet och Hygien | Yoga-ashramet Adhiroha, Rishikesh",
     description: "Kameraövervakning dygnet runt, inhägnat område, flygplatshämtning ingår och extra omtanke om kvinnor som reser ensamma, så sköter Adhiroha säkerhet och hygien i Rishikesh.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Säkerhet och Hygien | Yoga-ashramet Adhiroha, Rishikesh",
     description: "Kameraövervakning dygnet runt, inhägnat område, flygplatshämtning ingår och extra omtanke om kvinnor som reser ensamma, så sköter Adhiroha säkerhet och hygien i Rishikesh.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

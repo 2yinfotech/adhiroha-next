@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "it_IT", url: `${SITE}${IT}`,
     title: "Codice di Condotta e Politiche | Adhiroha, Rishikesh",
     description: "Consulta il codice di condotta, le regole dell'ashram e le politiche di rimborso e cancellazione della formazione insegnanti di yoga presso Adhiroha, Rishikesh, India.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Codice di Condotta e Politiche | Adhiroha, Rishikesh",
     description: "Consulta il codice di condotta, le regole dell'ashram e le politiche di rimborso e cancellazione della formazione insegnanti di yoga presso Adhiroha, Rishikesh, India.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

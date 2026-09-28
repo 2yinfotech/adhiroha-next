@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pt_BR", url: `${SITE}${PT}`,
     title: "Formação em Terapia Sonora em Rishikesh | 6 Dias | Adhiroha",
     description: "Formação residencial de professor em terapia e cura sonora de seis dias em Rishikesh, taças cantantes tibetanas, gongos e ciência védica do som, níveis 1, 2 e 3. A partir de € 690 com tudo incluído.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Formação em Terapia Sonora em Rishikesh | 6 Dias | Adhiroha",
     description: "Formação residencial de professor em terapia e cura sonora de seis dias em Rishikesh, taças cantantes tibetanas, gongos e ciência védica do som, níveis 1, 2 e 3. A partir de € 690 com tudo incluído.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

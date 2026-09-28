@@ -39,12 +39,13 @@ export const metadata = {
     title: "リシケシの200時間ヨガ指導者養成コース | Adhiroha",
     description:
       "ヨガアライアンス認定の200時間ヨガ指導者養成コース（リシケシ）。24日間、少人数制、ヒマラヤのアシュラム滞在、食事と遠足込み。",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "リシケシの200時間ヨガ指導者養成コース | Adhiroha",
     description: "ヨガアライアンス認定の200時間ヨガ指導者養成コース（リシケシ）。24日間、少人数制、ヒマラヤのアシュラム滞在、食事と遠足込み。",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

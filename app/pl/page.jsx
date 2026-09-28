@@ -26,13 +26,13 @@ export const metadata = {
     title: "Kurs Nauczycielski Jogi w Riszikeś | YTTC 200/300/500 Godzin | Adhiroha",
     description:
       "Certyfikowane przez Yoga Alliance kursy nauczycielskie jogi 200, 300 i 500 godzin w Riszikeś w Indiach. Małe grupy, doświadczeni indyjscy nauczyciele, pobyt w aśramie i wyżywienie w cenie.",
-    images: [{ url: "/img/yoga-teacher-training-india-course.webp", width: 1200, height: 630, alt: "Adhiroha Yoga School, Upper Tapovan, Rishikesh" }],
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Kurs Nauczycielski Jogi w Riszikeś | YTTC 200/300/500 Godzin | Adhiroha",
     description: "Certyfikowane przez Yoga Alliance kursy nauczycielskie jogi 200, 300 i 500 godzin w Riszikeś w Indiach. Małe grupy, doświadczeni indyjscy nauczyciele, pobyt w aśramie i wyżywienie w cenie.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

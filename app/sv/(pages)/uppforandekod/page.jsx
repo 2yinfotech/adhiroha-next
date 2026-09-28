@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "sv_SE", url: `${SITE}${SV}`,
     title: "Uppförandekod och Regler | Yoga-ashramet Adhiroha, Rishikesh",
     description: "Reglerna på Adhirohas ashram i Rishikesh, de fyra pelarna, uppförandekoden, nolltoleranspolicyn och allt om avgifter, betalningar och ombokning.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Uppförandekod och Regler | Yoga-ashramet Adhiroha, Rishikesh",
     description: "Reglerna på Adhirohas ashram i Rishikesh, de fyra pelarna, uppförandekoden, nolltoleranspolicyn och allt om avgifter, betalningar och ombokning.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

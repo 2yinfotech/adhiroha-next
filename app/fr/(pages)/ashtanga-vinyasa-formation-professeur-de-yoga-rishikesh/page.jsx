@@ -32,12 +32,13 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "fr_FR", url: `${SITE}${FR}`,
     title: "Formation Ashtanga & Vinyasa de professeur de yoga à Rishikesh | Adhiroha", description: "Formation de professeur de yoga Ashtanga & Vinyasa de 12 jours à Rishikesh, accréditée par le Ministry of Ayush. Petits groupes, hébergement en ashram, tous les repas inclus.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Formation Ashtanga & Vinyasa de professeur de yoga à Rishikesh | Adhiroha",
     description: "Formation de professeur de yoga Ashtanga & Vinyasa de 12 jours à Rishikesh, accréditée par le Ministry of Ayush. Petits groupes, hébergement en ashram, tous les repas inclus.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

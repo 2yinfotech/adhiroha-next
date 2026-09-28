@@ -24,8 +24,12 @@ export async function generateMetadata({ params }) {
   // Description, canonical and a complete per-post Open Graph block. Before
   // this, every post inherited the root layout's metadata, so all of them
   // shared the homepage's description and announced og:url as the homepage.
-  const cover = fixAssetPath(article.cover_image);
-  return postMetadata(article, { image: cover ? `${SITE}${cover}` : undefined });
+  // No image is passed, so postMetadata falls back to the site-wide logo. The
+  // post's own cover is deliberately not used here: every URL on the site
+  // shares as the logo, so a link pasted into WhatsApp is recognisably Adhiroha
+  // whichever page it points at. The cover still carries the article's hero and
+  // its schema image further down.
+  return postMetadata(article);
 }
 
 const ICON_CAL =

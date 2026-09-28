@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pt_BR", url: `${SITE}${PT}`,
     title: "Galeria de Fotos | Ashram de Yoga Adhiroha em Rishikesh, Índia",
     description: "181 fotos honestas do ashram Adhiroha em Upper Tapovan, Rishikesh, a shala, os quartos, a comida sáttvica, as cerimônias, os passeios e o dia da certificação.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Galeria de Fotos | Ashram de Yoga Adhiroha em Rishikesh, Índia",
     description: "181 fotos honestas do ashram Adhiroha em Upper Tapovan, Rishikesh, a shala, os quartos, a comida sáttvica, as cerimônias, os passeios e o dia da certificação.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

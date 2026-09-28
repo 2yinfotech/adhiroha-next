@@ -39,12 +39,13 @@ export const metadata = {
     title: "Ashtanga- en Vinyasa-yoga-docentenopleiding in Rishikesh | 12 Dagen | Adhiroha",
     description:
       "Twaalfdaagse ashtanga- en vinyasa-yoga-docentenopleiding in Rishikesh, geaccrediteerd door het Ministerie van Ayush. Kleine groepen, verblijf in een Himalaya-ashram, alle maaltijden en uitstapjes inbegrepen.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Ashtanga- en Vinyasa-yoga-docentenopleiding in Rishikesh | 12 Dagen | Adhiroha",
     description: "Twaalfdaagse ashtanga- en vinyasa-yoga-docentenopleiding in Rishikesh, geaccrediteerd door het Ministerie van Ayush. Kleine groepen, verblijf in een Himalaya-ashram, alle maaltijden en uitstapjes inbegrepen.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

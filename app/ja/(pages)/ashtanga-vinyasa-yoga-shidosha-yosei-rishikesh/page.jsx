@@ -39,12 +39,13 @@ export const metadata = {
     title: "リシケシのアシュタンガ＆ヴィンヤサ・ヨガ指導者養成コース | 12日間、Adhiroha",
     description:
       "アーユシュ省認定の12日間アシュタンガ＆ヴィンヤサ・ヨガ指導者養成コース（リシケシ）。少人数制、ヒマラヤのアシュラム滞在、食事と遠足込み。",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "リシケシのアシュタンガ＆ヴィンヤサ・ヨガ指導者養成コース | 12日間、Adhiroha",
     description: "アーユシュ省認定の12日間アシュタンガ＆ヴィンヤサ・ヨガ指導者養成コース（リシケシ）。少人数制、ヒマラヤのアシュラム滞在、食事と遠足込み。",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

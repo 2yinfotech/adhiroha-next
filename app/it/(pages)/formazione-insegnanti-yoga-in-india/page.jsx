@@ -30,12 +30,13 @@ export const metadata = {
     title: "Formazione Insegnanti di Yoga in India | YTTC 200, 300 e 500 Ore a Rishikesh",
     description:
       "Formazione insegnanti di yoga certificata Yoga Alliance di 200, 300 e 500 ore a Rishikesh, India. Tutto incluso, certificazione riconosciuta a livello internazionale.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Formazione Insegnanti di Yoga in India | YTTC 200, 300 e 500 Ore a Rishikesh",
     description: "Formazione insegnanti di yoga certificata Yoga Alliance di 200, 300 e 500 ore a Rishikesh, India. Tutto incluso, certificazione riconosciuta a livello internazionale.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

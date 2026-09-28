@@ -19,12 +19,13 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "es_ES", url: `${SITE}${ES}`,
     title: "Seguridad e higiene en nuestro ashram de Rishikesh | Adhiroha", description: "Cómo Adhiroha en Rishikesh garantiza la seguridad, la higiene y la logística de viaje, especialmente para mujeres que viajan solas. Recogida en el aeropuerto, videovigilancia y más.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Seguridad e higiene en nuestro ashram de Rishikesh | Adhiroha",
     description: "Cómo Adhiroha en Rishikesh garantiza la seguridad, la higiene y la logística de viaje, especialmente para mujeres que viajan solas. Recogida en el aeropuerto, videovigilancia y más.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

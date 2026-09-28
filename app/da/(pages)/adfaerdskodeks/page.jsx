@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "da_DK", url: `${SITE}${DA}`,
     title: "Adfærdskodeks og regler | Yogaashrammet Adhiroha, Rishikesh",
     description: "Reglerne på Adhirohas ashram i Rishikesh, de fire søjler, adfærdskodekset, nultolerancepolitikken og alt om priser, betaling og omlægning.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Adfærdskodeks og regler | Yogaashrammet Adhiroha, Rishikesh",
     description: "Reglerne på Adhirohas ashram i Rishikesh, de fire søjler, adfærdskodekset, nultolerancepolitikken og alt om priser, betaling og omlægning.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

@@ -39,12 +39,13 @@ export const metadata = {
     title: "500-Stunden Yogalehrer-Ausbildung in Rishikesh | Adhiroha",
     description:
       "Schließe deinen RYT-500 mit unserer 500-Stunden Yogalehrer-Ausbildung in Rishikesh ab, 60 Tage, die den 200- und 300-Stunden-Lehrplan verbinden, Unterkunft und Mahlzeiten inklusive.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "500-Stunden Yogalehrer-Ausbildung in Rishikesh | Adhiroha",
     description: "Schließe deinen RYT-500 mit unserer 500-Stunden Yogalehrer-Ausbildung in Rishikesh ab, 60 Tage, die den 200- und 300-Stunden-Lehrplan verbinden, Unterkunft und Mahlzeiten inklusive.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

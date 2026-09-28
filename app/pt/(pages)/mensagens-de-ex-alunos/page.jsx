@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pt_BR", url: `${SITE}${PT}`,
     title: "Uma Mensagem dos Nossos Ex-Alunos | Adhiroha, Rishikesh",
     description: "Formados da Adhiroha descrevem com as próprias palavras a formação de professor de yoga em Rishikesh, o jardim, o altar do fogo, os cinco elementos do campus e os professores por trás da transformação.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Uma Mensagem dos Nossos Ex-Alunos | Adhiroha, Rishikesh",
     description: "Formados da Adhiroha descrevem com as próprias palavras a formação de professor de yoga em Rishikesh, o jardim, o altar do fogo, os cinco elementos do campus e os professores por trás da transformação.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

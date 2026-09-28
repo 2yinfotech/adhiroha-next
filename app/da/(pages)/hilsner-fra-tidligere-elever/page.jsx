@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "da_DK", url: `${SITE}${DA}`,
     title: "En hilsen fra vores tidligere elever | Adhiroha, Rishikesh",
     description: "Tidligere elever fra Adhiroha fortæller om deres yogalæreruddannelse i Rishikesh, ashrammet, de fem elementer, underviserne og forvandlingen.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "En hilsen fra vores tidligere elever | Adhiroha, Rishikesh",
     description: "Tidligere elever fra Adhiroha fortæller om deres yogalæreruddannelse i Rishikesh, ashrammet, de fem elementer, underviserne og forvandlingen.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

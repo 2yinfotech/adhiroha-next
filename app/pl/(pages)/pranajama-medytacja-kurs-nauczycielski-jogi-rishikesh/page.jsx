@@ -39,12 +39,13 @@ export const metadata = {
     title: "Kurs Nauczycielski Pranajamy i Medytacji w Riszikeś | 12 Dni | Adhiroha",
     description:
       "Dwunastodniowy kurs nauczycielski pranajamy i medytacji w Riszikeś, akredytowany przez Ministerstwo Ayush. Małe grupy, pobyt w himalajskim aśramie, wszystkie posiłki i wycieczki w cenie.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Kurs Nauczycielski Pranajamy i Medytacji w Riszikeś | 12 Dni | Adhiroha",
     description: "Dwunastodniowy kurs nauczycielski pranajamy i medytacji w Riszikeś, akredytowany przez Ministerstwo Ayush. Małe grupy, pobyt w himalajskim aśramie, wszystkie posiłki i wycieczki w cenie.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

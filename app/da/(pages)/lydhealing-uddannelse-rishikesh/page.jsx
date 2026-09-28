@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "da_DK", url: `${SITE}${DA}`,
     title: "Lydhealing-uddannelse i Rishikesh | 6 dage | Adhiroha",
     description: "Seks dages læreruddannelse i lydhealing og -terapi med ophold i Rishikesh, tibetanske syngeskåle, gonger og vedisk lydvidenskab, niveau 1, 2 og 3. Fra 690 € alt inklusive.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Lydhealing-uddannelse i Rishikesh | 6 dage | Adhiroha",
     description: "Seks dages læreruddannelse i lydhealing og -terapi med ophold i Rishikesh, tibetanske syngeskåle, gonger og vedisk lydvidenskab, niveau 1, 2 og 3. Fra 690 € alt inklusive.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 

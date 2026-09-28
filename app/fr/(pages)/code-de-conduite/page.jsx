@@ -21,12 +21,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "fr_FR", url: `${SITE}${FR}`,
     title: "Code de conduite & règlement | Adhiroha, Rishikesh",
     description: "Consultez le code de conduite, les règles de l’ashram, les conditions de remboursement et d’annulation des formations de professeur de yoga à Adhiroha, Rishikesh, Inde.",
+    images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Code de conduite & règlement | Adhiroha, Rishikesh",
     description: "Consultez le code de conduite, les règles de l’ashram, les conditions de remboursement et d’annulation des formations de professeur de yoga à Adhiroha, Rishikesh, Inde.",
-    images: ["/img/yoga-teacher-training-india-course.webp"],
+    images: ["/img/adhiroha-og.jpg"],
   },
 };
 
