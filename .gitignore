@@ -10,3 +10,7 @@ npm-debug.log*
 
 # large local archive — never commit (breaks push, >100MB)
 Archive.zip
+
+# A copy of the logo dropped in the project root; the real assets live in
+# public/img (adhiroha-logo.png, adhiroha-og.jpg).
+/logo.png
