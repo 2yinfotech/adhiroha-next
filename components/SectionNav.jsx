@@ -17,6 +17,9 @@ export default function SectionNav({ sections = [] }) {
   const [open, setOpen] = useState(false);
   const [ready, setReady] = useState(false);
   const [active, setActive] = useState(sections[0]?.target ?? null);
+  // How far through the page the reader is, 0..1 — drawn as the ring.
+  const [progress, setProgress] = useState(0);
+  const [nudge, setNudge] = useState(false);
   const rootRef = useRef(null);
 
   // Show the nav only after the reader has scrolled a little way down, and
@@ -33,6 +36,7 @@ export default function SectionNav({ sections = [] }) {
       const doc = document.documentElement;
       const max = doc.scrollHeight - window.innerHeight;
       setReady(y > 320);
+      setProgress(max > 0 ? Math.min(1, Math.max(0, y / max)) : 0);
 
       // Scroll-spy: the active section is the last one whose top has crossed a
       // line ~a third of the way down the viewport.
@@ -60,6 +64,17 @@ export default function SectionNav({ sections = [] }) {
     };
   }, [sections]);
 
+  useEffect(() => {
+    if (!ready) return;
+    let seen = false;
+    try { seen = sessionStorage.getItem("adh_snav_seen") === "1"; } catch {}
+    if (seen) return;
+    try { sessionStorage.setItem("adh_snav_seen", "1"); } catch {}
+    setNudge(true);
+    const t = setTimeout(() => setNudge(false), 2600);
+    return () => clearTimeout(t);
+  }, [ready]);
+
   // Close on Escape or when clicking outside the nav.
   useEffect(() => {
     if (!open) return;
@@ -77,8 +92,26 @@ export default function SectionNav({ sections = [] }) {
     };
   }, [open]);
 
+  // Measured, so whether anyone uses this is a number rather than a guess.
+  const track = (event, extra = {}) => {
+    try {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event, page_path: window.location.pathname, ...extra });
+    } catch {}
+  };
+
+  const toggle = () => {
+    setOpen((v) => {
+      if (!v) track("section_nav_open");
+      return !v;
+    });
+  };
+
   const go = (target) => {
     setOpen(false);
+    track("section_nav_jump", {
+      section_label: sections.find((x) => x.target === target)?.label || target,
+    });
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const behavior = reduce ? "auto" : "smooth";
     if (target === "top") {
@@ -91,10 +124,15 @@ export default function SectionNav({ sections = [] }) {
 
   if (!sections.length) return null;
 
+  const index = Math.max(0, sections.findIndex((x) => x.target === active));
+  const current = sections[index]?.label || "";
+  // Ring geometry: r=15 in a 36 box.
+  const C = 2 * Math.PI * 15;
+
   return (
     <div
       ref={rootRef}
-      className={`snav${ready ? " is-ready" : ""}${open ? " is-open" : ""}`}
+      className={`snav${ready ? " is-ready" : ""}${open ? " is-open" : ""}${nudge ? " is-nudge" : ""}`}
     >
       {/* Wide screens: full horizontal bar docked bottom-centre. */}
       <nav className="snav-bar" aria-label="Jump to section">
@@ -137,19 +175,38 @@ export default function SectionNav({ sections = [] }) {
           </ul>
         </div>
 
+        {/* The pill says where you are rather than what it is. "Sections" told
+            nobody anything, and its three-line icon read as a second copy of
+            the site menu that already sits in the header — so it was ignored.
+            The label is the current section, already translated by the page,
+            and it changes as you scroll, which is what makes it look alive. */}
         <button
           type="button"
           className="snav-toggle"
           aria-expanded={open}
-          aria-label={open ? "Close section menu" : "Open section menu"}
-          onClick={() => setOpen((v) => !v)}
+          aria-label={open ? "Close section menu" : `Jump to section — now: ${current}`}
+          onClick={toggle}
         >
-          <span className="snav-icon" aria-hidden="true">
-            <span />
-            <span />
-            <span />
+          <span className="snav-ring" aria-hidden="true">
+            <svg viewBox="0 0 36 36">
+              <circle className="snav-ring-t" cx="18" cy="18" r="15" />
+              <circle
+                className="snav-ring-p"
+                cx="18" cy="18" r="15"
+                strokeDasharray={C}
+                strokeDashoffset={C * (1 - progress)}
+              />
+            </svg>
+            <b className="snav-ring-n">{index + 1}</b>
+            <span className="snav-ring-x" />
           </span>
-          <span className="snav-toggle-text">Sections</span>
+          <span className="snav-now">
+            <span className="snav-now-label">{current}</span>
+            <span className="snav-now-count">{index + 1} / {sections.length}</span>
+          </span>
+          <svg className="snav-chev" viewBox="0 0 12 8" aria-hidden="true">
+            <path d="M1 6.5l5-5 5 5" />
+          </svg>
         </button>
       </nav>
     </div>

@@ -105,16 +105,16 @@
 .snav-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  border: 1px solid rgba(201, 154, 99, 0.4);
-  padding: 12px 18px 12px 16px;
+  gap: 11px;
+  /* Never wider than the gap beside the WhatsApp button on the left. */
+  max-width: min(270px, calc(100vw - 112px));
+  border: 1px solid rgba(201, 154, 99, 0.45);
+  padding: 7px 16px 7px 7px;
   border-radius: 999px;
   cursor: pointer;
   background: var(--snav-ink);
   color: var(--snav-cream);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  text-align: left;
   box-shadow: 0 12px 32px rgba(44, 39, 35, 0.38), 0 2px 6px rgba(44, 39, 35, 0.24);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
   -webkit-tap-highlight-color: transparent;
@@ -124,24 +124,61 @@
   outline: 2px solid var(--snav-gold);
   outline-offset: 3px;
 }
-.snav-toggle-text { line-height: 1; }
 
-/* Three lines that morph to an X when open. */
-.snav-icon { position: relative; width: 18px; height: 12px; flex: 0 0 auto; }
-.snav-icon span {
-  position: absolute;
-  left: 0;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--snav-gold);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), width 0.4s ease, opacity 0.25s ease;
+/* Progress ring: fills as the reader moves down the page, with the current
+   section's number in the middle. Turns into a close mark when open. */
+.snav-ring { position: relative; flex: 0 0 auto; width: 38px; height: 38px; }
+.snav-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); display: block; }
+.snav-ring-t { fill: none; stroke: rgba(201, 154, 99, 0.22); stroke-width: 3; }
+.snav-ring-p {
+  fill: none; stroke: var(--snav-gold); stroke-width: 3; stroke-linecap: round;
+  transition: stroke-dashoffset 0.25s linear;
 }
-.snav-icon span:nth-child(1) { top: 0; width: 18px; }
-.snav-icon span:nth-child(2) { top: 5px; width: 12px; }
-.snav-icon span:nth-child(3) { top: 10px; width: 18px; }
-.snav.is-open .snav-icon span:nth-child(1) { top: 5px; width: 18px; transform: rotate(45deg); }
-.snav.is-open .snav-icon span:nth-child(2) { opacity: 0; transform: translateX(-8px); }
-.snav.is-open .snav-icon span:nth-child(3) { top: 5px; width: 18px; transform: rotate(-45deg); }
+.snav-ring-n {
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  font-size: 13px; font-weight: 700; color: var(--snav-gold);
+  transition: opacity 0.25s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.snav-ring-x { position: absolute; inset: 0; opacity: 0; transition: opacity 0.25s ease; }
+.snav-ring-x::before, .snav-ring-x::after {
+  content: ""; position: absolute; left: 50%; top: 50%;
+  width: 14px; height: 2px; margin: -1px 0 0 -7px;
+  border-radius: 2px; background: var(--snav-gold);
+}
+.snav-ring-x::before { transform: rotate(45deg); }
+.snav-ring-x::after { transform: rotate(-45deg); }
+.snav.is-open .snav-ring-n { opacity: 0; transform: scale(0.6); }
+.snav.is-open .snav-ring-x { opacity: 1; }
+
+/* Where you are, in the page's own language, and how far through you are. */
+.snav-now { display: flex; flex-direction: column; min-width: 0; line-height: 1.15; }
+.snav-now-label {
+  font-size: 14.5px; font-weight: 600; letter-spacing: 0.01em;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.snav-now-count {
+  margin-top: 3px;
+  font-size: 10.5px; font-weight: 500; letter-spacing: 0.12em;
+  color: rgba(242, 233, 220, 0.62);
+}
+
+/* Points up: the menu opens upward. Flips when it is open. */
+.snav-chev {
+  flex: 0 0 auto; width: 12px; height: 8px; margin-left: 2px;
+  fill: none; stroke: var(--snav-gold); stroke-width: 1.8;
+  stroke-linecap: round; stroke-linejoin: round;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.snav.is-open .snav-chev { transform: rotate(180deg); }
+
+/* One halo, twice, the first time the pill appears in a session. */
+.snav.is-nudge .snav-toggle { animation: snav-nudge 1.2s ease-out 2; }
+@keyframes snav-nudge {
+  0%   { box-shadow: 0 12px 32px rgba(44,39,35,.38), 0 0 0 0 rgba(201,154,99,.65); }
+  70%  { box-shadow: 0 12px 32px rgba(44,39,35,.38), 0 0 0 14px rgba(201,154,99,0); }
+  100% { box-shadow: 0 12px 32px rgba(44,39,35,.38), 0 0 0 0 rgba(201,154,99,0); }
+}
 
 /* Expanding menu panel */
 .snav-panel {
@@ -269,8 +306,11 @@
   .snav-link,
   .snav-dot,
   .snav-chip,
-  .snav-icon span {
+  .snav-ring-p,
+  .snav-ring-n,
+  .snav-chev {
     transition-duration: 0.001ms;
   }
+  .snav.is-nudge .snav-toggle { animation: none; }
   .snav.is-open .snav-link { animation: none; opacity: 1; transform: none; }
 }
