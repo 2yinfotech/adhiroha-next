@@ -18,6 +18,26 @@ const FIELDS = {
   ],
 };
 
+/* What the applicant reads once the application is in. The school's own
+   wording, and different for the two roles, so nobody is thanked for applying
+   to the wrong thing. */
+const DONE = {
+  volunteer: {
+    heading: "Thank you for submitting your application for the volunteer position.",
+    body:
+      "We truly appreciate your interest in contributing to our team. We will review your " +
+      "application and keep you updated. We will get in touch with you when a suitable " +
+      "volunteer opportunity arises.",
+  },
+  teacher: {
+    heading: "Thank you for submitting your application for the position of Teacher at Adhiroha.",
+    body:
+      "We sincerely appreciate your interest in joining our team. Your application will be " +
+      "carefully reviewed, and we will keep you informed of any relevant opportunities. We " +
+      "will contact you should a suitable position become available.",
+  },
+};
+
 /**
  * The volunteer and teacher application forms.
  *
@@ -79,11 +99,12 @@ export default function ApplicationForm({ type }) {
     return (
       <div className={styles.form} role="status" aria-live="polite">
         <div className={styles.formDone}>
-          <h3>Thank you, we have your application</h3>
-          <p>
-            It has reached us safely and nothing more is needed from you for now. Please give us
-            a little time to read it properly — we will write back to you by email as soon as it
-            has been reviewed and confirmed.
+          <h3>{DONE[type].heading}</h3>
+          <p>{DONE[type].body}</p>
+          <p className={styles.formDoneSignoff}>
+            Best Wishes,
+            <br />
+            The Adhiroha Team
           </p>
         </div>
       </div>

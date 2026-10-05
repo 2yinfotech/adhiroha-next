@@ -68,3 +68,4 @@
 .formDone { grid-column:1/-1; padding:34px 36px; border-radius:18px; background:#f4f8f4; border:1px solid #cfe3d3; }
 .formDone h3 { margin:0 0 10px; font-family:'Playfair Display',serif; font-weight:600; font-size:21px; color:#1a4d31; }
 .formDone p { margin:0; font-size:13.8px; font-weight:300; line-height:1.75; color:#42604e; }
+.formDoneSignoff { margin-top:16px !important; font-style:italic; }
