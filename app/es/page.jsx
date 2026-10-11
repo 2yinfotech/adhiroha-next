@@ -16,7 +16,7 @@ import { graph, extractFaqs, faqSchema, SITE, LANGUAGE_ALTERNATES, schoolTourVid
 export const metadata = {
   title: "Formación de Profesor de Yoga en Rishikesh | YTTC de 200/300/500 horas | Adhiroha",
   description:
-    "Formación de profesor de yoga certificada por Yoga Alliance de 200, 300 y 500 horas en Rishikesh, India. Grupos reducidos, profesores indios con experiencia, alojamiento en ashram y comidas incluidas.",
+    "Formación de profesor de yoga certificada por Yoga Alliance de 200, 300 y 500 horas en Rishikesh, India. Grupos reducidos, profesores indios con experiencia, alojamiento en la escuela y comidas incluidas.",
   alternates: { canonical: "/es/", languages: LANGUAGE_ALTERNATES },
   openGraph: {
     type: "website",
@@ -25,13 +25,13 @@ export const metadata = {
     url: `${SITE}/es/`,
     title: "Formación de Profesor de Yoga en Rishikesh | YTTC de 200/300/500 horas | Adhiroha",
     description:
-      "Formación de profesor de yoga certificada por Yoga Alliance de 200, 300 y 500 horas en Rishikesh, India. Grupos reducidos, profesores indios con experiencia, alojamiento en ashram y comidas incluidas.",
+      "Formación de profesor de yoga certificada por Yoga Alliance de 200, 300 y 500 horas en Rishikesh, India. Grupos reducidos, profesores indios con experiencia, alojamiento en la escuela y comidas incluidas.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Formación de Profesor de Yoga en Rishikesh | YTTC de 200/300/500 horas | Adhiroha",
-    description: "Formación de profesor de yoga certificada por Yoga Alliance de 200, 300 y 500 horas en Rishikesh, India. Grupos reducidos, profesores indios con experiencia, alojamiento en ashram y comidas incluidas.",
+    description: "Formación de profesor de yoga certificada por Yoga Alliance de 200, 300 y 500 horas en Rishikesh, India. Grupos reducidos, profesores indios con experiencia, alojamiento en la escuela y comidas incluidas.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

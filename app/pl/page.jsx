@@ -16,7 +16,7 @@ import { graph, extractFaqs, faqSchema, SITE, LANGUAGE_ALTERNATES, schoolTourVid
 export const metadata = {
   title: "Kurs Nauczycielski Jogi w Riszikeś | YTTC 200/300/500 Godzin | Adhiroha",
   description:
-    "Certyfikowane przez Yoga Alliance kursy nauczycielskie jogi 200, 300 i 500 godzin w Riszikeś w Indiach. Małe grupy, doświadczeni indyjscy nauczyciele, pobyt w aśramie i wyżywienie w cenie.",
+    "Certyfikowane przez Yoga Alliance kursy nauczycielskie jogi 200, 300 i 500 godzin w Riszikeś w Indiach. Małe grupy, doświadczeni indyjscy nauczyciele, pobyt w szkole i wyżywienie w cenie.",
   alternates: { canonical: "/pl/", languages: LANGUAGE_ALTERNATES },
   openGraph: {
     type: "website",
@@ -25,13 +25,13 @@ export const metadata = {
     url: `${SITE}/pl/`,
     title: "Kurs Nauczycielski Jogi w Riszikeś | YTTC 200/300/500 Godzin | Adhiroha",
     description:
-      "Certyfikowane przez Yoga Alliance kursy nauczycielskie jogi 200, 300 i 500 godzin w Riszikeś w Indiach. Małe grupy, doświadczeni indyjscy nauczyciele, pobyt w aśramie i wyżywienie w cenie.",
+      "Certyfikowane przez Yoga Alliance kursy nauczycielskie jogi 200, 300 i 500 godzin w Riszikeś w Indiach. Małe grupy, doświadczeni indyjscy nauczyciele, pobyt w szkole i wyżywienie w cenie.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Kurs Nauczycielski Jogi w Riszikeś | YTTC 200/300/500 Godzin | Adhiroha",
-    description: "Certyfikowane przez Yoga Alliance kursy nauczycielskie jogi 200, 300 i 500 godzin w Riszikeś w Indiach. Małe grupy, doświadczeni indyjscy nauczyciele, pobyt w aśramie i wyżywienie w cenie.",
+    description: "Certyfikowane przez Yoga Alliance kursy nauczycielskie jogi 200, 300 i 500 godzin w Riszikeś w Indiach. Małe grupy, doświadczeni indyjscy nauczyciele, pobyt w szkole i wyżywienie w cenie.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

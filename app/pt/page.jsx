@@ -16,7 +16,7 @@ import { graph, extractFaqs, faqSchema, SITE, LANGUAGE_ALTERNATES, schoolTourVid
 export const metadata = {
   title: "Formação de Professor de Yoga em Rishikesh | YTTC 200/300/500 Horas | Adhiroha",
   description:
-    "Formação de professor de yoga certificada pela Yoga Alliance de 200, 300 e 500 horas em Rishikesh, Índia. Turmas pequenas, professores indianos experientes, hospedagem no ashram e refeições inclusas.",
+    "Formação de professor de yoga certificada pela Yoga Alliance de 200, 300 e 500 horas em Rishikesh, Índia. Turmas pequenas, professores indianos experientes, hospedagem na escola e refeições inclusas.",
   alternates: { canonical: "/pt/", languages: LANGUAGE_ALTERNATES },
   openGraph: {
     type: "website",
@@ -25,13 +25,13 @@ export const metadata = {
     url: `${SITE}/pt/`,
     title: "Formação de Professor de Yoga em Rishikesh | YTTC 200/300/500 Horas | Adhiroha",
     description:
-      "Formação de professor de yoga certificada pela Yoga Alliance de 200, 300 e 500 horas em Rishikesh, Índia. Turmas pequenas, professores indianos experientes, hospedagem no ashram e refeições inclusas.",
+      "Formação de professor de yoga certificada pela Yoga Alliance de 200, 300 e 500 horas em Rishikesh, Índia. Turmas pequenas, professores indianos experientes, hospedagem na escola e refeições inclusas.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Formação de Professor de Yoga em Rishikesh | YTTC 200/300/500 Horas | Adhiroha",
-    description: "Formação de professor de yoga certificada pela Yoga Alliance de 200, 300 e 500 horas em Rishikesh, Índia. Turmas pequenas, professores indianos experientes, hospedagem no ashram e refeições inclusas.",
+    description: "Formação de professor de yoga certificada pela Yoga Alliance de 200, 300 e 500 horas em Rishikesh, Índia. Turmas pequenas, professores indianos experientes, hospedagem na escola e refeições inclusas.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

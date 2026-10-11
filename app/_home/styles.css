@@ -5071,3 +5071,10 @@
   color: #a2937d;
   margin-top: 2px;
 }
+
+/* The hero badges are single-line pills. "Largest Yoga School in Rishikesh ·
+   20,000+ Sq. Ft." is the longest of them and ran past the right edge on the
+   narrowest phones; there it may wrap onto a second line instead. */
+@media (max-width:400px){
+  .abx-badges span{white-space:normal;text-align:center;justify-content:center}
+}
