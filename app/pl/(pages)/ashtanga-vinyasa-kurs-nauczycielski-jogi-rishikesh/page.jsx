@@ -26,7 +26,7 @@ const sections = [
 export const metadata = {
   title: "Kurs Nauczycielski Ashtanga i Vinyasa Jogi w Riszikeś | 12 Dni | Adhiroha",
   description:
-    "Dwunastodniowy kurs nauczycielski ashtanga i vinyasa jogi w Riszikeś, akredytowany przez Ministerstwo Ayush. Małe grupy, pobyt w himalajskim aśramie, wszystkie posiłki i wycieczki w cenie.",
+    "Dwunastodniowy kurs nauczycielski ashtanga i vinyasa jogi w Riszikeś, akredytowany przez Ministerstwo Ayush. Małe grupy, pobyt w himalajskiej szkole, wszystkie posiłki i wycieczki w cenie.",
   alternates: {
     canonical: PL,
     languages: hreflangFor(EN),
@@ -38,13 +38,13 @@ export const metadata = {
     url: `${SITE}${PL}`,
     title: "Kurs Nauczycielski Ashtanga i Vinyasa Jogi w Riszikeś | 12 Dni | Adhiroha",
     description:
-      "Dwunastodniowy kurs nauczycielski ashtanga i vinyasa jogi w Riszikeś, akredytowany przez Ministerstwo Ayush. Małe grupy, pobyt w himalajskim aśramie, wszystkie posiłki i wycieczki w cenie.",
+      "Dwunastodniowy kurs nauczycielski ashtanga i vinyasa jogi w Riszikeś, akredytowany przez Ministerstwo Ayush. Małe grupy, pobyt w himalajskiej szkole, wszystkie posiłki i wycieczki w cenie.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Kurs Nauczycielski Ashtanga i Vinyasa Jogi w Riszikeś | 12 Dni | Adhiroha",
-    description: "Dwunastodniowy kurs nauczycielski ashtanga i vinyasa jogi w Riszikeś, akredytowany przez Ministerstwo Ayush. Małe grupy, pobyt w himalajskim aśramie, wszystkie posiłki i wycieczki w cenie.",
+    description: "Dwunastodniowy kurs nauczycielski ashtanga i vinyasa jogi w Riszikeś, akredytowany przez Ministerstwo Ayush. Małe grupy, pobyt w himalajskiej szkole, wszystkie posiłki i wycieczki w cenie.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

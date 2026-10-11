@@ -12,7 +12,7 @@ const EN = "/yoga-gallery-india/";
 export const metadata = {
   title: "Fotogalleri | Yoga-ashramet Adhiroha i Rishikesh, Indien",
   description:
-    "181 ärliga bilder från Adhirohas ashram i Upper Tapovan, Rishikesh, shalan, rummen, den sattviska maten, ceremonierna, utflykterna och examensdagen.",
+    "181 ärliga bilder från Adhirohas skola i Upper Tapovan, Rishikesh, shalan, rummen, den sattviska maten, ceremonierna, utflykterna och examensdagen.",
   alternates: {
     canonical: SV,
     languages: hreflangFor(EN),
@@ -20,13 +20,13 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "sv_SE", url: `${SITE}${SV}`,
     title: "Fotogalleri | Yoga-ashramet Adhiroha i Rishikesh, Indien",
-    description: "181 ärliga bilder från Adhirohas ashram i Upper Tapovan, Rishikesh, shalan, rummen, den sattviska maten, ceremonierna, utflykterna och examensdagen.",
+    description: "181 ärliga bilder från Adhirohas skola i Upper Tapovan, Rishikesh, shalan, rummen, den sattviska maten, ceremonierna, utflykterna och examensdagen.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Fotogalleri | Yoga-ashramet Adhiroha i Rishikesh, Indien",
-    description: "181 ärliga bilder från Adhirohas ashram i Upper Tapovan, Rishikesh, shalan, rummen, den sattviska maten, ceremonierna, utflykterna och examensdagen.",
+    description: "181 ärliga bilder från Adhirohas skola i Upper Tapovan, Rishikesh, shalan, rummen, den sattviska maten, ceremonierna, utflykterna och examensdagen.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

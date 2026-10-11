@@ -19,7 +19,7 @@ import { Icon, GoogleMark } from "./icons";
 export const metadata = {
   title: "Yoga Teacher Training in Rishikesh, India | Adhiroha Yoga School",
   description:
-    "Yoga Alliance registered 200, 300 and 500 hour teacher training in a three-acre Rishikesh ashram. Ministry of Ayush accredited. Ask for the next available dates.",
+    "Yoga Alliance registered 200, 300 and 500 hour teacher training at a three-acre Rishikesh school. Ministry of Ayush accredited. Ask for the next available dates.",
   alternates: { canonical: "/200-hour-yoga-teacher-training-rishikesh-apply/" },
 };
 
@@ -47,7 +47,7 @@ const COURSES = [
     img: "/gallery/yoga/yoga-041.webp",
     alt: "Students in a guided morning asana class in the Adhiroha yoga shala",
     for: "Your first teacher training. No teaching experience needed.",
-    points: ["24 days at the ashram", "Hatha, Ashtanga Vinyasa & Yin", "Teaching practicum from week two", "RYT 200 on completion"],
+    points: ["24 days at the school", "Hatha, Ashtanga Vinyasa & Yin", "Teaching practicum from week two", "RYT 200 on completion"],
   },
   {
     hours: "300",
@@ -72,15 +72,15 @@ const COURSES = [
 /* The ashram is the reason people choose this school over a studio in town, so
    it gets the photographs rather than a paragraph. */
 const CAROUSEL = [
-  { src: "/gallery/ashram/ashram-006.webp", alt: "The Adhiroha ashram from the air, set in forested hills above Rishikesh", cap: "Three acres above Upper Tapovan" },
+  { src: "/gallery/ashram/ashram-006.webp", alt: "The Adhiroha school from the air, set in forested hills above Rishikesh", cap: "Three acres above Upper Tapovan" },
   { src: "/gallery/yoga-shala/yoga-shala-005.webp", alt: "The open-sided yoga shala with mats laid out for a class", cap: "The shala, open on three sides" },
-  { src: "/gallery/ashram/ashram-016.webp", alt: "The swimming pool in the ashram gardens", cap: "The pool, for the hours in between" },
-  { src: "/gallery/accommodation/acco-002.webp", alt: "A clean twin room with mountain light at the ashram", cap: "Twin and triple rooms on site" },
-  { src: "/gallery/dinning/dinning-005.webp", alt: "Fresh vegetarian food served buffet style in the ashram dining hall", cap: "Three sattvic meals a day" },
-  { src: "/gallery/ashram/ashram-018.webp", alt: "A carved Buddha under a wooden pavilion in the ashram garden", cap: "Quiet corners, everywhere" },
+  { src: "/gallery/ashram/ashram-016.webp", alt: "The swimming pool in the school gardens", cap: "The pool, for the hours in between" },
+  { src: "/gallery/accommodation/acco-002.webp", alt: "A clean twin room with mountain light at the school", cap: "Twin and triple rooms on site" },
+  { src: "/gallery/dinning/dinning-005.webp", alt: "Fresh vegetarian food served buffet style in the school dining hall", cap: "Three sattvic meals a day" },
+  { src: "/gallery/ashram/ashram-018.webp", alt: "A carved Buddha under a wooden pavilion in the school garden", cap: "Quiet corners, everywhere" },
   { src: "/gallery/excursion/excursion-011.webp", alt: "Students practising yoga on the Ganga ghat with Rishikesh behind them", cap: "Practice on the Ganga ghat" },
   { src: "/gallery/sound-healing/sound-005.webp", alt: "A candlelit sound healing session", cap: "Sound healing and kirtan evenings" },
-  { src: "/gallery/ashram/ashram-003.webp", alt: "A stone path through the landscaped ashram gardens", cap: "Gardens you actually walk in" },
+  { src: "/gallery/ashram/ashram-003.webp", alt: "A stone path through the landscaped school gardens", cap: "Gardens you actually walk in" },
   { src: "/gallery/yoga-shala/yoga-shala-004.webp", alt: "The wooden floor of the yoga shala looking out onto forest", cap: "A sprung floor, forest on every side" },
 ];
 
@@ -88,8 +88,8 @@ const CAROUSEL = [
    worth asking any school in Rishikesh, and our answer to each. */
 const COMPARE = [
   ["Who teaches each subject", "A separate Yoga Acharya per subject, 10–20 years each", "Often one or two teachers covering everything"],
-  ["Where you practise", "Our own three-acre ashram and sprung-floor shala", "Frequently a rented hall or a hotel floor"],
-  ["Where you sleep", "On the ashram, a walk from the shala", "Sometimes a guesthouse across town"],
+  ["Where you practise", "Our own three-acre campus and sprung-floor shala", "Frequently a rented hall or a hotel floor"],
+  ["Where you sleep", "On campus, a walk from the shala", "Sometimes a guesthouse across town"],
   ["What is recognised", "Yoga Alliance RYS and Ministry of Ayush accreditation", "Yoga Alliance registration alone is common"],
   ["Food", "Three sattvic vegetarian meals a day, included", "Often a fixed allowance or eat-out"],
   ["Getting there", "Dehradun airport pickup included", "Usually arranged and paid for by you"],
@@ -105,12 +105,12 @@ const DAY = [
 
 const INCLUDED = [
   ["plane", "Airport pickup from Dehradun"],
-  ["bed", "Your room on the ashram, for the whole course"],
+  ["bed", "Your room at the school, for the whole course"],
   ["bowl", "Three vegetarian meals a day, herbal tea and RO water"],
   ["book", "All study materials and a welcome kit"],
   ["river", "A practice on the Ganga ghat and a sound healing session"],
   ["path", "Two guided excursions and a kirtan evening"],
-  ["wifi", "Unlimited high-speed WiFi across the ashram"],
+  ["wifi", "Unlimited high-speed WiFi across the campus"],
 ];
 
 const RATINGS = [["Google", "4.9", "383 reviews"], ["Yoga Alliance", "4.5", "20 reviews"], ["Tripadvisor", "4.3", "13 reviews"]];
@@ -120,7 +120,7 @@ const VIDEOS = [
   { id: "3a0OhN0uC0U", label: "What the first week felt like" },
   { id: "-tB_WnA0jAo", label: "On the teachers and the shala" },
   { id: "V2mporw4k8Q", label: "Arriving with no teaching experience" },
-  { id: "kfngfAxnIlg", label: "Life at the ashram, day to day" },
+  { id: "kfngfAxnIlg", label: "Life at the school, day to day" },
   { id: "TJsr8gATo9k", label: "What changed by day twenty-four" },
 ];
 
@@ -144,7 +144,7 @@ const MODAL = {
   sub: "Tell us where to write and we will send the fee, the dates still open and anything else you want to know — usually the same day.",
   points: [
     { icon: <Icon name="seal" />, text: "Yoga Alliance registered · Ministry of Ayush accredited" },
-    { icon: <Icon name="ashram" />, text: "Our own three-acre ashram, not a rented hall" },
+    { icon: <Icon name="ashram" />, text: "Our own three-acre campus, not a rented hall" },
     { icon: <Icon name="bowl" />, text: "Room, three meals a day and airport pickup included" },
     { icon: <Icon name="teacher" />, text: "A separate Acharya for every subject" },
   ],
@@ -169,7 +169,7 @@ export default function Page() {
             Authentic Yoga Teacher<br />Training in Rishikesh
           </h1>
           <p className="lp-lede">
-            200, 300 and 500 hour trainings in our own three-acre ashram above the river.
+            200, 300 and 500 hour trainings on our own three-acre campus above the river.
             Yoga Alliance registered, Ministry of Ayush accredited, and taught by Acharyas
             who have given their lives to this.
           </p>
@@ -218,7 +218,7 @@ export default function Page() {
       <section className="lp-band lp-courses">
         <div className="lp-in">
           <div className="lp-sechead">
-            <p className="lp-kick">Three trainings, one ashram</p>
+            <p className="lp-kick">Three trainings, one school</p>
             <h2>Choose where you are on the path</h2>
             <p className="lp-sub">
               Every course runs from the 1st to the 24th, in the same shala, with the same
@@ -254,7 +254,7 @@ export default function Page() {
         <div className="lp-in">
           <div className="lp-sechead">
             <p className="lp-kick">Why people choose us</p>
-            <h2>The ashram is the course</h2>
+            <h2>The school itself is the course</h2>
             <p className="lp-sub">
               Most schools in Rishikesh rent a hall and send you across town to sleep. We
               built our own place, on three acres of forested hillside, and you live inside it
@@ -306,7 +306,7 @@ export default function Page() {
         <div className="lp-in lp-day-grid">
           <figure className="lp-day-photo">
             <img src="/gallery/yoga/yoga-023.webp"
-                 alt="A student meditating in the ashram garden with the hills behind"
+                 alt="A student meditating in the school garden with the hills behind"
                  loading="lazy" width="900" height="1100" />
           </figure>
           <div>
@@ -357,8 +357,8 @@ export default function Page() {
             </ul>
           </div>
           <div className="lp-incl-pics">
-            <figure><img src="/gallery/dinning/dinning-002.webp" alt="Fresh vegetarian food being served in the ashram dining hall" loading="lazy" width="800" height="600" /></figure>
-            <figure><img src="/gallery/accommodation/acco-005.webp" alt="A twin room at the ashram with warm evening light" loading="lazy" width="800" height="600" /></figure>
+            <figure><img src="/gallery/dinning/dinning-002.webp" alt="Fresh vegetarian food being served in the school dining hall" loading="lazy" width="800" height="600" /></figure>
+            <figure><img src="/gallery/accommodation/acco-005.webp" alt="A twin room at the school with warm evening light" loading="lazy" width="800" height="600" /></figure>
             <figure><img src="/gallery/excursion/excursion-026.webp" alt="Students practising together on the sand beside the Ganga" loading="lazy" width="800" height="600" /></figure>
             <figure><img src="/gallery/sound-healing/sound-003.webp" alt="A sound healing session with singing bowls" loading="lazy" width="800" height="600" /></figure>
           </div>
@@ -414,7 +414,7 @@ export default function Page() {
             <ol className="lp-steps">
               <li><b>Batches run monthly</b><span>The 1st to the 24th. You arrive on the 30th or 31st of the month before.</span></li>
               <li><b>Tell us your course and month</b><span>We reply with the dates still open and the current fee — the popular months fill several batches ahead.</span></li>
-              <li><b>A registration fee holds the seat</b><span>It comes off the total. The balance is paid on arrival at the ashram.</span></li>
+              <li><b>A registration fee holds the seat</b><span>It comes off the total. The balance is paid on arrival at the school.</span></li>
             </ol>
             <LpEnquiryModal {...MODAL} />
             <p className="lp-cta-note">

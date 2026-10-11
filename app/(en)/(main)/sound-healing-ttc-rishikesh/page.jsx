@@ -9,7 +9,7 @@ import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, courseFa
 export const metadata = withOpenGraph({
   title: "Sound Healing Teacher Training in Rishikesh | Adhiroha",
   description:
-    "Certified sound healing and therapy teacher training in Rishikesh. Learn singing bowls, gongs and mantra over 6 days at our Yoga Alliance registered ashram.",
+    "Certified sound healing and therapy teacher training in Rishikesh. Learn singing bowls, gongs and mantra over 6 days at our Yoga Alliance registered school.",
   alternates: { canonical: "/sound-healing-ttc-rishikesh/", languages: hreflangFor("/sound-healing-ttc-rishikesh/") }
 });
 

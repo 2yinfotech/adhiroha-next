@@ -12,7 +12,7 @@ const EN = "/about-us/";
 export const metadata = {
   title: "アディローハについて | インド・リシケシのヨガスクール",
   description:
-    "アディローハをご紹介します。リシケシ、アッパー・タポヴァンにあるヨガアライアンス認定のヨガアシュラム。2万平方フィートの敷地と、70か国以上から3,000人を超える卒業生。",
+    "アディローハをご紹介します。リシケシ、アッパー・タポヴァンにあるヨガアライアンス認定のヨガスクール。2万平方フィートの敷地と、70か国以上から3,000人を超える卒業生。",
   alternates: {
     canonical: JA,
     languages: hreflangFor(EN),
@@ -20,13 +20,13 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "ja_JP", url: `${SITE}${JA}`,
     title: "アディローハについて | インド・リシケシのヨガスクール",
-    description: "アディローハをご紹介します。リシケシ、アッパー・タポヴァンにあるヨガアライアンス認定のヨガアシュラム。2万平方フィートの敷地と、70か国以上から3,000人を超える卒業生。",
+    description: "アディローハをご紹介します。リシケシ、アッパー・タポヴァンにあるヨガアライアンス認定のヨガスクール。2万平方フィートの敷地と、70か国以上から3,000人を超える卒業生。",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "アディローハについて | インド・リシケシのヨガスクール",
-    description: "アディローハをご紹介します。リシケシ、アッパー・タポヴァンにあるヨガアライアンス認定のヨガアシュラム。2万平方フィートの敷地と、70か国以上から3,000人を超える卒業生。",
+    description: "アディローハをご紹介します。リシケシ、アッパー・タポヴァンにあるヨガアライアンス認定のヨガスクール。2万平方フィートの敷地と、70か国以上から3,000人を超える卒業生。",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

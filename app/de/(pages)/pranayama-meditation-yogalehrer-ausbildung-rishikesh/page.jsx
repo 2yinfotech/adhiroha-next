@@ -24,20 +24,20 @@ const sections = [
 
 export const metadata = {
   title: "Pranayama & Meditation Yogalehrer-Ausbildung in Rishikesh | Adhiroha",
-  description: "12-tägige Pranayama- & Meditations-Yogalehrer-Ausbildung in Rishikesh, akkreditiert vom Ministry of Ayush. Kleine Gruppen, Ashram-Unterkunft, alle Mahlzeiten inklusive.",
+  description: "12-tägige Pranayama- & Meditations-Yogalehrer-Ausbildung in Rishikesh, akkreditiert vom Ministry of Ayush. Kleine Gruppen, Unterkunft an der Schule, alle Mahlzeiten inklusive.",
   alternates: {
     canonical: DE,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "de_DE", url: `${SITE}${DE}`,
-    title: "Pranayama & Meditation Yogalehrer-Ausbildung in Rishikesh | Adhiroha", description: "12-tägige Pranayama- & Meditations-Yogalehrer-Ausbildung in Rishikesh, akkreditiert vom Ministry of Ayush. Kleine Gruppen, Ashram-Unterkunft, alle Mahlzeiten inklusive.",
+    title: "Pranayama & Meditation Yogalehrer-Ausbildung in Rishikesh | Adhiroha", description: "12-tägige Pranayama- & Meditations-Yogalehrer-Ausbildung in Rishikesh, akkreditiert vom Ministry of Ayush. Kleine Gruppen, Unterkunft an der Schule, alle Mahlzeiten inklusive.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Pranayama & Meditation Yogalehrer-Ausbildung in Rishikesh | Adhiroha",
-    description: "12-tägige Pranayama- & Meditations-Yogalehrer-Ausbildung in Rishikesh, akkreditiert vom Ministry of Ayush. Kleine Gruppen, Ashram-Unterkunft, alle Mahlzeiten inklusive.",
+    description: "12-tägige Pranayama- & Meditations-Yogalehrer-Ausbildung in Rishikesh, akkreditiert vom Ministry of Ayush. Kleine Gruppen, Unterkunft an der Schule, alle Mahlzeiten inklusive.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

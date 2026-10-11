@@ -9,7 +9,7 @@ import { graph, breadcrumbSchema, extractFaqs, faqSchema, hreflangFor } from "@/
 export const metadata = withOpenGraph({
   title: "Code of Conduct & Policies | Adhiroha, Rishikesh",
   description:
-    "Read the code of conduct, ashram rules, refund and cancellation policies for yoga teacher training courses at Adhiroha in Rishikesh, India.",
+    "Read the code of conduct, school rules, refund and cancellation policies for yoga teacher training courses at Adhiroha in Rishikesh, India.",
   alternates: { canonical: "/yoga-ashram-in-india-code-of-conduct/", languages: hreflangFor("/yoga-ashram-in-india-code-of-conduct/") }
 });
 

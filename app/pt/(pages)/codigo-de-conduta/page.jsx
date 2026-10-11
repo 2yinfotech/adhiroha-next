@@ -10,23 +10,23 @@ const PT = "/pt/codigo-de-conduta/";
 const EN = "/yoga-ashram-in-india-code-of-conduct/";
 
 export const metadata = {
-  title: "Código de Conduta e Políticas | Ashram de Yoga Adhiroha, Rishikesh",
+  title: "Código de Conduta e Políticas | Escola de Yoga Adhiroha, Rishikesh",
   description:
-    "As regras do ashram Adhiroha em Rishikesh, os quatro pilares, o código de conduta, as políticas de tolerância zero e tudo sobre valores, pagamentos e remarcação.",
+    "As regras da escola Adhiroha em Rishikesh, os quatro pilares, o código de conduta, as políticas de tolerância zero e tudo sobre valores, pagamentos e remarcação.",
   alternates: {
     canonical: PT,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pt_BR", url: `${SITE}${PT}`,
-    title: "Código de Conduta e Políticas | Ashram de Yoga Adhiroha, Rishikesh",
-    description: "As regras do ashram Adhiroha em Rishikesh, os quatro pilares, o código de conduta, as políticas de tolerância zero e tudo sobre valores, pagamentos e remarcação.",
+    title: "Código de Conduta e Políticas | Escola de Yoga Adhiroha, Rishikesh",
+    description: "As regras da escola Adhiroha em Rishikesh, os quatro pilares, o código de conduta, as políticas de tolerância zero e tudo sobre valores, pagamentos e remarcação.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Código de Conduta e Políticas | Ashram de Yoga Adhiroha, Rishikesh",
-    description: "As regras do ashram Adhiroha em Rishikesh, os quatro pilares, o código de conduta, as políticas de tolerância zero e tudo sobre valores, pagamentos e remarcação.",
+    title: "Código de Conduta e Políticas | Escola de Yoga Adhiroha, Rishikesh",
+    description: "As regras da escola Adhiroha em Rishikesh, os quatro pilares, o código de conduta, as políticas de tolerância zero e tudo sobre valores, pagamentos e remarcação.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

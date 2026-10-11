@@ -9,7 +9,7 @@ import { graph, breadcrumbSchema, extractFaqs, faqSchema, hreflangFor } from "@/
 export const metadata = withOpenGraph({
   title: "Contact Adhiroha Yoga School | Rishikesh, India",
   description:
-    "Get in touch with Adhiroha Yoga School in Upper Tapovan, Rishikesh. Call, WhatsApp or email us about course dates, fees and travel to the ashram.",
+    "Get in touch with Adhiroha Yoga School in Upper Tapovan, Rishikesh. Call, WhatsApp or email us about course dates, fees and travel to the school.",
   alternates: { canonical: "/contact-us/", languages: hreflangFor("/contact-us/") }
 });
 

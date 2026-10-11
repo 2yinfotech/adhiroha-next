@@ -26,7 +26,7 @@ const sections = [
 export const metadata = {
   title: "300-Stunden Yogalehrer-Ausbildung in Rishikesh | Adhiroha",
   description:
-    "Vertiefe deine Praxis mit unserer 300-Stunden Yogalehrer-Ausbildung in Rishikesh. 30 Tage fortgeschrittene Asana, Pranayama und Philosophie im Yoga-Alliance-Ashram.",
+    "Vertiefe deine Praxis mit unserer 300-Stunden Yogalehrer-Ausbildung in Rishikesh. 30 Tage fortgeschrittene Asana, Pranayama und Philosophie an einer bei der Yoga Alliance registrierten Schule.",
   alternates: {
     canonical: DE,
     languages: hreflangFor(EN),
@@ -38,13 +38,13 @@ export const metadata = {
     url: `${SITE}${DE}`,
     title: "300-Stunden Yogalehrer-Ausbildung in Rishikesh | Adhiroha",
     description:
-      "Vertiefe deine Praxis mit unserer 300-Stunden Yogalehrer-Ausbildung in Rishikesh. 30 Tage fortgeschrittene Asana, Pranayama und Philosophie im Yoga-Alliance-Ashram.",
+      "Vertiefe deine Praxis mit unserer 300-Stunden Yogalehrer-Ausbildung in Rishikesh. 30 Tage fortgeschrittene Asana, Pranayama und Philosophie an einer bei der Yoga Alliance registrierten Schule.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "300-Stunden Yogalehrer-Ausbildung in Rishikesh | Adhiroha",
-    description: "Vertiefe deine Praxis mit unserer 300-Stunden Yogalehrer-Ausbildung in Rishikesh. 30 Tage fortgeschrittene Asana, Pranayama und Philosophie im Yoga-Alliance-Ashram.",
+    description: "Vertiefe deine Praxis mit unserer 300-Stunden Yogalehrer-Ausbildung in Rishikesh. 30 Tage fortgeschrittene Asana, Pranayama und Philosophie an einer bei der Yoga Alliance registrierten Schule.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

@@ -57,7 +57,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata = {
-  title: "Yoga Training in Rishikesh | Adhiroha Yoga Ashram",
+  title: "Yoga Training in Rishikesh | Adhiroha Yoga School",
   description:
     "Join Adhiroha for the best yoga teacher training in Rishikesh. Our internationally certified yoga courses in Rishikesh offer transformative experiences.",
   // No canonical and no hreflang on purpose: the layout marks this page

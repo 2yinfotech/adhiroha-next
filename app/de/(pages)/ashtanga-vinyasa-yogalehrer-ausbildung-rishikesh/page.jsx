@@ -24,20 +24,20 @@ const sections = [
 
 export const metadata = {
   title: "Ashtanga & Vinyasa Yogalehrer-Ausbildung in Rishikesh | Adhiroha",
-  description: "12-tägige Ashtanga- & Vinyasa-Yogalehrer-Ausbildung in Rishikesh, akkreditiert vom Ministry of Ayush. Kleine Gruppen, Ashram-Unterkunft, alle Mahlzeiten inklusive.",
+  description: "12-tägige Ashtanga- & Vinyasa-Yogalehrer-Ausbildung in Rishikesh, akkreditiert vom Ministry of Ayush. Kleine Gruppen, Unterkunft an der Schule, alle Mahlzeiten inklusive.",
   alternates: {
     canonical: DE,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "de_DE", url: `${SITE}${DE}`,
-    title: "Ashtanga & Vinyasa Yogalehrer-Ausbildung in Rishikesh | Adhiroha", description: "12-tägige Ashtanga- & Vinyasa-Yogalehrer-Ausbildung in Rishikesh, akkreditiert vom Ministry of Ayush. Kleine Gruppen, Ashram-Unterkunft, alle Mahlzeiten inklusive.",
+    title: "Ashtanga & Vinyasa Yogalehrer-Ausbildung in Rishikesh | Adhiroha", description: "12-tägige Ashtanga- & Vinyasa-Yogalehrer-Ausbildung in Rishikesh, akkreditiert vom Ministry of Ayush. Kleine Gruppen, Unterkunft an der Schule, alle Mahlzeiten inklusive.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Ashtanga & Vinyasa Yogalehrer-Ausbildung in Rishikesh | Adhiroha",
-    description: "12-tägige Ashtanga- & Vinyasa-Yogalehrer-Ausbildung in Rishikesh, akkreditiert vom Ministry of Ayush. Kleine Gruppen, Ashram-Unterkunft, alle Mahlzeiten inklusive.",
+    description: "12-tägige Ashtanga- & Vinyasa-Yogalehrer-Ausbildung in Rishikesh, akkreditiert vom Ministry of Ayush. Kleine Gruppen, Unterkunft an der Schule, alle Mahlzeiten inklusive.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

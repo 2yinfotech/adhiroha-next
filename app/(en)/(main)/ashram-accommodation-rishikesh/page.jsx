@@ -17,7 +17,7 @@ export const metadata = withOpenGraph({
 });
 
 const pageSchema = graph(
-  breadcrumbSchema([{ name: "Ashram Accommodation", url: "/ashram-accommodation-rishikesh/" }])
+  breadcrumbSchema([{ name: "Accommodation", url: "/ashram-accommodation-rishikesh/" }])
 );
 
 export default function Page() {

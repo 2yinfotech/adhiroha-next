@@ -11,20 +11,20 @@ const EN = "/sadhana-immersion-programme/";
 
 export const metadata = {
   title: "Sadhana Immersion Programm in Rishikesh | 15 Tage",
-  description: "15-tägiges Sadhana Immersion Programm in Rishikesh, Eigenpraxis, Meditation, Stille und bewusstes yogisches Leben im Ashram.",
+  description: "15-tägiges Sadhana Immersion Programm in Rishikesh, Eigenpraxis, Meditation, Stille und bewusstes yogisches Leben an der Schule.",
   alternates: {
     canonical: DE,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "de_DE", url: `${SITE}${DE}`,
-    title: "Sadhana Immersion Programm in Rishikesh | 15 Tage", description: "15-tägiges Sadhana Immersion Programm in Rishikesh, Eigenpraxis, Meditation, Stille und bewusstes yogisches Leben im Ashram.",
+    title: "Sadhana Immersion Programm in Rishikesh | 15 Tage", description: "15-tägiges Sadhana Immersion Programm in Rishikesh, Eigenpraxis, Meditation, Stille und bewusstes yogisches Leben an der Schule.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Sadhana Immersion Programm in Rishikesh | 15 Tage",
-    description: "15-tägiges Sadhana Immersion Programm in Rishikesh, Eigenpraxis, Meditation, Stille und bewusstes yogisches Leben im Ashram.",
+    description: "15-tägiges Sadhana Immersion Programm in Rishikesh, Eigenpraxis, Meditation, Stille und bewusstes yogisches Leben an der Schule.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

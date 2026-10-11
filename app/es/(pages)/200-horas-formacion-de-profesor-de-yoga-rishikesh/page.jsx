@@ -26,7 +26,7 @@ const sections = [
 export const metadata = {
   title: "Formación de Profesor de Yoga de 200 Horas en Rishikesh | Adhiroha",
   description:
-    "Formación de profesor de yoga de 200 horas en Rishikesh, certificada por Yoga Alliance. 24 días, grupos reducidos, ashram en el Himalaya, todas las comidas y excursiones incluidas.",
+    "Formación de profesor de yoga de 200 horas en Rishikesh, certificada por Yoga Alliance. 24 días, grupos reducidos, escuela en el Himalaya, todas las comidas y excursiones incluidas.",
   alternates: {
     canonical: ES,
     languages: hreflangFor(EN),
@@ -38,13 +38,13 @@ export const metadata = {
     url: `${SITE}${ES}`,
     title: "Formación de Profesor de Yoga de 200 Horas en Rishikesh | Adhiroha",
     description:
-      "Formación de profesor de yoga de 200 horas en Rishikesh, certificada por Yoga Alliance. 24 días, grupos reducidos, ashram en el Himalaya, todas las comidas y excursiones incluidas.",
+      "Formación de profesor de yoga de 200 horas en Rishikesh, certificada por Yoga Alliance. 24 días, grupos reducidos, escuela en el Himalaya, todas las comidas y excursiones incluidas.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Formación de Profesor de Yoga de 200 Horas en Rishikesh | Adhiroha",
-    description: "Formación de profesor de yoga de 200 horas en Rishikesh, certificada por Yoga Alliance. 24 días, grupos reducidos, ashram en el Himalaya, todas las comidas y excursiones incluidas.",
+    description: "Formación de profesor de yoga de 200 horas en Rishikesh, certificada por Yoga Alliance. 24 días, grupos reducidos, escuela en el Himalaya, todas las comidas y excursiones incluidas.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

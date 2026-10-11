@@ -12,12 +12,12 @@ import { graph, breadcrumbSchema } from "@/lib/seo";
 export const metadata = withOpenGraph({
   title: "Sattvic Food at Our Rishikesh Ashram | Adhiroha Yoga School",
   description:
-    "Three sattvic vegetarian meals a day at our Rishikesh ashram, cooked fresh for practice. What is served, how the kitchen works and how dietary needs are handled.",
+    "Three sattvic vegetarian meals a day at our Rishikesh school, cooked fresh for practice. What is served, how the kitchen works and how dietary needs are handled.",
   alternates: { canonical: "/ashram-food-rishikesh/" }
 });
 
 const pageSchema = graph(
-  breadcrumbSchema([{ name: "Ashram Food", url: "/ashram-food-rishikesh/" }])
+  breadcrumbSchema([{ name: "Food", url: "/ashram-food-rishikesh/" }])
 );
 
 export default function Page() {

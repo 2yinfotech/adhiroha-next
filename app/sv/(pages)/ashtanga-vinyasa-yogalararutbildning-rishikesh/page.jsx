@@ -26,7 +26,7 @@ const sections = [
 export const metadata = {
   title: "Ashtanga- och Vinyasa-yogalärarutbildning i Rishikesh | 12 Dagar | Adhiroha",
   description:
-    "Tolv dagars ashtanga- och vinyasa-yogalärarutbildning i Rishikesh, ackrediterad av Ayushministeriet. Små grupper, boende i himalayiskt ashram, alla måltider och utflykter ingår.",
+    "Tolv dagars ashtanga- och vinyasa-yogalärarutbildning i Rishikesh, ackrediterad av Ayushministeriet. Små grupper, boende på en skola i Himalaya, alla måltider och utflykter ingår.",
   alternates: {
     canonical: SV,
     languages: hreflangFor(EN),
@@ -38,13 +38,13 @@ export const metadata = {
     url: `${SITE}${SV}`,
     title: "Ashtanga- och Vinyasa-yogalärarutbildning i Rishikesh | 12 Dagar | Adhiroha",
     description:
-      "Tolv dagars ashtanga- och vinyasa-yogalärarutbildning i Rishikesh, ackrediterad av Ayushministeriet. Små grupper, boende i himalayiskt ashram, alla måltider och utflykter ingår.",
+      "Tolv dagars ashtanga- och vinyasa-yogalärarutbildning i Rishikesh, ackrediterad av Ayushministeriet. Små grupper, boende på en skola i Himalaya, alla måltider och utflykter ingår.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Ashtanga- och Vinyasa-yogalärarutbildning i Rishikesh | 12 Dagar | Adhiroha",
-    description: "Tolv dagars ashtanga- och vinyasa-yogalärarutbildning i Rishikesh, ackrediterad av Ayushministeriet. Små grupper, boende i himalayiskt ashram, alla måltider och utflykter ingår.",
+    description: "Tolv dagars ashtanga- och vinyasa-yogalärarutbildning i Rishikesh, ackrediterad av Ayushministeriet. Små grupper, boende på en skola i Himalaya, alla måltider och utflykter ingår.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

@@ -22,7 +22,7 @@ const sections = [
 export const metadata = withOpenGraph({
   title: "Pranayama & Meditation TTC in Rishikesh | Adhiroha",
   description:
-    "A 14-day pranayama and meditation teacher training in Rishikesh. Breathwork, kriya and meditation taught traditionally beside the Ganga at our ashram.",
+    "A 14-day pranayama and meditation teacher training in Rishikesh. Breathwork, kriya and meditation taught traditionally beside the Ganga at our school.",
   alternates: { canonical: "/pranayama-teacher-training-course-rishikesh/", languages: hreflangFor("/pranayama-teacher-training-course-rishikesh/") }
 });
 

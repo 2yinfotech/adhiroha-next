@@ -38,7 +38,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata = {
-  title: "Thank You | Adhiroha Yoga Ashram",
+  title: "Thank You | Adhiroha Yoga School",
   description: "Your enquiry has reached us. Our course counsellor will be in touch shortly.",
 };
 

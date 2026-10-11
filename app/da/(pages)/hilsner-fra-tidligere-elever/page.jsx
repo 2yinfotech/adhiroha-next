@@ -12,7 +12,7 @@ const EN = "/soon-after-message/";
 export const metadata = {
   title: "En hilsen fra vores tidligere elever | Adhiroha, Rishikesh",
   description:
-    "Tidligere elever fra Adhiroha fortæller om deres yogalæreruddannelse i Rishikesh, ashrammet, de fem elementer, underviserne og forvandlingen.",
+    "Tidligere elever fra Adhiroha fortæller om deres yogalæreruddannelse i Rishikesh, skolen, de fem elementer, underviserne og forvandlingen.",
   alternates: {
     canonical: DA,
     languages: hreflangFor(EN),
@@ -20,13 +20,13 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "da_DK", url: `${SITE}${DA}`,
     title: "En hilsen fra vores tidligere elever | Adhiroha, Rishikesh",
-    description: "Tidligere elever fra Adhiroha fortæller om deres yogalæreruddannelse i Rishikesh, ashrammet, de fem elementer, underviserne og forvandlingen.",
+    description: "Tidligere elever fra Adhiroha fortæller om deres yogalæreruddannelse i Rishikesh, skolen, de fem elementer, underviserne og forvandlingen.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "En hilsen fra vores tidligere elever | Adhiroha, Rishikesh",
-    description: "Tidligere elever fra Adhiroha fortæller om deres yogalæreruddannelse i Rishikesh, ashrammet, de fem elementer, underviserne og forvandlingen.",
+    description: "Tidligere elever fra Adhiroha fortæller om deres yogalæreruddannelse i Rishikesh, skolen, de fem elementer, underviserne og forvandlingen.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

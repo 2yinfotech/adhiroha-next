@@ -26,7 +26,7 @@ const sections = [
 export const metadata = {
   title: "200-timers yogalæreruddannelse i Rishikesh | Adhiroha",
   description:
-    "200-timers yogalæreruddannelse i Rishikesh, certificeret af Yoga Alliance. 24 dage, små hold, ophold i himalayansk ashram, alle måltider og udflugter inkluderet.",
+    "200-timers yogalæreruddannelse i Rishikesh, certificeret af Yoga Alliance. 24 dage, små hold, ophold på en yogaskole i Himalaya, alle måltider og udflugter inkluderet.",
   alternates: {
     canonical: DA,
     languages: hreflangFor(EN),
@@ -38,13 +38,13 @@ export const metadata = {
     url: `${SITE}${DA}`,
     title: "200-timers yogalæreruddannelse i Rishikesh | Adhiroha",
     description:
-      "200-timers yogalæreruddannelse i Rishikesh, certificeret af Yoga Alliance. 24 dage, små hold, ophold i himalayansk ashram, alle måltider og udflugter inkluderet.",
+      "200-timers yogalæreruddannelse i Rishikesh, certificeret af Yoga Alliance. 24 dage, små hold, ophold på en yogaskole i Himalaya, alle måltider og udflugter inkluderet.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "200-timers yogalæreruddannelse i Rishikesh | Adhiroha",
-    description: "200-timers yogalæreruddannelse i Rishikesh, certificeret af Yoga Alliance. 24 dage, små hold, ophold i himalayansk ashram, alle måltider og udflugter inkluderet.",
+    description: "200-timers yogalæreruddannelse i Rishikesh, certificeret af Yoga Alliance. 24 dage, små hold, ophold på en yogaskole i Himalaya, alle måltider og udflugter inkluderet.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

@@ -26,7 +26,7 @@ const sections = [
 export const metadata = {
   title: "Formação de Professor de Yoga de 500 Horas em Rishikesh | Adhiroha",
   description:
-    "Formação de professor de yoga de 500 horas em Rishikesh, certificada pela Yoga Alliance. 60 dias, da base ao avançado, hospedagem em ashram himalaio, todas as refeições e passeios inclusos.",
+    "Formação de professor de yoga de 500 horas em Rishikesh, certificada pela Yoga Alliance. 60 dias, da base ao avançado, hospedagem em escola no Himalaia, todas as refeições e passeios inclusos.",
   alternates: {
     canonical: PT,
     languages: hreflangFor(EN),
@@ -38,13 +38,13 @@ export const metadata = {
     url: `${SITE}${PT}`,
     title: "Formação de Professor de Yoga de 500 Horas em Rishikesh | Adhiroha",
     description:
-      "Formação de professor de yoga de 500 horas em Rishikesh, certificada pela Yoga Alliance. 60 dias, da base ao avançado, hospedagem em ashram himalaio, todas as refeições e passeios inclusos.",
+      "Formação de professor de yoga de 500 horas em Rishikesh, certificada pela Yoga Alliance. 60 dias, da base ao avançado, hospedagem em escola no Himalaia, todas as refeições e passeios inclusos.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Formação de Professor de Yoga de 500 Horas em Rishikesh | Adhiroha",
-    description: "Formação de professor de yoga de 500 horas em Rishikesh, certificada pela Yoga Alliance. 60 dias, da base ao avançado, hospedagem em ashram himalaio, todas as refeições e passeios inclusos.",
+    description: "Formação de professor de yoga de 500 horas em Rishikesh, certificada pela Yoga Alliance. 60 dias, da base ao avançado, hospedagem em escola no Himalaia, todas as refeições e passeios inclusos.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

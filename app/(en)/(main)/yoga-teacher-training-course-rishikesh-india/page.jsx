@@ -43,7 +43,7 @@ const URL = "/yoga-teacher-training-course-rishikesh-india/";
 export const metadata = {
   title: "Yoga Teacher Training in India | 200, 300 & 500 Hour YTTC in Rishikesh | Adhiroha",
   description:
-    "Yoga teacher training in India at Adhiroha, Rishikesh. Yoga Alliance registered 200, 300 and 500 hour residential courses from €1275, all-inclusive. Compare fees, syllabus and dates, and see the ashram you would be living in.",
+    "Yoga teacher training in India at Adhiroha, Rishikesh. Yoga Alliance registered 200, 300 and 500 hour residential courses from €1275, all-inclusive. Compare fees, syllabus and dates, and see the school you would be living in.",
   keywords: [
     "yoga teacher training in india",
     "yoga teacher training in rishikesh",
@@ -111,7 +111,7 @@ const sections = [
   { label: "500 Hour", target: "c500" },
   { label: "Dates", target: "dates" },
   { label: "A day", target: "a-day" },
-  { label: "The ashram", target: "ashram" },
+  { label: "The school", target: "ashram" },
   { label: "Teachers", target: "teachers" },
   { label: "Reviews", target: "videos" },
   { label: "FAQ", target: "faq" },
@@ -156,7 +156,7 @@ function CourseSection({ lv, index }) {
             <h2 className="tp-h2 wide">{L.title} in Rishikesh</h2>
             <p className="tp-p">{L.blurb}</p>
             <p className="tp-p">
-              Everything you need for the {L.days} is already inside the fee: your room on ashram, three
+              Everything you need for the {L.days} is already inside the fee: your room at the school, three
               meals a day, all training and materials, both excursions, airport pickup from Dehradun and
               your certificate.
             </p>
@@ -279,12 +279,12 @@ export default function Page() {
               <span className="kicker">Root · Heart · Crown</span>
               <h1>Yoga Teacher Training in India</h1>
               <p className="c-sub c-sub-lg">
-                Three Yoga Alliance registered trainings at our ashram in Upper Tapovan, Rishikesh, on
+                Three Yoga Alliance registered trainings at our school in Upper Tapovan, Rishikesh, on
                 one continuous path. Two hundred hours to begin teaching, three hundred more to teach
                 with authority, or all five hundred in a single stretch above the Ganga Ji.
               </p>
               <p className="c-sub c-sub-sm">
-                Three Yoga Alliance registered trainings at our ashram in Rishikesh, on one path.
+                Three Yoga Alliance registered trainings at our school in Rishikesh, on one path.
               </p>
               <div className="c-meta">
                 <span><Lotus /> Yoga Alliance RYS 200 · 300 · 500</span>
@@ -443,7 +443,7 @@ export default function Page() {
               how you live while you are here.
             </p>
             <div className="tp-spine-tags reveal">
-              <span>Same ashram</span><span>Same faculty</span><span>Same three meals</span>
+              <span>Same school</span><span>Same faculty</span><span>Same three meals</span>
               <span>Same daily rhythm</span><span>Same excursions</span><span>Same certificate body</span>
             </div>
           </div>
@@ -496,7 +496,7 @@ export default function Page() {
               <span className="tp-eyebrow">Where it happens</span>
               <h2 className="tp-h2 wide">Three acres in Upper Tapovan, a kilometre above the town</h2>
               <p className="tp-p">
-                A practice takes on the shape of the space it happens in. The ashram spreads across three
+                A practice takes on the shape of the space it happens in. Our school spreads across three
                 quiet acres beside a flowing brook, ringed by hills and forest, and every corner of it
                 exists for a reason.
               </p>
@@ -543,7 +543,7 @@ export default function Page() {
                   <ul className="tp-ticks">
                     <li><Tick /> Ensuite washrooms with dependable hot water, around the clock</li>
                     <li><Tick /> Simple, peaceful interiors that make it easy to rest and sit quietly</li>
-                    <li><Tick /> High-speed WiFi and safe RO drinking water throughout the ashram</li>
+                    <li><Tick /> High-speed WiFi and safe RO drinking water throughout the school grounds</li>
                     <li><Tick /> Twin or triple sharing for the whole course, so you are never quite alone</li>
                   </ul>
                 </div>
@@ -758,7 +758,7 @@ export default function Page() {
         <section className="tp-sec tight" id="gallery">
           <div className="tp-wrap">
             <div className="tp-head reveal">
-              <span className="tp-eyebrow">The ashram, month by month</span>
+              <span className="tp-eyebrow">The school, month by month</span>
               <h2 className="tp-h2 wide">What it actually looks like</h2>
               <p className="tp-p">
                 A few frames from recent batches. There are hundreds more in the{" "}
@@ -889,7 +889,7 @@ export default function Page() {
               </li>
               <li className="rl-card">
                 <a className="rl-link" href="/about-us/">Why Adhiroha Is the Best Yoga School in Rishikesh</a>
-                <p className="rl-note">The founder&rsquo;s letter, the accreditations, and what the ashram is actually like.</p>
+                <p className="rl-note">The founder&rsquo;s letter, the accreditations, and what the school is actually like.</p>
               </li>
             </ul>
           </div>

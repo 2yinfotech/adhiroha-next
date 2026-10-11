@@ -11,20 +11,20 @@ const EN = "/yoga-gallery-india/";
 
 export const metadata = {
   title: "Yoga-Galerie | Der Adhiroha Ashram, Rishikesh",
-  description: "181 ehrliche Fotos aus dem Adhiroha Ashram in Upper Tapovan, Rishikesh, die Shala, die Zimmer, das Essen, die Zeremonien und die Menschen.",
+  description: "181 ehrliche Fotos aus der Adhiroha-Schule in Upper Tapovan, Rishikesh, die Shala, die Zimmer, das Essen, die Zeremonien und die Menschen.",
   alternates: {
     canonical: DE,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "de_DE", url: `${SITE}${DE}`,
-    title: "Yoga-Galerie | Der Adhiroha Ashram, Rishikesh", description: "181 ehrliche Fotos aus dem Adhiroha Ashram in Upper Tapovan, Rishikesh, die Shala, die Zimmer, das Essen, die Zeremonien und die Menschen.",
+    title: "Yoga-Galerie | Der Adhiroha Ashram, Rishikesh", description: "181 ehrliche Fotos aus der Adhiroha-Schule in Upper Tapovan, Rishikesh, die Shala, die Zimmer, das Essen, die Zeremonien und die Menschen.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Yoga-Galerie | Der Adhiroha Ashram, Rishikesh",
-    description: "181 ehrliche Fotos aus dem Adhiroha Ashram in Upper Tapovan, Rishikesh, die Shala, die Zimmer, das Essen, die Zeremonien und die Menschen.",
+    description: "181 ehrliche Fotos aus der Adhiroha-Schule in Upper Tapovan, Rishikesh, die Shala, die Zimmer, das Essen, die Zeremonien und die Menschen.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

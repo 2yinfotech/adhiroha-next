@@ -22,7 +22,7 @@ const sections = [
 export const metadata = withOpenGraph({
   title: "300 Hour Yoga Teacher Training in Rishikesh, India | RYT 300 | Adhiroha",
   description:
-    "Advance your practice with our 300 hour yoga teacher training in Rishikesh. 30 days of deeper asana, pranayama and philosophy at a Yoga Alliance RYS ashram.",
+    "Advance your practice with our 300 hour yoga teacher training in Rishikesh. 30 days of deeper asana, pranayama and philosophy at a Yoga Alliance RYS school.",
   alternates: { canonical: "/300-hour-yoga-teacher-training-course-rishikesh/", languages: hreflangFor("/300-hour-yoga-teacher-training-course-rishikesh/") }
 }, { type: "article" });
 

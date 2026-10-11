@@ -26,7 +26,7 @@ const sections = [
 export const metadata = {
   title: "Pranayama- en Meditatie-docentenopleiding in Rishikesh | 12 Dagen | Adhiroha",
   description:
-    "Twaalfdaagse pranayama- en meditatie-docentenopleiding in Rishikesh, geaccrediteerd door het Ministerie van Ayush. Kleine groepen, verblijf in een Himalaya-ashram, alle maaltijden en uitstapjes inbegrepen.",
+    "Twaalfdaagse pranayama- en meditatie-docentenopleiding in Rishikesh, geaccrediteerd door het Ministerie van Ayush. Kleine groepen, verblijf op een yogaschool in de Himalaya, alle maaltijden en uitstapjes inbegrepen.",
   alternates: {
     canonical: NL,
     languages: hreflangFor(EN),
@@ -38,13 +38,13 @@ export const metadata = {
     url: `${SITE}${NL}`,
     title: "Pranayama- en Meditatie-docentenopleiding in Rishikesh | 12 Dagen | Adhiroha",
     description:
-      "Twaalfdaagse pranayama- en meditatie-docentenopleiding in Rishikesh, geaccrediteerd door het Ministerie van Ayush. Kleine groepen, verblijf in een Himalaya-ashram, alle maaltijden en uitstapjes inbegrepen.",
+      "Twaalfdaagse pranayama- en meditatie-docentenopleiding in Rishikesh, geaccrediteerd door het Ministerie van Ayush. Kleine groepen, verblijf op een yogaschool in de Himalaya, alle maaltijden en uitstapjes inbegrepen.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Pranayama- en Meditatie-docentenopleiding in Rishikesh | 12 Dagen | Adhiroha",
-    description: "Twaalfdaagse pranayama- en meditatie-docentenopleiding in Rishikesh, geaccrediteerd door het Ministerie van Ayush. Kleine groepen, verblijf in een Himalaya-ashram, alle maaltijden en uitstapjes inbegrepen.",
+    description: "Twaalfdaagse pranayama- en meditatie-docentenopleiding in Rishikesh, geaccrediteerd door het Ministerie van Ayush. Kleine groepen, verblijf op een yogaschool in de Himalaya, alle maaltijden en uitstapjes inbegrepen.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

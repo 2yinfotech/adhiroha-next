@@ -10,23 +10,23 @@ const SV = "/sv/uppforandekod/";
 const EN = "/yoga-ashram-in-india-code-of-conduct/";
 
 export const metadata = {
-  title: "Uppförandekod och Regler | Yoga-ashramet Adhiroha, Rishikesh",
+  title: "Uppförandekod och Regler | Yogaskolan Adhiroha, Rishikesh",
   description:
-    "Reglerna på Adhirohas ashram i Rishikesh, de fyra pelarna, uppförandekoden, nolltoleranspolicyn och allt om avgifter, betalningar och ombokning.",
+    "Reglerna på Adhirohas skola i Rishikesh, de fyra pelarna, uppförandekoden, nolltoleranspolicyn och allt om avgifter, betalningar och ombokning.",
   alternates: {
     canonical: SV,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "sv_SE", url: `${SITE}${SV}`,
-    title: "Uppförandekod och Regler | Yoga-ashramet Adhiroha, Rishikesh",
-    description: "Reglerna på Adhirohas ashram i Rishikesh, de fyra pelarna, uppförandekoden, nolltoleranspolicyn och allt om avgifter, betalningar och ombokning.",
+    title: "Uppförandekod och Regler | Yogaskolan Adhiroha, Rishikesh",
+    description: "Reglerna på Adhirohas skola i Rishikesh, de fyra pelarna, uppförandekoden, nolltoleranspolicyn och allt om avgifter, betalningar och ombokning.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Uppförandekod och Regler | Yoga-ashramet Adhiroha, Rishikesh",
-    description: "Reglerna på Adhirohas ashram i Rishikesh, de fyra pelarna, uppförandekoden, nolltoleranspolicyn och allt om avgifter, betalningar och ombokning.",
+    title: "Uppförandekod och Regler | Yogaskolan Adhiroha, Rishikesh",
+    description: "Reglerna på Adhirohas skola i Rishikesh, de fyra pelarna, uppförandekoden, nolltoleranspolicyn och allt om avgifter, betalningar och ombokning.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

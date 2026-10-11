@@ -8,7 +8,7 @@ import { graph, breadcrumbSchema } from "@/lib/seo";
 export const metadata = withOpenGraph({
   title: "Volunteer in Rishikesh | Adhiroha Yoga School",
   description:
-    "Volunteer at Adhiroha Yoga School in Rishikesh as a course coordinator, live at the ashram, support students and deepen your own practice.",
+    "Volunteer at Adhiroha Yoga School in Rishikesh as a course coordinator, live at the school, support students and deepen your own practice.",
   alternates: { canonical: "/volunteer-opportunity-in-rishikesh/" },
 });
 
@@ -40,7 +40,7 @@ export default function VolunteerPage() {
       <section className={styles.section}>
         <span className={styles.sectionLabel}>Course coordinator</span>
         <h2 className={styles.sectionTitle}>Work, learn and contribute to a living yoga community</h2>
-        <p className={styles.lead}>We are seeking passionate volunteers who wish to work or learn at one of India&apos;s most reputed yoga schools. This role is a chance to contribute with care while becoming part of the daily life of the ashram.</p>
+        <p className={styles.lead}>We are seeking passionate volunteers who wish to work or learn at one of India&apos;s most reputed yoga schools. This role is a chance to contribute with care while becoming part of the daily life of the school.</p>
         <div className={styles.threeGrid}>
           <article className={styles.infoCard}><span className={styles.number}>01</span><h3>For motivated individuals</h3><p>Gain practical experience at a respected yoga institution and make a meaningful contribution behind the scenes.</p></article>
           <article className={styles.infoCard}><span className={styles.number}>02</span><h3>For Adhiroha students</h3><p>Extend your stay in Rishikesh while helping to create a steady, welcoming experience for the next group of students.</p></article>

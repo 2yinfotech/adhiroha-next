@@ -11,20 +11,20 @@ const EN = "/sound-healing-ttc-rishikesh/";
 
 export const metadata = {
   title: "Formazione in Guarigione del Suono a Rishikesh | Adhiroha",
-  description: "Formazione Insegnanti in Guarigione del Suono e Terapia di 6 giorni a Rishikesh. Ciotole tibetane, gong e scienza vedica del suono, in un ashram registrato Yoga Alliance.",
+  description: "Formazione Insegnanti in Guarigione del Suono e Terapia di 6 giorni a Rishikesh. Ciotole tibetane, gong e scienza vedica del suono, in una scuola registrata Yoga Alliance.",
   alternates: {
     canonical: IT,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "it_IT", url: `${SITE}${IT}`,
-    title: "Formazione in Guarigione del Suono a Rishikesh | Adhiroha", description: "Formazione Insegnanti in Guarigione del Suono e Terapia di 6 giorni a Rishikesh. Ciotole tibetane, gong e scienza vedica del suono, in un ashram registrato Yoga Alliance.",
+    title: "Formazione in Guarigione del Suono a Rishikesh | Adhiroha", description: "Formazione Insegnanti in Guarigione del Suono e Terapia di 6 giorni a Rishikesh. Ciotole tibetane, gong e scienza vedica del suono, in una scuola registrata Yoga Alliance.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Formazione in Guarigione del Suono a Rishikesh | Adhiroha",
-    description: "Formazione Insegnanti in Guarigione del Suono e Terapia di 6 giorni a Rishikesh. Ciotole tibetane, gong e scienza vedica del suono, in un ashram registrato Yoga Alliance.",
+    description: "Formazione Insegnanti in Guarigione del Suono e Terapia di 6 giorni a Rishikesh. Ciotole tibetane, gong e scienza vedica del suono, in una scuola registrata Yoga Alliance.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

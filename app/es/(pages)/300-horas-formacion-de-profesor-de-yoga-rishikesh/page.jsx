@@ -26,7 +26,7 @@ const sections = [
 export const metadata = {
   title: "Formación de profesor de yoga de 300 horas en Rishikesh | Adhiroha",
   description:
-    "Profundiza tu práctica con nuestra formación de profesor de yoga de 300 horas en Rishikesh. 30 días de asanas avanzados, pranayama y filosofía en un ashram acreditado por Yoga Alliance.",
+    "Profundiza tu práctica con nuestra formación de profesor de yoga de 300 horas en Rishikesh. 30 días de asanas avanzados, pranayama y filosofía en una escuela acreditada por Yoga Alliance.",
   alternates: {
     canonical: ES,
     languages: hreflangFor(EN),
@@ -38,13 +38,13 @@ export const metadata = {
     url: `${SITE}${ES}`,
     title: "Formación de profesor de yoga de 300 horas en Rishikesh | Adhiroha",
     description:
-      "Profundiza tu práctica con nuestra formación de profesor de yoga de 300 horas en Rishikesh. 30 días de asanas avanzados, pranayama y filosofía en un ashram acreditado por Yoga Alliance.",
+      "Profundiza tu práctica con nuestra formación de profesor de yoga de 300 horas en Rishikesh. 30 días de asanas avanzados, pranayama y filosofía en una escuela acreditada por Yoga Alliance.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Formación de profesor de yoga de 300 horas en Rishikesh | Adhiroha",
-    description: "Profundiza tu práctica con nuestra formación de profesor de yoga de 300 horas en Rishikesh. 30 días de asanas avanzados, pranayama y filosofía en un ashram acreditado por Yoga Alliance.",
+    description: "Profundiza tu práctica con nuestra formación de profesor de yoga de 300 horas en Rishikesh. 30 días de asanas avanzados, pranayama y filosofía en una escuela acreditada por Yoga Alliance.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

@@ -26,7 +26,7 @@ const sections = [
 export const metadata = {
   title: "Pranayama- og meditations-yogalæreruddannelse i Rishikesh | 12 dage | Adhiroha",
   description:
-    "Tolv dages pranayama- og meditations-yogalæreruddannelse i Rishikesh, akkrediteret af Ayush-ministeriet. Små hold, ophold i himalayansk ashram, alle måltider og udflugter inkluderet.",
+    "Tolv dages pranayama- og meditations-yogalæreruddannelse i Rishikesh, akkrediteret af Ayush-ministeriet. Små hold, ophold på en yogaskole i Himalaya, alle måltider og udflugter inkluderet.",
   alternates: {
     canonical: DA,
     languages: hreflangFor(EN),
@@ -38,13 +38,13 @@ export const metadata = {
     url: `${SITE}${DA}`,
     title: "Pranayama- og meditations-yogalæreruddannelse i Rishikesh | 12 dage | Adhiroha",
     description:
-      "Tolv dages pranayama- og meditations-yogalæreruddannelse i Rishikesh, akkrediteret af Ayush-ministeriet. Små hold, ophold i himalayansk ashram, alle måltider og udflugter inkluderet.",
+      "Tolv dages pranayama- og meditations-yogalæreruddannelse i Rishikesh, akkrediteret af Ayush-ministeriet. Små hold, ophold på en yogaskole i Himalaya, alle måltider og udflugter inkluderet.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Pranayama- og meditations-yogalæreruddannelse i Rishikesh | 12 dage | Adhiroha",
-    description: "Tolv dages pranayama- og meditations-yogalæreruddannelse i Rishikesh, akkrediteret af Ayush-ministeriet. Små hold, ophold i himalayansk ashram, alle måltider og udflugter inkluderet.",
+    description: "Tolv dages pranayama- og meditations-yogalæreruddannelse i Rishikesh, akkrediteret af Ayush-ministeriet. Små hold, ophold på en yogaskole i Himalaya, alle måltider og udflugter inkluderet.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

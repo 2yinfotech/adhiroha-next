@@ -12,7 +12,7 @@ const EN = "/yoga-gallery-india/";
 export const metadata = {
   title: "Fotogalerij | Yoga-ashram Adhiroha in Rishikesh, India",
   description:
-    "181 eerlijke foto's van de Adhiroha-ashram in Upper Tapovan, Rishikesh, de shala, de kamers, het sattvische eten, de ceremonies, de uitstapjes en de diploma-uitreiking.",
+    "181 eerlijke foto's van de Adhiroha-school in Upper Tapovan, Rishikesh, de shala, de kamers, het sattvische eten, de ceremonies, de uitstapjes en de diploma-uitreiking.",
   alternates: {
     canonical: NL,
     languages: hreflangFor(EN),
@@ -20,13 +20,13 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "nl_NL", url: `${SITE}${NL}`,
     title: "Fotogalerij | Yoga-ashram Adhiroha in Rishikesh, India",
-    description: "181 eerlijke foto's van de Adhiroha-ashram in Upper Tapovan, Rishikesh, de shala, de kamers, het sattvische eten, de ceremonies, de uitstapjes en de diploma-uitreiking.",
+    description: "181 eerlijke foto's van de Adhiroha-school in Upper Tapovan, Rishikesh, de shala, de kamers, het sattvische eten, de ceremonies, de uitstapjes en de diploma-uitreiking.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Fotogalerij | Yoga-ashram Adhiroha in Rishikesh, India",
-    description: "181 eerlijke foto's van de Adhiroha-ashram in Upper Tapovan, Rishikesh, de shala, de kamers, het sattvische eten, de ceremonies, de uitstapjes en de diploma-uitreiking.",
+    description: "181 eerlijke foto's van de Adhiroha-school in Upper Tapovan, Rishikesh, de shala, de kamers, het sattvische eten, de ceremonies, de uitstapjes en de diploma-uitreiking.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

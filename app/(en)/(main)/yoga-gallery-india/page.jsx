@@ -9,7 +9,7 @@ import { graph, breadcrumbSchema, extractFaqs, faqSchema, hreflangFor } from "@/
 export const metadata = withOpenGraph({
   title: "Yoga Gallery | The Adhiroha Ashram, Rishikesh",
   description:
-    "See the Adhiroha ashram in Rishikesh, the yoga shala, rooms, dining hall, Ganga ghat sessions and Himalayan surroundings, in photographs.",
+    "See Adhiroha Yoga School in Rishikesh, the yoga shala, rooms, dining hall, Ganga ghat sessions and Himalayan surroundings, in photographs.",
   alternates: { canonical: "/yoga-gallery-india/", languages: hreflangFor("/yoga-gallery-india/") }
 });
 

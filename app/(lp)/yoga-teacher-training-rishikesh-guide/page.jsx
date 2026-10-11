@@ -26,7 +26,7 @@ const BADGES = [
 const INSIDE = [
   ["The full curriculum", "Every subject, hour by hour: asana, pranayama, anatomy, philosophy, teaching methodology and practicum."],
   ["A real daily schedule", "What 5:45 to 21:30 actually looks like, from shatkarma to the evening meditation."],
-  ["Where you sleep and eat", "Room options, the three sattvic meals a day, and everything provided in the ashram."],
+  ["Where you sleep and eat", "Room options, the three sattvic meals a day, and everything provided at the school."],
   ["Upcoming batch dates", "Which months still have places, and how far ahead people usually book."],
   ["What the certificate is", "One Adhiroha certificate carrying both Yoga Alliance registration and Ministry of Ayush accreditation."],
   ["What to pack and expect", "Visa notes, airport pickup, the weather month by month, and what the first day feels like."],
@@ -34,9 +34,9 @@ const INSIDE = [
 
 const GALLERY = [
   ["/gallery/yoga-shala/yoga-shala-001.webp", "The open-sided yoga shala at Adhiroha, looking out onto the forest"],
-  ["/gallery/ashram/ashram-006.webp", "The Adhiroha ashram buildings on the green hillside of Upper Tapovan"],
-  ["/gallery/accommodation/acco-001.webp", "A clean, simple twin room with a mountain view at the ashram"],
-  ["/gallery/dinning/dinning-004.webp", "Sattvic vegetarian food served in the ashram dining hall"],
+  ["/gallery/ashram/ashram-006.webp", "The Adhiroha school buildings on the green hillside of Upper Tapovan"],
+  ["/gallery/accommodation/acco-001.webp", "A clean, simple twin room with a mountain view at the school"],
+  ["/gallery/dinning/dinning-004.webp", "Sattvic vegetarian food served in the school dining hall"],
   ["/gallery/yoga/yoga-012.webp", "Students in a guided morning asana practice"],
   ["/gallery/excursion/excursion-003.webp", "A group excursion to a waterfall in the hills around Rishikesh"],
   ["/gallery/sound-healing/sound-003.webp", "A sound healing session with singing bowls"],
@@ -61,12 +61,12 @@ const COURSES = [
 const WHY = [
   { img: "/gallery/yoga/yoga-001.webp", h: "Small groups, senior teachers", tag: "The teaching", chips: ["7 to 20 years", "Hands-on adjustment", "Small batches"],
     p: "You are taught by acharyas with 7 to 20 years behind them, in groups small enough that your alignment actually gets corrected." },
-  { img: "/gallery/ashram/ashram-002.webp", h: "A residential ashram, not a hotel", tag: "The setting", chips: ["Upper Tapovan", "20,000+ sq ft", "Forest and river"],
+  { img: "/gallery/ashram/ashram-002.webp", h: "A live-in school, not a hotel", tag: "The setting", chips: ["Upper Tapovan", "20,000+ sq ft", "Forest and river"],
     p: "Teachers and students live on the same grounds in Upper Tapovan, a kilometre above the noise of the town." },
   { img: "/img/yoga-training-certification.webp", h: "A credential that travels", tag: "The certificate", chips: ["RYS 200 / 300 / 500", "Ministry of Ayush", "Never expires"],
     p: "Adhiroha is a Registered Yoga School with Yoga Alliance at all three levels, and accredited by the Yoga Certification Board under the Ministry of Ayush." },
   { img: "/gallery/dinning/dinning-002.webp", h: "Three sattvic meals a day", tag: "The food", chips: ["Satvik & Ayurvedic", "Organic", "Fresh daily"],
-    p: "Cooked fresh in the ashram kitchen, different every day, and included from the moment you arrive." },
+    p: "Cooked fresh in the school kitchen, different every day, and included from the moment you arrive." },
   { img: "/gallery/excursion/excursion-009.webp", h: "Excursions that are part of it", tag: "Beyond the mat", chips: ["Waterfall", "Temples", "Ganga aarti"],
     p: "Waterfalls, temples, the evening Ganga aarti. Not add-ons sold separately, but part of the course." },
   { img: "/gallery/certification/certification-004.webp", h: "A qualification that never expires", tag: "For good", chips: ["No renewal fee", "No expiry", "Yours to keep"],
@@ -115,8 +115,7 @@ export default function Page() {
                  width="867" height="288" decoding="async" />
             <h1>Yoga Teacher Training in Rishikesh, India</h1>
             <p className="lp-sub">
-              Yoga Alliance registered, 200, 300 and 500 hour residential courses at a
-              Himalayan ashram in Upper Tapovan. Get the full course guide, free, before
+              Yoga Alliance registered, 200, 300 and 500 hour residential courses at a Himalayan school in Upper Tapovan. Get the full course guide, free, before
               you decide anything.
             </p>
             <ul className="lp-ticks">
@@ -144,7 +143,7 @@ export default function Page() {
           <div className="lp-stat"><b>3,000+</b><span>students trained</span></div>
           <div className="lp-stat"><b>70+</b><span>countries</span></div>
           <div className="lp-stat"><b>4.9</b><span>average Google rating</span></div>
-          <div className="lp-stat"><b>20,000+</b><span>sq ft ashram</span></div>
+          <div className="lp-stat"><b>20,000+</b><span>sq ft campus</span></div>
           <div className="lp-orgs">
             <img src="/img/logo-yoga-alliance.webp" alt="Yoga Alliance" width="200" height="200" loading="lazy" decoding="async" />
             <img src="/img/logo-ministry-of-ayush.webp" alt="Ministry of Ayush" width="200" height="200" loading="lazy" decoding="async" />
@@ -192,7 +191,7 @@ export default function Page() {
       <section className="lp-gallery">
         <div className="lp-wrap">
           <div className="lp-head">
-            <Kicker>The ashram</Kicker>
+            <Kicker>The school</Kicker>
             <h2>Where you would actually be living</h2>
             <Sunburst />
           </div>
@@ -306,12 +305,12 @@ export default function Page() {
           <div className="lp-figstack">
             <figure className="lp-figure">
               <img src="/gallery/accommodation/acco-003.webp"
-                   alt="A simple, clean twin room at the Adhiroha ashram with a view of the hills"
+                   alt="A simple, clean twin room at the Adhiroha school with a view of the hills"
                    width="1000" height="667" loading="lazy" decoding="async" />
             </figure>
             <figure className="lp-figure lp-figure-sm">
               <img src="/gallery/accommodation/acco-007.webp"
-                   alt="A private bathroom in the ashram accommodation"
+                   alt="A private bathroom in the school accommodation"
                    width="1000" height="667" loading="lazy" decoding="async" />
             </figure>
           </div>
@@ -324,7 +323,7 @@ export default function Page() {
             </p>
             <ul className="lp-inside">
               {[["Clean, quiet rooms", "Triple, twin and private options, each with a private bathroom and hot water."],
-                ["Three sattvic meals a day", "Cooked fresh in the ashram kitchen, different every day, with fruit in the morning."],
+                ["Three sattvic meals a day", "Cooked fresh in the school kitchen, different every day, with fruit in the morning."],
                 ["Airport pickup included", "From Dehradun (Jolly Grant), about 25 km away. Delhi transfers can be arranged too."],
                 ["Filtered water, laundry, wifi", "The small practical things, sorted, so they never become a distraction."]].map(([h, p]) => (
                 <li key={h}>
@@ -436,8 +435,7 @@ export default function Page() {
             <h2>Take the guide, then decide</h2>
             <p>
               No obligation and nothing to pay. Read it, sit with it, and if it feels right
-              we will talk about dates. If you would rather just speak to a person, call the
-              ashram directly.
+              we will talk about dates. If you would rather just speak to a person, call the school directly.
             </p>
             <a className="lp-call" href="tel:+919999048900">
               <span aria-hidden="true">

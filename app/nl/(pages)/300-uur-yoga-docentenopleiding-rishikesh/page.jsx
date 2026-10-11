@@ -26,7 +26,7 @@ const sections = [
 export const metadata = {
   title: "300-Uur Yoga-docentenopleiding in Rishikesh | Adhiroha",
   description:
-    "Gevorderde 300-uur yoga-docentenopleiding in Rishikesh, gecertificeerd door Yoga Alliance. 30 dagen, kleine groepen, verblijf in een Himalaya-ashram, alle maaltijden en uitstapjes inbegrepen.",
+    "Gevorderde 300-uur yoga-docentenopleiding in Rishikesh, gecertificeerd door Yoga Alliance. 30 dagen, kleine groepen, verblijf op een yogaschool in de Himalaya, alle maaltijden en uitstapjes inbegrepen.",
   alternates: {
     canonical: NL,
     languages: hreflangFor(EN),
@@ -38,13 +38,13 @@ export const metadata = {
     url: `${SITE}${NL}`,
     title: "300-Uur Yoga-docentenopleiding in Rishikesh | Adhiroha",
     description:
-      "Gevorderde 300-uur yoga-docentenopleiding in Rishikesh, gecertificeerd door Yoga Alliance. 30 dagen, kleine groepen, verblijf in een Himalaya-ashram, alle maaltijden en uitstapjes inbegrepen.",
+      "Gevorderde 300-uur yoga-docentenopleiding in Rishikesh, gecertificeerd door Yoga Alliance. 30 dagen, kleine groepen, verblijf op een yogaschool in de Himalaya, alle maaltijden en uitstapjes inbegrepen.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "300-Uur Yoga-docentenopleiding in Rishikesh | Adhiroha",
-    description: "Gevorderde 300-uur yoga-docentenopleiding in Rishikesh, gecertificeerd door Yoga Alliance. 30 dagen, kleine groepen, verblijf in een Himalaya-ashram, alle maaltijden en uitstapjes inbegrepen.",
+    description: "Gevorderde 300-uur yoga-docentenopleiding in Rishikesh, gecertificeerd door Yoga Alliance. 30 dagen, kleine groepen, verblijf op een yogaschool in de Himalaya, alle maaltijden en uitstapjes inbegrepen.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

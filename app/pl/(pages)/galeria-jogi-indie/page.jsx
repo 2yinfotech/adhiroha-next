@@ -12,7 +12,7 @@ const EN = "/yoga-gallery-india/";
 export const metadata = {
   title: "Galeria Zdjęć | Aśram Jogi Adhiroha w Riszikeś, Indie",
   description:
-    "181 szczerych zdjęć z aśramu Adhiroha w Upper Tapovan w Riszikeś, sala, pokoje, jedzenie satwiczne, ceremonie, wycieczki i dzień certyfikacji.",
+    "181 szczerych zdjęć ze szkoły Adhiroha w Upper Tapovan w Riszikeś, sala, pokoje, jedzenie satwiczne, ceremonie, wycieczki i dzień certyfikacji.",
   alternates: {
     canonical: PL,
     languages: hreflangFor(EN),
@@ -20,13 +20,13 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pl_PL", url: `${SITE}${PL}`,
     title: "Galeria Zdjęć | Aśram Jogi Adhiroha w Riszikeś, Indie",
-    description: "181 szczerych zdjęć z aśramu Adhiroha w Upper Tapovan w Riszikeś, sala, pokoje, jedzenie satwiczne, ceremonie, wycieczki i dzień certyfikacji.",
+    description: "181 szczerych zdjęć ze szkoły Adhiroha w Upper Tapovan w Riszikeś, sala, pokoje, jedzenie satwiczne, ceremonie, wycieczki i dzień certyfikacji.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Galeria Zdjęć | Aśram Jogi Adhiroha w Riszikeś, Indie",
-    description: "181 szczerych zdjęć z aśramu Adhiroha w Upper Tapovan w Riszikeś, sala, pokoje, jedzenie satwiczne, ceremonie, wycieczki i dzień certyfikacji.",
+    description: "181 szczerych zdjęć ze szkoły Adhiroha w Upper Tapovan w Riszikeś, sala, pokoje, jedzenie satwiczne, ceremonie, wycieczki i dzień certyfikacji.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };
