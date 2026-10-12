@@ -271,7 +271,7 @@ export const TEACHERS = [
   ["Yogacharya Jagjeet Singh", "Philosophy & anatomy", "20+ years · M.A. Yoga Science", "/img/remote/img_jagjeet-singh.jpg"],
   ["Yogacharya Pratap Rawat", "Ashtanga & vinyasa", "14+ years · M.A. Yoga & Vedic Sciences", "/img/remote/img_adhiroha-yttc-023.webp"],
   ["Yogacharya Sunil Bisht", "Hatha, pranayama & meditation", "20+ years · born in Rishikesh", "/img/remote/img_sunil-bisht.avif"],
-  ["Yogacharya Jitendra Bhandari", "Pranayama & shatkarma", "20+ years · trained at Sivananda Ashram", "/img/remote/img_jitendra.webp"],
+  ["Yogacharya Jitendra Bhandari", "Pranayama & shatkarma", "20+ years · trained at a traditional ashram", "/img/remote/img_jitendra.webp"],
   ["Yogacharya Ajay Pundir", "Ashtanga & vinyasa", "8+ years teaching · M.A. Yoga", "/img/remote/img_adhiroha-yttc-022.webp"],
   ["Yogacharya Ashish Bangwal", "Hatha yoga", "8+ years · Iyengar-rooted Hatha", "/img/remote/img_adhiroha-yttc-026.webp"],
   ["Yogacharya Anil Rayal", "Anatomy & physiology", "9+ years · acupressure therapy", "/img/remote/img_adhiroha-yttc-027.webp"],
