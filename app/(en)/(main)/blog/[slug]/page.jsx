@@ -149,6 +149,37 @@ export default async function ArticlePage({ params }) {
                 </section>
               )}
             </article>
+
+            {/* The grid always reserved a third column for this, so on desktop
+                the right of every post was blank. Sticky like the contents rail;
+                below 1024px the grid collapses and it follows the article. */}
+            <aside className="art-aside" aria-label="Study yoga at Adhiroha">
+              <div className="aside-card">
+                <span className="aside-k">Train in Rishikesh</span>
+                <h4>Want to study authentic yoga in Rishikesh?</h4>
+                <p>
+                  Join Adhiroha, a Yoga Alliance registered school in Upper Tapovan. Practise and learn with
+                  experienced Indian teachers, with your stay and Satvik meals included.
+                </p>
+                <ul className="aside-ticks">
+                  <li>200, 300 &amp; 500 hour teacher training</li>
+                  <li>Courses start on the 1st of every month</li>
+                  <li>Rated 4.9 on Google</li>
+                </ul>
+                <div className="aside-rys">
+                  <img src="/img/RYS200.png" alt="Yoga Alliance RYS 200" width="54" height="54" loading="lazy" />
+                  <img src="/img/RYS300.png" alt="Yoga Alliance RYS 300" width="54" height="54" loading="lazy" />
+                  <img src="/img/RYS500.png" alt="Yoga Alliance RYS 500" width="54" height="54" loading="lazy" />
+                </div>
+                <a className="aside-btn" href="/yoga-teacher-training-course-rishikesh-india/">
+                  Join Adhiroha
+                  <svg width="16" height="10" viewBox="0 0 20 10" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M1 5h17M14 1l4 4-4 4" /></svg>
+                </a>
+                <a className="aside-wa" href="https://wa.me/919999048900" target="_blank" rel="noopener noreferrer">
+                  Ask us on WhatsApp
+                </a>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
