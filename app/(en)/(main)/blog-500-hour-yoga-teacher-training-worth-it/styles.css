@@ -10,6 +10,15 @@
   .aside-btn{display:flex;align-items:center;justify-content:center;gap:9px;background:var(--rust);color:#fff;border-radius:9px;padding:14px 18px;text-decoration:none;font-size:11.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;transition:transform .25s,box-shadow .25s}
   .aside-btn:hover{transform:translateY(-2px);box-shadow:0 16px 30px -14px rgba(237,28,37,.6)}
   .aside-btn svg{transition:transform .3s}.aside-btn:hover svg{transform:translateX(4px)}
+  .aside-ticks{list-style:none;margin:0 0 18px;padding:0}
+  .aside-ticks li{position:relative;padding:0 0 9px 22px;font-size:12.6px;line-height:1.5;color:#e8dfd2}
+  .aside-ticks li::before{content:"";position:absolute;left:2px;top:4px;width:10px;height:6px;border-left:1.6px solid #eccdb9;border-bottom:1.6px solid #eccdb9;transform:rotate(-45deg)}
+  .aside-rys{display:flex;gap:10px;margin:0 0 20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12)}
+  .aside-rys img{width:54px;height:54px;object-fit:contain;background:#fff;border-radius:50%;padding:3px}
+  .aside-card .aside-btn{color:#fff}
+  .aside-wa{display:block;text-align:center;margin-top:12px;font-size:11.5px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:#eccdb9;text-decoration:none;padding:11px;border:1px solid rgba(236,205,185,.35);border-radius:9px;transition:background .25s,color .25s}
+  .aside-wa:hover{background:rgba(236,205,185,.1);color:#fff}
+  @media(max-width:1024px){.art-aside{position:static;margin-top:44px}}
   .aside-related{border:1px solid var(--line);border-radius:16px;padding:22px 22px 6px;background:#fff}
   .aside-related .aside-k{color:var(--rust)}
   .arel{display:block;text-decoration:none;padding-bottom:15px;margin-bottom:15px;border-bottom:1px solid var(--line)}
@@ -19,6 +28,7 @@
   .arel:hover .arel-t{color:var(--rust)}
   @media(max-width:1100px){.art-aside{position:static;flex-direction:row;flex-wrap:wrap;margin-top:8px}.aside-card,.aside-related{flex:1 1 300px}}
   @media(max-width:620px){.art-aside{flex-direction:column}}
+  @media(min-width:1025px){.art-aside{position:sticky;top:40px;flex-direction:column}}
 
 /* ============================================================
    MOBILE NAV — language switcher lifted out of the drawer,
