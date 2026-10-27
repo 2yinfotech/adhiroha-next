@@ -96,7 +96,7 @@ const FAQ = [
   ["How far ahead should I book?", "Batches usually fill a few months out, and the nearest two months are often the tightest. The guide lists which dates still have places."],
   ["What is included once I arrive?", "Accommodation, three sattvic meals a day, all course materials, the excursions and airport pickup. The guide sets out the full list."],
   ["Can I come on my own?", "Most people do. You will be sharing a schedule, a dining hall and a shala with the same group for the whole course, so nobody stays a stranger for long."],
-  ["What are the rooms like?", "Clean, simple and quiet, with private bathrooms and hot water. Triple, twin and private options exist, and the guide shows photographs of each."],
+  ["What are the rooms like?", "Clean, simple and quiet, with private bathrooms and hot water. Triple and twin options exist, and the guide shows photographs of each."],
   ["Is there an age limit?", "No. Batches regularly run from students in their early twenties to people well into their sixties."],
 ];
 
@@ -322,7 +322,7 @@ export default function Page() {
               is turn up and practise.
             </p>
             <ul className="lp-inside">
-              {[["Clean, quiet rooms", "Triple, twin and private options, each with a private bathroom and hot water."],
+              {[["Clean, quiet rooms", "Triple and twin options, each with a private bathroom and hot water."],
                 ["Three sattvic meals a day", "Cooked fresh in the school kitchen, different every day, with fruit in the morning."],
                 ["Airport pickup included", "From Dehradun (Jolly Grant), about 25 km away. Delhi transfers can be arranged too."],
                 ["Filtered water, laundry, wifi", "The small practical things, sorted, so they never become a distraction."]].map(([h, p]) => (
