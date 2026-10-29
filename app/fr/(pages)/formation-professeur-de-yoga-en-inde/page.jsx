@@ -11,20 +11,20 @@ const EN = "/yoga-teacher-training-course-rishikesh-india/";
 
 export const metadata = {
   title: "Formation de professeur de yoga en Inde | YTTC 200, 300 & 500 heures à Rishikesh | Adhiroha",
-  description: "Formation de professeur de yoga certifiée Yoga Alliance de 200, 300 & 500 heures à Rishikesh, Inde. Hébergement inclus et formule tout compris.",
+  description: "Formation de professeur de yoga enregistrée auprès de Yoga Alliance de 200, 300 & 500 heures à Rishikesh, Inde. Hébergement inclus et formule tout compris.",
   alternates: {
     canonical: FR,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "fr_FR", url: `${SITE}${FR}`,
-    title: "Formation de professeur de yoga en Inde | YTTC 200, 300 & 500 heures à Rishikesh | Adhiroha", description: "Formation de professeur de yoga certifiée Yoga Alliance de 200, 300 & 500 heures à Rishikesh, Inde. Hébergement inclus et formule tout compris.",
+    title: "Formation de professeur de yoga en Inde | YTTC 200, 300 & 500 heures à Rishikesh | Adhiroha", description: "Formation de professeur de yoga enregistrée auprès de Yoga Alliance de 200, 300 & 500 heures à Rishikesh, Inde. Hébergement inclus et formule tout compris.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Formation de professeur de yoga en Inde | YTTC 200, 300 & 500 heures à Rishikesh | Adhiroha",
-    description: "Formation de professeur de yoga certifiée Yoga Alliance de 200, 300 & 500 heures à Rishikesh, Inde. Hébergement inclus et formule tout compris.",
+    description: "Formation de professeur de yoga enregistrée auprès de Yoga Alliance de 200, 300 & 500 heures à Rishikesh, Inde. Hébergement inclus et formule tout compris.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

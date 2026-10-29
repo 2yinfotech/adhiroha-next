@@ -12,7 +12,7 @@ const EN = "/yoga-teacher-training-course-rishikesh-india/";
 export const metadata = {
   title: "Yogalæreruddannelse i Indien | YTTC 200, 300 og 500 timer i Rishikesh | Adhiroha",
   description:
-    "Yogalæreruddannelse i Indien hos Adhiroha, Rishikesh, kurser med ophold på 200, 300 og 500 timer, certificeret af Yoga Alliance. Over 3.000 elever fra mere end 70 lande. Alt inklusive, internationalt anerkendt certificering.",
+    "Yogalæreruddannelse i Indien hos Adhiroha, Rishikesh, kurser med ophold på 200, 300 og 500 timer, registreret hos Yoga Alliance. Over 3.000 elever fra mere end 70 lande. Alt inklusive, internationalt anerkendt certificering.",
   keywords: [
     "yogalæreruddannelse i indien",
     "yogalæreruddannelse i rishikesh",
@@ -29,13 +29,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "da_DK", url: `${SITE}${DA}`,
     title: "Yogalæreruddannelse i Indien | YTTC 200, 300 og 500 timer i Rishikesh",
     description:
-      "Yoga Alliance-certificerede yogalæreruddannelser på 200, 300 og 500 timer i Rishikesh, Indien. Alt inklusive, internationalt anerkendt certificering.",
+      "Yoga Alliance-registrerede yogalæreruddannelser på 200, 300 og 500 timer i Rishikesh, Indien. Alt inklusive, internationalt anerkendt certificering.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Yogalæreruddannelse i Indien | YTTC 200, 300 og 500 timer i Rishikesh",
-    description: "Yoga Alliance-certificerede yogalæreruddannelser på 200, 300 og 500 timer i Rishikesh, Indien. Alt inklusive, internationalt anerkendt certificering.",
+    description: "Yoga Alliance-registrerede yogalæreruddannelser på 200, 300 og 500 timer i Rishikesh, Indien. Alt inklusive, internationalt anerkendt certificering.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };
@@ -44,7 +44,7 @@ const pageSchema = graph(
   courseSchema({
     name: "200-timers yogalæreruddannelse i Rishikesh, Indien",
     description:
-      "200-timers yogalæreruddannelse med ophold, certificeret af Yoga Alliance, i Rishikesh, Indien, grundforløbet for nybegyndere i asana, pranayama, anatomi, filosofi og undervisningspraksis.",
+      "200-timers yogalæreruddannelse med ophold, registreret hos Yoga Alliance, i Rishikesh, Indien, grundforløbet for nybegyndere i asana, pranayama, anatomi, filosofi og undervisningspraksis.",
     url: "/da/200-timers-yogalaereruddannelse-rishikesh/",
     price: 1275,
     days: 24,

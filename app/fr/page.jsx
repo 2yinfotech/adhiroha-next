@@ -15,7 +15,7 @@ import { graph, extractFaqs, faqSchema, SITE, LANGUAGE_ALTERNATES, schoolTourVid
 export const metadata = {
   title: "Formation de professeur de yoga à Rishikesh | 200/300/500 h YTTC | Adhiroha",
   description:
-    "Formation de professeur de yoga certifiée Yoga Alliance à Rishikesh, Inde, 200, 300 & 500 heures. Petits groupes, professeurs indiens expérimentés, hébergement à l’école & repas inclus.",
+    "Formation de professeur de yoga enregistrée auprès de Yoga Alliance à Rishikesh, Inde, 200, 300 & 500 heures. Petits groupes, professeurs indiens expérimentés, hébergement à l’école & repas inclus.",
   alternates: { canonical: "/fr/", languages: LANGUAGE_ALTERNATES },
   openGraph: {
     type: "website",
@@ -24,13 +24,13 @@ export const metadata = {
     url: `${SITE}/fr/`,
     title: "Formation de professeur de yoga à Rishikesh | 200/300/500 h YTTC | Adhiroha",
     description:
-      "Formation de professeur de yoga certifiée Yoga Alliance à Rishikesh, Inde, 200, 300 & 500 heures. Petits groupes, professeurs indiens expérimentés, hébergement à l’école & repas inclus.",
+      "Formation de professeur de yoga enregistrée auprès de Yoga Alliance à Rishikesh, Inde, 200, 300 & 500 heures. Petits groupes, professeurs indiens expérimentés, hébergement à l’école & repas inclus.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Formation de professeur de yoga à Rishikesh | 200/300/500 h YTTC | Adhiroha",
-    description: "Formation de professeur de yoga certifiée Yoga Alliance à Rishikesh, Inde, 200, 300 & 500 heures. Petits groupes, professeurs indiens expérimentés, hébergement à l’école & repas inclus.",
+    description: "Formation de professeur de yoga enregistrée auprès de Yoga Alliance à Rishikesh, Inde, 200, 300 & 500 heures. Petits groupes, professeurs indiens expérimentés, hébergement à l’école & repas inclus.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

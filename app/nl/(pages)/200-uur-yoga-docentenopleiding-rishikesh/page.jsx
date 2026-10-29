@@ -26,7 +26,7 @@ const sections = [
 export const metadata = {
   title: "200-Uur Yoga-docentenopleiding in Rishikesh | Adhiroha",
   description:
-    "200-uur yoga-docentenopleiding in Rishikesh, gecertificeerd door Yoga Alliance. 24 dagen, kleine groepen, verblijf op een yogaschool in de Himalaya, alle maaltijden en uitstapjes inbegrepen.",
+    "200-uur yoga-docentenopleiding in Rishikesh, geregistreerd bij Yoga Alliance. 24 dagen, kleine groepen, verblijf op een yogaschool in de Himalaya, alle maaltijden en uitstapjes inbegrepen.",
   alternates: {
     canonical: NL,
     languages: hreflangFor(EN),
@@ -38,13 +38,13 @@ export const metadata = {
     url: `${SITE}${NL}`,
     title: "200-Uur Yoga-docentenopleiding in Rishikesh | Adhiroha",
     description:
-      "200-uur yoga-docentenopleiding in Rishikesh, gecertificeerd door Yoga Alliance. 24 dagen, kleine groepen, verblijf op een yogaschool in de Himalaya, alle maaltijden en uitstapjes inbegrepen.",
+      "200-uur yoga-docentenopleiding in Rishikesh, geregistreerd bij Yoga Alliance. 24 dagen, kleine groepen, verblijf op een yogaschool in de Himalaya, alle maaltijden en uitstapjes inbegrepen.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "200-Uur Yoga-docentenopleiding in Rishikesh | Adhiroha",
-    description: "200-uur yoga-docentenopleiding in Rishikesh, gecertificeerd door Yoga Alliance. 24 dagen, kleine groepen, verblijf op een yogaschool in de Himalaya, alle maaltijden en uitstapjes inbegrepen.",
+    description: "200-uur yoga-docentenopleiding in Rishikesh, geregistreerd bij Yoga Alliance. 24 dagen, kleine groepen, verblijf op een yogaschool in de Himalaya, alle maaltijden en uitstapjes inbegrepen.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

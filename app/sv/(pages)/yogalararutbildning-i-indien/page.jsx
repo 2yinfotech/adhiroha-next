@@ -12,7 +12,7 @@ const EN = "/yoga-teacher-training-course-rishikesh-india/";
 export const metadata = {
   title: "Yogalärarutbildning i Indien | YTTC 200, 300 och 500 Timmar i Rishikesh | Adhiroha",
   description:
-    "Yogalärarutbildning i Indien hos Adhiroha, Rishikesh, internatbaserade kurser på 200, 300 och 500 timmar, certifierade av Yoga Alliance. Över 3 000 elever från mer än 70 länder. All-inclusive-pris, internationellt erkänd certifiering.",
+    "Yogalärarutbildning i Indien hos Adhiroha, Rishikesh, internatbaserade kurser på 200, 300 och 500 timmar, registrerade hos Yoga Alliance. Över 3 000 elever från mer än 70 länder. All-inclusive-pris, internationellt erkänd certifiering.",
   keywords: [
     "yogalärarutbildning i indien",
     "yogalärarutbildning i rishikesh",
@@ -29,13 +29,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "sv_SE", url: `${SITE}${SV}`,
     title: "Yogalärarutbildning i Indien | YTTC 200, 300 och 500 Timmar i Rishikesh",
     description:
-      "Yoga Alliance-certifierade yogalärarutbildningar på 200, 300 och 500 timmar i Rishikesh, Indien. All-inclusive, internationellt erkänd certifiering.",
+      "Yoga Alliance-registrerade yogalärarutbildningar på 200, 300 och 500 timmar i Rishikesh, Indien. All-inclusive, internationellt erkänd certifiering.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Yogalärarutbildning i Indien | YTTC 200, 300 och 500 Timmar i Rishikesh",
-    description: "Yoga Alliance-certifierade yogalärarutbildningar på 200, 300 och 500 timmar i Rishikesh, Indien. All-inclusive, internationellt erkänd certifiering.",
+    description: "Yoga Alliance-registrerade yogalärarutbildningar på 200, 300 och 500 timmar i Rishikesh, Indien. All-inclusive, internationellt erkänd certifiering.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };
@@ -44,7 +44,7 @@ const pageSchema = graph(
   courseSchema({
     name: "200-Timmars Yogalärarutbildning i Rishikesh, Indien",
     description:
-      "Internatbaserad 200-timmars yogalärarutbildning certifierad av Yoga Alliance i Rishikesh, Indien, grunden för nybörjare i asana, pranayama, anatomi, filosofi och undervisningspraktik.",
+      "Internatbaserad 200-timmars yogalärarutbildning registrerad hos Yoga Alliance i Rishikesh, Indien, grunden för nybörjare i asana, pranayama, anatomi, filosofi och undervisningspraktik.",
     url: "/sv/200-timmars-yogalararutbildning-rishikesh/",
     price: 1275,
     days: 24,

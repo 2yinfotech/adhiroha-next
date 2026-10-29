@@ -12,7 +12,7 @@ const EN = "/about-us/";
 export const metadata = {
   title: "Chi è Adhiroha | Scuola di Yoga a Rishikesh, India",
   description:
-    "Scopri Adhiroha, una scuola di yoga certificata Yoga Alliance a Upper Tapovan, Rishikesh, con 20.000 mq di campus e oltre 3.000 studenti formati da più di 70 paesi.",
+    "Scopri Adhiroha, una scuola di yoga registrata presso Yoga Alliance a Upper Tapovan, Rishikesh, con 20.000 mq di campus e oltre 3.000 studenti formati da più di 70 paesi.",
   alternates: {
     canonical: IT,
     languages: hreflangFor(EN),
@@ -20,13 +20,13 @@ export const metadata = {
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "it_IT", url: `${SITE}${IT}`,
     title: "Chi è Adhiroha | Scuola di Yoga a Rishikesh, India",
-    description: "Scopri Adhiroha, una scuola di yoga certificata Yoga Alliance a Upper Tapovan, Rishikesh, con 20.000 mq di campus e oltre 3.000 studenti formati da più di 70 paesi.",
+    description: "Scopri Adhiroha, una scuola di yoga registrata presso Yoga Alliance a Upper Tapovan, Rishikesh, con 20.000 mq di campus e oltre 3.000 studenti formati da più di 70 paesi.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Chi è Adhiroha | Scuola di Yoga a Rishikesh, India",
-    description: "Scopri Adhiroha, una scuola di yoga certificata Yoga Alliance a Upper Tapovan, Rishikesh, con 20.000 mq di campus e oltre 3.000 studenti formati da più di 70 paesi.",
+    description: "Scopri Adhiroha, una scuola di yoga registrata presso Yoga Alliance a Upper Tapovan, Rishikesh, con 20.000 mq di campus e oltre 3.000 studenti formati da più di 70 paesi.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

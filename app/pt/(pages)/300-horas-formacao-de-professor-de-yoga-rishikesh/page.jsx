@@ -26,7 +26,7 @@ const sections = [
 export const metadata = {
   title: "Formação de Professor de Yoga de 300 Horas em Rishikesh | Adhiroha",
   description:
-    "Formação avançada de professor de yoga de 300 horas em Rishikesh, certificada pela Yoga Alliance. 30 dias, turmas pequenas, hospedagem em escola no Himalaia, todas as refeições e passeios inclusos.",
+    "Formação avançada de professor de yoga de 300 horas em Rishikesh, registrada na Yoga Alliance. 30 dias, turmas pequenas, hospedagem em escola no Himalaia, todas as refeições e passeios inclusos.",
   alternates: {
     canonical: PT,
     languages: hreflangFor(EN),
@@ -38,13 +38,13 @@ export const metadata = {
     url: `${SITE}${PT}`,
     title: "Formação de Professor de Yoga de 300 Horas em Rishikesh | Adhiroha",
     description:
-      "Formação avançada de professor de yoga de 300 horas em Rishikesh, certificada pela Yoga Alliance. 30 dias, turmas pequenas, hospedagem em escola no Himalaia, todas as refeições e passeios inclusos.",
+      "Formação avançada de professor de yoga de 300 horas em Rishikesh, registrada na Yoga Alliance. 30 dias, turmas pequenas, hospedagem em escola no Himalaia, todas as refeições e passeios inclusos.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Formação de Professor de Yoga de 300 Horas em Rishikesh | Adhiroha",
-    description: "Formação avançada de professor de yoga de 300 horas em Rishikesh, certificada pela Yoga Alliance. 30 dias, turmas pequenas, hospedagem em escola no Himalaia, todas as refeições e passeios inclusos.",
+    description: "Formação avançada de professor de yoga de 300 horas em Rishikesh, registrada na Yoga Alliance. 30 dias, turmas pequenas, hospedagem em escola no Himalaia, todas as refeições e passeios inclusos.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

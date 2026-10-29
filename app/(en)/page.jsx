@@ -17,7 +17,7 @@ import { graph, extractFaqs, faqSchema, LANGUAGE_ALTERNATES, schoolTourVideoSche
 export const metadata = withOpenGraph({
   title: "Yoga Teacher Training in Rishikesh, India | Adhiroha Yoga School",
   description:
-    "Yoga Alliance certified yoga teacher training school in Rishikesh, India. Small batches, expert Indian teachers, a stay on our three-acre school campus and meals included.",
+    "Yoga Alliance registered yoga teacher training school in Rishikesh, India. Small batches, expert Indian teachers, a stay on our three-acre school campus and meals included.",
   // Page-level `alternates` replaces the layout's, so the hreflang set has to be
   // declared here alongside the canonical — not inherited.
   alternates: { canonical: "/", languages: LANGUAGE_ALTERNATES }

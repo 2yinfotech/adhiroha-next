@@ -22,7 +22,7 @@ const sections = [
 export const metadata = withOpenGraph({
   title: "200 Hour Yoga Teacher Training in Rishikesh, India | RYT 200 | Adhiroha",
   description:
-    "Yoga Alliance certified 200 hour yoga teacher training in Rishikesh. 24 days, small groups, residential Himalayan stay, all meals and excursions included.",
+    "Yoga Alliance registered 200 hour yoga teacher training in Rishikesh. 24 days, small groups, residential Himalayan stay, all meals and excursions included.",
   alternates: { canonical: "/200-hour-yoga-teacher-training-course-rishikesh/", languages: hreflangFor("/200-hour-yoga-teacher-training-course-rishikesh/") }
 }, { type: "article" });
 

@@ -16,7 +16,7 @@ import { graph, extractFaqs, faqSchema, SITE, LANGUAGE_ALTERNATES, schoolTourVid
 export const metadata = {
   title: "Yoga-docentenopleiding in Rishikesh | YTTC 200/300/500 Uur | Adhiroha",
   description:
-    "Door Yoga Alliance gecertificeerde yoga-docentenopleidingen van 200, 300 en 500 uur in Rishikesh, India. Kleine groepen, ervaren Indiase docenten, verblijf op de school en maaltijden inbegrepen.",
+    "Bij Yoga Alliance geregistreerde yoga-docentenopleidingen van 200, 300 en 500 uur in Rishikesh, India. Kleine groepen, ervaren Indiase docenten, verblijf op de school en maaltijden inbegrepen.",
   alternates: { canonical: "/nl/", languages: LANGUAGE_ALTERNATES },
   openGraph: {
     type: "website",
@@ -25,13 +25,13 @@ export const metadata = {
     url: `${SITE}/nl/`,
     title: "Yoga-docentenopleiding in Rishikesh | YTTC 200/300/500 Uur | Adhiroha",
     description:
-      "Door Yoga Alliance gecertificeerde yoga-docentenopleidingen van 200, 300 en 500 uur in Rishikesh, India. Kleine groepen, ervaren Indiase docenten, verblijf op de school en maaltijden inbegrepen.",
+      "Bij Yoga Alliance geregistreerde yoga-docentenopleidingen van 200, 300 en 500 uur in Rishikesh, India. Kleine groepen, ervaren Indiase docenten, verblijf op de school en maaltijden inbegrepen.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Yoga-docentenopleiding in Rishikesh | YTTC 200/300/500 Uur | Adhiroha",
-    description: "Door Yoga Alliance gecertificeerde yoga-docentenopleidingen van 200, 300 en 500 uur in Rishikesh, India. Kleine groepen, ervaren Indiase docenten, verblijf op de school en maaltijden inbegrepen.",
+    description: "Bij Yoga Alliance geregistreerde yoga-docentenopleidingen van 200, 300 en 500 uur in Rishikesh, India. Kleine groepen, ervaren Indiase docenten, verblijf op de school en maaltijden inbegrepen.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

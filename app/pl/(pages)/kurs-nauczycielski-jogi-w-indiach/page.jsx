@@ -12,7 +12,7 @@ const EN = "/yoga-teacher-training-course-rishikesh-india/";
 export const metadata = {
   title: "Kurs Nauczycielski Jogi w Indiach | YTTC 200, 300 i 500 Godzin w Riszikeś | Adhiroha",
   description:
-    "Kurs nauczycielski jogi w Indiach w Adhiroha, Riszikeś, stacjonarne kursy 200, 300 i 500 godzin z certyfikatem Yoga Alliance. Ponad 3000 uczniów z przeszło 70 krajów. Opłata all inclusive, certyfikat uznawany na całym świecie.",
+    "Kurs nauczycielski jogi w Indiach w Adhiroha, Riszikeś, stacjonarne kursy 200, 300 i 500 godzin w szkole zarejestrowanej w Yoga Alliance. Ponad 3000 uczniów z przeszło 70 krajów. Opłata all inclusive, certyfikat uznawany na całym świecie.",
   keywords: [
     "kurs nauczycielski jogi w indiach",
     "kurs nauczycielski jogi w riszikeś",
@@ -29,13 +29,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pl_PL", url: `${SITE}${PL}`,
     title: "Kurs Nauczycielski Jogi w Indiach | YTTC 200, 300 i 500 Godzin w Riszikeś",
     description:
-      "Certyfikowane przez Yoga Alliance kursy nauczycielskie jogi 200, 300 i 500 godzin w Riszikeś w Indiach. All inclusive, certyfikat uznawany na całym świecie.",
+      "Zarejestrowane w Yoga Alliance kursy nauczycielskie jogi 200, 300 i 500 godzin w Riszikeś w Indiach. All inclusive, certyfikat uznawany na całym świecie.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Kurs Nauczycielski Jogi w Indiach | YTTC 200, 300 i 500 Godzin w Riszikeś",
-    description: "Certyfikowane przez Yoga Alliance kursy nauczycielskie jogi 200, 300 i 500 godzin w Riszikeś w Indiach. All inclusive, certyfikat uznawany na całym świecie.",
+    description: "Zarejestrowane w Yoga Alliance kursy nauczycielskie jogi 200, 300 i 500 godzin w Riszikeś w Indiach. All inclusive, certyfikat uznawany na całym świecie.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };
@@ -44,7 +44,7 @@ const pageSchema = graph(
   courseSchema({
     name: "200-Godzinny Kurs Nauczycielski Jogi w Riszikeś, Indie",
     description:
-      "Stacjonarny 200-godzinny kurs nauczycielski jogi z certyfikatem Yoga Alliance w Riszikeś w Indiach, fundament dla początkujących: asany, pranajama, anatomia, filozofia i praktyka nauczania.",
+      "Stacjonarny 200-godzinny kurs nauczycielski jogi w szkole zarejestrowanej w Yoga Alliance w Riszikeś w Indiach, fundament dla początkujących: asany, pranajama, anatomia, filozofia i praktyka nauczania.",
     url: "/pl/200-godzinny-kurs-nauczycielski-jogi-rishikesh/",
     price: 1275,
     days: 24,

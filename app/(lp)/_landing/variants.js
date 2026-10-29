@@ -137,7 +137,7 @@ const RAW = {
     bullet2: "24 Days in Rishikesh · Beginner-Friendly",
     coursesHeading: "200 Hour Yoga TTC in India",
     coursesIntro:
-      "Complete our 200 hour yoga teacher training in 24 days in Rishikesh and graduate eligible to register with Yoga Alliance as an RYT 200, the 200 hour Yoga Alliance certification studios ask for worldwide. It is where most of our students begin.",
+      "Complete our 200 hour yoga teacher training in 24 days in Rishikesh and graduate eligible to register with Yoga Alliance as an RYT 200, the 200 hour Yoga Alliance registration studios ask for worldwide. It is where most of our students begin.",
     whyTail: "Yoga School in Rishikesh",
     whyIntro:
       "Why so many teachers begin with our 200 hour yoga TTC in India, in the spiritual heart of Rishikesh",
@@ -158,7 +158,7 @@ const RAW = {
     bullet2: "Yoga Alliance RYS 500 · Rishikesh, India",
     coursesHeading: "500 Hour Yoga Teacher Training",
     coursesIntro:
-      "The 500 hour yoga teacher training takes you from foundation to advanced in one 60-day immersion in Rishikesh, and you graduate eligible to register with Yoga Alliance at the RYT 500 level: the 500 hour Yoga Alliance certification in a single course.",
+      "The 500 hour yoga teacher training takes you from foundation to advanced in one 60-day immersion in Rishikesh, and you graduate eligible to register with Yoga Alliance at the RYT 500 level: the 500 hour Yoga Alliance registration in a single course.",
     whyTail: "500 Hour Yoga School in India",
     whyIntro:
       "Sixty days of 500 hour yoga teacher training in the spiritual heart of Rishikesh",

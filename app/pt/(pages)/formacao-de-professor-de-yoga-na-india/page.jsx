@@ -12,7 +12,7 @@ const EN = "/yoga-teacher-training-course-rishikesh-india/";
 export const metadata = {
   title: "Formação de Professor de Yoga na Índia | YTTC 200, 300 e 500 Horas em Rishikesh | Adhiroha",
   description:
-    "Formação de professor de yoga na Índia com a Adhiroha, Rishikesh, cursos residenciais de 200, 300 e 500 horas certificados pela Yoga Alliance. Mais de 3.000 alunos de mais de 70 países. Valor com tudo incluído e certificação reconhecida internacionalmente.",
+    "Formação de professor de yoga na Índia com a Adhiroha, Rishikesh, cursos residenciais de 200, 300 e 500 horas registrados na Yoga Alliance. Mais de 3.000 alunos de mais de 70 países. Valor com tudo incluído e certificação reconhecida internacionalmente.",
   keywords: [
     "formação de professor de yoga na índia",
     "formação de professor de yoga em rishikesh",
@@ -29,13 +29,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "pt_BR", url: `${SITE}${PT}`,
     title: "Formação de Professor de Yoga na Índia | YTTC 200, 300 e 500 Horas em Rishikesh",
     description:
-      "Formações de professor de yoga de 200, 300 e 500 horas certificadas pela Yoga Alliance em Rishikesh, Índia. Tudo incluído, certificação reconhecida internacionalmente.",
+      "Formações de professor de yoga de 200, 300 e 500 horas registradas na Yoga Alliance em Rishikesh, Índia. Tudo incluído, certificação reconhecida internacionalmente.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Formação de Professor de Yoga na Índia | YTTC 200, 300 e 500 Horas em Rishikesh",
-    description: "Formações de professor de yoga de 200, 300 e 500 horas certificadas pela Yoga Alliance em Rishikesh, Índia. Tudo incluído, certificação reconhecida internacionalmente.",
+    description: "Formações de professor de yoga de 200, 300 e 500 horas registradas na Yoga Alliance em Rishikesh, Índia. Tudo incluído, certificação reconhecida internacionalmente.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };
@@ -44,7 +44,7 @@ const pageSchema = graph(
   courseSchema({
     name: "Formação de Professor de Yoga de 200 Horas em Rishikesh, Índia",
     description:
-      "Curso residencial de formação de professor de yoga de 200 horas certificado pela Yoga Alliance em Rishikesh, Índia, a base para iniciantes em asana, pranayama, anatomia, filosofia e prática de ensino.",
+      "Curso residencial de formação de professor de yoga de 200 horas registrado na Yoga Alliance em Rishikesh, Índia, a base para iniciantes em asana, pranayama, anatomia, filosofia e prática de ensino.",
     url: "/pt/200-horas-formacao-de-professor-de-yoga-rishikesh/",
     price: 1275,
     days: 24,

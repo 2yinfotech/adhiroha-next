@@ -26,7 +26,7 @@ const sections = [
 export const metadata = {
   title: "Formazione Insegnanti di Yoga di 200 Ore a Rishikesh | Adhiroha",
   description:
-    "Formazione insegnanti di yoga di 200 ore a Rishikesh, certificata Yoga Alliance. 24 giorni, gruppi ridotti, soggiorno in una scuola himalayana, tutti i pasti e le escursioni incluse.",
+    "Formazione insegnanti di yoga di 200 ore a Rishikesh, registrata presso Yoga Alliance. 24 giorni, gruppi ridotti, soggiorno in una scuola himalayana, tutti i pasti e le escursioni incluse.",
   alternates: {
     canonical: IT,
     languages: hreflangFor(EN),
@@ -38,13 +38,13 @@ export const metadata = {
     url: `${SITE}${IT}`,
     title: "Formazione Insegnanti di Yoga di 200 Ore a Rishikesh | Adhiroha",
     description:
-      "Formazione insegnanti di yoga di 200 ore a Rishikesh, certificata Yoga Alliance. 24 giorni, gruppi ridotti, soggiorno in una scuola himalayana, tutti i pasti e le escursioni incluse.",
+      "Formazione insegnanti di yoga di 200 ore a Rishikesh, registrata presso Yoga Alliance. 24 giorni, gruppi ridotti, soggiorno in una scuola himalayana, tutti i pasti e le escursioni incluse.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Formazione Insegnanti di Yoga di 200 Ore a Rishikesh | Adhiroha",
-    description: "Formazione insegnanti di yoga di 200 ore a Rishikesh, certificata Yoga Alliance. 24 giorni, gruppi ridotti, soggiorno in una scuola himalayana, tutti i pasti e le escursioni incluse.",
+    description: "Formazione insegnanti di yoga di 200 ore a Rishikesh, registrata presso Yoga Alliance. 24 giorni, gruppi ridotti, soggiorno in una scuola himalayana, tutti i pasti e le escursioni incluse.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

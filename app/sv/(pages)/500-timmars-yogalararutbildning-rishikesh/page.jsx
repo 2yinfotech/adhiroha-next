@@ -26,7 +26,7 @@ const sections = [
 export const metadata = {
   title: "500-Timmars Yogalärarutbildning i Rishikesh | Adhiroha",
   description:
-    "500-timmars yogalärarutbildning i Rishikesh, certifierad av Yoga Alliance. 60 dagar, från grund till avancerat, boende på en skola i Himalaya, alla måltider och utflykter ingår.",
+    "500-timmars yogalärarutbildning i Rishikesh, registrerad hos Yoga Alliance. 60 dagar, från grund till avancerat, boende på en skola i Himalaya, alla måltider och utflykter ingår.",
   alternates: {
     canonical: SV,
     languages: hreflangFor(EN),
@@ -38,13 +38,13 @@ export const metadata = {
     url: `${SITE}${SV}`,
     title: "500-Timmars Yogalärarutbildning i Rishikesh | Adhiroha",
     description:
-      "500-timmars yogalärarutbildning i Rishikesh, certifierad av Yoga Alliance. 60 dagar, från grund till avancerat, boende på en skola i Himalaya, alla måltider och utflykter ingår.",
+      "500-timmars yogalärarutbildning i Rishikesh, registrerad hos Yoga Alliance. 60 dagar, från grund till avancerat, boende på en skola i Himalaya, alla måltider och utflykter ingår.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "500-Timmars Yogalärarutbildning i Rishikesh | Adhiroha",
-    description: "500-timmars yogalärarutbildning i Rishikesh, certifierad av Yoga Alliance. 60 dagar, från grund till avancerat, boende på en skola i Himalaya, alla måltider och utflykter ingår.",
+    description: "500-timmars yogalärarutbildning i Rishikesh, registrerad hos Yoga Alliance. 60 dagar, från grund till avancerat, boende på en skola i Himalaya, alla måltider och utflykter ingår.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

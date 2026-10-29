@@ -11,20 +11,20 @@ const EN = "/yoga-teacher-training-course-rishikesh-india/";
 
 export const metadata = {
   title: "Yogalehrer-Ausbildung in Indien | 200, 300 & 500 Stunden YTTC in Rishikesh | Adhiroha",
-  description: "Von Yoga Alliance zertifizierte 200-, 300- & 500-Stunden Yogalehrer-Ausbildung in Rishikesh, Indien. Mit Unterkunft und all-inclusive.",
+  description: "Bei Yoga Alliance registrierte 200-, 300- & 500-Stunden Yogalehrer-Ausbildung in Rishikesh, Indien. Mit Unterkunft und all-inclusive.",
   alternates: {
     canonical: DE,
     languages: hreflangFor(EN),
   },
   openGraph: {
     type: "website", siteName: "Adhiroha Yoga School", locale: "de_DE", url: `${SITE}${DE}`,
-    title: "Yogalehrer-Ausbildung in Indien | 200, 300 & 500 Stunden YTTC in Rishikesh | Adhiroha", description: "Von Yoga Alliance zertifizierte 200-, 300- & 500-Stunden Yogalehrer-Ausbildung in Rishikesh, Indien. Mit Unterkunft und all-inclusive.",
+    title: "Yogalehrer-Ausbildung in Indien | 200, 300 & 500 Stunden YTTC in Rishikesh | Adhiroha", description: "Bei Yoga Alliance registrierte 200-, 300- & 500-Stunden Yogalehrer-Ausbildung in Rishikesh, Indien. Mit Unterkunft und all-inclusive.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Yogalehrer-Ausbildung in Indien | 200, 300 & 500 Stunden YTTC in Rishikesh | Adhiroha",
-    description: "Von Yoga Alliance zertifizierte 200-, 300- & 500-Stunden Yogalehrer-Ausbildung in Rishikesh, Indien. Mit Unterkunft und all-inclusive.",
+    description: "Bei Yoga Alliance registrierte 200-, 300- & 500-Stunden Yogalehrer-Ausbildung in Rishikesh, Indien. Mit Unterkunft und all-inclusive.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

@@ -16,7 +16,7 @@ import { graph, extractFaqs, faqSchema, SITE, LANGUAGE_ALTERNATES, schoolTourVid
 export const metadata = {
   title: "Formazione Insegnanti di Yoga a Rishikesh | YTTC 200/300/500 Ore | Adhiroha",
   description:
-    "Formazione insegnanti di yoga certificata Yoga Alliance di 200, 300 e 500 ore a Rishikesh, India. Gruppi ridotti, insegnanti indiani esperti, soggiorno nella scuola e pasti inclusi.",
+    "Formazione insegnanti di yoga registrata presso Yoga Alliance di 200, 300 e 500 ore a Rishikesh, India. Gruppi ridotti, insegnanti indiani esperti, soggiorno nella scuola e pasti inclusi.",
   alternates: { canonical: "/it/", languages: LANGUAGE_ALTERNATES },
   openGraph: {
     type: "website",
@@ -25,13 +25,13 @@ export const metadata = {
     url: `${SITE}/it/`,
     title: "Formazione Insegnanti di Yoga a Rishikesh | YTTC 200/300/500 Ore | Adhiroha",
     description:
-      "Formazione insegnanti di yoga certificata Yoga Alliance di 200, 300 e 500 ore a Rishikesh, India. Gruppi ridotti, insegnanti indiani esperti, soggiorno nella scuola e pasti inclusi.",
+      "Formazione insegnanti di yoga registrata presso Yoga Alliance di 200, 300 e 500 ore a Rishikesh, India. Gruppi ridotti, insegnanti indiani esperti, soggiorno nella scuola e pasti inclusi.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Formazione Insegnanti di Yoga a Rishikesh | YTTC 200/300/500 Ore | Adhiroha",
-    description: "Formazione insegnanti di yoga certificata Yoga Alliance di 200, 300 e 500 ore a Rishikesh, India. Gruppi ridotti, insegnanti indiani esperti, soggiorno nella scuola e pasti inclusi.",
+    description: "Formazione insegnanti di yoga registrata presso Yoga Alliance di 200, 300 e 500 ore a Rishikesh, India. Gruppi ridotti, insegnanti indiani esperti, soggiorno nella scuola e pasti inclusi.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

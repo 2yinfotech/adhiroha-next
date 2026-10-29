@@ -26,7 +26,7 @@ const sections = [
 export const metadata = {
   title: "リシケシの500時間ヨガ指導者養成コース | Adhiroha",
   description:
-    "ヨガアライアンス認定の500時間ヨガ指導者養成コース（リシケシ）。60日間、基礎から熟達までの全行程、ヒマラヤの学校での滞在、オールインクルーシブ。",
+    "ヨガアライアンス登録校の500時間ヨガ指導者養成コース（リシケシ）。60日間、基礎から熟達までの全行程、ヒマラヤの学校での滞在、オールインクルーシブ。",
   alternates: {
     canonical: JA,
     languages: hreflangFor(EN),
@@ -38,13 +38,13 @@ export const metadata = {
     url: `${SITE}${JA}`,
     title: "リシケシの500時間ヨガ指導者養成コース | Adhiroha",
     description:
-      "ヨガアライアンス認定の500時間ヨガ指導者養成コース（リシケシ）。60日間、基礎から熟達までの全行程、ヒマラヤの学校での滞在、オールインクルーシブ。",
+      "ヨガアライアンス登録校の500時間ヨガ指導者養成コース（リシケシ）。60日間、基礎から熟達までの全行程、ヒマラヤの学校での滞在、オールインクルーシブ。",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "リシケシの500時間ヨガ指導者養成コース | Adhiroha",
-    description: "ヨガアライアンス認定の500時間ヨガ指導者養成コース（リシケシ）。60日間、基礎から熟達までの全行程、ヒマラヤの学校での滞在、オールインクルーシブ。",
+    description: "ヨガアライアンス登録校の500時間ヨガ指導者養成コース（リシケシ）。60日間、基礎から熟達までの全行程、ヒマラヤの学校での滞在、オールインクルーシブ。",
     images: ["/img/adhiroha-og.jpg"],
   },
 };

@@ -12,7 +12,7 @@ const EN = "/yoga-teacher-training-course-rishikesh-india/";
 export const metadata = {
   title: "Yoga-docentenopleiding in India | YTTC 200, 300 en 500 Uur in Rishikesh | Adhiroha",
   description:
-    "Yoga-docentenopleiding in India bij Adhiroha, Rishikesh, residentiële cursussen van 200, 300 en 500 uur, gecertificeerd door Yoga Alliance. Meer dan 3.000 studenten uit ruim 70 landen. All-inclusive prijs, internationaal erkende certificering.",
+    "Yoga-docentenopleiding in India bij Adhiroha, Rishikesh, residentiële cursussen van 200, 300 en 500 uur, geregistreerd bij Yoga Alliance. Meer dan 3.000 studenten uit ruim 70 landen. All-inclusive prijs, internationaal erkende certificering.",
   keywords: [
     "yoga-docentenopleiding in india",
     "yoga-docentenopleiding in rishikesh",
@@ -29,13 +29,13 @@ export const metadata = {
     type: "website", siteName: "Adhiroha Yoga School", locale: "nl_NL", url: `${SITE}${NL}`,
     title: "Yoga-docentenopleiding in India | YTTC 200, 300 en 500 Uur in Rishikesh",
     description:
-      "Door Yoga Alliance gecertificeerde yoga-docentenopleidingen van 200, 300 en 500 uur in Rishikesh, India. All-inclusive, internationaal erkende certificering.",
+      "Bij Yoga Alliance geregistreerde yoga-docentenopleidingen van 200, 300 en 500 uur in Rishikesh, India. All-inclusive, internationaal erkende certificering.",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Yoga-docentenopleiding in India | YTTC 200, 300 en 500 Uur in Rishikesh",
-    description: "Door Yoga Alliance gecertificeerde yoga-docentenopleidingen van 200, 300 en 500 uur in Rishikesh, India. All-inclusive, internationaal erkende certificering.",
+    description: "Bij Yoga Alliance geregistreerde yoga-docentenopleidingen van 200, 300 en 500 uur in Rishikesh, India. All-inclusive, internationaal erkende certificering.",
     images: ["/img/adhiroha-og.jpg"],
   },
 };
@@ -44,7 +44,7 @@ const pageSchema = graph(
   courseSchema({
     name: "200-Uur Yoga-docentenopleiding in Rishikesh, India",
     description:
-      "Residentiële 200-uur yoga-docentenopleiding met Yoga Alliance-certificering in Rishikesh, India, de basis voor beginners in asana, pranayama, anatomie, filosofie en lespraktijk.",
+      "Residentiële 200-uur yoga-docentenopleiding van een bij Yoga Alliance geregistreerde school in Rishikesh, India, de basis voor beginners in asana, pranayama, anatomie, filosofie en lespraktijk.",
     url: "/nl/200-uur-yoga-docentenopleiding-rishikesh/",
     price: 1275,
     days: 24,

@@ -71,7 +71,7 @@ const pageSchema = graph(
   courseSchema({
     name: "200 Hour Yoga Teacher Training in Rishikesh, India",
     description:
-      "Residential 200 hour Yoga Alliance certified yoga teacher training course in Rishikesh, India, the beginner-friendly foundation in asana, pranayama, anatomy, philosophy and teaching practice.",
+      "Residential 200 hour Yoga Alliance registered yoga teacher training course in Rishikesh, India, the beginner-friendly foundation in asana, pranayama, anatomy, philosophy and teaching practice.",
     url: COURSE_URL[200],
     price: 1275,
     days: 24,
