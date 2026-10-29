@@ -1,0 +1,125 @@
+/* ===================================================================
+   ADHIROHA REVIEWS — only what this page adds to the hub's `tp-` system
+   (imported from ../yoga-teacher-training-course-rishikesh-india/).
+   Every rule is namespaced `rv-` so nothing leaks into other pages.
+   =================================================================== */
+
+.rv-stars { display: inline-flex; gap: 2px; vertical-align: middle; }
+
+/* ---------- hero card ---------- */
+.rv-hero-card { display: flex; flex-direction: column; gap: 18px; }
+.rv-hc-top { display: flex; align-items: center; gap: 14px; }
+.rv-hc-top > svg { flex: none; }
+.rv-hc-score { font-size: 54px; color: var(--ink); }
+.rv-hc-top b {
+  display: block; margin-top: 6px;
+  font-family: 'Poppins', system-ui, sans-serif; font-size: 12.5px; font-weight: 500; color: var(--ink);
+}
+.rv-hc-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid #e2dccf; }
+.rv-hc-list li {
+  display: grid; grid-template-columns: 26px 1fr auto auto; align-items: center; gap: 12px;
+  padding: 11px 0; border-bottom: 1px solid #e2dccf;
+  font-family: 'Poppins', system-ui, sans-serif; font-size: 13px; color: var(--body);
+}
+.rv-hc-list img { width: 26px; height: 26px; object-fit: contain; }
+.rv-hc-list b { font-family: 'Playfair Display', Georgia, serif; font-size: 18px; font-weight: 600; color: var(--ink); }
+.rv-hc-list i { font-style: normal; font-size: 11px; color: #9b9287; min-width: 74px; text-align: right; }
+.rv-yt {
+  width: 26px; height: 26px; border-radius: 7px; background: #ff0000; color: #fff;
+  display: grid; place-items: center;
+}
+.rv-yt.big { width: 34px; height: 34px; border-radius: 9px; }
+
+/* ---------- platform tiles ---------- */
+.rv-platforms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.rv-platform {
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px;
+  background: #fff; border: 1px solid var(--tp-line); border-radius: 18px; padding: 30px 20px 26px;
+  text-decoration: none; color: inherit; transition: transform .3s ease, box-shadow .3s ease;
+}
+a.rv-platform:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(40, 30, 20, .08); }
+.rv-platform > img { width: 34px; height: 34px; object-fit: contain; }
+.rv-p-score { font-size: 46px; color: var(--ink); margin-top: 6px; }
+.rv-p-score small { font-size: 17px; color: #9b9287; margin-left: 2px; }
+.rv-p-sub { font-family: 'Poppins', system-ui, sans-serif; font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase; color: #9b9287; }
+.rv-platform b { font-family: 'Playfair Display', Georgia, serif; font-size: 19px; font-weight: 500; color: var(--ink); margin-top: 4px; }
+.rv-platform i { font-style: normal; font-family: 'Poppins', system-ui, sans-serif; font-size: 12.5px; font-weight: 300; color: var(--body); }
+.rv-platform .tp-link { margin-top: 10px; font-size: 10.5px; }
+
+/* ---------- Google review cards ---------- */
+.rv-greviews { columns: 3; column-gap: 22px; }
+.rv-greview {
+  break-inside: avoid; margin: 0 0 22px; background: #fff;
+  border: 1px solid var(--tp-line); border-radius: 18px; padding: 24px 26px 26px;
+}
+.rv-gr-head { display: flex; align-items: center; gap: 12px; }
+.rv-gr-who { flex: 1; min-width: 0; }
+.rv-gr-who b { display: block; font-family: 'Poppins', system-ui, sans-serif; font-size: 14px; font-weight: 500; color: var(--ink); }
+.rv-gr-who i { display: block; font-style: normal; font-family: 'Poppins', system-ui, sans-serif; font-size: 11.5px; font-weight: 300; color: #9b9287; }
+.rv-gr-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin: 14px 0 12px; }
+.rv-gr-meta span:last-child { font-family: 'Poppins', system-ui, sans-serif; font-size: 11.5px; color: #9b9287; }
+.rv-greview blockquote { margin: 0; }
+.rv-greview blockquote p {
+  margin: 0; font-family: 'Poppins', system-ui, sans-serif; font-size: 14.5px; font-weight: 300;
+  line-height: 1.8; color: var(--ink);
+}
+.rv-more { text-align: center; margin-top: 18px; }
+
+/* ---------- video reviews ---------- */
+.rv-vmain { max-width: 980px; margin: 0 auto 34px; }
+.rv-vgrid {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 18px;
+}
+.rv-vcard {
+  appearance: none; display: block; width: 100%; text-align: left; cursor: pointer;
+  background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 14px; padding: 8px 8px 12px; color: inherit;
+  transition: background .25s ease, border-color .25s ease;
+}
+.rv-vcard:hover { background: rgba(255, 255, 255, .09); }
+.rv-vcard[aria-current="true"] { background: rgba(236, 205, 185, .14); border-color: rgba(236, 205, 185, .45); }
+.rv-vcard:focus-visible { outline: 2px solid #eccdb9; outline-offset: 2px; }
+.rv-vthumb { position: relative; display: block; aspect-ratio: 16 / 9; border-radius: 9px; overflow: hidden; background: #12100e; }
+.rv-vthumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.rv-vplay {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 255, 255, .9); color: var(--ink);
+  display: grid; place-items: center; transition: transform .25s ease;
+}
+.rv-vcard:hover .rv-vplay { transform: translate(-50%, -50%) scale(1.1); }
+.rv-vlen {
+  position: absolute; right: 6px; bottom: 6px; background: rgba(0, 0, 0, .75); color: #fff;
+  font-family: 'Poppins', system-ui, sans-serif; font-size: 10.5px; font-weight: 500;
+  border-radius: 4px; padding: 2px 6px;
+}
+.rv-vcard b { display: block; margin: 10px 4px 0; font-family: 'Poppins', system-ui, sans-serif; font-size: 12.5px; font-weight: 500; color: #fff; }
+.rv-vcard i { display: block; margin: 3px 4px 0; font-style: normal; font-family: 'Poppins', system-ui, sans-serif; font-size: 11px; font-weight: 300; color: #a89e91; }
+.rv-vfoot { text-align: center; margin: 36px 0 0; }
+
+/* ---------- themes ---------- */
+.rv-themes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.rv-theme {
+  background: #fff; border: 1px solid var(--tp-line); border-radius: 18px; padding: 28px 26px;
+  display: flex; flex-direction: column;
+}
+.rv-theme-n { font-size: 30px; color: var(--lv); opacity: .55; margin-bottom: 14px; }
+.rv-theme-sum { margin: 0 0 18px; font-family: 'Poppins', system-ui, sans-serif; font-size: 13.5px; font-weight: 300; line-height: 1.75; color: var(--body); flex: 1; }
+.rv-theme blockquote { margin: 0; border-top: 1px solid var(--tp-line); padding-top: 16px; }
+.rv-theme blockquote p { margin: 0 0 8px; font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 15px; line-height: 1.6; color: var(--ink); }
+.rv-theme cite { font-style: normal; font-family: 'Poppins', system-ui, sans-serif; font-size: 11.5px; color: #9b9287; }
+
+/* ---------- responsive (same breakpoints as the hub) ---------- */
+@media (max-width: 1100px) {
+  .rv-platforms, .rv-themes { grid-template-columns: 1fr 1fr; }
+  .rv-greviews { columns: 2; }
+}
+@media (max-width: 760px), (max-width: 1024px) and (orientation: portrait) {
+  .rv-themes { grid-template-columns: 1fr; }
+  .rv-platforms { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .rv-platform { padding: 22px 12px 20px; }
+  .rv-p-score { font-size: 36px; }
+  .rv-greviews { columns: 1; }
+  .rv-vgrid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .rv-hc-score { font-size: 44px; }
+}

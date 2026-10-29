@@ -118,7 +118,7 @@ const RATINGS = [["Google", "4.9", "383 reviews"], ["Yoga Alliance", "4.5", "20 
 const VIDEOS = [
   { id: "34JbOEe7Xn8", label: "A graduate on the 200 hour course" },
   { id: "3a0OhN0uC0U", label: "What the first week felt like" },
-  { id: "-tB_WnA0jAo", label: "On the teachers and the shala" },
+  { id: "W4jT7YXZpMU", label: "On the teachers and the shala" },
   { id: "V2mporw4k8Q", label: "Arriving with no teaching experience" },
   { id: "kfngfAxnIlg", label: "Life at the school, day to day" },
   { id: "TJsr8gATo9k", label: "What changed by day twenty-four" },
