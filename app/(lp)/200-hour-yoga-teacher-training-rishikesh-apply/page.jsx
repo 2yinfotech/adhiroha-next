@@ -113,7 +113,7 @@ const INCLUDED = [
   ["wifi", "Unlimited high-speed WiFi across the campus"],
 ];
 
-const RATINGS = [["Google", "4.9", "383 reviews"], ["Yoga Alliance", "4.5", "20 reviews"], ["Tripadvisor", "4.3", "13 reviews"]];
+const RATINGS = [["Google", "4.9", "390+ reviews"], ["Yoga Alliance", "4.5", "20 reviews"], ["Tripadvisor", "4.3", "13 reviews"]];
 
 const VIDEOS = [
   { id: "34JbOEe7Xn8", label: "A graduate on the 200 hour course" },
@@ -189,7 +189,7 @@ export default function Page() {
               <GoogleMark />
               <b>4.9</b>
               <span className="lp-stars" aria-hidden="true">★★★★★</span>
-              <span>from 383 Google reviews</span>
+              <span>from 390+ Google reviews</span>
             </p>
           </div>
         </div>
