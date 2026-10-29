@@ -18,7 +18,7 @@ import { DRAWER_HTML, FOOTER_HTML, HEADER_HTML } from "@/components/chrome";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
-import { PLATFORM_RATINGS, breadcrumbSchema, faqSchema, graph, videoSchema } from "@/lib/seo";
+import { ORG_ID, PLATFORM_RATINGS, SITE, breadcrumbSchema, faqSchema, graph, videoSchema } from "@/lib/seo";
 import scripts from "./scripts";
 import {
   FAQS, GOOGLE_REVIEWS, GOOGLE_URL, THEMES, VIDEOS, YOGA_ALLIANCE_URL, YOUTUBE_URL,
@@ -29,9 +29,9 @@ const URL = "/adhiroha-reviews/";
 const [GOOGLE, YA, TRIP] = PLATFORM_RATINGS;
 
 export const metadata = {
-  title: `Adhiroha Reviews | ${GOOGLE.value}★ from ${GOOGLE.count} Google Reviews & Student Videos`,
+  title: `Adhiroha Reviews: ${GOOGLE.value}★ on Google & ${VIDEOS.length} Student Videos`,
   description:
-    `Read Adhiroha Yoga School reviews: ${GOOGLE.value} stars from ${GOOGLE.count} Google reviews, Yoga Alliance and Tripadvisor ratings, and ${VIDEOS.length} unscripted video reviews from graduates of our 200, 300 and 500 hour yoga teacher training in Rishikesh.`,
+    `Adhiroha Yoga School reviews: ${GOOGLE.value} stars from ${GOOGLE.count} Google reviews, plus ${VIDEOS.length} unscripted video reviews from yoga teacher training graduates in Rishikesh.`,
   keywords: [
     "adhiroha reviews",
     "adhiroha yoga school reviews",
@@ -50,7 +50,19 @@ export const metadata = {
   },
 };
 
+// The page itself: a collection of reviews about the school, so `about` points
+// at the sitewide Organization node, which already carries the Google rating.
 const pageSchema = graph(
+  {
+    "@type": "CollectionPage",
+    "@id": `${SITE}${URL}#webpage`,
+    url: `${SITE}${URL}`,
+    name: "Adhiroha Reviews",
+    description: metadata.description,
+    about: { "@id": ORG_ID },
+    primaryImageOfPage: `${SITE}/gallery/opening-caremony/opening-014.webp`,
+    inLanguage: "en",
+  },
   faqSchema(FAQS.map(([question, answer]) => ({ question, answer }))),
   breadcrumbSchema([{ name: "Adhiroha Reviews", url: URL }]),
   ...VIDEOS.map((v, i) => videoSchema({ ...v, n: i + 1 }))
@@ -240,7 +252,7 @@ export default function Page() {
           <div className="tp-wrap">
             <div className="tp-head reveal">
               <span className="tp-eyebrow">Student video testimonials</span>
-              <h2 className="tp-h2 wide">{VIDEOS.length} graduates, on camera, unscripted</h2>
+              <h2 className="tp-h2 wide">Adhiroha video reviews: {VIDEOS.length} graduates, unscripted</h2>
               <p className="tp-p">
                 Every student review on the Adhiroha YouTube channel, recorded at the end of their course,
                 in their own words. Pick any one to play it.
@@ -306,7 +318,7 @@ export default function Page() {
           <div className="tp-wrap">
             <div className="tp-head mid reveal">
               <span className="tp-eyebrow">From the interviews</span>
-              <h2 className="tp-h2 wide">In their words</h2>
+              <h2 className="tp-h2 wide">Adhiroha reviews in students&rsquo; own words</h2>
             </div>
             <div className="tp-quotes reveal">
               {VOICES.map(([name, place, quote]) => (

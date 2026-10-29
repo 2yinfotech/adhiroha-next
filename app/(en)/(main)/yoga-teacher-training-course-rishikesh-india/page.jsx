@@ -749,6 +749,9 @@ export default function Page() {
                 </figure>
               ))}
             </div>
+            <p className="tp-faq-more reveal">
+              <a className="tp-link" href="/adhiroha-reviews/">Read all Adhiroha reviews <Arrow /></a>
+            </p>
           </div>
         </section>
 

@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { getAllArticles } from "@/lib/articles";
 import { SITE } from "@/lib/seo";
+import { VIDEOS } from "./(en)/(main)/adhiroha-reviews/data";
 
 /**
  * The sitemap, generated from the routes that actually exist.
@@ -96,9 +97,28 @@ function weightFor(url) {
   if (url === "/") return { changeFrequency: "weekly", priority: 1 };
   if (/^\/[a-z]{2}\/$/.test(url)) return { changeFrequency: "weekly", priority: 0.9 };
   if (/hour-yoga-teacher-training/.test(url)) return { changeFrequency: "weekly", priority: 0.9 };
+  // Reviews change weekly and the page competes for the school's own name.
+  if (url === "/adhiroha-reviews/") return { changeFrequency: "weekly", priority: 0.8 };
   if (url.startsWith("/blog/")) return { changeFrequency: "monthly", priority: 0.6 };
   return { changeFrequency: "monthly", priority: 0.7 };
 }
+
+// The reviews page embeds every student review on the YouTube channel. Listing
+// them here as video entries is what gets them into Google's video results
+// with this page, rather than YouTube, as the landing URL. Next writes these
+// values into the XML unescaped, so nothing below may contain & < or >.
+const REVIEWS_URL = "/adhiroha-reviews/";
+const seconds = (len) => len.split(":").reduce((m, s) => m * 60 + Number(s), 0);
+const reviewVideos = () =>
+  VIDEOS.map((v, i) => ({
+    title: `Adhiroha Student Review ${String(i + 1).padStart(2, "0")}: Yoga Teacher Training in Rishikesh`,
+    thumbnail_loc: `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`,
+    description:
+      "An unscripted review from a graduate of the yoga teacher training course at Adhiroha Yoga School, Upper Tapovan, Rishikesh.",
+    player_loc: `https://www.youtube.com/embed/${v.id}`,
+    duration: seconds(v.length),
+    publication_date: v.uploadDate,
+  }));
 
 export const revalidate = 3600;
 
@@ -111,5 +131,6 @@ export default async function sitemap() {
     url: `${BASE}${url}`,
     lastModified,
     ...weightFor(url),
+    ...(url === REVIEWS_URL ? { videos: reviewVideos() } : {}),
   }));
 }

@@ -164,7 +164,7 @@ export default async function ArticlePage({ params }) {
                 <ul className="aside-ticks">
                   <li>200, 300 &amp; 500 hour teacher training</li>
                   <li>Courses start on the 1st of every month</li>
-                  <li>Rated 4.9 on Google</li>
+                  <li><a href="/adhiroha-reviews/" style={{ color: "inherit" }}>Rated 4.9 on Google</a></li>
                 </ul>
                 <div className="aside-rys">
                   <img src="/img/RYS200.png" alt="Yoga Alliance RYS 200" width="54" height="54" loading="lazy" />
