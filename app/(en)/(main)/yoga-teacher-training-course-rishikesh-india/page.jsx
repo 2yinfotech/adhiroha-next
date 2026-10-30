@@ -16,9 +16,13 @@
 // Everything here is in the HTML and visible on load.
 //
 //   H1  hero
+//   H2  at a glance     the direct answer to "yoga teacher training in India"
 //   H2  the ladder      the three courses drawn to scale on one 500-hour axis
 //   H2  200 / 300 / 500 three full sections, each with its own H3s
 //   H2  batch dates     one table, a column per course
+//   H2  why india, where in india, cost, choosing, coming from abroad — the
+//                       country-level questions this page has to answer to rank
+//                       for the India keyword rather than for Rishikesh
 //   ——  the shared spine — everything the three have in common, written once
 //   H2  ashram, food, teachers, excursions, certificate, videos, voices, FAQ
 //   H2  keep exploring  down into the three dedicated course pages
@@ -34,16 +38,16 @@ import {
 } from "@/lib/seo";
 import scripts from "./page-scripts";
 import {
-  ARC, COURSE_URL, DAY, EXCURSIONS, FAQS, INCLUDED, LEVEL, LEVELS,
-  MOSAIC, NOT_INCLUDED, PILLAR_STEP, PILLARS, SPACES, TEACHERS, VIDEOS, VOICES, WHO,
+  ARC, CHOOSE, COURSE_URL, DAY, EXCURSIONS, FAQS, INCLUDED, LEVEL, LEVELS,
+  MOSAIC, NOT_INCLUDED, PILLAR_STEP, PILLARS, PLACES, SPACES, TEACHERS, VIDEOS, VOICES, WHO, WHY_INDIA,
 } from "./data";
 
 const URL = "/yoga-teacher-training-course-rishikesh-india/";
 
 export const metadata = {
-  title: "Yoga Teacher Training in India | 200, 300 & 500 Hour YTTC in Rishikesh | Adhiroha",
+  title: "Yoga Teacher Training in India | 200, 300 & 500 Hour | Adhiroha",
   description:
-    "Yoga teacher training in India at Adhiroha, Rishikesh. Yoga Alliance registered 200, 300 and 500 hour residential courses from €1275, all-inclusive. Compare fees, syllabus and dates, and see the school you would be living in.",
+    "Yoga teacher training in India at Adhiroha, Rishikesh. Yoga Alliance registered 200, 300 & 500 hour courses from €1275 with stay and meals. Monthly batches.",
   keywords: [
     "yoga teacher training in india",
     "yoga teacher training in rishikesh",
@@ -54,9 +58,9 @@ export const metadata = {
   ],
   alternates: { canonical: URL, languages: hreflangFor(URL) },
   openGraph: {
-    title: "Yoga Teacher Training in India | 200, 300 & 500 Hour YTTC in Rishikesh",
+    title: "Yoga Teacher Training in India | 200, 300 & 500 Hour Courses",
     description:
-      "Yoga Alliance registered 200, 300 and 500 hour residential yoga teacher training in Rishikesh, India. All-inclusive fees, internationally recognised certification.",
+      "Yoga Alliance registered 200, 300 and 500 hour yoga teacher training in India, at our school in Rishikesh. All-inclusive fees, with a new batch every month.",
     url: URL,
     type: "website",
     images: [{ url: "/img/adhiroha-og.jpg", width: 1200, height: 630, alt: "Adhiroha Yoga School" }],
@@ -110,6 +114,8 @@ const sections = [
   { label: "300 Hour", target: "c300" },
   { label: "500 Hour", target: "c500" },
   { label: "Dates", target: "dates" },
+  { label: "Why India", target: "why-india" },
+  { label: "Fees", target: "cost" },
   { label: "A day", target: "a-day" },
   { label: "The school", target: "ashram" },
   { label: "Teachers", target: "teachers" },
@@ -146,14 +152,14 @@ function CourseSection({ lv, index }) {
     <section className={`tp-sec tp-course tp-lv${lv}${index % 2 ? " tp-paper" : ""}`} id={`c${lv}`}>
       <div className="tp-wrap">
         <figure className="tp-course-photo reveal">
-          <img src={L.image} alt={`Students on the ${lv} hour yoga teacher training at Adhiroha, Rishikesh`} loading="lazy" />
+          <img src={L.image} alt={`Students on the ${lv} hour yoga teacher training in India at Adhiroha, Rishikesh`} loading="lazy" />
           <figcaption><span className="tp-fig">{lv}</span> {L.name}</figcaption>
         </figure>
 
         <div className="tp-course-head">
           <div className="reveal">
             <span className="tp-eyebrow">{L.name} · {L.days} · {L.credential}</span>
-            <h2 className="tp-h2 wide">{L.title} in Rishikesh</h2>
+            <h2 className="tp-h2 wide">{L.title} in India</h2>
             <p className="tp-p">{L.blurb}</p>
             <p className="tp-p">
               Everything you need for the {L.days} is already inside the fee: your room at the school, three
@@ -265,7 +271,7 @@ export default function Page() {
           <img
             className="u-img"
             src="/img/adhiroha-yttc-014.webp"
-            alt="Students practising together in the open-sided shala at Adhiroha, Rishikesh"
+            alt="Students on a yoga teacher training in India, practising in the open-sided shala at Adhiroha, Rishikesh"
             width="1600" height="1064" loading="eager" fetchPriority="high"
           />
           <div dangerouslySetInnerHTML={{ __html: HEADER_HTML }} />
@@ -279,12 +285,12 @@ export default function Page() {
               <span className="kicker">Root · Heart · Crown</span>
               <h1>Yoga Teacher Training in India</h1>
               <p className="c-sub c-sub-lg">
-                Three Yoga Alliance registered trainings at our school in Upper Tapovan, Rishikesh, on
-                one continuous path. Two hundred hours to begin teaching, three hundred more to teach
+                Three Yoga Alliance registered trainings at our school in Upper Tapovan, Rishikesh, in the
+                Himalayan foothills of northern India, on one continuous path. Two hundred hours to begin teaching, three hundred more to teach
                 with authority, or all five hundred in a single stretch above the Ganga Ji.
               </p>
               <p className="c-sub c-sub-sm">
-                Three Yoga Alliance registered trainings at our school in Rishikesh, on one path.
+                Three Yoga Alliance registered trainings at our school in Rishikesh, India, on one path.
               </p>
               <div className="c-meta">
                 <span><Lotus /> Yoga Alliance RYS 200 · 300 · 500</span>
@@ -326,13 +332,37 @@ export default function Page() {
         </section>
 
         {/* ============================================================
+            AT A GLANCE — the direct answer, first thing below the hero.
+            ============================================================ */}
+        <section className="tp-sec tight" id="india">
+          <div className="tp-wrap tp-split-sec">
+            <div className="tp-head reveal">
+              <span className="tp-eyebrow">The short version</span>
+              <h2 className="tp-h2 wide">Yoga teacher training in India, at a glance</h2>
+              <p className="tp-p">
+                Yoga teacher training in India is a live-in course, usually 200, 300 or 500 hours long,
+                that qualifies you to teach yoga and to register with Yoga Alliance as an RYT. India is
+                where the practice began, which is why students fly here from all over the world to
+                learn it.
+              </p>
+              <p className="tp-p">
+                Adhiroha runs all three levels at our school in Upper Tapovan, Rishikesh, with a new
+                batch starting on the 1st of every month. Fees start at &euro;{LEVEL[200].triple}, with
+                your room, three meals a day and airport pickup from Dehradun already included.
+              </p>
+            </div>
+            <figure className="tp-split-img reveal"><img src="/gallery/opening-caremony/opening-014.webp" alt="The opening ceremony that begins every yoga teacher training batch at Adhiroha, India" loading="lazy" /></figure>
+          </div>
+        </section>
+
+        {/* ============================================================
             THE LADDER
             ============================================================ */}
         <section className="tp-sec tp-ladder" id="the-path">
           <div className="tp-wrap">
             <div className="tp-head reveal">
               <span className="tp-eyebrow">The path, to scale</span>
-              <h2 className="tp-h2 wide">Five hundred hours, and where each course sits on them</h2>
+              <h2 className="tp-h2 wide">Yoga teacher training courses in India: 200, 300 and 500 hours</h2>
               <p className="tp-p">
                 The three trainings are not three separate products. They are one path measured out in
                 hours. The 200 hour covers the first stretch of it, the 300 hour covers the rest, and the
@@ -429,6 +459,146 @@ export default function Page() {
         </section>
 
         {/* ============================================================
+            WHY INDIA
+            ============================================================ */}
+        <section className="tp-sec tp-paper" id="why-india">
+          <div className="tp-wrap">
+            <div className="tp-head reveal">
+              <span className="tp-eyebrow">Why come all this way</span>
+              <h2 className="tp-h2 wide">Why do your yoga teacher training in India?</h2>
+              <p className="tp-p">
+                You can take a 200 hour course almost anywhere now. Students keep choosing India for
+                reasons a studio at home cannot offer.
+              </p>
+            </div>
+            <div className="tp-who reveal">
+              {WHY_INDIA.map(([tag, h, p]) => (
+                <div className="tp-who-item" key={h}>
+                  <span>{tag}</span>
+                  <b>{h}</b>
+                  <p>{p}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ============================================================
+            WHERE IN INDIA
+            ============================================================ */}
+        <section className="tp-sec" id="where-in-india">
+          <div className="tp-wrap">
+            <div className="tp-head reveal">
+              <span className="tp-eyebrow">Choosing a place</span>
+              <h2 className="tp-h2 wide">Where to do yoga teacher training in India</h2>
+              <p className="tp-p">
+                India&rsquo;s main training centres are very different places, and the right one depends
+                on the experience you want. Here is how they differ, including the one we chose.
+              </p>
+            </div>
+            <div className="tp-who reveal">
+              {PLACES.map(([tag, h, p]) => (
+                <div className="tp-who-item" key={h}>
+                  <span>{tag}</span>
+                  <b>{h}</b>
+                  <p>{p}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ============================================================
+            COST
+            ============================================================ */}
+        <section className="tp-sec tp-cream" id="cost">
+          <div className="tp-wrap tp-split-sec">
+            <div className="tp-head reveal">
+              <span className="tp-eyebrow">What it costs</span>
+              <h2 className="tp-h2 wide">How much does yoga teacher training cost in India?</h2>
+              <p className="tp-p">
+                Fees for yoga teacher training in India vary widely, from a few hundred euros to more
+                than &euro;3000, and headline prices are hard to compare because some leave out food,
+                rooms or the certificate. Add up the full cost before you decide: tuition, accommodation,
+                meals, airport transfer and certification.
+              </p>
+              <p className="tp-p">
+                At Adhiroha the fee is all-inclusive, and it depends on the course and your room:
+              </p>
+              <ul className="tp-ticks">
+                {LEVELS.map((lv) => (
+                  <li key={lv}>
+                    <Tick /> <span><b>{lv} hour, {LEVEL[lv].days}:</b> &euro;{LEVEL[lv].triple} in triple sharing or &euro;{LEVEL[lv].double} in double sharing</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="tp-p">
+                That covers your room, three meals a day, all training and materials, both excursions,
+                airport pickup from Dehradun and your certificate. Flights, visa and travel insurance are
+                yours to arrange, and the <a href="#included">full list</a> is further down this page.
+              </p>
+            </div>
+            <figure className="tp-split-img reveal"><img src="/gallery/dinning/dinning-004.webp" alt="Sattvic vegetarian food served in the school dining hall, included in the course fee" loading="lazy" /></figure>
+          </div>
+        </section>
+
+        {/* ============================================================
+            CHOOSING A SCHOOL
+            ============================================================ */}
+        <section className="tp-sec tp-paper" id="choose">
+          <div className="tp-wrap">
+            <div className="tp-head reveal">
+              <span className="tp-eyebrow">Comparing schools</span>
+              <h2 className="tp-h2 wide">How to choose the best yoga teacher training in India</h2>
+              <p className="tp-p">
+                The best course is the one that fits you and stands up to a few simple checks. These are
+                the ones worth making with any school, ours included.
+              </p>
+            </div>
+            <div className="tp-who reveal">
+              {CHOOSE.map(([tag, h, p]) => (
+                <div className="tp-who-item" key={h}>
+                  <span>{tag}</span>
+                  <b>{h}</b>
+                  <p>{p}</p>
+                </div>
+              ))}
+            </div>
+            <p className="tp-faq-more reveal">
+              See how Adhiroha measures up on the <a href="/adhiroha-reviews/">student reviews page</a> and
+              on the <a href="/yoga-teachers-in-india/">teachers page</a>.
+            </p>
+          </div>
+        </section>
+
+        {/* ============================================================
+            COMING FROM ABROAD
+            ============================================================ */}
+        <section className="tp-sec" id="travel">
+          <div className="tp-wrap tp-split-sec">
+            <div className="tp-head reveal">
+              <span className="tp-eyebrow">Getting here</span>
+              <h2 className="tp-h2 wide">Coming to India for your training: visa, flights and safety</h2>
+              <p className="tp-p">
+                Students fly in from all over the world, many of them alone and many for the first time.
+                Here is how the journey works.
+              </p>
+              <ul className="tp-ticks">
+                <li><Tick /> <span><b>Visa:</b> once you register we send the admission documents for your Indian Tourist e-Visa application.</span></li>
+                <li><Tick /> <span><b>Flights:</b> we recommend flying into Delhi and taking a short domestic flight to Dehradun&rsquo;s Jolly Grant Airport.</span></li>
+                <li><Tick /> <span><b>Arrival:</b> pickup from Dehradun Airport is included in your fee, and our driver waits at arrivals with your name on a placard.</span></li>
+                <li><Tick /> <span><b>Safety:</b> a walled campus under CCTV, the gate closed by 21:00, shared rooms allotted by gender, and support staff you can reach at any hour.</span></li>
+              </ul>
+              <p className="tp-p">
+                Read more about <a href="/safety-hygiene-in-rishikesh/">safety for solo travellers</a> and
+                the <a href="/weather/">weather in Rishikesh, month by month</a>.
+              </p>
+            </div>
+            <figure className="tp-split-img reveal"><img src="/gallery/ashram/ashram-006.webp" alt="The school buildings on the green hillside of Upper Tapovan, Rishikesh" loading="lazy" /></figure>
+          </div>
+        </section>
+
+        {/* ============================================================
             THE SPINE
             ============================================================ */}
         <section className="tp-spine">
@@ -494,7 +664,7 @@ export default function Page() {
           <div className="tp-wrap">
             <div className="tp-head reveal">
               <span className="tp-eyebrow">Where it happens</span>
-              <h2 className="tp-h2 wide">Three acres in Upper Tapovan, a kilometre above the town</h2>
+              <h2 className="tp-h2 wide">Your yoga school in India: three acres in Upper Tapovan, Rishikesh</h2>
               <p className="tp-p">
                 A practice takes on the shape of the space it happens in. Our school spreads across three
                 quiet acres beside a flowing brook, ringed by hills and forest, and every corner of it
@@ -577,7 +747,7 @@ export default function Page() {
           <div className="tp-wrap">
             <div className="tp-head reveal">
               <span className="tp-eyebrow">Ten acharyas</span>
-              <h2 className="tp-h2 wide">The people at the front of the room</h2>
+              <h2 className="tp-h2 wide">The Indian yoga teachers at the front of the room</h2>
               <p className="tp-p">
                 A school is only ever as good as the people teaching in it. We never hand a whole course
                 to one person, and we never put an intern at the front — every subject is led by someone
@@ -636,10 +806,10 @@ export default function Page() {
           <div className="tp-wrap">
             <div className="tp-head reveal">
               <span className="tp-eyebrow">What you earn</span>
-              <h2 className="tp-h2 wide">One certificate, carrying both recognitions</h2>
+              <h2 className="tp-h2 wide">One certificate: Yoga Alliance and India&rsquo;s Ministry of Ayush</h2>
               <p className="tp-p">
                 Adhiroha is a Registered Yoga School with Yoga Alliance at all three levels, and
-                accredited by the Yoga Certification Board under the Ministry of Ayush. Finish your
+                accredited by the Yoga Certification Board under the Ministry of Ayush, Government of India. Finish your
                 course and you leave with a single certificate carrying both, which is all a studio in
                 Berlin, a gym in Melbourne or a retreat in Costa Rica needs to see. To receive it you
                 need a minimum of 90% attendance and a genuine effort through the final assessment.
@@ -810,7 +980,7 @@ export default function Page() {
           <div className="tp-wrap">
             <div className="tp-head mid reveal">
               <span className="tp-eyebrow">Before you book</span>
-              <h2 className="tp-h2 wide">Questions people ask us first</h2>
+              <h2 className="tp-h2 wide">Yoga teacher training in India: questions people ask first</h2>
             </div>
             <div className="tp-faq reveal">
               {FAQS.map(([q, a], i) => (

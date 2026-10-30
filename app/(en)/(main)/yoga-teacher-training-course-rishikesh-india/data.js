@@ -331,8 +331,40 @@ export const NOT_INCLUDED = [
   "Anything not listed on the left",
 ];
 
+export const WHY_INDIA = [
+  ["Lineage", "You learn yoga in the country it came from", "Asana, pranayama, philosophy and mantra are taught here as one tradition rather than as a fitness format, by teachers who grew up around it. Chanting, ritual and Sanskrit are part of ordinary life outside the shala too."],
+  ["Immersion", "You live the practice for weeks", "On a yoga course in India, practice, study, meals and sleep all happen in one place. With no commute and no work shift between the morning asana and the evening meditation, the training gets your full attention."],
+  ["Value", "Your fee goes further", "With a lower cost of living, a full course in India with your room and food included often costs less than the tuition alone on a studio training in Europe or North America."],
+  ["Recognition", "The credential travels with you", "A Yoga Alliance registered course counts wherever you go next. Complete one at Adhiroha and you can register as an RYT, with the recognition of India's own Ministry of Ayush on the same certificate."],
+];
+
+export const PLACES = [
+  ["Uttarakhand", "Rishikesh", "A Himalayan town on the Ganga, known as the yoga capital of the world, with generations of teachers and a largely vegetarian, alcohol-free way of life. The classic choice for traditional Hatha and Ashtanga."],
+  ["West coast", "Goa", "Beaches, warm weather and a relaxed, international crowd. A good fit if you want the training to feel like time by the sea, and most comfortable in the dry months after the monsoon."],
+  ["South India", "Kerala", "Backwaters, coconut palms and the beach towns around Varkala, in the home state of Ayurveda. A natural choice if you want Ayurveda alongside your yoga."],
+  ["Himachal Pradesh", "Dharamshala", "Mountain air, pine forest and a large Tibetan community, home of the Dalai Lama. Cooler and quieter, and a good fit if meditation is what draws you."],
+  ["Karnataka", "Mysuru", "The city most closely tied to the Ashtanga lineage of K. Pattabhi Jois. A serious destination for students who are already committed to that method."],
+  ["Our choice", "Why Adhiroha is in Rishikesh", "Teachers, tradition and the Ganga all in one place. Our three-acre school sits in Upper Tapovan, above the town, close enough to walk into its life and far enough to hear the brook instead of the traffic."],
+];
+
+export const CHOOSE = [
+  ["Registration", "Look the school up yourself", "A logo on a website proves nothing. Search for the school in the Yoga Alliance directory and confirm it is registered at the level you want to study."],
+  ["Teachers", "Ask who actually teaches", "Find out whether each subject has its own experienced teacher, or whether one person carries the whole course."],
+  ["Reviews", "Read recent reviews on several platforms", "Compare Google, Yoga Alliance and Tripadvisor, and look at recent batches. Student videos are harder to fake than quotes on a homepage."],
+  ["The real cost", "Compare what the fee includes", "A low headline price can leave out meals, a private bathroom, airport transfer or the certificate. Compare the full cost, not the first number."],
+  ["The place", "See the actual campus", "Look for real photographs and video of the rooms, kitchen and shala, and check where the school sits in relation to the town and the road."],
+  ["Support", "Ask what happens when you land", "A good school answers this without hesitating: who collects you, what documents you get for your visa, and who you call at night."],
+];
+
 export const FAQS = [
+  ["How much does yoga teacher training cost in India?", "It varies widely, from a few hundred euros to more than €3000, depending on the school and on what the fee includes. At Adhiroha the all-inclusive fee is €1275 for the 200 hour, €1500 for the 300 hour and €2790 for the 500 hour in triple sharing, with your room, three meals a day, training materials, excursions, airport pickup from Dehradun and your certificate included."],
+  ["What is the best yoga teacher training in India?", "The best course is the one registered at the level you need, taught by experienced teachers, with strong recent reviews and a fee that shows everything it includes. Adhiroha is a Registered Yoga School with Yoga Alliance at all three levels, recognised by the Ministry of Ayush, and rated 4.9 on Google, 4.5 on Yoga Alliance and 4.3 on Tripadvisor."],
   ["Which level should I book?", "If you have never trained before, book the 200 hour — it is the foundation everything else rests on. If you already hold a 200 hour certificate, book the 300. If you want the whole path in one journey and can give it two months, book the 500, which has no prerequisite at all."],
+  ["Is there a 500 hour yoga teacher training in India?", "Yes. Adhiroha runs a 500 hour yoga teacher training in Rishikesh, a 60-day course with no prerequisite that combines the foundation and the advanced level and leads to RYT 500."],
+  ["Is the certificate recognised by the Government of India?", "Yes. Adhiroha is accredited by the Yoga Certification Board under the Ministry of Ayush, Government of India, and your certificate carries that recognition alongside Yoga Alliance registration at your level."],
+  ["Do I need a visa for yoga teacher training in India?", "Most international students need one, and most apply for the Indian Tourist e-Visa. Once you register, we send the admission documents for your application. Please check the current rules for your passport before you book flights."],
+  ["Is India safe for a solo female traveller on a yoga course?", "Many of our students are women who travel to India alone. A driver meets you at Dehradun Airport, the campus is walled and under CCTV with the gate closed by 21:00, shared rooms are allotted by gender, and support staff can be reached at any hour."],
+  ["Where in India is Adhiroha?", "In Upper Tapovan, Rishikesh, in the state of Uttarakhand in northern India. The nearest airport is Jolly Grant in Dehradun, and pickup from there is included in your fee."],
   ["Do I need to be flexible or experienced?", "No. What the course asks for is willingness, not flexibility or youth. Most people on any given batch are new to it, and the 200 hour assumes no prior teaching experience whatsoever."],
   ["What certificate do I actually receive?", "One certificate, issued by Adhiroha, carrying both recognitions: accreditation by the Yoga Certification Board under the Ministry of Ayush, and Yoga Alliance registration at your level. It never expires."],
   ["Is Adhiroha registered with Yoga Alliance?", "Yes. Adhiroha is a Registered Yoga School with Yoga Alliance at all three levels — RYS 200, RYS 300 and RYS 500 — so a course completed here makes you eligible to register as an RYT at the level you trained."],
