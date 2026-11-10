@@ -7,7 +7,7 @@ import JsonLd from "@/components/JsonLd";
 import { graph, breadcrumbSchema, extractFaqs, faqSchema, hreflangFor } from "@/lib/seo";
 
 export const metadata = withOpenGraph({
-  title: "Student Reviews & Alumni Messages | Adhiroha",
+  title: "A Message from Our Graduates | Adhiroha, Rishikesh",
   description:
     "Read what graduates say soon after their training at Adhiroha, honest messages from students of our 200, 300 and 500 hour courses in Rishikesh.",
   alternates: { canonical: "/soon-after-message/", languages: hreflangFor("/soon-after-message/") }

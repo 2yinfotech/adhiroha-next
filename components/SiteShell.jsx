@@ -3,6 +3,7 @@ import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/GoogleT
 import ConsentDefaults from "@/components/ConsentDefaults";
 import ConsentBanner from "@/components/ConsentBanner";
 import MetaPixel from "@/components/MetaPixel";
+import TrustpilotInvite from "@/components/TrustpilotInvite";
 import GoogleAdsTag from "@/components/GoogleAdsTag";
 import CourseEnquiryModal from "@/components/CourseEnquiryModal";
 import RegistrationDonePopup from "@/components/RegistrationDonePopup";
@@ -283,6 +284,8 @@ export default function SiteShell({ lang, children }) {
         {/* Meta Pixel: PageView everywhere, ViewContent on the course pages and
             Lead on a completed booking. Waits for cookie consent like Hotjar. */}
         <MetaPixel />
+        {/* Trustpilot invitation script. Waits for cookie consent like Hotjar. */}
+        <TrustpilotInvite />
         <ConsentBanner locale={lang} />
         {/* Arms itself only on the courses that are not currently running. */}
         <CourseEnquiryModal locale={lang} />

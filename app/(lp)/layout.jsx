@@ -14,6 +14,7 @@ import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/GoogleT
 import ConsentDefaults from "@/components/ConsentDefaults";
 import ConsentBanner from "@/components/ConsentBanner";
 import MetaPixel from "@/components/MetaPixel";
+import TrustpilotInvite from "@/components/TrustpilotInvite";
 import GoogleAdsTag from "@/components/GoogleAdsTag";
 import { SITE } from "@/lib/seo";
 
@@ -44,6 +45,7 @@ export default function LandingLayout({ children }) {
         {/* This layout does not use SiteShell, so the pixel has to be added
             here too — and this is the page paid traffic actually lands on. */}
         <MetaPixel />
+        <TrustpilotInvite />
         <ConsentBanner locale="en" />
       </body>
     </html>

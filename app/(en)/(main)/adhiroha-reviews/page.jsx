@@ -31,7 +31,7 @@ const [GOOGLE, YA, TRIP] = PLATFORM_RATINGS;
 export const metadata = {
   title: `Adhiroha Reviews: ${GOOGLE.value}★ on Google & ${VIDEOS.length} Student Videos`,
   description:
-    `Adhiroha Yoga School reviews: ${GOOGLE.value} stars from ${GOOGLE.count} Google reviews, plus ${VIDEOS.length} unscripted video reviews from yoga teacher training graduates in Rishikesh.`,
+    `Adhiroha reviews from students: ${GOOGLE.value} stars on ${GOOGLE.count} Google reviews, and ${VIDEOS.length} yoga teacher training reviews on video from our graduates in Rishikesh.`,
   keywords: [
     "adhiroha reviews",
     "adhiroha yoga school reviews",
@@ -128,12 +128,17 @@ export default function Page() {
               <span className="kicker">In our students&rsquo; own words</span>
               <h1>Adhiroha Reviews</h1>
               <p className="c-sub c-sub-lg">
-                What students say about Adhiroha Yoga School in Upper Tapovan, Rishikesh: {GOOGLE.count} Google
-                reviews averaging {GOOGLE.value}, our ratings on Yoga Alliance and Tripadvisor, and {VIDEOS.length} unscripted
-                video reviews from graduates of the 200, 300 and 500 hour yoga teacher training.
+                All the Adhiroha reviews in one place: {GOOGLE.count} Google reviews averaging {GOOGLE.value}, our
+                ratings on Yoga Alliance and Tripadvisor, and what students say about Adhiroha Yoga School in
+                Upper Tapovan, Rishikesh.
+              </p>
+              <p className="c-sub c-sub-lg">
+                Then watch {VIDEOS.length} unscripted yoga teacher training reviews on video, recorded by graduates
+                of our 200, 300 and 500 hour courses at the end of their training.
               </p>
               <p className="c-sub c-sub-sm">
-                {GOOGLE.value} stars from {GOOGLE.count} Google reviews, and {VIDEOS.length} video reviews from our graduates.
+                Adhiroha reviews: {GOOGLE.value} stars from {GOOGLE.count} Google reviews, and {VIDEOS.length} yoga
+                teacher training reviews on video from our graduates.
               </p>
               <div className="actions">
                 <a className="btn-primary" href="#google-reviews">Read the reviews</a>
