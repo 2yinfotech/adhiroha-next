@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import "./styles.css";
 import { HEADER_HTML, DRAWER_HTML, FOOTER_HTML } from "@/components/chrome";
 import ArticleScripts from "@/components/ArticleScripts";
-import { getArticleBySlug, getAllArticles, getFaqs, getInternalOk } from "@/lib/articles";
+import { getArticleBySlug, getAllArticles, getFaqs, getInternalOk, getUploadFiles } from "@/lib/articles";
 import { postMetadata } from "@/lib/blog-seo";
 import { SITE } from "@/lib/seo";
 import {
@@ -51,7 +51,7 @@ export default async function ArticlePage({ params }) {
   ]);
 
   const toc = buildToc(article.content);
-  const body = fixArticleHtml(article.content, { internalOk });
+  const body = fixArticleHtml(article.content, { internalOk, uploads: getUploadFiles() });
   const cover = fixAssetPath(article.cover_image);
   const minutes = readingMinutes(article.content);
   const date = formatDate(article.published_date);
