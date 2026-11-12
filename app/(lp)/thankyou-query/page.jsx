@@ -1,4 +1,4 @@
-import { Montserrat, Playfair_Display } from "next/font/google";
+import { montserrat, playfair } from "../_landing/fonts";
 import "./styles.css";
 
 /**
@@ -22,20 +22,6 @@ import "./styles.css";
  * googleadservices.com/pagead/conversion/761575090/, `generate_lead` produces
  * none. Do not rename this without building the matching tag in GTM first.
  */
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-montserrat",
-  display: "swap",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["500", "600"],
-  variable: "--font-playfair",
-  display: "swap",
-});
 
 export const metadata = {
   title: "Thank You | Adhiroha Yoga School",

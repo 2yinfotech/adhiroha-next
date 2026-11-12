@@ -1,4 +1,4 @@
-import { Montserrat, Playfair_Display } from "next/font/google";
+import { montserrat, playfair } from "../_landing/fonts";
 import "../yoga-training-rishikesh/styles.css";
 import { buildLanding, landingMetadata } from "../_landing/build";
 
@@ -8,20 +8,6 @@ import { buildLanding, landingMetadata } from "../_landing/build";
  * it is generated rather than copied; the render below mirrors the original
  * page.jsx, whose comments explain the script concatenation.
  */
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-montserrat",
-  display: "swap",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-playfair",
-  display: "swap",
-});
 
 export const metadata = landingMetadata("500-hour-yoga-teacher-training-india");
 

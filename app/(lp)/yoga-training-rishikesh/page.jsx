@@ -1,4 +1,4 @@
-import { Montserrat, Playfair_Display } from "next/font/google";
+import { montserrat, playfair } from "../_landing/fonts";
 import "./styles.css";
 import content from "./content";
 import scripts from "./scripts";
@@ -14,8 +14,9 @@ import scripts from "./scripts";
  *
  * Two things are deliberately not like the original:
  *
- *   · The fonts are self-hosted through next/font instead of two render-blocking
- *     requests to fonts.googleapis.com. The generated family names arrive as the
+ *   · The fonts are self-hosted from app/(lp)/_landing/fonts/ through
+ *     next/font/local instead of two render-blocking requests to
+ *     fonts.googleapis.com. The generated family names arrive as the
  *     CSS variables the stylesheet now names first in every stack.
  *
  *   · There is deliberately no <link rel="preload"> for the hero. One was tried
@@ -41,20 +42,6 @@ import scripts from "./scripts";
  *     the content was never the problem — removing the script node from the tree
  *     is what silences it. Concatenated here, React never tracks the node.
  */
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-montserrat",
-  display: "swap",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-playfair",
-  display: "swap",
-});
 
 export const metadata = {
   title: "Yoga Training in Rishikesh | Adhiroha Yoga School",
