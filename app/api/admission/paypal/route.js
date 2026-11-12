@@ -2,6 +2,7 @@ import { NextResponse, after } from "next/server";
 import {
   COURSES, computeFees, gatewayBreakdown, getBatches,
   markBookingsPaid, sendAdmissionMail, sendStudentConfirmation, getBookingRoom, setBookingRoom,
+  accoLabel,
 } from "@/lib/admission";
 import { allocateConfirmedRoom } from "@/lib/rooms";
 import { createPayPalOrder, capturePayPalOrder, completedCapture, paypalConfigured } from "@/lib/paypal";
@@ -43,7 +44,7 @@ export async function POST(request) {
   if (priced.error) return NextResponse.json({ error: priced.error }, { status: 400 });
 
   const { batch, fees, numStudents, expected } = priced;
-  const acco = body.sharing === "double" ? "Double Sharing" : "Triple Sharing";
+  const acco = accoLabel(body.course, body.sharing, batch?.isFirstBatch);
 
   /* ---------- create ---------- */
   if (body.action === "create") {

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   COURSES, YOGA_TTC_COURSES, ROOM_TRACKED_COURSES, ADDONS, FEES,
-  computeFees, gatewayBreakdown, tierLabels, inclusions,
+  computeFees, gatewayBreakdown, tierLabels, inclusions, sharingOptions, SINGLE_MAX_STUDENTS,
 } from "@/lib/admission-fees";
 import { contentNameFor } from "@/lib/meta-pixel";
 
@@ -27,11 +27,57 @@ const COURSE_FROM_PARAM = {
 const AGREE_FIRST = "Please accept the Code of Conduct before paying.";
 const CONDUCT_URL = "/yoga-ashram-in-india-code-of-conduct/";
 
-// Accommodation photography (public/img/remote).
+// Accommodation photography (public/img/remote). The single private room has
+// no photograph of its own, so its card cycles through the double and triple
+// rooms instead.
 const ACCO_IMG = {
-  triple: "/img/remote/img_tion-1.webp",
-  double: "/img/remote/img_tion2.webp",
+  triple: ["/img/remote/img_tion-1.webp"],
+  double: ["/img/remote/img_tion2.webp"],
+  single: ["/img/remote/img_tion2.webp", "/img/remote/img_tion-1.webp"],
 };
+
+// A self-advancing photo strip for an accommodation card. The card itself is a
+// <button>, so there are no arrow buttons inside it (a button may not contain
+// another one): the strip moves on its own, pauses under the mouse, and can be
+// swiped on a phone.
+function AccoCarousel({ images, alt }) {
+  const [at, setAt] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const touchX = useRef(null);
+  const n = images.length;
+
+  useEffect(() => {
+    if (paused || n < 2) return;
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+    const t = setInterval(() => setAt((i) => (i + 1) % n), 3200);
+    return () => clearInterval(t);
+  }, [paused, n]);
+
+  if (n < 2) return <img className="adm-accoimg" src={images[0]} alt={alt} loading="lazy" />;
+
+  return (
+    <span
+      className="adm-accocar"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onTouchStart={(e) => { touchX.current = e.touches[0].clientX; setPaused(true); }}
+      onTouchEnd={(e) => {
+        const dx = e.changedTouches[0].clientX - (touchX.current ?? 0);
+        if (Math.abs(dx) > 40) setAt((i) => (i + (dx < 0 ? 1 : n - 1)) % n);
+        touchX.current = null;
+      }}
+    >
+      <span className="adm-accotrack" style={{ transform: `translateX(-${at * 100}%)` }}>
+        {images.map((src, i) => (
+          <img key={src} className="adm-accoimg" src={src} alt={i === 0 ? alt : ""} loading="lazy" />
+        ))}
+      </span>
+      <span className="adm-accodots" aria-hidden="true">
+        {images.map((src, i) => <i key={src} className={i === at ? "on" : ""} />)}
+      </span>
+    </span>
+  );
+}
 
 const PAYPAL_CLIENT_ID = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || "";
 
@@ -162,6 +208,18 @@ export default function AdmissionForm() {
   // option can be disabled — students no longer pick a specific room.
   const availabilityTracked = ROOM_TRACKED_COURSES.includes(course);
   const labels = tierLabels(course, batch?.isFirstBatch);
+  const accoChoices = useMemo(() => sharingOptions(course, batch?.isFirstBatch), [course, batch?.isFirstBatch]);
+  // Why a card cannot be picked right now, or "" when it can.
+  const accoBlocked = (which) => {
+    if (which === "single" && students.length > SINGLE_MAX_STUDENTS) return "One student only";
+    if (!availabilityTracked || !rooms) return "";
+    const booked = which === "triple" ? rooms.tripleSharingBooked
+      : which === "double" ? rooms.doubleSharingBooked
+      : rooms.singleSharingBooked ?? true;
+    // A room that is closed by policy rather than by bookings says so.
+    // "Fully booked" on a December double would simply be untrue.
+    return booked ? rooms.unavailableReason?.[which] || "Fully booked" : "";
+  };
   const leadGender = students[0]?.gender || "";
 
   const fees = useMemo(() => {
@@ -245,11 +303,13 @@ export default function AdmissionForm() {
   // leave a sharing type selected that the new combination no longer offers —
   // a man who picked double in March and then moved to the December batch.
   // Drop the choice so step 2 asks again instead of carrying an unbookable one.
+  // The same goes for a single room once a second student is added, and for a
+  // card the newly chosen batch does not show at all.
   useEffect(() => {
-    if (!sharing || !rooms) return;
-    const gone = sharing === "triple" ? rooms.tripleSharingBooked : rooms.doubleSharingBooked;
-    if (gone) setSharing("");
-  }, [rooms, sharing]);
+    if (!sharing) return;
+    if (!accoChoices.includes(sharing) || accoBlocked(sharing)) setSharing("");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [rooms, sharing, students.length, accoChoices]);
 
 
   /* ---------- students ---------- */
@@ -815,16 +875,12 @@ export default function AdmissionForm() {
             <h2 className="adm-h">Choose Your Accommodation</h2>
             {availabilityTracked && !rooms && leadGender && <div className="adm-loading">Checking availability…</div>}
 
-            <div className="adm-accos">
-              {["triple", "double"].map((which) => {
+            <div className={`adm-accos${accoChoices.length > 2 ? " three" : ""}`}>
+              {accoChoices.map((which) => {
                 const f = previewFees(which);
                 if (!f) return null;
-                const full = availabilityTracked && rooms
-                  ? which === "triple" ? rooms.tripleSharingBooked : rooms.doubleSharingBooked
-                  : false;
-                // A room that is closed by policy rather than by bookings says so.
-                // "Fully booked" on a December double would simply be untrue.
-                const reason = rooms?.unavailableReason?.[which] || "";
+                const reason = accoBlocked(which);
+                const full = !!reason;
                 return (
                   <button
                     key={which}
@@ -834,11 +890,11 @@ export default function AdmissionForm() {
                     aria-pressed={sharing === which}
                     onClick={() => setSharing(which)}
                   >
-                    <img className="adm-accoimg" src={ACCO_IMG[which]} alt={`${labels[which]} room at Adhiroha`} loading="lazy" />
+                    <AccoCarousel images={ACCO_IMG[which]} alt={`${labels[which]} room at Adhiroha`} />
                     <span className="adm-accobody">
                       <span className="adm-accohead">
                         <b>{labels[which]}</b>
-                        {full && <em className="adm-fullbadge">{reason || "Fully booked"}</em>}
+                        {full && <em className="adm-fullbadge">{reason}</em>}
                       </span>
                       <span className="adm-fees">
                         <span className="adm-feerow"><span>Total Fees</span><b>{eur(f.total)}</b></span>

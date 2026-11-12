@@ -32,19 +32,18 @@ SET time_zone = '+00:00';
 CREATE TABLE IF NOT EXISTS `rooms` (
   `id`         TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name`       VARCHAR(64)      NOT NULL,
-  -- 'single' is the private room. It is never offered on the website; see
-  -- `bookable` below.
+  -- 'single' is the private room, sold on the website since November 2026
+  -- (single-private-room.sql).
   `sharing`    ENUM('single','double','triple') NOT NULL,
   -- Kept as a column rather than derived from `sharing`, so a room can be
   -- taken down to fewer beds for a season without changing its type.
   `capacity`   TINYINT UNSIGNED NOT NULL,
   `sort_order` TINYINT UNSIGNED NOT NULL DEFAULT 0,
   `active`     TINYINT(1)       NOT NULL DEFAULT 1 COMMENT 'in use at all',
-  -- Whether the admission panel on the website may offer it. The single
-  -- private room is kept out of the wizard because it is given on walk-ins and
-  -- as a favour, but it is a real room and the admin panel still fills it — so
-  -- it belongs in this table, not outside it, or the occupancy board would show
-  -- the ashram as emptier than it is.
+  -- Whether the admission panel on the website may offer it. A room can be
+  -- kept out of the wizard and still be filled from the admin panel — it
+  -- belongs in this table either way, or the occupancy board would show the
+  -- ashram as emptier than it is.
   `bookable`   TINYINT(1)       NOT NULL DEFAULT 1 COMMENT 'offered on the website',
   PRIMARY KEY (`id`),
   UNIQUE KEY `uq_rooms_name` (`name`),
@@ -64,9 +63,9 @@ INSERT INTO `rooms` (`name`,`sharing`,`capacity`,`sort_order`,`bookable`) VALUES
   ('ABHYASA',        'triple', 3, 16, 1),
   ('NIRVANA',        'triple', 3, 17, 1),
   ('DHYANA',         'triple', 3, 18, 1),
-  -- Walk-ins and special cases only. Filled from the admin panel, never from
-  -- the website. Capacity 1, so the same capacity rule covers it for free.
-  ('SINGLE PRIVATE', 'single', 1, 30, 0)
+  -- The single private room. Capacity 1, so the same capacity rule covers it
+  -- for free.
+  ('SINGLE PRIVATE', 'single', 1, 30, 1)
 ON DUPLICATE KEY UPDATE
   `sharing` = VALUES(`sharing`),
   `capacity` = VALUES(`capacity`),

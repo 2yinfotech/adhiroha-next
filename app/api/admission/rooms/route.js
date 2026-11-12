@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 
 /**
  * What this student may book: the months their stay covers, every room's
- * status, and the two sharing totals.
+ * status, and whether each sharing type still has a room.
  *
  * Needs `course` and `year` as well as month and gender, because a 500 hour
  * stay runs across two months and a room has to be free for both.
@@ -33,7 +33,10 @@ export async function GET(request) {
       availableRooms: board.rooms.filter((r) => r.available).map((r) => r.name),
       doubleSharingBooked: openIn("double").length === 0,
       tripleSharingBooked: openIn("triple").length === 0,
-      unavailableReason: { double: "", triple: "" },
+      // The single private room only counts once it is marked bookable in
+      // `rooms` (single-private-room.sql); until then it reads as booked.
+      singleSharingBooked: openIn("single").length === 0,
+      unavailableReason: { double: "", triple: "", single: "" },
     });
   } catch (e) {
     // Any failure to read the new tables falls back to the old rooms_name
@@ -44,13 +47,14 @@ export async function GET(request) {
       "Falling back to the rooms_name reading — run room-occupancy.sql to enable room selection."
     );
     const legacy = await getRoomAvailability(month, gender).catch(() => null);
-    if (legacy) return NextResponse.json({ ...legacy, months: [], rooms: [], legacy: true });
+    // The old rooms_name sheet has no single private room to read.
+    if (legacy) return NextResponse.json({ ...legacy, singleSharingBooked: true, months: [], rooms: [], legacy: true });
 
     return NextResponse.json(
       {
         months: [], rooms: [], availableRooms: [],
-        doubleSharingBooked: true, tripleSharingBooked: true,
-        unavailableReason: { double: "", triple: "" },
+        doubleSharingBooked: true, tripleSharingBooked: true, singleSharingBooked: true,
+        unavailableReason: { double: "", triple: "", single: "" },
         error: "unavailable",
       },
       { status: 500 }

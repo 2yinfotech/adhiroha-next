@@ -3,6 +3,7 @@ import crypto from "crypto";
 import {
   COURSES, computeFees, gatewayBreakdown, getBatches,
   markBookingsPaid, sendAdmissionMail, sendStudentConfirmation, getBookingRoom, setBookingRoom,
+  accoLabel,
 } from "@/lib/admission";
 import { allocateConfirmedRoom } from "@/lib/rooms";
 
@@ -48,7 +49,7 @@ export async function POST(request) {
     }
   } catch (e) { /* fall through — payment is already verified */ }
 
-  const acco = sharing === "double" ? "Double Sharing" : "Triple Sharing";
+  const acco = accoLabel(course, sharing, batch?.isFirstBatch);
   const paid = fees ? gatewayBreakdown(fees.reg).razorpay.total : 0;
 
   try {

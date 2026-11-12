@@ -21,9 +21,11 @@ export const LEVEL = {
     credential: "RYT 200",
     triple: "1275",
     double: "1650",
+    single: "2500",
     reserve: "300",
     balanceTriple: "975",
     balanceDouble: "1350",
+    balanceSingle: "2200",
     image: "/img/adhiroha-yttc-014.webp",
     blurb:
       "The foundation. Almost everyone who teaches this practice for a living began with a course exactly like this one.",
@@ -42,9 +44,11 @@ export const LEVEL = {
     credential: "RYT 300",
     triple: "1500",
     double: "2000",
+    single: "3000",
     reserve: "500",
     balanceTriple: "1000",
     balanceDouble: "1500",
+    balanceSingle: "2500",
     image: "/img/yttc-004.webp",
     blurb:
       "The advanced half. It begins where the foundation ended, and finishes the path to the full 500-hour credential.",
@@ -63,9 +67,11 @@ export const LEVEL = {
     credential: "RYT 500",
     triple: "2790",
     double: "3690",
+    single: "5500",
     reserve: "750",
     balanceTriple: "2040",
     balanceDouble: "2940",
+    balanceSingle: "4750",
     image: "/img/yttc-009.webp",
     blurb:
       "The whole path in one journey. Two months, from the first posture to leading an advanced room.",
@@ -357,7 +363,7 @@ export const CHOOSE = [
 ];
 
 export const FAQS = [
-  ["How much does yoga teacher training cost in India?", "It varies widely, from a few hundred euros to more than €3000, depending on the school and on what the fee includes. At Adhiroha the all-inclusive fee is €1275 for the 200 hour, €1500 for the 300 hour and €2790 for the 500 hour in triple sharing, with your room, three meals a day, training materials, excursions, airport pickup from Dehradun and your certificate included."],
+  ["How much does yoga teacher training cost in India?", "It varies widely, from a few hundred euros to more than €3000, depending on the school and on what the fee includes. At Adhiroha the all-inclusive fee is €1275 for the 200 hour, €1500 for the 300 hour and €2790 for the 500 hour in triple sharing, with your room, three meals a day, training materials, excursions, airport pickup from Dehradun and your certificate included. A single private room is €2500, €3000 and €5500 for the same three courses."],
   ["What is the best yoga teacher training in India?", "The best course is the one registered at the level you need, taught by experienced teachers, with strong recent reviews and a fee that shows everything it includes. Adhiroha is a Registered Yoga School with Yoga Alliance at all three levels, recognised by the Ministry of Ayush, and rated 4.9 on Google, 4.5 on Yoga Alliance and 4.3 on Tripadvisor."],
   ["Which level should I book?", "If you have never trained before, book the 200 hour — it is the foundation everything else rests on. If you already hold a 200 hour certificate, book the 300. If you want the whole path in one journey and can give it two months, book the 500, which has no prerequisite at all."],
   ["Is there a 500 hour yoga teacher training in India?", "Yes. Adhiroha runs a 500 hour yoga teacher training in Rishikesh, a 60-day course with no prerequisite that combines the foundation and the advanced level and leads to RYT 500."],

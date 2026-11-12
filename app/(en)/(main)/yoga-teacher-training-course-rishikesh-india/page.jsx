@@ -182,9 +182,15 @@ function CourseSection({ lv, index }) {
                 <div className="tp-fig tp-price-big">&euro;{L.triple}</div>
                 <div className="tp-price-sub">all-inclusive</div>
               </div>
-              <div className="tp-price-alt">
-                <span>Double sharing</span>
-                <b>&euro;{L.double}</b>
+              <div className="tp-price-alts">
+                <div className="tp-price-alt">
+                  <span>Double sharing</span>
+                  <b>&euro;{L.double}</b>
+                </div>
+                <div className="tp-price-alt">
+                  <span>Single private</span>
+                  <b>&euro;{L.single}</b>
+                </div>
               </div>
             </div>
 
@@ -201,6 +207,7 @@ function CourseSection({ lv, index }) {
               <div className="tp-split-r"><b>&euro;{L.reserve}</b> reserves your seat</div>
               <div className="tp-split-r"><b>&euro;{L.balanceTriple}</b> on arrival, triple sharing</div>
               <div className="tp-split-r"><b>&euro;{L.balanceDouble}</b> on arrival, double sharing</div>
+              <div className="tp-split-r"><b>&euro;{L.balanceSingle}</b> on arrival, single private</div>
             </div>
 
             <a className="btn-primary" href="/student-admission-panel/">Apply for the {lv} hour</a>
@@ -324,8 +331,8 @@ export default function Page() {
               <a className="btn-primary" href="/student-admission-panel/">Apply Now</a>
               <div className="bc-note">
                 <Info />
-                Double sharing from &euro;1650. A registration fee reserves your seat and is always part
-                of the total, never an extra charge.
+                Double sharing from &euro;{LEVEL[200].double}, single private from &euro;{LEVEL[200].single}.
+                A registration fee reserves your seat and is always part of the total, never an extra charge.
               </div>
             </aside>
           </div>
@@ -528,7 +535,7 @@ export default function Page() {
               <ul className="tp-ticks">
                 {LEVELS.map((lv) => (
                   <li key={lv}>
-                    <Tick /> <span><b>{lv} hour, {LEVEL[lv].days}:</b> &euro;{LEVEL[lv].triple} in triple sharing or &euro;{LEVEL[lv].double} in double sharing</span>
+                    <Tick /> <span><b>{lv} hour, {LEVEL[lv].days}:</b> &euro;{LEVEL[lv].triple} in triple sharing, &euro;{LEVEL[lv].double} in double sharing or &euro;{LEVEL[lv].single} in a single private room</span>
                   </li>
                 ))}
               </ul>

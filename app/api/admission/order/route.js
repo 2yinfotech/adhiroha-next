@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { COURSES, computeFees, gatewayBreakdown, getBatches, WISE_LINKS } from "@/lib/admission";
+import { COURSES, computeFees, gatewayBreakdown, getBatches, WISE_LINKS, accoLabel } from "@/lib/admission";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -33,7 +33,7 @@ export async function POST(request) {
   if (!fees) return NextResponse.json({ error: "Could not price that course." }, { status: 400 });
 
   const g = gatewayBreakdown(fees.reg)[gateway];
-  const acco = sharing === "double" ? "Double Sharing" : "Triple Sharing";
+  const acco = accoLabel(course, sharing, batch.isFirstBatch);
   const room = body.room || "N/A";
   const code = body.codes?.[0] || "";
 

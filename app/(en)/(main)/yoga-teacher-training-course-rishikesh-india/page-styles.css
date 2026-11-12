@@ -269,6 +269,7 @@
   font-size: 12.5px; font-weight: 300; color: var(--body); line-height: 1.7;
 }
 .tp-price-alt b { display: block; font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 600; color: var(--ink); }
+.tp-price-alts { display: flex; gap: 22px; }
 
 .tp-rows { margin: 26px 0 24px; border-top: 1px solid var(--tp-line); }
 .tp-row {

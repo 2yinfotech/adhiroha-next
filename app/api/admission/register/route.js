@@ -2,6 +2,7 @@ import { NextResponse, after } from "next/server";
 import {
   COURSES, computeFees, gatewayBreakdown, saveBooking, generateStudentCode,
   sendAdmissionMail, getBatches, shortDateRange, updateBookingSelection,
+  accoLabel, SINGLE_MAX_STUDENTS,
 } from "@/lib/admission";
 
 export const dynamic = "force-dynamic";
@@ -60,7 +61,11 @@ export async function POST(request) {
     return NextResponse.json({ error: "Could not price that course." }, { status: 400 });
   }
 
-  const acco = !sharing ? "Not selected yet" : sharing === "double" ? "Double Sharing" : "Triple Sharing";
+  if (sharing === "single" && students.length > SINGLE_MAX_STUDENTS) {
+    return NextResponse.json({ error: "The single private room is for one student. Please choose a shared room for a group." }, { status: 400 });
+  }
+
+  const acco = !sharing ? "Not selected yet" : accoLabel(course, sharing, batch.isFirstBatch);
   // Rows are written with no room. One is allocated when the booking is
   // confirmed, by the payment routes, and written over this.
   const room = "N/A";
