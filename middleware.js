@@ -22,6 +22,16 @@ import { NextResponse } from "next/server";
 const REAL_OLD_PAGES = new Set(["/registration.php", "/Registration.php"]);
 
 export function middleware(request) {
+  // Second matcher below: a page asked for with `Accept: text/markdown` (an AI
+  // agent) gets the Markdown copy from app/api/markdown. Browsers never send
+  // that header, so ordinary page loads still skip middleware entirely.
+  if (!request.nextUrl.pathname.endsWith(".php")) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/api/markdown/";
+    url.search = `?path=${encodeURIComponent(request.nextUrl.pathname)}`;
+    return NextResponse.rewrite(url);
+  }
+
   if (REAL_OLD_PAGES.has(request.nextUrl.pathname)) return NextResponse.next();
 
   // No body and no page render — the cheapest answer this server can give.
@@ -32,5 +42,11 @@ export function middleware(request) {
 }
 
 export const config = {
-  matcher: "/(.*)\\.php",
+  matcher: [
+    "/(.*)\\.php",
+    {
+      source: "/((?!api/|_next/|.*\\.[a-z0-9]+$).*)",
+      has: [{ type: "header", key: "accept", value: ".*text/markdown.*" }],
+    },
+  ],
 };

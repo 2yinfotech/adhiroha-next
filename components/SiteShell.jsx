@@ -4,6 +4,7 @@ import ConsentDefaults from "@/components/ConsentDefaults";
 import ConsentBanner from "@/components/ConsentBanner";
 import MetaPixel from "@/components/MetaPixel";
 import TrustpilotInvite from "@/components/TrustpilotInvite";
+import WebMcpTools from "@/components/WebMcpTools";
 import GoogleAdsTag from "@/components/GoogleAdsTag";
 import CourseEnquiryModal from "@/components/CourseEnquiryModal";
 import RegistrationDonePopup from "@/components/RegistrationDonePopup";
@@ -286,6 +287,8 @@ export default function SiteShell({ lang, children }) {
         <MetaPixel />
         {/* Trustpilot invitation script. Waits for cookie consent like Hotjar. */}
         <TrustpilotInvite />
+        {/* Read-only tools for in-browser AI agents (WebMCP). */}
+        <WebMcpTools />
         <ConsentBanner locale={lang} />
         {/* Arms itself only on the courses that are not currently running. */}
         <CourseEnquiryModal locale={lang} />

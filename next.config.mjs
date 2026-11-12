@@ -126,6 +126,17 @@ const nextConfig = {
   // its own careful pass rather than a guess that breaks checkout.
   async headers() {
     return [
+      // RFC 8288 Link header for AI agents: the site summary (llms.txt) and a
+      // Markdown copy of this very page (app/api/markdown). Agent-readiness
+      // checkers look for it on the homepage.
+      {
+        source: "/",
+        headers: [{ key: "Link", value: '</llms.txt>; rel="describedby"; type="text/plain", </api/markdown/?path=%2F>; rel="alternate"; type="text/markdown"' }],
+      },
+      {
+        source: "/:page((?!api/|_next/)[^.]*[^./])/",
+        headers: [{ key: "Link", value: '</llms.txt>; rel="describedby"; type="text/plain", </api/markdown/?path=/:page/>; rel="alternate"; type="text/markdown"' }],
+      },
       {
         // Course and marketing pages change a few times a month, not a few
         // times a day. Without a Cache-Control header every request rebuilt the
