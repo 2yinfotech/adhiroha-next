@@ -605,7 +605,7 @@ export default function AdmissionForm() {
   return (
     <section className="adm-wrap" ref={topRef}>
       <header className="adm-head">
-        <img className="adm-logo" src="/img/logo-black.webp" alt="Adhiroha" width="500" height="136" />
+        <a href="/" className="adm-logolink" aria-label="Adhiroha home"><img className="adm-logo" src="/img/logo-black.webp" alt="Adhiroha" width="500" height="136" /></a>
         <span className="adm-kicker">Adhiroha Admission Panel</span>
         <h1>Reserve your Seat</h1>
         <p>Choose your course and dates, tell us who's coming, pick your stay, and secure your place with the registration fee.</p>
