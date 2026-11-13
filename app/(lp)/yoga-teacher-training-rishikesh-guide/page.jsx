@@ -460,7 +460,7 @@ export default function Page() {
 
       <footer className="lp-foot">
         <div className="lp-wrap">
-          <p>Adhiroha Yoga School, Adhiroha Ashram, Upper Tapovan, Rishikesh, Sakalana, Uttarakhand 249137</p>
+          <p>Adhiroha Yoga School, Adhiroha Ashram, Upper Tapovan, Rishikesh, Uttarakhand 249137</p>
           <p className="lp-foot-sm">Registered Yoga School with Yoga Alliance, USA · Accredited by the Yoga Certification Board, Ministry of Ayush, Government of India</p>
         </div>
       </footer>
