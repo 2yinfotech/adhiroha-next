@@ -225,15 +225,30 @@ const HEADER_SCROLL_SCRIPT = `
 (function(){
   if(window.__adhHeaderBound)return;
   window.__adhHeaderBound=1;
-  var hd=null,lastY=window.pageYOffset||0;
+  var hd=null,fl=null,lastY=window.pageYOffset||0;
+  /* While the header is hidden, a small copy of its logo sits top-left so the
+     brand never leaves the screen. Built from the header's own logo, so it
+     links to the right language's homepage without per-locale markup. */
+  function makeFloat(){
+    var lg=hd.querySelector('.hd-logo'),im=lg&&lg.querySelector('img');
+    if(!im)return;
+    fl=document.createElement('a');
+    fl.className='hd-float';
+    fl.href=lg.getAttribute('href')||'/';
+    fl.setAttribute('aria-label',lg.getAttribute('aria-label')||'Adhiroha');
+    fl.innerHTML='<img src="'+im.getAttribute('src')+'" alt="" width="500" height="136">';
+    document.body.appendChild(fl);
+  }
   function onScroll(){
     if(!hd)hd=document.getElementById('hd');
     if(!hd)return;
+    if(!fl&&document.body)makeFloat();
     var y=window.pageYOffset||0;
     hd.classList.toggle('stuck',y>40);
     if(y>lastY+5&&y>220){hd.classList.add('hide');}
     else if(y<lastY-5){hd.classList.remove('hide');}
     if(y<120){hd.classList.remove('hide');}
+    if(fl)fl.classList.toggle('on',hd.classList.contains('hide'));
     lastY=y;
   }
   window.addEventListener('scroll',onScroll,{passive:true});
@@ -243,6 +258,17 @@ const HEADER_SCROLL_SCRIPT = `
   else{onScroll();}
   onScroll();
 })();
+`;
+
+/* The floating logo the script above shows while the header is hidden. Lives
+   here rather than in the page stylesheets because every page carries its own
+   full copy of those. */
+const HEADER_FLOAT_CSS = `
+.hd-float{position:fixed;top:14px;left:24px;z-index:101;display:flex;align-items:center;padding:9px 18px;border-radius:999px;background:rgba(26,20,15,.9);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(201,162,92,.35);box-shadow:0 12px 30px -14px rgba(0,0,0,.6);opacity:0;visibility:hidden;transform:translateY(-18px) scale(.9);transition:opacity .3s ease,transform .4s cubic-bezier(.22,.61,.36,1),visibility 0s linear .4s}
+.hd-float.on{opacity:1;visibility:visible;transform:none;transition:opacity .35s ease .15s,transform .5s cubic-bezier(.34,1.56,.64,1) .15s,visibility 0s}
+.hd-float img{display:block;height:34px;width:auto}
+@media(max-width:680px){.hd-float{top:10px;left:12px;padding:7px 13px}.hd-float img{height:26px}}
+@media(prefers-reduced-motion:reduce){.hd-float,.hd-float.on{transform:none;transition:opacity .2s,visibility 0s}}
 `;
 
 export default function SiteShell({ lang, children }) {
@@ -274,6 +300,7 @@ export default function SiteShell({ lang, children }) {
         <script dangerouslySetInnerHTML={{ __html: WHATSAPP_CLICK_SCRIPT }} />
         {/* Header background / auto-hide, bound now rather than after hydration. */}
         <script dangerouslySetInnerHTML={{ __html: HEADER_SCROLL_SCRIPT }} />
+        <style dangerouslySetInnerHTML={{ __html: HEADER_FLOAT_CSS }} />
         {/* Clears Google's `_gl` from the address bar once the tag has read it. */}
         <script dangerouslySetInnerHTML={{ __html: CLEAN_GL_SCRIPT }} />
       </head>
