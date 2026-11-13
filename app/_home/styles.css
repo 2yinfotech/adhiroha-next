@@ -4483,14 +4483,15 @@
      its own content width, leaving the fact card narrower than the photo. */
   .detail,.detail.flip{display:flex;flex-direction:column;gap:0;align-items:stretch}
   .detail > .d-media,.detail > .d-text{display:contents}
-  .detail > .d-text > .kicker{order:1}
-  .detail > .d-text > .sec-h{order:1}
+  .detail > .d-text > .d-copy{display:contents}
+  .detail > .d-text > .kicker,.detail .d-copy > .kicker{order:1}
+  .detail > .d-text > .sec-h,.detail .d-copy > .sec-h{order:1}
   .detail > .d-media > .frame{order:2}
   .detail > .d-media > .fact-card{order:3}
   .detail > .course-link-m{display:inline-flex;order:4;margin-top:18px}
-  .detail > .d-text > *{order:5}
+  .detail > .d-text > *,.detail .d-copy > *{order:5}
   /* The heading's own margin no longer sits above the first paragraph. */
-  .detail > .d-text > .body-p:first-of-type{margin-top:26px}
+  .detail > .d-text > .body-p:first-of-type,.detail .d-copy > .body-p:first-of-type{margin-top:26px}
 
   /* ---------- THE REMAINING TWO-COLUMN SECTIONS ----------
      Same treatment: heading → image → the rest. The media column is the
@@ -5088,4 +5089,18 @@
   .detail > .d-text > .fact-card-2{order:3;margin-top:0;padding-top:0;border-top:0;border-top-left-radius:0;border-top-right-radius:0;text-align:left}
   .detail > .d-text > .fact-card-2 > .fact-row:first-child{border-top:1px solid var(--line)}
   .detail > .d-media > .fact-card{padding-bottom:0;border-bottom:0;border-bottom-left-radius:0;border-bottom-right-radius:0;box-shadow:none}
+}
+/* On the two-column layout the two cards share a row, so their tops line up
+   whichever column is taller: photo and text copy fill row 1, cards row 2. */
+@media (min-width: 1101px) {
+  .detail { row-gap: 24px; }
+  .detail > .d-media, .detail > .d-text { display: contents; }
+  /* The photo fills row 1, so a long text (Sound Healing, most translations)
+     never leaves a gap between the photo and its card. */
+  .detail > .d-media > .frame { grid-column: 1; grid-row: 1; align-self: stretch; height: auto; min-height: 460px; }
+  .detail > .d-text > .d-copy { grid-column: 2; grid-row: 1; }
+  .detail > .d-media > .fact-card { grid-column: 1; grid-row: 2; margin-top: 0; }
+  .detail > .d-text > .fact-card-2 { grid-column: 2; grid-row: 2; margin-top: 0; }
+  .detail.flip > .d-media > .frame, .detail.flip > .d-media > .fact-card { grid-column: 2; }
+  .detail.flip > .d-text > .d-copy, .detail.flip > .d-text > .fact-card-2 { grid-column: 1; }
 }
