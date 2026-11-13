@@ -542,10 +542,7 @@
   .ftr-about p{font-size:13.5px;font-weight:300;line-height:1.9;color:#b3a99d;margin:0}
   .ftr-lotus{width:150px;height:auto;color:var(--fgold);opacity:.78;margin-top:26px;display:block}
   .ftr-h{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:#efe6d7;margin:0 0 20px;letter-spacing:.3px}
-  .ftr-h::after{content:"";display:block;width:44px;height:12px;margin-top:11px;
-    background:
-      linear-gradient(var(--fgold),var(--fgold)) 0 0/44px 2px no-repeat,
-      radial-gradient(circle at 5px 9px,var(--fgold) 0 2px,transparent 2.4px) 0 0/12px 12px no-repeat}
+  .ftr-h::after{content:"";display:block;width:44px;height:2px;margin-top:11px;background:var(--fgold)}
   .ftr-addr{font-size:13px;font-weight:300;line-height:1.85;color:#b3a99d;margin:0 0 18px;max-width:230px}
   .ftr-dir{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:500;letter-spacing:.4px;
     color:#e9e0d1;text-decoration:none;border:1px solid rgba(201,154,99,.42);border-radius:30px;
