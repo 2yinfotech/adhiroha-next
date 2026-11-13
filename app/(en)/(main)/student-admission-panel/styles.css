@@ -154,6 +154,7 @@
 }
 .adm-h:first-child { margin-top: 2px; }
 .adm-opt { color: var(--body); font-weight: 400; font-size: 12.5px; }
+.adm-schol { margin: -4px 0 12px; color: var(--rust); font-weight: 600; font-size: 14px; }
 .adm-loading { color: var(--body); font-size: 14px; padding: 10px 0; }
 .adm-loading a, .adm-hint a { color: var(--gold-dk); }
 .adm-hint {

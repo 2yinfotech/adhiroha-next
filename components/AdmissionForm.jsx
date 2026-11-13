@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   COURSES, YOGA_TTC_COURSES, ROOM_TRACKED_COURSES, ADDONS, FEES,
   computeFees, gatewayBreakdown, tierLabels, inclusions, sharingOptions, SINGLE_MAX_STUDENTS,
+  COURSE_TYPE_MAP,
 } from "@/lib/admission-fees";
 import { contentNameFor } from "@/lib/meta-pixel";
 
@@ -203,6 +204,8 @@ export default function AdmissionForm() {
   );
   // Bundles are only offered on teacher trainings.
   const canBundle = YOGA_TTC_COURSES.includes(course);
+  // The biggest bundle scholarship any room offers on this course.
+  const maxScholarship = Math.max(0, ...Object.values(FEES[COURSE_TYPE_MAP[course]] || {}).map((b) => b.scholarship || 0));
   const activeAddOns = useMemo(() => (canBundle ? addOns : []), [canBundle, addOns]);
   // Availability is still checked for these courses so a fully-booked sharing
   // option can be disabled — students no longer pick a specific room.
@@ -830,6 +833,9 @@ export default function AdmissionForm() {
                   Add to Your Training
                   <span className="adm-opt">Optional</span>
                 </h2>
+                {maxScholarship > 0 && (
+                  <p className="adm-schol">Add to your training &amp; get up to {eur(maxScholarship)} scholarship</p>
+                )}
                 <div className="adm-addons">
                   {Object.values(ADDONS).map((a) => {
                     const on = addOns.includes(a.key);
