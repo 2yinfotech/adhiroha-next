@@ -47,10 +47,10 @@
 
 /* ───────── Header ───────── */
 .adm-head { text-align: center; margin-bottom: 26px; }
-.adm-logolink { display: inline-block; }
-.adm-logo { display: block; width: auto; height: 46px; margin: 0 auto 14px; }
+.adm-logolink { display: block; width: fit-content; margin: 0 auto 8px; }
+.adm-logo { display: block; width: auto; height: 46px; }
 .adm-kicker {
-  display: inline-block;
+  display: block;
   font-size: 11px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -469,7 +469,6 @@
   flex-direction: column;
   gap: 8px;
 }
-.adm-pay-razorpay { border-color: var(--gold); background: #fff; }
 
 /* Payment buttons carry each gateway's own brand colour. */
 .adm-btn.brand-wise {
