@@ -48,7 +48,7 @@ const TOOLS = [
     execute: async () =>
       text({
         name: "Adhiroha",
-        address: "Adhiroha Trek Road, Upper Tapovan, Rishikesh, Uttarakhand 249137, India",
+        address: "Adhiroha Yoga School, Adhiroha Ashram, Upper Tapovan, Rishikesh, Sakalana, Uttarakhand 249137, India",
         phone: "+91 99990 48900",
         whatsapp: "https://api.whatsapp.com/send?phone=919999048900",
         email: "info@adhiroha.com",

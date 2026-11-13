@@ -120,7 +120,7 @@ export default function Page() {
 
       <footer className="tq-footer">
         <img src="/lp/yoga-training/adhiroha-logo-15.png" alt="Adhiroha" width="130" height="43" />
-        <p>Adhiroha, Adhiroha Trek Road, Upper Tapovan, Rishikesh, Uttarakhand, Bharat (India) 249137</p>
+        <p>Adhiroha Yoga School, Adhiroha Ashram, Upper Tapovan, Rishikesh, Sakalana, Uttarakhand 249137</p>
         <p>+91-9999-048-900 &middot; info@adhiroha.com</p>
         <p>&copy; 2026 Adhiroha. All rights reserved.</p>
       </footer>
