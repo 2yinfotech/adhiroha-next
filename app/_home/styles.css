@@ -5101,6 +5101,8 @@
   .detail > .d-text > .d-copy { grid-column: 2; grid-row: 1; }
   .detail > .d-media > .fact-card { grid-column: 1; grid-row: 2; margin-top: 0; }
   .detail > .d-text > .fact-card-2 { grid-column: 2; grid-row: 2; margin-top: 0; }
+  /* Equal height too, so the bottoms line up when one value wraps. */
+  .detail > .d-media > .fact-card, .detail > .d-text > .fact-card-2 { align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
   .detail.flip > .d-media > .frame, .detail.flip > .d-media > .fact-card { grid-column: 2; }
   .detail.flip > .d-text > .d-copy, .detail.flip > .d-text > .fact-card-2 { grid-column: 1; }
 }
