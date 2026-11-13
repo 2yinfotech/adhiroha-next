@@ -28,13 +28,12 @@ const COURSE_FROM_PARAM = {
 const AGREE_FIRST = "Please accept the Code of Conduct before paying.";
 const CONDUCT_URL = "/yoga-ashram-in-india-code-of-conduct/";
 
-// Accommodation photography (public/img/remote). The single private room has
-// no photograph of its own, so its card cycles through the double and triple
-// rooms instead.
+// Accommodation photography (public/img/remote). The single private room's two
+// photos were supplied by the owner on 2026-11-13.
 const ACCO_IMG = {
   triple: ["/img/remote/img_tion-1.webp"],
   double: ["/img/remote/img_tion2.webp"],
-  single: ["/img/remote/img_tion2.webp", "/img/remote/img_tion-1.webp"],
+  single: ["/img/remote/img_single-private-1.webp", "/img/remote/img_single-private-2.webp"],
 };
 
 // A self-advancing photo strip for an accommodation card. The card itself is a
