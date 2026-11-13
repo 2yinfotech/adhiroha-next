@@ -5076,19 +5076,16 @@
   .abx-badges span{white-space:normal;text-align:center;justify-content:center}
 }
 
-/* ---------- Course facts table beside the text, not under the photo ----------
-   On the two-column layout the table used to sit under the image, leaving a
-   tall empty gap under the shorter text column. Here .d-media dissolves into the
-   grid so the photo spans both rows on one side while the text and then the
-   table stack on the other. Only where the grid is two columns (above 1100px);
-   below that, phones and tablets keep the stacked order they already have. */
-@media (min-width: 1101px) {
-  .detail { row-gap: 30px; }
-  .detail > .d-media { display: contents; }
-  .detail > .d-media > .frame { grid-column: 1; grid-row: 1 / span 2; position: sticky; top: 48px; align-self: start; }
-  .detail > .d-text { grid-column: 2; grid-row: 1; }
-  .detail > .d-media > .fact-card { grid-column: 2; grid-row: 2; margin-top: 0; align-self: start; }
-  .detail.flip > .d-media > .frame { grid-column: 2; }
-  .detail.flip > .d-text,
-  .detail.flip > .d-media > .fact-card { grid-column: 1; }
+/* ---------- Course facts split across the two columns ----------
+   Each fact table is two cards: the first two rows stay under the photo
+   (.d-media > .fact-card) and the rest sit at the end of the text column
+   (.fact-card-2), so on the two-column layout neither column trails off empty.
+   On phones and portrait tablets the columns dissolve into one ordered stack
+   (see the .detail > .d-text rules above), and there the second card is pulled
+   up to sit straight under the first and drawn as one table, as before. */
+.d-text > .fact-card-2{margin-top:26px}
+@media(max-width:768px),(max-width:1024px) and (orientation:portrait){
+  .detail > .d-text > .fact-card-2{order:3;margin-top:0;padding-top:0;border-top:0;border-top-left-radius:0;border-top-right-radius:0;text-align:left}
+  .detail > .d-text > .fact-card-2 > .fact-row:first-child{border-top:1px solid var(--line)}
+  .detail > .d-media > .fact-card{padding-bottom:0;border-bottom:0;border-bottom-left-radius:0;border-bottom-right-radius:0;box-shadow:none}
 }
