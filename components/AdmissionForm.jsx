@@ -602,7 +602,8 @@ export default function AdmissionForm() {
   return (
     <section className="adm-wrap" ref={topRef}>
       <header className="adm-head">
-        <span className="adm-kicker">Adhiroha Admissions</span>
+        <img className="adm-logo" src="/img/logo-black.webp" alt="Adhiroha" width="500" height="136" />
+        <span className="adm-kicker">Adhiroha Admission Panel</span>
         <h1>Reserve your Seat</h1>
         <p>Choose your course and dates, tell us who's coming, pick your stay, and secure your place with the registration fee.</p>
       </header>
@@ -904,7 +905,7 @@ export default function AdmissionForm() {
                           <span className="adm-combobox">
                             <span className="adm-combolabel">Course + Sound Healing Bundle</span>
                             <span className="adm-feerow"><span>Booked Separately</span><b><s>{eur(f.separate)}</s></b></span>
-                            <span className="adm-feerow save"><span>You Save</span><b>{eur(f.scholarship)}</b></span>
+                            <span className="adm-feerow save"><span>Special Scholarship Benefit</span><b>{eur(f.scholarship)}</b></span>
                           </span>
                         )}
                       </span>
