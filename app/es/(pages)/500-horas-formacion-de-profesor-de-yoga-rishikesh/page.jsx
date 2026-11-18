@@ -1,12 +1,19 @@
 // Página en español de la formación de profesor de yoga de 500 horas — servida en /es/500-horas-formacion-de-profesor-de-yoga-rishikesh.
 // Reutiliza sin cambios la hoja de estilos y el script de la página en inglés; solo cambia el contenido.
 import "../../../(en)/(main)/500-hour-yoga-teacher-training-course-rishikesh/styles.css";
-import content from "./content";
+import rawContent from "./content";
+import { withBatchTable, upcomingBatches } from "@/lib/batches";
 import scripts from "../../../(en)/(main)/500-hour-yoga-teacher-training-course-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
 import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
+
+// The batch table is rendered here, not by scripts.js after load, so the
+// dates are in the HTML. Revalidated daily so the months roll forward.
+export const revalidate = 86400;
+const content = rawContent;
+const renderedContent = () => withBatchTable(rawContent, "500", "es");
 
 const ES = "/es/500-horas-formacion-de-profesor-de-yoga-rishikesh/";
 const EN = "/500-hour-yoga-teacher-training-course-rishikesh/";
@@ -24,7 +31,7 @@ const sections = [
 ];
 
 export const metadata = {
-  title: "Formación de profesor de yoga de 500 horas en Rishikesh | Adhiroha",
+  title: "Formación de profesor de yoga de 500 horas en Rishikesh",
   description:
     "Completa tu RYT-500 con nuestra formación de profesor de yoga de 500 horas en Rishikesh, 60 días que combinan el plan de estudios de 200 y 300 horas, con alojamiento y comidas incluidos.",
   alternates: {
@@ -49,9 +56,10 @@ export const metadata = {
   },
 };
 
-const pageSchema = graph(
+const pageSchema = () => graph(
   ...studentVideoSchemas(),
   courseSchema({
+    batches: upcomingBatches("500", 6),
     name: "Formación de profesor de yoga de 500 horas en Rishikesh",
     description: metadata.description,
     url: ES,
@@ -66,8 +74,8 @@ const pageSchema = graph(
 export default function Page() {
   return (
     <div lang="es">
-      <JsonLd data={pageSchema} />
-      <div dangerouslySetInnerHTML={{ __html: content }} />
+      <JsonLd data={pageSchema()} />
+      <div dangerouslySetInnerHTML={{ __html: renderedContent() }} />
       <SectionNav sections={sections} />
       <PageScripts code={scripts} />
     </div>

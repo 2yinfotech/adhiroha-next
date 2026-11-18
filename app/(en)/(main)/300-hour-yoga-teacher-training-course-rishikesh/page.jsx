@@ -1,11 +1,18 @@
 import "./styles.css";
 import { withOpenGraph } from "@/lib/root-metadata";
-import content from "./content";
+import rawContent from "./content";
+import { withBatchTable, upcomingBatches } from "@/lib/batches";
 import scripts from "./scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
 import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
+
+// The batch table is rendered here, not by scripts.js after load, so the
+// dates are in the HTML. Revalidated daily so the months roll forward.
+export const revalidate = 86400;
+const content = rawContent;
+const renderedContent = () => withBatchTable(rawContent, "300", "en");
 
 const sections = [
   { label: "Intro", target: "top" },
@@ -20,7 +27,7 @@ const sections = [
 ];
 
 export const metadata = withOpenGraph({
-  title: "300 Hour Yoga Teacher Training in Rishikesh, India | RYT 300 | Adhiroha",
+  title: "300 Hour Yoga Teacher Training in Rishikesh | RYT 300",
   description:
     "Advance your practice with our 300 hour yoga teacher training in Rishikesh. 30 days of deeper asana, pranayama and philosophy at a Yoga Alliance RYS school.",
   alternates: { canonical: "/300-hour-yoga-teacher-training-course-rishikesh/", languages: hreflangFor("/300-hour-yoga-teacher-training-course-rishikesh/") }
@@ -28,9 +35,10 @@ export const metadata = withOpenGraph({
 
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing
 // can earn rich results. FAQs are parsed from the page's own markup.
-const pageSchema = graph(
+const pageSchema = () => graph(
   ...studentVideoSchemas(),
     courseSchema({
+    batches: upcomingBatches("300", 6),
       name: "300 Hour Yoga Teacher Training in Rishikesh",
       description: metadata.description,
       url: "/300-hour-yoga-teacher-training-course-rishikesh/",
@@ -46,8 +54,8 @@ const pageSchema = graph(
 export default function Page() {
   return (
     <>
-      <JsonLd data={pageSchema} />
-      <div dangerouslySetInnerHTML={{ __html: content }} />
+      <JsonLd data={pageSchema()} />
+      <div dangerouslySetInnerHTML={{ __html: renderedContent() }} />
       <SectionNav sections={sections} />
       <PageScripts code={scripts} />
     </>

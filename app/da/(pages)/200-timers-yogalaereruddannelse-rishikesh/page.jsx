@@ -1,12 +1,19 @@
 // Danish 200-hour course page — served at /da/200-timers-yogalaereruddannelse-rishikesh.
 // Reuses the English course page's stylesheet and script unchanged; only the copy differs.
 import "../../../(en)/(main)/200-hour-yoga-teacher-training-course-rishikesh/styles.css";
-import content from "./content";
+import rawContent from "./content";
+import { withBatchTable, upcomingBatches } from "@/lib/batches";
 import scripts from "../../../(en)/(main)/200-hour-yoga-teacher-training-course-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
 import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
+
+// The batch table is rendered here, not by scripts.js after load, so the
+// dates are in the HTML. Revalidated daily so the months roll forward.
+export const revalidate = 86400;
+const content = rawContent;
+const renderedContent = () => withBatchTable(rawContent, "200", "da");
 
 const DA = "/da/200-timers-yogalaereruddannelse-rishikesh/";
 const EN = "/200-hour-yoga-teacher-training-course-rishikesh/";
@@ -51,9 +58,10 @@ export const metadata = {
 
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing
 // can earn rich results. FAQs are parsed from the page's own markup.
-const pageSchema = graph(
+const pageSchema = () => graph(
   ...studentVideoSchemas(),
   courseSchema({
+    batches: upcomingBatches("200", 6),
     name: "200-timers yogalæreruddannelse i Rishikesh",
     description: metadata.description,
     url: DA,
@@ -68,8 +76,8 @@ const pageSchema = graph(
 export default function Page() {
   return (
     <div lang="da">
-      <JsonLd data={pageSchema} />
-      <div dangerouslySetInnerHTML={{ __html: content }} />
+      <JsonLd data={pageSchema()} />
+      <div dangerouslySetInnerHTML={{ __html: renderedContent() }} />
       <SectionNav sections={sections} />
       <PageScripts code={scripts} />
     </div>

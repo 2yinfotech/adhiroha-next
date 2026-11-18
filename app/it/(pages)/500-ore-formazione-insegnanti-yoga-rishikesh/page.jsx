@@ -1,12 +1,19 @@
 // Pagina italiana della formazione insegnanti di yoga di 500 ore — servita su /it/500-ore-formazione-insegnanti-yoga-rishikesh.
 // Riutilizza senza modifiche il foglio di stile e lo script della pagina inglese; cambia solo il contenuto.
 import "../../../(en)/(main)/500-hour-yoga-teacher-training-course-rishikesh/styles.css";
-import content from "./content";
+import rawContent from "./content";
+import { withBatchTable, upcomingBatches } from "@/lib/batches";
 import scripts from "../../../(en)/(main)/500-hour-yoga-teacher-training-course-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
 import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
+
+// The batch table is rendered here, not by scripts.js after load, so the
+// dates are in the HTML. Revalidated daily so the months roll forward.
+export const revalidate = 86400;
+const content = rawContent;
+const renderedContent = () => withBatchTable(rawContent, "500", "it");
 
 const IT = "/it/500-ore-formazione-insegnanti-yoga-rishikesh/";
 const EN = "/500-hour-yoga-teacher-training-course-rishikesh/";
@@ -24,7 +31,7 @@ const sections = [
 ];
 
 export const metadata = {
-  title: "Formazione Insegnanti di Yoga di 500 Ore a Rishikesh | Adhiroha",
+  title: "Formazione Insegnanti di Yoga di 500 Ore a Rishikesh",
   description:
     "Completa il tuo RYT-500 con la nostra formazione insegnanti di yoga di 500 ore a Rishikesh, 60 giorni che combinano il programma delle 200 e delle 300 ore, con alloggio e pasti inclusi.",
   alternates: {
@@ -51,9 +58,10 @@ export const metadata = {
 
 // Dati strutturati per questa pagina — Course/FAQ/breadcrumbs così l'annuncio
 // può ottenere rich results. Le FAQ vengono estratte dal markup della pagina stessa.
-const pageSchema = graph(
+const pageSchema = () => graph(
   ...studentVideoSchemas(),
   courseSchema({
+    batches: upcomingBatches("500", 6),
     name: "Formazione Insegnanti di Yoga di 500 Ore a Rishikesh",
     description: metadata.description,
     url: IT,
@@ -68,8 +76,8 @@ const pageSchema = graph(
 export default function Page() {
   return (
     <div lang="it">
-      <JsonLd data={pageSchema} />
-      <div dangerouslySetInnerHTML={{ __html: content }} />
+      <JsonLd data={pageSchema()} />
+      <div dangerouslySetInnerHTML={{ __html: renderedContent() }} />
       <SectionNav sections={sections} />
       <PageScripts code={scripts} />
     </div>

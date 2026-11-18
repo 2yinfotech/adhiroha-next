@@ -1,12 +1,19 @@
 // Spanish 200-hour course page — served at /es/200-horas-formacion-de-profesor-de-yoga-rishikesh.
 // Reuses the English course page's stylesheet and script unchanged; only the copy differs.
 import "../../../(en)/(main)/200-hour-yoga-teacher-training-course-rishikesh/styles.css";
-import content from "./content";
+import rawContent from "./content";
+import { withBatchTable, upcomingBatches } from "@/lib/batches";
 import scripts from "../../../(en)/(main)/200-hour-yoga-teacher-training-course-rishikesh/scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
 import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, SITE, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
+
+// The batch table is rendered here, not by scripts.js after load, so the
+// dates are in the HTML. Revalidated daily so the months roll forward.
+export const revalidate = 86400;
+const content = rawContent;
+const renderedContent = () => withBatchTable(rawContent, "200", "es");
 
 const ES = "/es/200-horas-formacion-de-profesor-de-yoga-rishikesh/";
 const EN = "/200-hour-yoga-teacher-training-course-rishikesh/";
@@ -24,7 +31,7 @@ const sections = [
 ];
 
 export const metadata = {
-  title: "Formación de Profesor de Yoga de 200 Horas en Rishikesh | Adhiroha",
+  title: "Formación de Profesor de Yoga de 200 Horas en Rishikesh",
   description:
     "Formación de profesor de yoga de 200 horas en Rishikesh, registrada en Yoga Alliance. 24 días, grupos reducidos, escuela en el Himalaya, todas las comidas y excursiones incluidas.",
   alternates: {
@@ -49,9 +56,10 @@ export const metadata = {
   },
 };
 
-const pageSchema = graph(
+const pageSchema = () => graph(
   ...studentVideoSchemas(),
   courseSchema({
+    batches: upcomingBatches("200", 6),
     name: "Formación de Profesor de Yoga de 200 Horas en Rishikesh",
     description: metadata.description,
     url: ES,
@@ -66,8 +74,8 @@ const pageSchema = graph(
 export default function Page() {
   return (
     <div lang="es">
-      <JsonLd data={pageSchema} />
-      <div dangerouslySetInnerHTML={{ __html: content }} />
+      <JsonLd data={pageSchema()} />
+      <div dangerouslySetInnerHTML={{ __html: renderedContent() }} />
       <SectionNav sections={sections} />
       <PageScripts code={scripts} />
     </div>
