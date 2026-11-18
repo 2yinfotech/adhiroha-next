@@ -12,6 +12,7 @@ import {
   readingMinutes,
   formatDate,
 } from "@/lib/article-render";
+import { courseBoxHtml, withInlineCourseLink } from "@/lib/blog-course-links";
 
 // Articles come from the live database, so render per request (new/edited posts
 // appear immediately and no build-time DB connection is needed).
@@ -51,7 +52,11 @@ export default async function ArticlePage({ params }) {
   ]);
 
   const toc = buildToc(article.content);
-  const body = fixArticleHtml(article.content, { internalOk, uploads: getUploadFiles() });
+  const body = withInlineCourseLink(
+    article.slug,
+    fixArticleHtml(article.content, { internalOk, uploads: getUploadFiles() })
+  );
+  const courseBox = courseBoxHtml(article.slug);
   const cover = fixAssetPath(article.cover_image);
   const minutes = readingMinutes(article.content);
   const date = formatDate(article.published_date);
@@ -133,6 +138,7 @@ export default async function ArticlePage({ params }) {
             )}
 
             <article className="art-body reveal">
+              {courseBox && <div dangerouslySetInnerHTML={{ __html: courseBox }} />}
               <div dangerouslySetInnerHTML={{ __html: body }} />
               <div dangerouslySetInnerHTML={{ __html: faqHtml }} />
 

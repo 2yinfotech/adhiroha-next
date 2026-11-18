@@ -176,3 +176,11 @@
    the rust used by a running course, so the two read as different states. */
 .bc-pill.is-soon{background:#b07d45;color:#fff;border:0;
   box-shadow:0 3px 12px rgba(40,26,12,.34)}
+
+/* Course box above the top-traffic posts (lib/blog-course-links.js) */
+.art-course-box{border:1px solid var(--line);border-left:3px solid var(--rust);border-radius:12px;padding:18px 20px;margin:0 0 30px;background:#fbf7f1}
+.art-course-box .acb-k{display:block;font-size:10.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--rust);margin-bottom:8px}
+.art-course-box p{margin:0 0 12px;color:var(--ink);font-size:15px;line-height:1.6}
+.art-course-box .acb-link{display:inline-flex;align-items:center;gap:8px;color:var(--rust);font-weight:600;font-size:13px;letter-spacing:.6px;text-transform:uppercase;text-decoration:none}
+.art-course-box .acb-link:hover{color:var(--rust-dark)}
+.art-course-inline a{color:var(--rust);font-weight:600}
