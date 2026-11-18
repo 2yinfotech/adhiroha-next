@@ -6,7 +6,7 @@ import scripts from "./scripts";
 import PageScripts from "@/components/PageScripts";
 import SectionNav from "@/components/SectionNav";
 import JsonLd from "@/components/JsonLd";
-import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, courseFacts, studentVideoSchemas, hreflangFor } from "@/lib/seo";
+import { graph, breadcrumbSchema, courseSchema, extractFaqs, faqSchema, courseFacts, studentVideoSchemas, STUDENT_VIDEOS_500, hreflangFor } from "@/lib/seo";
 
 // The batch table is rendered here, not by scripts.js after load, so the
 // dates are in the HTML. Revalidated daily so the months roll forward.
@@ -37,7 +37,7 @@ export const metadata = withOpenGraph({
 // Structured data for this page — Course/FAQ/breadcrumbs so the listing
 // can earn rich results. FAQs are parsed from the page's own markup.
 const pageSchema = () => graph(
-  ...studentVideoSchemas(),
+  ...studentVideoSchemas(STUDENT_VIDEOS_500),
     courseSchema({
     batches: upcomingBatches("500", 6),
       name: "500 Hour Yoga Teacher Training in Rishikesh",
