@@ -279,6 +279,7 @@ export const TEACHERS = [
   ["Yogacharya Ajay Pundir", "Ashtanga & vinyasa", "8+ years teaching · M.A. Yoga", "/img/remote/img_adhiroha-yttc-022.webp"],
   ["Yogacharya Ashish Bangwal", "Hatha yoga", "8+ years · Iyengar-rooted Hatha", "/img/remote/img_adhiroha-yttc-026.webp"],
   ["Yogacharya Anil Rayal", "Anatomy & physiology", "12+ years · acupressure therapy", "/img/remote/img_adhiroha-yttc-027.webp"],
+  ["Yogacharya Jitendra Bhandari", "Pranayama & shatkarma", "20+ years · trained at a traditional ashram", "/img/remote/img_jitendra.webp"],
   ["Yogacharya Prashant", "Hatha & ashtanga", "5+ years · patient, practical teaching", "/img/remote/img_prashant.jpg"],
 ];
 
