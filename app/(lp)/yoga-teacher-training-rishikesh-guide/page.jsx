@@ -84,7 +84,7 @@ const VOICES = [
 
 const TEACHERS = [
   ["/img/remote/img_jagjeet-singh.jpg", "Yogacharya Jagjeet Singh", "Philosophy and anatomy", "20+ years"],
-  ["/img/remote/img_adhiroha-yttc-023.webp", "Yogacharya Pratap Rawat", "Ashtanga Vinyasa", "14+ years"],
+  ["/img/remote/img_adhiroha-yttc-022.webp", "Yogacharya Ajay Pundir", "Ashtanga Vinyasa", "8+ years"],
   ["/img/remote/img_rajat-1.jpg", "Yogacharya Rajat Purwal", "Pranayama and Shatkarma", "12+ years"],
   ["/img/sunil.webp", "Yogacharya Sunil Bisht", "Meditation", "20+ years"],
 ];

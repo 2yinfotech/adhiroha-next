@@ -275,12 +275,10 @@ export const SPACES = [
 
 export const TEACHERS = [
   ["Yogacharya Jagjeet Singh", "Philosophy & anatomy", "20+ years · M.A. Yoga Science", "/img/remote/img_jagjeet-singh.jpg"],
-  ["Yogacharya Pratap Rawat", "Ashtanga & vinyasa", "14+ years · M.A. Yoga & Vedic Sciences", "/img/remote/img_adhiroha-yttc-023.webp"],
   ["Yogacharya Sunil Bisht", "Hatha, pranayama & meditation", "20+ years · born in Rishikesh", "/img/remote/img_sunil-bisht.avif"],
   ["Yogacharya Ajay Pundir", "Ashtanga & vinyasa", "8+ years teaching · M.A. Yoga", "/img/remote/img_adhiroha-yttc-022.webp"],
   ["Yogacharya Ashish Bangwal", "Hatha yoga", "8+ years · Iyengar-rooted Hatha", "/img/remote/img_adhiroha-yttc-026.webp"],
   ["Yogacharya Anil Rayal", "Anatomy & physiology", "12+ years · acupressure therapy", "/img/remote/img_adhiroha-yttc-027.webp"],
-  ["Yogacharya Anil Singh", "Adjustment & alignment", "9+ years · hands-on specialist", "/img/remote/img_adhiroha-yttc-024.webp"],
   ["Yogacharya Prashant", "Hatha & ashtanga", "5+ years · patient, practical teaching", "/img/remote/img_prashant.jpg"],
 ];
 
